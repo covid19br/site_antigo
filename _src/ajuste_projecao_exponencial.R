@@ -10,7 +10,7 @@ names(tempos.duplicacao) <- c("estimativa", "ic.inf", "ic.sup")
 
 ## Ajusta modelos exponencial aos ultimos cinco dias da série
 ## e projeta para os próximos 5 dias
-exp.5d <- forecast.exponential(brasil[,1],
+exp.5d <- forecast.exponential(brasil[,2],
                                start = length(time(brasil))-4,
                                days.forecast = 5)
 
