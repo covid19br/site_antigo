@@ -1,5 +1,6 @@
 source('prepara_dados.R')
 source('ajuste_projecao_exponencial.R')
+source('plots.R')
 library(rmarkdown)
 
 rmarkdown::render('main.Rmd', output_file="../index.html")
