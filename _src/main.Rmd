@@ -23,7 +23,7 @@ Principal
 ===================================== 
 Column
 -------------------------------------
-### plot Casos BR
+### Casos acumulados no Brasil
 
 ```{r}
 #ggplotly(plot.forecast.exp)
@@ -34,7 +34,7 @@ plot.forecast.exp
 
 Column
 -------------------------------------
-### Plot R0
+### Número de reprodução
 
 ```{r}
 plot.estimate.R0
@@ -56,6 +56,8 @@ plot.tempo.dupl
 ```{r child = 'informacoes.Rmd'}
 ```
 
-```{r child = 'sobre.md'}
+```{r child = 'sobre.Rmd'}
 ```
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="covid19br.github.io" property="cc:attributionName" rel="cc:attributionURL">Decameron Team</a> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
 
