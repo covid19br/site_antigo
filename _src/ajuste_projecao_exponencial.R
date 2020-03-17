@@ -14,3 +14,11 @@ exp.5d <- forecast.exponential(brasil[,1],
                                start = length(time(brasil))-4,
                                days.forecast = 5)
 
+# salva tabela de previsões pra 5d
+write.zoo(tempos.duplicacao, file="../outputs/prev.5d.csv", sep=",")
+# salva tabela de tempos de duplicação
+write.zoo(tempos.duplicacao, file="../outputs/tempos.duplicacao.csv", sep=",")
+
+# ajuste de R0 usando EpiEstim
+res.uncertain.si <- estimate.R0(brasil.raw$novos.casos, day0=8, delay=7)
+

@@ -39,3 +39,7 @@ plot.tempo.dupl <-
                 date_labels = "%d/%b", name="") +
     ylab("Tempo de duplicação (dias)") +
     plot.formatos
+
+#> Default config will estimate R on weekly sliding windows.
+p <- plot(res_uncertain_si, legend = TRUE) + plot.formatos
+
