@@ -55,9 +55,9 @@ def regenerate_aggregate_datafile(aggregate_files, save_folder, base_name):
     import re
 
     files = sorted(glob(save_folder + base_name + '*.csv'))
-    states = ['Dia;Nome;Casos suspeitos;% Casos suspeitos;Casos confirmados;% Casos confirmados;Casos descartados;% Casos descartados;Óbitos;% Óbitos;Total;Transmissão local']
-    regions = ['Dia;Nome;Casos suspeitos;% Casos suspeitos;Casos confirmados;% Casos confirmados;Casos descartados;% Casos descartados;Óbitos;% Óbitos;Total;Transmissão local']
-    country = ['Dia;Casos suspeitos;% Casos suspeitos;Casos confirmados;% Casos confirmados;Casos descartados;% Casos descartados;Óbitos;% Óbitos;Total;Transmissão local']
+    states = ['day;state;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
+    regions = ['day;region;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
+    country = ['day;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
     for fname in files:
         day = re.search(base_name + '(.+).csv', fname).groups()[0]
         with open(fname, 'r') as f:
