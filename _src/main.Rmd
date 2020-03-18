@@ -76,3 +76,22 @@ A Razão de reprodução efetiva (R<sub>e</sub>) mede o número de casos gerados
 
 Aqui, usamos um cenário bem simples para ilustrar as vantagens do <b>isolamento social</b> em reduzir a propagação de uma doença contagiosa. Nós traduzimos e adaptamos o [modelo de propagação de um vírus](http://ccl.northwestern.edu/netlogo/models/SpreadofDisease) em uma rede social feito por Uri Wilensky (Northwestern University).  Para ler mais e simular diferentes cenários, [<b>CLIQUE AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
 
+
+### Casos suspeitos estão aumentando? {data-commentary-width=200}
+
+```{r}
+ggplotly(evolucao.tipos.casos)
+```
+
+***
+
+Casos suspeitos são pacientes com sintomas e que tiveram contato com
+casos confirmados ou suspeitos, ou com pessoas que chegaram de área
+afetada. Veja definição em detalhes no [site do Ministério da
+Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-definition).
+
+Os casos suspeitos são avaliados pelo sistema de saúde, podendo ser
+classificados em casos confirmados ou descartados.
+
+casos suspeitos formam a maioria dos casos reportados oficialmente, e
+estão crescendo muito rápido. 

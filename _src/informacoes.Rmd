@@ -51,7 +51,7 @@ modelo estima o valor da taxa de crescimento da epidemia neste período
 ### 
 
 ```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5,  fig.cap = "ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de 2020"}
-plot.formatos <- theme_bw()+g
+plot.formatos <- theme_bw()+
     theme(axis.text= element_text(size=12, face="bold"),
           axis.title.y = element_text(size=14, face="bold"))
 

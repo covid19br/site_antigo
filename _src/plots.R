@@ -1,4 +1,6 @@
 library(ggplot2)
+library(dplyr)
+library(tidyr)
 library(zoo)
 library(EpiEstim)
 
@@ -50,3 +52,18 @@ plot.estimate.R0 <-
     ylab("Número reprodução") +
     plot.formatos
 
+
+################################################################################
+## Evolucao de casos suspeitos, descartados e confirmados
+################################################################################
+
+evolucao.tipos.casos <-
+    brasil.ivis %>%
+    filter(!is.na(Suspeitos)) %>%
+    gather(Suspeitos:Óbitos, key = Classe, value = N.casos) %>%
+    mutate(Classe = factor(Classe, levels =c("Óbitos", "Confirmados", "Suspeitos","Descartados"))) %>%
+    ggplot(aes(dia,N.casos)) +
+    geom_col(aes(fill=Classe)) +
+    scale_x_date( date_labels = "%d/%b", name="") +
+    ylab("Número de casos") +
+    plot.formatos
