@@ -1,10 +1,12 @@
 ---
 title: "Observatório COVID-19 BR"
 output: 
-  flexdashboard::flex_dashboard:
-    storyboard: true
-    source: embed
-    source_code: "https://github.com/covid19br/covid19br.github.io"
+ flexdashboard::flex_dashboard:
+  storyboard: true
+  source: embed
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  includes:
+   after_body: footer.html
 ---
 
 ```{r setOptions, include=FALSE, message=FALSE}
@@ -16,7 +18,6 @@ options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
 
-# COVID-19 BR
 
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
 
@@ -61,19 +62,9 @@ A Razão de reprodução efetiva (R<sub>e</sub>) mede o número de casos gerados
 
 ### Como o isolamento social influencia a dinâmica de propagação da epidemia? {data-commentary-width=200}
 
-<!-- [![Faça sua própria simulação](https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)-->
-
+![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)
 
 ***
 
 Aqui, usamos um cenário bem simples para ilustrar as vantagens do <b>isolamento social</b> em reduzir a propagação de uma doença contagiosa. Nós traduzimos e adaptamos o [modelo de propagação de um vírus](http://ccl.northwestern.edu/netlogo/models/SpreadofDisease) em uma rede social feito por Uri Wilensky (Northwestern University).  Para ler mais e simular diferentes cenários, [<b>CLIQUE AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
-
-
-```{r child = 'informacoes.Rmd'}
-```
-
-```{r child = 'sobre.Rmd'}
-```
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> de <a xmlns:cc="http://creativecommons.org/ns#" href="covid19br.github.io" property="cc:attributionName" rel="cc:attributionURL">Decameron Team</a> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
 
