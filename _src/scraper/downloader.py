@@ -1,4 +1,5 @@
-import os, shutil
+import os, shutil, sys
+from datetime import date, timedelta
 
 # config
 # notice `download_folder` should reflect your Chrome default download folder
@@ -32,7 +33,6 @@ def download_current_file(download_folder):
 
 def save_file_if_new(download_folder, save_folder):
     '''Save downloaded file to proper place if it's different from previous one. Return True if the file is new, False otherwise.'''
-    from datetime import date, timedelta
     # check if file is new and different before replacing
     fnames = [ 'brasil-ivis-' + (date.today()-timedelta(1)).isoformat() + '.csv',
                'brasil-ivis-' + date.today().isoformat() + '.csv']
@@ -106,7 +106,10 @@ if __name__ == '__main__':
     if isnewfile:
         regenerate_aggregate_datafile([save_folder + 'states.csv',
             save_folder + 'brazil.csv'], save_folder, 'brasil-ivis-')
-
+        os.system('git add ' + save_folder + 'states.csv ' + save_folder + 'brazil.csv ' + save_folder + 'brasil-ivis-' + date.today().isoformat() + '.csv')
+        os.system('git commit -m "[auto] novos dados" && git push')
+        sys.exit(0)
+    sys.exit(1)
 
 # dia 11/03: 2 colunas a mais (casos provaveis)
 # dias 09-10/03: coluna Total a menos
