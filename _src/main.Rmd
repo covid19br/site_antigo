@@ -36,12 +36,29 @@ ggplotly(plot.forecast.exp , tolltip=c("Index", "casos.acumulados", "predito", "
 
 ***
 
-A linha preta indica os casos confirmados desde o dia ... A linha azul são as previsões para os próximos 5 dias, assumindo que a propagação continue ... A região sombreada ...
+A linha preta indica o número de casos confirmados, a partir do dia 25 de
+fevereiro de 2020, quando foi notificado o primeiro caso de COVID-19
+no país. A linha azul é a previsão para os próximos 5 dias, se a
+taxa de crescimento continuar a mesma dos últimos 5 dias. A região
+sombreada é o intervalo de confiança dessa previsão. Se a taxa
+continuar a mesma esse intervalo tem 95% de probabilidade de conter a
+previsão correta.
 
 
 - Por que só 5 dias?
 
-Porque ...
+Porque quando o crescimento é exponencial as incertezas também crescem
+exponencialmente. Veja o gráfico: a região cinza, que expressa a
+incerteza em torno da previsão, vai aumentando de largura à medida com
+o tempo desde hoje. 
+
+Também por isso, mesmo pequenas mudanças de velocidade que aconteçam
+hoje ou amanhã se propagam exponencialmente, e vão causar enormes variações no
+futuro. Como você verá nos próximo gráficos, a velocidade da epidemia
+pode variar no intervalo de dias.
+
+Considerando tudo isso, avaliamos que é inútil e inadequado fazer
+previsões para mais de 5 dias com este método.
 
 
 ### Quão rápido a doença se propaga? {data-commentary-width=200}
@@ -53,7 +70,21 @@ ggplotly(plot.tempo.dupl)
 
 ***
 
-O tempo de duplicação indica quanto tempo demora para **dobrar** o número de casos. Ou seja, quanto menor esse número, mais rápido a doença está se espalhando. Usando os dados brasileiros ... Esse número depende fortemente das medidas de contenção da doença ...
+O tempo de duplicação indica quantos dias levam para **dobrar** o
+número de casos. Ou seja, quanto menor esse número, mais rápido a
+doença está se espalhando. Esse número depende fortemente das medidas
+de contenção da doença. A estimativa de hoje é de 
+`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),2], 1)))` e 
+`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),3], 1))` dias.
+
+A linha azul no gráfico mostra o tempo de duplicação estimado a
+intervalos de 5 dias (as datas indicam o fim de cada um desses
+intervalos). A faixa cinza é o intervalo de confiança desses tempos de
+duplicação. Esse intervalo tem 95% de chance de incluir o valor real
+do tempo de duplicação. O intervalo largo mostra que a incerteza é
+grande, mas mesmo assim vemos que tempos de duplicação variam à medida
+que o tempo passa. 
+
 
 
 ### Para quantas pessoas cada infectado transmite a doença? {data-commentary-width=200}
@@ -65,8 +96,23 @@ ggplotly(plot.estimate.R0)
 
 ***
 
-A Razão de reprodução efetiva (R<sub>e</sub>) mede o número de casos gerados por cada pessoa infectada...
+O Número Reprodutivo efetivo ($R_e$) é a média de pessoas que cada
+pessoa infectada contamina.  É a propriedade mais importante para se
+entender o comportamento de uma epidemia. Um número
+reprodutivo maior que um indica que doença está se espalhando. 
 
+Do mesmo jeito que para o tempo de duplicação do gráfico anterior,
+ estimamos o $R_e$ da epidemia de COVID-19 no Brasil diariamente, mas
+ em períodos de 7 dias. No momento o $R_e$ está entre 
+ `r round(res.uncertain.si$R[nrow(res.uncertain.si$R), 5],1)` e
+ `r round(res.uncertain.si$R[nrow(res.uncertain.si$R), 11],1)`.
+ 
+A linha azul no gráfico mostra a estimativa de $R_e$ a intervalos de 7
+dias (as datas indicam o fim de cada um desses intervalos). A faixa
+cinza é o intervalo de confiança dessas estimativas.  Esse intervalo
+tem 95% de chance de incluir o valor real de $R_e$. Temos ainda uma
+grande incerteza quanto ao valor de $R_e$. Mas mesmo o limite mínimo do intervalo e confiança
+está bem acima de um, indicando que a epidemia está em expansão.
 
 ### Como o isolamento social influencia a dinâmica de propagação da epidemia? {data-commentary-width=200}
 
@@ -74,7 +120,13 @@ A Razão de reprodução efetiva (R<sub>e</sub>) mede o número de casos gerados
 
 ***
 
-Aqui, usamos um cenário bem simples para ilustrar as vantagens do <b>isolamento social</b> em reduzir a propagação de uma doença contagiosa. Nós traduzimos e adaptamos o [modelo de propagação de um vírus](http://ccl.northwestern.edu/netlogo/models/SpreadofDisease) em uma rede social feito por Uri Wilensky (Northwestern University).  Para ler mais e simular diferentes cenários, [<b>CLIQUE AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
+Aqui, usamos um cenário bem simples para ilustrar as vantagens do
+<b>isolamento social</b> em reduzir a propagação de uma doença
+contagiosa. Nós traduzimos e adaptamos o [modelo de propagação de um
+vírus](http://ccl.northwestern.edu/netlogo/models/SpreadofDisease) em
+uma rede social feito por Uri Wilensky (Northwestern University).
+Para ler mais e simular diferentes cenários, [<b>CLIQUE
+AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
 
 
 ### Casos suspeitos estão aumentando? {data-commentary-width=200}
@@ -86,12 +138,13 @@ ggplotly(evolucao.tipos.casos)
 ***
 
 Casos suspeitos são pacientes com sintomas e que tiveram contato com
-casos confirmados ou suspeitos, ou com pessoas que chegaram de área
+outros casos suspeitos ou confirmados, ou ainda com pessoas que chegaram de área
 afetada. Veja definição em detalhes no [site do Ministério da
 Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-definition).
 
 Os casos suspeitos são avaliados pelo sistema de saúde, podendo ser
 classificados em casos confirmados ou descartados.
 
-casos suspeitos formam a maioria dos casos reportados oficialmente, e
-estão crescendo muito rápido. 
+Desde que o Brasil confirmou 19 casos suspeitos (07/03/2020) os casos
+suspeitos formam a maioria dos casos reportados oficialmente, e estão
+crescendo muito rápido.
