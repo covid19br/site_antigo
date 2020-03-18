@@ -1,26 +1,24 @@
 ---
 title: "Observatório COVID-19 BR"
-#header-includes:
-#  - \usepackage[brazil]{babel}
 output: 
   flexdashboard::flex_dashboard:
-  storyboard: true
-  source: embed
-#date: "`r format(Sys.time(), '%d de %B de %Y')`"
+    storyboard: true
+    source: embed
+    source_code: "https://github.com/covid19br/covid19br.github.io"
 ---
 
 ```{r setOptions, include=FALSE, message=FALSE}
 library(flexdashboard)
 #library(xtable)
-#library(knitr)
+library(knitr)
 #library(plotly)
 options(OutDec = ',')
-#knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
 
 # COVID-19 BR
 
-### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?
+### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
 
 ```{r}
 #ggplotly(plot.forecast.exp)
@@ -37,7 +35,7 @@ A linha preta indica os casos confirmados desde o dia ... A linha azul são as p
 Porque ...
 
 
-### Quão rápido a doença se propaga?
+### Quão rápido a doença se propaga? {data-commentary-width=200}
 
 ```{r}
 plot.tempo.dupl
@@ -49,7 +47,7 @@ plot.tempo.dupl
 O tempo de duplicação indica quanto tempo demora para **dobrar** o número de casos. Ou seja, quanto menor esse número, mais rápido a doença está se espalhando. Usando os dados brasileiros ... Esse número depende fortemente das medidas de contenção da doença ...
 
 
-### Para quantas pessoas cada infectado transmite a doença?
+### Para quantas pessoas cada infectado transmite a doença? {data-commentary-width=200}
 
 ```{r}
 plot.estimate.R0
@@ -61,7 +59,7 @@ plot.estimate.R0
 A Razão de reprodução efetiva (R<sub>e</sub>) mede o número de casos gerados por cada pessoa infectada...
 
 
-### Como o isolamento social influencia a dinâmica de propagação da epidemia?
+### Como o isolamento social influencia a dinâmica de propagação da epidemia? {data-commentary-width=200}
 
 <!-- [![Faça sua própria simulação](https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)-->
 
