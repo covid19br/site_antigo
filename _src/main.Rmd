@@ -22,7 +22,7 @@ output:
 library(flexdashboard)
 #library(xtable)
 library(knitr)
-#library(plotly)
+library(plotly)
 options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
@@ -30,8 +30,8 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
 
 ```{r}
-#ggplotly(plot.forecast.exp)
-plot.forecast.exp
+ggplotly(plot.forecast.exp)
+##plot.forecast.exp
 ```
 
 ***
@@ -47,8 +47,8 @@ Porque ...
 ### Quão rápido a doença se propaga? {data-commentary-width=200}
 
 ```{r}
-plot.tempo.dupl
-#ggplotly(plot.tempo.dupl)
+##plot.tempo.dupl
+ggplotly(plot.tempo.dupl)
 ```
 
 ***
@@ -59,8 +59,8 @@ O tempo de duplicação indica quanto tempo demora para **dobrar** o número de 
 ### Para quantas pessoas cada infectado transmite a doença? {data-commentary-width=200}
 
 ```{r}
-plot.estimate.R0
-#ggplotly(plot.estimate.R0)
+##plot.estimate.R0
+ggplotly(plot.estimate.R0)
 ```
 
 ***
