@@ -1,4 +1,5 @@
 library(zoo)
+library(EpiEstim)
 
 #' Ajusta um modelo exponencial para n de casos em função de n de dias
 #' passados desde o início da série.
@@ -88,8 +89,8 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
 ###############################################################################
 # Estimating R accounting for uncertainty on the serial interval distribution #
 ###############################################################################
-## - the mean of the SI in a Normal(4.8, 0.71), truncated at 3.8 and 6.1
-## - the sd of the SI in a Normal(2.3, 0.58), truncated at 1.6 and 3.5
+## - the mean of the SI comes from a Normal(4.8, 0.71), truncated at 3.8 and 6.1
+## - the sd of the SI comes from  a Normal(2.3, 0.58), truncated at 1.6 and 3.5
 ## 
 ##   day0 : day to start the analysis
 ##   delay : 7 #number of days

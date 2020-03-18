@@ -34,13 +34,23 @@ plot.forecast.exp <-
 ################################################################################
 plot.tempo.dupl <-
     ggplot(tempos.duplicacao, aes(Index, estimativa)) +
-    geom_line(size = 1.25) +
-    geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup, fill="band"), alpha = 0.25) +
+    geom_line(size = 1.25, color="darkblue") +
+    geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), alpha = 0.25) +
+    ##geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup, fill="band"), alpha = 0.25) +
+    geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill = alpha = 0.25) +
     scale_x_date(#breaks=seq(min(time(ncasos.completa)), max(time(ncasos.completa)), by=3),
                 date_labels = "%d/%b", name="") +
     ylab("Tempo de duplicação (dias)") +
     plot.formatos
 
 # Default config will estimate R on weekly sliding windows.
-plot.estimate.R0 <- plot(res.uncertain.si, "R", legend=TRUE) + plot.formatos
-
+## plot.estimate.R <- plot(res.uncertain.si, "R", legend=TRUE) + plot.formatos
+plot.estimate.R <-
+    ggplot(data = res.uncertain.si.zoo, aes(Index, Mean.R)) +
+    geom_line(size = 1.25, color="darkblue") +
+    ##geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R, fill="band"), alpha = 0.25) +
+    geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), alpha = 0.25) +
+    scale_x_date( date_labels = "%d/%b", name="") +
+    ylab("Número instantâneo de reprodução") +
+    plot.formatos
+    
