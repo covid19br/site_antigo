@@ -11,9 +11,9 @@ if [ $? = 0 ]; then
     R --no-save < update.R
     if [ $? = 0 ]; then
         pushd ..
-        git add outputs/prev.5d.csv  outputs/tempos.duplicacao.csv dados/brutos-ivis/ index.html
+        git add outputs/prev.5d.csv  outputs/tempos.duplicacao.csv index.html
         popd
-        git commit -m "[auto] Novos dados e projeções."
+        git commit -m "[auto] Novas projeções."
         git push
     else
         echo "** Erro na atualização do site. **"
