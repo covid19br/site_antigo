@@ -14,7 +14,7 @@ plot.formatos <- theme_bw()+
 ## para os proximos 5 dias (com intervalo de confiança)
 ################################################################################
 ## Serie com observados e previstos
-## (gambiarra para ter linha contínua no graico, verificar hel de ggplot.zoo)
+## (gambiarra para ter linha contínua no grafico, verificar help de ggplot.zoo)
 ncasos.completa <-c(brasil$casos.acumulados, exp.5d$predito)
 plot.forecast.exp <-
     ggplot(ncasos.completa, aes(Index, ncasos.completa)) +

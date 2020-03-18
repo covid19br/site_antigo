@@ -1,15 +1,105 @@
-# Informações
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(ggplot2)
+library(knitr)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
+```
+
+# Informações Técnicas
 
 
-<h2>Estimativa de R<sub>0</sub></h2>
+## Estimativa do tempo de duplicação
 
+No início das epidemias o número de infectados cresce
+exponencialmente, o que implica que o tempo para que o número de casos
+duplique a constante $\ln(2)/r$, onde $r$ é a taxa de crescimento de
+número de casos. Um crescimento exponencial a taxa constante também
+implica em uma relação linear entre o logaritmo do número de casos e
+o tempo. Esta expectativa em geral vale para pequenos intervalos de
+tempo, na fase inicial de epidemias. É o que vemos para o Brasil, por
+exemplo, nos cincos dias a partir do dia em que o número de casos no
+ter chegado a 15:
+
+```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
+plot.formatos <- theme_bw()+
+    theme(axis.text= element_text(size=12, face="bold"),
+          axis.title.y = element_text(size=14, face="bold"))
+
+exemplo1 <- window(brasil, start="2020-03-07",end="2020-03-11")
+ex.fit <- fitP.exp(exemplo1$casos.acumulados, only.coef=FALSE)
+exemplo1$pred <- predict(ex.fit, type="response")
+ggplot(exemplo1,
+       aes(Index, casos.acumulados)) +
+    geom_point(size=2, color="darkblue") +
+    geom_line(aes(Index, pred)) +
+    scale_x_date(date_labels = "%d/%b", name="") +
+    ylab("log (Número de casos)") +
+    scale_y_log10() +
+    plot.formatos
+```
+
+A linha reta no gráfico mostra o previsto por um modelo linear em
+escala log para dados de contagem [^1], ajustado a estes dados. Esse
+modelo estima o valor da taxa de crescimento da epidemia neste período
+($r$), com a qual estimamos o tempo de duplicação. 
+
+Com este modelo linear estimamos o número de casos para os próximos
+dias, e os intervalos de confiança dos valores previstos:
+
+```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
+ex.forecast <- forecast.exponential(exemplo1$casos.acumulados,
+                                    start=as.Date("2020-03-07"),
+                                    days.forecast = 5)
+exemplo2 <- window(brasil, start="2020-03-07", end="2020-03-16")
+exemplo2 <- merge(exemplo2,
+                  zoo(data.frame(pred=predict(ex.fit, newdata=data.frame(ndias=0:10), type="response")),
+                  time(exemplo2)))              
+ggplot(data= exemplo2, aes(Index, casos.acumulados)) +
+    geom_point(size=2, color="darkblue") +
+    geom_line(aes(Index, pred)) +
+    geom_ribbon(data=ex.forecast, aes(y=predito, ymin=ic.low, ymax=ic.upp), alpha=0.2) +
+    scale_x_date(date_labels = "%d/%b", name="") +
+    ylab("log (Número de casos)") +
+    scale_y_log10() +
+    plot.formatos
+```
+
+A extensão da reta de regressão está abaixo dos pontos do número de
+casos dos próximos cinco dias. Isso mostra que o coeficiente de
+crescimento exponencial pode variar mesmo na fase inicial da epidemia,
+o que torna extrapolações de longo prazo muito sujeitas a
+erros. Apesar disso, O intervalo da previsão do modelo incluiu os
+números de casos dos cinco dias seguintes, mostrando que essa
+regressão é útil para fazer previsões de curto prazo.
+
+Para avaliar o quanto o crescimento da epidemia varia ao longo do
+tempo, ajustamos o modelo linear para períodos de cinco dias, a partir
+de quando foram registrados 15 casos. De cada um desses modelos
+estimamos o tempo de duplicação, e seu intervalo de confiança. Assim,
+a primeira estimativa é para o período de 'r
+format(min(time(brasil.d0)), "%d de %B")` a 'r
+format(min(time(brasil.d0))+5, "%d de %B")`. A segunda é para o
+período de 'r format(min(time(brasil.d0))+1, "%d de %B")` a 'r
+format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
+tabela abaixo exemplifica os resultados obtidos para os primeiros 10
+dias a partir do dia com 15 casos:
+
+
+```{r exemplo tabela com tempos duplicacao}
+ex.dt <- dt.rw(brasil.d0[1:10], window.width =5)
+kable(as.data.frame(ex.dt), col.names=c("Estimado", "IC-inferior", "IC-superior"),
+      caption="Estimativas dos tempos de duplicação do número de casos de COVID-19 para o Brasil, para período de 5 dias, a partir de 07 de março de 2020. Indicados os valores estimados e os limites inferiores e superiores do intervalo de confiança a 95%. As datas em cada linha da tabela são os dias do final de cada período.")
+```
+
+## Estimativa do Número de Reprodução da Epidemia
 
 Em epidemiologia, uma das medidas mais importantes é o número
-reprodutivo basal ou razão de reprodução básica (R<sub>0</sub>). Essa
+reprodutivo basal ou razão de reprodução básica ($R_0$). Essa
 medida indica o número de casos secundários que um indivíduo
 infeccioso pode gerar em uma população totalmente suscetível. Apesar
 de ser muito útil para avaliar o potencial de propagação de doenças
-infecciosas em diferentes contextos, R<sub>0</sub> é uma medida
+infecciosas em diferentes contextos, $R_0$ é uma medida
 teórica. Com a propagação de doenças infecciosas com altas taxas de
 transmissibilidade, muitas pessoas se infectam e, em diversos casos,
 indivíduos que já foram infectados podem tornar-se resistentes, não
@@ -17,42 +107,49 @@ pertencendo mais ao grupo de suscetíveis. Neste momento, a premissa de
 uma população totalmente suscetível passa a não ser mais uma boa
 aproximação da realidade e uma nova medida epidemiológica faz-se
 necessária. Essa medida é o número reprodutivo efetivo ou razão de
-reprodução efetiva (Re). Esse número indica o número de casos
+reprodução efetiva ($R_e$). Esse número indica o número de casos
 secundários produzidos em uma população na qual nem todos são
 suscetíveis. 
 
 Para analisar a dinâmica instantânea de uma doença infecciosa que tem
-potencial de infectar grande parte da população, o valor de Re
+potencial de infectar grande parte da população, o valor de $R_e$
 calculado ao longo do tempo pode informar o quão crítico é o atual
-estágio de uma epidemia. Podemos calcular o Re utilizando séries
+estágio de uma epidemia. Podemos calcular o $R_e$ utilizando séries
 temporais de dados de incidência (novos casos a cada dia, semana, etc)
 e a distribuição do intervalo serial, definido como o intervalo de
 tempo entre o início da doença em um caso primário e o início da
 doença em um caso secundário. O intervalo serial é uma medida difícil de ser
 obtida, principalmente para doenças infecciosas com pouco estudo
 epidemiológico. Para contornar esse problema, pode-se estimar o valor
-de Re considerando incertezas na medida do intervalo
+de $R_e$ considerando incertezas na medida do intervalo
 serial. 
 
-Usamos a série temporal dos últimos 7 dias da
-epidemia de COVID-19 para estimar diariamente os
-valores de Re, utilizando a metodologia de Wallinga e
-Teunis (2004) e implementada no pacote EpiEstim* do software R. 
-Para a medida de intervalo serial, utilizamos uma
+Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19
+para estimar diariamente os valores de Re, utilizando a metodologia de
+Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software
+R (Cori 2020).  Para a medida de intervalo serial, utilizamos uma
 distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e
 desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo
-Nishiura et al. (2020).
+Nishiura **et al.** (2020).
 
 ![Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.](fig/R0_prsc.png){ width=30% }
  
-<p>
 
-</p>
 
-<h4>Referências</h4>
+### Referências
 
-Wallinga J and Teunis P. Different Epidemic Curves for Severe Acute Respiratory Syndrome Reveal Similar Impacts of Control Measures, American Journal of Epidemiology, Volume 160, Issue 6, 15 September 2004, Pages 509–516, https://doi.org/10.1093/aje/kwh255
+Ane Cori (2019). EpiEstim: Estimate Time Varying Reproduction Numbers
+from Epidemic Curves. R package version
+2.2-1. https://CRAN.R-project.org/package=EpiEstim
 
-Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novelcoronavirus (COVID-19) infections. International Journal of Infectious Diseases, 2020. doi: https://doi.org/10.1016/j.ijid.2020.02.060
+Wallinga J and Teunis P. Different Epidemic Curves for Severe Acute
+Respiratory Syndrome Reveal Similar Impacts of Control Measures,
+American Journal of Epidemiology, Volume 160, Issue 6, 15 September
+2004, Pages 509–516, https://doi.org/10.1093/aje/kwh255
+
+Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of
+novelcoronavirus (COVID-19) infections. International Journal of
+Infectious Diseases, 2020. doi:
+https://doi.org/10.1016/j.ijid.2020.02.060
  
-*Pacote EpiEstim no R: https://cran.r-project.org/web/packages/EpiEstim/index.html
+[^1]: Modelo linear generalizado Poisson (glm), com função de ligação logarítimica.
