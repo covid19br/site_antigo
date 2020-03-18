@@ -74,24 +74,23 @@ Entre em contato com que já está no grupo.
     + [CV](http://lattes.cnpq.br/1810788882318135)
     + <c.franco@unesp.br>
 
-* Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/))
-    + [CV](http://lattes.cnpq.br/3884092565521453)
-    + <prado@ib.usp.br>
-
 * Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/))
     + [CV](http://lattes.cnpq.br/9619030543047007)
     + <prguima@gmail.com>
+
+* Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/))
+    + [CV](http://lattes.cnpq.br/3884092565521453)
+    + <prado@ib.usp.br>
 
 * Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/))
     + [CV](http://lattes.cnpq.br/1301865568118160)
     + <renato.coutinho@ufabc.edu.br>
 	
-* Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/))
-    + [CV](http://lattes.cnpq.br/8497878967418484)
-    + <kraenkel@ift.unesp.br>
-
 * Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br))
     + [CV](http://lattes.cnpq.br/9741820804547685)
     + <rodrigo.corder@usp.br>
 
+* Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/))
+    + [CV](http://lattes.cnpq.br/8497878967418484)
+    + <kraenkel@ift.unesp.br>
 

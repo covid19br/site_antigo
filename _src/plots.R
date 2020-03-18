@@ -18,15 +18,16 @@ plot.formatos <- theme_bw()+
 ################################################################################
 ## Serie com observados e previstos
 ## (gambiarra para ter linha contínua no grafico, verificar help de ggplot.zoo)
-ncasos.completa <-c(brasil$casos.acumulados, exp.5d$predito)
+ncasos.completa <-merge(casos=brasil$casos.acumulados, exp.5d[, c("predito","ic.low","ic.upp")])
+ncasos.completa$casos[time(ncasos.completa)>=min(time(exp.5d))] <- exp.5d$predito[time(exp.5d)>=min(time(exp.5d))]
 plot.forecast.exp <-
-    ggplot(ncasos.completa, aes(Index, ncasos.completa)) +
-    geom_ribbon(data=exp.5d, aes(Index, predito, ymin=ic.low, ymax=ic.upp), fill="lightgrey") +
-    geom_line(aes(Index, ncasos.completa)) +
-    geom_point(data=brasil, aes(Index, casos.acumulados), size=2) +
+    ggplot(ncasos.completa, aes(Index, casos)) +
+    geom_ribbon(aes(ymin=ic.low, ymax=ic.upp), fill="lightgrey") +
+    geom_line() +
+    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], aes(Index, casos), size=2) +
     scale_x_date(date_labels = "%d/%b", name="") +
-    ylim(0,max(exp.5d$ic.upp)) +
-    geom_point(data=exp.5d, aes(Index,predito), col="blue", size=2) +
+    ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
+    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))], aes(Index, casos), size=2, col="blue") +
     ylab("Número de casos") +
     plot.formatos
 
