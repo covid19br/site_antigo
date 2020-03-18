@@ -19,7 +19,24 @@ output:
   in_header: header.html
 ---
 
-# Fontes
+<h2>Fontes dos dados</h2>
+
+Utilizamos os registros das notificações de casos de COVID-19
+divulgadas diatiamente pelo Ministério da Saúde na 
+[Plataforma IVIS](http://plataforma.saude.gov.br/novocoronavirus/).
+
+A cada atualização na plataforma um programa automático de recupareção
+de dados nos envia os novos registros e dispara a atualização das
+análise e gráficos neste site.
+
+
+<h2>Outras fontes e iniciativas semelhantes</h2>
+
+Lista em construção, as iniciativas se multiplicam:
+
+* [CMMID COVID repository](https://cmmid.github.io/topics/covid19/), Centre for Mathematical Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.
+* [Jonh Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html)
+* [Site sobre epidemia de COVID-19 da Organização Mundial da Saúde](https://www.who.int/health-topics/coronavirus)
 
 
 
