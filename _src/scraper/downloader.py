@@ -89,3 +89,8 @@ if __name__ == '__main__':
             save_folder + 'regions.csv', save_folder + 'brazil.csv'],
             save_folder, 'brasil-ivis-')
 
+
+# dia 11/03: 2 colunas a mais (casos provaveis)
+# dias 25/02 - 08/03: Unidade da Federação;Suspeitos;Confirmados;Descartados;Óbitos;Transmissão local
+# dias 02/02 - UF;Suspeito;Confirmado;Descartado;Transmissão local
+
