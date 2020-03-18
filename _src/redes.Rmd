@@ -1,74 +1,8 @@
-Outros plots, link Miúdo
+Vírus na cidade
 ===================================== 
 
-Column 1 {data-width=200}
-------------------------------------
-### Plot Miúdo com link
+Aqui, usamos um cenário bem simples para ilustrar as vantagens do <b>isolamento social</b> em reduzir a propagação de uma doença contagiosa. Nós traduzimos e adaptamos o [modelo de propagação de um vírus](http://ccl.northwestern.edu/netlogo/models/SpreadofDisease) em uma rede social feito por Uri Wilensky (Northwestern University).  Para ler mais e simular diferentes cenários, [<b>CLIQUE AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
 
-```{r}
-#library(plotly)
-#renderPlotly({
-#  an = movies[movies[input$movie_type]==1,]
-#  g = ggplot(an, aes(length, rating)) + 
-#    geom_point(size=0.5, aes(text=paste("Film: ", title))) + 
-#    xlab("Length") + ylab("Rating") + 
-#    ylim(c(0, 10)) 
-#  ggplotly(g)
-#})
-```
+### Vírus na cidade: simulação didática
 
-### Value boxes
-
-```{r}
-#renderValueBox({
-#  an = movies[movies[input$movie_type]==1,]
-#  valueBox(sum(an$rating <3), icon = "ion-stats-chart-outline", 
-#           caption="Movies Rated less than 3", color="red")
-#})
-```
-
-Column 2 {data-width=300}
--------------------------------------
-
-### Plot 2
-
-```{r}
-# This example makes use of the `dygraphs` R package. The dygraphs
-#package provides rich facilities for charting time-series data 
-#in R. 
-
-#library(dygraphs)
-#renderDygraph({
-#  years = movies[movies$year > 1929 & movies[input$movie_type]==1,]
-#  rat_by_year = tapply(years$rating, years$year, mean)
-#  
-#  x = ts(as.vector(rat_by_year), start=1930)
-#  y = cbind(Rating=x)
-#  dygraph(y, main = "Ratings over the years", 
-#          ylab = "Ratings", group="Ratings") %>% 
-#    dyRangeSelector() %>%
-#    dyOptions(stepPlot = TRUE) %>%
-#    dySeries("V1", label = "Rating")
-#})
-```
-
-### Plot 3
-
-```{r}
-#library(dygraphs)
-#renderDygraph({
-#  years = movies[movies$year > 1929 & movies[input$movie_type]==1,]
-#  num_by_year = tapply(years$rating, years$year, sum)
-#  ## Create ts object
-#  x = ts(as.vector(num_by_year), start=1930)
-#  y = cbind(Rating=x)
-#  
-  ## Plot code
-#  dygraph(y, main = "Number of movies over the years", 
-#          ylab = "No. of movies",group="Ratings") %>% 
-#    dyRangeSelector() %>%
-#    dyOptions(stepPlot = TRUE) %>%
-#    dySeries("V1", label = "No. of Movies made")
-#})
-```
-
+![Faça sua própria simulação em https://guimaraeslabbr.weebly.com/COVID19.html](fig/rede_prsc.jpg)

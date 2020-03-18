@@ -1,27 +1,22 @@
-Informações
+Mais informações
 ===================================== 
 
-Diante da propagação da COVID-19, doença causada pelo novo coronavírus, a Organização Mundial da Saúde (OMS) decretou pandemia mundial no dia 11/03. Segundo a OMS, uma pandemia é a disseminação mundial de uma nova doença. Com início na China, o coronavírus se espalhou rapidamente por todos os continentes, contaminando milhares pessoas e levando diversos governantes a tomarem medidas drásticas para a contenção da doença. A dinâmica da transmissão de doenças infecciosas e, em particular, da COVID-19, deve ser compreendida para que os governos possam tomar as melhores decisões. Neste sentido, modelos matemáticos são fundamentais uma vez que, a partir deles, tendências e diferentes cenários podem ser simulados. Os resultados de simulações matemáticas, embora sempre apresentem incertezas, são de suma importância para o planejamento de políticas públicas. Diante do surto de COVID-19 que já se apresenta no Brasil, nós, cientistas de diversas áreas, apresentamos aqui análises matemáticas baseadas em dados empíricos oficiais da propagação do coronavírus no país. Esperamos contribuir com as autoridades responsáveis e informar a população a partir de um ponto de vista científico.
 
-#### Estimativa de R<sub>0</sub>
+<h2>Estimativa de R<sub>0</sub></h2>
+
 
 Em epidemiologia, uma das medidas mais importantes é o número reprodutivo basal ou razão de reprodução básica (R<sub>0</sub>). Essa medida indica o número de casos secundários que um indivíduo infeccioso pode gerar em uma população totalmente suscetível. Apesar de ser muito útil para avaliar o potencial de propagação de doenças infecciosas em diferentes contextos, R<sub>0</sub> é uma medida teórica. Com a propagação de doenças infecciosas com altas taxas de transmissibilidade, muitas pessoas se infectam e, em diversos casos, indivíduos que já foram infectados podem tornar-se resistentes, não pertencendo mais ao grupo de suscetíveis. Neste momento, a premissa de uma população totalmente suscetível passa a não ser mais uma boa aproximação da realidade e uma nova medida epidemiológica faz-se necessária. Essa medida é o número reprodutivo efetivo ou razão de reprodução efetiva (Re). Esse número indica o número de casos secundários produzidos em uma população na qual nem todos são suscetíveis. Para analisar a dinâmica instantânea de uma doença infecciosa que tem potencial de infectar grande parte da população, o valor de Re calculado continuamente pode informar o quão crítico é o atual estágio de uma determinada epidemia. Podemos calcular o Re utilizando séries temporais de dados de incidência e a distribuição do intervalo serial, definido como o intervalo de tempo entre o início da doença em um caso primário e o início da doença em um caso secundário. Entretanto, esta medida é difícil de ser obtida, principalmente para doenças infecciosas com pouco estudo epidemiológico. Para contornar esse problema, pode-se estimar o valor de Re considerando incertezas na medida do intervalo serial. Consideramos aqui a série temporal dos últimos 7 dias da epidemia de COVID-19 no contexto brasileiro, estimamos diariamente os valores de Re utilizando a metodologia apresentada por Wallinga e Teunis, 2004 e implementada no pacote EpiEstim* do software R (Figura). Para a medida de intervalo serial, utilizamos uma distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo Nishiura et al., 2020.
- 
-Wallinga, J. and P. Teunis. Different epidemic curves for severe acute respiratory syndrome reveal similar impacts of control measures (AJE 2004).
 
-Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novel coronavirus (COVID-19) infections, International Journal of Infectious Diseases (2020), doi: https://doi.org/10.1016/j.ijid.2020.02.060
+![Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.](fig/R0_prsc.png){ width=30% }
  
-*https://cran.r-project.org/web/packages/EpiEstim/index.html
+<p>
 
-EpiEstim
-Serial interval:
+</p>
+
+<h4>Referências</h4>
+
+Wallinga J and Teunis P. Different Epidemic Curves for Severe Acute Respiratory Syndrome Reveal Similar Impacts of Control Measures, American Journal of Epidemiology, Volume 160, Issue 6, 15 September 2004, Pages 509–516, https://doi.org/10.1093/aje/kwh255
+
+Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novelcoronavirus (COVID-19) infections. International Journal of Infectious Diseases, 2020. doi: https://doi.org/10.1016/j.ijid.2020.02.060
  
-1. Mean of 7.5 days (95% CI, 5.3 to 19 – sd = 3.4 – n=6). 
-We fitted a gamma distribution to data from cluster investigations to estimate the serial interval distribution…
-On the basis of the dates of illness onset of 6 pairs of cases in these clusters, we estimated that the serial interval distribution had a mean (±SD) of 7.5±3.4 days (95% CI, 5.3 to 19).
-Li, Q. et al. Early Transmission Dynamics in Wuhan, China, of Novel Coronavirus–Infected Pneumonia. N. Engl. J. Med. NEJMoa2001316 (2020) doi:10.1056/NEJMoa2001316.
- 
-2. Mean of 4.8 days (95% CrI: 3.8, 6.1). SD of 2.3 days (95% CrI: 1.6, 3.5)– n=18. 
-Limiting our dataset to only certain observations, the median serial interval of the best-fit Weibull distribution model was estimated at 4.6 days (95% CI: 3.5, 5.9) with a mean and SD of 4.8 days (95% CrI: 3.8, 6.1) and 2.3 days (95% CrI: 1.6, 3.5), respectively.
-Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novel coronavirus (COVID-19) infections, International Journal of Infectious Diseases (2020),
-doi: https://doi.org/10.1016/j.ijid.2020.02.060
+*Pacote EpiEstim no R: https://cran.r-project.org/web/packages/EpiEstim/index.html

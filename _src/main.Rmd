@@ -34,7 +34,7 @@ plot.forecast.exp
 
 Column
 -------------------------------------
-### Número de reprodução
+### Razão de reprodução básica (R<sub>0</sub>)
 
 ```{r}
 plot.estimate.R0
@@ -42,7 +42,7 @@ plot.estimate.R0
 
 ```
 
-### Plot taxa de duplicação
+### Tempo de duplicação de casos
 
 ```{r}
 plot.tempo.dupl
