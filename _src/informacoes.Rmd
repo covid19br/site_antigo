@@ -1,3 +1,24 @@
+---
+title: "Observatório COVID-19 BR"
+output: 
+ flexdashboard::flex_dashboard:
+  orientation: columns
+  vertical_layout: scroll
+  source: embed
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: styles.css
+  navbar:
+      - { title: "Início", href: "index.html", align: left}
+      - { title: "+Info", href: "informacoes.html", align: left}
+      - { title: "Fontes", href: "fontes.html", align: left}
+      - { title: "Sobre", href: "sobre.html", align: left}
+  favicon: favicon.png
+ includes:
+  after_body: footer.html
+  in_header: header.html
+---
+
 
 ```{r setOptions, include=FALSE, message=FALSE}
 library(ggplot2)
@@ -47,7 +68,7 @@ modelo estima o valor da taxa de crescimento da epidemia neste período
 Com este modelo linear estimamos o número de casos para os próximos
 dias, e os intervalos de confiança dos valores previstos:
 
-```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
+```{r estimativa_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
 ex.forecast <- forecast.exponential(exemplo1$casos.acumulados,
                                     start=as.Date("2020-03-07"),
                                     days.forecast = 5)
