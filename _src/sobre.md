@@ -92,5 +92,5 @@ Entre em contato com que já está no grupo.
 
 * Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/))
     + [CV](http://lattes.cnpq.br/8497878967418484)
-    + <kraenkel@ift.unesp.br>
+    + <roberto.kraenkel@unesp.br>
 
