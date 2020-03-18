@@ -27,7 +27,7 @@ options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
 
-### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
+### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?
 
 ```{r}
 ggplotly(plot.forecast.exp , tolltip=c("x", "y", "ymin", "ymax"))
@@ -55,7 +55,7 @@ Por isso avaliamos que é inadequado fazer
 previsões para mais de 5 dias com este método.
 
 
-### Quão rápido a doença se propaga? {data-commentary-width=200}
+### Quão rápido a doença se propaga?
 
 ```{r}
 ##plot.tempo.dupl
@@ -80,7 +80,7 @@ que o tempo passa.
 
 
 
-### Para quantas pessoas cada infectado transmite a doença? {data-commentary-width=200}
+### Para quantas pessoas cada infectado transmite a doença?
 
 ```{r}
 ##plot.estimate.R0
@@ -106,7 +106,7 @@ grande incerteza quanto ao valor de $R_e$. Mas mesmo **o limite mínimo
 do intervalo e confiança está bem acima de um, indicando que a
 epidemia está em expansão rápida**.
 
-### Como o isolamento social influencia a dinâmica de propagação da epidemia? {data-commentary-width=200}
+### Como o isolamento social influencia a dinâmica de propagação da epidemia?
 
 ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)
 
@@ -120,7 +120,7 @@ Para ler mais e simular diferentes cenários, [<b>CLIQUE
 AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
 
 
-### Casos suspeitos estão aumentando? {data-commentary-width=200}
+### Casos suspeitos estão aumentando?
 
 ```{r}
 ggplotly(evolucao.tipos.casos)
@@ -141,7 +141,7 @@ suspeitos formam a maioria dos casos reportados oficialmente, e estão
 crescendo muito rápido**.
 
 
-### Como epidemias se espalham por um país continental? {data-commentary-width=200}
+### Como epidemias se espalham por um país continental?
 
 ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/voos_brasil.jpg)
 
