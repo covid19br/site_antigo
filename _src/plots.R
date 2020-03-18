@@ -1,4 +1,6 @@
 library(ggplot2)
+library(dplyr)
+library(tidyr)
 library(zoo)
 library(EpiEstim)
 
@@ -16,15 +18,16 @@ plot.formatos <- theme_bw()+
 ################################################################################
 ## Serie com observados e previstos
 ## (gambiarra para ter linha contínua no grafico, verificar help de ggplot.zoo)
-ncasos.completa <-c(brasil$casos.acumulados, exp.5d$predito)
+ncasos.completa <-merge(casos=brasil$casos.acumulados, exp.5d[, c("predito","ic.low","ic.upp")])
+ncasos.completa$casos[time(ncasos.completa)>=min(time(exp.5d))] <- exp.5d$predito[time(exp.5d)>=min(time(exp.5d))]
 plot.forecast.exp <-
-    ggplot(ncasos.completa, aes(Index, ncasos.completa)) +
-    geom_ribbon(data=exp.5d, aes(Index, predito, ymin=ic.low, ymax=ic.upp), fill="lightgrey") +
-    geom_line(aes(Index, ncasos.completa)) +
-    geom_point(data=brasil, aes(Index, casos.acumulados), size=2) +
+    ggplot(ncasos.completa, aes(Index, casos)) +
+    geom_ribbon(aes(ymin=ic.low, ymax=ic.upp), fill="lightgrey") +
+    geom_line() +
+    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], aes(Index, casos), size=2) +
     scale_x_date(date_labels = "%d/%b", name="") +
-    ylim(0,max(exp.5d$ic.upp)) +
-    geom_point(data=exp.5d, aes(Index,predito), col="blue", size=2) +
+    ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
+    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))], aes(Index, casos), size=2, col="blue") +
     ylab("Número de casos") +
     plot.formatos
 
@@ -47,6 +50,23 @@ plot.estimate.R0 <-
     geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill="lightgrey") +
     geom_line(size = 1.25, color="darkblue") +
     scale_x_date( date_labels = "%d/%b", name="") +
-    ylab("Número reprodução") +
+    ylim(0.8, max(res.uncertain.si.zoo$Quantile.0.975.R))+
+    geom_hline(yintercept=1, linetype="dashed", col="red") +          
+    ylab("Número de reprodução") +
     plot.formatos
 
+
+################################################################################
+## Evolucao de casos suspeitos, descartados e confirmados
+################################################################################
+
+evolucao.tipos.casos <-
+    brasil.ivis %>%
+    filter(!is.na(Suspeitos)) %>%
+    gather(Suspeitos:Óbitos, key = Classe, value = N.casos) %>%
+    mutate(Classe = factor(Classe, levels =c("Óbitos", "Confirmados", "Suspeitos","Descartados"))) %>%
+    ggplot(aes(dia,N.casos)) +
+    geom_col(aes(fill=Classe)) +
+    scale_x_date( date_labels = "%d/%b", name="") +
+    ylab("Número de casos") +
+    plot.formatos
