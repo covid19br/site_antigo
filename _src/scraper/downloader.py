@@ -11,7 +11,7 @@ def download_current_file(download_folder):
     from selenium import webdriver
     # clean possible saved file
     if os.path.exists(download_folder + 'brasil.csv'):
-        print("Removendo arquivo antigo.")
+        print("Removendo arquivo antigo de %s." % download_folder)
         os.remove(download_folder + 'brasil.csv')
     
     # download current file
@@ -32,20 +32,27 @@ def download_current_file(download_folder):
 
 def save_file_if_new(download_folder, save_folder):
     '''Save downloaded file to proper place if it's different from previous one. Return True if the file is new, False otherwise.'''
-    from datetime import date
+    from datetime import date, timedelta
     # check if file is new and different before replacing
-    fname = 'brasil-ivis-' + date.today().isoformat() + '.csv'
-    if os.path.exists(save_folder + fname):
-        diff = os.system('diff -q ' + save_folder + fname + ' ' + download_folder + 'brasil.csv')
-        if diff == 0:
-            print("Nenhuma alteração no arquivo.")
-            return False
+    fnames = [ 'brasil-ivis-' + (date.today()-timedelta(1)).isoformat() + '.csv',
+               'brasil-ivis-' + date.today().isoformat() + '.csv']
+    diffs = []
+    for fname in fnames:
+        if os.path.exists(save_folder + fname):
+            diffs.append(os.system('diff -q ' + save_folder + fname + ' ' + \
+                    download_folder + 'brasil.csv'))
         else:
-            # files differ
-            print('Nova versão do dia %s encontrada.' % date.today().isoformat())
-    else:
-        print('Primeira versão do dia %s encontrada.' % date.today().isoformat())
-    
+            diffs.append(1)
+
+    if diffs == [0, 1]:
+        print("Nenhuma alteração no arquivo de ontem.")
+        return False
+    elif diffs == [1, 0]:
+        print("Nenhuma alteração no arquivo de hoje.")
+        return False
+    elif diffs == [1, 1]:
+        print('Nova versão encontrada.')
+
     # move/replace file and re-generate data file
     shutil.move(download_folder + 'brasil.csv', save_folder + fname)
     return True
@@ -55,30 +62,42 @@ def regenerate_aggregate_datafile(aggregate_files, save_folder, base_name):
     import re
 
     files = sorted(glob(save_folder + base_name + '*.csv'))
-    states = ['day;state;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
-    regions = ['day;region;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
-    country = ['day;suspect.cases;perc.suspect.cases;confirmed.cases;perc.confirmed.cases;discarded.cases;perc.discarded.cases;deaths;perc.deaths;total;local.transmission']
+    states = []
+    country = ['day;suspect.cases;confirmed.cases;discarded.cases;deaths']
+
     for fname in files:
         day = re.search(base_name + '(.+).csv', fname).groups()[0]
+        if day < '2020-03-09':
+            # old tables were manually cleaned
+            continue
+        fields = [0, 1, 3, 5, 7, 10]
+        if day < '2020-03-11':
+            # table has 1 missing fields (total cases)
+            fields = [0, 1, 3, 5, 7, 9]
+        if day == '2020-03-11':
+            # table has 2 extra fields (probable cases)
+            fields = [0, 1, 5, 7, 9, 12]
         with open(fname, 'r') as f:
             for line in f.readlines():
                 g1 = re.search(r'^Unidade da Federação;(.+)', line)
                 if g1:
-                    states.append(day + ';' + g1.groups()[0])
+                    # break fields
+                    sfields = [day] + [ g1.groups()[0].split(';')[i] for i in fields ]
+                    # clean up state name
+                    sfields[1] = re.search(r'^(.+) \(.+\)\**', sfields[1]).groups()[0]
+                    states.append(';'.join(sfields))
                     continue
-                g2 = re.search(r'^Região;(.+)', line)
-                if g2:
-                    regions.append(day + ';' + g2.groups()[0])
-                    continue
-                g3 = re.search(r'^País;Brasil;(.+)', line)
+                g3 = re.search(r'^País;(.+)', line)
                 if g3:
-                    country.append(day + ';' + g3.groups()[0])
+                    # break fields
+                    sfields = [day] + [ g3.groups()[0].split(';')[i] for i in fields[1:-1] ]
+                    country.append(';'.join(sfields))
 
     with open(aggregate_files[0], 'w') as f:
+        with open(save_folder + 'states_begin.csv', 'r') as states_begin:
+            f.write(states_begin.read())
         f.write('\n'.join(states))
     with open(aggregate_files[1], 'w') as f:
-        f.writelines('\n'.join(regions))
-    with open(aggregate_files[2], 'w') as f:
         f.writelines('\n'.join(country))
 
 if __name__ == '__main__':
@@ -86,11 +105,11 @@ if __name__ == '__main__':
     isnewfile = save_file_if_new(download_folder, save_folder)
     if isnewfile:
         regenerate_aggregate_datafile([save_folder + 'states.csv',
-            save_folder + 'regions.csv', save_folder + 'brazil.csv'],
-            save_folder, 'brasil-ivis-')
+            save_folder + 'brazil.csv'], save_folder, 'brasil-ivis-')
 
 
 # dia 11/03: 2 colunas a mais (casos provaveis)
+# dias 09-10/03: coluna Total a menos
 # dias 25/02 - 08/03: Unidade da Federação;Suspeitos;Confirmados;Descartados;Óbitos;Transmissão local
-# dias 02/02 - UF;Suspeito;Confirmado;Descartado;Transmissão local
+# dias 02/02 - 07/2: UF;Suspeito;Confirmado;Descartado;Transmissão local
 
