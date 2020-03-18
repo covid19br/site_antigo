@@ -2,7 +2,7 @@
 title: "Observatório COVID-19 BR"
 output: 
  flexdashboard::flex_dashboard:
-  orientation: columns
+  orientation: rows
   vertical_layout: scroll
   source: embed
   source_code: "https://github.com/covid19br/covid19br.github.io"
@@ -27,10 +27,10 @@ options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
 ```
 
-# Informações Técnicas
+Row  {data-height=600}
+---------------------
 
-
-## Estimativa do tempo de duplicação
+### Estimativa do tempo de duplicação
 
 No início das epidemias o número de infectados cresce
 exponencialmente, o que implica que o tempo para que o número de casos
@@ -39,11 +39,19 @@ número de casos. Um crescimento exponencial a taxa constante também
 implica em uma relação linear entre o logaritmo do número de casos e
 o tempo. Esta expectativa em geral vale para pequenos intervalos de
 tempo, na fase inicial de epidemias. É o que vemos para o Brasil, por
-exemplo, nos cincos dias a partir do dia em que o número de casos no
-ter chegado a 15:
+exemplo, nos cincos dias a partir do dia em que o número de casos
+chegou a 15 (gráfico ao lado)
 
-```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
-plot.formatos <- theme_bw()+
+A linha reta no gráfico mostra o previsto por um modelo linear em
+escala log para dados de contagem [^1], ajustado a estes dados. Esse
+modelo estima o valor da taxa de crescimento da epidemia neste período
+($r$), com a qual estimamos o tempo de duplicação. 
+
+
+### 
+
+```{r exemplo_crescimento_exponencial, fig.width = 6, fig.height = 5,  fig.cap = "ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de 2020"}
+plot.formatos <- theme_bw()+g
     theme(axis.text= element_text(size=12, face="bold"),
           axis.title.y = element_text(size=14, face="bold"))
 
@@ -60,15 +68,27 @@ ggplot(exemplo1,
     plot.formatos
 ```
 
-A linha reta no gráfico mostra o previsto por um modelo linear em
-escala log para dados de contagem [^1], ajustado a estes dados. Esse
-modelo estima o valor da taxa de crescimento da epidemia neste período
-($r$), com a qual estimamos o tempo de duplicação. 
+Row {data-height=600}
+--------------------
 
-Com este modelo linear estimamos o número de casos para os próximos
-dias, e os intervalos de confiança dos valores previstos:
+### Projeções de número de casos 
 
-```{r estimativa_crescimento_exponencial, fig.width = 6, fig.height = 5, caption = "ln do n de casos de COVID-19 no Brasil, entre 07  e 13 de março de 2020"}
+Com o modelo linear ajustado estimamos o número de casos para os próximos
+dias, e os intervalos de confiança dos valores previstos (gáfico ao lado).
+
+A extensão da reta de regressão está abaixo dos pontos do número de
+casos dos próximos cinco dias. Isso mostra que o coeficiente de
+crescimento exponencial pode variar mesmo na fase inicial da epidemia,
+o que torna extrapolações de longo prazo muito sujeitas a
+erros. Apesar disso, O intervalo da previsão do modelo incluiu os
+números de casos dos cinco dias seguintes, mostrando que essa
+regressão é útil para fazer previsões de curto prazo.
+
+
+
+### 
+
+```{r estimativa_crescimento_exponencial, fig.width = 6,  fig.height = 5,  fig.cap = "ln do n de casos de COVID-19 no Brasil, entre 07  e 12 de março e valores previstos de 12 a 16 de março de 2020. "}
 ex.forecast <- forecast.exponential(exemplo1$casos.acumulados,
                                     start=as.Date("2020-03-07"),
                                     days.forecast = 5)
@@ -86,26 +106,23 @@ ggplot(data= exemplo2, aes(Index, casos.acumulados)) +
     plot.formatos
 ```
 
-A extensão da reta de regressão está abaixo dos pontos do número de
-casos dos próximos cinco dias. Isso mostra que o coeficiente de
-crescimento exponencial pode variar mesmo na fase inicial da epidemia,
-o que torna extrapolações de longo prazo muito sujeitas a
-erros. Apesar disso, O intervalo da previsão do modelo incluiu os
-números de casos dos cinco dias seguintes, mostrando que essa
-regressão é útil para fazer previsões de curto prazo.
+Row
+--------------------
+
+### Série temporal dos tempos de duplicação 
 
 Para avaliar o quanto o crescimento da epidemia varia ao longo do
 tempo, ajustamos o modelo linear para períodos de cinco dias, a partir
 de quando foram registrados 15 casos. De cada um desses modelos
 estimamos o tempo de duplicação, e seu intervalo de confiança. Assim,
-a primeira estimativa é para o período de 'r
-format(min(time(brasil.d0)), "%d de %B")` a 'r
-format(min(time(brasil.d0))+5, "%d de %B")`. A segunda é para o
-período de 'r format(min(time(brasil.d0))+1, "%d de %B")` a 'r
-format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
-tabela abaixo exemplifica os resultados obtidos para os primeiros 10
+a primeira estimativa é para o período de `r format(min(time(brasil.d0)), "%d de %B")` a 
+`r format(min(time(brasil.d0))+5, "%d de %B")`.  A segunda é para o
+período de `r format(min(time(brasil.d0))+1, "%d de %B")` a 
+`r format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
+tabela ao lado  exemplifica os resultados obtidos para os primeiros 10
 dias a partir do dia com 15 casos:
 
+###
 
 ```{r exemplo tabela com tempos duplicacao}
 ex.dt <- dt.rw(brasil.d0[1:10], window.width =5)
@@ -113,7 +130,10 @@ kable(as.data.frame(ex.dt), col.names=c("Estimado", "IC-inferior", "IC-superior"
       caption="Estimativas dos tempos de duplicação do número de casos de COVID-19 para o Brasil, para período de 5 dias, a partir de 07 de março de 2020. Indicados os valores estimados e os limites inferiores e superiores do intervalo de confiança a 95%. As datas em cada linha da tabela são os dias do final de cada período.")
 ```
 
-## Estimativa do Número de Reprodução da Epidemia
+Row
+---------------------
+
+### Estimativa do Número de Reprodução da Epidemia
 
 Em epidemiologia, uma das medidas mais importantes é o número
 reprodutivo basal ou razão de reprodução básica ($R_0$). Essa
@@ -153,9 +173,13 @@ distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e
 desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo
 Nishiura **et al.** (2020).
 
-![Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.](fig/R0_prsc.png){ width=30% }
+### 
+
+![Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.](fig/R0_prsc.png){ width=50% }
  
 
+Row
+---------------------
 
 ### Referências
 
