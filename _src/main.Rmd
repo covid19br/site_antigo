@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
 
 ```{r}
-ggplotly(plot.forecast.exp)
+ggplotly(plot.forecast.exp , tolltip=c("Index", "casos.acumulados", "predito", "ic.low", "ic.upp"))
 ##plot.forecast.exp
 ```
 
