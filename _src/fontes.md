@@ -14,9 +14,9 @@ output:
       - { title: "Fontes", href: "fontes.html", align: left}
       - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
- includes:
-  after_body: footer.html
-  in_header: header.html
+  includes:
+   after_body: footer.html
+   in_header: header.html
 ---
 
 <h2>Fontes dos dados</h2>

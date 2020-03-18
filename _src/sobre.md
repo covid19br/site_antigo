@@ -14,9 +14,9 @@ output:
       - { title: "Fontes", href: "fontes.html", align: left}
       - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
- includes:
-  after_body: footer.html
-  in_header: header.html
+  includes:
+   after_body: footer.html
+   in_header: header.html
 ---
 
 <h2>Sobre a iniciativa</h2>
@@ -76,7 +76,7 @@ Entre em contato com que já está no grupo.
 
 * Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/))
     + [CV](http://lattes.cnpq.br/9619030543047007)
-    + <prguima@gmail.com>
+    + <prguima@ib.usp.br>
 
 * Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/))
     + [CV](http://lattes.cnpq.br/3884092565521453)
@@ -85,12 +85,12 @@ Entre em contato com que já está no grupo.
 * Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/))
     + [CV](http://lattes.cnpq.br/1301865568118160)
     + <renato.coutinho@ufabc.edu.br>
-	
-* Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br))
-    + [CV](http://lattes.cnpq.br/9741820804547685)
-    + <rodrigo.corder@usp.br>
 
 * Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/))
     + [CV](http://lattes.cnpq.br/8497878967418484)
     + <roberto.kraenkel@unesp.br>
+
+* Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br))
+    + [CV](http://lattes.cnpq.br/9741820804547685)
+    + <rodrigo.corder@usp.br>
 

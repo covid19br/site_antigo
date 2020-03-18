@@ -14,9 +14,9 @@ output:
       - { title: "Fontes", href: "fontes.html", align: left}
       - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
- includes:
-  after_body: footer.html
-  in_header: header.html
+  includes:
+   after_body: footer.html
+   in_header: header.html
 ---
 
 
@@ -74,13 +74,13 @@ Row {data-height=600}
 ### Projeções de número de casos 
 
 Com o modelo linear ajustado estimamos o número de casos para os próximos
-dias, e os intervalos de confiança dos valores previstos (gáfico ao lado).
+dias, e os intervalos de confiança dos valores previstos (gráfico ao lado).
 
 A extensão da reta de regressão está abaixo dos pontos do número de
 casos dos próximos cinco dias. Isso mostra que o coeficiente de
 crescimento exponencial pode variar mesmo na fase inicial da epidemia,
 o que torna extrapolações de longo prazo muito sujeitas a
-erros. Apesar disso, O intervalo da previsão do modelo incluiu os
+erros. Apesar disso, o intervalo da previsão do modelo incluiu os
 números de casos dos cinco dias seguintes, mostrando que essa
 regressão é útil para fazer previsões de curto prazo.
 
@@ -171,7 +171,7 @@ Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software
 R (Cori 2020).  Para a medida de intervalo serial, utilizamos uma
 distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e
 desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo
-Nishiura **et al.** (2020).
+Nishiura *et al.* (2020).
 
 ### 
 
