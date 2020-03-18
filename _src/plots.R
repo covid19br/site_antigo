@@ -49,7 +49,7 @@ plot.estimate.R0 <-
     geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill="lightgrey") +
     geom_line(size = 1.25, color="darkblue") +
     scale_x_date( date_labels = "%d/%b", name="") +
-    ylab("Número reprodução") +
+    ylab("Número de reprodução") +
     plot.formatos
 
 

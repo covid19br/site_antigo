@@ -30,18 +30,17 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? {data-commentary-width=200}
 
 ```{r}
-ggplotly(plot.forecast.exp , tolltip=c("Index", "casos.acumulados", "predito", "ic.low", "ic.upp"))
+ggplotly(plot.forecast.exp , tolltip=c("x", "y", "ymin", "ymax"))
 ##plot.forecast.exp
 ```
 
 ***
 
-A linha preta indica o número de casos confirmados no Brasil por dia.
-A linha azul é a previsão para os próximos 5 dias, se a
-taxa de crescimento continuar a mesma dos últimos 5 dias. A região
-sombreada é o intervalo de confiança dessa previsão. Se a taxa
-continuar a mesma, esse intervalo tem 95% de probabilidade de conter a
-previsão correta.
+Pontos pretos indicam o número de casos confirmados no Brasil por dia.
+Pontos azuis são a previsão para os próximos 5 dias, se a taxa de
+crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
+intervalo de confiança dessa previsão. Se a taxa continuar a mesma,
+esse intervalo tem 95% de probabilidade de conter a previsão correta.
 
 
 - Por que só 5 dias?
@@ -139,6 +138,6 @@ Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-definition).
 Os casos suspeitos são avaliados pelo sistema de saúde, podendo ser
 classificados em casos confirmados ou descartados.
 
-Desde que o Brasil confirmou 19 casos suspeitos (07/03/2020) os casos
+Desde que o Brasil notificou 19 casos confirmados (07/03/2020), os casos
 suspeitos formam a maioria dos casos reportados oficialmente, e estão
 crescendo muito rápido.
