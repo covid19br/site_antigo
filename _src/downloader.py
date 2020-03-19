@@ -19,6 +19,9 @@ def download_current_file(download_folder):
     driver = webdriver.Chrome()
     
     driver.get("http://plataforma.saude.gov.br/novocoronavirus")
+    # take a breath and let it load
+    time.sleep(2)
+    # trigger js to get table
     driver.execute_script("dashboard.coronavirus.brazilCSV()");
     # wait for download to finish
     i = 0
@@ -81,16 +84,18 @@ def regenerate_aggregate_datafile(aggregate_files, save_folder, base_name):
             for line in f.readlines():
                 g1 = re.search(r'^Unidade da Federação;(.+)', line)
                 if g1:
+                    text = g1.groups()[0].replace('.', '')
                     # break fields
-                    sfields = [day] + [ g1.groups()[0].split(';')[i] for i in fields ]
+                    sfields = [day] + [ text.split(';')[i] for i in fields ]
                     # clean up state name
                     sfields[1] = re.search(r'^(.+) \(.+\)\**', sfields[1]).groups()[0]
                     states.append(';'.join(sfields))
                     continue
                 g3 = re.search(r'^País;(.+)', line)
                 if g3:
+                    text = g3.groups()[0].replace('.', '')
                     # break fields
-                    sfields = [day] + [ g3.groups()[0].split(';')[i] for i in fields[1:-1] ]
+                    sfields = [day] + [ text.split(';')[i] for i in fields[1:-1] ]
                     country.append(';'.join(sfields))
 
     with open(aggregate_files[0], 'w') as f:
