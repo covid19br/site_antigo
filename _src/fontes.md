@@ -42,7 +42,7 @@ divulgue o nosso trabalho também.
 
 <h2>Outras fontes de dados e de informações</h2>
 
-* [Portal sobre Coronavírus da FIOCRUZ(https://portal.fiocruz.br/coronavirus)
+* [Portal sobre Coronavírus da FIOCRUZ](https://portal.fiocruz.br/coronavirus)
 * [CMMID COVID repository](https://cmmid.github.io/topics/covid19/), Centre for Mathematical Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.
 * [Jonh Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html)
 * [Site sobre epidemia de COVID-19 da Organização Mundial da Saúde](https://www.who.int/health-topics/coronavirus)
