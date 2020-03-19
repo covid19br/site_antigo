@@ -30,20 +30,26 @@ de dados nos envia os novos registros e dispara a atualização das
 análise e gráficos neste site.
 
 
-<h2>Outras fontes e iniciativas semelhantes</h2>
+<h2>COVID Data Science no Brasil</h2>
 
-Lista em construção, as iniciativas se multiplicam:
+Lista em construção, as iniciativas se multiplicam. Se você tem trabalho na área nos escreva para divulgarmos aqui. E por favor divulgue o nosso trabalho também.
+
+* [covidbr](https://liibre.github.io/coronabr/), pacore em R para download dos dados oficiais de COVID-19, Por Sara Mortara e Adreia Sanchéz-Tapia
+* [Número de casos confirmados de COVID-19 no Brasil](https://labs.wesleycota.com/sarscov2/br), Wesley Cota, Universidade de Viçosa.
+
+
+<h2>Outras fontes de dados e de informações</h2>
 
 * [CMMID COVID repository](https://cmmid.github.io/topics/covid19/), Centre for Mathematical Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.
 * [Jonh Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html)
 * [Site sobre epidemia de COVID-19 da Organização Mundial da Saúde](https://www.who.int/health-topics/coronavirus)
-* [Número de casos confirmados de COVID-19 no Brasil](https://labs.wesleycota.com/sarscov2/br), Wesley Cota, Universidade de Viçosa.
 
 
 <h2>Nosso grupo na mídia</h2>
 
 * [Programa Fantástico](https://globoplay.globo.com/v/8401335/), Rede Globo, 15 de março de 2020.
 * [Contra epidemia de coronavírus, Brasil precisa parar, afirmam especialistas](https://www1.folha.uol.com.br/equilibrioesaude/2020/03/contra-epidemia-brasil-precisa-parar-afirmam-especialistas.shtml), Folha de São Paulo, 16 de março de 2020.
+ 
 
 
 
