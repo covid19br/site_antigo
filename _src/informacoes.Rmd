@@ -115,11 +115,11 @@ Para avaliar o quanto o crescimento da epidemia varia ao longo do
 tempo, ajustamos o modelo linear para períodos de cinco dias, a partir
 de quando foram registrados 15 casos. Estimamos o tempo de duplicação
 e o respectivo intervalo de confiança para cada um desses
-modelos. Assim, a primeira estimativa é para o período de `r
-format(min(time(brasil.d0)), "%d de %B")` a `r
-format(min(time(brasil.d0))+5, "%d de %B")`.  A segunda é para o
-período de `r format(min(time(brasil.d0))+1, "%d de %B")` a `r
-format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
+modelos. Assim, a primeira estimativa é para o período de 
+`r format(min(time(brasil.d0)), "%d de %B")` a 
+`r format(min(time(brasil.d0))+5, "%d de %B")`.  A segunda é para o
+período de `r format(min(time(brasil.d0))+1, "%d de %B")` a 
+`r format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
 tabela ao lado  exemplifica os resultados obtidos para os primeiros 10
 dias a partir do dia com 15 casos:
 
@@ -127,7 +127,12 @@ dias a partir do dia com 15 casos:
 
 ```{r exemplo tabela com tempos duplicacao}
 ex.dt <- dt.rw(brasil.d0[1:10], window.width =5)
-kable(as.data.frame(ex.dt), col.names=c("Estimado", "IC-inferior", "IC-superior"),
+ex.dt$coef  <-  round(ex.dt$coef,1)
+ex.dt$coef.low  <- round(ex.dt$coef.low,1)
+ex.dt$coef.upp  <- round(ex.dt$coef.upp,1)
+ex.dt.df <- as.data.frame(ex.dt[,c(1,3,2)])
+rownames(ex.dt.df) <- format(as.Date(rownames(ex.dt.df)), "%d/%m/%Y")
+kable(ex.dt.df, col.names=c("Estimado", "IC-inferior", "IC-superior"),
       caption="Estimativas dos tempos de duplicação do número de casos de COVID-19 para o Brasil, para período de 5 dias, a partir de 07 de março de 2020. Indicados os valores estimados e os limites inferiores e superiores do intervalo de confiança a 95%. As datas em cada linha da tabela são os dias do final de cada período.")
 ```
 

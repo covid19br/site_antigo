@@ -36,7 +36,7 @@ Lista em construção, as iniciativas se multiplicam. Se você tem
 trabalho na área nos escreva para divulgarmos aqui. E por favor
 divulgue o nosso trabalho também.
 
-* [covidbr](https://liibre.github.io/coronabr/), pacote em [R](https://www.r-project.org) para download dos dados oficiais de COVID-19, por Sara Mortara e Andrea Sanchéz-Tapia, Jardim Botânico do Rio de Janeiro. 
+* [covidbr](https://liibre.github.io/coronabr/), pacote em [R](https://www.r-project.org) para download dos dados oficiais de COVID-19, por Sara Mortara e Andrea Sánchez-Tapia, Jardim Botânico do Rio de Janeiro. 
 * [Número de casos confirmados de COVID-19 no Brasil](https://labs.wesleycota.com/sarscov2/br), Wesley Cota, Universidade de Viçosa.
 
 
@@ -48,10 +48,13 @@ divulgue o nosso trabalho também.
 * [Site sobre epidemia de COVID-19 da Organização Mundial da Saúde](https://www.who.int/health-topics/coronavirus)
 
 
-<h2>Nosso grupo na mídia</h2>
+<h2>O Observatório Covid-19 BR na mídia</h2>
 
 * [Programa Fantástico](https://globoplay.globo.com/v/8401335/), Rede Globo, 15 de março de 2020.
-* [Contra epidemia de coronavírus, Brasil precisa parar, afirmam especialistas](https://www1.folha.uol.com.br/equilibrioesaude/2020/03/contra-epidemia-brasil-precisa-parar-afirmam-especialistas.shtml), Folha de São Paulo, 16 de março de 2020.
+* ["Contra epidemia de coronavírus, Brasil precisa parar, afirmam especialistas"](https://www1.folha.uol.com.br/equilibrioesaude/2020/03/contra-epidemia-brasil-precisa-parar-afirmam-especialistas.shtml), Folha de São Paulo, 16 de março de 2020.
+* ["A ciência da epidemiologia: o caso do coronavírus"](https://www.youtube.com/watch?v=4E0QBcN7Uw8), Programa "Física ao vivo", Sociedade Brasileira de Física, 18 de março e 2020.
+* ["Cientistas lançam observatório de Covid-19 no Brasil em tempo real e dizem que casos podem chegar a 1.600 em quatro dias"](https://cadeacura.blogfolha.uol.com.br/?p=1309), Folha e São Paulo, 18 de março de 2020.
+
  
 
 
