@@ -64,10 +64,10 @@ ggplotly(plot.tempo.dupl)
 
 ***
 
-O tempo de duplicação indica ** quantos dias levam para dobrar o número de casos**. 
+O tempo de duplicação indica **quantos dias levam para dobrar o número de casos** . 
 Quanto menor esse número, mais rápido a
 doença está se espalhando. Esse número depende muito das medidas
-de contenção da doença. A estimativa de hoje é ** entre 
+de contenção da doença. **A estimativa de hoje é  entre 
 `r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),2], 1))` e 
 `r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),3], 1))` dias**.
 

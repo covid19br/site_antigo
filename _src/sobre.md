@@ -65,7 +65,7 @@ encontrados em nosso [github](https://github.com/covid19br/covid19BR).
 
 <h2>Quer participar?</h2>
 
-Entre em contato com que já está no grupo.
+Entre em contato com quem já está no grupo.
 
 
 <h3>Autores</h3>

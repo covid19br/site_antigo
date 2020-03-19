@@ -34,10 +34,10 @@ Row  {data-height=600}
 
 No início das epidemias o número de infectados cresce
 exponencialmente, o que implica que o tempo para que o número de casos
-duplique a constante $\ln(2)/r$, onde $r$ é a taxa de crescimento de
+duplique é constante em $\ln(2)/r$, onde $r$ é a taxa de crescimento de
 número de casos. Um crescimento exponencial a taxa constante também
 implica em uma relação linear entre o logaritmo do número de casos e
-o tempo. Esta expectativa em geral vale para pequenos intervalos de
+o tempo. Essa expectativa em geral vale para pequenos intervalos de
 tempo, na fase inicial de epidemias. É o que vemos para o Brasil, por
 exemplo, nos cincos dias a partir do dia em que o número de casos
 chegou a 15 (gráfico ao lado)
@@ -113,12 +113,13 @@ Row
 
 Para avaliar o quanto o crescimento da epidemia varia ao longo do
 tempo, ajustamos o modelo linear para períodos de cinco dias, a partir
-de quando foram registrados 15 casos. De cada um desses modelos
-estimamos o tempo de duplicação, e seu intervalo de confiança. Assim,
-a primeira estimativa é para o período de `r format(min(time(brasil.d0)), "%d de %B")` a 
-`r format(min(time(brasil.d0))+5, "%d de %B")`.  A segunda é para o
-período de `r format(min(time(brasil.d0))+1, "%d de %B")` a 
-`r format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
+de quando foram registrados 15 casos. Estimamos o tempo de duplicação
+e o respectivo intervalo de confiança para cada um desses
+modelos. Assim, a primeira estimativa é para o período de `r
+format(min(time(brasil.d0)), "%d de %B")` a `r
+format(min(time(brasil.d0))+5, "%d de %B")`.  A segunda é para o
+período de `r format(min(time(brasil.d0))+1, "%d de %B")` a `r
+format(min(time(brasil.d0))+6, "%d de %B")` e assim sucessivamente. A
 tabela ao lado  exemplifica os resultados obtidos para os primeiros 10
 dias a partir do dia com 15 casos:
 
@@ -166,7 +167,7 @@ de $R_e$ considerando incertezas na medida do intervalo
 serial. 
 
 Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19
-para estimar diariamente os valores de Re, utilizando a metodologia de
+para estimar diariamente os valores de $R_e$, utilizando a metodologia de
 Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software
 R (Cori 2020).  Para a medida de intervalo serial, utilizamos uma
 distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e

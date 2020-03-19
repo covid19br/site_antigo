@@ -32,14 +32,17 @@ análise e gráficos neste site.
 
 <h2>COVID Data Science no Brasil</h2>
 
-Lista em construção, as iniciativas se multiplicam. Se você tem trabalho na área nos escreva para divulgarmos aqui. E por favor divulgue o nosso trabalho também.
+Lista em construção, as iniciativas se multiplicam. Se você tem
+trabalho na área nos escreva para divulgarmos aqui. E por favor
+divulgue o nosso trabalho também.
 
-* [covidbr](https://liibre.github.io/coronabr/), pacore em R para download dos dados oficiais de COVID-19, Por Sara Mortara e Adreia Sanchéz-Tapia
+* [covidbr](https://liibre.github.io/coronabr/), pacote em [R](https://www.r-project.org) para download dos dados oficiais de COVID-19, por Sara Mortara e Andrea Sanchéz-Tapia, Jardim Botânico do Rio de Janeiro. 
 * [Número de casos confirmados de COVID-19 no Brasil](https://labs.wesleycota.com/sarscov2/br), Wesley Cota, Universidade de Viçosa.
 
 
 <h2>Outras fontes de dados e de informações</h2>
 
+* [Portal sobre Coronavírus da FIOCRUZ(https://portal.fiocruz.br/coronavirus)
 * [CMMID COVID repository](https://cmmid.github.io/topics/covid19/), Centre for Mathematical Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.
 * [Jonh Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html)
 * [Site sobre epidemia de COVID-19 da Organização Mundial da Saúde](https://www.who.int/health-topics/coronavirus)
