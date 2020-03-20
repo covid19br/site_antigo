@@ -10,3 +10,15 @@
   font-weight: 500;
 }
 
+@media only screen and (max-width: 479px){
+    .navbar-brand {
+        float: none;
+        padding: 0.5em;
+    }
+
+    .navbar-author {
+        display: inline-block;
+        margin-left: 0;
+        padding: 0.5em;
+    }
+}
