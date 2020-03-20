@@ -63,12 +63,8 @@ Markdown](https://rmarkdown.rstudio.com/) e os códigos podem ser
 encontrados em nosso [github](https://github.com/covid19br/covid19BR).
 
 
-<h2>Quer participar?</h2>
 
-Entre em contato com qualquer pessoa do grupo.
-
-
-<h3>Equipe</h3>
+<h2>Equipe</h2>
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
     + [CV](http://lattes.cnpq.br/1738716619940707)

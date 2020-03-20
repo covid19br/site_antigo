@@ -55,6 +55,9 @@ divulgue o nosso trabalho também.
 * ["A ciência da epidemiologia: o caso do coronavírus"](https://www.youtube.com/watch?v=4E0QBcN7Uw8), Programa "Física ao vivo", Sociedade Brasileira de Física, 18 de março e 2020.
 * ["Cientistas lançam observatório de Covid-19 no Brasil em tempo real e dizem que casos podem chegar a 1.600 em quatro dias"](https://cadeacura.blogfolha.uol.com.br/?p=1309), Folha e São Paulo, 18 de março de 2020.
 * ["Pesquisadores criam site com dados e projeções sobre a Covid-19 no Brasil"](http://www.jornaldaciencia.org.br/edicoes/?url=http://jcnoticias.jornaldaciencia.org.br/7-pesquisadores-criam-site-com-dados-e-projecoes-sobre-a-covid-19-no-brasil/), Jornal da Ciência, 19 de março de 2020.
+* ["Para conter o avanço explosivo"](https://revistapesquisa.fapesp.br/2020/03/19/para-conter-o-avanco-explosivo/), Revista Pesquisa FAPESP, 19 de março de 2020
+* ["Ritmo de contágio do coronavírus no Brasil está igual ao registrado na Itália e acelerando, apontam universidades"](https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/20/ritmo-de-contagio-do-coronavirus-no-brasil-esta-igual-ao-registrado-na-italia-e-acelerando-aponta-unesp.ghtml), Portal G1, 20 de março de 2020
+
 
 
  
