@@ -68,12 +68,44 @@ encontrados em nosso [github](https://github.com/covid19br/covid19BR).
 Entre em contato com qualquer pessoa do grupo.
 
 
-<h3>Autores</h3>
+<h3>Equipe</h3>
 
+* Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
+    + [CV](http://lattes.cnpq.br/1738716619940707)
+    + <a.sontag@unesp.br>
+	
 * Caroline Franco (doutoranda @ [IFT-UNESP](https://www.ift.unesp.br/))
     + [CV](http://lattes.cnpq.br/1810788882318135)
     + <c.franco@unesp.br>
 
+* Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) )
+    + [CV](http://lattes.cnpq.br/0111799832635782)
+    + <deboraycb@gmail.com>
+
+* Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/))
+    + [CV](http://lattes.cnpq.br/750889398476891)
+    + <flaviam@ifi.unicamp.br>
+
+* Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/))
+    + [CV](http://lattes.cnpq.br/1251914870700498)
+    + <laisouzalves@gmail.com>
+
+* Leonardo Souto Ferreira(mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
+    + [CV](http://lattes.cnpq.br/7427980482483909)
+    + <leonardo.souto@unesp.br>
+
+* Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/))
+    + [CV](http://lattes.cnpq.br/3654522236249726)
+    + <marco.a.pinheiro@unesp.br>
+
+* Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) )
+    + [CV](http://lattes.cnpq.br/9213292464230085)
+    + <marina.rillo@evobio.eu>
+
+* Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/))
+    + [CV](http://lattes.cnpq.br/2869271527300181)
+    + <plemos@uchicago.edu>
+	
 * Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/))
     + [CV](http://lattes.cnpq.br/9619030543047007)
     + <prguima@ib.usp.br>
@@ -82,6 +114,10 @@ Entre em contato com qualquer pessoa do grupo.
     + [CV](http://lattes.cnpq.br/3884092565521453)
     + <prado@ib.usp.br>
 
+* Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) )
+    + [CV](http://lattes.cnpq.br/3085324638663546)
+    + <rafael.lp.silva@unesp.br>
+	
 * Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/))
     + [CV](http://lattes.cnpq.br/1301865568118160)
     + <renato.coutinho@ufabc.edu.br>
@@ -93,4 +129,21 @@ Entre em contato com qualquer pessoa do grupo.
 * Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br))
     + [CV](http://lattes.cnpq.br/9741820804547685)
     + <rodrigo.corder@usp.br>
+
+* Silas Poloni Lyra (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/) )
+    + [CV](http://lattes.cnpq.br/3162809212291639)
+    + <silas.poloni@unesp.br>
+
+* Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP] )
+    + [CV](http://lattes.cnpq.br/8988655613888832)
+    + <portellatp@usp.br>
+
+* Vítor Sudbrack (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
+    + [CV](http://lattes.cnpq.br/1687206263257247)
+    + <vitor.sudbrack@unesp.br>
+
+* Wendell Pereira Barreto 
+    + [CV](http://lattes.cnpq.br/0639412837460678)
+    + <wendellbarreto@gmail.com>
+
 
