@@ -54,6 +54,8 @@ divulgue o nosso trabalho também.
 * ["Contra epidemia de coronavírus, Brasil precisa parar, afirmam especialistas"](https://www1.folha.uol.com.br/equilibrioesaude/2020/03/contra-epidemia-brasil-precisa-parar-afirmam-especialistas.shtml), Folha de São Paulo, 16 de março de 2020.
 * ["A ciência da epidemiologia: o caso do coronavírus"](https://www.youtube.com/watch?v=4E0QBcN7Uw8), Programa "Física ao vivo", Sociedade Brasileira de Física, 18 de março e 2020.
 * ["Cientistas lançam observatório de Covid-19 no Brasil em tempo real e dizem que casos podem chegar a 1.600 em quatro dias"](https://cadeacura.blogfolha.uol.com.br/?p=1309), Folha e São Paulo, 18 de março de 2020.
+* ["Pesquisadores criam site com dados e projeções sobre a Covid-19 no Brasil"](http://www.jornaldaciencia.org.br/edicoes/?url=http://jcnoticias.jornaldaciencia.org.br/7-pesquisadores-criam-site-com-dados-e-projecoes-sobre-a-covid-19-no-brasil/), Jornal da Ciência, 19 de março de 2020.
+
 
  
 
