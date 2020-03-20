@@ -19,7 +19,23 @@ output:
    in_header: header.html
 ---
 
-<h2>Sobre a iniciativa</h2>
+<h2>Quem somos</h2>
+
+O **Observatório Covid-19 BR** é uma iniciativa independente, fruto da
+colaboração entre pesquisadores com o desejo de contribuir para a
+disseminação de informação de qualidade baseada em dados atualizados e
+análises cientificamente embasadas. Criamos este sítio com códigos de
+fonte aberta que nos permite acompanhar o estado atual da epidemia de
+Covid-19 no Brasil, incluindo análises estatísticas e previsões.
+
+
+A interface gráfica foi produzida utilizando-se [R
+Markdown](https://rmarkdown.rstudio.com/) e os códigos podem ser
+encontrados em nosso [github](https://github.com/covid19br/covid19BR).
+
+
+
+<h3>Motivação</h3>
 
 <b>Diante da propagação da COVID-19, doença causada pelo novo
 coronavírus, a Organização Mundial da Saúde (OMS) decretou pandemia
@@ -48,23 +64,8 @@ partir de um ponto de vista científico.</b>
 
 </p>
 
-<h2>O grupo</h2>
 
-O **Observatório Covid-19 BR** é uma iniciativa independente, fruto da
-colaboração entre pesquisadores com o desejo de contribuir para a
-disseminação de informação de qualidade baseada em dados atualizados e
-análises cientificamente embasadas. Criamos este sítio com códigos de
-fonte aberta que nos permite acompanhar o estado atual da epidemia de
-Covid-19 no Brasil, incluindo análises estatísticas e previsões.
-
-
-A interface gráfica foi produzida utilizando-se [R
-Markdown](https://rmarkdown.rstudio.com/) e os códigos podem ser
-encontrados em nosso [github](https://github.com/covid19br/covid19BR).
-
-
-
-<h2>Equipe</h2>
+<h3>Equipe</h3>
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
     + [CV](http://lattes.cnpq.br/1738716619940707)
