@@ -93,7 +93,6 @@ partir de um ponto de vista científico.</b>
 
 * Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) )
     + [CV](http://lattes.cnpq.br/9213292464230085)
-    + <marina.rillo@evobio.eu>
 
 * Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/))
     + [CV](http://lattes.cnpq.br/2869271527300181)
