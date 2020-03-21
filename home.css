@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  background-color: #e2e2e2;
+}
+
+.column {
+  flex: 1; /*grow*/
+}
+
+.item {
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.item img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) { /*breakpoint*/
+  .container {
+    flex-direction: column;
+  }
+}
+
+.chart-wrapper .chart-stage {
+    padding: 0px;
+}
