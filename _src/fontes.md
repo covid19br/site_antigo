@@ -6,7 +6,6 @@ output:
   vertical_layout: scroll
   self_contained: false
   lib_dir: ../libs
-  source: embed
   source_code: "https://github.com/covid19br/covid19br.github.io"
   social: menu
   css: styles.css
