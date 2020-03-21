@@ -27,7 +27,7 @@ plot.forecast.exp <-
     geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], aes(Index, casos), size=2) +
     scale_x_date(date_labels = "%d/%b", name="") +
     ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
-    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))], aes(Index, casos), size=2, col="blue") +
+    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))], aes(Index, casos), size=2, col="#e66101") +
     ylab("Número de casos") +
     plot.formatos
 

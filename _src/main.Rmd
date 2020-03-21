@@ -39,7 +39,7 @@ ggplotly(plot.forecast.exp , tolltip=c("x", "y", "ymin", "ymax"))
 ***
 
 Pontos pretos indicam o número de casos confirmados no Brasil por dia.
-**Pontos azuis são a previsão para os próximos 5 dias (entre 
+**Pontos em laranja são a previsão para os próximos 5 dias (entre 
 `r  as.integer(exp.5d[max(nrow(exp.5d)),2])` e `r as.integer(exp.5d[max(nrow(exp.5d)),3])` 
 casos em `r format(max(time(exp.5d)), "%d/%m/%Y")` )**, se a taxa de
 crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
