@@ -24,8 +24,8 @@ output:
 <h2>Fontes dos dados</h2>
 
 Utilizamos os registros das notificações de casos de COVID-19
-divulgadas diatiamente pelo Ministério da Saúde na 
-[Plataforma IVIS](http://plataforma.saude.gov.br/novocoronavirus/).
+divulgadas diariamente pelo 
+[Ministério da Saúde](https://coronavirus.saude.gov.br/).
 
 A cada atualização na plataforma um programa automático de recupareção
 de dados nos envia os novos registros e dispara a atualização das
@@ -59,6 +59,7 @@ divulgue o nosso trabalho também.
 * ["Pesquisadores criam site com dados e projeções sobre a Covid-19 no Brasil"](http://www.jornaldaciencia.org.br/edicoes/?url=http://jcnoticias.jornaldaciencia.org.br/7-pesquisadores-criam-site-com-dados-e-projecoes-sobre-a-covid-19-no-brasil/), Jornal da Ciência, 19 de março de 2020.
 * ["Para conter o avanço explosivo"](https://revistapesquisa.fapesp.br/2020/03/19/para-conter-o-avanco-explosivo/), Revista Pesquisa FAPESP, 19 de março de 2020
 * ["Ritmo de contágio do coronavírus no Brasil está igual ao registrado na Itália e acelerando, apontam universidades"](https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/20/ritmo-de-contagio-do-coronavirus-no-brasil-esta-igual-ao-registrado-na-italia-e-acelerando-aponta-unesp.ghtml), Portal G1, 20 de março de 2020
+* ["Tempos excepcionais demandam medidas excepcionais"](https://www1.folha.uol.com.br/opiniao/2020/03/com-o-avanco-da-covid-19-o-brasil-deve-adotar-ja-medidas-drasticas-de-confinamento-sim.shtml), por Roberto Kraenkel, Renato Coutinho e Caroline Franco (equipe do Observatório COVID-19 BR). Folha de São Paulo, 21 de março de 2020.
 
 
 
