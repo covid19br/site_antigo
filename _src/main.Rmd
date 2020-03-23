@@ -34,11 +34,7 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 
 ```{r}
 
-ggplotly(plot.forecast.exp, tolltip=c("x", "y", "ymin", "ymax"))
-        # hovertemplate = paste("Data:", Index,
-        #                       "Casos:", casos,
-        #                       "IC min (previsao):", 10^(ic.low),
-        #                       "IC max (previsao):", 10^(ic.upp)))
+ggplotly(plot.forecast.exp)
 ##plot.forecast.exp
 
 ```
