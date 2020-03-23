@@ -20,15 +20,25 @@ plot.formatos <- theme_bw()+
 ## (gambiarra para ter linha contínua no grafico, verificar help de ggplot.zoo)
 ncasos.completa <-merge(casos=brasil$casos.acumulados, exp.5d[, c("predito","ic.low","ic.upp")])
 ncasos.completa$casos[time(ncasos.completa)>=min(time(exp.5d))] <- exp.5d$predito[time(exp.5d)>=min(time(exp.5d))]
+
 plot.forecast.exp <-
-    ggplot(ncasos.completa, aes(Index, casos)) +
-    geom_ribbon(aes(ymin=ic.low, ymax=ic.upp), fill="lightgrey") +
+    ggplot(data=ncasos.completa, aes(x=Index, y=casos,ymin=ic.low, ymax=ic.upp)) +
+    geom_ribbon(fill="lightgrey") +
     geom_line() +
-    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], aes(Index, casos), size=2) +
+    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], size=2,
+               aes(text = paste("Data:", Index, "\n",
+                                "Casos:", round(casos)))) +
+    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))],
+               aes(text = paste("Data:", Index, "\n",
+                        "Casos previstos:", round(casos), "\n",
+                        "IC min:", round(ic.low), "\n",
+                        "IC max:", round(ic.upp))),
+                size=2, col="#e66101") +
     scale_x_date(date_labels = "%d/%b", name="") +
-    ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
-    geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))], aes(Index, casos), size=2, col="blue") +
+    scale_y_log10() +
+    ##ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
     ylab("Número de casos") +
+    ggtitle("Número de casos notificados em escala logarítimica") +
     plot.formatos
 
 ################################################################################

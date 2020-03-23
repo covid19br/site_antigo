@@ -10,7 +10,7 @@ for (f in all_pages){
     s <- strsplit(f, '.', fixed=TRUE)
     s <- s[[1]][-length(s[[1]])]
     fname <- paste(paste(s, collapse='.'), 'html', sep='.')
-    rmarkdown::render(f, output_file=paste('../', fname, sep=''))
+    rmarkdown::render(f, output_file=paste('../', fname, sep=''), output_dir='../')
 }
 
 rmarkdown::render('main.Rmd', output_file="../index.html")

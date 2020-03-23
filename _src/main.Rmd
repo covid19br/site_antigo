@@ -1,18 +1,20 @@
 ---
 title: "Observatório COVID-19 BR"
 date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
-output: 
+output:
  flexdashboard::flex_dashboard:
   storyboard: true
+  self_contained: false
+  lib_dir: ../libs
   source: embed
   source_code: "https://github.com/covid19br/covid19br.github.io"
   social: menu
   css: styles.css
   navbar:
-      - { title: "Início", href: "index.html", align: left}
-      - { title: "+Info", href: "informacoes.html", align: left}
-      - { title: "Fontes", href: "fontes.html", align: left}
-      - { title: "Sobre", href: "sobre.html", align: left}
+    - { title: "Início", href: "index.html", align: left}
+    - { title: "+Info", href: "informacoes.html", align: left}
+    - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
   includes:
    after_body: footer.html
@@ -31,14 +33,16 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?
 
 ```{r}
-ggplotly(plot.forecast.exp , tolltip=c("x", "y", "ymin", "ymax"))
+
+ggplotly(plot.forecast.exp, tooltip = "text")
 ##plot.forecast.exp
+
 ```
 
 ***
 
 Pontos pretos indicam o número de casos confirmados no Brasil por dia.
-**Pontos azuis são a previsão para os próximos 5 dias (entre 
+**Pontos em laranja são a previsão para os próximos 5 dias (entre 
 `r  as.integer(exp.5d[max(nrow(exp.5d)),2])` e `r as.integer(exp.5d[max(nrow(exp.5d)),3])` 
 casos em `r format(max(time(exp.5d)), "%d/%m/%Y")` )**, se a taxa de
 crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
@@ -104,7 +108,7 @@ dias (as datas indicam o fim de cada um desses intervalos). A faixa
 cinza é o intervalo de confiança dessas estimativas.  Esse intervalo
 tem 95% de chance de incluir o valor real de $R_e$. No momento há uma
 grande incerteza quanto ao valor de $R_e$. Mas mesmo **o limite mínimo
-do intervalo e confiança está bem acima de um, indicando que a
+do intervalo de confiança está bem acima de um, indicando que a
 epidemia está em expansão rápida**.
 
 ### Como o isolamento social influencia a dinâmica de propagação da epidemia?
@@ -120,7 +124,7 @@ uma rede social feito por Uri Wilensky (Northwestern University).
 Para ler mais e simular diferentes cenários, [<b>CLIQUE
 AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
 
-
+<!-- 
 ### Casos suspeitos estão aumentando?
 
 ```{r}
@@ -141,6 +145,7 @@ Desde que o Brasil notificou 19 casos confirmados (07/03/2020), **os casos
 suspeitos formam a maioria dos casos reportados oficialmente, e estão
 crescendo muito rápido**.
 
+-->
 
 ### Como epidemias se espalham por um país continental?
 
