@@ -83,10 +83,12 @@ partir de um ponto de vista científico.</b>
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/))
     + [CV](http://lattes.cnpq.br/750889398476891)
 
+* Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
+
 * Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/))
     + [CV](http://lattes.cnpq.br/1251914870700498)
 
-* Leonardo Souto Ferreira(mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
+* Leonardo Souto Ferreira (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
     + [CV](http://lattes.cnpq.br/7427980482483909)
 
 * Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/))
@@ -119,7 +121,7 @@ partir de um ponto de vista científico.</b>
 * Silas Poloni Lyra (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/) )
     + [CV](http://lattes.cnpq.br/3162809212291639)
 
-* Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP] )
+* Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP](http://ecologia.ib.usp.br/) )
     + [CV](http://lattes.cnpq.br/8988655613888832)
 
 * Vítor Sudbrack (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
