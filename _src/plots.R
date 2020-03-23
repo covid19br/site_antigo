@@ -30,7 +30,7 @@ plot.forecast.exp <-
                                 "Casos:", round(casos)))) +
     geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))],
                aes(text = paste("Data:", Index, "\n",
-                        "Casos:", round(casos), "\n",
+                        "Casos previstos:", round(casos), "\n",
                         "IC min:", round(ic.low), "\n",
                         "IC max:", round(ic.upp))),
                 size=2, col="#e66101") +
