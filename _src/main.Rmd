@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 
 ```{r}
 
-ggplotly(plot.forecast.exp)
+ggplotly(plot.forecast.exp, tooltip = "text")
 ##plot.forecast.exp
 
 ```

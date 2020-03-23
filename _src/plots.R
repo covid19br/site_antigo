@@ -25,12 +25,14 @@ plot.forecast.exp <-
     ggplot(data=ncasos.completa, aes(x=Index, y=casos,ymin=ic.low, ymax=ic.upp)) +
     geom_ribbon(fill="lightgrey") +
     geom_line() +
-    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], size=2) +
+    geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(exp.5d))], size=2,
+               aes(text = paste("Data:", Index, "\n",
+                                "Casos:", round(casos)))) +
     geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(exp.5d))],
                aes(text = paste("Data:", Index, "\n",
                         "Casos:", round(casos), "\n",
-                        "IC min (previsao):", round(ic.low), "\n",
-                        "IC max (previsao):", round(ic.upp))),
+                        "IC min:", round(ic.low), "\n",
+                        "IC max:", round(ic.upp))),
                 size=2, col="#e66101") +
     scale_x_date(date_labels = "%d/%b", name="") +
     scale_y_log10() +
