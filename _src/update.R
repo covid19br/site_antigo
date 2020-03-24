@@ -3,8 +3,7 @@ source('ajuste_projecao_exponencial.R')
 source('plots.R')
 library(rmarkdown)
 
-all_pages <- c('informacoes.Rmd', 'sobre.md', 'fontes.md')
-to_update <- c('main.Rmd')
+all_pages <- c('index.Rmd', 'informacoes.Rmd', 'sobre.md', 'fontes.md', 'projecao.Rmd')
 
 for (f in all_pages){
     s <- strsplit(f, '.', fixed=TRUE)
@@ -12,6 +11,4 @@ for (f in all_pages){
     fname <- paste(paste(s, collapse='.'), 'html', sep='.')
     rmarkdown::render(f, output_file=paste('../', fname, sep=''), output_dir='../')
 }
-
-rmarkdown::render('main.Rmd', output_file="../index.html")
 

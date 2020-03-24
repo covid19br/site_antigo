@@ -1,25 +1,45 @@
 .container {
-  display: flex;
   background-color: #e2e2e2;
-}
-
-.column {
-  flex: 1; /*grow*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
 }
 
 .item {
   padding: 10px;
   margin: 5px;
   background-color: #fff;
+  flex-grow: 1;
+  max-width: 33.3%;
+}
+
+.item2 {
+  padding: 10px;
+  margin: 5px;
+  background-color: #fff;
+  flex-grow: 2;  
+  max-width: 66.7%;
 }
 
 .item img {
-    max-width: 100%;
+    max-width: 90%;
+    height: auto;
+}
+.item2 img {
+    max-width: 90%;
+    height: auto;
 }
 
 @media (max-width: 768px) { /*breakpoint*/
   .container {
     flex-direction: column;
+  }
+  .item {
+    max-width: 100%;
+  }
+  .item2 {
+    max-width: 100%;
   }
 }
 

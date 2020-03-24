@@ -27,102 +27,70 @@ library(flexdashboard)
 library(knitr)
 #library(plotly)
 options(OutDec = ',')
-knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=3, fig.height=2)
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=3,
+                      fig.height=2, fig.align="center")
 ```
 
-<!---- COLUMN 1 ---->
 <div class="container">
-<div class="column">
-  <div class="item">
 
-<h4><a href="#" id="casos">Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? </a></h4>
-
-<a href="#">
-```{r}
+<div class="item2">
+  <h4><a href="projecao.html" id="casos">Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? </a></h4>
+  <a href="projecao.html">
+```{r , fig.width = 6, fig.height=4}
 plot.forecast.exp
 ```
-</a>
-  </div>
+  </a>
+</div>
 
-  <div class="item">
-<h4><a href="#">Casos suspeitos estão aumentando?</a></h4>
+<div class="item">
+  <h4><a href="#">Como epidemias se espalham por um país continental?</a></h4>
+  
+  ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/voos_brasil.jpg)
+  
+  A chave pode estar na rede formada por aeroportos e vôos conectando os estados.
+  
+  [<b>Leia mais aqui</b>](https://guimaraeslabbr.weebly.com/voos.html).
+</div>
+
+<div class="item">
+  <h4><a href="#">Casos suspeitos estão aumentando?</a></h4>
 
 ```{r}
 evolucao.tipos.casos
 ```
 
-Desde que o Brasil notificou 19 casos confirmados (07/03/2020), **os casos
-suspeitos formam a maioria dos casos reportados oficialmente, e estão
-crescendo muito rápido**.
-  </div>
-
-  <div class="item">
-<h4><a href="#">Como posso saber mais sobre epidemias e as análises deste site?</a></h4>
-
-![https://youtu.be/4E0QBcN7Uw8](fig/2020-marco-roberto-fisica-ao-vivo.jpg)
-
-Assista à [palestra de Roberto Kraenkel](https://youtu.be/4E0QBcN7Uw8) para a série de vídeos de divulgação científica 
-[Física ao Vivo](http://www.sbfisica.org.br/v1/home/index.php/pt/fisica-ao-vivo), 
-da [Sociedade Brasileira de Física](http://www.sbfisica.org.br/v1/home/index.php/pt/).
-
-Roberto é um dos criadores do **Observatório Covid-19 BR**, e apresenta no vídeo
-os conceitos básicos da epidemiologia, usando material que o
-Observatório disponibiliza neste site.
-
-  </div>
+  Desde que o Brasil notificou 19 casos confirmados (07/03/2020), os casos
+  suspeitos formam a maioria dos casos reportados.
 </div>
 
-<!---- COLUMN 2 ---->
-<div class="column">
-
-  <div class="item">
-<h4><a href="#" id="tduplica">Quão rápido a doença se propaga?</a></h4>
-
-<a href="#">
+<div class="item">
+  <h4><a href="#" id="tduplica">Quão rápido a doença se propaga?</a></h4>
+  
+  <a href="#">
 ```{r}
 plot.tempo.dupl
 ```
-</a>
-  </div>
-
-  <div class="item">
-<h4><a href="#">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a></h4>
-
-![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)
-
-
-Aqui, usamos **um cenário bem simples para ilustrar as vantagens do isolamento social em reduzir a propagação de uma doença
-contagiosa**. Para ler mais e simular diferentes cenários, [<b>CLIQUE
-AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
-
-  </div>
+  </a>
 </div>
 
-<!---- COLUMN 3 ---->
-<div class="column">
-  <div class="item">
+<div class="item">
+  <h4><a href="#">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a></h4>
+  
+  ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)
+  
+  
+  O isolamento social reduz a propagação de uma doença
+  contagiosa. Para ler mais e simular diferentes cenários, [<b>CLIQUE
+  AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
+</div>
 
-<h4><a href="#">Para quantas pessoas cada infectado transmite a doença?</a></h4>
-
-<a href="#">
+<div class="item">
+  <h4><a href="#">Para quantas pessoas cada infectado transmite a doença?</a></h4>
+  <a href="#">
 ```{r}
 plot.estimate.R0
 ```
-</a>
-  </div>
-
-  <div class="item">
-<h4><a href="#">Como epidemias se espalham por um país continental?</a></h4>
-
-![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/voos_brasil.jpg)
-
-
-A chave pode estar na rede formada por aeroportos e vôos conectando os estados
-brasileiros. Portanto, a análise da estrutura dessa rede aérea pode nos ajudar
-a entender a propagação do COVID-19 por nosso país.
-
-[<b>Leia mais aqui</b>](https://guimaraeslabbr.weebly.com/voos.html).
-
-  </div>
+  </a>
 </div>
+
 </div>

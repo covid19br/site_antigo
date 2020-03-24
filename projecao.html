@@ -8,9 +8,9 @@
 
 
 
-<title>Observatório COVID-19 BR | Sobre</title>
+<title>Observatório COVID-19 BR | Projeção</title>
 
-<meta property="og:title" content="Observatório COVID-19 BR | Sobre" />
+<meta property="og:title" content="Observatório COVID-19 BR | Projeção" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
@@ -34,6 +34,13 @@ window.FlexDashboardComponents = [];
 <script src="libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <style type="text/css">
 
 /*
@@ -804,9 +811,10 @@ body {
   
 </span>
 <span class="navbar-brand">
-  Observatório COVID-19 BR | Sobre
+  Observatório COVID-19 BR | Projeção
   <span class="navbar-author">
-        </span>
+      24 de março de 2020, 01:50
+      </span>
 </span>
 
 </div>
@@ -2585,105 +2593,20 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<h2>
-Quem somos
-</h2>
-<p>O <strong>Observatório Covid-19 BR</strong> é uma iniciativa independente, fruto da colaboração entre pesquisadores com o desejo de contribuir para a disseminação de informação de qualidade baseada em dados atualizados e análises cientificamente embasadas. Criamos este sítio com códigos de fonte aberta que nos permite acompanhar o estado atual da epidemia de Covid-19 no Brasil, incluindo análises estatísticas e previsões.</p>
-<p>A interface gráfica foi produzida utilizando-se <a href="https://rmarkdown.rstudio.com/">R Markdown</a> e os códigos podem ser encontrados em nosso <a href="https://github.com/covid19br/covid19BR">GitHub</a>.</p>
-<h3>
-Motivação
-</h3>
-<p><b>Diante da propagação da COVID-19, doença causada pelo novo coronavírus, a Organização Mundial da Saúde (OMS) decretou pandemia mundial no dia 11/03. Segundo a OMS, uma pandemia é a disseminação mundial de uma nova doença. Com início na China, o coronavírus se espalhou rapidamente por todos os continentes, contaminando milhares pessoas e levando diversos governantes a tomarem medidas drásticas para a contenção da doença. A dinâmica da transmissão de doenças infecciosas e, em particular, da COVID-19, deve ser compreendida para que os governos e cidadãos possam tomar as melhores decisões.</p>
-<p>Com modelos matemáticos construídos a partir do conhecimento e dados disponíveis podemos simular diferentes cenários e identificar tendências. Como qualquer resultado científico, as descobertas feitas com modelos matemáticos têm algum nível de incerteza. Mas ainda assim são de suma importância para o planejamento de políticas públicas.</p>
-<p>Diante do surto de COVID-19 que já se apresenta no Brasil, nós, cientistas de diversas áreas, apresentamos aqui análises baseadas em dados oficiais da propagação do coronavírus no país. Esperamos contribuir com as autoridades responsáveis e informar a população a partir de um ponto de vista científico.</b></p>
-<p>
-</p>
-<h3>
-Contato
-<h3>
-<p>Envie mensagem para: <a href="mailto:obscovid19br@gmail.com" class="email">obscovid19br@gmail.com</a></p>
-<h3>
-Equipe
-</h3>
-<ul>
-<li><p>Andrei Michel Sontag (mestrando @ <a href="https://www.ift.unesp.br/">IFT - UNESP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/1738716619940707">CV</a></li>
-</ul></li>
-<li><p>Caroline Franco (doutoranda @ <a href="https://www.ift.unesp.br/">IFT-UNESP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/1810788882318135">CV</a></li>
-</ul></li>
-<li><p>Débora Y C Brandt (doutoranda @ <a href="https://ib.berkeley.edu/">UC Berkeley, Estados Unidos</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/0111799832635782">CV</a></li>
-</ul></li>
-<li><p>Flávia Maria Darcie Marquitti (pós doc @ <a href="https://www.ifi.unicamp.br/~flaviam/">IFGW e IB - Unicamp</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/750889398476891">CV</a></li>
-</ul></li>
-<li><p>Júlia Yoko Lopes Yamaguti (bacharelanda @ <a href="http://ufabc.edu.br">UFABC</a>)</p></li>
-<li><p>Laís de Souza Alves (doutoranda @ <a href="https://www.fis.unb.br/">IF - UnB</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/1251914870700498">CV</a></li>
-</ul></li>
-<li><p>Leonardo Souto Ferreira (mestrando @ <a href="https://www.ift.unesp.br/">IFT - UNESP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/7427980482483909">CV</a></li>
-</ul></li>
-<li><p>Marco Antonio Silva Pinheiro (doutorando @ <a href="https://www.ift.unesp.br/">IFT-UNESP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/3654522236249726">CV</a></li>
-</ul></li>
-<li><p>Marina Costa Rillo (pós doc @ <a href="https://uol.de/en/icbm">Uni Oldenburg, Alemanha</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/9213292464230085">CV</a></li>
-</ul></li>
-<li><p>Paula Lemos-Costa (pós doc @ <a href="https://lemoscosta.weebly.com/">University of Chicago</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/2869271527300181">CV</a></li>
-</ul></li>
-<li><p>Paulo Guimarães Jr (Miúdo) (professor @ <a href="http://guimaraeslab.weebly.com/">IB-USP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/9619030543047007">CV</a></li>
-</ul></li>
-<li><p>Paulo Inácio Prado (professor @ <a href="http://ecologia.ib.usp.br/let/">IB-USP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
-</ul></li>
-<li><p>Rafael Lopes Paixão da Silva (doutorando @ <a href="https://www.ift.unesp.br/">IFT - UNESP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/3085324638663546">CV</a></li>
-</ul></li>
-<li><p>Renato Coutinho (professor @ <a href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
-</ul></li>
-<li><p>Roberto Kraenkel (professor @ <a href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
-</ul></li>
-<li><p>Rodrigo Corder (doutorando @ <a href="http://ww3.icb.usp.br">ICB-USP</a>)</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/9741820804547685">CV</a></li>
-</ul></li>
-<li><p>Silas Poloni Lyra (doutorando @ <a href="https://www.ift.unesp.br/">IFT-UNESP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/3162809212291639">CV</a></li>
-</ul></li>
-<li><p>Tatiana P. Portella Zenker (doutoranda @ <a href="http://ecologia.ib.usp.br/">Ecologia - USP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/8988655613888832">CV</a></li>
-</ul></li>
-<li><p>Vítor Sudbrack (mestrando @ <a href="https://www.ift.unesp.br/">IFT - UNESP</a> )</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/1687206263257247">CV</a></li>
-</ul></li>
-<li><p>Wendell Pereira Barreto</p>
-<ul>
-<li><a href="http://lattes.cnpq.br/0639412837460678">CV</a></li>
-</ul></li>
-</ul>
+<div id="quantos-casos-já-temos-no-brasil-quantos-teremos-nos-próximos-dias" class="section level1">
+<h1>Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?</h1>
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
+
+</div>
+<div id="htmlwidget-3b46be841dfee9e9fc64" style="width:576px;height:460,8px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3b46be841dfee9e9fc64">{"x":{"data":[{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18348,18348,18347,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18331,18330,18329,18328,18327,18326,18325,18324,18323,18322,18321,18320,18319,18318,18317,18317],"y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3.30132963843537,3.42659043927926,3.55148100554446,3.67618964101703,3.8007967561223,3.8007967561223,3.92626851346166,3.78296102489669,3.63975505669901,3.49673101929397,3.35407721646762,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348],"y":[0,0,0,0,0.301029995663981,0.301029995663981,0.301029995663981,0.301029995663981,0.602059991327962,0.845098040014257,1.11394335230684,1.27875360095283,1.39794000867204,1.47712125471966,1.53147891704226,1.7160033436348,1.88649072517248,1.99122607569249,2.08278537031645,2.30102999566398,2.36921585741014,2.46239799789896,2.63144376901317,2.79309160017658,2.95616843047536,3.05230909964732,3.18920948958231,3.32770342745149,3.46166072928661,3.59561803112174,3.72957533295686,3.86353263479198],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344],"y":[0,0,0,0,0.301029995663981,0.301029995663981,0.301029995663981,0.301029995663981,0.602059991327962,0.845098040014257,1.11394335230684,1.27875360095283,1.39794000867204,1.47712125471966,1.53147891704226,1.7160033436348,1.88649072517248,1.99122607569249,2.08278537031645,2.30102999566398,2.36921585741014,2.46239799789896,2.63144376901317,2.79309160017658,2.95616843047536,3.05230909964732,3.18920948958231,3.32770342745149],"text":["Data: 2020-02-25 <br /> Casos: 1","Data: 2020-02-26 <br /> Casos: 1","Data: 2020-02-27 <br /> Casos: 1","Data: 2020-02-28 <br /> Casos: 1","Data: 2020-02-29 <br /> Casos: 2","Data: 2020-03-01 <br /> Casos: 2","Data: 2020-03-02 <br /> Casos: 2","Data: 2020-03-03 <br /> Casos: 2","Data: 2020-03-04 <br /> Casos: 4","Data: 2020-03-05 <br /> Casos: 7","Data: 2020-03-06 <br /> Casos: 13","Data: 2020-03-07 <br /> Casos: 19","Data: 2020-03-08 <br /> Casos: 25","Data: 2020-03-09 <br /> Casos: 30","Data: 2020-03-10 <br /> Casos: 34","Data: 2020-03-11 <br /> Casos: 52","Data: 2020-03-12 <br /> Casos: 77","Data: 2020-03-13 <br /> Casos: 98","Data: 2020-03-14 <br /> Casos: 121","Data: 2020-03-15 <br /> Casos: 200","Data: 2020-03-16 <br /> Casos: 234","Data: 2020-03-17 <br /> Casos: 290","Data: 2020-03-18 <br /> Casos: 428","Data: 2020-03-19 <br /> Casos: 621","Data: 2020-03-20 <br /> Casos: 904","Data: 2020-03-21 <br /> Casos: 1128","Data: 2020-03-22 <br /> Casos: 1546","Data: 2020-03-23 <br /> Casos: 2127"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18344,18345,18346,18347,18348],"y":[3.32770342745149,3.46166072928661,3.59561803112174,3.72957533295686,3.86353263479198],"text":["Data: 2020-03-23 <br /> Casos previstos: 2127 <br /> IC min: 2001 <br /> IC max: 2260","Data: 2020-03-24 <br /> Casos previstos: 2895 <br /> IC min: 2670 <br /> IC max: 3139","Data: 2020-03-25 <br /> Casos previstos: 3941 <br /> IC min: 3560 <br /> IC max: 4363","Data: 2020-03-26 <br /> Casos previstos: 5365 <br /> IC min: 4744 <br /> IC max: 6067","Data: 2020-03-27 <br /> Casos previstos: 7304 <br /> IC min: 6321 <br /> IC max: 8439"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(230,97,1,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(230,97,1,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":42.6825491363907,"r":7.30593607305936,"b":28.7414947569802,"l":69.4063926940639},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Número de casos notificados em escala logarítimica","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18315.45,18349.55],"tickmode":"array","ticktext":["24/fev","02/mar","09/mar","16/mar","23/mar"],"tickvals":[18316,18323,18330,18337,18344],"categoryorder":"array","categoryarray":["24/fev","02/mar","09/mar","16/mar","23/mar"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.196313425673083,4.12258193913474],"tickmode":"array","ticktext":["1","10","100","1000","10000"],"tickvals":[0,1,2,3,4],"categoryorder":"array","categoryarray":["1","10","100","1000","10000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de casos <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"32ba86566cb1e2":{"x":{},"y":{},"ymin":{},"ymax":{},"type":"scatter"},"32ba8623b219f3":{"x":{},"y":{},"ymin":{},"ymax":{}},"32ba8641c41432":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}},"32ba86d54f528":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}}},"cur_data":"32ba86566cb1e2","visdat":{"32ba86566cb1e2":["function (y) ","x"],"32ba8623b219f3":["function (y) ","x"],"32ba8641c41432":["function (y) ","x"],"32ba86d54f528":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<p>Pontos pretos indicam o número de casos confirmados no Brasil por dia. <strong>Pontos em laranja são a previsão para os próximos 5 dias (entre 6321 e 8438 casos em 27/03/2020 )</strong>, se a taxa de crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.</p>
+<div id="por-que-só-5-dias" class="section level2">
+<h2>Por que só 5 dias?</h2>
+<p>Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o tempo. E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.</p>
+<p>Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.</p>
+</div>
+</div>
 
 </div>
 
