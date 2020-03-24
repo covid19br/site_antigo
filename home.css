@@ -30,6 +30,10 @@
     max-width: 90%;
     height: auto;
 }
+.section .level3 {
+  max-width: initial !important;
+}
+
 
 @media (max-width: 768px) { /*breakpoint*/
   .container {
