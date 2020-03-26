@@ -3,9 +3,8 @@ title: "Observatório COVID-19 BR"
 date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
 output:
  flexdashboard::flex_dashboard:
-  orientation: columns
-  vertical_layout: scroll
   self_contained: false
+  theme: cerulean
   lib_dir: ../libs
   source_code: "https://github.com/covid19br/covid19br.github.io"
   social: menu

@@ -3,8 +3,9 @@ title: "Observatório COVID-19 BR | Projeção"
 date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
 output:
  flexdashboard::flex_dashboard:
-  orientation: columns
+  orientation: column
   vertical_layout: scroll
+  theme: cerulean
   self_contained: false
   lib_dir: ../libs
   source_code: "https://github.com/covid19br/covid19br.github.io"
@@ -21,30 +22,32 @@ output:
    in_header: header.html
 ---
 
+
+
 ```{r setOptions, include=FALSE, message=FALSE}
 library(flexdashboard)
 #library(xtable)
 library(knitr)
-#library(plotly)
+library(plotly)
 options(OutDec = ',')
-knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.align="center")
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
+
 
 ### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?
 
 ```{r}
-
 ggplotly(plot.forecast.exp, tooltip = "text")
 ##plot.forecast.exp
-
 ```
 
-Pontos pretos indicam o número de casos confirmados no Brasil por dia.
+>Pontos pretos indicam o número de casos confirmados no Brasil por dia.
 **Pontos em laranja são a previsão para os próximos 5 dias (entre 
 `r  as.integer(exp.5d[max(nrow(exp.5d)),2])` e `r as.integer(exp.5d[max(nrow(exp.5d)),3])` 
 casos em `r format(max(time(exp.5d)), "%d/%m/%Y")` )**, se a taxa de
 crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
-intervalo de confiança dessa previsão. 
+intervalo de confiança dessa previsão.
+
 
 ### Por que só 5 dias?
 
@@ -56,4 +59,5 @@ hoje ou amanhã vão causar enormes variações no futuro.
 
 Por isso avaliamos que é inadequado fazer
 previsões para mais de 5 dias com este método.
+
 
