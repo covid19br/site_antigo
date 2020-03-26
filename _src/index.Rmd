@@ -13,6 +13,7 @@ output:
     - { title: "Início", href: "index.html", align: left}
     - { title: "+Info", href: "informacoes.html", align: left}
     - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
     - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
   includes:
@@ -42,30 +43,33 @@ plot.forecast.exp
 </div>
 
 <div class="item">
-  <h4><a href="#">Como epidemias se espalham por um país continental?</a></h4>
-  
-  ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/voos_brasil.jpg)
+  <h4><a href="pais.html">Como epidemias se espalham por um país continental?</a></h4>
+ 
+ <a href="pais.html">
+   ![](fig/voos_brasil.jpg)
+ </a>
   
   A chave pode estar na rede formada por aeroportos e vôos conectando os estados.
   
-  [<b>Leia mais aqui</b>](https://guimaraeslabbr.weebly.com/voos.html).
-</div>
+ </div>
 
 <div class="item">
-  <h4><a href="#">Casos suspeitos estão aumentando?</a></h4>
+  <h4><a href="casos.html">Casos suspeitos estão aumentando?</a></h4>
 
+<a href="casos.html">
 ```{r}
 evolucao.tipos.casos
 ```
+  </a>
 
   Desde que o Brasil notificou 19 casos confirmados (07/03/2020), os casos
   suspeitos formam a maioria dos casos reportados.
 </div>
 
 <div class="item">
-  <h4><a href="#" id="tduplica">Quão rápido a doença se propaga?</a></h4>
+  <h4><a href="propagacao.html" id="tduplica">Quão rápido a doença se propaga?</a></h4>
   
-  <a href="#">
+  <a href="propagacao.html">
 ```{r}
 plot.tempo.dupl
 ```
@@ -73,19 +77,20 @@ plot.tempo.dupl
 </div>
 
 <div class="item">
-  <h4><a href="#">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a></h4>
-  
-  ![(https://guimaraeslabbr.weebly.com/COVID19.html)](fig/rede_prsc.jpg)
-  
+  <h4><a href="dinamica.html">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a></h4>
+ 
+  <a href="dinamica.html">
+ ![](fig/rede_prsc.jpg)
+   </a>
+ 
   
   O isolamento social reduz a propagação de uma doença
-  contagiosa. Para ler mais e simular diferentes cenários, [<b>CLIQUE
-  AQUI</b>](https://guimaraeslabbr.weebly.com/COVID19.html).
+  contagiosa. 
 </div>
 
 <div class="item">
-  <h4><a href="#">Para quantas pessoas cada infectado transmite a doença?</a></h4>
-  <a href="#">
+  <h4><a href="transmissao.html">Para quantas pessoas cada infectado transmite a doença?</a></h4>
+  <a href="transmissao.html">
 ```{r}
 plot.estimate.R0
 ```

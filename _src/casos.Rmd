@@ -33,32 +33,25 @@ library(plotly)
 options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
 ```
-
-
-### Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?
+### Casos suspeitos estão aumentando?
 
 ```{r}
-ggplotly(plot.forecast.exp, tooltip = "text")
-##plot.forecast.exp
+ggplotly(evolucao.tipos.casos)
 ```
 
->Pontos pretos indicam o número de casos confirmados no Brasil por dia.
-**Pontos em laranja são a previsão para os próximos 5 dias (entre 
-`r  as.integer(exp.5d[max(nrow(exp.5d)),2])` e `r as.integer(exp.5d[max(nrow(exp.5d)),3])` 
-casos em `r format(max(time(exp.5d)), "%d/%m/%Y")` )**, se a taxa de
-crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
-intervalo de confiança dessa previsão.
+###
 
+Casos suspeitos são pacientes com sintomas e que tiveram contato com
+outros casos suspeitos ou confirmados, ou ainda com pessoas que chegaram de área
+afetada. Veja definição em detalhes no [site do Ministério da
+Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-definition).
 
-### Por que só 5 dias?
+Os casos suspeitos são avaliados pelo sistema de saúde, podendo ser
+classificados em casos confirmados ou descartados.
 
-Porque quando o crescimento é exponencial as incertezas também crescem
-exponencialmente. Por isso a região cinza, que expressa a
-incerteza da previsão, aumenta de largura com
-o tempo.  E mesmo pequenas mudanças na taxa que aconteçam
-hoje ou amanhã vão causar enormes variações no futuro. 
+Desde que o Brasil notificou 19 casos confirmados (07/03/2020), **os casos
+suspeitos formam a maioria dos casos reportados oficialmente, e estão
+crescendo muito rápido**.
 
-Por isso avaliamos que é inadequado fazer
-previsões para mais de 5 dias com este método.
 
 

@@ -13,6 +13,7 @@ output:
     - { title: "Início", href: "index.html", align: left}
     - { title: "+Info", href: "informacoes.html", align: left}
     - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
     - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
   includes:
@@ -20,7 +21,7 @@ output:
    in_header: header.html
 ---
 
-<h2>Quem somos</h2>
+### Quem somos
 
 O **Observatório Covid-19 BR** é uma iniciativa independente, fruto da
 colaboração entre pesquisadores com o desejo de contribuir para a
@@ -36,7 +37,7 @@ encontrados em nosso [GitHub](https://github.com/covid19br/covid19BR).
 
 
 
-<h3>Motivação</h3>
+### Motivação
 
 <b>Diante da propagação da COVID-19, doença causada pelo novo
 coronavírus, a Organização Mundial da Saúde (OMS) decretou pandemia
@@ -65,12 +66,12 @@ partir de um ponto de vista científico.</b>
 
 </p>
 
-<h3> Contato </h3>
+### Contato
  
 Envie mensagem para: obscovid19br@gmail.com
 
 
-<h3>Equipe</h3>
+### Equipe
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
     + [CV](http://lattes.cnpq.br/1738716619940707)
@@ -80,6 +81,9 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) )
     + [CV](http://lattes.cnpq.br/0111799832635782)
+
+* Fabiana Rodrigues Arantes (física e artista @ https://artfabi.com/ )
+    + [CV](http://lattes.cnpq.br/2495800931137053)
 
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/))
     + [CV](http://lattes.cnpq.br/750889398476891)

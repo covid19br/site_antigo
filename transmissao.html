@@ -8,9 +8,9 @@
 
 
 
-<title>Observatório COVID-19 BR | Fontes</title>
+<title>Observatório COVID-19 BR</title>
 
-<meta property="og:title" content="Observatório COVID-19 BR | Fontes" />
+<meta property="og:title" content="Observatório COVID-19 BR" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
@@ -27,13 +27,20 @@ window.FlexDashboardComponents = [];
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <style type="text/css">
 
 /*
@@ -736,49 +743,17 @@ body {
 
 .section.sidebar {
   top: 51px;
-  background-color: rgba(39, 128, 227, 0.1);
-}
-
-.value-box {
-  color: #f9f9f9;
-}
-
-.bg-primary {
-  background-color: rgba(39, 128, 227, 0.7);
-}
-
-.storyboard-nav .sbframelist ul li.active {
-  background-color: rgba(39, 128, 227, 0.7);
+  background-color: rgba(3, 60, 115, 0.1);
 }
 
 .nav-tabs-custom > .nav-tabs > li.active {
-  border-top-color: rgba(39, 128, 227, 0.7);
+  border-top-color: #2fa4e7;
 }
 
-.bg-info {
-  background-color: rgba(153, 84, 187, 0.7);
+.storyboard-nav .sbframelist ul li.active {
+  background-color: rgba(47, 164, 231, 0.7);
 }
 
-.bg-warning {
-  background-color: rgba(255, 117, 24, 0.7);
-}
-
-.bg-danger {
-  background-color: rgba(255, 0, 57, 0.7);
-}
-
-.bg-success {
-  background-color: rgba(63, 182, 24, 0.7);
-}
-
-.chart-title {
-  font-weight: 500;
-}
-
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:active {
-  font-weight: 500;
-}
 
 </style>
 
@@ -804,9 +779,10 @@ body {
   
 </span>
 <span class="navbar-brand">
-  Observatório COVID-19 BR | Fontes
+  Observatório COVID-19 BR
   <span class="navbar-author">
-        </span>
+      26 de março de 2020, 03:01
+      </span>
 </span>
 
 </div>
@@ -2585,27 +2561,19 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<div id="fontes-dos-dados" class="section level3">
-<h3>Fontes dos dados</h3>
-<p>Utilizamos os registros das notificações de casos de COVID-19 divulgadas diariamente pelo <a href="https://coronavirus.saude.gov.br/">Ministério da Saúde</a>.</p>
-<p>A cada atualização na plataforma um programa automático de recupareção de dados nos envia os novos registros e dispara a atualização das análise e gráficos neste site.</p>
+<div id="para-quantas-pessoas-cada-infectado-transmite-a-doença" class="section level3">
+<h3>Para quantas pessoas cada infectado transmite a doença?</h3>
+<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+
 </div>
-<div id="covid-data-science-no-brasil" class="section level3">
-<h3>COVID Data Science no Brasil</h3>
-<p>Lista em construção, as iniciativas se multiplicam. Se você tem trabalho na área nos escreva para divulgarmos aqui. E por favor divulgue o nosso trabalho também.</p>
-<ul>
-<li><a href="https://liibre.github.io/coronabr/">covidbr</a>, pacote em <a href="https://www.r-project.org">R</a> para download dos dados oficiais de COVID-19, por Sara Mortara e Andrea Sánchez-Tapia, Jardim Botânico do Rio de Janeiro.</li>
-<li><a href="https://labs.wesleycota.com/sarscov2/br">Número de casos confirmados de COVID-19 no Brasil</a>, Wesley Cota, Universidade de Viçosa.</li>
-</ul>
+<div id="htmlwidget-93b4e53e1d1ab5e80775" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-93b4e53e1d1ab5e80775">{"x":{"data":[{"x":[18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18346,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18331,18331],"y":[1.80317906124544,2.24742204590365,2.6150623326822,2.3911220426806,2.09095362835537,2.74706447581639,2.35538593480808,2.17476091065175,2.56559159568055,2.8090689770823,2.9361759653748,2.57224935031175,2.58521294671719,2.27400126972103,2.012396212105,1.75161461317069,1.75161461317069,3.02208634730612,3.77280761449334,4.51001049742832,5.30629102465896,5.2580982626534,5.64316466267107,5.14496284443499,4.78044279695123,4.25214657878659,4.61613232613165,5.40594555411304,4.43096944316849,5.01697815487688,5.40856942757267,5.2875369373052,5.27742810891887,1.80317906124544],"text":["Quantile.0.025.R: 1,803179<br />Quantile.0.975.R: 5,277428<br />Index: 2020-03-10<br />Mean.R: 3,123897","Quantile.0.025.R: 2,247422<br />Quantile.0.975.R: 5,287537<br />Index: 2020-03-11<br />Mean.R: 3,460602","Quantile.0.025.R: 2,615062<br />Quantile.0.975.R: 5,408569<br />Index: 2020-03-12<br />Mean.R: 3,790363","Quantile.0.025.R: 2,391122<br />Quantile.0.975.R: 5,016978<br />Index: 2020-03-13<br />Mean.R: 3,534040","Quantile.0.025.R: 2,090954<br />Quantile.0.975.R: 4,430969<br />Index: 2020-03-14<br />Mean.R: 3,083334","Quantile.0.025.R: 2,747064<br />Quantile.0.975.R: 5,405946<br />Index: 2020-03-15<br />Mean.R: 3,832733","Quantile.0.025.R: 2,355386<br />Quantile.0.975.R: 4,616132<br />Index: 2020-03-16<br />Mean.R: 3,320513","Quantile.0.025.R: 2,174761<br />Quantile.0.975.R: 4,252147<br />Index: 2020-03-17<br />Mean.R: 3,051976","Quantile.0.025.R: 2,565592<br />Quantile.0.975.R: 4,780443<br />Index: 2020-03-18<br />Mean.R: 3,471999","Quantile.0.025.R: 2,809069<br />Quantile.0.975.R: 5,144963<br />Index: 2020-03-19<br />Mean.R: 3,803472","Quantile.0.025.R: 2,936176<br />Quantile.0.975.R: 5,643165<br />Index: 2020-03-20<br />Mean.R: 4,114014","Quantile.0.025.R: 2,572249<br />Quantile.0.975.R: 5,258098<br />Index: 2020-03-21<br />Mean.R: 3,717457","Quantile.0.025.R: 2,585213<br />Quantile.0.975.R: 5,306291<br />Index: 2020-03-22<br />Mean.R: 3,685187","Quantile.0.025.R: 2,274001<br />Quantile.0.975.R: 4,510010<br />Index: 2020-03-23<br />Mean.R: 3,171924","Quantile.0.025.R: 2,012396<br />Quantile.0.975.R: 3,772808<br />Index: 2020-03-24<br />Mean.R: 2,722130","Quantile.0.025.R: 1,751615<br />Quantile.0.975.R: 3,022086<br />Index: 2020-03-25<br />Mean.R: 2,261208","Quantile.0.025.R: 1,751615<br />Quantile.0.975.R: 3,022086<br />Index: 2020-03-25<br />Mean.R: 2,261208","Quantile.0.025.R: 1,751615<br />Quantile.0.975.R: 3,022086<br />Index: 2020-03-25<br />Mean.R: 2,261208","Quantile.0.025.R: 2,012396<br />Quantile.0.975.R: 3,772808<br />Index: 2020-03-24<br />Mean.R: 2,722130","Quantile.0.025.R: 2,274001<br />Quantile.0.975.R: 4,510010<br />Index: 2020-03-23<br />Mean.R: 3,171924","Quantile.0.025.R: 2,585213<br />Quantile.0.975.R: 5,306291<br />Index: 2020-03-22<br />Mean.R: 3,685187","Quantile.0.025.R: 2,572249<br />Quantile.0.975.R: 5,258098<br />Index: 2020-03-21<br />Mean.R: 3,717457","Quantile.0.025.R: 2,936176<br />Quantile.0.975.R: 5,643165<br />Index: 2020-03-20<br />Mean.R: 4,114014","Quantile.0.025.R: 2,809069<br />Quantile.0.975.R: 5,144963<br />Index: 2020-03-19<br />Mean.R: 3,803472","Quantile.0.025.R: 2,565592<br />Quantile.0.975.R: 4,780443<br />Index: 2020-03-18<br />Mean.R: 3,471999","Quantile.0.025.R: 2,174761<br />Quantile.0.975.R: 4,252147<br />Index: 2020-03-17<br />Mean.R: 3,051976","Quantile.0.025.R: 2,355386<br />Quantile.0.975.R: 4,616132<br />Index: 2020-03-16<br />Mean.R: 3,320513","Quantile.0.025.R: 2,747064<br />Quantile.0.975.R: 5,405946<br />Index: 2020-03-15<br />Mean.R: 3,832733","Quantile.0.025.R: 2,090954<br />Quantile.0.975.R: 4,430969<br />Index: 2020-03-14<br />Mean.R: 3,083334","Quantile.0.025.R: 2,391122<br />Quantile.0.975.R: 5,016978<br />Index: 2020-03-13<br />Mean.R: 3,534040","Quantile.0.025.R: 2,615062<br />Quantile.0.975.R: 5,408569<br />Index: 2020-03-12<br />Mean.R: 3,790363","Quantile.0.025.R: 2,247422<br />Quantile.0.975.R: 5,287537<br />Index: 2020-03-11<br />Mean.R: 3,460602","Quantile.0.025.R: 1,803179<br />Quantile.0.975.R: 5,277428<br />Index: 2020-03-10<br />Mean.R: 3,123897","Quantile.0.025.R: 1,803179<br />Quantile.0.975.R: 5,277428<br />Index: 2020-03-10<br />Mean.R: 3,123897"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346],"y":[3.12389680515025,3.46060176755935,3.79036286909642,3.5340396228361,3.08333414274158,3.83273330441951,3.32051287775157,3.05197600885003,3.47199905156684,3.80347218336959,4.11401415271616,3.71745687938776,3.68518713523419,3.17192428607773,2.72212962813602,2.26120839472253],"text":["Index: 2020-03-10<br />Mean.R: 3,123897","Index: 2020-03-11<br />Mean.R: 3,460602","Index: 2020-03-12<br />Mean.R: 3,790363","Index: 2020-03-13<br />Mean.R: 3,534040","Index: 2020-03-14<br />Mean.R: 3,083334","Index: 2020-03-15<br />Mean.R: 3,832733","Index: 2020-03-16<br />Mean.R: 3,320513","Index: 2020-03-17<br />Mean.R: 3,051976","Index: 2020-03-18<br />Mean.R: 3,471999","Index: 2020-03-19<br />Mean.R: 3,803472","Index: 2020-03-20<br />Mean.R: 4,114014","Index: 2020-03-21<br />Mean.R: 3,717457","Index: 2020-03-22<br />Mean.R: 3,685187","Index: 2020-03-23<br />Mean.R: 3,171924","Index: 2020-03-24<br />Mean.R: 2,722130","Index: 2020-03-25<br />Mean.R: 2,261208"],"type":"scatter","mode":"lines","line":{"width":4.7244094488189,"color":"rgba(0,0,139,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18330.25,18346.75],"y":[1,1],"text":"yintercept: 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,0,0,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.7412480974125,"r":7.30593607305936,"b":29.3344402933444,"l":37.5259443752594},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18330.25,18346.75],"tickmode":"array","ticktext":["16/mar","23/mar"],"tickvals":[18337,18344],"categoryorder":"array","categoryarray":["16/mar","23/mar"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.557841766866447,5.88532289580462],"tickmode":"array","ticktext":["1","2","3","4","5"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["1","2","3","4","5"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de reprodução <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"4a5044454016":{"ymin":{},"ymax":{},"x":{},"y":{},"type":"scatter"},"4a501ba25512":{"x":{},"y":{}},"4a507408164e":{"yintercept":{}}},"cur_data":"4a5044454016","visdat":{"4a5044454016":["function (y) ","x"],"4a501ba25512":["function (y) ","x"],"4a507408164e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
-<div id="outras-fontes-de-dados-e-de-informações" class="section level3">
-<h3>Outras fontes de dados e de informações</h3>
-<ul>
-<li><a href="https://portal.fiocruz.br/coronavirus">Portal sobre Coronavírus da FIOCRUZ</a></li>
-<li><a href="https://cmmid.github.io/topics/covid19/">CMMID COVID repository</a>, Centre for Mathematical Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.</li>
-<li><a href="https://coronavirus.jhu.edu/map.html">Jonh Hopkins Coronavirus Resource Center</a></li>
-<li><a href="https://www.who.int/health-topics/coronavirus">Site sobre epidemia de COVID-19 da Organização Mundial da Saúde</a></li>
-</ul>
+<div id="section" class="section level3">
+<h3></h3>
+<p>O Número Reprodutivo efetivo (<span class="math inline">\(R_e\)</span>) é a média de pessoas contaminadas por um infectado. <strong>Números reprodutivos maiores que um indicam que a doença está se espalhando</strong>. Marcamos este limite com uma linha vermelha.</p>
+<p>Estimamos o <span class="math inline">\(R_e\)</span> da epidemia de COVID-19 no Brasil diariamente. <strong>No momento o <span class="math inline">\(R_e\)</span> está entre 1,8 e 3 </strong>.</p>
+<p>A linha azul no gráfico mostra a estimativa de <span class="math inline">\(R_e\)</span> a intervalos de 7 dias (as datas indicam o fim de cada um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de chance de incluir o valor real de <span class="math inline">\(R_e\)</span>. No momento há uma grande incerteza quanto ao valor de <span class="math inline">\(R_e\)</span>. Mas mesmo <strong>o limite mínimo do intervalo de confiança está bem acima de um, indicando que a epidemia está em expansão rápida</strong>.</p>
 </div>
 
 </div>
@@ -2649,7 +2617,7 @@ StatCounter"></a></div></noscript>
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    theme: "cosmo",
+    theme: "cerulean",
     fillPage: false,
     orientation: "columns",
     storyboard: false,
