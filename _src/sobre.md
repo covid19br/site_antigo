@@ -65,8 +65,9 @@ partir de um ponto de vista científico.</b>
 
 </p>
 
-<h3> Contato <h3>
- Envie mensagem para: obscovid19br@gmail.com
+<h3> Contato </h3>
+ 
+Envie mensagem para: obscovid19br@gmail.com
 
 
 <h3>Equipe</h3>
@@ -82,6 +83,9 @@ partir de um ponto de vista científico.</b>
 
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/))
     + [CV](http://lattes.cnpq.br/750889398476891)
+
+* Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) )
+    + [CV](lattes: http://lattes.cnpq.br/3740948585907265)
 
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
