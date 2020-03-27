@@ -58,9 +58,11 @@ plot.forecast.exp
 
 <a href="casos.html">
 ```{r}
-evolucao.tipos.casos
+evolucao.tipos.casos + theme(axis.text.x = element_text(size = 5, angle = 90),
+                            axis.text.y = element_text(size = 5),
+                            axis.title.y = element_text(size = 8))
 ```
-  </a>
+  </a topmargin="2">
 
   Desde que o Brasil notificou 19 casos confirmados (07/03/2020), os casos
   suspeitos formam a maioria dos casos reportados.
@@ -70,8 +72,10 @@ evolucao.tipos.casos
   <h4><a href="propagacao.html" id="tduplica">Quão rápido a doença se propaga?</a></h4>
   
   <a href="propagacao.html">
+  
 ```{r}
-plot.tempo.dupl
+plot.tempo.dupl + theme(axis.text.x = element_text(size = 10),
+                        axis.title.y = element_text(size = 8))
 ```
   </a>
 </div>
@@ -92,7 +96,8 @@ plot.tempo.dupl
   <h4><a href="transmissao.html">Para quantas pessoas cada infectado transmite a doença?</a></h4>
   <a href="transmissao.html">
 ```{r}
-plot.estimate.R0
+plot.estimate.R0 + theme(axis.text.x = element_text(size = 10),
+                        axis.title.y = element_text(size = 8))
 ```
   </a>
 </div>
