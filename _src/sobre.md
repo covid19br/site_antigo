@@ -88,6 +88,8 @@ Envie mensagem para: obscovid19br@gmail.com
 * Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) )
     + [CV](lattes: http://lattes.cnpq.br/3740948585907265)
 
+* Irina Lerner (bacharelanda @ [CCM-USP](http://www.cecm.usp.br/index.html))
+
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
 * Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/))
