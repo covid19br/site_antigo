@@ -1,0 +1,60 @@
+---
+title: "Observatório COVID-19 BR"
+date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
+output:
+ flexdashboard::flex_dashboard:
+  orientation: column
+  vertical_layout: scroll
+  theme: cerulean
+  self_contained: false
+  lib_dir: ../libs
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: 'styles.css'
+  navbar:
+    - { title: "Início", href: "index.html", align: left}
+    - { title: "+Info", href: "informacoes.html", align: left}
+    - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
+    - { title: "Sobre", href: "sobre.html", align: left}
+  favicon: favicon.png
+  includes:
+   after_body: footer.html
+   in_header: header.html
+---
+
+
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(flexdashboard)
+#library(xtable)
+library(knitr)
+library(plotly)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
+```
+### Quão rápido a doença se propaga?
+
+```{r}
+##plot.tempo.dupl
+ggplotly(plot.tempo.dupl)
+```
+
+###
+
+O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos** . 
+Quanto menor esse número, mais rápido a
+doença está se espalhando. Esse número depende muito das medidas
+de contenção da doença. **A estimativa de hoje é  entre 
+`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),2], 1))` e 
+`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),3], 1))` dias**.
+
+A linha azul no gráfico mostra o tempo de duplicação estimado a
+intervalos de 5 dias (as datas indicam o fim de cada um desses
+intervalos). A faixa cinza é o intervalo de confiança desses tempos de
+duplicação. O intervalo largo mostra que a incerteza é
+grande, mas mesmo assim vemos que tempos de duplicação variam à medida
+que o tempo passa. 
+
+
+

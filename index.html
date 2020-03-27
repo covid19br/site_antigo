@@ -22,26 +22,18 @@ window.FlexDashboardComponents = [];
 </script>
 
 <script id="flexdashboard-navbar" type="application/json">
-[{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
+[{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<link href="libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-<script src="libs/sly-1.6.1/sly.min.js"></script>
-<script src="libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
-<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <style type="text/css">
 
 /*
@@ -744,49 +736,17 @@ body {
 
 .section.sidebar {
   top: 51px;
-  background-color: rgba(39, 128, 227, 0.1);
-}
-
-.value-box {
-  color: #f9f9f9;
-}
-
-.bg-primary {
-  background-color: rgba(39, 128, 227, 0.7);
-}
-
-.storyboard-nav .sbframelist ul li.active {
-  background-color: rgba(39, 128, 227, 0.7);
+  background-color: rgba(3, 60, 115, 0.1);
 }
 
 .nav-tabs-custom > .nav-tabs > li.active {
-  border-top-color: rgba(39, 128, 227, 0.7);
+  border-top-color: #2fa4e7;
 }
 
-.bg-info {
-  background-color: rgba(153, 84, 187, 0.7);
+.storyboard-nav .sbframelist ul li.active {
+  background-color: rgba(47, 164, 231, 0.7);
 }
 
-.bg-warning {
-  background-color: rgba(255, 117, 24, 0.7);
-}
-
-.bg-danger {
-  background-color: rgba(255, 0, 57, 0.7);
-}
-
-.bg-success {
-  background-color: rgba(63, 182, 24, 0.7);
-}
-
-.chart-title {
-  font-weight: 500;
-}
-
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:active {
-  font-weight: 500;
-}
 
 @media only screen and (min-width: 768px) {
 html, body {
@@ -802,6 +762,7 @@ html, body {
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
+<link rel="stylesheet" href="home.css" type="text/css" />
 
 </head>
 
@@ -823,7 +784,7 @@ html, body {
 <span class="navbar-brand">
   Observatório COVID-19 BR
   <span class="navbar-author">
-      26 de março de 2020, 18:01
+      27 de março de 2020, 16:37
       </span>
 </span>
 
@@ -837,6 +798,9 @@ html, body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
+<img class="mobile-figure" data-mobile-figure-id=fig1 src="index_files/figure-html/unnamed-chunk-1-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig2 src="index_files/figure-html/unnamed-chunk-2-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig3 src="index_files/figure-html/unnamed-chunk-3-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2603,94 +2567,51 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<div id="quantos-casos-já-temos-no-brasil-quantos-teremos-nos-próximos-dias" class="section level3">
-<h3>Quantos casos já temos no Brasil? Quantos teremos nos próximos dias?</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="container">
+<div class="item2">
+<h4>
+<a href="projecao.html" id="casos">Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? </a>
+</h4>
+<a href="projecao.html">
+<div class="knitr-options" data-fig-width="576" data-fig-height="384">
 
 </div>
-<div id="htmlwidget-cf881ea4765f0c48bfd7" style="width:768px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cf881ea4765f0c48bfd7">{"x":{"data":[{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18349,18350,18351,18352,18352,18352,18351,18350,18349,18348,18347,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18331,18330,18329,18328,18327,18326,18325,18324,18323,18322,18321,18320,18319,18318,18317,18317],"y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3.51037745957367,3.57040234894313,3.63023001024846,3.68995593520204,3.74962315914801,3.74962315914801,3.83102542052056,3.75975677626891,3.68854683302488,3.6174386261326,3.54652764730444,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18349,18350,18351,18352],"y":[0,0,0,0,0.301029995663981,0.301029995663981,0.301029995663981,0.301029995663981,0.602059991327962,0.845098040014257,1.11394335230684,1.27875360095283,1.39794000867204,1.47712125471966,1.53147891704226,1.7160033436348,1.88649072517248,1.99122607569249,2.08278537031645,2.30102999566398,2.36921585741014,2.46239799789896,2.63144376901317,2.79309160017658,2.95616843047536,3.05230909964732,3.18920948958231,3.27669152884504,3.34262004255335,3.38614210893082,3.46463855909503,3.52845255343906,3.59392048753786,3.65938842163667,3.72485635573548,3.79032428983428],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348],"y":[0,0,0,0,0.301029995663981,0.301029995663981,0.301029995663981,0.301029995663981,0.602059991327962,0.845098040014257,1.11394335230684,1.27875360095283,1.39794000867204,1.47712125471966,1.53147891704226,1.7160033436348,1.88649072517248,1.99122607569249,2.08278537031645,2.30102999566398,2.36921585741014,2.46239799789896,2.63144376901317,2.79309160017658,2.95616843047536,3.05230909964732,3.18920948958231,3.27669152884504,3.34262004255335,3.38614210893082,3.46463855909503,3.52845255343906],"text":["Data: 2020-02-25 <br /> Casos: 1","Data: 2020-02-26 <br /> Casos: 1","Data: 2020-02-27 <br /> Casos: 1","Data: 2020-02-28 <br /> Casos: 1","Data: 2020-02-29 <br /> Casos: 2","Data: 2020-03-01 <br /> Casos: 2","Data: 2020-03-02 <br /> Casos: 2","Data: 2020-03-03 <br /> Casos: 2","Data: 2020-03-04 <br /> Casos: 4","Data: 2020-03-05 <br /> Casos: 7","Data: 2020-03-06 <br /> Casos: 13","Data: 2020-03-07 <br /> Casos: 19","Data: 2020-03-08 <br /> Casos: 25","Data: 2020-03-09 <br /> Casos: 30","Data: 2020-03-10 <br /> Casos: 34","Data: 2020-03-11 <br /> Casos: 52","Data: 2020-03-12 <br /> Casos: 77","Data: 2020-03-13 <br /> Casos: 98","Data: 2020-03-14 <br /> Casos: 121","Data: 2020-03-15 <br /> Casos: 200","Data: 2020-03-16 <br /> Casos: 234","Data: 2020-03-17 <br /> Casos: 290","Data: 2020-03-18 <br /> Casos: 428","Data: 2020-03-19 <br /> Casos: 621","Data: 2020-03-20 <br /> Casos: 904","Data: 2020-03-21 <br /> Casos: 1128","Data: 2020-03-22 <br /> Casos: 1546","Data: 2020-03-23 <br /> Casos: 1891","Data: 2020-03-24 <br /> Casos: 2201","Data: 2020-03-25 <br /> Casos: 2433","Data: 2020-03-26 <br /> Casos: 2915","Data: 2020-03-27 <br /> Casos: 3376"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18348,18349,18350,18351,18352],"y":[3.52845255343906,3.59392048753786,3.65938842163667,3.72485635573548,3.79032428983428],"text":["Data: 2020-03-27 <br /> Casos previstos: 3376 <br /> IC min: 3239 <br /> IC max: 3520","Data: 2020-03-28 <br /> Casos previstos: 3926 <br /> IC min: 3719 <br /> IC max: 4144","Data: 2020-03-29 <br /> Casos previstos: 4564 <br /> IC min: 4268 <br /> IC max: 4881","Data: 2020-03-30 <br /> Casos previstos: 5307 <br /> IC min: 4897 <br /> IC max: 5751","Data: 2020-03-31 <br /> Casos previstos: 6171 <br /> IC min: 5619 <br /> IC max: 6777"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(230,97,1,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(230,97,1,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.2754946727549,"r":7.30593607305936,"b":29.3344402933444,"l":69.4063926940639},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Número de casos notificados em escala logarítimica","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18315.25,18353.75],"tickmode":"array","ticktext":["01/mar","15/mar","01/abr"],"tickvals":[18322,18336,18353],"categoryorder":"array","categoryarray":["01/mar","15/mar","01/abr"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.191551271026028,4.02257669154659],"tickmode":"array","ticktext":["1","10","100","1000","10000"],"tickvals":[0,1,2,3,4],"categoryorder":"array","categoryarray":["1","10","100","1000","10000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de casos <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2afe2385ae3f2":{"x":{},"y":{},"ymin":{},"ymax":{},"type":"scatter"},"2afe23aedd8c1":{"x":{},"y":{},"ymin":{},"ymax":{}},"2afe242dc0e65":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}},"2afe22f59c191":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}}},"cur_data":"2afe2385ae3f2","visdat":{"2afe2385ae3f2":["function (y) ","x"],"2afe23aedd8c1":["function (y) ","x"],"2afe242dc0e65":["function (y) ","x"],"2afe22f59c191":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<hr />
-<p>Pontos pretos indicam o número de casos confirmados no Brasil por dia. <strong>Pontos em laranja são a previsão para os próximos 5 dias (entre 5618 e 6776 casos em 31/03/2020 )</strong>, se a taxa de crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.</p>
-<div id="por-que-só-5-dias" class="section level4">
-<h4>Por que só 5 dias?</h4>
-<p>Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o tempo. E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.</p>
-<p>Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="576" data-figure-id=fig1 style="display: block; margin: auto;" /> </a></p>
 </div>
+<div class="item">
+<h4>
+<a href="pais.html">Como epidemias se espalham por um país continental?</a>
+</h4>
+<p><a href="pais.html"> <img src="fig/voos_brasil.jpg" /> </a></p>
+<p>A chave pode estar na rede formada por aeroportos e vôos conectando os estados.</p>
 </div>
-<div id="quão-rápido-a-doença-se-propaga" class="section level3">
-<h3>Quão rápido a doença se propaga?</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="item">
+<h4>
+<a href="propagacao.html" id="tduplica">Quão rápido a doença se propaga?</a>
+</h4>
+<p><a href="propagacao.html"></p>
+<div class="knitr-options" data-fig-width="288" data-fig-height="192">
 
 </div>
-<div id="htmlwidget-6455503269728db498f2" style="width:768px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6455503269728db498f2">{"x":{"data":[{"x":[18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18347,18347,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18332],"y":[1.95087185813603,1.72952663269849,1.69557899816727,1.84984726301032,1.78695603238048,1.97961388665138,2.17002176250885,2.11770219359948,2.04648310233221,1.79731941683914,1.9249993262968,2.09955609802065,2.40674644983591,2.8892689724517,3.55984641922852,4.22200044548045,4.22200044548045,5.04697583266159,4.19569316533185,3.34487449371373,2.76364448564278,2.41620896651063,2.24413208826226,2.1301607829222,2.57745861227426,2.8236416193454,3.08333263673549,2.86774818365444,2.65201554417763,3.08649701487156,2.94569751644281,3.43371657784681,5.43005681684525,1.95087185813603],"text":["ic.inf: 1,950872<br />ic.sup: 5,430057<br />Index: 2020-03-11<br />estimativa: 2,885954","ic.inf: 1,729527<br />ic.sup: 3,433717<br />Index: 2020-03-12<br />estimativa: 2,309658","ic.inf: 1,695579<br />ic.sup: 2,945698<br />Index: 2020-03-13<br />estimativa: 2,158832","ic.inf: 1,849847<br />ic.sup: 3,086497<br />Index: 2020-03-14<br />estimativa: 2,318593","ic.inf: 1,786956<br />ic.sup: 2,652016<br />Index: 2020-03-15<br />estimativa: 2,138650","ic.inf: 1,979614<br />ic.sup: 2,867748<br />Index: 2020-03-16<br />estimativa: 2,345136","ic.inf: 2,170022<br />ic.sup: 3,083333<br />Index: 2020-03-17<br />estimativa: 2,549640","ic.inf: 2,117702<br />ic.sup: 2,823642<br />Index: 2020-03-18<br />estimativa: 2,421909","ic.inf: 2,046483<br />ic.sup: 2,577459<br />Index: 2020-03-19<br />estimativa: 2,282617","ic.inf: 1,797319<br />ic.sup: 2,130161<br />Index: 2020-03-20<br />estimativa: 1,950343","ic.inf: 1,924999<br />ic.sup: 2,244132<br />Index: 2020-03-21<br />estimativa: 2,072899","ic.inf: 2,099556<br />ic.sup: 2,416209<br />Index: 2020-03-22<br />estimativa: 2,247209","ic.inf: 2,406746<br />ic.sup: 2,763644<br />Index: 2020-03-23<br />estimativa: 2,573245","ic.inf: 2,889269<br />ic.sup: 3,344874<br />Index: 2020-03-24<br />estimativa: 3,100771","ic.inf: 3,559846<br />ic.sup: 4,195693<br />Index: 2020-03-25<br />estimativa: 3,852060","ic.inf: 4,222000<br />ic.sup: 5,046976<br />Index: 2020-03-26<br />estimativa: 4,598129","ic.inf: 4,222000<br />ic.sup: 5,046976<br />Index: 2020-03-26<br />estimativa: 4,598129","ic.inf: 4,222000<br />ic.sup: 5,046976<br />Index: 2020-03-26<br />estimativa: 4,598129","ic.inf: 3,559846<br />ic.sup: 4,195693<br />Index: 2020-03-25<br />estimativa: 3,852060","ic.inf: 2,889269<br />ic.sup: 3,344874<br />Index: 2020-03-24<br />estimativa: 3,100771","ic.inf: 2,406746<br />ic.sup: 2,763644<br />Index: 2020-03-23<br />estimativa: 2,573245","ic.inf: 2,099556<br />ic.sup: 2,416209<br />Index: 2020-03-22<br />estimativa: 2,247209","ic.inf: 1,924999<br />ic.sup: 2,244132<br />Index: 2020-03-21<br />estimativa: 2,072899","ic.inf: 1,797319<br />ic.sup: 2,130161<br />Index: 2020-03-20<br />estimativa: 1,950343","ic.inf: 2,046483<br />ic.sup: 2,577459<br />Index: 2020-03-19<br />estimativa: 2,282617","ic.inf: 2,117702<br />ic.sup: 2,823642<br />Index: 2020-03-18<br />estimativa: 2,421909","ic.inf: 2,170022<br />ic.sup: 3,083333<br />Index: 2020-03-17<br />estimativa: 2,549640","ic.inf: 1,979614<br />ic.sup: 2,867748<br />Index: 2020-03-16<br />estimativa: 2,345136","ic.inf: 1,786956<br />ic.sup: 2,652016<br />Index: 2020-03-15<br />estimativa: 2,138650","ic.inf: 1,849847<br />ic.sup: 3,086497<br />Index: 2020-03-14<br />estimativa: 2,318593","ic.inf: 1,695579<br />ic.sup: 2,945698<br />Index: 2020-03-13<br />estimativa: 2,158832","ic.inf: 1,729527<br />ic.sup: 3,433717<br />Index: 2020-03-12<br />estimativa: 2,309658","ic.inf: 1,950872<br />ic.sup: 5,430057<br />Index: 2020-03-11<br />estimativa: 2,885954","ic.inf: 1,950872<br />ic.sup: 5,430057<br />Index: 2020-03-11<br />estimativa: 2,885954"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347],"y":[2.88595399037457,2.30965840675684,2.15883233317841,2.3185929554066,2.13865035389424,2.34513597443327,2.54963956290592,2.42190913954073,2.28261716573528,1.95034269089136,2.07289859842284,2.24720856228126,2.57324533599758,3.10077061965939,3.85206042914667,4.59812883677766],"text":["Index: 2020-03-11<br />estimativa: 2,885954","Index: 2020-03-12<br />estimativa: 2,309658","Index: 2020-03-13<br />estimativa: 2,158832","Index: 2020-03-14<br />estimativa: 2,318593","Index: 2020-03-15<br />estimativa: 2,138650","Index: 2020-03-16<br />estimativa: 2,345136","Index: 2020-03-17<br />estimativa: 2,549640","Index: 2020-03-18<br />estimativa: 2,421909","Index: 2020-03-19<br />estimativa: 2,282617","Index: 2020-03-20<br />estimativa: 1,950343","Index: 2020-03-21<br />estimativa: 2,072899","Index: 2020-03-22<br />estimativa: 2,247209","Index: 2020-03-23<br />estimativa: 2,573245","Index: 2020-03-24<br />estimativa: 3,100771","Index: 2020-03-25<br />estimativa: 3,852060","Index: 2020-03-26<br />estimativa: 4,598129"],"type":"scatter","mode":"lines","line":{"width":4.7244094488189,"color":"rgba(0,0,139,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.7412480974125,"r":7.30593607305936,"b":29.3344402933444,"l":37.5259443752594},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18331.25,18347.75],"tickmode":"array","ticktext":["16/mar","23/mar"],"tickvals":[18337,18344],"categoryorder":"array","categoryarray":["16/mar","23/mar"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1.50885510723337,5.61678070777915],"tickmode":"array","ticktext":["2","3","4","5"],"tickvals":[2,3,4,5],"categoryorder":"array","categoryarray":["2","3","4","5"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Tempo de duplicação (dias) <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2afe26c474b3f":{"ymin":{},"ymax":{},"x":{},"y":{},"type":"scatter"},"2afe21537d7f8":{"x":{},"y":{}}},"cur_data":"2afe26c474b3f","visdat":{"2afe26c474b3f":["function (y) ","x"],"2afe21537d7f8":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<hr />
-<p>O tempo de duplicação indica <strong>quanto tempo leva para dobrar o número de casos</strong> . Quanto menor esse número, mais rápido a doença está se espalhando. Esse número depende muito das medidas de contenção da doença. <strong>A estimativa de hoje é entre 4,2 e 5 dias</strong>.</p>
-<p>A linha azul no gráfico mostra o tempo de duplicação estimado a intervalos de 5 dias (as datas indicam o fim de cada um desses intervalos). A faixa cinza é o intervalo de confiança desses tempos de duplicação. O intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação variam à medida que o tempo passa.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="288" data-figure-id=fig2 style="display: block; margin: auto;" /> </a></p>
 </div>
-<div id="para-quantas-pessoas-cada-infectado-transmite-a-doença" class="section level3">
-<h3>Para quantas pessoas cada infectado transmite a doença?</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="item">
+<h4>
+<a href="transmissao.html">Para quantas pessoas cada infectado transmite a doença?</a>
+</h4>
+<a href="transmissao.html">
+<div class="knitr-options" data-fig-width="288" data-fig-height="192">
 
 </div>
-<div id="htmlwidget-549d4425945fb3a69903" style="width:768px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-549d4425945fb3a69903">{"x":{"data":[{"x":[18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18347,18347,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18331,18331],"y":[1.78463048558594,2.23961281807004,2.59529843475871,2.37246462283204,2.07294177703498,2.73952202247782,2.34526584414098,2.15722971530144,2.54770887054348,2.78524267784055,2.9249176196401,2.56335002078009,2.5776248365549,2.26765653906115,2.00760709954563,1.74255200259742,1.68478861751047,1.68478861751047,2.65886071368672,3.01207490513689,3.74912241996888,4.48340665222755,5.27267224261917,5.24262275580053,5.62307911060386,5.12906827537284,4.75950154008229,4.27419882420803,4.59335568259901,5.38329407829439,4.42700886096732,4.99813094955343,5.38680165916043,5.2858090585378,5.2940885684881,1.78463048558594],"text":["Quantile.0.025.R: 1,784630<br />Quantile.0.975.R: 5,294089<br />Index: 2020-03-10<br />Mean.R: 3,126416","Quantile.0.025.R: 2,239613<br />Quantile.0.975.R: 5,285809<br />Index: 2020-03-11<br />Mean.R: 3,462809","Quantile.0.025.R: 2,595298<br />Quantile.0.975.R: 5,386802<br />Index: 2020-03-12<br />Mean.R: 3,788729","Quantile.0.025.R: 2,372465<br />Quantile.0.975.R: 4,998131<br />Index: 2020-03-13<br />Mean.R: 3,525261","Quantile.0.025.R: 2,072942<br />Quantile.0.975.R: 4,427009<br />Index: 2020-03-14<br />Mean.R: 3,081994","Quantile.0.025.R: 2,739522<br />Quantile.0.975.R: 5,383294<br />Index: 2020-03-15<br />Mean.R: 3,831445","Quantile.0.025.R: 2,345266<br />Quantile.0.975.R: 4,593356<br />Index: 2020-03-16<br />Mean.R: 3,318933","Quantile.0.025.R: 2,157230<br />Quantile.0.975.R: 4,274199<br />Index: 2020-03-17<br />Mean.R: 3,053225","Quantile.0.025.R: 2,547709<br />Quantile.0.975.R: 4,759502<br />Index: 2020-03-18<br />Mean.R: 3,472359","Quantile.0.025.R: 2,785243<br />Quantile.0.975.R: 5,129068<br />Index: 2020-03-19<br />Mean.R: 3,802549","Quantile.0.025.R: 2,924918<br />Quantile.0.975.R: 5,623079<br />Index: 2020-03-20<br />Mean.R: 4,115404","Quantile.0.025.R: 2,563350<br />Quantile.0.975.R: 5,242623<br />Index: 2020-03-21<br />Mean.R: 3,719824","Quantile.0.025.R: 2,577625<br />Quantile.0.975.R: 5,272672<br />Index: 2020-03-22<br />Mean.R: 3,686368","Quantile.0.025.R: 2,267657<br />Quantile.0.975.R: 4,483407<br />Index: 2020-03-23<br />Mean.R: 3,171002","Quantile.0.025.R: 2,007607<br />Quantile.0.975.R: 3,749122<br />Index: 2020-03-24<br />Mean.R: 2,721160","Quantile.0.025.R: 1,742552<br />Quantile.0.975.R: 3,012075<br />Index: 2020-03-25<br />Mean.R: 2,260230","Quantile.0.025.R: 1,684789<br />Quantile.0.975.R: 2,658861<br />Index: 2020-03-26<br />Mean.R: 2,082327","Quantile.0.025.R: 1,684789<br />Quantile.0.975.R: 2,658861<br />Index: 2020-03-26<br />Mean.R: 2,082327","Quantile.0.025.R: 1,684789<br />Quantile.0.975.R: 2,658861<br />Index: 2020-03-26<br />Mean.R: 2,082327","Quantile.0.025.R: 1,742552<br />Quantile.0.975.R: 3,012075<br />Index: 2020-03-25<br />Mean.R: 2,260230","Quantile.0.025.R: 2,007607<br />Quantile.0.975.R: 3,749122<br />Index: 2020-03-24<br />Mean.R: 2,721160","Quantile.0.025.R: 2,267657<br />Quantile.0.975.R: 4,483407<br />Index: 2020-03-23<br />Mean.R: 3,171002","Quantile.0.025.R: 2,577625<br />Quantile.0.975.R: 5,272672<br />Index: 2020-03-22<br />Mean.R: 3,686368","Quantile.0.025.R: 2,563350<br />Quantile.0.975.R: 5,242623<br />Index: 2020-03-21<br />Mean.R: 3,719824","Quantile.0.025.R: 2,924918<br />Quantile.0.975.R: 5,623079<br />Index: 2020-03-20<br />Mean.R: 4,115404","Quantile.0.025.R: 2,785243<br />Quantile.0.975.R: 5,129068<br />Index: 2020-03-19<br />Mean.R: 3,802549","Quantile.0.025.R: 2,547709<br />Quantile.0.975.R: 4,759502<br />Index: 2020-03-18<br />Mean.R: 3,472359","Quantile.0.025.R: 2,157230<br />Quantile.0.975.R: 4,274199<br />Index: 2020-03-17<br />Mean.R: 3,053225","Quantile.0.025.R: 2,345266<br />Quantile.0.975.R: 4,593356<br />Index: 2020-03-16<br />Mean.R: 3,318933","Quantile.0.025.R: 2,739522<br />Quantile.0.975.R: 5,383294<br />Index: 2020-03-15<br />Mean.R: 3,831445","Quantile.0.025.R: 2,072942<br />Quantile.0.975.R: 4,427009<br />Index: 2020-03-14<br />Mean.R: 3,081994","Quantile.0.025.R: 2,372465<br />Quantile.0.975.R: 4,998131<br />Index: 2020-03-13<br />Mean.R: 3,525261","Quantile.0.025.R: 2,595298<br />Quantile.0.975.R: 5,386802<br />Index: 2020-03-12<br />Mean.R: 3,788729","Quantile.0.025.R: 2,239613<br />Quantile.0.975.R: 5,285809<br />Index: 2020-03-11<br />Mean.R: 3,462809","Quantile.0.025.R: 1,784630<br />Quantile.0.975.R: 5,294089<br />Index: 2020-03-10<br />Mean.R: 3,126416","Quantile.0.025.R: 1,784630<br />Quantile.0.975.R: 5,294089<br />Index: 2020-03-10<br />Mean.R: 3,126416"],"type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347],"y":[3.12641629192788,3.46280914721064,3.78872860774489,3.52526071671024,3.08199354403796,3.83144458672741,3.3189331808754,3.0532246205375,3.47235930118145,3.80254892447836,4.11540373342416,3.71982430299603,3.68636756976204,3.17100208193343,2.72116020915278,2.26023049913871,2.08232723056983],"text":["Index: 2020-03-10<br />Mean.R: 3,126416","Index: 2020-03-11<br />Mean.R: 3,462809","Index: 2020-03-12<br />Mean.R: 3,788729","Index: 2020-03-13<br />Mean.R: 3,525261","Index: 2020-03-14<br />Mean.R: 3,081994","Index: 2020-03-15<br />Mean.R: 3,831445","Index: 2020-03-16<br />Mean.R: 3,318933","Index: 2020-03-17<br />Mean.R: 3,053225","Index: 2020-03-18<br />Mean.R: 3,472359","Index: 2020-03-19<br />Mean.R: 3,802549","Index: 2020-03-20<br />Mean.R: 4,115404","Index: 2020-03-21<br />Mean.R: 3,719824","Index: 2020-03-22<br />Mean.R: 3,686368","Index: 2020-03-23<br />Mean.R: 3,171002","Index: 2020-03-24<br />Mean.R: 2,721160","Index: 2020-03-25<br />Mean.R: 2,260230","Index: 2020-03-26<br />Mean.R: 2,082327"],"type":"scatter","mode":"lines","line":{"width":4.7244094488189,"color":"rgba(0,0,139,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18330.2,18347.8],"y":[1,1],"text":"yintercept: 1","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(255,0,0,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.7412480974125,"r":7.30593607305936,"b":29.3344402933444,"l":37.5259443752594},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18330.2,18347.8],"tickmode":"array","ticktext":["16/mar","23/mar"],"tickvals":[18337,18344],"categoryorder":"array","categoryarray":["16/mar","23/mar"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.558846044469807,5.86423306613405],"tickmode":"array","ticktext":["1","2","3","4","5"],"tickvals":[1,2,3,4,5],"categoryorder":"array","categoryarray":["1","2","3","4","5"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de reprodução <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2afe2516a3ecf":{"ymin":{},"ymax":{},"x":{},"y":{},"type":"scatter"},"2afe2239a0823":{"x":{},"y":{}},"2afe2e210092":{"yintercept":{}}},"cur_data":"2afe2516a3ecf","visdat":{"2afe2516a3ecf":["function (y) ","x"],"2afe2239a0823":["function (y) ","x"],"2afe2e210092":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-<hr />
-<p>O Número Reprodutivo efetivo (<span class="math inline">\(R_e\)</span>) é a média de pessoas contaminadas por um infectado. <strong>Números reprodutivos maiores que um indicam que a doença está se espalhando</strong>. Marcamos este limite com uma linha vermelha.</p>
-<p>Estimamos o <span class="math inline">\(R_e\)</span> da epidemia de COVID-19 no Brasil diariamente. <strong>No momento o <span class="math inline">\(R_e\)</span> está entre 1,7 e 2,7 </strong>.</p>
-<p>A linha azul no gráfico mostra a estimativa de <span class="math inline">\(R_e\)</span> a intervalos de 7 dias (as datas indicam o fim de cada um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de chance de incluir o valor real de <span class="math inline">\(R_e\)</span>. No momento há uma grande incerteza quanto ao valor de <span class="math inline">\(R_e\)</span>. Mas mesmo <strong>o limite mínimo do intervalo de confiança está bem acima de um, indicando que a epidemia está em expansão rápida</strong>.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="288" data-figure-id=fig3 style="display: block; margin: auto;" /> </a></p>
 </div>
-<div id="como-o-isolamento-social-influencia-a-dinâmica-de-propagação-da-epidemia" class="section level3">
-<h3>Como o isolamento social influencia a dinâmica de propagação da epidemia?</h3>
-<div class="figure">
-<img src="fig/rede_prsc.jpg" alt="" />
-<p class="caption">(<a href="https://guimaraeslabbr.weebly.com/COVID19.html" class="uri">https://guimaraeslabbr.weebly.com/COVID19.html</a>)</p>
+<div class="item">
+<h4>
+<a href="dinamica.html">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a>
+</h4>
+<p><a href="dinamica.html"> <img src="fig/rede_prsc.jpg" /> </a></p>
+<p>O isolamento social reduz a propagação de uma doença contagiosa.</p>
 </div>
-<hr />
-<p>Aqui, usamos <strong>um cenário bem simples para ilustrar as vantagens do isolamento social em reduzir a propagação de uma doença contagiosa</strong>. Nós traduzimos e adaptamos o <a href="http://ccl.northwestern.edu/netlogo/models/SpreadofDisease">modelo de propagação de um vírus</a> em uma rede social feito por Uri Wilensky (Northwestern University). Para ler mais e simular diferentes cenários, <a href="https://guimaraeslabbr.weebly.com/COVID19.html"><b>CLIQUE AQUI</b></a>.</p>
-<!-- 
-### Casos suspeitos estão aumentando?
-
-<div class="knitr-options" data-fig-width="768" data-fig-height="576"></div>
-<div id="htmlwidget-ac0e3f0bbd0cf90a9984" style="width:768px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ac0e3f0bbd0cf90a9984">{"x":{"data":[{"orientation":"v","width":[0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455],"base":[1640,1707,1894,2662,2927,3030,3599,3922,11000,13547],"x":[18330,18331,18332,18333,18334,18335,18336,18337,18338,18339],"y":[0,0,0,0,0,0,0,0,1,4],"text":["Classe: Óbitos<br />dia: 2020-03-09<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-10<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-11<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-12<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-13<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-14<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-15<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-16<br />N.casos:     0","Classe: Óbitos<br />dia: 2020-03-17<br />N.casos:     1","Classe: Óbitos<br />dia: 2020-03-18<br />N.casos:     4"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Óbitos","legendgroup":"Óbitos","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455],"base":[1615,1673,1842,2585,2829,2909,3399,3688,10709,13119],"x":[18330,18331,18332,18333,18334,18335,18336,18337,18338,18339],"y":[25,34,52,77,98,121,200,234,291,428],"text":["Classe: Confirmados<br />dia: 2020-03-09<br />N.casos:    25","Classe: Confirmados<br />dia: 2020-03-10<br />N.casos:    34","Classe: Confirmados<br />dia: 2020-03-11<br />N.casos:    52","Classe: Confirmados<br />dia: 2020-03-12<br />N.casos:    77","Classe: Confirmados<br />dia: 2020-03-13<br />N.casos:    98","Classe: Confirmados<br />dia: 2020-03-14<br />N.casos:   121","Classe: Confirmados<br />dia: 2020-03-15<br />N.casos:   200","Classe: Confirmados<br />dia: 2020-03-16<br />N.casos:   234","Classe: Confirmados<br />dia: 2020-03-17<br />N.casos:   291","Classe: Confirmados<br />dia: 2020-03-18<br />N.casos:   428"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(124,174,0,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Confirmados","legendgroup":"Confirmados","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455],"base":[685,780,935,1163,1344,1413,1486,1624,1890,1841],"x":[18330,18331,18332,18333,18334,18335,18336,18337,18338,18339],"y":[930,893,907,1422,1485,1496,1913,2064,8819,11278],"text":["Classe: Suspeitos<br />dia: 2020-03-09<br />N.casos:   930","Classe: Suspeitos<br />dia: 2020-03-10<br />N.casos:   893","Classe: Suspeitos<br />dia: 2020-03-11<br />N.casos:   907","Classe: Suspeitos<br />dia: 2020-03-12<br />N.casos:  1422","Classe: Suspeitos<br />dia: 2020-03-13<br />N.casos:  1485","Classe: Suspeitos<br />dia: 2020-03-14<br />N.casos:  1496","Classe: Suspeitos<br />dia: 2020-03-15<br />N.casos:  1913","Classe: Suspeitos<br />dia: 2020-03-16<br />N.casos:  2064","Classe: Suspeitos<br />dia: 2020-03-17<br />N.casos:  8819","Classe: Suspeitos<br />dia: 2020-03-18<br />N.casos: 11278"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(0,191,196,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Suspeitos","legendgroup":"Suspeitos","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":[0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455,0.900000000001455],"base":[0,0,0,0,0,0,0,0,0,0],"x":[18330,18331,18332,18333,18334,18335,18336,18337,18338,18339],"y":[685,780,935,1163,1344,1413,1486,1624,1890,1841],"text":["Classe: Descartados<br />dia: 2020-03-09<br />N.casos:   685","Classe: Descartados<br />dia: 2020-03-10<br />N.casos:   780","Classe: Descartados<br />dia: 2020-03-11<br />N.casos:   935","Classe: Descartados<br />dia: 2020-03-12<br />N.casos:  1163","Classe: Descartados<br />dia: 2020-03-13<br />N.casos:  1344","Classe: Descartados<br />dia: 2020-03-14<br />N.casos:  1413","Classe: Descartados<br />dia: 2020-03-15<br />N.casos:  1486","Classe: Descartados<br />dia: 2020-03-16<br />N.casos:  1624","Classe: Descartados<br />dia: 2020-03-17<br />N.casos:  1890","Classe: Descartados<br />dia: 2020-03-18<br />N.casos:  1841"],"type":"bar","marker":{"autocolorscale":false,"color":"rgba(199,124,255,1)","line":{"width":1.88976377952756,"color":"transparent"}},"name":"Descartados","legendgroup":"Descartados","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":25.7412480974125,"r":7.30593607305936,"b":29.3344402933444,"l":69.4063926940639},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18329.055,18339.945],"tickmode":"array","ticktext":["10/mar","12/mar","14/mar","16/mar","18/mar"],"tickvals":[18331,18333,18335,18337,18339],"categoryorder":"array","categoryarray":["10/mar","12/mar","14/mar","16/mar","18/mar"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-677.55,14228.55],"tickmode":"array","ticktext":["0","5000","10000"],"tickvals":[0,5000,10000],"categoryorder":"array","categoryarray":["0","5000","10000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de casos <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895},"y":0.927821522309711},"annotations":[{"text":"Classe","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"bottom","legendTitle":true}],"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"2afe24b3562e":{"fill":{},"x":{},"y":{},"type":"bar"}},"cur_data":"2afe24b3562e","visdat":{"2afe24b3562e":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
-
-***
-
-Casos suspeitos são pacientes com sintomas e que tiveram contato com
-outros casos suspeitos ou confirmados, ou ainda com pessoas que chegaram de área
-afetada. Veja definição em detalhes no [site do Ministério da
-Saúde](http://plataforma.saude.gov.br/novocoronavirus/#COVID-19-definition).
-
-Os casos suspeitos são avaliados pelo sistema de saúde, podendo ser
-classificados em casos confirmados ou descartados.
-
-Desde que o Brasil notificou 19 casos confirmados (07/03/2020), **os casos
-suspeitos formam a maioria dos casos reportados oficialmente, e estão
-crescendo muito rápido**.
-
--->
-</div>
-<div id="como-epidemias-se-espalham-por-um-país-continental" class="section level3">
-<h3>Como epidemias se espalham por um país continental?</h3>
-<div class="figure">
-<img src="fig/voos_brasil.jpg" alt="" />
-<p class="caption">(<a href="https://guimaraeslabbr.weebly.com/COVID19.html" class="uri">https://guimaraeslabbr.weebly.com/COVID19.html</a>)</p>
-</div>
-<hr />
-<p>A chave pode estar na rede formada por aeroportos e vôos conectando os estados brasileiros. Portanto, a análise da estrutura dessa rede aérea pode nos ajudar a entender a propagação do COVID-19 por nosso país.</p>
-<p><a href="https://guimaraeslabbr.weebly.com/voos.html"><b>Leia mais aqui</b></a>.</p>
-</div>
-<div id="como-posso-saber-mais-sobre-epidemias-e-as-análises-deste-site" class="section level3">
-<h3>Como posso saber mais sobre epidemias e as análises deste site?</h3>
-<div class="figure">
-<img src="fig/2020-marco-roberto-fisica-ao-vivo.jpg" alt="" />
-<p class="caption"><a href="https://youtu.be/4E0QBcN7Uw8" class="uri">https://youtu.be/4E0QBcN7Uw8</a></p>
-</div>
-<hr />
-<p>Assista à <a href="https://youtu.be/4E0QBcN7Uw8">palestra de Roberto Kraenkel</a> para a série de vídeos de divulgação científica <a href="http://www.sbfisica.org.br/v1/home/index.php/pt/fisica-ao-vivo">Física ao Vivo</a>, da <a href="http://www.sbfisica.org.br/v1/home/index.php/pt/">Sociedade Brasileira de Física</a>.</p>
-<p>Roberto é um dos criadores do <strong>Observatório Covid-19 BR</strong>, e apresenta no vídeo os conceitos básicos da epidemiologia, usando material que o Observatório disponibiliza neste site.</p>
 </div>
 
 </div>
@@ -2734,10 +2655,10 @@ StatCounter"></a></div></noscript>
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    theme: "cosmo",
+    theme: "cerulean",
     fillPage: true,
     orientation: "columns",
-    storyboard: true,
+    storyboard: false,
     defaultFigWidth: 576,
     defaultFigHeight: 460,
     defaultFigWidthMobile: 360,

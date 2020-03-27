@@ -21,7 +21,7 @@ output:
    in_header: header.html
 ---
 
-<h2>Quem somos</h2>
+### Quem somos
 
 O **Observatório Covid-19 BR** é uma iniciativa independente, fruto da
 colaboração entre pesquisadores com o desejo de contribuir para a
@@ -36,8 +36,7 @@ Markdown](https://rmarkdown.rstudio.com/) e os códigos podem ser
 encontrados em nosso [GitHub](https://github.com/covid19br/covid19BR).
 
 
-
-<h3>Motivação</h3>
+### Motivação
 
 <b>Diante da propagação da COVID-19, doença causada pelo novo
 coronavírus, a Organização Mundial da Saúde (OMS) decretou pandemia
@@ -66,76 +65,56 @@ partir de um ponto de vista científico.</b>
 
 </p>
 
-<h3> Contato </h3>
+### Contato
  
 Envie mensagem para: obscovid19br@gmail.com
 
 
-<h3>Equipe</h3>
+### Equipe
 
-* Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
-    + [CV](http://lattes.cnpq.br/1738716619940707)
+* Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1738716619940707)
 	
-* Caroline Franco (doutoranda @ [IFT-UNESP](https://www.ift.unesp.br/))
-    + [CV](http://lattes.cnpq.br/1810788882318135)
+* Caroline Franco (doutoranda @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/1810788882318135)
 
-* Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) )
-    + [CV](http://lattes.cnpq.br/0111799832635782)
+* Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) ) | [CV](http://lattes.cnpq.br/0111799832635782)
 
-* Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/))
-    + [CV](http://lattes.cnpq.br/750889398476891)
+* Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
 
-* Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) )
-    + [CV](lattes: http://lattes.cnpq.br/3740948585907265)
+* Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](lattes: http://lattes.cnpq.br/3740948585907265)
 
 * Irina Lerner (bacharelanda @ [CCM-USP](http://www.cecm.usp.br/index.html))
 
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
-* Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/))
-    + [CV](http://lattes.cnpq.br/1251914870700498)
+* Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/)) | [CV](http://lattes.cnpq.br/1251914870700498)
 
-* Leonardo Souto Ferreira (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
-    + [CV](http://lattes.cnpq.br/7427980482483909)
+* Leonardo Souto Ferreira (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/7427980482483909)
 
-* Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/))
-    + [CV](http://lattes.cnpq.br/3654522236249726)
+* Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/3654522236249726)
 
-* Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) )
-    + [CV](http://lattes.cnpq.br/9213292464230085)
+* Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) ) | [CV](http://lattes.cnpq.br/9213292464230085)
 
-* Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/))
-    + [CV](http://lattes.cnpq.br/2869271527300181)
+* Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/)) | [CV](http://lattes.cnpq.br/2869271527300181)
 	
-* Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/))
-    + [CV](http://lattes.cnpq.br/9619030543047007)
+* Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/)) | [CV](http://lattes.cnpq.br/9619030543047007)
 
-* Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/))
-    + [CV](http://lattes.cnpq.br/3884092565521453)
+* Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3884092565521453)
 
-* Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) )
-    + [CV](http://lattes.cnpq.br/3085324638663546)
+* Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/3085324638663546)
 	
-* Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/))
-    + [CV](http://lattes.cnpq.br/1301865568118160)
+* Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/)) | [CV](http://lattes.cnpq.br/1301865568118160)
 
-* Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/))
-    + [CV](http://lattes.cnpq.br/8497878967418484)
+* Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/)) | [CV](http://lattes.cnpq.br/8497878967418484)
 
-* Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br))
-    + [CV](http://lattes.cnpq.br/9741820804547685)
+* Rodrigo Corder (doutorando @ [ICB-USP](http://ww3.icb.usp.br)) | [CV](http://lattes.cnpq.br/9741820804547685)
 
-* Silas Poloni Lyra (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/) )
-    + [CV](http://lattes.cnpq.br/3162809212291639)
+* Silas Poloni Lyra (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/3162809212291639)
 
-* Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP](http://ecologia.ib.usp.br/) )
-    + [CV](http://lattes.cnpq.br/8988655613888832)
+* Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP](http://ecologia.ib.usp.br/) ) | [CV](http://lattes.cnpq.br/8988655613888832)
 
-* Vítor Sudbrack (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) )
-    + [CV](http://lattes.cnpq.br/1687206263257247)
+* Vítor Sudbrack (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1687206263257247)
 
-* Wendell Pereira Barreto 
-    + [CV](http://lattes.cnpq.br/0639412837460678)
+* Wendell Pereira Barreto  | [CV](http://lattes.cnpq.br/0639412837460678)
 
 
 

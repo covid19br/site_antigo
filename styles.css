@@ -6,8 +6,26 @@
   background-size: cover;
 }
 
+.chart-wrapper .chart-notes {
+    font-size: 14px;
+}
+
+.chart-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 10px 4px;
+}
+
+.chart-stage img {
+    max-width: 80%;
+}
+
 .sbframelist li {
   font-weight: 500;
+}
+
+.section .level3 {
+  max-width: 1024px;
 }
 
 @media only screen and (max-width: 479px){
