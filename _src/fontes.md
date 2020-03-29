@@ -38,8 +38,10 @@ Lista em construção, as iniciativas se multiplicam. Se você tem
 trabalho na área nos escreva para divulgarmos aqui. E por favor
 divulgue o nosso trabalho também.
 
-*[COVI19 BRASIL](https://ciis.fmrp.usp.br/covid19), portal de pesquisadores da USP e UnB, com dados em tempo real, análise e modelos de predição.
+* [COVI19 BRASIL](https://ciis.fmrp.usp.br/covid19), portal de pesquisadores da USP e UnB. Com dados em tempo real, análise e modelos de predição.
+
 * [covidbr](https://liibre.github.io/coronabr/), pacote em [R](https://www.r-project.org) para download dos dados oficiais de COVID-19, por Sara Mortara e Andrea Sánchez-Tapia, Jardim Botânico do Rio de Janeiro. 
+
 * [Número de casos confirmados de COVID-19 no Brasil](https://labs.wesleycota.com/sarscov2/br), Wesley Cota, Universidade de Viçosa.
 
 
