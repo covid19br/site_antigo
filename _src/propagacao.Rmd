@@ -42,7 +42,7 @@ ggplotly(plot.tempo.dupl)
 
 ###
 
-O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos** . 
+O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos confirmados**. 
 Quanto menor esse número, mais rápido a
 doença está se espalhando. Esse número depende muito das medidas
 de contenção da doença. **A estimativa de hoje é  entre 
@@ -56,5 +56,9 @@ duplicação. O intervalo largo mostra que a incerteza é
 grande, mas mesmo assim vemos que tempos de duplicação variam à medida
 que o tempo passa. 
 
+###
 
+**Atenção:** O tempo de duplicação aqui divulgado se refere aos dados de casos confirmados pelo Ministério da Saúde.
+Atrasos de notificação, além da subnotificação e mudanças em seu protocolo, afetam o seu cálculo. 
+Os resultados recentes de aumento no tempo de duplicação podem ser devido tanto à dinâmica das notificações quanto à dinâmica da epidemia. Não há como separá-las sem informações mais detalhadas sobre cobertura de testagem ou número de testes aguardando análise por parte dos órgãos públicos.  
 
