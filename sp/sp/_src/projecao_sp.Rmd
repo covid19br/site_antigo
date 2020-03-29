@@ -1,0 +1,65 @@
+---
+title: "Observatório COVID-19 SP"
+date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
+output:
+ flexdashboard::flex_dashboard:
+  orientation: column
+  vertical_layout: scroll
+  theme: cerulean
+  self_contained: false
+  lib_dir: ../libs
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: 'styles.css'
+  navbar:
+    - { title: "Início", href: "../index.html", align: left}
+    - { title: "São Paulo", href: "index.html", align: left}
+    - { title: "+Info", href: "../informacoes.html", align: left}
+    - { title: "Fontes", href: "../fontes.html", align: left}
+    - { title: "Na Mídia", href: "../midia.html", align: left}
+    - { title: "Sobre", href: "../sobre.html", align: left}
+  favicon: favicon.png
+  includes:
+   after_body: ../../_src/footer.html
+   in_header: ../../_src/header.html
+---
+
+
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(flexdashboard)
+#library(xtable)
+library(knitr)
+library(plotly)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
+```
+
+
+### Quantos casos já temos em São Paulo? Quantos teremos nos próximos dias?
+
+```{r}
+ggplotly(plot.forecast.exp, tooltip = "text")
+##plot.forecast.exp
+```
+
+>Pontos pretos indicam o número de casos confirmados em São Paulo por dia.
+**Pontos em laranja são a previsão para os próximos 5 dias (entre 
+`r  as.integer(exp.5d[max(nrow(exp.5d)),2])` e `r as.integer(exp.5d[max(nrow(exp.5d)),3])` 
+casos em `r format(max(time(exp.5d)), "%d/%m/%Y")` )**, se a taxa de
+crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
+intervalo de confiança dessa previsão.
+
+
+### Por que só 5 dias?
+
+Porque quando o crescimento é exponencial as incertezas também crescem
+exponencialmente. Por isso a região cinza, que expressa a
+incerteza da previsão, aumenta de largura com
+o tempo.  E mesmo pequenas mudanças na taxa que aconteçam
+hoje ou amanhã vão causar enormes variações no futuro. 
+
+Por isso avaliamos que é inadequado fazer
+previsões para mais de 5 dias com este método.
+
+
