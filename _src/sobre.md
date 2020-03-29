@@ -6,7 +6,6 @@ output:
   vertical_layout: scroll
   self_contained: false
   lib_dir: ../libs
-  source: embed
   source_code: "https://github.com/covid19br/covid19br.github.io"
   social: menu
   css: styles.css
@@ -14,6 +13,7 @@ output:
     - { title: "Início", href: "index.html", align: left}
     - { title: "+Info", href: "informacoes.html", align: left}
     - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
     - { title: "Sobre", href: "sobre.html", align: left}
   favicon: favicon.png
   includes:
@@ -78,6 +78,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) ) | [CV](http://lattes.cnpq.br/0111799832635782)
 
+* Fabiana Rodrigues Arantes (física e artista @ https://artfabi.com/ ) | [CV](http://lattes.cnpq.br/2495800931137053)
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
 
 * Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](lattes: http://lattes.cnpq.br/3740948585907265)
