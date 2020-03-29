@@ -18,8 +18,8 @@ output:
     - { title: "Sobre", href: "../sobre.html", align: left}
   favicon: favicon.png
   includes:
-   after_body: footer.html
-   in_header: header.html
+   after_body: ../../_src/footer.html
+   in_header: ../../_src/header.html
 ---
 
 ```{r setOptions, include=FALSE, message=FALSE}

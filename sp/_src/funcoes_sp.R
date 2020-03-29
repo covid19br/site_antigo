@@ -94,7 +94,7 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
 ## 
 ##   day0 : day to start the analysis
 ##   delay : 7 #number of days
-estimate.R0 <- function(novos.casos, day0=9, delay=7, ...){
+estimate.R0 <- function(novos.casos, day0=8, delay=7, ...){
     library(EpiEstim)
     config <- make_config(list(si_parametric_distr = "L",
                            mean_si = 4.8, std_mean_si = 0.71,
