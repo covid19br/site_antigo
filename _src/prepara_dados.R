@@ -1,5 +1,6 @@
 ## Bibliotecas necessarias
 library(zoo)
+
 ## Funcoes
 source("funcoes.R")
 ## Leitura dos dados
@@ -16,3 +17,4 @@ brasil.ivis <- brasil.ivis[, c(1,2,4,3,5)]
 brasil.ivis$dia <- as.Date(brasil.ivis$dia, "%Y-%m-%d")
 ## objeto zoo
 brasil.ivis.zoo <- zoo(brasil.ivis[,-1], brasil.ivis$dia)
+
