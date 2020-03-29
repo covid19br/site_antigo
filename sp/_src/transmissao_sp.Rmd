@@ -1,0 +1,62 @@
+---
+title: "Observatório COVID-19 SP"
+date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
+output:
+ flexdashboard::flex_dashboard:
+  orientation: column
+  vertical_layout: scroll
+  theme: cerulean
+  self_contained: false
+  lib_dir: ../libs
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: 'styles.css'
+  navbar:
+    - { title: "Início", href: "../index.html", align: left}
+    - { title: "São Paulo", href: "index.html", align: left}
+    - { title: "+Info", href: "../informacoes.html", align: left}
+    - { title: "Fontes", href: "../fontes.html", align: left}
+    - { title: "Na Mídia", href: "../midia.html", align: left}
+    - { title: "Sobre", href: "../sobre.html", align: left}
+  favicon: favicon.png
+  includes:
+   after_body: footer.html
+   in_header: header.html
+---
+
+
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(flexdashboard)
+#library(xtable)
+library(knitr)
+library(plotly)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
+```
+### Para quantas pessoas cada infectado transmite a doença?
+
+```{r}
+##plot.estimate.R0
+ggplotly(plot.estimate.R0)
+```
+
+###
+
+O Número Reprodutivo efetivo ($R_e$) é a média de pessoas contaminadas
+por um infectado.  **Números reprodutivos maiores que um indicam que a
+doença está se espalhando**. Marcamos este limite com uma linha vermelha.
+
+Estimamos o $R_e$ da epidemia de COVID-19 em São Paulo diariamente.
+**No momento o $R_e$ está entre 
+`r round(res.uncertain.si$R[nrow(res.uncertain.si$R), 5],1)` e
+ `r round(res.uncertain.si$R[nrow(res.uncertain.si$R), 11],1)` **.
+ 
+A linha azul no gráfico mostra a estimativa de $R_e$ a intervalos de 7
+dias (as datas indicam o fim de cada um desses intervalos). A faixa
+cinza é o intervalo de confiança dessas estimativas.  Esse intervalo
+tem 95% de chance de incluir o valor real de $R_e$. No momento há uma
+grande incerteza quanto ao valor de $R_e$. Mas mesmo **o limite mínimo
+do intervalo de confiança está bem acima de um, indicando que a
+epidemia está em expansão rápida**.
+
