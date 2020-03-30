@@ -90,7 +90,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
 
-* Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](lattes: http://lattes.cnpq.br/3740948585907265)
+* Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](http://lattes.cnpq.br/3740948585907265)
 
 * Irina B. Barros (doutoranda @ University of California) | [CV](http://lattes.cnpq.br/3183781480200250)
 
