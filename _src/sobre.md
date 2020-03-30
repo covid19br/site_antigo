@@ -98,7 +98,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
-* Kate P. Maia (ps doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2035115116584174)
+* Kate P. Maia (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2035115116584174)
 
 * Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/)) | [CV](http://lattes.cnpq.br/1251914870700498)
 
