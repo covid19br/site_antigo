@@ -72,28 +72,53 @@ Envie mensagem para: obscovid19br@gmail.com
 
 ### Equipe
 
+* Ana Paula A. de Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/1901397112835628)
+
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1738716619940707)
 	
 * Caroline Franco (doutoranda @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/1810788882318135)
 
+* Cecília S. de Andreazzi (tecnologista @ Fundação Oswaldo Cruz) | [CV](http://lattes.cnpq.br/7344032911778389)
+
+* Danilo G. Muniz da Silva (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3922429014710806)
+
 * Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) ) | [CV](http://lattes.cnpq.br/0111799832635782)
 
+* Erika Marques Santana (técnica @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/4873694782558406)
+
 * Fabiana Rodrigues Arantes (física e artista @ https://artfabi.com/ ) | [CV](http://lattes.cnpq.br/2495800931137053)
+
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
 
 * Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](lattes: http://lattes.cnpq.br/3740948585907265)
+
+* Irina B. Barros (doutoranda @ University of California) | [CV](http://lattes.cnpq.br/3183781480200250)
 
 * Irina Lerner (bacharelanda @ [CCM-USP](http://www.cecm.usp.br/index.html))
 
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
+* Kate P. Maia (ps doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2035115116584174)
+
 * Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/)) | [CV](http://lattes.cnpq.br/1251914870700498)
 
+* Leandro G. Cosmo (doutorando @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/8022223997680224)
+
 * Leonardo Souto Ferreira (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/7427980482483909)
+
+* Lucas P. de Medeiros (doutorando @ MIT) | [CV](http://lattes.cnpq.br/8194959344563273)
 
 * Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/3654522236249726)
 
 * Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) ) | [CV](http://lattes.cnpq.br/9213292464230085)
+
+* Marilia P. Gaiarsa (pesquisadora @ University of California) | [CV](http://lattes.cnpq.br/6763492504422527)
+
+* Mathias M. Pires (professor @ IB - UNICAMP) | [CV](http://lattes.cnpq.br/1369273685630276)
+
+* Mauricio N. Cantor Magnani (professor @ UFSC) | [CV](http://lattes.cnpq.br/1195966541381142)
+
+* Pamela C. Santana (doutoranda @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2857205934833784)
 
 * Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/)) | [CV](http://lattes.cnpq.br/2869271527300181)
 	
@@ -101,8 +126,12 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3884092565521453)
 
+* Paulo R. Guimarães Jr. (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/9619030543047007)
+
 * Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/3085324638663546)
-	
+
+* Rafael Luís G. Raimundo (professor @ DEMA - UFPB) | [CV](http://lattes.cnpq.br/9236593676134620)
+
 * Renato Coutinho  (professor @ [CMCC-UFABC](http://professor.ufabc.edu.br/~renato.coutinho/)) | [CV](http://lattes.cnpq.br/1301865568118160)
 
 * Roberto Kraenkel (professor @ [IFT-UNESP](https://professores.ift.unesp.br/roberto.kraenkel/)) | [CV](http://lattes.cnpq.br/8497878967418484)
@@ -117,5 +146,4 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Wendell Pereira Barreto  | [CV](http://lattes.cnpq.br/0639412837460678)
 
-
-
+* Wesley F. Dáttilo da Cruz (professor @ A.C.México) | [CV](http://lattes.cnpq.br/4069859384161064)
