@@ -72,7 +72,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 ### Equipe
 
-* Ana Paula A. de Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/1901397112835628)
+* Ana Paula A. de Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/1901397112835628)
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1738716619940707)
 	
@@ -80,11 +80,11 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Cecília S. de Andreazzi (tecnologista @ Fundação Oswaldo Cruz) | [CV](http://lattes.cnpq.br/7344032911778389)
 
-* Danilo G. Muniz da Silva (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3922429014710806)
+* Danilo G. Muniz da Silva (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/3922429014710806)
 
 * Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) ) | [CV](http://lattes.cnpq.br/0111799832635782)
 
-* Erika Marques Santana (técnica @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/4873694782558406)
+* Erika Marques Santana (técnica @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/4873694782558406)
 
 * Fabiana Rodrigues Arantes (física e artista @ https://artfabi.com/ ) | [CV](http://lattes.cnpq.br/2495800931137053)
 
@@ -98,11 +98,11 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Júlia Yoko Lopes Yamaguti (bacharelanda @ [UFABC](http://ufabc.edu.br))
 
-* Kate P. Maia (pós doc @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2035115116584174)
+* Kate P. Maia (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/2035115116584174)
 
 * Laís de Souza Alves (doutoranda @ [IF - UnB](https://www.fis.unb.br/)) | [CV](http://lattes.cnpq.br/1251914870700498)
 
-* Leandro G. Cosmo (doutorando @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/8022223997680224)
+* Leandro G. Cosmo (doutorando @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/8022223997680224)
 
 * Leonardo Souto Ferreira (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/7427980482483909)
 
@@ -118,7 +118,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Mauricio N. Cantor Magnani (professor @ UFSC) | [CV](http://lattes.cnpq.br/1195966541381142)
 
-* Pamela C. Santana (doutoranda @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/2857205934833784)
+* Pamela C. Santana (doutoranda @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/2857205934833784)
 
 * Paula Lemos-Costa (pós doc @ [University of Chicago](https://lemoscosta.weebly.com/)) | [CV](http://lattes.cnpq.br/2869271527300181)
 	
@@ -126,7 +126,7 @@ Envie mensagem para: obscovid19br@gmail.com
 
 * Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3884092565521453)
 
-* Paulo R. Guimarães Jr. (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/9619030543047007)
+* Paulo R. Guimarães Jr. (professor @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/9619030543047007)
 
 * Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/3085324638663546)
 
