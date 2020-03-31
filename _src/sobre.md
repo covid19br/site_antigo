@@ -67,7 +67,9 @@ partir de um ponto de vista científico.</b>
 
 ### Contato
  
-Envie mensagem para: obscovid19br@gmail.com
+* Para comentários, sugestões e colaborações científicas, por favor, envie mensagem para nós via obscovid19br@gmail.com .
+
+* Para imprensa e entrevistas, por favor, contate o jornalista Carlos Tautz (carlostautz01@gmail.com). 
 
 
 ### Equipe
@@ -75,7 +77,9 @@ Envie mensagem para: obscovid19br@gmail.com
 * Ana Paula A. de Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/1901397112835628)
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1738716619940707)
-	
+
+* Carlos Tautz (jornalista e doutorando em História @ UFF)
+
 * Caroline Franco (doutoranda @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/1810788882318135)
 
 * Cecília S. de Andreazzi (tecnologista @ Fundação Oswaldo Cruz) | [CV](http://lattes.cnpq.br/7344032911778389)
@@ -125,8 +129,6 @@ Envie mensagem para: obscovid19br@gmail.com
 * Paulo Guimarães Jr (Miúdo) (professor @ [IB-USP](http://guimaraeslab.weebly.com/)) | [CV](http://lattes.cnpq.br/9619030543047007)
 
 * Paulo Inácio Prado (professor @ [IB-USP](http://ecologia.ib.usp.br/let/)) | [CV](http://lattes.cnpq.br/3884092565521453)
-
-* Paulo R. Guimarães Jr. (professor @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/9619030543047007)
 
 * Rafael Lopes Paixão da Silva (doutorando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/3085324638663546)
 
