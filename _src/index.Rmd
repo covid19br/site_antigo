@@ -53,17 +53,20 @@ plot.forecast.exp
   
  </div>
 
-<!--<div class="item">
+<div class="item">
   <h4><a href="propagacao.html" id="tduplica">Quão rápido a doença se propaga?</a></h4>
+No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes moleculares sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora faz com que os números disponíveis publicamente (número de notificações) cresça de maneira artificialmente lenta.
+
+Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
   
-  <a href="propagacao.html">
+ <!-- <a href="propagacao.html">
   
 ```{r}
 plot.tempo.dupl + theme(axis.text.x = element_text(size = 10),
                         axis.title.y = element_text(size = 8))
 ```
-  </a>
-</div>-->
+  </a>-->
+</div>
 
 <!--<div class="item">
   <h4><a href="transmissao.html">Para quantas pessoas cada infectado transmite a doença?</a></h4>
