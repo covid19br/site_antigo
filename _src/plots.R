@@ -34,7 +34,7 @@ plot.forecast.exp <-
                         "IC min:", round(ic.low), "\n",
                         "IC max:", round(ic.upp))),
                 size=2, col="#e66101") +
-    scale_x_date(date_labels = "%d/%b", name="") +
+    scale_x_date(date_labels = "%d/%b", name="", limits=c(as.Date('2020-02-25'), NA)) +
     scale_y_log10() +
     ##ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
     ylab("Número de casos") +
@@ -70,13 +70,13 @@ plot.estimate.R0 <-
 ## Evolucao de casos suspeitos, descartados e confirmados
 ################################################################################
 
-evolucao.tipos.casos <-
-    brasil.ivis %>%
-    filter(!is.na(Suspeitos)) %>%
-    gather(Suspeitos:Óbitos, key = Classe, value = N.casos) %>%
-    mutate(Classe = factor(Classe, levels =c("Óbitos", "Confirmados", "Suspeitos","Descartados"))) %>%
-    ggplot(aes(dia,N.casos)) +
-    geom_col(aes(fill=Classe)) +
-    scale_x_date( date_labels = "%d/%b", name="") +
-    ylab("Número de casos") +
-    plot.formatos
+#evolucao.tipos.casos <-
+#    brasil.ivis %>%
+#    filter(!is.na(Suspeitos)) %>%
+#    gather(Suspeitos:Óbitos, key = Classe, value = N.casos) %>%
+#    mutate(Classe = factor(Classe, levels =c("Óbitos", "Confirmados", "Suspeitos","Descartados"))) %>%
+#    ggplot(aes(dia,N.casos)) +
+#    geom_col(aes(fill=Classe)) +
+#    scale_x_date( date_labels = "%d/%b", name="") +
+#    ylab("Número de casos") +
+#    plot.formatos

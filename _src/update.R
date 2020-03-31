@@ -5,8 +5,9 @@ library(rmarkdown)
 
 static_pages <- c('sobre.md', 'fontes.md', 'midia.md')
 dynamic_pages <- c('index.Rmd', 'informacoes.Rmd', 'projecao.Rmd', 'pais.Rmd',
-                   'casos.Rmd', 'dinamica.Rmd')
+                   'dinamica.Rmd')
 # 'propagacao.Rmd', 'transmissao.Rmd'
+# 'casos.Rmd', 
 all_pages <- c(static_pages, dynamic_pages)
 
 for (f in all_pages){
