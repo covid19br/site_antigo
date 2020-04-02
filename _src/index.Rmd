@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=3,
 <div class="container">
 
 <div class="item2">
-  <h4><a href="projecao.html" id="casos">Quantos casos já temos no Brasil? Quantos teremos nos próximos dias? </a></h4>
+  <h4><a href="projecao.html" id="casos">Quantos casos notificados no Brasil? Quantos serão notificados nos próximos dias? </a></h4>
   <a href="projecao.html">
 ```{r , fig.width = 6, fig.height=4}
 plot.forecast.exp
