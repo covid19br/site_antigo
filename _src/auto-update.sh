@@ -6,7 +6,7 @@ hoje=`date +"%Y-%m-%d"`
 ontem=`date -d "yesterday" +"%Y-%m-%d"`
 
 print_help(){
-    echo -e "\nBaixa dados do IVIS e atualiza o site.\n"
+    echo -e "\nBaixa dados do MS e atualiza o site.\n"
     echo -e "  Opções:\n"
     echo -e "    -h help"
 #    echo -e "    -q quieto"
@@ -44,15 +44,25 @@ shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
 if [ $download = 1 ]; then
-    python downloader.py
+    R --no-save < atualiza_dados.R
     downloaded=$?
+    if [ $downloaded = 0 ]; then
+        git status -s
+        git diff-index --quiet HEAD --
+        if [ $? != 0 ]; then
+            git add ../dados/BrasilCov19.csv ../dados/EstadosCov19.csv ../dados/brutos/
+            git commit -m "[auto] Dados de hoje."
+        else
+            downloaded=1
+        fi
+    fi
 fi
 
 if [[ $force = 1 || ( $update = 1  && ( $downloaded = 1 || -z $downloaded )) ]]; then
     R --no-save < update.R
     if [ $? = 0 ]; then
         pushd ..
-        git add outputs/prev.5d.csv  outputs/tempos.duplicacao.csv index.html
+        git add outputs/prev.5d.csv outputs/tempos.duplicacao.csv outputs/*.prev.5d.csv outputs/*.tempos.duplicacao.csv *.html
         popd
         git commit -m "[auto] Novas projeções."
         git push

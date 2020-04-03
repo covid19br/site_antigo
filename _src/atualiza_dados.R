@@ -2,7 +2,9 @@ library(dplyr)
 
 # download data
 #dados_curr <- read.csv(paste0("https://covid.saude.gov.br/assets/files/BRnCov19_", format(Sys.Date(), "%d%m%Y"), ".csv"), as.is = TRUE, sep = ";")
-dados_curr <- read.csv(paste0("https://covid.saude.gov.br/assets/files/COVID19_", format(Sys.Date(), "%Y%m%d"), ".csv"), as.is = TRUE, sep = ";")
+tryCatch(dados_curr <- read.csv(paste0("https://covid.saude.gov.br/assets/files/COVID19_", format(Sys.Date(), "%Y%m%d"), ".csv"), as.is = TRUE, sep = ";"),
+         error=quit(save="no", status=1))
+
 dados_curr$data <- as.Date(dados_curr$data, format = "%d/%m/%y")
 write.csv(dados_curr, file = paste0("../dados/brutos/BRnCov19_", format(max(dados_curr$data), "%Y%m%d"), ".csv"), row.names = FALSE)
 
