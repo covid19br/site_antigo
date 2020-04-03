@@ -21,5 +21,5 @@ write.zoo(tempos.duplicacao, file="../outputs/tempos.duplicacao.csv", sep=",")
 
 # ajuste de R0 usando EpiEstim
 res.uncertain.si <- estimate.R0(brasil.raw$novos.casos, day0 = 8, delay = 7)
-res.uncertain.si.zoo <- zoo(res.uncertain.si$R, as.Date(brasil.raw$dia, "%d-%m-%Y")[res.uncertain.si$R$t_end])
+res.uncertain.si.zoo <- zoo(res.uncertain.si$R, as.Date(brasil.raw$data, "%d-%m-%Y")[res.uncertain.si$R$t_end])
 names(res.uncertain.si.zoo) <- gsub("\\(R\\)", ".R", names(res.uncertain.si.zoo))

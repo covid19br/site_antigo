@@ -24,6 +24,7 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -818,8 +819,8 @@ body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
-<img class="mobile-figure" data-mobile-figure-id=fig1 src="/home/paulo/work/pesquisa/colaboracoes/ift/corona/covid19br.github.io/informacoes_files/figure-html/exemplo_crescimento_exponencial-1.mb.png" />
-<img class="mobile-figure" data-mobile-figure-id=fig2 src="/home/paulo/work/pesquisa/colaboracoes/ift/corona/covid19br.github.io/informacoes_files/figure-html/estimativa_crescimento_exponencial-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig1 src="informacoes_files/figure-html/exemplo_crescimento_exponencial-1.mb.png" />
+<img class="mobile-figure" data-mobile-figure-id=fig2 src="informacoes_files/figure-html/estimativa_crescimento_exponencial-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2626,13 +2627,29 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 </div>
 </div>
 </div>
-<div id="row-2" class="section level2">
+<div id="row-2" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="análise-de-erro-das-nossas-previsões" class="section level3">
+<h3>Análise de erro das nossas previsões</h3>
+<p>Estamos há 20 dias no ar fazendo previsões do número de casos confirmados para os próximos 5 dias. Fizemos, neste momento, uma análise de nossas previsões. Para tanto, contruímos um histograma da diferença entre o valor predito e o valor observado, divida pelo intervalo de confiança do valor predito. Isso significa dizer que o valor observado ficou dentro do intervalo de confiança de valor previsto caso ele apareça entre +100% ou -100%. Indicamos esses limites como linhas horizontais em vermelho.</p>
+<p>Os pontos em verde são as previsões acertadas, enquanto que os pontos em vermelho indicam as previsões erradas. Na previsão do dia seguinte, acertamos aprox. 91% das vezes (20 acertos em 22 previsões). Na previsão para dois dias à frente, acertamos aprox. 86% das vezes (18 acertos em 21 previsões). Já nas previsões para três, quatro e cinco dias à frente, acertamos 80%, 68% e 72%, respectivamente.</p>
+<p>Podemos observar que os erros ocorreram especialmente na última semana (25~29/03), quando ocorreu um grande aumento no tempo de duplicação dos casos confirmados. É notável também que nosso modelo sempre sobrestima quando erra, i.e., prevemos um número maior do que observado quando erramos. Isto é provavelmente relacionado com o fator de subnotificações e atrasos nas notificações.</p>
+</div>
+<div id="section-2" class="section level3">
+<h3></h3>
+<div class="figure">
+<img src="fig/erros.jpeg" style="width:100.0%" alt="" />
+<p class="caption">Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)</p>
+</div>
+</div>
+</div>
+<div id="row-3" class="section level2">
 <h2>Row</h2>
 <div id="série-temporal-dos-tempos-de-duplicação" class="section level3">
 <h3>Série temporal dos tempos de duplicação</h3>
 <p>Para avaliar o quanto o crescimento da epidemia varia ao longo do tempo, ajustamos o modelo linear para períodos de cinco dias, a partir de quando foram registrados 15 casos. Estimamos o tempo de duplicação e o respectivo intervalo de confiança para cada um desses modelos. Assim, a primeira estimativa é para o período de 07 de março a 12 de março. A segunda é para o período de 08 de março a 13 de março e assim sucessivamente. A tabela ao lado exemplifica os resultados obtidos para os primeiros 10 dias a partir do dia com 15 casos:</p>
 </div>
-<div id="section-2" class="section level3">
+<div id="section-3" class="section level3">
 <h3></h3>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
@@ -2650,21 +2667,21 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <tbody>
 <tr class="odd">
 <td>11/03/2020</td>
-<td align="right">2,9</td>
-<td align="right">2,0</td>
-<td align="right">5,4</td>
+<td align="right">2,8</td>
+<td align="right">1,9</td>
+<td align="right">5,2</td>
 </tr>
 <tr class="even">
 <td>12/03/2020</td>
-<td align="right">2,3</td>
-<td align="right">1,7</td>
-<td align="right">3,4</td>
+<td align="right">2,2</td>
+<td align="right">1,6</td>
+<td align="right">3,1</td>
 </tr>
 <tr class="odd">
 <td>13/03/2020</td>
-<td align="right">2,2</td>
-<td align="right">1,7</td>
-<td align="right">2,9</td>
+<td align="right">2,0</td>
+<td align="right">1,6</td>
+<td align="right">2,7</td>
 </tr>
 <tr class="even">
 <td>14/03/2020</td>
@@ -2688,7 +2705,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 </table>
 </div>
 </div>
-<div id="row-3" class="section level2">
+<div id="row-4" class="section level2">
 <h2>Row</h2>
 <div id="estimativa-do-número-de-reprodução-da-epidemia" class="section level3">
 <h3>Estimativa do Número de Reprodução da Epidemia</h3>
@@ -2696,7 +2713,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <p>Para analisar a dinâmica instantânea de uma doença infecciosa que tem potencial de infectar grande parte da população, o valor de <span class="math inline">\(R_e\)</span> calculado ao longo do tempo pode informar o quão crítico é o atual estágio de uma epidemia. Podemos calcular o <span class="math inline">\(R_e\)</span> utilizando séries temporais de dados de incidência (novos casos a cada dia, semana, etc) e a distribuição do intervalo serial, definido como o intervalo de tempo entre o início da doença em um caso primário e o início da doença em um caso secundário. O intervalo serial é uma medida difícil de ser obtida, principalmente para doenças infecciosas com pouco estudo epidemiológico. Para contornar esse problema, pode-se estimar o valor de <span class="math inline">\(R_e\)</span> considerando incertezas na medida do intervalo serial.</p>
 <p>Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19 para estimar diariamente os valores de <span class="math inline">\(R_e\)</span>, utilizando a metodologia de Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software R (Cori 2020). Para a medida de intervalo serial, utilizamos uma distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo Nishiura <em>et al.</em> (2020).</p>
 </div>
-<div id="section-3" class="section level3">
+<div id="section-4" class="section level3">
 <h3></h3>
 <div class="figure">
 <img src="fig/R0_prsc.png" style="width:50.0%" alt="" />
@@ -2704,7 +2721,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 </div>
 </div>
 </div>
-<div id="row-4" class="section level2">
+<div id="row-5" class="section level2">
 <h2>Row</h2>
 <div id="referências" class="section level3">
 <h3>Referências</h3>

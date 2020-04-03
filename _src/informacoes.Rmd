@@ -108,6 +108,34 @@ ggplot(data= exemplo2, aes(Index, casos.acumulados)) +
     plot.formatos
 ```
 
+Row {data-height=600}
+--------------------
+
+### Análise de erro das nossas previsões
+
+Estamos há 20 dias no ar fazendo previsões do número de casos confirmados
+para os próximos 5 dias. Fizemos, neste momento, uma análise de nossas previsões. 
+Para tanto, contruímos um histograma da diferença entre o valor predito
+e o valor observado, divida pelo intervalo de confiança do valor predito. 
+Isso significa dizer que o valor observado ficou dentro do intervalo de confiança de valor
+previsto caso ele apareça entre +100% ou -100%. Indicamos esses limites como linhas horizontais em vermelho.
+
+Os pontos em verde são as previsões acertadas, enquanto que os pontos em vermelho indicam
+as previsões erradas. Na previsão do dia seguinte, acertamos aprox. 91% das vezes (20 acertos em 22 previsões).
+Na previsão para dois dias à frente, acertamos aprox. 86% das vezes (18 acertos em 21 previsões).
+Já nas previsões para três, quatro e cinco dias à frente, acertamos 80%, 68% e 72%, respectivamente. 
+
+Podemos observar que os erros ocorreram especialmente na última semana (25~29/03), 
+quando ocorreu um grande aumento no tempo de duplicação dos casos confirmados. 
+É notável também que nosso modelo sempre sobrestima quando erra, i.e., 
+prevemos um número maior do que observado quando erramos. Isto é provavelmente relacionado com 
+o fator de subnotificações e atrasos nas notificações.
+
+### 
+
+![Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)](fig/erros.jpeg){ width=100% }
+
+
 Row
 --------------------
 
