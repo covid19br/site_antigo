@@ -1,0 +1,69 @@
+---
+title: "`r paste('Observatório COVID-19', st)`"
+date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
+output:
+ flexdashboard::flex_dashboard:
+  orientation: column
+  vertical_layout: scroll
+  self_contained: false
+  theme: cerulean
+  lib_dir: ../libs
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: 'styles.css'
+  navbar:
+    - { title: "Início", href: "index.html", align: left}
+    - { title: "SP", href: "SP", align: left}
+    - { title: "+Info", href: "informacoes.html", align: left}
+    - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
+    - { title: "Sobre", href: "sobre.html", align: left}
+  favicon: favicon.png
+  includes:
+   after_body: footer.html
+   in_header: header.html
+---
+
+```{r setOptions, include=FALSE, message=FALSE}
+library(flexdashboard)
+#library(xtable)
+library(knitr)
+library(plotly)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fig.height=6)
+```
+
+
+### Quantos casos notificados já temos no estado de `r sigla.estado[st]`? Quantos teremos nos próximos dias?
+
+```{r}
+ggplotly(estados.plot.forecast.exp[[st]], tooltip = "text")
+```
+
+>Pontos pretos indicam o número de casos confirmados notificados no estado de `r sigla.estado[st]` por dia.
+**Pontos em laranja são a previsão para os próximos 5 dias (entre 
+`r  as.integer(estados.exp.5d[[st]][max(nrow(estados.exp.5d[[st]])),2])` e 
+`r as.integer(estados.exp.5d[[st]][max(nrow(estados.exp.5d[[st]])),3])` casos em
+`r format(max(time(estados.exp.5d[[st]])), "%d/%m/%Y")` )**, se a taxa de
+crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
+intervalo de confiança dessa previsão.
+
+
+### Por que só 5 dias?
+
+Porque quando o crescimento é exponencial as incertezas também crescem
+exponencialmente. Por isso a região cinza, que expressa a
+incerteza da previsão, aumenta de largura com
+o tempo.  E mesmo pequenas mudanças na taxa que aconteçam
+hoje ou amanhã vão causar enormes variações no futuro. 
+
+Por isso avaliamos que é inadequado fazer
+previsões para mais de 5 dias com este método.
+
+
+### Quão rápido a doença se propaga?
+
+No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes moleculares sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora faz com que os números disponíveis publicamente (número de notificações) cresça de maneira artificialmente lenta.
+
+Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
+

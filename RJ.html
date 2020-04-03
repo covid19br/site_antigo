@@ -8,9 +8,9 @@
 
 
 
-<title>Observatório COVID-19 BR</title>
+<title>Observatório COVID-19 RJ</title>
 
-<meta property="og:title" content="Observatório COVID-19 BR" />
+<meta property="og:title" content="Observatório COVID-19 RJ" />
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 
@@ -22,7 +22,7 @@ window.FlexDashboardComponents = [];
 </script>
 
 <script id="flexdashboard-navbar" type="application/json">
-[{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
+[{"title":"Início","href":"index.html","align":"left"},{"title":"SP","href":"SP","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
@@ -34,6 +34,13 @@ window.FlexDashboardComponents = [];
 <script src="libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
 <link href="libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/plotly-binding-4.9.2/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
 <style type="text/css">
 
 /*
@@ -748,21 +755,11 @@ body {
 }
 
 
-@media only screen and (min-width: 768px) {
-html, body {
-  height: 100%;
-}
-
-#dashboard-container {
-  height: 100%;
-}
-}
 </style>
 
 
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
-<link rel="stylesheet" href="home.css" type="text/css" />
 
 </head>
 
@@ -782,7 +779,7 @@ html, body {
   
 </span>
 <span class="navbar-brand">
-  Observatório COVID-19 BR
+  Observatório COVID-19 RJ
   <span class="navbar-author">
       03 de abril de 2020, 05:53
       </span>
@@ -798,8 +795,6 @@ html, body {
 </div><!--/.container-->
 </div><!--/.navbar-->
 
-<img class="mobile-figure" data-mobile-figure-id=fig1 src="index_files/figure-html/unnamed-chunk-1-1.mb.png" />
-<img class="mobile-figure" data-mobile-figure-id=fig2 src="index_files/figure-html/unnamed-chunk-2-1.mb.png" />
 <script type="text/javascript">
 
 
@@ -2566,52 +2561,26 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<div class="container">
-<div class="item2">
-<h4>
-<a href="projecao.html" id="casos">Quantos casos notificados no Brasil? Quantos serão notificados nos próximos dias? </a>
-</h4>
-<a href="projecao.html">
-<div class="knitr-options" data-fig-width="576" data-fig-height="384">
+<div id="quantos-casos-notificados-já-temos-no-estado-de-rio-de-janeiro-quantos-teremos-nos-próximos-dias" class="section level3">
+<h3>Quantos casos notificados já temos no estado de Rio de Janeiro? Quantos teremos nos próximos dias?</h3>
+<div class="knitr-options" data-fig-width="768" data-fig-height="576">
 
 </div>
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="576" data-figure-id=fig1 style="display: block; margin: auto;" /> </a></p>
+<div id="htmlwidget-b332012eb3e412632d58" style="width:768px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b332012eb3e412632d58">{"x":{"data":[{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18349,18350,18351,18352,18353,18354,18355,18356,18357,18358,18359,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,18359,18358,18357,18356,18355,18354,18353,18352,18351,18350,18349,18348,18347,18346,18345,18344,18343,18342,18341,18340,18339,18338,18337,18336,18335,18334,18333,18332,18331,18330,18329,18328,18327,18326,18325,18324,18323,18322,18321,18320,18319,18318,18317,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,18317],"y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3.00747922307385,3.05358023237452,3.09935552084032,3.14496169181112,3.19046983232198,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3.32942584856077,3.26424204496396,3.19915627182707,3.13423961618519,3.06964868137818,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(211,211,211,1)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18349,18350,18351,18352,18353,18354,18355,18356,18357,18358,18359,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"y":[null,null,null,null,null,null,null,null,null,0,0,0.301029995663981,0.477121254719662,0.477121254719662,0.903089986991944,1.11394335230684,1.20411998265592,1.20411998265592,1.34242268082221,1.38021124171161,1.49136169383427,1.51851393987789,1.65321251377534,1.81291335664286,2.03742649794062,2.07554696139253,2.26951294421792,2.36735592102602,2.48429983934679,2.56820172406699,2.62428209583567,2.69284691927723,2.74663419893758,2.77815125038364,2.81756536955978,2.85003325768977,2.92012332629072,2.99651167215418,3.03856395222602,3.09390992427986,3.1492558963337,3.20460186838754,3.25994784044138,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"text":"","type":"scatter","mode":"lines","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,18317,18318,18319,18320,18321,18322,18323,18324,18325,18326,18327,18328,18329,18330,18331,18332,18333,18334,18335,18336,18337,18338,18339,18340,18341,18342,18343,18344,18345,18346,18347,18348,18349,18350,18351,18352,18353,18354,18355],"y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0.301029995663981,0.477121254719662,0.477121254719662,0.903089986991944,1.11394335230684,1.20411998265592,1.20411998265592,1.34242268082221,1.38021124171161,1.49136169383427,1.51851393987789,1.65321251377534,1.81291335664286,2.03742649794062,2.07554696139253,2.26951294421792,2.36735592102602,2.48429983934679,2.56820172406699,2.62428209583567,2.69284691927723,2.74663419893758,2.77815125038364,2.81756536955978,2.85003325768977,2.92012332629072,2.99651167215418,3.03856395222602],"text":["Data: 2020-01-30 <br /> Casos: 0","Data: 2020-01-31 <br /> Casos: 0","Data: 2020-02-01 <br /> Casos: 0","Data: 2020-02-02 <br /> Casos: 0","Data: 2020-02-03 <br /> Casos: 0","Data: 2020-02-04 <br /> Casos: 0","Data: 2020-02-05 <br /> Casos: 0","Data: 2020-02-06 <br /> Casos: 0","Data: 2020-02-07 <br /> Casos: 0","Data: 2020-02-08 <br /> Casos: 0","Data: 2020-02-09 <br /> Casos: 0","Data: 2020-02-10 <br /> Casos: 0","Data: 2020-02-11 <br /> Casos: 0","Data: 2020-02-12 <br /> Casos: 0","Data: 2020-02-13 <br /> Casos: 0","Data: 2020-02-14 <br /> Casos: 0","Data: 2020-02-15 <br /> Casos: 0","Data: 2020-02-16 <br /> Casos: 0","Data: 2020-02-17 <br /> Casos: 0","Data: 2020-02-18 <br /> Casos: 0","Data: 2020-02-19 <br /> Casos: 0","Data: 2020-02-20 <br /> Casos: 0","Data: 2020-02-21 <br /> Casos: 0","Data: 2020-02-22 <br /> Casos: 0","Data: 2020-02-23 <br /> Casos: 0","Data: 2020-02-24 <br /> Casos: 0","Data: 2020-02-25 <br /> Casos: 0","Data: 2020-02-26 <br /> Casos: 0","Data: 2020-02-27 <br /> Casos: 0","Data: 2020-02-28 <br /> Casos: 0","Data: 2020-02-29 <br /> Casos: 0","Data: 2020-03-01 <br /> Casos: 0","Data: 2020-03-02 <br /> Casos: 0","Data: 2020-03-03 <br /> Casos: 0","Data: 2020-03-04 <br /> Casos: 0","Data: 2020-03-05 <br /> Casos: 1","Data: 2020-03-06 <br /> Casos: 1","Data: 2020-03-07 <br /> Casos: 2","Data: 2020-03-08 <br /> Casos: 3","Data: 2020-03-09 <br /> Casos: 3","Data: 2020-03-10 <br /> Casos: 8","Data: 2020-03-11 <br /> Casos: 13","Data: 2020-03-12 <br /> Casos: 16","Data: 2020-03-13 <br /> Casos: 16","Data: 2020-03-14 <br /> Casos: 22","Data: 2020-03-15 <br /> Casos: 24","Data: 2020-03-16 <br /> Casos: 31","Data: 2020-03-17 <br /> Casos: 33","Data: 2020-03-18 <br /> Casos: 45","Data: 2020-03-19 <br /> Casos: 65","Data: 2020-03-20 <br /> Casos: 109","Data: 2020-03-21 <br /> Casos: 119","Data: 2020-03-22 <br /> Casos: 186","Data: 2020-03-23 <br /> Casos: 233","Data: 2020-03-24 <br /> Casos: 305","Data: 2020-03-25 <br /> Casos: 370","Data: 2020-03-26 <br /> Casos: 421","Data: 2020-03-27 <br /> Casos: 493","Data: 2020-03-28 <br /> Casos: 558","Data: 2020-03-29 <br /> Casos: 600","Data: 2020-03-30 <br /> Casos: 657","Data: 2020-03-31 <br /> Casos: 708","Data: 2020-04-01 <br /> Casos: 832","Data: 2020-04-02 <br /> Casos: 992","Data: 2020-04-03 <br /> Casos: 1093"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,0,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(0,0,0,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[18355,18356,18357,18358,18359],"y":[3.03856395222602,3.09390992427986,3.1492558963337,3.20460186838754,3.25994784044138],"text":["Data: 2020-04-03 <br /> Casos previstos: 1093 <br /> IC min: 1017 <br /> IC max: 1174","Data: 2020-04-04 <br /> Casos previstos: 1241 <br /> IC min: 1131 <br /> IC max: 1362","Data: 2020-04-05 <br /> Casos previstos: 1410 <br /> IC min: 1257 <br /> IC max: 1582","Data: 2020-04-06 <br /> Casos previstos: 1602 <br /> IC min: 1396 <br /> IC max: 1838","Data: 2020-04-07 <br /> Casos previstos: 1819 <br /> IC min: 1550 <br /> IC max: 2135"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(230,97,1,1)","opacity":1,"size":7.55905511811024,"symbol":"circle","line":{"width":1.88976377952756,"color":"rgba(230,97,1,1)"}},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":43.2754946727549,"r":7.30593607305936,"b":29.3344402933444,"l":61.4362806143628},"plot_bgcolor":"rgba(255,255,255,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187},"title":{"text":"Número de casos notificados em RJ em escala logarítimica","font":{"color":"rgba(0,0,0,1)","family":"","size":17.5342465753425},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[18314.9,18361.1],"tickmode":"array","ticktext":["01/mar","15/mar","01/abr"],"tickvals":[18322,18336,18353],"categoryorder":"array","categoryarray":["01/mar","15/mar","01/abr"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.6118721461187}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.166471292428038,3.49589714098881],"tickmode":"array","ticktext":["1","10","100","1000"],"tickvals":[0,1,2,3],"categoryorder":"array","categoryarray":["1","10","100","1000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":15.9402241594022},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","title":{"text":"<b> Número de casos <\/b>","font":{"color":"rgba(0,0,0,1)","family":"","size":18.5969281859693}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":"transparent","line":{"color":"rgba(51,51,51,1)","width":0.66417600664176,"linetype":"solid"},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.689497716895}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","showSendToCloud":false},"source":"A","attrs":{"821a4474f0dd7":{"x":{},"y":{},"ymin":{},"ymax":{},"type":"scatter"},"821a47f156691":{"x":{},"y":{},"ymin":{},"ymax":{}},"821a45424a1eb":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}},"821a4554ae15f":{"text":{},"x":{},"y":{},"ymin":{},"ymax":{}}},"cur_data":"821a4474f0dd7","visdat":{"821a4474f0dd7":["function (y) ","x"],"821a47f156691":["function (y) ","x"],"821a45424a1eb":["function (y) ","x"],"821a4554ae15f":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<blockquote>
+<p>Pontos pretos indicam o número de casos confirmados notificados no estado de Rio de Janeiro por dia. <strong>Pontos em laranja são a previsão para os próximos 5 dias (entre 1550 e 2135 casos em 07/04/2020 )</strong>, se a taxa de crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.</p>
+</blockquote>
 </div>
-<div class="item">
-<h4>
-<a href="pais.html">Como epidemias se espalham por um país continental?</a>
-</h4>
-<p><a href="pais.html"> <img src="fig/voos_brasil.jpg" /> </a></p>
-<p>A chave pode estar na rede formada por aeroportos e vôos conectando os estados.</p>
+<div id="por-que-só-5-dias" class="section level3">
+<h3>Por que só 5 dias?</h3>
+<p>Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o tempo. E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.</p>
+<p>Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.</p>
 </div>
-<div class="item">
-<h4>
-<a href="#" id="tduplica">Quão rápido a doença se propaga?</a>
-</h4>
+<div id="quão-rápido-a-doença-se-propaga" class="section level3">
+<h3>Quão rápido a doença se propaga?</h3>
 <p>No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes moleculares sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora faz com que os números disponíveis publicamente (número de notificações) cresça de maneira artificialmente lenta.</p>
 <p>Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.</p>
-<p><!-- <a href="propagacao.html">
-  
-<div class="knitr-options" data-fig-width="288" data-fig-height="192"></div>
-<img src="index_files/figure-html/unnamed-chunk-2-1.png" width="288" data-figure-id=fig2 style="display: block; margin: auto;" />
-  </a>
-</div>--></p>
-<!--<div class="item">
-  <h4><a href="transmissao.html">Para quantas pessoas cada infectado transmite a doença?</a></h4>
-  <a href="transmissao.html">-->
-<!--```{r}-->
-<!--plot.estimate.R0 + theme(axis.text.x = element_text(size = 10),-->
-<!--                        axis.title.y = element_text(size = 8))-->
-<!--```-->
-<!--  </a>-->
-</div>
-<div class="item">
-<h4>
-<a href="dinamica.html">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a>
-</h4>
-<p><a href="dinamica.html"> <img src="fig/rede_prsc.jpg" /> </a></p>
-<p>O isolamento social reduz a propagação de uma doença contagiosa.</p>
-</div>
 </div>
 
 </div>
@@ -2656,7 +2625,7 @@ StatCounter"></a></div></noscript>
 $(document).ready(function () {
   FlexDashboard.init({
     theme: "cerulean",
-    fillPage: true,
+    fillPage: false,
     orientation: "columns",
     storyboard: false,
     defaultFigWidth: 576,

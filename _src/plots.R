@@ -65,6 +65,39 @@ plot.estimate.R0 <-
     ylab("Número de reprodução") +
     plot.formatos
 
+############### Gráficos por Estado ############################################
+##
+## Grafico da serie observada e do previsto pelo modelo exponencial
+## para os proximos 5 dias (com intervalo de confiança)
+################################################################################
+estados.plot.forecast.exp <- list()
+for (st in names(estados.d0)){
+    ## Serie com observados e previstos
+    ## (gambiarra para ter linha contínua no grafico, verificar help de ggplot.zoo)
+    ncasos.completa <-merge(casos=estados[[st]]$casos.acumulados,
+                            estados.exp.5d[[st]][, c("predito","ic.low","ic.upp")])
+    ncasos.completa$casos[time(ncasos.completa)>=min(time(estados.exp.5d[[st]]))] <- estados.exp.5d[[st]]$predito[time(estados.exp.5d[[st]])>=min(time(estados.exp.5d[[st]]))]
+    
+    estados.plot.forecast.exp[[st]] <-
+        ggplot(data=ncasos.completa, aes(x=Index, y=casos,ymin=ic.low, ymax=ic.upp)) +
+        geom_ribbon(fill="lightgrey") +
+        geom_line() +
+        geom_point(data=ncasos.completa[time(ncasos.completa)<=min(time(estados.exp.5d[[st]]))],
+                   size=2, aes(text = paste("Data:", Index, "\n", "Casos:",
+                                            round(casos)))) +
+        geom_point(data=ncasos.completa[time(ncasos.completa)>=min(time(estados.exp.5d[[st]]))],
+                   aes(text = paste("Data:", Index, "\n",
+                            "Casos previstos:", round(casos), "\n",
+                            "IC min:", round(ic.low), "\n",
+                            "IC max:", round(ic.upp))),
+                    size=2, col="#e66101") +
+        scale_x_date(date_labels = "%d/%b", name="", limits=c(as.Date('2020-02-25'), NA)) +
+        scale_y_log10() +
+        ##ylim(0,max(ncasos.completa$ic.upp, na.rm=TRUE)) +
+        ylab("Número de casos") +
+        ggtitle(paste("Número de casos notificados em", st, "em escala logarítimica")) +
+        plot.formatos
+}
 
 ################################################################################
 ## Evolucao de casos suspeitos, descartados e confirmados

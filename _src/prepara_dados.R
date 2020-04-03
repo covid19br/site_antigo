@@ -12,17 +12,16 @@ minimo <- 15 ## pelo menos 15 casos
 brasil.d0 <- diazero(brasil$casos.acumulados, limite = minimo)
 ## Dados do IVIS: suspeitos, descartados e confirmados
 
-### dados SP
-sampa.raw <- read.csv("../dados/sampa.csv", as.is = TRUE)
-## Cria objeto da classe zoo 
-sampa <- zoo(sampa.raw[, 2:3], as.Date(sampa.raw$dia, "%Y-%m-%d")) 
-## Tira os casos acumulados iniciais abaixo de um mínimo
-minimo <- 15 ## pelo menos 15 casos
-sampa.d0 <- diazero(sampa$casos.acumulados, limite = minimo)
+estados <- list()
+estados.d0 <- list()
+for(st in unique(estados.raw$estado)){
+    if(exists("estados.para.atualizar") && ! (st %in% estados.para.atualizar))
+        next
+    estado.raw <- estados.raw[estados.raw$estado == st,]
+    if (estado.raw$casos.acumulados[nrow(estado.raw)] <= minimo)
+        next
+    estados[[st]] <- zoo(estado.raw[,c("novos.casos","casos.acumulados")],
+                         as.Date(estado.raw$data, "%Y-%m-%d"))
+    estados.d0[[st]] <- diazero(estados[[st]]$casos.acumulados, limite = minimo)
+}
 
-#brasil.ivis <- read.csv2("../dados/brutos-ivis/brazil.csv", as.is=TRUE, na.strings="-")
-#names(brasil.ivis) <- c("dia","Suspeitos","Confirmados","Descartados","Óbitos")
-#brasil.ivis <- brasil.ivis[, c(1,2,4,3,5)]
-#brasil.ivis$dia <- as.Date(brasil.ivis$dia, "%Y-%m-%d")
-### objeto zoo
-#brasil.ivis.zoo <- zoo(brasil.ivis[,-1], brasil.ivis$dia)
