@@ -16,3 +16,13 @@ brasil.ivis <- brasil.ivis[, c(1,2,4,3,5)]
 brasil.ivis$dia <- as.Date(brasil.ivis$dia, "%Y-%m-%d")
 ## objeto zoo
 brasil.ivis.zoo <- zoo(brasil.ivis[,-1], brasil.ivis$dia)
+
+
+### dados SP
+sampa.raw <- read.csv("../dados/sampa.csv", as.is = TRUE)
+## Cria objeto da classe zoo 
+sampa <- zoo(sampa.raw[, 2:3], as.Date(sampa.raw$dia, "%Y-%m-%d")) 
+## Tira os casos acumulados iniciais abaixo de um mínimo
+minimo <- 15 ## pelo menos 15 casos
+sampa.d0 <- diazero(sampa$casos.acumulados, limite = minimo)
+
