@@ -44,11 +44,10 @@ shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
 if [ $download = 1 ]; then
-    R --no-save < atualiza_dados.R
+    R -q --no-save < atualiza_dados.R
     downloaded=$?
     if [ $downloaded = 0 ]; then
-        git status -s
-        git diff-index --quiet HEAD --
+        git diff-index --quiet HEAD -- ../dados
         if [ $? != 0 ]; then
             git add ../dados/BrasilCov19.csv ../dados/EstadosCov19.csv ../dados/brutos/
             git commit -m "[auto] Dados de hoje."
@@ -58,8 +57,8 @@ if [ $download = 1 ]; then
     fi
 fi
 
-if [[ $force = 1 || ( $update = 1  && ( $downloaded = 1 || -z $downloaded )) ]]; then
-    R --no-save < update.R
+if [[ $force = 1 || ( $update = 1  && ( $downloaded = 0 || -z $downloaded )) ]]; then
+    R -q --no-save < update.R
     if [ $? = 0 ]; then
         pushd ..
         git add outputs/prev.5d.csv outputs/tempos.duplicacao.csv outputs/*.prev.5d.csv outputs/*.tempos.duplicacao.csv *.html
