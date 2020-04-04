@@ -1,7 +1,6 @@
 library(dplyr)
 
 # download data
-#dados_curr <- read.csv(paste0("https://covid.saude.gov.br/assets/files/BRnCov19_", format(Sys.Date(), "%d%m%Y"), ".csv"), as.is = TRUE, sep = ";")
 tryCatch(dados_curr <- read.csv(paste0("https://covid.saude.gov.br/assets/files/COVID19_", format(Sys.Date(), "%Y%m%d"), ".csv"), as.is = TRUE, sep = ";"),
          error=quit(save="no", status=1))
 

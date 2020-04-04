@@ -44,7 +44,7 @@ shift $((OPTIND-1))
 [ "${1:-}" = "--" ] && shift
 
 if [ $download = 1 ]; then
-    R -q --no-save < atualiza_dados.R
+    python downloader.py
     downloaded=$?
     if [ $downloaded = 0 ]; then
         git diff-index --quiet HEAD -- ../dados

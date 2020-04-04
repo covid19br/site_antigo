@@ -4,10 +4,10 @@ from datetime import date, timedelta
 # config
 # notice `download_folder` should reflect your Chrome default download folder
 download_folder = os.path.expanduser('~/Downloads/')
-save_folder = os.path.expanduser('~/Dropbox/covid19/covid19BR/dados/brutos-ivis/')
+save_folder = os.path.expanduser('~/Dropbox/covid19/covid19BR/dados/brutos/')
 
 def download_current_file(download_folder):
-    '''Download current file from IVIS website.'''
+    '''Download current file from MS website.'''
     import time
     from selenium import webdriver
     # clean possible saved file
@@ -18,32 +18,30 @@ def download_current_file(download_folder):
     # download current file
     driver = webdriver.Chrome()
     
-    driver.get("http://plataforma.saude.gov.br/novocoronavirus")
+    driver.get("https://covid.saude.gov.br/")
     # take a breath and let it load
     time.sleep(2)
-    # trigger js to get table
-    driver.execute_script("dashboard.coronavirus.brazilCSV()");
+    # click buttom to get table
+    buttom = driver.find_elements_by_xpath("//input[@class='ok' and @role='button']")[0]
+    button.click()
+    #driver.execute_script("dashboard.coronavirus.brazilCSV()");
     # wait for download to finish
-    i = 0
-    while not os.path.exists(download_folder + 'brasil.csv'):
-        time.sleep(1)
-        i += 1
-        # 5 min !?
-        if i > 300:
-            break
-    print('Arquivo baixado após %d segundos.' % i)
+    fname = getDownLoadedFileName(300)
+    print('Arquivo baixado')
     driver.close()
+    return(fname)
 
-def save_file_if_new(download_folder, save_folder):
+def save_file_if_new(fname, save_folder):
     '''Save downloaded file to proper place if it's different from previous one. Return True if the file is new, False otherwise.'''
     # check if file is new and different before replacing
-    fnames = [ 'brasil-ivis-' + (date.today()-timedelta(1)).isoformat() + '.csv',
-               'brasil-ivis-' + date.today().isoformat() + '.csv']
+    fnames = [ 'BRnCov19_' +  (date.today()-timedelta(1)).strftime("%Y%m%d") + '.csv',
+               'BRnCov19_' +  date.today().strftime("%Y%m%d") + '.csv' ]
+
     diffs = []
-    for fname in fnames:
-        if os.path.exists(save_folder + fname):
-            diffs.append(os.system('diff -q ' + save_folder + fname + ' ' + \
-                    download_folder + 'brasil.csv'))
+    for f in fnames:
+        if os.path.exists(save_folder + f):
+            diffs.append(os.system('diff -q ' + save_folder + f + ' ' + \
+                    fname)
         else:
             diffs.append(1)
 
@@ -57,8 +55,32 @@ def save_file_if_new(download_folder, save_folder):
         print('Nova versão encontrada.')
 
     # move/replace file and re-generate data file
-    shutil.move(download_folder + 'brasil.csv', save_folder + fname)
+    shutil.move(fname, save_folder + 'BRnCov19_' + date.today().strftime("%Y%m%d") + '.csv')
     return True
+
+# method to get the downloaded file name
+def getDownLoadedFileName(waitTime):
+    driver.execute_script("window.open()")
+    # switch to new tab
+    driver.switch_to.window(driver.window_handles[-1])
+    # navigate to chrome downloads
+    driver.get('chrome://downloads')
+    # define the endTime
+    endTime = time.time()+waitTime
+    while True:
+        try:
+            # get downloaded percentage
+            downloadPercentage = driver.execute_script(
+                "return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('#progress').value")
+            # check if downloadPercentage is 100 (otherwise the script will keep waiting)
+            if downloadPercentage == 100:
+                # return the file name once the download is completed
+                return driver.execute_script("return document.querySelector('downloads-manager').shadowRoot.querySelector('#downloadsList downloads-item').shadowRoot.querySelector('div#content  #file-link').text")
+        except:
+            pass
+        time.sleep(1)
+        if time.time() > endTime:
+            break
 
 def regenerate_aggregate_datafile(aggregate_files, save_folder, base_name):
     from glob import glob
@@ -106,11 +128,12 @@ def regenerate_aggregate_datafile(aggregate_files, save_folder, base_name):
         f.writelines('\n'.join(country))
 
 if __name__ == '__main__':
-    download_current_file(download_folder)
-    isnewfile = save_file_if_new(download_folder, save_folder)
+    fname = download_current_file(download_folder)
+    isnewfile = save_file_if_new(fname, save_folder)
     if isnewfile:
-        regenerate_aggregate_datafile([save_folder + 'states.csv',
-            save_folder + 'brazil.csv'], save_folder, 'brasil-ivis-')
+        #regenerate_aggregate_datafile([save_folder + 'states.csv',
+        #    save_folder + 'brazil.csv'], save_folder, 'brasil-ivis-')
+        os.system('R -q --no-save < atualiza_dados.R')
         os.system('git add ' + save_folder + 'states.csv ' + save_folder + 'brazil.csv ' + save_folder + 'brasil-ivis-' + date.today().isoformat() + '.csv')
         os.system('git commit -m "[auto] novos dados" && git push')
         sys.exit(0)
