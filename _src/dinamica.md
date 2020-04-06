@@ -23,16 +23,6 @@ output:
 ---
 
 
-```{r setOptions, include=FALSE, message=FALSE}
-library(flexdashboard)
-#library(xtable)
-library(knitr)
-#library(plotly)
-options(OutDec = ',')
-knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=3,
-                      fig.height=2, fig.align="center")
-```
-
 ### Como o isolamento social influencia a dinâmica de propagação da epidemia?
 
 <a href="https://guimaraeslabbr.weebly.com/COVID19.html">

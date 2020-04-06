@@ -22,16 +22,6 @@ output:
    in_header: header.html
 ---
 
-```{r setOptions, include=FALSE, message=FALSE}
-library(flexdashboard)
-#library(xtable)
-library(knitr)
-#library(plotly)
-options(OutDec = ',')
-knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=3,
-                      fig.height=2, fig.align="center")
-```
-
 ### Como epidemias se espalham por um país continental?
 
 <a href="https://guimaraeslabbr.weebly.com/voos.html">
