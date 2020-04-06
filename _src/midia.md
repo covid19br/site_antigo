@@ -39,3 +39,12 @@ output:
 * ["Crescimento exponencial e curva epidêmica: entenda os principais conceitos matemáticos que explicam a pandemia de coronavírus"](https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/31/crescimento-exponencial-e-curva-epidemica-entenda-os-principais-conceitos-matematicos-que-explicam-a-pandemia-de-coronavirus.ghtml?fbclid=IwAR1MP0il7jJWv6RWKfIT35szQcNAyiQMwEQcNdb76TruWtoo7CqW0ZzdQ4c), Portal G1, 31 de março de 2020.
 * [Fila para testes interrompe análise sobre velocidade do contágio do coronavírus](https://www.cnnbrasil.com.br/saude/2020/03/31/fila-para-testes-interrompe-analise-sobre-velocidade-do-contagio-do-coronavirus?fbclid=IwAR2EEI2rUZUXPGFrvB4hdZcGyzmPAuHJ2wV_OvtjIsV8OGiljrIRGvYyZaM), CNN Brasil, 31 de março de 2020. 
 * [Resultado de COVID-19 só um mês depois do enterro](https://piaui.folha.uol.com.br/resultado-de-teste-de-covid-19-so-um-mes-depois-do-enterro/), Revista Piauí, 03 de abril de 2020.
+
+
+### Boletins diários da mídia
+
+Boletins diários produzidos pelo jornalista Carlos Tautz. Clique na data e deixe o boletim em pdf.
+
+* Abril: [01](./clipping/14.pdf) [02](./clipping/15.pdf) [03](./clipping/16.pdf) [04](./clipping/17.pdf) [05](./clipping/18.pdf) [06](./clipping/19.pdf)
+* Março: [20](./clipping/2.pdf) [21](./clipping/3.pdf) [22](./clipping/4.pdf) [23](./clipping/5.pdf) [24](./clipping/6.pdf) [25](./clipping/7.pdf) [26](./clipping/8.pdf) [27](./clipping/9.pdf) [28](./clipping/10.pdf) [29](./clipping/11.pdf) [30](./clipping/12.pdf) [31](./clipping/13.pdf)
+
