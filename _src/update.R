@@ -18,7 +18,6 @@ sigla.estado <- c(AC="Acre", AL="Alagoas", AP="Amapá", AM="Amazonas",
 dynamic_pages <- c('index.Rmd', 'informacoes.Rmd', 'projecao.Rmd')
 # 'propagacao.Rmd', 'transmissao.Rmd'
 # 'casos.Rmd', 
-all_pages <- c(static_pages, dynamic_pages)
 
 for (f in dynamic_pages){
     rmarkdown::render(f, output_dir='../')
