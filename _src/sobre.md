@@ -65,11 +65,13 @@ partir de um ponto de vista científico.</b>
 
 </p>
 
-### Contato
+### Contato & Redes Sociais
  
 * Para comentários, sugestões e colaborações científicas, por favor, envie mensagem para nós via obscovid19br@gmail.com .
 
 * Para imprensa e entrevistas, por favor, contate o jornalista Carlos Tautz (carlostautz01@gmail.com). 
+
+* Nos siga no Instagram @[obscovid19br](https://www.instagram.com/obscovid19br/) e nos curta no Facebook [fb.com/obscovid19br](https://www.facebook.com/obscovid19br). Te esperamos lá!
 
 
 ### Equipe
