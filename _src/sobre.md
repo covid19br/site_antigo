@@ -76,7 +76,7 @@ partir de um ponto de vista científico.</b>
 
 ### Equipe
 
-* Ana Paula A. de Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/1901397112835628)
+* Ana Paula A. Assis (pós doc @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/1901397112835628)
 
 * Andrei Michel Sontag (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1738716619940707)
 
@@ -116,6 +116,8 @@ partir de um ponto de vista científico.</b>
 
 * Marco Antonio Silva Pinheiro (doutorando @ [IFT-UNESP](https://www.ift.unesp.br/)) | [CV](http://lattes.cnpq.br/3654522236249726)
 
+* Marina C. Côrtes (professora @ IB-Unesp) | [CV](http://lattes.cnpq.br/6547567800497624)
+
 * Marina Costa Rillo (pós doc @ [Uni Oldenburg, Alemanha](https://uol.de/en/icbm) ) | [CV](http://lattes.cnpq.br/9213292464230085)
 
 * Marilia P. Gaiarsa (pesquisadora @ University of California) | [CV](http://lattes.cnpq.br/6763492504422527)
@@ -147,6 +149,8 @@ partir de um ponto de vista científico.</b>
 * Tatiana P. Portella Zenker (doutoranda @ [Ecologia - USP](http://ecologia.ib.usp.br/) ) | [CV](http://lattes.cnpq.br/8988655613888832)
 
 * Vítor Sudbrack (mestrando @ [IFT - UNESP](https://www.ift.unesp.br/) ) | [CV](http://lattes.cnpq.br/1687206263257247)
+
+* Viviana Márquez Velásquez (doutoranda @ UFPB) | [CV](http://lattes.cnpq.br/8563030599753995)
 
 * Wendell Pereira Barreto  | [CV](http://lattes.cnpq.br/0639412837460678)
 
