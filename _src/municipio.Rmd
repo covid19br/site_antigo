@@ -1,5 +1,5 @@
 ---
-title: "`r paste('Observatório COVID-19', st)`"
+title: "`r paste('Observatório COVID-19', municipio)`"
 date: "`r format(Sys.time(), '%d de %B de %Y, %H:%M')`"
 output:
  flexdashboard::flex_dashboard:
@@ -36,17 +36,17 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE, fig.width=8, fi
 Column {data-width=600}
 -------------------------------------
     
-### Quantos casos notificados já temos na cidade de `r sigla.municipio[mun]`? Quantos teremos nos próximos dias?
+### Quantos casos notificados já temos na cidade de `r municipio`? Quantos teremos nos próximos dias?
 
 ```{r}
-ggplotly(municip.plot.forecast.exp[[mun]], tooltip = "text")
+ggplotly(municip.plot.forecast.exp, tooltip = "text")
 ```
 
 >Pontos pretos indicam o número de casos confirmados notificados no estado de `r sigla.estado[st]` por dia.
 **Pontos em laranja são a previsão para os próximos 5 dias (entre 
-`r  as.integer(municip.exp.5d[[mun]][max(nrow(municip.exp.5d[[mun]])),2])` e 
-`r as.integer(municip.exp.5d[[mun]][max(nrow(municip.exp.5d[[mun]])),3])` casos em
-`r format(max(time(municip.exp.5d[[st]])), "%d/%m/%Y")` )**, se a taxa de
+`r  as.integer(municip.exp.5d[max(nrow(municip.exp.5d)),2])` e 
+`r as.integer(municip.exp.5d[max(nrow(municip.exp.5d)),3])` casos em
+`r format(max(time(municip.exp.5d)), "%d/%m/%Y")` )**, se a taxa de
 crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
 intervalo de confiança dessa previsão.
 
@@ -69,15 +69,15 @@ Column {data-width=400}
 ### Quão rápido a doença se propaga?
 
 ```{r}
-ggplotly(municip.tempo.dupl[[mun]])
+ggplotly(municip.plot.tempo.dupl)
 ```   
 
 O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos confirmados**. 
 Quanto menor esse número, mais rápido a
 doença está se espalhando. Esse número depende muito das medidas
 de contenção da doença. **A estimativa de hoje é entre 
-`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),2], 1))` e 
-`r as.vector(round(tempos.duplicacao[max(nrow(tempos.duplicacao)),3], 1))` dias**.
+`r as.vector(round(municip.tempos.duplicacao[max(nrow(municip.tempos.duplicacao)),2], 1))` e 
+`r as.vector(round(municip.tempos.duplicacao[max(nrow(municip.tempos.duplicacao)),3], 1))` dias**.
 
 A linha azul no gráfico mostra o tempo de duplicação estimado a
 intervalos de 5 dias (as datas indicam o fim de cada um desses
@@ -100,8 +100,8 @@ doença está se espalhando**. Marcamos este limite com uma linha vermelha.
 
 Estimamos o $R_e$ da epidemia de COVID-19 no Brasil diariamente.
 **No momento o $R_e$ está entre 
-`r round(municip.res.uncertain.si[[mun]]$R[nrow(res.uncertain.si$R), 5],1)` e
- `r round(municip.res.uncertain.si[[mun]]$R[nrow(res.uncertain.si$R), 11],1)` **.
+`r round(municip.res.uncertain.si$R[nrow(municip.res.uncertain.si$R), 5],1)` e
+ `r round(municip.res.uncertain.si$R[nrow(municip.res.uncertain.si$R), 11],1)` **.
  
 A linha azul no gráfico mostra a estimativa de $R_e$ a intervalos de 7
 dias (as datas indicam o fim de cada um desses intervalos). A faixa
