@@ -28,7 +28,7 @@ municipio <- sigla.municipios[mun]
 # preparação dos dados específica por município?
 # este arquivo deve se encarregar de procurar na pasta certa pelo arquivo com a
 # data mais recente
-source(paste0('prepara_dados_', mun, '.R'))
+source(paste0('prepara_dados_municipio_', mun, '.R'))
 
 # códigos de análise e plot genéricos (mas pode usar as variáveis `mun` e
 # `municipio` pra títulos de plot etc.
