@@ -39,7 +39,7 @@ output:
 * ["Crescimento exponencial e curva epidêmica: entenda os principais conceitos matemáticos que explicam a pandemia de coronavírus"](https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/31/crescimento-exponencial-e-curva-epidemica-entenda-os-principais-conceitos-matematicos-que-explicam-a-pandemia-de-coronavirus.ghtml?fbclid=IwAR1MP0il7jJWv6RWKfIT35szQcNAyiQMwEQcNdb76TruWtoo7CqW0ZzdQ4c), Portal G1, 31 de março de 2020.
 * [Fila para testes interrompe análise sobre velocidade do contágio do coronavírus](https://www.cnnbrasil.com.br/saude/2020/03/31/fila-para-testes-interrompe-analise-sobre-velocidade-do-contagio-do-coronavirus?fbclid=IwAR2EEI2rUZUXPGFrvB4hdZcGyzmPAuHJ2wV_OvtjIsV8OGiljrIRGvYyZaM), CNN Brasil, 31 de março de 2020. 
 * [Resultado de COVID-19 só um mês depois do enterro](https://piaui.folha.uol.com.br/resultado-de-teste-de-covid-19-so-um-mes-depois-do-enterro/), Revista Piauí, 03 de abril de 2020.
-* [Vídeo: coronavírus no Brasil pode ser até 5 vezes pior do que parece](https://www.em.com.br/app/noticia/bem-viver/2020/04/09/interna_bem_viver,1137349/video-coronavirus-no-brasil-pode-ser-ate-5-vezes-pior-do-que-parece.shtml), Estado de Mina, canal #paraentender, 09 de abril de 2020.
+* [Vídeo: coronavírus no Brasil pode ser até 5 vezes pior do que parece](https://www.em.com.br/app/noticia/bem-viver/2020/04/09/interna_bem_viver,1137349/video-coronavirus-no-brasil-pode-ser-ate-5-vezes-pior-do-que-parece.shtml), Estado de Minas, canal #paraentender, 09 de abril de 2020.
 
 
 ### Boletins diários da mídia
