@@ -46,7 +46,7 @@ plot.estimate.R0 <-
     geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill="lightgrey") +
     geom_line(size = 1.25, color="darkblue") +
     scale_x_date( date_labels = "%d/%b", name="") +
-    ylim(0.8, max(Re.now.zoo$Quantile.0.975.R))+
+    ylim(min(c(0.8, min(Re.now.zoo$Quantile.0.025.R))), max(Re.now.zoo$Quantile.0.975.R))+
     geom_hline(yintercept=1, linetype="dashed", col="red") +          
     ylab("Número de reprodução da epidemia") +
     plot.formatos
