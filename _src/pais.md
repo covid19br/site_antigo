@@ -13,6 +13,7 @@ output:
   navbar:
     - { title: "Início", href: "index.html", align: left}
     - { title: "+Info", href: "informacoes.html", align: left}
+    - { title: "+Perguntas", href: "perguntas.html", align: left}
     - { title: "Fontes", href: "fontes.html", align: left}
     - { title: "Na Mídia", href: "midia.html", align: left}
     - { title: "Sobre", href: "sobre.html", align: left}
