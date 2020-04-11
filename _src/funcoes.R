@@ -165,7 +165,7 @@ estimate.R0 <- function(novos.casos, day0=8, delay=7, ...){
 #' @param ncasos vetor de número de novos casos
 #' @param datas vetor de datas dos novos casos
 Re.com.data <- function(ncasos, datas, dia0 = min(datas), delay = 5){
-    if(length(ngcasos)!=length(datas)) stop("ncasos e ndatas devem ter o mesmo comprimento")
+    if(length(ncasos)!=length(datas)) stop("ncasos e ndatas devem ter o mesmo comprimento")
     day0 <- min(which(datas >= dia0, arr.ind=TRUE))
     if(day0 < delay)
         day0 = delay + 1

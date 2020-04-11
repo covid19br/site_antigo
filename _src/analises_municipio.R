@@ -17,7 +17,7 @@ now.exp.upper <-forecast.exponential(now.pred.zoo$upper.merged.c,
 ################################################################################
 ## Cálculo do R efetivo ##
 ################################################################################
-Re.now <- Re.com.data(ncasos = now.pred.zoo$n.casos.merged, datas = time(now.pred.zoo), delay = 7)
+Re.now <- Re.com.data(ncasos = now.pred.zoo$estimate.merged, datas = time(now.pred.zoo), delay = 7)
 ## Objeto time series indexado pela data de fim de cada janela de cálculo
 Re.now.zoo <- zoo(Re.now$R[,-(12:13)], Re.now$R[,13]) 
 
