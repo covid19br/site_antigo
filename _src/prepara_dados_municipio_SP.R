@@ -1,12 +1,12 @@
 ## Pacotes necessários
 library(zoo)
 library(dplyr)
-
+source("funcoes.R")
 
 ## Diretorio dos arquivos das bases
 nome.dir <- "../dados/municipio_SP/" 
 ## Retira datas dos sufixos dos nomes das bases e identifica a maior data
-## Só funciona se os nomes das bases forem mantidos
+## Só funciona se os nomes das bases forem mantidos no padrão
 data.base <- dir(nome.dir, pattern = "nowcasting_covid_20") %>%
     substr(start = 18, stop = 27) %>%
     as.Date(format = "%Y_%m_%d") %>%
@@ -25,3 +25,21 @@ n.sintoma.zoo <- with(n.sintoma, zoo(n.casos,as.Date(dt_sin_pri)))
 ## Junta todos os casos por data de sintoma com previsao do nowcasting (que só tem os ultimos 30 dias)
 ## VERIFICAR: Total de casos reportado por data do nowcasting tem diferenças com total de casos por data de sintoma tabulado
 now.pred.zoo <- merge(n.casos=n.sintoma.zoo, now.pred.zoo)
+## Adiciona variavel de novos casos merged:
+## pevisto por nowcasting na janela usada pelo nowcasting (últimos 30 dias)
+## e n de casos observados antes disto
+now.pred.zoo$estimate.merged <- with(now.pred.zoo, preenche.now(estimate, n.casos))
+now.pred.zoo$lower.merged <- with(now.pred.zoo, preenche.now(lower, n.casos))
+now.pred.zoo$upper.merged <- with(now.pred.zoo, preenche.now(upper, n.casos))
+## n cumulativo
+now.pred.zoo$estimate.merged.c <- cumsum(now.pred.zoo$estimate.merge)
+now.pred.zoo$lower.merged.c <- cumsum(now.pred.zoo$lower.merge)
+now.pred.zoo$upper.merged.c <- cumsum(now.pred.zoo$upper.merge)
+
+## Atualiza tb o data.frame
+now.pred <- as.data.frame(now.pred.zoo)
+now.pred$onset_date <- as.Date(rownames(now.pred))
+now.pred <- now.pred[,c(11,1:10)]
+
+## Lista com todos os resultados no nowcasting
+now.lista <- readRDS(paste0(nome.dir, "nowcasting_covid_",data.base,".rds"))

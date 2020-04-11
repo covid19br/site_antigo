@@ -62,7 +62,7 @@ dt.rw <- function(zoo.obj, window.width){
               align="right")
 }
 
-
+#' Forecast usando regressão Poisson sobre série dos casos acumulados
 forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.forecast, ...){
     if(class(zoo.obj)!="zoo"|!is.null(dim(zoo.obj)))
         stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")
@@ -75,6 +75,10 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
     else
         fim <- end
     y <- window(zoo.obj, start = inicio, end = fim)
+    if(!is.integer(y)) {
+        warning("Resposta não está em inteiros, convertendo para inteiro para ajustar glm Poisson")
+        y <- as.integer(y)
+    }
     fit <- fitP.exp(y, only.coef = FALSE)
     datas.forecast <- fim + (1:days.forecast)
     newdata <- data.frame( ndias = as.vector( datas.forecast - inicio ) )
@@ -85,6 +89,58 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
     df1$ic.upp <-  with(df1, exp(lpred + 2*lse))
     zoo(df1[,c("predito","ic.low","ic.upp")], datas.forecast)
 }
+
+#' Médias e ICs das probabilidades de notificação a cada dia
+#' @param NobBS.output objeto retornado pela função NobBS do pacote de
+#'     mesmo nome
+#' @return data frame com média e quantis 2.5% e 97.5% das
+#'     distribuições a posteriori dos parâmetros de atraso de
+#'     notificação pelo método de nowcasting da função NobBS. Os
+#'     valores estão convertidos para escala de probabilidade, e
+#'     portanto podem ser interpretado como a probabilidade de um caso
+#'     ser notificado D dias após o dias o primeiro sintoma, sendo que
+#'     vai de zero ao máximo definido pelos argumentos do nowcasting
+beta.summary <- function(NobBS.output){
+    df <- NobBS.output$params.post
+    df1 <- df[, names(df)[grepl("Beta",names(df))]]
+    data.frame(atraso = as.integer(substr(names(df1), 6, 8)),
+               mean = exp(apply(df1, 2, mean)),
+               lower = exp(apply(df1, 2, quantile, 0.025)),
+               upper = exp(apply(df1, 2, quantile, 0.975)),
+               row.names = names(df1))    
+}
+
+#' Estima numero de notificacoes por dia a partir de um vetor de n de casos novos
+#'
+estima.not <- function(vetor.casos, NobBS.output){
+    betas <- beta.summary(NobBS.output)$mean
+    i <- length(vetor.casos)-length(betas)
+    if(i<0) stop(paste("vetor.casos deve ter comprimento maior ou igual a", length(betas))) 
+    else if(i>0)
+        y <- vetor.casos[(i+1):length(vetor.casos)]
+    else
+        y <- vetor.casos
+    sum(y*rev(betas))
+    }
+
+
+#' Preenche NA's iniciais do vetor de estimaod spleo nowcasting
+#' @details O nowcasting estima para os últimos n dias. Esta função
+#'     preenche os dias anteriores com os valores de um outro vetor,
+#'     normalmente o vetor de n de casos observado
+preenche.now <- function(vetor.now, vetor.casos){
+    index <- max(which(is.na(vetor.now), arr.ind=TRUE))
+    vetor.now[1:index] <- vetor.casos[1:index]
+    return(vetor.now)
+    }
+
+#' Inverso da funcao logito
+inv.logit <- function(x)
+    exp(x)/(1+exp(x))
+
+#' substitui NAS por zeros
+na.zero <- function(x)
+    ifelse(is.na(x), 0, x)
 
 ###############################################################################
 # Estimating R accounting for uncertainty on the serial interval distribution #
@@ -105,3 +161,17 @@ estimate.R0 <- function(novos.casos, day0=8, delay=7, ...){
     estimate_R(novos.casos, method = "uncertain_si", config = config)
 }
 
+#' Calcula R efetivo sobre a estimativas de nowcasting retornadas pela função NobBS::NobBS
+#' @param ncasos vetor de número de novos casos
+#' @param datas vetor de datas dos novos casos
+Re.com.data <- function(ncasos, datas, dia0 = min(datas), delay = 5){
+    if(length(ngcasos)!=length(datas)) stop("ncasos e ndatas devem ter o mesmo comprimento")
+    day0 <- min(which(datas >= dia0, arr.ind=TRUE))
+    if(day0 < delay)
+        day0 = delay + 1
+    Re <- estimate.R0(as.integer(na.zero(ncasos)), day0 = day0, delay = delay)
+    names(Re$R) <- gsub("\\(R\\)", ".R", names(Re$R))
+    Re$R$data.inicio <- datas[Re$R$t_start]
+    Re$R$data.fim <- datas[Re$R$t_end]
+    return(Re)
+}
