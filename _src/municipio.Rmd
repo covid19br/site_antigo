@@ -43,9 +43,9 @@ ggplotly(plot.nowcast.cum, tooltip = "text")
 
 Pontos pretos indicam o número de casos confirmados notificados no estado de `r municipio` por dia.
 **Pontos em laranja são a previsão para os próximos 5 dias (entre 
-`r  as.integer(now.exp.mean[max(nrow(now.exp.mean)),2])` e 
-`r as.integer(now.exp.mean[max(nrow(now.exp.mean)),3])` casos em
-`r format(max(time(now.exp.mean)), "%d/%m/%Y")` )**, se a taxa de
+`r  as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])` e 
+`r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos em
+`r format(max(time(now.proj.zoo)), "%d/%m/%Y")` )**, se a taxa de
 crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
 intervalo de confiança dessa previsão.
 
