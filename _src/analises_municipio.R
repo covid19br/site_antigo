@@ -25,7 +25,7 @@ Re.now.zoo <- zoo(Re.now$R[,-(12:13)], Re.now$R[,13])
 ################################################################################
 ## Cálculo do tempo de duplicação ##
 ################################################################################
-td.now <- dt.rw(now.pred.zoo$n.casos.merged.cumul, window.width = 5)
+td.now <- dt.rw(now.pred.zoo$estimate.merged.c, window.width = 5)
 ## Conveniencia: reordena e renomeia as colunas do objeto resultante
 td.now <- td.now[,c(1,3,2)]
 names(td.now) <- c("estimativa", "ic.inf", "ic.sup")

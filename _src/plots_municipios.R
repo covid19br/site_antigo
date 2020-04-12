@@ -19,7 +19,7 @@ plot.nowcast <-
     ggplot(aes(Index, n.casos)) +
     geom_line(aes(col = "Notificados"), size = 1) +
     geom_line(aes(y = estimate, col = "Estimado"), size = 1) +
-    geom_ribbon(aes(ymin = lower, ymax = upper), fill= "red", alpha = 0.2) +
+    geom_ribbon(aes(ymin = lower, ymax = upper), fill= "indian red") +
     scale_x_date(date_labels = "%d/%b", name="") +
     scale_color_discrete(name="") +
     xlab("Dia do primeiro sintoma") +
@@ -35,6 +35,7 @@ plot.tempo.dupl <-
     geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill="lightgrey") +
     geom_line(size = 1.25, color="darkblue") +
     scale_x_date(date_labels = "%d/%b", name="") +
+    coord_cartesian(ylim = c(0, 50)) +
     ylab("Tempo de duplicação (dias)") +
     plot.formatos 
 
