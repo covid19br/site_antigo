@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
 ### Quantos casos notificados já temos na cidade de `r municipio`? Quantos teremos nos próximos dias?
 
 ```{r}
-ggplotly(plot.nowcast, tooltip = "text")
+ggplotly(plot.nowcast.cum, tooltip = "text")
 ```
 
 ***
