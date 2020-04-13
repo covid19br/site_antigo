@@ -27,27 +27,29 @@ output:
 library(flexdashboard)
 #library(xtable)
 library(knitr)
-library(plotly)
+#library(plotly)
 options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
 ```
 
 
-### Quantos casos notificados já temos na cidade de `r municipio`? Quantos teremos nos próximos dias?
+### Quantos casos estimamos ter na cidade de `r municipio`? Quantos teremos nos próximos dias?
 
 ```{r}
-ggplotly(plot.nowcast.cum, tooltip = "text")
+#ggplotly(plot.nowcast.cum, tooltip = "text")
 ```
 
 ***
 
-Pontos pretos indicam o número de casos confirmados notificados no estado de `r municipio` por dia.
+**Pontos pretos indicam o número de casos graves de COVID-19 (hospitalizados) estimados na cidade de `r municipio` no dia indicado.** Para calcular esse número, utiliza-se os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe e uma técnica estatística que elimina os atrasos do sistema de notificação, isto é, adianta-se as notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser notificado no sistema de vigilância oficial. Assume-se que a estatística desses intervalos de tempo perdura como nos últimos dias e que o fluxo de notificações é regular. Essa técnica não considera a subnotificação de casos assintomáticos ou leves que não são testados.   
+
 **Pontos em laranja são a previsão para os próximos 5 dias (entre 
 `r  as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])` e 
-`r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos em
+`r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos graves em
 `r format(max(time(now.proj.zoo)), "%d/%m/%Y")` )**, se a taxa de
-crescimento continuar a mesma dos últimos 5 dias. Em cinza é o
+crescimento dos valores corrigidos continuar a mesma dos últimos 5 dias. Em cinza é o
 intervalo de confiança dessa previsão.
+
 
 <h5>Por que só 5 dias?</h5>
 
@@ -64,12 +66,12 @@ previsões para mais de 5 dias com este método.
 ### Quão rápido a doença se propaga?
 
 ```{r}
-ggplotly(plot.tempo.dupl)
+#ggplotly(plot.tempo.dupl)
 ```   
 
 ***
 
-O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos confirmados**. 
+O tempo de duplicação indica **quanto tempo leva para dobrar o número de casos graves (hospitalizados)** na cidade de `r municipio`. 
 Quanto menor esse número, mais rápido a
 doença está se espalhando. Esse número depende muito das medidas
 de contenção da doença. **A estimativa de hoje é entre 
@@ -87,16 +89,17 @@ que o tempo passa.
 ### Para quantas pessoas cada infectado transmite a doença?
 
 ```{r}
-ggplotly(plot.estimate.R0)
+#ggplotly(plot.estimate.R0)
 ```
 
 ***
 
 O Número Reprodutivo efetivo ($R_e$) é a média de pessoas contaminadas
-por um infectado.  **Números reprodutivos maiores que um indicam que a
+por um infectado.  **Números reprodutivos maiores que 1 indicam que a
 doença está se espalhando**. Marcamos este limite com uma linha vermelha.
 
-Estimamos o $R_e$ da epidemia de COVID-19 no Brasil diariamente.
+Estimamos o $R_e$ da epidemia de COVID-19 no Brasil diariamente na cidade de `r municipio`
+baseando-se nos dados estimados de casos graves.
 **No momento o $R_e$ está entre 
 `r round(Re.now.zoo[nrow(Re.now.zoo), 5],1)` e
  `r round(Re.now.zoo[nrow(Re.now.zoo), 11],1)` **.
