@@ -36,7 +36,9 @@ knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
 ### Quantos casos estimamos ter na cidade de `r municipio`? Quantos teremos nos próximos dias?
 
 ```{r}
-#ggplotly(plot.nowcast.cum, tooltip = "text")
+
+plotly::layout(p = ggplotly(plot.nowcast.cum), legend = list(orientation = "h", valign = "middle", y = 1.05))
+
 ```
 
 ***

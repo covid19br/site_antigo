@@ -62,7 +62,7 @@ plot.nowcast.cum <-
 ################################################################################
 plot.tempo.dupl <-
     ggplot(td.now, aes(Index, estimativa)) +
-    geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill = "lightgrey", alpha = 0.5) +
+    geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill = "lightgrey", alpha = 0.75) +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(3, "Dark2")[1]) +
     scale_x_date(date_labels = "%d/%b", name="") +
     ##coord_cartesian(ylim = c(0, 50)) +
@@ -74,7 +74,7 @@ plot.tempo.dupl <-
 ################################################################################
 plot.estimate.R0 <-
     ggplot(data = Re.now.zoo, aes(Index, Mean.R)) +
-    geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill = "lightgrey", alpha = 0.5) +
+    geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill = "lightgrey", alpha = 0.75) +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(4, "Dark2")[3]) +
     scale_x_date( date_labels = "%d/%b", name="") +
     ylim(min(c(0.8, min(Re.now.zoo$Quantile.0.025.R))), max(Re.now.zoo$Quantile.0.975.R))+
