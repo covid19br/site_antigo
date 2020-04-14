@@ -43,14 +43,14 @@ plotly::layout(p = ggplotly(plot.nowcast.cum), legend = list(orientation = "h", 
 
 ***
 
-**Pontos pretos indicam o número de casos graves de COVID-19 (hospitalizados) estimados na cidade de `r municipio` no dia indicado.** Para calcular esse número, utiliza-se os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe e uma técnica estatística que elimina os atrasos do sistema de notificação, isto é, adianta-se as notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser notificado no sistema de vigilância oficial. Assume-se que a estatística desses intervalos de tempo perdura como nos últimos dias e que o fluxo de notificações é regular. Essa técnica não considera a subnotificação de casos assintomáticos ou leves que não são testados.   
+**A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de `r municipio` até a data, e a linha vermelha a estimativa corrigindo atrasos de notificação.** Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é, adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou leves que não são testados.
 
-**Pontos em laranja são a previsão para os próximos 5 dias (entre 
+**Pontos tracejados são a previsão para os próximos 5 dias (entre 
 `r  as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])` e 
 `r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos graves em
 `r format(max(time(now.proj.zoo)), "%d/%m/%Y")` )**, se a taxa de
-crescimento dos valores corrigidos continuar a mesma dos últimos 5 dias. Em cinza é o
-intervalo de confiança dessa previsão.
+crescimento dos valores corrigidos continuar a mesma dos últimos 5 dias. Em
+cinza é mostrado o intervalo de confiança dessa previsão.
 
 
 <h5>Por que só 5 dias?</h5>
@@ -58,8 +58,7 @@ intervalo de confiança dessa previsão.
 Porque quando o crescimento é exponencial as incertezas também crescem
 exponencialmente. Por isso a região cinza, que expressa a
 incerteza da previsão, aumenta de largura com
-o tempo.  E mesmo pequenas mudanças na taxa que aconteçam
-hoje ou amanhã vão causar enormes variações no futuro. 
+o tempo.
 
 Por isso avaliamos que é inadequado fazer
 previsões para mais de 5 dias com este método.
@@ -108,13 +107,21 @@ Estimamos o $R_e$ da epidemia de COVID-19 no Brasil diariamente na cidade de `r 
 baseando-se nos dados estimados de casos graves.
 **No momento o $R_e$ está entre 
 `r round(Re.now.zoo[nrow(Re.now.zoo), 5],1)` e
- `r round(Re.now.zoo[nrow(Re.now.zoo), 11],1)` **.
+ `r round(Re.now.zoo[nrow(Re.now.zoo), 11],1)`**.
  
 A linha roxa no gráfico mostra a estimativa de $R_e$ a intervalos de 7
 dias (as datas indicam o fim de cada um desses intervalos). A faixa
 cinza é o intervalo de confiança dessas estimativas.  Esse intervalo
 tem 95% de chance de incluir o valor real de $R_e$. No momento há uma
-grande incerteza quanto ao valor de $R_e$. Mas mesmo **o limite mínimo
-do intervalo de confiança está acima de um, indicando que a
-epidemia continua em expansão rápida**.
+grande incerteza quanto ao valor de $R_e$. 
+`r 
+if(round(Re.now.zoo[nrow(Re.now.zoo), 5],1) >= 1){
+    "Mas mesmo **o limite mínimo do intervalo de confiança está acima de um, indicando que a
+epidemia continua em expansão rápida**."
+} else if(round(Re.now.zoo[nrow(Re.now.zoo), 11],1) < 1){
+    "No entanto, mesmo **o limite máximo do intervalo de confiança está abaixo de um, indicando que a
+epidemia está em declínio**."
+} else
+    "**O limiar de 1 está dentro do intervalo de confiança, ou seja, $R_e$ pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão**."
+`
 
