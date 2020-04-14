@@ -27,7 +27,7 @@ output:
 library(flexdashboard)
 #library(xtable)
 library(knitr)
-#library(plotly)
+library(plotly)
 options(OutDec = ',')
 knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
 ```
