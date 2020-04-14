@@ -66,7 +66,9 @@ previsões para mais de 5 dias com este método.
 ### Quão rápido a doença se propaga?
 
 ```{r}
-#ggplotly(plot.tempo.dupl)
+
+plotly::layout(p = ggplotly(plot.tempo.dupl), legend = list(orientation = "h", valign = "middle", y = 1.05))
+
 ```   
 
 ***
@@ -78,7 +80,7 @@ de contenção da doença. **A estimativa de hoje é entre
 `r as.vector(round(td.now[max(nrow(td.now)),2], 1))` e 
 `r as.vector(round(td.now[max(nrow(td.now)),3], 1))` dias**.
 
-A linha azul no gráfico mostra o tempo de duplicação estimado a
+A linha verde no gráfico mostra o tempo de duplicação estimado a
 intervalos de 5 dias (as datas indicam o fim de cada um desses
 intervalos). A faixa cinza é o intervalo de confiança desses tempos de
 duplicação. O intervalo largo mostra que a incerteza é
@@ -89,7 +91,9 @@ que o tempo passa.
 ### Para quantas pessoas cada infectado transmite a doença?
 
 ```{r}
-#ggplotly(plot.estimate.R0)
+
+plotly::layout(p = ggplotly(plot.estimate.R0), legend = list(orientation = "h", valign = "middle", y = 1.05))
+
 ```
 
 ***
@@ -104,7 +108,7 @@ baseando-se nos dados estimados de casos graves.
 `r round(Re.now.zoo[nrow(Re.now.zoo), 5],1)` e
  `r round(Re.now.zoo[nrow(Re.now.zoo), 11],1)` **.
  
-A linha azul no gráfico mostra a estimativa de $R_e$ a intervalos de 7
+A linha roxa no gráfico mostra a estimativa de $R_e$ a intervalos de 7
 dias (as datas indicam o fim de cada um desses intervalos). A faixa
 cinza é o intervalo de confiança dessas estimativas.  Esse intervalo
 tem 95% de chance de incluir o valor real de $R_e$. No momento há uma
