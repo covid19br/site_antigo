@@ -1,0 +1,74 @@
+---
+  title: "Observatório COVID-19 BR | Informações"
+output: 
+  flexdashboard::flex_dashboard:
+  orientation: rows
+vertical_layout: scroll
+self_contained: false
+lib_dir: ../libs
+source_code: "https://github.com/covid19br/covid19br.github.io"
+social: menu
+css: styles.css
+navbar:
+- { title: "Início", href: "index.html", align: left}
+- { title: "+Info", href: "informacoes.html", align: left}
+- { title: "+Perguntas", href: "perguntas.html", align: left}
+- { title: "Fontes", href: "fontes.html", align: left}
+- { title: "Na Mídia", href: "midia.html", align: left}
+- { title: "Sobre", href: "sobre.html", align: left}
+favicon: favicon.png
+includes:
+  after_body: footer.html
+in_header: header.html
+---
+  
+  
+  ```{r setOptions, include=FALSE, message=FALSE}
+library(ggplot2)
+library(knitr)
+options(OutDec = ',')
+knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
+```
+
+Row  {data-height=600}
+---------------------
+  
+### Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19 sem distanciamento social?
+  
+  No início da epidemia no município de São Paulo, a ocupação dos leitos com casos confirmados de COVID-19 era de 0.8% dos leitos totais (dia 19/03, dados da SIVEP-GRIPE) e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias **se nenhuma medida de controle de contágio tivesse sido tomada** e o número de leitos se mantivesse constante (Fig. 1). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (Fig. 2). 
+
+### 
+
+![Fig. 1: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe).](fig/leitos.png){ width=100% }
+
+
+Row {data-height=600}
+--------------------
+  
+### Por que modelar um cenário sem distanciamento social?
+
+Nosso modelo representa o cenário irreal do desenvolvimento de COVID-19 no município de São Paulo sem medidas de distanciamento social. Apesar de hipotético, este modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de distanciamento social salvaram (trabalho futuro). Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na cidade. Para representar o cenário sem  medidas de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19/03, Fig. 1).
+
+
+### 
+
+![Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).](fig/leitos_UTI.png){ width=100% }
+
+Row {data-height=600}
+--------------------
+  
+### É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?
+
+Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma porcentagem baixa dos leitos (por exemplo, 5% dos leitos totais), a ocupação total de leitos pode ser atingida muito rapidamente sem medidas preventivas (por exemplo, 12 dias). Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Desta forma, iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19. 
+
+
+
+Row {data-height=600}
+--------------------
+### Método
+
+Usamos um modelo logístico para simular os números de infectados, suscetíveis e hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo. Utilizamos os números de hospitalizados por faixa etária entre os dias 14 e 19 de março (período anterior às medidas de quarentena) do sistema SIVEP-Gripe para a cidade de São Paulo para ajustar os valores dos parâmetros do modelo aos dados observados usando um método de ajuste bayesiano. O tempo de duplicação que melhor se ajustou aos dados observados neste período foi de 2.4 dias. Usamos este valor inicial de tempo de duplicação (2.4 dias) para projetar o número de hospitalizados para os dias subsequentes (20 de março a 13 de abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo com o número de não infectados no tempo t. Para a estimativa de número de infectados, utilizamos a distribuição etária de hospitalizados proposta por Verity et al. 2020 [Ref 1]. A conversão de hospitalizados em pessoas que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados que necessitam de UTI proposta pelo CDC [Ref 2]. Nós não consideramos possíveis mudanças no tempo de duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes variações e incertezas no tempo de duplicação.
+
+**[Ref. 1]**: Verity, R., Okell, L.C. and Dorigatti, I., Estimates of the severity of COVID-19 disease. medRxiv 2020.
+**[Ref. 2]**: COVID, C., Severe Outcomes Among Patients with Coronavirus Disease 2019 (COVID-19) -- United States, February 12 - March 16, 2020.
+
