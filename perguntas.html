@@ -24,6 +24,7 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"+Perguntas","href":"perguntas.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -2608,7 +2609,7 @@ window.FlexDashboardComponents.push({
 </div>
 </div>
 <div id="row-2" class="section level2" data-height="500">
-<h2>Row</h2>
+<h2 data-height="500">Row</h2>
 <div id="o-quão-diferentes-são-os-casos-notificados-dos-casos-reais" class="section level3">
 <h3>O quão diferentes são os casos notificados dos casos reais?</h3>
 <p>No caso da atual pandemia, <b>os casos notificados de COVID-19 são as pessoas que fizeram o exame para detectar o vírus ou o seu anticorpo no seu organismo e obtiveram um resultado positivo</b>, e portanto são casos confirmados de COVID-19. O número de casos reais é maior do que o número de casos notificados, devido a dois conceitos: (i) a subnotificação, ou seja, escolhe-se testar em apenas uma parcela da população, que no caso do Brasil são os casos graves e os de profissionais da saúde. Pessoas assintomáticas, por exemplo, não são testadas e, portanto, não entram para o banco de dados de casos notificados. Esse é uma escolha consciente do modelo de vigilância adotado; e (ii) existem atrasos na notificação, pois há o tempo entre o contágio e o aparecimento de sintomas (chamado de tempo de incubação), o tempo entre os primeiro sintomas e ir no médico, e finalmente o tempo para sair o resultado do exame. Tudo isso faz com que o número de confirmados hoje seja um retrato do passado, do número de pessoas que foram contaminados há vários dias.</p>
@@ -2616,7 +2617,7 @@ window.FlexDashboardComponents.push({
 <div id="section" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/mensagem.jpeg" alt="Nosso pedido para que você, se possível, #FiqueEmCasa!" style="width:100.0%" />
+<img src="fig/mensagem.jpeg" style="width:100.0%" alt="" />
 <p class="caption">Nosso pedido para que você, se possível, #FiqueEmCasa!</p>
 </div>
 </div>
@@ -2703,6 +2704,7 @@ src="https://c.statcounter.com/12220607/0/18092bfd/1/"
 alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
