@@ -1,34 +1,27 @@
 ---
-  title: "Observatório COVID-19 BR | Informações"
+title: "Observatório COVID-19 BR"
 output: 
-  flexdashboard::flex_dashboard:
+ flexdashboard::flex_dashboard:
   orientation: rows
-vertical_layout: scroll
-self_contained: false
-lib_dir: ../libs
-source_code: "https://github.com/covid19br/covid19br.github.io"
-social: menu
-css: styles.css
-navbar:
-- { title: "Início", href: "index.html", align: left}
-- { title: "+Info", href: "informacoes.html", align: left}
-- { title: "+Perguntas", href: "perguntas.html", align: left}
-- { title: "Fontes", href: "fontes.html", align: left}
-- { title: "Na Mídia", href: "midia.html", align: left}
-- { title: "Sobre", href: "sobre.html", align: left}
-favicon: favicon.png
-includes:
-  after_body: footer.html
-in_header: header.html
+  vertical_layout: scroll
+  self_contained: false
+  lib_dir: ../libs
+  source_code: "https://github.com/covid19br/covid19br.github.io"
+  social: menu
+  css: styles.css
+  navbar:
+    - { title: "Início", href: "index.html", align: left}
+    - { title: "+Info", href: "informacoes.html", align: left}
+    - { title: "+Perguntas", href: "perguntas.html", align: left}
+    - { title: "Fontes", href: "fontes.html", align: left}
+    - { title: "Na Mídia", href: "midia.html", align: left}
+    - { title: "Sobre", href: "sobre.html", align: left}
+  favicon: favicon.png
+  includes:
+   after_body: footer.html
+   in_header: header.html
 ---
-  
-  
-  ```{r setOptions, include=FALSE, message=FALSE}
-library(ggplot2)
-library(knitr)
-options(OutDec = ',')
-knitr::opts_chunk$set(echo=FALSE, warnings=FALSE, message=FALSE)
-```
+
 
 Row  {data-height=600}
 ---------------------
@@ -54,16 +47,15 @@ Nosso modelo representa o cenário irreal do desenvolvimento de COVID-19 no muni
 
 ![Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).](fig/leitos_UTI.png){ width=100% }
 
-Row {data-height=600}
+Row 
 --------------------
-  
 ### É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?
 
 Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma porcentagem baixa dos leitos (por exemplo, 5% dos leitos totais), a ocupação total de leitos pode ser atingida muito rapidamente sem medidas preventivas (por exemplo, 12 dias). Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Desta forma, iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19. 
 
 
 
-Row {data-height=600}
+Row 
 --------------------
 ### Método
 
