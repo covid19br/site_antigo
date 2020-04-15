@@ -24,7 +24,6 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"+Perguntas","href":"perguntas.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -2585,8 +2584,8 @@ window.FlexDashboardComponents.push({
 
 <div id="dashboard-container">
 
-<div id="row" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<div id="row" class="section level2" data-height="400">
+<h2>Row</h2>
 <div id="em-quanto-tempo-100-dos-leitos-de-são-paulo-estariam-ocupados-com-covid-19-sem-distanciamento-social" class="section level3">
 <h3>Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19 sem distanciamento social?</h3>
 <p>No início da epidemia no município de São Paulo, a ocupação dos leitos com casos confirmados de COVID-19 era de 0.8% dos leitos totais (dia 19/03, dados da SIVEP-GRIPE) e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias <strong>se nenhuma medida de controle de contágio tivesse sido tomada</strong> e o número de leitos se mantivesse constante (Fig. 1). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (Fig. 2).</p>
@@ -2594,13 +2593,13 @@ window.FlexDashboardComponents.push({
 <div id="section" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/leitos.png" style="width:100.0%" alt="" />
+<img src="fig/leitos.png" alt="Fig. 1: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe)." style="width:100.0%" />
 <p class="caption">Fig. 1: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe).</p>
 </div>
 </div>
 </div>
-<div id="row-1" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<div id="row-1" class="section level2" data-height="400">
+<h2>Row</h2>
 <div id="por-que-modelar-um-cenário-sem-distanciamento-social" class="section level3">
 <h3>Por que modelar um cenário sem distanciamento social?</h3>
 <p>Nosso modelo representa o cenário irreal do desenvolvimento de COVID-19 no município de São Paulo sem medidas de distanciamento social. Apesar de hipotético, este modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de distanciamento social salvaram (trabalho futuro). Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na cidade. Para representar o cenário sem medidas de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19/03, Fig. 1).</p>
@@ -2608,7 +2607,7 @@ window.FlexDashboardComponents.push({
 <div id="section-1" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/leitos_UTI.png" style="width:100.0%" alt="" />
+<img src="fig/leitos_UTI.png" alt="Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe)." style="width:100.0%" />
 <p class="caption">Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).</p>
 </div>
 </div>
@@ -2624,8 +2623,9 @@ window.FlexDashboardComponents.push({
 <h2>Row</h2>
 <div id="método" class="section level3">
 <h3>Método</h3>
-<p>Usamos um modelo logístico para simular os números de infectados, suscetíveis e hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo. Utilizamos os números de hospitalizados por faixa etária entre os dias 14 e 19 de março (período anterior às medidas de quarentena) do sistema SIVEP-Gripe para a cidade de São Paulo para ajustar os valores dos parâmetros do modelo aos dados observados usando um método de ajuste bayesiano. O tempo de duplicação que melhor se ajustou aos dados observados neste período foi de 2.4 dias. Usamos este valor inicial de tempo de duplicação (2.4 dias) para projetar o número de hospitalizados para os dias subsequentes (20 de março a 13 de abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo com o número de não infectados no tempo t. Para a estimativa de número de infectados, utilizamos a distribuição etária de hospitalizados proposta por Verity et al. 2020 [Ref 1]. A conversão de hospitalizados em pessoas que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados que necessitam de UTI proposta pelo CDC [Ref 2]. Nós não consideramos possíveis mudanças no tempo de duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes variações e incertezas no tempo de duplicação.</p>
-<p><strong>[Ref. 1]</strong>: Verity, R., Okell, L.C. and Dorigatti, I., Estimates of the severity of COVID-19 disease. medRxiv 2020. <strong>[Ref. 2]</strong>: COVID, C., Severe Outcomes Among Patients with Coronavirus Disease 2019 (COVID-19) – United States, February 12 - March 16, 2020.</p>
+<p>Usamos um modelo logístico para simular os números de infectados, suscetíveis e hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo. Utilizamos os números de hospitalizados por faixa etária entre os dias 14 e 19 de março (período anterior às medidas de quarentena) do sistema SIVEP-Gripe para a cidade de São Paulo para ajustar os valores dos parâmetros do modelo aos dados observados usando um método de ajuste bayesiano. O tempo de duplicação que melhor se ajustou aos dados observados neste período foi de 2.4 dias. Usamos este valor inicial de tempo de duplicação (2.4 dias) para projetar o número de hospitalizados para os dias subsequentes (20 de março a 13 de abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo com o número de não infectados no tempo t. Para a estimativa de número de infectados, utilizamos a distribuição etária de hospitalizados proposta por Verity et al. 2020 [<em>Ref 1</em>]. A conversão de hospitalizados em pessoas que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados que necessitam de UTI proposta pelo CDC [<em>Ref 2</em>]. Nós não consideramos possíveis mudanças no tempo de duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes variações e incertezas no tempo de duplicação.</p>
+<p>[<em>Ref. 1</em>] Verity, R., Okell, L.C., Dorigatti, I., <em>et al.</em> Estimates of the severity of COVID-19 disease. medRxiv 2020.03.09.20033357. DOI: <a href="https://doi.org/10.1101/2020.03.09.20033357" class="uri">https://doi.org/10.1101/2020.03.09.20033357</a></p>
+<p>[<em>Ref. 2</em>] Severe Outcomes Among Patients with Coronavirus Disease 2019 (COVID-19) — United States, February 12 – March 16, 2020. MMWR Morb Mortal Wkly Rep 2020;69:343-346. DOI: <a href="http://dx.doi.org/10.15585/mmwr.mm6912e2external" class="uri">http://dx.doi.org/10.15585/mmwr.mm6912e2external</a></p>
 </div>
 </div>
 
@@ -2666,7 +2666,6 @@ src="https://c.statcounter.com/12220607/0/18092bfd/1/"
 alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
-
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
