@@ -24,6 +24,7 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"+Perguntas","href":"perguntas.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -2585,7 +2586,7 @@ window.FlexDashboardComponents.push({
 <div id="dashboard-container">
 
 <div id="row" class="section level2" data-height="400">
-<h2>Row</h2>
+<h2 data-height="400">Row</h2>
 <div id="em-quanto-tempo-100-dos-leitos-de-são-paulo-estariam-ocupados-com-covid-19-sem-distanciamento-social" class="section level3">
 <h3>Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19 sem distanciamento social?</h3>
 <p>No início da epidemia no município de São Paulo, a ocupação dos leitos com casos confirmados de COVID-19 era de 0.8% dos leitos totais (dia 19/03, dados da SIVEP-GRIPE) e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias <strong>se nenhuma medida de controle de contágio tivesse sido tomada</strong> e o número de leitos se mantivesse constante (<strong>Fig. 1</strong>). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (<strong>Fig. 2</strong>).</p>
@@ -2595,13 +2596,13 @@ window.FlexDashboardComponents.push({
 <div id="section" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/leitos.png" alt="Fig. 1: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe)." style="width:100.0%" />
+<img src="fig/leitos.png" style="width:100.0%" alt="" />
 <p class="caption"><strong>Fig. 1</strong>: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe).</p>
 </div>
 </div>
 </div>
 <div id="row-1" class="section level2" data-height="400">
-<h2>Row</h2>
+<h2 data-height="400">Row</h2>
 <div id="é-arriscado-reduzir-o-isolamento-social-em-municípios-com-mais-de-50-dos-leitos-disponíveis" class="section level3">
 <h3>É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?</h3>
 <p>Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma porcentagem baixa dos leitos (por exemplo, 5% dos leitos totais), a ocupação total de leitos pode ser atingida muito rapidamente sem medidas preventivas (por exemplo, 12 dias). Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Desta forma, iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19.</p>
@@ -2609,7 +2610,7 @@ window.FlexDashboardComponents.push({
 <div id="section-1" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/leitos_UTI.png" alt="Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe)." style="width:100.0%" />
+<img src="fig/leitos_UTI.png" style="width:100.0%" alt="" />
 <p class="caption"><strong>Fig. 2</strong>: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).</p>
 </div>
 </div>
@@ -2661,6 +2662,7 @@ src="https://c.statcounter.com/12220607/0/18092bfd/1/"
 alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
