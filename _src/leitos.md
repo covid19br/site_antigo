@@ -28,33 +28,31 @@ Row  {data-height=400}
   
 ### Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19 sem distanciamento social?
   
-No início da epidemia no município de São Paulo, a ocupação dos leitos com casos confirmados de COVID-19 era de 0.8% dos leitos totais (dia 19/03, dados da SIVEP-GRIPE) e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias **se nenhuma medida de controle de contágio tivesse sido tomada** e o número de leitos se mantivesse constante (Fig. 1). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (Fig. 2). 
+No início da epidemia no município de São Paulo, a ocupação dos leitos com casos confirmados de COVID-19 era de 0.8% dos leitos totais (dia 19/03, dados da SIVEP-GRIPE) e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias **se nenhuma medida de controle de contágio tivesse sido tomada** e o número de leitos se mantivesse constante (**Fig. 1**). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (**Fig. 2**). 
+
+
+ <font size="3.5">*Por que modelar um cenário sem distanciamento social?*</font>
+
+Nosso modelo representa o cenário irreal do desenvolvimento de COVID-19 no município de São Paulo sem medidas de distanciamento social. Apesar de hipotético, este modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de distanciamento social salvaram (trabalho futuro). Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na cidade. Para representar o cenário sem  medidas de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19/03, **Fig. 1**).
 
 
 ### 
 
-![Fig. 1: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe).](fig/leitos.png){ width=100% }
+![**Fig. 1**: Previsão da porcentagem de leitos totais ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos os casos reais de hospitalizados entre os dias 14 e 19/03 (dados do SIVEP-Gripe).](fig/leitos.png){ width=100% }
 
 
 
 Row {data-height=400}
 --------------------
 
-### Por que modelar um cenário sem distanciamento social?
+### É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?
 
-Nosso modelo representa o cenário irreal do desenvolvimento de COVID-19 no município de São Paulo sem medidas de distanciamento social. Apesar de hipotético, este modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de distanciamento social salvaram (trabalho futuro). Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na cidade. Para representar o cenário sem  medidas de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19/03, Fig. 1).
+Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma porcentagem baixa dos leitos (por exemplo, 5% dos leitos totais), a ocupação total de leitos pode ser atingida muito rapidamente sem medidas preventivas (por exemplo, 12 dias). Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Desta forma, iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19. 
   
 
 ### 
 
-![Fig. 2: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).](fig/leitos_UTI.png){ width=100% }
-
-
-Row 
---------------------
-### É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?
-
-Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma porcentagem baixa dos leitos (por exemplo, 5% dos leitos totais), a ocupação total de leitos pode ser atingida muito rapidamente sem medidas preventivas (por exemplo, 12 dias). Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Desta forma, iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19. 
+![**Fig. 2**: Previsão da porcentagem de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os dias 15/3 e 13/4 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo (dados do SIVEP-Gripe).](fig/leitos_UTI.png){ width=100% }
 
 
 Row 
