@@ -1,11 +1,6 @@
 # Libraries
 library(rmarkdown)
 
-# Helper Functions
-makeNamedList <- function(...) {
-  structure(list(...), names = as.list(substitute(list(...)))[-1L])
-}
-
 estados.para.atualizar <- c('SP', 'RJ') # Estados a serem atualizados
 
 # Processamento de Dados
@@ -16,8 +11,5 @@ source('ajuste_projecao_exponencial.R')
 source('plots.R')
 
 # Atualizacao do conteudo do site
-# Atualizacao
-plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, plot.tempo.dupl, est.tempo.dupl, proj.num.casos) # Graficos a serem atualizados
-tables.para.atualizar <- c(serie.temp.table) # Tabelas a serem atualizadas
 # Graficos, tabelas e horário
 source('update_web.R')

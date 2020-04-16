@@ -6,6 +6,11 @@ library(tidyverse)
 library(plotly)
 library(lubridate)
 
+# Helper Functions
+makeNamedList <- function(...) {
+  structure(list(...), names = as.list(substitute(list(...)))[-1L])
+}
+
 ################################################################################
 ## Data de Atualizacao
 ################################################################################
@@ -16,6 +21,7 @@ close(file)
 ################################################################################
 ## Atualiza Plots
 ################################################################################
+plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, plot.tempo.dupl, est.tempo.dupl, proj.num.casos) # Graficos a serem atualizados
 filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
 
@@ -39,7 +45,8 @@ for (st in estados.para.atualizar) {
 ################################################################################
 ## Atualiza tabelas
 ################################################################################
-names.tables <- makeNamedList(tables.para.atualizar)
+tables.para.atualizar <- c(serie.temp.table) # Tabelas a serem atualizadas
+names.tables <- makeNamedList(serie.temp.table) # Tabelas a serem atualizadas
 filenames <- names(names.tables)
 n <- length(tables.para.atualizar)
 
