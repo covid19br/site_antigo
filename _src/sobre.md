@@ -91,6 +91,8 @@ partir de um ponto de vista científico.</b>
 
 * Débora Y C Brandt (doutoranda @ [UC Berkeley, Estados Unidos](https://ib.berkeley.edu/) ) | [CV](http://lattes.cnpq.br/0111799832635782)
 
+* Diogo Melo (pós doc @ IB-USP) | [CV](http://lattes.cnpq.br/7012154595546796)
+
 * Erika Marques Santana (técnica @ [IB-USP](http://ecologia.ib.usp.br/)) | [CV](http://lattes.cnpq.br/4873694782558406)
 
 * Fabiana Rodrigues Arantes (física e artista @ https://artfabi.com/ ) | [CV](http://lattes.cnpq.br/2495800931137053)
