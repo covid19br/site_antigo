@@ -45,7 +45,7 @@ plotly::layout(p = ggplotly(plot.nowcast.cum), legend = list(orientation = "h", 
 
 **A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de `r municipio` até a data, e a linha vermelha a estimativa corrigindo atrasos de notificação.** Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é, adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou leves que não são testados.
 
-** Como o método utiliza um algoritmo de correção do passado com pontos presvistos, os pontos tracejados da linha vermelha são as previsões para os últimos 2 dias e para os próximos 5 dias (entre 
+Como o método utiliza um algoritmo de correção do passado com pontos presvistos, **os pontos tracejados da linha vermelha são as previsões para os últimos 2 dias e para os próximos 5 dias (entre 
 `r  as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])` e 
 `r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos graves em
 `r format(max(time(now.proj.zoo)), "%d/%m/%Y")` )**, se a taxa de
