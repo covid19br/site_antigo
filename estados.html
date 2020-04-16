@@ -66,7 +66,7 @@
     <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <a class="nav-link" href="#">
-        Fontes
+        Visão Detalhada
       </a>
     </div>
 
@@ -75,9 +75,6 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="./index.html">Visão Geral</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./estados.html#sp">Visão Detalhada</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
@@ -89,6 +86,9 @@
           <a class="nav-link" href="./midia.html">Reportagens</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="./fontes.html">Fontes</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="./sobre.html">Sobre</a>
         </li>
         <!-- MENU.ITEM -->
@@ -97,74 +97,144 @@
 
   </nav>
 
-
   <!-- Titulo Principal -->
   <div class="container-fluid mt-2">
     <div class="main-title">
-      <h1 class="display" id="page-title">Fontes</h1><small class="page-title-update">Descubra as fontes utilizadas pelo
-        Observatório</small>
-    </div> <!-- PAGE.TITLE -->
+      <div class="dropdown">
+        <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="text-reset">
+            <h1 class="display" id="page-title">São Paulo</h1>
+          </a> <!-- PAGE.TITLE -->
+        </div>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left" aria-labelledby="titleDropdown">
+          <a class="dropdown-item" href="#">Brasil</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item active" href="#sp">São Paulo</a>
+          <a class="dropdown-item" href="#rj">Rio de Janeiro</a>
+        </div>
+      </div>
+      <small class="page-title-update updateDate">Última atualização: </small>
+    </div>
   </div>
 
   <!-- Cards -->
-  <div class="card-columns one">
+  <div class="card-columns two">
     <!-- COLUMNS.NUM -->
 
+    <!-- NEW.CARD -->
+
+    <!-- GRAPH.CARD -->
     <div class="card">
-      <!-- CARD.HEADER -->
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Fonte de dados</h5> <!-- CARD.TITLE.TEXT -->
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_virus.svg" width=64px alt="Desenho do coronavírus" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Progressão da doença</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text inline">Quantos casos notificados já temos <div class="card-state-text">em São Paulo
+              </div>? Quantos teremos nos próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.DATE -->
+        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
+
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.forecast.exp.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.forecast.exp.svg class="placeholder_svg" width="100%">
+        </div>
+
+
+        <!-- CARD.GGPLOT.LEGEND -->
+        <div class="card-chartLegend">
+          <small class="chartLegendSquare" id="legendGrey">Casos Confirmados</small>
+          <small class="chartLegendSquare" id="legendBlue">Previsão</small>
+        </div>
+
         <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <p>Utilizamos os registros das notificações de casos de COVID-19 divulgadas diariamente pelo <a
-              href="https://coronavirus.saude.gov.br/">Ministério da Saúde</a>.</p>
-          <p>A cada atualização na plataforma um programa automático de recupareção de dados nos envia os novos
-            registros e dispara a atualização das análise e gráficos neste site.</p>
+        <p class="text-justify inline">
+          Pontos pretos indicam o número de casos confirmados notificados <div class="card-state-text">em São Paulo
+          </div> por dia. <b>Pontos em laranja são
+            a previsão para os próximos 5 dias (entre 10533 e 11616 casos em 18/04/2020)</b>, se a taxa de crescimento
+          continuar a
+          mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.
         </p>
       </div>
     </div>
 
+    <!-- NEW.CARD -->
+
+    <!-- 5.DAYS.CARD -->
     <div class="card">
-      <!-- CARD.HEADER -->
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">COVID Data Science no Brasil</h5> <!-- CARD.TITLE.TEXT -->
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_calendar.svg" width=64px alt="Desenho do coronavírus" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Precisão da previsão</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Por que somente 5 dias de previsão são exibidos no gráfico?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
         <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <p>Lista em construção, as iniciativas se multiplicam. Se você tem trabalho na área nos escreva para
-            divulgarmos aqui. E por favor divulgue o nosso trabalho também.</p>
-          <ul>
-            <li><a href="https://labs.wesleycota.com/sarscov2/br">Número de casos confirmados de COVID-19 no Brasil</a>,
-              Wesley Cota, Universidade de Viçosa.</li>
-            <li><a href="https://ciis.fmrp.usp.br/covid19">COVI19 BRASIL</a>, portal de pesquisadores da USP e UnB. Com
-              dados em tempo real, análise e modelos de predição.</li>
-            <li><a href="https://liibre.github.io/coronabr/">covidbr</a>, pacote em <a
-                href="https://www.r-project.org">R</a> para download dos dados oficiais de COVID-19, por Sara Mortara e
-              Andrea Sánchez-Tapia, Jardim Botânico do Rio de Janeiro.</li>
-          </ul>
+        <p class="text-justify mt-2">
+          Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
+          cinza, que
+          expressa a incerteza da previsão, aumenta de largura com o tempo. E mesmo pequenas mudanças na taxa que
+          aconteçam hoje
+          ou amanhã vão causar enormes variações no futuro.
         </p>
+        <p class="text-justify">
+          Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+        </p>
+
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+
       </div>
     </div>
 
+    <!-- NEW.CARD -->
+
+    <!-- SPEED.CARD -->
     <div class="card">
-      <!-- CARD.HEADER -->
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Outras fontes de dados e de informações</h5> <!-- CARD.TITLE.TEXT -->
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_public.svg" width=64px alt="Desenho do coronavírus" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">O tempo de duplicação</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Quão rápido a doença se propaga?</p> <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
         <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <ul>
-            <li><a href="https://portal.fiocruz.br/coronavirus">Portal sobre Coronavírus da FIOCRUZ</a></li>
-            <li><a href="https://coronavirus.jhu.edu/map.html">Jonh Hopkins Coronavirus Resource Center</a></li>
-            <li><a href="https://www.who.int/health-topics/coronavirus">Site sobre epidemia de COVID-19 da Organização
-                Mundial da Saúde</a></li>
-            <li><a href="https://cmmid.github.io/topics/covid19/">CMMID COVID repository</a>, Centre for Mathematical
-              Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.</li>
-          </ul>
+        <p class="text-justify mt-2">
+          No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes
+          moleculares
+          sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora faz com que os
+          números
+          disponíveis publicamente (número de notificações) cresça de maneira artificialmente lenta.
         </p>
+        <p class="text-justify">
+          Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria
+          irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
+        </p>
+
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+
       </div>
     </div>
+
+    <!-- NEW.CARD -->
 
   </div>
 
@@ -182,6 +252,7 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
+  <script src="./js/async-iframe.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -190,6 +261,7 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> <!-- Ionic Icons -->
   <script src="js/updateDate.js"></script>
+  <script src="js/changeState.js"></script>
 </body>
 
 </html>

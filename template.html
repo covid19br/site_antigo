@@ -63,11 +63,18 @@
     </a>
 
     <!-- DESTAQUE -->
-    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <a class="nav-link" href="#">
-        Fontes
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Visão Detalhada
       </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="./estados.html#br">Brasil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="./estados.html#sp">São Paulo</a>
+        <a class="dropdown-item" href="./estados.html#rj">Rio de Janeiro</a>
+        <!-- ESTADOS.ITEM -->
+      </div>
     </div>
 
     <!-- MENU -->
@@ -75,9 +82,6 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="./index.html">Visão Geral</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./estados.html#sp">Visão Detalhada</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
@@ -89,82 +93,30 @@
           <a class="nav-link" href="./midia.html">Reportagens</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="./fontes.html">Fontes</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="./sobre.html">Sobre</a>
         </li>
         <!-- MENU.ITEM -->
       </ul>
     </div>
-
+    
   </nav>
-
 
   <!-- Titulo Principal -->
   <div class="container-fluid mt-2">
     <div class="main-title">
-      <h1 class="display" id="page-title">Fontes</h1><small class="page-title-update">Descubra as fontes utilizadas pelo
-        Observatório</small>
+      <h1 class="display" id="page-title">Visão Geral</h1><small class="page-title-update updateDate">Última
+        atualização: </small>
     </div> <!-- PAGE.TITLE -->
   </div>
 
   <!-- Cards -->
-  <div class="card-columns one">
+  <div class="card-columns">
     <!-- COLUMNS.NUM -->
 
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Fonte de dados</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <p>Utilizamos os registros das notificações de casos de COVID-19 divulgadas diariamente pelo <a
-              href="https://coronavirus.saude.gov.br/">Ministério da Saúde</a>.</p>
-          <p>A cada atualização na plataforma um programa automático de recupareção de dados nos envia os novos
-            registros e dispara a atualização das análise e gráficos neste site.</p>
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">COVID Data Science no Brasil</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <p>Lista em construção, as iniciativas se multiplicam. Se você tem trabalho na área nos escreva para
-            divulgarmos aqui. E por favor divulgue o nosso trabalho também.</p>
-          <ul>
-            <li><a href="https://labs.wesleycota.com/sarscov2/br">Número de casos confirmados de COVID-19 no Brasil</a>,
-              Wesley Cota, Universidade de Viçosa.</li>
-            <li><a href="https://ciis.fmrp.usp.br/covid19">COVI19 BRASIL</a>, portal de pesquisadores da USP e UnB. Com
-              dados em tempo real, análise e modelos de predição.</li>
-            <li><a href="https://liibre.github.io/coronabr/">covidbr</a>, pacote em <a
-                href="https://www.r-project.org">R</a> para download dos dados oficiais de COVID-19, por Sara Mortara e
-              Andrea Sánchez-Tapia, Jardim Botânico do Rio de Janeiro.</li>
-          </ul>
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Outras fontes de dados e de informações</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <ul>
-            <li><a href="https://portal.fiocruz.br/coronavirus">Portal sobre Coronavírus da FIOCRUZ</a></li>
-            <li><a href="https://coronavirus.jhu.edu/map.html">Jonh Hopkins Coronavirus Resource Center</a></li>
-            <li><a href="https://www.who.int/health-topics/coronavirus">Site sobre epidemia de COVID-19 da Organização
-                Mundial da Saúde</a></li>
-            <li><a href="https://cmmid.github.io/topics/covid19/">CMMID COVID repository</a>, Centre for Mathematical
-              Modelling of Infectious Diseases, Londo School of Hygiene and Tropical Medicine.</li>
-          </ul>
-        </p>
-      </div>
-    </div>
+    <!-- NEW.CARD -->
 
   </div>
 
@@ -190,6 +142,11 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> <!-- Ionic Icons -->
   <script src="js/updateDate.js"></script>
+  <!-- SCRIPT PARA USAR TABELAS 
+    <script src="js/updateTable.js"></script> -->
+  <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> -->
 </body>
 
 </html>
