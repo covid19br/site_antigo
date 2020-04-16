@@ -24,7 +24,7 @@ output:
 
 ### Página COVID-19 BR do Muncípio de São Paulo
 
-O Observatório Covid-19 BR participa do **Grupo Técnico de
+O [Observatório Covid-19 BR](covid19br.github.io/sobre.html) participa do **Grupo Técnico de
 Assessoramento em Epidemiologia e Modelagem Matemática COVID19** (GT
 COVID-19 Sampa) da Secretaria de Saúde do Município de São Paulo. Este
 grupo bases de dados oficiais para o município, para prover
