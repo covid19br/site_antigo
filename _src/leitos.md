@@ -26,7 +26,7 @@ output:
 Row  {data-height=850}
 ---------------------
   
-### Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19 sem distanciamento social?
+### Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem distanciamento social?
   
 No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias (dia 6 de abril) **se nenhuma medida de controle de contágio tivesse sido tomada** e o número de leitos se mantivesse constante (**Fig. 1A e 2A**). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (**Fig. 1B e 2B**).
 
