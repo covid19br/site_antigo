@@ -24,6 +24,7 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"+Perguntas","href":"perguntas.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -2587,7 +2588,7 @@ window.FlexDashboardComponents.push({
 <div id="dashboard-container">
 
 <div id="row" class="section level2" data-height="600">
-<h2>Row</h2>
+<h2 data-height="600">Row</h2>
 <div id="estimativa-do-tempo-de-duplicação" class="section level3">
 <h3>Estimativa do tempo de duplicação</h3>
 <p>No início das epidemias o número de infectados cresce exponencialmente, o que implica que o tempo para que o número de casos duplique é constante em <span class="math inline">\(\ln(2)/r\)</span>, onde <span class="math inline">\(r\)</span> é a taxa de crescimento de número de casos. Um crescimento exponencial a taxa constante também implica em uma relação linear entre o logaritmo do número de casos e o tempo. Essa expectativa em geral vale para pequenos intervalos de tempo, na fase inicial de epidemias. É o que vemos para o Brasil, por exemplo, nos cincos dias a partir do dia em que o número de casos chegou a 15 (gráfico ao lado)</p>
@@ -2607,7 +2608,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de 2020
 </div>
 </div>
 <div id="row-1" class="section level2" data-height="600">
-<h2>Row</h2>
+<h2 data-height="600">Row</h2>
 <div id="projeções-de-número-de-casos" class="section level3">
 <h3>Projeções de número de casos</h3>
 <p>Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de confiança dos valores previstos (gráfico ao lado).</p>
@@ -2627,7 +2628,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 </div>
 </div>
 <div id="row-2" class="section level2" data-height="600">
-<h2>Row</h2>
+<h2 data-height="600">Row</h2>
 <div id="análise-de-erro-das-nossas-previsões" class="section level3">
 <h3>Análise de erro das nossas previsões</h3>
 <p>Estamos há 20 dias no ar fazendo previsões do número de casos confirmados para os próximos 5 dias. Fizemos, neste momento, uma análise de nossas previsões. Para tanto, contruímos um histograma da diferença entre o valor predito e o valor observado, divida pelo intervalo de confiança do valor predito. Isso significa dizer que o valor observado ficou dentro do intervalo de confiança de valor previsto caso ele apareça entre +100% ou -100%. Indicamos esses limites como linhas horizontais em vermelho.</p>
@@ -2637,7 +2638,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div id="section-2" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/erros.jpeg" alt="Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)" style="width:100.0%" />
+<img src="fig/erros.jpeg" style="width:100.0%" alt="" />
 <p class="caption">Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)</p>
 </div>
 </div>
@@ -2646,7 +2647,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <h2>Row</h2>
 <div id="série-temporal-dos-tempos-de-duplicação" class="section level3">
 <h3>Série temporal dos tempos de duplicação</h3>
-<p>Para avaliar o quanto o crescimento da epidemia varia ao longo do tempo, ajustamos o modelo linear para períodos de cinco dias, a partir de quando foram registrados 15 casos. Estimamos o tempo de duplicação e o respectivo intervalo de confiança para cada um desses modelos. Assim, a primeira estimativa é para o período de 07 de March a 12 de March. A segunda é para o período de 08 de March a 13 de March e assim sucessivamente. A tabela ao lado exemplifica os resultados obtidos para os primeiros 10 dias a partir do dia com 15 casos:</p>
+<p>Para avaliar o quanto o crescimento da epidemia varia ao longo do tempo, ajustamos o modelo linear para períodos de cinco dias, a partir de quando foram registrados 15 casos. Estimamos o tempo de duplicação e o respectivo intervalo de confiança para cada um desses modelos. Assim, a primeira estimativa é para o período de 07 de março a 12 de março. A segunda é para o período de 08 de março a 13 de março e assim sucessivamente. A tabela ao lado exemplifica os resultados obtidos para os primeiros 10 dias a partir do dia com 15 casos:</p>
 </div>
 <div id="section-3" class="section level3">
 <h3></h3>
@@ -2715,7 +2716,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div id="section-4" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/R0_prsc.png" alt="Resultado das análises utilizando dados brasileiros da epidemia de Covid-19." style="width:50.0%" />
+<img src="fig/R0_prsc.png" style="width:50.0%" alt="" />
 <p class="caption">Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.</p>
 </div>
 </div>
@@ -2742,8 +2743,8 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Modelo linear generalizado Poisson (glm), com função de ligação logarítimica.<a href="#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p>No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num sistema separado, chamado <em>E-SUS VE</em>, o que inclui casos leves. Profissionais de saúde são testados e se positivam passam a casos confirmados nessa base.<a href="#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p>Modelo linear generalizado Poisson (glm), com função de ligação logarítimica.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num sistema separado, chamado <em>E-SUS VE</em>, o que inclui casos leves. Profissionais de saúde são testados e se positivam passam a casos confirmados nessa base.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 
@@ -2784,6 +2785,7 @@ src="https://c.statcounter.com/12220607/0/18092bfd/1/"
 alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
+
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
