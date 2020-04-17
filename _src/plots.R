@@ -168,10 +168,8 @@ serie.temp.table <- kable(ex.dt.df, "html", col.names=c("Estimado", "IC-inferior
 ## Tabela para preencher o minimo e o máximo
 ######################################################################
 minmax.casos <- data.frame(row.names = c(names(estados.exp.5d), "BR"))
-
 minmax.lugares <- estados.exp.5d
 minmax.lugares[[length(estados.exp.5d)+1]] <- exp.5d
-
 min <- vector()
 max <- vector()
 data <- vector()
@@ -181,5 +179,4 @@ for (i in 1:length(minmax.lugares)) {
   data[i] <- format(max(time(minmax.lugares[[i]])), "%d/%m/%Y")
 }
 minmax.casos <- cbind(minmax.casos, min, max, data)
-
-?write.csv(minmax.casos, file="../web/minmaxcasos.txt")
+write.csv(minmax.casos, file="../web/minmaxcasos.csv", row.names = TRUE)
