@@ -186,6 +186,8 @@ Modifique a **descrição** do card buscando por `<!-- CARD.TITLE.DESCRIPTION --
   </div>
 </div>
 ```
+Use o site Iconfinder (https://www.iconfinder.com/p/coronavirus-awareness-icons) para encontrar ícone gratuitos em svg relacionados ao COVID-19.
+**Importante:** o nome do autor do ícone deve ser citado em Sobre.
 
 ##### 1.2 Título sem ícone
 Modifique o **título** buscando por `<!-- CARD.TITLE.TEXT -->` e substituindo `TITULO DO CARD`

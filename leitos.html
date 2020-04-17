@@ -2,150 +2,331 @@
 <html lang="pt">
 
 <head>
-  <!-- Description meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description"
-    content="O Observatório COVID-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
-  <!-- SEO: https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions -->
-  <title>Observatório COVID-19 BR</title>
+    <!-- Description meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="O Observatório COVID-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+    <!-- SEO: https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions -->
+    <title>Observatório COVID-19 BR</title>
 
-  <!-- Bootstrap CSS via BootstrapCDN -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
-    rel="stylesheet"> <!-- Poppins Font -->
-  <link href="./css/custom.css" rel="stylesheet">
+    <!-- Bootstrap CSS via BootstrapCDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <!-- Poppins Font -->
+    <link href="./css/custom.css" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#007bff">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#007bff">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Observatório COVID-19 BR">
-  <meta name="twitter:description"
-    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Observatório COVID-19 BR">
+    <meta name="twitter:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
 
-  <!-- Facebook -->
-  <meta property="og:url" content="https://covid19br.github.io">
-  <meta property="og:title" content="Bootstrap">
-  <meta property="og:description"
-    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/bootstrap-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <!-- Facebook -->
+    <meta property="og:url" content="https://covid19br.github.io">
+    <meta property="og:title" content="Bootstrap">
+    <meta property="og:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://covid19br.github.io/img/favicons/bootstrap-social.png">
+    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+    <!-- Ionic Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
-  <!-- Barra Superior -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <!-- BOTAO DO MENU -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- BOTAO DO MENU -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- LOGO -->
-    <a class="navbar-brand" href="./index.html">
-      <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
-    </a>
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+            <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+        </a>
 
-    <!-- DESTAQUE -->
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Visão Detalhada
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="./estados.html#br">Brasil</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="./estados.html#sp">São Paulo</a>
-        <a class="dropdown-item" href="./estados.html#rj">Rio de Janeiro</a>
-        <!-- ESTADOS.ITEM -->
-      </div>
+        <!-- DESTAQUE -->
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Visão Detalhada
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./estados.html#br">Brasil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="./estados.html#sp">São Paulo</a>
+                <a class="dropdown-item" href="./estados.html#rj">Rio de Janeiro</a>
+                <!-- ESTADOS.ITEM -->
+            </div>
+        </div>
+
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Visão Geral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./midia.html">Reportagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./fontes.html">Fontes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./sobre.html">Sobre</a>
+                </li>
+                <!-- MENU.ITEM -->
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-2">
+        <div class="main-title">
+            <h1 class="display" id="page-title">Leitos</h1><small class="page-title-update">Potencial de leitos
+                necessários na ausência de medidas preventivas na cidade de São Paulo</small>
+        </div> <!-- PAGE.TITLE -->
     </div>
 
-    <!-- MENU -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html">Visão Geral</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./midia.html">Reportagens</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./fontes.html">Fontes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./sobre.html">Sobre</a>
-        </li>
-        <!-- MENU.ITEM -->
-      </ul>
+    <!-- Texto Principal -->
+    <div class="card-columns one">
+        <!-- COLUMNS.NUM -->
+
+        <!-- NEW.CARD -->
+
+        <!-- Identificador do card -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <div class="media">
+                    <img src="./img/icon_sick_bed.svg" width=64px alt="Ícone que representa o leito de um hospital"
+                        class="card-icon"> <!-- CARD.TITLE.ICON -->
+                    <div class="media-body">
+                        <h5 class="card-title">Modelando a ocupação dos leitos em São Paulo</h5>
+                        <!-- CARD.TITLE.TEXT -->
+                        <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com
+                            COVID-19, sem distanciamento social?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                    </div>
+                </div>
+
+                <!-- CARD.DATE -->
+                <p class="card-date"><small class="updateDate">Última atualização: </small></p>
+
+                <!-- CARD.TEXT -->
+                <p class="text-justify">
+                    No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados
+                    de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o
+                    número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de
+                    março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam
+                    ocupados por pacientes de COVID-19 em apenas 18 dias (dia 6 de abril) se nenhuma medida de controle
+                    de contágio tivesse sido tomada e o número de leitos se mantivesse constante (Fig. 1 e 2). A
+                    simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos
+                    leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (Fig. 3 e 4).
+                </p>
+
+                <!-- CARD.BUTTON.EXPAND -->
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1"
+                    aria-expanded="false" aria-controls="collapseGraph">
+                    Por que modelar um cenário sem distanciamento social? ▾
+                </button>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapse1">
+                    <p class="text-justify">
+                        Nosso modelo representa um cenário do avanço da epidemia de COVID-19 no município de São Paulo,
+                        caso as medidas de distanciamento social não tivessem sido tomadas. Apesar de hipotético, este
+                        modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não
+                        tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos
+                        na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de
+                        distanciamento social salvaram (trabalho em andamento). A comparação é importante, por exemplo,
+                        para o gestor público ter as condições necessárias para tomar a melhor decisão em termos de
+                        administração e de política pública, em especial em um momento de extrema gravidade como é o
+                        atual. Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na
+                        cidade. Para representar o cenário sem medidas de distanciamento social, estimamos o tempo de
+                        duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19 de março,
+                        Fig. 1A e 2A).
+                    </p>
+                </div>
+
+                <!-- CARD.BUTTON.EXPAND -->
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2"
+                    aria-expanded="false" aria-controls="collapseGraph">
+                    É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis? ▾
+                </button>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapse2">
+                    <p class="text-justify">
+                        Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma
+                        porcentagem baixa dos leitos, a ocupação total de leitos pode ser atingida muito rapidamente sem
+                        medidas preventivas. Medidas preventivas, como o isolamento social, aumentam o tempo de
+                        duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais.
+                        Iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito
+                        tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de
+                        medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+
     </div>
 
-  </nav>
+    <!-- Figuras 1 e 2 -->
+    <div class="card-columns two">
+        <!-- NEW.CARD -->
 
-  <!-- Titulo Principal -->
-  <div class="container-fluid mt-2">
-    <div class="main-title">
-      <h1 class="display" id="page-title">Visão Geral</h1><small class="page-title-update updateDate">Última
-        atualização: </small>
-    </div> <!-- PAGE.TITLE -->
-  </div>
+        <!-- Figura 1 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <!-- CARD.IMAGE -->
+                <img src="./web/leitos_fig1.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                <h5 class="card-title mb-2" style="text-align: center;">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
+                <p class="card-text legenda">Previsão da porcentagem de leitos hospitalares ocupados por COVID-19
+                    no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A
+                    linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados
+                    observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de
+                    notificações SIVEP-GRIPE).</p> <!-- CARD.IMAGE.LEGENDA -->
+            </div>
+        </div>
 
-  <!-- Cards -->
-  <div class="card-columns">
-    <!-- COLUMNS.NUM -->
+        <!-- NEW.CARD -->
 
-    <!-- NEW.CARD -->
+        <!-- Figura 1 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                
+                <!-- CARD.IMAGE -->
+                <img src="./web/leitos_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                <h5 class="card-title mb-2" style="text-align: center;">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
+                <p class="card-text legenda">Versão em escala logarítmica da Fig 1. Previsão da porcentagem (em escala
+                    logarítmica) de leitos hospitalares ocupados por COVID-19 no município de São Paulo entre os dias
+                    15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos
+                    estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados
+                    entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).</p>
+                <!-- CARD.IMAGE.LEGENDA -->
+            </div>
+        </div>
 
-  </div>
-
-  <!-- Footer -->
-  <footer class="container-fluid">
-    <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
-      <p class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank"
-          class="text-reset">Source Code</a></p>
+        <!-- NEW.CARD -->
     </div>
-    <!-- FOOTER.ITEM -->
-  </footer>
 
-  <!-- JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="js/updateDate.js"></script>
-  <!-- SCRIPT PARA USAR TABELAS 
+    <!-- Metodos e Referencias -->
+    <div class="card-columns two">
+        <!-- NEW.CARD -->
+
+        <!-- Metodos -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <h5 class="card-title mb-3">Método</h5> <!-- CARD.TITLE.TEXT -->
+                <!-- CARD.TEXT -->
+                <p class="text-justify">
+                    Usamos um <b>modelo logístico</b> para simular os números de infectados, suscetíveis e
+                    hospitalizados por
+                    classe etária, de acordo com a distribuição etária da população do município de São Paulo.
+                </p>
+                <p class="text-justify">
+                    Utilizamos número de hospitalizados (casos graves) por faixa etária da base oficial de notificações
+                    SIVEP-GRIPE entre os dias 14 e 19 de março (período anterior às medidas de quarentena, que entraram
+                    em vigor dis 24 de março, Ref. 1). Usamos um método de ajuste bayesiano para ajustar os valores dos
+                    parâmetros do modelo aos dados observados.
+                </p>
+                <p class="text-justify">
+                    O tempo de duplicação que melhor se ajustou aos dados
+                    observados neste período foi de 2.4 dias. Usamos este valor inicial de tempo de duplicação (2.4
+                    dias) para projetar o número de hospitalizados para os dias subsequentes (20 de março a 13 de
+                    abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo
+                    com o número de não infectados no tempo t.
+                </p>
+                <p class="text-justify">
+                    Para a estimativa de número de infectados, utilizamos a
+                    distribuição etária de hospitalizados proposta na Ref. 2. A conversão de hospitalizados em pessoas
+                    que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados
+                    que necessitam de UTI proposta na Ref. 3. Nós não consideramos possíveis mudanças no tempo de
+                    duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes
+                    variações e incertezas no tempo de duplicação.
+                </p>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+
+        <!-- Referencias -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <h5 class="card-title mb-3">Referências</h5> <!-- CARD.TITLE.TEXT -->
+                <!-- CARD.TEXT -->
+                <ol>
+                    <li id="1">Governo de SP determina quarentena em todo o Estado. <a
+                            href="https://www.saopaulo.sp.gov.br/ultimas-noticias/ao-vivo-governo-de-sp-anuncia-novas-medidas-para-combate-ao-coronavirus-no-estado/"
+                            target="_blank">Leia no Portal do Governo</a>.</li>
+                    <li id="2"><a href="https://doi.org/10.1101/2020.03.09.20033357" target="_blank">Verity, R., Okell,
+                            L.C., Dorigatti, I., et al. Estimates of the severity of COVID-19 disease. medRxiv
+                            2020.03.09.20033357.</a></li>
+                    <li id="3"><a href="http://dx.doi.org/10.15585/mmwr.mm6912e2" target="_blank">Severe Outcomes Among
+                            Patients with Coronavirus Disease 2019 (COVID-19), United States, February 12 – March 16,
+                            2020. Morb Mortal Wkly Rep 2020; 69:343-346.</a></li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <div class="footer-content">
+            <ion-icon name="logo-github"></ion-icon>
+            <p class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank"
+                    class="text-reset">Source Code</a></p>
+        </div>
+        <!-- FOOTER.ITEM -->
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/updateDate.js"></script>
+    <!-- SCRIPT PARA USAR TABELAS 
     <script src="js/updateTable.js"></script> -->
-  <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES
+    <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> -->
 </body>
