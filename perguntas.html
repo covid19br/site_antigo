@@ -18,22 +18,20 @@
   <link href="./css/custom.css" rel="stylesheet">
 
   <!-- Favicons -->
-  <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <!-- SEO: Adicionar favicons-->
-  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
-  <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-  <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#007bff">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"> <!-- SEO: Adicionar imagens de redes sociais -->
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Observatório COVID-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
@@ -41,11 +39,15 @@
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://getbootstrap.com/docs/4.4/assets/brand/bootstrap-social.png">
-  <meta property="og:image:secure_url" content="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/bootstrap-social.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+
+  <!-- Ionic Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -122,22 +124,27 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse1">
-        <p class="text-justify">
-          Uma epidemia é um aumento repentino de uma doença que acomete um grande número de pessoas em um curto período
-          de tempo, ou seja, apresenta uma rápida disseminação - em contraste com as endemias, que se estendem por
-          longos períodos, são típicas e frequentes em alguma região específica, e podem até ser sazonais, como a
-          malária na Amazônia. Surtos epidêmicos são os momentos de aumento dentro de uma região delimitada.
-        </p>
-        <p class="text-justify">
-          Em geral, as epidemias são causadas pela chegada de novos agentes etiológicos (os causadores de doenças, como
-          alguns vírus e bactérias) em um local. Nestas situações, toda a população é suscetível a se contaminar porque
-          não teve contato com a doença antes. Exemplos de epidemias conhecidas aos brasileiros são Zika e Chikungunya.
-        </p>
-        <p class="text-justify">
-          Uma epidemia ganha o status de pandemia, quando a região afetada passa a englobar grandes extensões, com
-          diferentes países e continentes. Um exemplo de pandemia é a Gripe Suína (H1N1, em 2009), que era uma pandemia
-          que eventualmente se transformou em endemia.
-        </p>
+          <p class="text-justify">
+            Uma epidemia é um aumento repentino de uma doença que acomete um grande número de pessoas em um curto
+            período
+            de tempo, ou seja, apresenta uma rápida disseminação - em contraste com as endemias, que se estendem por
+            longos períodos, são típicas e frequentes em alguma região específica, e podem até ser sazonais, como a
+            malária na Amazônia. Surtos epidêmicos são os momentos de aumento dentro de uma região delimitada.
+          </p>
+          <p class="text-justify">
+            Em geral, as epidemias são causadas pela chegada de novos agentes etiológicos (os causadores de doenças,
+            como
+            alguns vírus e bactérias) em um local. Nestas situações, toda a população é suscetível a se contaminar
+            porque
+            não teve contato com a doença antes. Exemplos de epidemias conhecidas aos brasileiros são Zika e
+            Chikungunya.
+          </p>
+          <p class="text-justify">
+            Uma epidemia ganha o status de pandemia, quando a região afetada passa a englobar grandes extensões, com
+            diferentes países e continentes. Um exemplo de pandemia é a Gripe Suína (H1N1, em 2009), que era uma
+            pandemia
+            que eventualmente se transformou em endemia.
+          </p>
         </div>
       </div>
     </div>
@@ -155,21 +162,22 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse2">
-        <p class="text-justify">
-          O crescimento exponencial é um crescimento muito rápido, cujo lema é “quanto mais se tem, mais se cresce”. No
-          caso de epidemias, isso significa: quanto mais pessoas infectadas, mais pessoas se infectam. Outro exemplo
-          clássico de crescimento exponencial é o crescimento das populações de seres vivos, pela reprodução. Por
-          exemplo, para seres que se reproduzem assexuadamente, como as bactérias, cada célula se divide e gera duas
-          novas bactérias. Dessa forma, o número de bactérias duplica a cada reprodução e, portanto, quanto mais
-          bactérias existem, mais bactérias são geradas.
-        </p>
-        <p class="text-justify">
-          No caso das epidemias, a fase de crescimento exponencial tem um limite, pois as pessoas já infectadas ganham
-          imunidade e então as pessoas que o vírus consegue infectar, chamadas de susceptíveis, começam a ficar
-          escassas. Assim, a medida em que a densidade de susceptíveis na população fica baixa, ocorre a redução do
-          contato entre infectantes e susceptíveis e a epidemia começa a frear, atingindo o pico quando o número de
-          novos infectados for igual ao número de pessoas imunizadas (também chamadas de “recuperadas”) no mesmo dia.
-        </p>
+          <p class="text-justify">
+            O crescimento exponencial é um crescimento muito rápido, cujo lema é “quanto mais se tem, mais se cresce”.
+            No
+            caso de epidemias, isso significa: quanto mais pessoas infectadas, mais pessoas se infectam. Outro exemplo
+            clássico de crescimento exponencial é o crescimento das populações de seres vivos, pela reprodução. Por
+            exemplo, para seres que se reproduzem assexuadamente, como as bactérias, cada célula se divide e gera duas
+            novas bactérias. Dessa forma, o número de bactérias duplica a cada reprodução e, portanto, quanto mais
+            bactérias existem, mais bactérias são geradas.
+          </p>
+          <p class="text-justify">
+            No caso das epidemias, a fase de crescimento exponencial tem um limite, pois as pessoas já infectadas ganham
+            imunidade e então as pessoas que o vírus consegue infectar, chamadas de susceptíveis, começam a ficar
+            escassas. Assim, a medida em que a densidade de susceptíveis na população fica baixa, ocorre a redução do
+            contato entre infectantes e susceptíveis e a epidemia começa a frear, atingindo o pico quando o número de
+            novos infectados for igual ao número de pessoas imunizadas (também chamadas de “recuperadas”) no mesmo dia.
+          </p>
         </div>
       </div>
     </div>
@@ -187,23 +195,26 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse3">
-        <p class="text-justify">
-          Todas as epidemias seguem um padrão, chamado “curva epidêmica”. Na caso de uma pandemia, esse padrão se repete
-          em cada novo foco. Do ponto de vista matemático, uma pandemia é o conjunto de várias epidemias ocorrendo ao
-          mesmo tempo em diferentes lugares. A curva epidêmica mostra um aumento exponencial de casos no início, o que é
-          muito rápido. Após algum tempo, a curva satura (gerando o “pico”), e, finalmente, decresce.
-        </p>
-        <p class="text-justify">
-          Previsões epidemiológicas de curto prazo, como as que esboçamos na nossa página inicial, assumem que esse
-          comportamento vai perdurar pelos próximos cinco dias com as características dos últimos cinco dias observados.
-          As informações técnicas nos deixamos na página de <a href="./informacoes.html">Informações Técnicas</a>.
-        </p>
-        <p class="text-justify">
-          Nesta <a
-            href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/31/crescimento-exponencial-e-curva-epidemica-entenda-os-principais-conceitos-matematicos-que-explicam-a-pandemia-de-coronavirus.ghtml"
-            target="_blank">reportagem do Portal G1</a>, os membros do Observatório COVID-19 BR falam mais sobre o
-          comportamento das curvas epidêmicas para a população em geral.
-        </p>
+          <p class="text-justify">
+            Todas as epidemias seguem um padrão, chamado “curva epidêmica”. Na caso de uma pandemia, esse padrão se
+            repete
+            em cada novo foco. Do ponto de vista matemático, uma pandemia é o conjunto de várias epidemias ocorrendo ao
+            mesmo tempo em diferentes lugares. A curva epidêmica mostra um aumento exponencial de casos no início, o que
+            é
+            muito rápido. Após algum tempo, a curva satura (gerando o “pico”), e, finalmente, decresce.
+          </p>
+          <p class="text-justify">
+            Previsões epidemiológicas de curto prazo, como as que esboçamos na nossa página inicial, assumem que esse
+            comportamento vai perdurar pelos próximos cinco dias com as características dos últimos cinco dias
+            observados.
+            As informações técnicas nos deixamos na página de <a href="./informacoes.html">Informações Técnicas</a>.
+          </p>
+          <p class="text-justify">
+            Nesta <a
+              href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/03/31/crescimento-exponencial-e-curva-epidemica-entenda-os-principais-conceitos-matematicos-que-explicam-a-pandemia-de-coronavirus.ghtml"
+              target="_blank">reportagem do Portal G1</a>, os membros do Observatório COVID-19 BR falam mais sobre o
+            comportamento das curvas epidêmicas para a população em geral.
+          </p>
         </div>
       </div>
     </div>
@@ -220,20 +231,25 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse4">
-        <p class="text-justify">
-          Notificações são os avisos realizados, dentro do sistema oficial de vigilância de saúde de um país, de casos
-          de uma determinada doença. A esses casos positivos para a doença estudada chamamos de “casos notificados”, em
-          oposição aos casos de enfermos que acabam não descobertos ou registrados.
-        </p>
-        <p class="text-justify">
-          A notificação é obrigatória por <a
-            href="https://portalarquivos2.saude.gov.br/images/pdf/2018/abril/25/Portaria-n---2014-de-17--Fevereiro-2016.pdf"
-            target="_blank">lei</a> para muitas doenças. Esses dados são recolhidos em hospitais e por agentes de saúde
-          pública nos municípios e então passados para os órgãos e secretarias responsáveis no estado, para enfim serem
-          compilados pela ANVISA (Agência Nacional de Vigilância Sanitária) e Ministério da Saúde , em âmbito nacional.
-          Esse sistema de recolhimento de números de casos notificados é importante em qualquer cidade ou país para agir
-          na prevenção e controle das diferentes doenças.
-        </p>
+          <p class="text-justify">
+            Notificações são os avisos realizados, dentro do sistema oficial de vigilância de saúde de um país, de casos
+            de uma determinada doença. A esses casos positivos para a doença estudada chamamos de “casos notificados”,
+            em
+            oposição aos casos de enfermos que acabam não descobertos ou registrados.
+          </p>
+          <p class="text-justify">
+            A notificação é obrigatória por <a
+              href="https://portalarquivos2.saude.gov.br/images/pdf/2018/abril/25/Portaria-n---2014-de-17--Fevereiro-2016.pdf"
+              target="_blank">lei</a> para muitas doenças. Esses dados são recolhidos em hospitais e por agentes de
+            saúde
+            pública nos municípios e então passados para os órgãos e secretarias responsáveis no estado, para enfim
+            serem
+            compilados pela ANVISA (Agência Nacional de Vigilância Sanitária) e Ministério da Saúde , em âmbito
+            nacional.
+            Esse sistema de recolhimento de números de casos notificados é importante em qualquer cidade ou país para
+            agir
+            na prevenção e controle das diferentes doenças.
+          </p>
         </div>
       </div>
     </div>
@@ -251,24 +267,30 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse5">
-        <p class="text-justify">
-          No caso da atual pandemia, os casos notificados de COVID-19 são as pessoas que fizeram o exame para detectar o
-          vírus ou o seu anticorpo no seu organismo e obtiveram um resultado positivo, e portanto são casos confirmados
-          de COVID-19. O número de casos reais é maior do que o número de casos notificados, devido a dois conceitos:
-        </p>
-        <ol>
-          <li>a subnotificação, ou seja, escolhe-se testar em apenas uma parcela da população, que no caso do Brasil são
-            os casos graves e os de profissionais da saúde. Pessoas assintomáticas, por exemplo, não são testadas e,
-            portanto, não entram para o banco de dados de casos notificados. Esse é uma escolha consciente do modelo de
-            vigilância adotado;</li>
-          <li>existem atrasos na notificação, pois há o tempo entre o contágio e o aparecimento de sintomas (chamado de
-            tempo de incubação), o tempo entre os primeiro sintomas e ir no médico, e finalmente o tempo para sair o
-            resultado do exame.</li>
-        </ol>
-        <p class="text-justify">
-          Tudo isso faz com que o número de confirmados hoje seja um retrato do passado, do número de pessoas que foram
-          contaminados há vários dias.
-        </p>
+          <p class="text-justify">
+            No caso da atual pandemia, os casos notificados de COVID-19 são as pessoas que fizeram o exame para detectar
+            o
+            vírus ou o seu anticorpo no seu organismo e obtiveram um resultado positivo, e portanto são casos
+            confirmados
+            de COVID-19. O número de casos reais é maior do que o número de casos notificados, devido a dois conceitos:
+          </p>
+          <ol>
+            <li>a subnotificação, ou seja, escolhe-se testar em apenas uma parcela da população, que no caso do Brasil
+              são
+              os casos graves e os de profissionais da saúde. Pessoas assintomáticas, por exemplo, não são testadas e,
+              portanto, não entram para o banco de dados de casos notificados. Esse é uma escolha consciente do modelo
+              de
+              vigilância adotado;</li>
+            <li>existem atrasos na notificação, pois há o tempo entre o contágio e o aparecimento de sintomas (chamado
+              de
+              tempo de incubação), o tempo entre os primeiro sintomas e ir no médico, e finalmente o tempo para sair o
+              resultado do exame.</li>
+          </ol>
+          <p class="text-justify">
+            Tudo isso faz com que o número de confirmados hoje seja um retrato do passado, do número de pessoas que
+            foram
+            contaminados há vários dias.
+          </p>
         </div>
       </div>
     </div>
@@ -286,15 +308,15 @@
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse6">
-        <p class="text-justify">
-          <b>Nós usamos dados do Ministério da Saúde para o Brasil e seus estados, que estão disponíveis no <a
-              href="https://covid.saude.gov.br/" target="_blank">Painel Coronavírus</a>.</b> Para comparar com outros
-          países do mundo, nós usamos os dados do Repositório John Hopkins University, disponível <a
-            href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series"
-            target="_blank">aqui</a>. Ambos os dados são abertos ao público, assim como todas as nossas análises têm
-          código acessível e podem ser replicadas por qualquer pesquisador que deseje estudá-las. Esse é o espírito de
-          ciência colaborativa e aberta à verificação que defendemos!
-        </p>
+          <p class="text-justify">
+            <b>Nós usamos dados do Ministério da Saúde para o Brasil e seus estados, que estão disponíveis no <a
+                href="https://covid.saude.gov.br/" target="_blank">Painel Coronavírus</a>.</b> Para comparar com outros
+            países do mundo, nós usamos os dados do Repositório John Hopkins University, disponível <a
+              href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series"
+              target="_blank">aqui</a>. Ambos os dados são abertos ao público, assim como todas as nossas análises têm
+            código acessível e podem ser replicadas por qualquer pesquisador que deseje estudá-las. Esse é o espírito de
+            ciência colaborativa e aberta à verificação que defendemos!
+          </p>
 
         </div>
       </div>
@@ -308,20 +330,20 @@
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse7" role="button">
           <h5 class="card-title mb-3">▾Como os estudos feitos pelo Observatório COVID-19 BR podem ajudar em tomadas de
-          decisões pelos governantes? Como cientista podem ajudar nesta crise da COVID-19?</h5>
+            decisões pelos governantes? Como cientista podem ajudar nesta crise da COVID-19?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse7">
-        <p class="text-justify">
-          <b>Temos feito trabalhos de curadoria científica para todos os gabinetes de crise que nos procuram, e
-            procuramos ajudar ao máximo para que as decisões políticas e estratégicas sejam tomadas com fundamentos
-            científicos. </b> A ciência da epidemiologia é um campo extremamente interdisciplinar, que une médicos,
-          biólogos, matemáticos, físicos, entre outros cientistas. O espírito colaborativo do Observatório agrega
-          pessoas de diferentes áreas que trabalham com assuntos ou técnicas semelhantes nas suas pesquisas.Algumas
-          informações podem ser sensíveis e por isso optamos por não divulgá-las abertamente no site. Porém estamos
-          diariamente aprimorando e realizando diferentes análises para auxiliar as autoridades.
-        </p>
+          <p class="text-justify">
+            <b>Temos feito trabalhos de curadoria científica para todos os gabinetes de crise que nos procuram, e
+              procuramos ajudar ao máximo para que as decisões políticas e estratégicas sejam tomadas com fundamentos
+              científicos. </b> A ciência da epidemiologia é um campo extremamente interdisciplinar, que une médicos,
+            biólogos, matemáticos, físicos, entre outros cientistas. O espírito colaborativo do Observatório agrega
+            pessoas de diferentes áreas que trabalham com assuntos ou técnicas semelhantes nas suas pesquisas.Algumas
+            informações podem ser sensíveis e por isso optamos por não divulgá-las abertamente no site. Porém estamos
+            diariamente aprimorando e realizando diferentes análises para auxiliar as autoridades.
+          </p>
 
         </div>
       </div>
@@ -334,26 +356,33 @@
       <div class="card-body">
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse8" role="button">
-          <h5 class="card-title mb-3">▾Qual a importância do “achatamento da curva” que estão dizendo por aí? É verdade que
-          independentemente da forma da curva o número de infectados é o mesmo?</h5>
+          <h5 class="card-title mb-3">▾Qual a importância do “achatamento da curva” que estão dizendo por aí? É verdade
+            que
+            independentemente da forma da curva o número de infectados é o mesmo?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse8">
-        <p class="text-justify">
-          <b>Apesar do comportamento da curva epidêmica ser sempre semelhante, o quão rápido ela cresce pode ser
-            controlado.</b> O fator determinante para o perfil de crescimento da curva é o número de contatos que uma
-          pessoa infectada tem com pessoas susceptíveis. Por isso o isolamento social é importante - pois reduz o número
-          de contatos físicos entre um possível infectado e um suscetível. A diminuição do número de novos casos por dia
-          pode ocorrer de duas formas: (i) por meio da redução do contato entre as pessoas de forma geral, ou (ii)
-          porque o número de susceptíveis está baixo, e neste caso a maioria dos contatos estão ocorrendo entre pessoas
-          que já tiveram a doença. Para parar uma epidemia através do caso (ii), o número de pessoas que já tiveram a
-          doença deve ser o mesmo até o pico, independente do tempo que leva para atingi-lo. Agora, ao frear a epidemia
-          com o caso (i), podemos reduzir sim o número total de pessoas que já tiveram a doença. Em qualquer das opções,
-          o achatamento da curva resulta na redução do número de doentes simultâneos, ocorrendo de forma novas infecções
-          sejam mais diluídas ao longo do tempo, garantindo que o sistema médico tenha capacidade suficiente para
-          atender à todos com qualidade e rapidez.
-        </p>
+          <p class="text-justify">
+            <b>Apesar do comportamento da curva epidêmica ser sempre semelhante, o quão rápido ela cresce pode ser
+              controlado.</b> O fator determinante para o perfil de crescimento da curva é o número de contatos que uma
+            pessoa infectada tem com pessoas susceptíveis. Por isso o isolamento social é importante - pois reduz o
+            número
+            de contatos físicos entre um possível infectado e um suscetível. A diminuição do número de novos casos por
+            dia
+            pode ocorrer de duas formas: (i) por meio da redução do contato entre as pessoas de forma geral, ou (ii)
+            porque o número de susceptíveis está baixo, e neste caso a maioria dos contatos estão ocorrendo entre
+            pessoas
+            que já tiveram a doença. Para parar uma epidemia através do caso (ii), o número de pessoas que já tiveram a
+            doença deve ser o mesmo até o pico, independente do tempo que leva para atingi-lo. Agora, ao frear a
+            epidemia
+            com o caso (i), podemos reduzir sim o número total de pessoas que já tiveram a doença. Em qualquer das
+            opções,
+            o achatamento da curva resulta na redução do número de doentes simultâneos, ocorrendo de forma novas
+            infecções
+            sejam mais diluídas ao longo do tempo, garantindo que o sistema médico tenha capacidade suficiente para
+            atender à todos com qualidade e rapidez.
+          </p>
 
         </div>
       </div>
@@ -367,22 +396,26 @@
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse9" role="button">
           <h5 class="card-title mb-3">▾Qual a diferença entre o isolamento horizontal e o isolamento vertical? Os dados
-          mostram a eficácia de algum destes isolamentos?</h5>
+            mostram a eficácia de algum destes isolamentos?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse9">
-        <p class="text-justify">
-          <b>O isolamento horizontal é quando reduzimos o contato entre todas as pessoas, ao passo que o isolamento
-            vertical é quando reduzimos o contato entre pessoas do grupo de risco e a grande massa da população -
-            permitindo então que o vírus se espalhe fora do grupo de risco.</b> Os dados de países como Itália, Espanha
-          e China já mostraram a eficácia do isolamento horizontal para frear a epidemia, sendo que quanto mais cedo ele
-          é adotado, mais eficaz é. Já o isolamento vertical nunca foi colocado em prática. No Brasil, por exemplo, <a
-            href="https://gauchazh.clicrbs.com.br/saude/noticia/2020/04/cerca-de-25-dos-idosos-brasileiros-moram-com-tres-ou-mais-pessoas-ck8mzg7jl00sx01te0mmq31qr.html"
-            target="_blank">segundo o IBGE</a>, 60% dos idosos brasileiros moram com até duas pessoas e 25% com três ou
-          mais pessoas, sendo portanto difícil isolá-los do restante da população. Ressaltando, ainda, que mesmo fora do
-          grupo de risco, há casos graves, necessidade de hospitalização e mortes.
-        </p>
+          <p class="text-justify">
+            <b>O isolamento horizontal é quando reduzimos o contato entre todas as pessoas, ao passo que o isolamento
+              vertical é quando reduzimos o contato entre pessoas do grupo de risco e a grande massa da população -
+              permitindo então que o vírus se espalhe fora do grupo de risco.</b> Os dados de países como Itália,
+            Espanha
+            e China já mostraram a eficácia do isolamento horizontal para frear a epidemia, sendo que quanto mais cedo
+            ele
+            é adotado, mais eficaz é. Já o isolamento vertical nunca foi colocado em prática. No Brasil, por exemplo, <a
+              href="https://gauchazh.clicrbs.com.br/saude/noticia/2020/04/cerca-de-25-dos-idosos-brasileiros-moram-com-tres-ou-mais-pessoas-ck8mzg7jl00sx01te0mmq31qr.html"
+              target="_blank">segundo o IBGE</a>, 60% dos idosos brasileiros moram com até duas pessoas e 25% com três
+            ou
+            mais pessoas, sendo portanto difícil isolá-los do restante da população. Ressaltando, ainda, que mesmo fora
+            do
+            grupo de risco, há casos graves, necessidade de hospitalização e mortes.
+          </p>
 
         </div>
       </div>
@@ -395,23 +428,26 @@
       <div class="card-body">
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse10" role="button">
-          <h5 class="card-title mb-3">▾Podemos prever com certeza quando será o pico de casos em uma epidemia e quando ela
-          terminará? E no caso específico da COVID-19?</h5>
+          <h5 class="card-title mb-3">▾Podemos prever com certeza quando será o pico de casos em uma epidemia e quando
+            ela
+            terminará? E no caso específico da COVID-19?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse10">
-        <p class="text-justify">
-          <b>Previsões de médio e longo prazo necessitam de um modelo epidemiológico, o qual deve assumir hipóteses que
-            ainda não são claras para uma doença recente como a COVID-19.</b> Um modelo epidemiológico matemático é um
-          conjunto de equações que descreve os elementos-chave da epidemia. Muitos desses elementos nós ainda não
-          conhecemos por se tratar de uma doença recente, como por exemplo se as pessoas adquirem imunidade permanente
-          ou temporária, como na gripe comum. Alguns outros, por exemplo, dependem da resposta da população e do
-          governo, e são difíceis de prever. Portanto, prever o pico e o término da epidemia é algo que pode ser
-          influenciado por diversos fatores que impactam na dinâmica da doença. Estes fatores podem ter um efeito, por
-          menor que seja, ampliado exponencialmente. Levando isso em consideração, não julgamos pertinente tentar fazer
-          estimativas de longo e médio prazo para uma doença cujos conhecimentos estão sendo aprendidos a cada dia.
-        </p>
+          <p class="text-justify">
+            <b>Previsões de médio e longo prazo necessitam de um modelo epidemiológico, o qual deve assumir hipóteses
+              que
+              ainda não são claras para uma doença recente como a COVID-19.</b> Um modelo epidemiológico matemático é um
+            conjunto de equações que descreve os elementos-chave da epidemia. Muitos desses elementos nós ainda não
+            conhecemos por se tratar de uma doença recente, como por exemplo se as pessoas adquirem imunidade permanente
+            ou temporária, como na gripe comum. Alguns outros, por exemplo, dependem da resposta da população e do
+            governo, e são difíceis de prever. Portanto, prever o pico e o término da epidemia é algo que pode ser
+            influenciado por diversos fatores que impactam na dinâmica da doença. Estes fatores podem ter um efeito, por
+            menor que seja, ampliado exponencialmente. Levando isso em consideração, não julgamos pertinente tentar
+            fazer
+            estimativas de longo e médio prazo para uma doença cujos conhecimentos estão sendo aprendidos a cada dia.
+          </p>
 
         </div>
       </div>
@@ -425,26 +461,26 @@
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse11" role="button">
           <h5 class="card-title mb-3">▾O que os dados dizem em relação à influência do clima na dinâmica da doença? É
-          correto pensar que no inverno a situação pode piorar?</h5>
+            correto pensar que no inverno a situação pode piorar?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse11">
-        <p class="text-justify">
-          <b>Não há indícios que o clima altere a velocidade de contágio e disseminação da doença de forma
-            relevante.</b> Nosso acompanhamento do início da epidemia no Brasil mostra que as velocidades iniciais da
-          doença aqui foram semelhantes às da Espanha e Itália, sendo que os climas são opostos nos hemisférios. Um
-          excelente artigo no blog do professor José Alexandre F. Diniz Filho, da UFG, <a
-            href="https://www.blogalexdiniz.com/post/condi%C3%A7%C3%B5es-clim%C3%A1ticas-n%C3%A3o-explicam-a-varia%C3%A7%C3%A3o-nas-taxas-de-crescimento-de-covid19-no-mundo"
-            target="_blank">“Condições climáticas não explicam a variação nas taxas de crescimento de Covid19 no
-            mundo”</a>, traz a seguinte consideração: “Por uma série de razões históricas, muitos países com menos
-          recursos e piores condições sócio-econômicas (que por sua vez levam a más condições sanitárias e piores
-          condições nutricionais das pessoas), estão nas regiões tropicais do planeta. Esses problemas facilmente
-          neutralizariam qualquer efeito climático e de sazonalidade potencial em escalas mais locais, como menores
-          taxas de sobrevivência do vírus exposto ao sol e alta temperatura.”. Quanto à vinda do inverno, é necessário
-          se atentar que este é o período típico de outras doenças, como dengue, gripe sazonal, asma e bronquite que
-          também demandam atenção hospitalar e, por isso, podem sobrecarregar ainda mais o sistema de saúde nacional.
-        </p>
+          <p class="text-justify">
+            <b>Não há indícios que o clima altere a velocidade de contágio e disseminação da doença de forma
+              relevante.</b> Nosso acompanhamento do início da epidemia no Brasil mostra que as velocidades iniciais da
+            doença aqui foram semelhantes às da Espanha e Itália, sendo que os climas são opostos nos hemisférios. Um
+            excelente artigo no blog do professor José Alexandre F. Diniz Filho, da UFG, <a
+              href="https://www.blogalexdiniz.com/post/condi%C3%A7%C3%B5es-clim%C3%A1ticas-n%C3%A3o-explicam-a-varia%C3%A7%C3%A3o-nas-taxas-de-crescimento-de-covid19-no-mundo"
+              target="_blank">“Condições climáticas não explicam a variação nas taxas de crescimento de Covid19 no
+              mundo”</a>, traz a seguinte consideração: “Por uma série de razões históricas, muitos países com menos
+            recursos e piores condições sócio-econômicas (que por sua vez levam a más condições sanitárias e piores
+            condições nutricionais das pessoas), estão nas regiões tropicais do planeta. Esses problemas facilmente
+            neutralizariam qualquer efeito climático e de sazonalidade potencial em escalas mais locais, como menores
+            taxas de sobrevivência do vírus exposto ao sol e alta temperatura.”. Quanto à vinda do inverno, é necessário
+            se atentar que este é o período típico de outras doenças, como dengue, gripe sazonal, asma e bronquite que
+            também demandam atenção hospitalar e, por isso, podem sobrecarregar ainda mais o sistema de saúde nacional.
+          </p>
 
         </div>
       </div>
@@ -457,22 +493,26 @@
       <div class="card-body">
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse12" role="button">
-          <h5 class="card-title mb-3">▾O número de habitantes (ou a densidade) da região influencia na dinâmica da epidemia
-          nesse lugar?</h5>
+          <h5 class="card-title mb-3">▾O número de habitantes (ou a densidade) da região influencia na dinâmica da
+            epidemia
+            nesse lugar?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse12">
-        <p class="text-justify">
-          <b>O número de habitantes numa região influencia o momento de saturação da curva, isto é, quando atingimos o
-            pico.</b> Porém, no começo da epidemia, durante a fase exponencial, esse não é um fator relevante. Isso
-          porque o número de contatos que um infectante tem no seu dia-a-dia depende das relações dele, e não da
-          densidade de habitantes no local. Alguns fatores, como tamanho médio das famílias (ou seja, características da
-          estrutura da sociedade), impactam na velocidade de contágio. Portanto, há preocupação sobre a dinâmica da
-          epidemia em comunidades e favelas de grandes metrópoles, pois é onde um grande número de pessoas moram juntas
-          e próximas a outras famílias. Outras fatores, como a distribuição etária da população, impactam no cálculo de
-          pessoas no grupo de risco e em projeções sobre a possível utilização de hospitais.
-        </p>
+          <p class="text-justify">
+            <b>O número de habitantes numa região influencia o momento de saturação da curva, isto é, quando atingimos o
+              pico.</b> Porém, no começo da epidemia, durante a fase exponencial, esse não é um fator relevante. Isso
+            porque o número de contatos que um infectante tem no seu dia-a-dia depende das relações dele, e não da
+            densidade de habitantes no local. Alguns fatores, como tamanho médio das famílias (ou seja, características
+            da
+            estrutura da sociedade), impactam na velocidade de contágio. Portanto, há preocupação sobre a dinâmica da
+            epidemia em comunidades e favelas de grandes metrópoles, pois é onde um grande número de pessoas moram
+            juntas
+            e próximas a outras famílias. Outras fatores, como a distribuição etária da população, impactam no cálculo
+            de
+            pessoas no grupo de risco e em projeções sobre a possível utilização de hospitais.
+          </p>
 
         </div>
       </div>
@@ -485,23 +525,25 @@
       <div class="card-body">
         <!-- CARD.HEADER -->
         <a class="text-reset" data-toggle="collapse" href="#collapse13" role="button">
-          <h5 class="card-title mb-3">▾Porque usamos gráficos em escala logarítmica? Qual as vantagens e desvantagens dessa
-          visualização?</h5>
+          <h5 class="card-title mb-3">▾Porque usamos gráficos em escala logarítmica? Qual as vantagens e desvantagens
+            dessa
+            visualização?</h5>
         </a> <!-- CARD.TITLE.TEXT -->
 
         <!-- CARD.TEXT -->
         <div class="collapse" id="collapse13">
-        <p class="text-justify">
-          <b>A escala logarítmica relativiza a quantidade de novos casos.</b> Neste tipo de escala, podemos ver que um
-          aumento de 10 novos casos numa população que tem 10 casos (ou seja, quando número de casos aumenta 100%) é
-          muito mais grave do que se ter 10 novos casos numa população que já tem 1000 casos (ou seja, um aumento de
-          0,1%). Desta forma, a inclinação em um gráfico em escala logarítmica está relacionada com o aumento relativo
-          no número de casos. Por este motivo, utiliza-se essa escala para ver o comportamento das curvas epidêmicas.
-          Além disso, uma curva exponencial em escala logarítmica é uma reta, o que facilita a visualização. No caso de
-          uma epidemia de curva exponencial representada em escala logarítmica podemos olhar para a inclinação dessa
-          curva para entender a velocidade com que a doença se espalha, e quanto mais íngreme essa reta, maior a
-          velocidade de crescimento do número de casos.
-        </p>
+          <p class="text-justify">
+            <b>A escala logarítmica relativiza a quantidade de novos casos.</b> Neste tipo de escala, podemos ver que um
+            aumento de 10 novos casos numa população que tem 10 casos (ou seja, quando número de casos aumenta 100%) é
+            muito mais grave do que se ter 10 novos casos numa população que já tem 1000 casos (ou seja, um aumento de
+            0,1%). Desta forma, a inclinação em um gráfico em escala logarítmica está relacionada com o aumento relativo
+            no número de casos. Por este motivo, utiliza-se essa escala para ver o comportamento das curvas epidêmicas.
+            Além disso, uma curva exponencial em escala logarítmica é uma reta, o que facilita a visualização. No caso
+            de
+            uma epidemia de curva exponencial representada em escala logarítmica podemos olhar para a inclinação dessa
+            curva para entender a velocidade com que a doença se espalha, e quanto mais íngreme essa reta, maior a
+            velocidade de crescimento do número de casos.
+          </p>
 
         </div>
       </div>
@@ -522,11 +564,11 @@
           alt="Imagem que representa a influência da quarentena na disseminação do coronavírus">
         <p class="card-text legenda"><small>Nosso pedido para que você, se possível, #FiqueEmCasa!</small></p>
         <!-- CARD.IMAGE.LEGENDA -->
-        </div>
       </div>
     </div>
+  </div>
 
-    <!-- NEW.CARD -->
+  <!-- NEW.CARD -->
 
   </div>
 
@@ -550,7 +592,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> <!-- Ionic Icons -->
   <script src="js/updateDate.js"></script>
 </body>
 
