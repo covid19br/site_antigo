@@ -50,7 +50,8 @@ Como o método utiliza um algoritmo de correção do passado com pontos presvist
 `r as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])` casos graves em
 `r format(max(time(now.proj.zoo)), "%d/%m/%Y")` )**, se a taxa de
 crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. Em
-cinza é mostrado o intervalo de confiança dessa previsão.
+cinza é mostrado o intervalo de confiança dessa previsão. Acesse <a
+href="informacoes.html">aqui</a> para +Info sobre o método. 
 
 
 <h5>Por que só 5 dias?</h5>

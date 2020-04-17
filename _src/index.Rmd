@@ -44,15 +44,15 @@ plot.forecast.exp
 </div>
 
 <div class="item">
-  <h4><a href="pais.html">Como epidemias se espalham por um país continental? E por um estado?</a></h4>
+  <h4><a href="municipio_SP.html">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</a></h4>
  
- <a href="pais.html">
-   ![](fig/voos_brasil.jpg)
- </a>
+  <a href="municipio_SP.html">
+ ![width=80%](fig/nowcasting_front.png)
+   </a>
+ 
+  Estimamos o número de casos graves usando os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo.
   
-  A chave pode estar na rede formada por aeroportos e vôos conectando os estados e estradas conectando as capitais às cidades do interior.
-  
- </div>
+</div>
 
 <div class="item">
   <h4><a href="perguntas.html">Respostas da nossa equipe para algumas das principais perguntas sobre COVID-19</a></h4>
@@ -77,6 +77,17 @@ plot.forecast.exp
   
 </div>
 
+<div class="item">
+  <h4><a href="pais.html">Como epidemias se espalham por um país continental? E por um estado?</a></h4>
+ 
+ <a href="pais.html">
+   ![](fig/voos_brasil.jpg)
+ </a>
+  
+  A chave pode estar na rede formada por aeroportos e vôos conectando os estados e estradas conectando as capitais às cidades do interior.
+  
+</div>
+
 
 <div class="item">
   <h4><a href="dinamica.html">Como o isolamento social influencia a dinâmica de propagação da epidemia?</a></h4>
@@ -89,6 +100,7 @@ plot.forecast.exp
   O isolamento social reduz a propagação de uma doença
   contagiosa. 
 </div>
+
 
 
 <div class="item">
@@ -117,15 +129,5 @@ Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notif
 </div>
 
 
-<!--<div class="item">
-  <h4><a href="municipio_SP.html">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</a></h4>
- 
-  <a href="municipio_SP.html">
- ![](fig/.png)
-   </a>
- 
-  Estimamos o número de casos graves usando os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo. Nossa técnica estatística permite corrigir os atrasos de notificação, acesse <a href="informacoes.html">aqui</a> para +Info. 
-  
-</div>-->
 
 </div>
