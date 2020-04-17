@@ -163,3 +163,23 @@ rownames(ex.dt.df) <- format(as.Date(rownames(ex.dt.df)), "%d/%m/%Y")
 serie.temp.table <- kable(ex.dt.df, "html", col.names=c("Estimado", "IC-inferior", "IC-superior"),
       caption="Estimativas dos tempos de duplicação do número de casos de COVID-19 para o Brasil, para período de 5 dias, a partir de 07 de março de 2020. Indicados os valores estimados e os limites inferiores e superiores do intervalo de confiança a 95%. As datas em cada linha da tabela são os dias do final de cada período.",
       pagetitle = "09")
+
+######################################################################
+## Tabela para preencher o minimo e o máximo
+######################################################################
+minmax.casos <- data.frame(row.names = c(names(estados.exp.5d), "BR"))
+
+minmax.lugares <- estados.exp.5d
+minmax.lugares[[length(estados.exp.5d)+1]] <- exp.5d
+
+min <- vector()
+max <- vector()
+data <- vector()
+for (i in 1:length(minmax.lugares)) {
+  min[i] <- as.integer(minmax.lugares[[i]][max(nrow(minmax.lugares[[i]])),2])
+  max[i] <- as.integer(minmax.lugares[[i]][max(nrow(minmax.lugares[[i]])),3])
+  data[i] <- format(max(time(minmax.lugares[[i]])), "%d/%m/%Y")
+}
+minmax.casos <- cbind(minmax.casos, min, max, data)
+
+?write.csv(minmax.casos, file="../web/minmaxcasos.txt")
