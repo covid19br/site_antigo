@@ -30,7 +30,6 @@ Row  {data-height=400}
   
 No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam ocupados por pacientes de COVID-19 em apenas 18 dias (dia 6 de abril) **se nenhuma medida de controle de contágio tivesse sido tomada** e o número de leitos se mantivesse constante (**Fig. 1 e 2**). A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (**Fig. 3 e 4**).
 
-
 ###
 
 ![**Fig. 1**: Previsão da porcentagem de **leitos hospitalares** ocupados por COVID-19 no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).](fig/leitos_fig1.png){ width=100% }
@@ -65,7 +64,7 @@ Row  {data-height=400}
 
 ### Quantos leitos existem na cidade de São Paulo?
 
-De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) [*Ref. 1*], a cidade de São Paulo possui 4.205 leitos de UTI e 28.297 leitos simples para adultos no sistema SUS e privado. Esses leitos estão disponíveis para pacientes com diversos tipos de enfermidades, e não é possível saber até o momento quantos deles estão ocupados por outras doenças que não são COVID-19 ou Síndrome Respiratória Aguda Grave (SRAG). Contudo, sabemos que os gestores dos hospitais estão suspendendo procedimentos eletivos (não urgentes), realocando doentes entre enfermarias e adequando espaços físicos, dentro e fora dos hospitais, para aumentar a disponibilidade de leitos para os casos de COVID-19 (Fonte: Secretaria Municipal de São Paulo). 
+De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) [*Ref. 1*], a cidade de São Paulo possui 4.205 leitos de UTI para adultos, dos quais 25% são SUS, e 27.847 leitos simples para adultos dos quais 52% são SUS. Esses leitos estão disponíveis para pacientes com diversos tipos de enfermidades. Até o momento, tem sido difícil saber com precisão quantos leitos estão disponíveis exclusivamente para acolherem pessoas acometidas de COVID-19 ou Síndrome Respiratória Aguda Grave (SRAG). Há informes oficiais que os gestores das redes hospitalares, tanto pública quanto privada, suspenderam os chamados procedimentos eletivos (não urgentes), re-alocaram doentes entre enfermarias, adequaram e ainda vêm adequando espaços físicos, dentro e fora dos hospitais, para aumentar a disponibilidade de leitos para os casos de COVID-19 (Fonte: Secretaria Municipal de São Paulo). 
 
 ### 
 
