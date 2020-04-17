@@ -8,3 +8,4 @@ for (f in static_pages){
 }
 
 
+
