@@ -3,12 +3,12 @@
 var estados =
     [
         {
-            uf: "SP",
+            uf: "sp",
             prep: "em",
             verbose: "São Paulo"
         },
         {
-            uf: "RJ",
+            uf: "rj",
             prep: "no",
             verbose: "Rio de Janeiro"
         },
@@ -18,127 +18,127 @@ var estados =
             verbose: "Brasil",
         },
         {
-            uf: "AC",
+            uf: "ac",
             prep: "no",
             verbose: "Acre"
         },
         {
-            uf: "AL",
+            uf: "al",
             prep: "em",
             verbose: "Alagoas"
         },
         {
-            uf: "AP",
+            uf: "ap",
             prep: "no",
             verbose: "Amapá"
         },
         {
-            uf: "AM",
+            uf: "am",
             prep: "no",
             verbose: "Amazonas"
         },
         {
-            uf: "BA",
+            uf: "ba",
             prep: "na",
             verbose: "Bahia"
         },
         {
-            uf: "CE",
+            uf: "ce",
             prep: "no",
             verbose: "Ceará"
         },
         {
-            uf: "DF",
+            uf: "df",
             prep: "no",
             verbose: "Distrito Federal"
         },
         {
-            uf: "ES",
+            uf: "es",
             prep: "em",
             verbose: "Espírito Santo"
         },
         {
-            uf: "GO",
+            uf: "go",
             prep: "em",
             verbose: "Goiás"
         },
         {
-            uf: "MA",
+            uf: "ma",
             prep: "no",
             verbose: "Maranhão"
         },
         {
-            uf: "MT",
+            uf: "mt",
             prep: "em",
             verbose: "Mato Grosso"
         },
         {
-            uf: "MS",
+            uf: "ms",
             prep: "em",
             verbose: "Mato Grosso do Sul"
         },
         {
-            uf: "MG",
+            uf: "mg",
             prep: "em",
             verbose: "Minas Gerais"
         },
         {
-            uf: "PA",
+            uf: "pa",
             prep: "no",
             verbose: "Pará"
         },
         {
-            uf: "PB",
+            uf: "pb",
             prep: "na",
             verbose: "Paraíba"
         },
         {
-            uf: "PR",
+            uf: "pr",
             prep: "no",
             verbose: "Paraná"
         },
         {
-            uf: "PE",
+            uf: "pe",
             prep: "em",
             verbose: "Pernambuco"
         },
         {
-            uf: "PI",
+            uf: "pi",
             prep: "no",
             verbose: "Piauí"
         },
         {
-            uf: "RN",
+            uf: "rn",
             prep: "no",
             verbose: "Rio Grande do Norte"
         },
         {
-            uf: "RS",
+            uf: "rs",
             prep: "no",
             verbose: "Rio Grande do Sul"
         },
         {
-            uf: "RO",
+            uf: "ro",
             prep: "em",
             verbose: "Rondônia"
         },
         {
-            uf: "RR",
+            uf: "rr",
             prep: "em",
             verbose: "Roraima"
         },
         {
-            uf: "SC",
+            uf: "sc",
             prep: "em",
             verbose: "Santa Catarina"
         },
         {
-            uf: "SE",
+            uf: "se",
             prep: "em",
             verbose: "Sergipe"
         },
         {
-            uf: "TO",
+            uf: "to",
             prep: "em",
             verbose: "Tocantins"
         }
@@ -146,55 +146,55 @@ var estados =
 
 function getUFCode(verbose) {
     for (i = 0; i < estados.length; i++) {
-        if(estados[i].verbose == verbose) return(estados[i].uf);
+        if (estados[i].verbose == verbose) return (estados[i].uf);
     }
 
     // UF not found: returns to SP
-    return("SP");
+    return ("sp");
 }
 
 function getVerbose(uf) {
     for (i = 0; i < estados.length; i++) {
-        if(estados[i].uf == uf) return(estados[i].verbose);
+        if (estados[i].uf == uf) return (estados[i].verbose);
     }
 
     // UF not found: returns to SP
-    return("SP");
+    return ("sp");
 }
 
 function getCurrentUF() {
     var current = $("#page-title").text()
-    return(getUFCode(current));
+    return (getUFCode(current));
 }
 
 function getPreposicao(verbose) {
     for (i = 0; i < estados.length; i++) {
-        if(estados[i].verbose == verbose) return(estados[i].prep);
+        if (estados[i].verbose == verbose) return (estados[i].prep);
     }
 
-    return("em");
+    return ("em");
 }
 
 function hasUF(split_src) {
     // verifica se existe codigo uf no penultimo index
     for (i = 0; i < estados.length; i++) {
-        if(estados[i].uf == split_src[(split_src.length - 2)]) return(true);
+        if (estados[i].uf == split_src[(split_src.length - 2)]) return (true);
     }
-    
-    return(false);
+
+    return (false);
 }
 
 function setActive(active) {
     // cleans
     $(".dropdown-item").removeClass("active");
-    
+
     // updates
     var selector = ".dropdown-item:contains(" + active + ")";
     $(selector).addClass("active");
 }
 
 function setRequest(uf) {
-    state = getVerbose(uf);
+    state = getVerbose(uf.toLowerCase());
 
     // Updates text
     $("#page-title").text(state);
@@ -218,12 +218,12 @@ function updateWidget() {
     var new_src = "";
 
     // change UF
-    for(i=0; i<split_src.length; i++) {
-        if(i == (split_src.length - 2)) {
+    for (i = 0; i < split_src.length; i++) {
+        if (i == (split_src.length - 2)) {
             new_src = new_src + "." + current_uf;
         }
         else {
-            if(i==0) {
+            if (i == 0) {
                 new_src = new_src + split_src[i];
             }
             else {
@@ -253,14 +253,14 @@ function updateStatic() {
     var new_svg = "";
 
     // change UF
-    if(hasUF(split_src)) {
-        for(i=0; i<split_src.length; i++) {
-            if(i == (split_src.length - 2)) {
+    if (hasUF(split_src)) {
+        for (i = 0; i < split_src.length; i++) {
+            if (i == (split_src.length - 2)) {
                 new_src = new_src + "." + current_uf;
                 new_svg = new_svg + "." + current_uf;
             }
             else {
-                if(i==0) {
+                if (i == 0) {
                     new_src = new_src + split_src[i];
                     new_svg = new_svg + split_svg[i];
                 }
@@ -272,24 +272,24 @@ function updateStatic() {
         }
     }
     else {
-        for(i=0; i<split_src.length; i++) {
-            if(i == (split_src.length - 2)) {
+        for (i = 0; i < split_src.length; i++) {
+            if (i == (split_src.length - 2)) {
                 new_src = new_src + "." + split_src[i] + "." + current_uf;
                 new_svg = new_svg + "." + split_svg[i] + "." + current_uf;
             }
             else {
-                if(i==0) {
+                if (i == 0) {
                     new_src = new_src + split_src[i];
                     new_svg = new_svg + split_svg[i];
                 }
                 else {
                     new_src = new_src + "." + split_src[i];
                     new_svg = new_svg + "." + split_svg[i];
-            }
+                }
             }
         }
     }
-    
+
     // Update SRCs
     // HTML Widget
     $(".codegena_iframe").attr("data-src", new_src);
@@ -302,7 +302,7 @@ function updateStatic() {
 // First Load
 // Sets requested state on #page-title via hash URL
 var requested = $(location).attr('hash').substring(1);
-if(requested.length == 2) setRequest(requested);
+if (requested.length == 2) setRequest(requested);
 
 // Updates states based on #page-title
 updateStatic();
@@ -310,18 +310,18 @@ updateStatic();
 // JQuery OnClick Update
 $(".dropdown-item").click(function () {
     // se nao eh o item atual
-    if(!$(this).hasClass("active")) {
+    if (!$(this).hasClass("active")) {
         var state = $(this).text();
-        
+
         // troca o titulo o card-text
         $("#page-title").text(state);
         $(".card-state-text").text(getPreposicao(state) + " " + state);
 
         // troca o estado ativo
         setActive(state);
-    
+
         // troca os gráficos
-        if($(".placeholder_svg").length) updateStatic();
+        if ($(".placeholder_svg").length) updateStatic();
 
         // atualiza o iframe
         else updateWidget();

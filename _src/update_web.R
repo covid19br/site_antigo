@@ -1,4 +1,5 @@
 # Atualizacao do conteudo do site
+print("Atualizando conteudo do website")
 
 # Libraries
 library(widgetframe)
@@ -14,6 +15,7 @@ makeNamedList <- function(...) {
 ################################################################################
 ## Data de Atualizacao
 ################################################################################
+print("Atualizando data de atualizacao...")
 file <- file("../web/last.update.txt")
 writeLines(c(paste(now())), file)
 close(file)
@@ -21,6 +23,7 @@ close(file)
 ################################################################################
 ## Atualiza Plots
 ################################################################################
+print("Atualizando plots...")
 plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, plot.tempo.dupl, est.tempo.dupl, proj.num.casos) # Graficos a serem atualizados
 filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
@@ -37,7 +40,7 @@ for (i in 1:n){
 ################################################################################
 for (st in estados.para.atualizar) {
   graph <- ggplotly(estados.plot.forecast.exp.br[[st]]) # GGPlot -> Plotly
-  filepath <- paste("../web/plot.forecast.exp.", st, sep="") # Atualiza plot.forecast.exp para estados
+  filepath <- paste("../web/plot.forecast.exp.", tolower(st), sep="") # Atualiza plot.forecast.exp para estados
   orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
   saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
 }
@@ -45,6 +48,7 @@ for (st in estados.para.atualizar) {
 ################################################################################
 ## Atualiza tabelas
 ################################################################################
+print("Atualizando tabelas...")
 tables.para.atualizar <- c(serie.temp.table) # Tabelas a serem atualizadas
 names.tables <- makeNamedList(serie.temp.table) # Tabelas a serem atualizadas
 filenames <- names(names.tables)
