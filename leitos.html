@@ -120,7 +120,7 @@
 
         <!-- NEW.CARD -->
 
-        <!-- Identificador do card -->
+        <!-- Card 1 -->
         <div class="card">
             <div class="card-body">
                 <!-- CARD.HEADER -->
@@ -149,56 +149,44 @@
                     simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos
                     leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (Fig. 3 e 4).
                 </p>
-
-                <!-- CARD.BUTTON.EXPAND -->
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1"
-                    aria-expanded="false" aria-controls="collapseGraph">
-                    Por que modelar um cenário sem distanciamento social? ▾
-                </button>
-                
-
-                <!-- CARD.BUTTON.EXPAND -->
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2"
-                    aria-expanded="false" aria-controls="collapseGraph">
-                    É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis? ▾
-                </button>
-                
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapse1">
-                    <p class="text-justify">
-                        Nosso modelo representa um cenário do avanço da epidemia de COVID-19 no município de São Paulo,
-                        caso as medidas de distanciamento social não tivessem sido tomadas. Apesar de hipotético, este
-                        modelo nos permite explorar o que aconteceria no município de São Paulo caso estas medidas não
-                        tivessem sido tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos
-                        na cidade de São Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de
-                        distanciamento social salvaram (trabalho em andamento). A comparação é importante, por exemplo,
-                        para o gestor público ter as condições necessárias para tomar a melhor decisão em termos de
-                        administração e de política pública, em especial em um momento de extrema gravidade como é o
-                        atual. Nosso modelo, apesar de hipotético, utiliza dados reais de número de leitos e de casos na
-                        cidade. Para representar o cenário sem medidas de distanciamento social, estimamos o tempo de
-                        duplicação da doença num período anterior a estas medidas em São Paulo (dias 14 a 19 de março,
-                        Fig. 1A e 2A).
-                    </p>
-                </div>
-
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapse2">
-                    <p class="text-justify">
-                        Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma
-                        porcentagem baixa dos leitos, a ocupação total de leitos pode ser atingida muito rapidamente sem
-                        medidas preventivas. Medidas preventivas, como o isolamento social, aumentam o tempo de
-                        duplicação da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais.
-                        Iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito
-                        tarde, já que o número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de
-                        medidas preventivas podem demorar para afetar o número de hospitalizações por COVID-19.
-                    </p>
-                </div>
-
             </div>
         </div>
 
         <!-- NEW.CARD -->
 
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <div class="media">
+                    <img src="./img/icon_public.svg" width=64px alt="Ícone que representa o leito de um hospital"
+                        class="card-icon"> <!-- CARD.TITLE.ICON -->
+                    <div class="media-body">
+                        <h5 class="card-title">Por que modelar um cenário sem distanciamento social?</h5>
+                        <!-- CARD.TITLE.TEXT -->
+                        <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com
+                            COVID-19, sem distanciamento social?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                    </div>
+                </div>
+
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-2">
+                    Nosso modelo representa um cenário do avanço da epidemia de COVID-19 no município de São Paulo, caso
+                    as medidas de distanciamento social não tivessem sido tomadas. Apesar de hipotético, este modelo nos
+                    permite explorar o que aconteceria no município de São Paulo caso estas medidas não tivessem sido
+                    tomadas. Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São
+                    Paulo, podemos quantificar quantos leitos (e vidas!) as medidas de distanciamento social salvaram
+                    (trabalho em andamento). A comparação é importante, por exemplo, para o gestor público ter as
+                    condições necessárias para tomar a melhor decisão em termos de administração e de política pública,
+                    em especial em um momento de extrema gravidade como é o atual. Nosso modelo, apesar de hipotético,
+                    utiliza dados reais de número de leitos e de casos na cidade. Para representar o cenário sem medidas
+                    de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas
+                    medidas em São Paulo (dias 14 a 19 de março, Fig. 1 e 2).
+                </p>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
     </div>
 
     <!-- Figuras 1 e 2 -->
@@ -213,11 +201,12 @@
 
                 <!-- CARD.IMAGE -->
                 <img src="./web/leitos_fig1.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
-                <p class="card-text legenda"><small>Previsão da porcentagem de leitos hospitalares ocupados por COVID-19
-                    no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A
-                    linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados
-                    observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de
-                    notificações SIVEP-GRIPE).</small></p> <!-- CARD.IMAGE.LEGENDA -->
+                <p class="card-text legenda mt-2"><small>Previsão da porcentagem de leitos hospitalares ocupados por
+                        COVID-19
+                        no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A
+                        linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados
+                        observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de
+                        notificações SIVEP-GRIPE).</small></p> <!-- CARD.IMAGE.LEGENDA -->
             </div>
         </div>
 
@@ -227,15 +216,134 @@
         <div class="card">
             <div class="card-body">
                 <!-- CARD.HEADER -->
-                
+                <h5 class="card-title mb-2" style="text-align: center;">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
                 <!-- CARD.IMAGE -->
                 <img src="./web/leitos_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
-                <h5 class="card-title mb-2" style="text-align: center;">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
-                <p class="card-text legenda"><small>Versão em escala logarítmica da Fig 1. Previsão da porcentagem (em escala
-                    logarítmica) de leitos hospitalares ocupados por COVID-19 no município de São Paulo entre os dias
-                    15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos
-                    estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados
-                    entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).</small></p>
+                <p class="card-text legenda mt-2"><small>Versão em escala logarítmica da Fig 1. Previsão da porcentagem
+                        (em escala
+                        logarítmica) de leitos hospitalares ocupados por COVID-19 no município de São Paulo entre os
+                        dias
+                        15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos
+                        estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados
+                        entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).</small></p>
+                <!-- CARD.IMAGE.LEGENDA -->
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+    </div>
+
+    <!-- Texto Principal -->
+    <div class="card-columns one">
+        <!-- COLUMNS.NUM -->
+
+        <!-- NEW.CARD -->
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <div class="media">
+                    <img src="./img/icon_sick_bed.svg" width=64px alt="Ícone que representa o leito de um hospital"
+                        class="card-icon"> <!-- CARD.TITLE.ICON -->
+                    <div class="media-body">
+                        <h5 class="card-title">É arriscado reduzir o isolamento social em municípios com mais de 50% dos
+                            leitos disponíveis?</h5>
+                        <!-- CARD.TITLE.TEXT -->
+                        <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com
+                            COVID-19, sem distanciamento social?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                    </div>
+                </div>
+
+                <!-- CARD.DATE -->
+                <p class="card-date"><small class="updateDate">Última atualização: </small></p>
+
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-2">
+                    Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma
+                    porcentagem baixa dos leitos, a ocupação total de leitos pode ser atingida muito rapidamente sem
+                    medidas preventivas. Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação
+                    da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais. Iniciar as medidas
+                    preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o número
+                    de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem
+                    demorar para afetar o número de hospitalizações por COVID-19.
+
+                </p>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <div class="media">
+                    <img src="./img/icon_public.svg" width=64px alt="Ícone que representa o leito de um hospital"
+                        class="card-icon"> <!-- CARD.TITLE.ICON -->
+                    <div class="media-body">
+                        <h5 class="card-title">Quantos leitos existem na cidade de São Paulo?
+                        </h5>
+                        <!-- CARD.TITLE.TEXT -->
+                        <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com
+                            COVID-19, sem distanciamento social?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                    </div>
+                </div>
+
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-2">
+                    De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) [Ref. 1], a cidade de São
+                    Paulo possui 4.205 leitos de UTI para adultos, dos quais 25% são SUS, e 27.847 leitos simples para
+                    adultos dos quais 52% são SUS. Esses leitos estão disponíveis para pacientes com diversos tipos de
+                    enfermidades. Até o momento, tem sido difícil saber com precisão quantos leitos estão disponíveis
+                    exclusivamente para acolherem pessoas acometidas de COVID-19 ou Síndrome Respiratória Aguda Grave
+                    (SRAG). Há informes oficiais que os gestores das redes hospitalares, tanto pública quanto privada,
+                    suspenderam os chamados procedimentos eletivos (não urgentes), re-alocaram doentes entre
+                    enfermarias, adequaram e ainda vêm adequando espaços físicos, dentro e fora dos hospitais, para
+                    aumentar a disponibilidade de leitos para os casos de COVID-19 (Fonte: Secretaria Municipal de São
+                    Paulo).
+
+
+                </p>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+    </div>
+
+    <!-- Figuras 3 e 4 -->
+    <div class="card-columns two-small">
+        <!-- NEW.CARD -->
+
+        <!-- Figura 1 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <h5 class="card-title mb-3" style="text-align: center;">Figura 3</h5> <!-- CARD.TITLE.TEXT -->
+
+                <!-- CARD.IMAGE -->
+                <img src="./web/leitos_fig1.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                <p class="card-text legenda mt-2"><small>Previsão da porcentagem de leitos de UTI ocupados por COVID-19
+                        no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A
+                        linha e os pontos amarelos são os casos estimados pelo modelo.
+                    </small></p> <!-- CARD.IMAGE.LEGENDA -->
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+
+        <!-- Figura 1 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <h5 class="card-title mb-2" style="text-align: center;">Figura 4</h5> <!-- CARD.TITLE.TEXT -->
+                <!-- CARD.IMAGE -->
+                <img src="./web/leitos_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                <p class="card-text legenda mt-2"><small>Fig. 3 em escala logarítmica. Previsão da porcentagem (em
+                        escala logarítmica) de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os
+                        dias 15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os
+                        casos estimados pelo modelo.
+                    </small></p>
                 <!-- CARD.IMAGE.LEGENDA -->
             </div>
         </div>
@@ -244,7 +352,7 @@
     </div>
 
     <!-- Metodos e Referencias -->
-    <div class="card-columns two">
+    <div class="card-columns one">
         <!-- NEW.CARD -->
 
         <!-- Metodos -->
