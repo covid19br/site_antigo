@@ -145,6 +145,11 @@ body {
     .two {
         column-count: 2!important;
     }
+    .two-small {
+        column-count: 2!important;
+        width: 75%;
+        margin: 1rem auto!important;
+    }
 }
 
 /* Medium devices (tablets, less than 992px) */

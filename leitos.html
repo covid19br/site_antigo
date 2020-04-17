@@ -139,7 +139,7 @@
                 <p class="card-date"><small class="updateDate">Última atualização: </small></p>
 
                 <!-- CARD.TEXT -->
-                <p class="text-justify">
+                <p class="text-justify mt-2">
                     No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados
                     de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o
                     número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de
@@ -155,6 +155,14 @@
                     aria-expanded="false" aria-controls="collapseGraph">
                     Por que modelar um cenário sem distanciamento social? ▾
                 </button>
+                
+
+                <!-- CARD.BUTTON.EXPAND -->
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2"
+                    aria-expanded="false" aria-controls="collapseGraph">
+                    É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis? ▾
+                </button>
+                
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapse1">
                     <p class="text-justify">
@@ -173,11 +181,6 @@
                     </p>
                 </div>
 
-                <!-- CARD.BUTTON.EXPAND -->
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse2"
-                    aria-expanded="false" aria-controls="collapseGraph">
-                    É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis? ▾
-                </button>
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapse2">
                     <p class="text-justify">
@@ -199,21 +202,22 @@
     </div>
 
     <!-- Figuras 1 e 2 -->
-    <div class="card-columns two">
+    <div class="card-columns two-small">
         <!-- NEW.CARD -->
 
         <!-- Figura 1 -->
         <div class="card">
             <div class="card-body">
                 <!-- CARD.HEADER -->
+                <h5 class="card-title mb-3" style="text-align: center;">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
+
                 <!-- CARD.IMAGE -->
                 <img src="./web/leitos_fig1.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
-                <h5 class="card-title mb-2" style="text-align: center;">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
-                <p class="card-text legenda">Previsão da porcentagem de leitos hospitalares ocupados por COVID-19
+                <p class="card-text legenda"><small>Previsão da porcentagem de leitos hospitalares ocupados por COVID-19
                     no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A
                     linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados
                     observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de
-                    notificações SIVEP-GRIPE).</p> <!-- CARD.IMAGE.LEGENDA -->
+                    notificações SIVEP-GRIPE).</small></p> <!-- CARD.IMAGE.LEGENDA -->
             </div>
         </div>
 
@@ -227,11 +231,11 @@
                 <!-- CARD.IMAGE -->
                 <img src="./web/leitos_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
                 <h5 class="card-title mb-2" style="text-align: center;">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
-                <p class="card-text legenda">Versão em escala logarítmica da Fig 1. Previsão da porcentagem (em escala
+                <p class="card-text legenda"><small>Versão em escala logarítmica da Fig 1. Previsão da porcentagem (em escala
                     logarítmica) de leitos hospitalares ocupados por COVID-19 no município de São Paulo entre os dias
                     15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos
                     estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados
-                    entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).</p>
+                    entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).</small></p>
                 <!-- CARD.IMAGE.LEGENDA -->
             </div>
         </div>
