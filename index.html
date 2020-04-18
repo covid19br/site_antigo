@@ -13,8 +13,8 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
-    rel="stylesheet"> <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
   <link href="./css/custom.css" rel="stylesheet">
 
   <!-- Favicons -->
@@ -236,7 +236,48 @@
 
     <!-- NEW.CARD -->
 
+    <!-- SP.MAP.CARD -->
+    <div class="card">
+      <div class="card-body">
 
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_globe.svg" class="card-icon" width=64px alt="Avião sobrevoando o globo terrestre">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Dinâmicas de contágio 2</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">E como as epidemias se espalham por dentro de um estado?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.IMAGE -->
+        <img src="./fig/sppp_orig.jpg" class="card-img-top"
+          alt="Gráfico de conexões sobre o mapa do São Paulo que representa a dinâmica de propagação no país">
+
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          Neste relatório, associamos dados da rede de fluxos rodoviários e da demografia das microrregiões paulistas
+          com os casos confirmados de COVID-19 atualizados em 04/04/2020 para gerar informações estratégicas sobre a
+          propagação geográfica da pandemia de SARS-CoV-2 no Estado de São Paulo. Identificamos microrregiões que podem
+          atuar como núcleos propagadores da epidemia ou que têm alta vulnerabilidade a receber pessoas infectadas.
+          Desta forma, atualizamos a identificação das microrregiões mais vulneráveis à propagação geográfica da
+          pandemia do novo coronavírus (SARS-CoV-2) no estado de SP.
+        </p>
+
+        <!-- CARD.BUTTON -->
+        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/49" target="_blank"><button
+            class="btn btn-primary" type="button">
+            Leia o relatório na íntegra aqui.
+          </button></a>
+
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Guimarães Lab</div>
+
+      </div>
+    </div>
+
+    <!-- NEW.CARD -->
 
     <!-- GRAPH.CARD -->
     <div class="card">
@@ -291,6 +332,38 @@
       </div>
     </div>
 
+    <!-- GRAVES.CARD -->
+    <div class="card">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_sick_bed.svg" width=64px
+            alt="Menino com garganta tossindo" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.IMAGE -->
+        <a href="municipios.html"><img src="./fig/nowcasting_front.png" class="card-img-top mt-3"
+          alt="Gŕafico mostrando a porcentagem de ocupação de leitos e o limite do sistema de saúde indicado"></a>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3">
+          Estimamos o número de casos graves usando os dados de notificação de hospitalizações por SRAG (Síndrome
+          Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo.
+        </p>
+
+        <!-- CARD.BUTTON -->
+        <a href="municipios.html" target="_blank"><button class="btn btn-primary mt-1" type="button">
+            Saiba mais
+          </button></a>
+      </div>
+    </div>
+
     <!-- DUPLICACAO.NOTA.CARD -->
     <div class="card">
       <div class="card-body">
@@ -310,14 +383,7 @@
         <p class="text-justify">
           No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes
           moleculares sem resultados, necessários para que os casos sejam confirmados e notificados.
-          Essa demora faz com que os números disponíveis publicamente (número de notificações) cresça de maneira
-          artificialmente lenta.
-        </p>
-
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
           Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia.
-          Seria irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
         </p>
 
         <!-- CARD.SIGNATURE -->
@@ -327,39 +393,37 @@
     </div>
 
     <!-- NEW.CARD -->
-    
+
     <!-- LEITOS.CARD -->
     <div class="card">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_sick_bed.svg" width=64px alt="Previsão de quando os leitos de São Paulo se esgotariam sem isolamento social"
-            class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_hospital.svg" width=64px
+            alt="Previsão de quando os leitos de São Paulo se esgotariam sem isolamento social" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Esgotamento de leitos em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem distanciamento social?</p>
+            <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem
+              distanciamento social?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
 
         <!-- CARD.IMAGE -->
-        <img src="./web/leitos_fig1.svg" class="card-img-top mt-3"
-          alt="Gŕafico mostrando a porcentagem de ocupação de leitos e o limite do sistema de saúde indicado">
+        <a href="leitos.html"><img src="./web/leitos_fig1.svg" class="card-img-top mt-3"
+          alt="Gŕafico mostrando a porcentagem de ocupação de leitos e o limite do sistema de saúde indicado"></a>
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3">
-          Sem nenhuma medida de controle de contágio, os leitos hospitalares da cidade de São Paulo já teriam sido completamente ocupados por pacientes de COVID-19 no dia 6 de abril.
+          Sem nenhuma medida de controle de contágio, os leitos hospitalares da cidade de São Paulo já teriam sido
+          completamente ocupados por pacientes de COVID-19 no dia 6 de abril.
         </p>
 
         <!-- CARD.BUTTON -->
-        <a href="leitos.html" target="_blank"><button class="btn btn-primary mt-1"
-            type="button">
+        <a href="leitos.html"><button class="btn btn-primary mt-1" type="button">
             Saiba mais
           </button></a>
-
-        <!-- CARD.SIGNATURE -->
-        <div class="blockquote-footer text-right">Guimarães Lab</div>
-
       </div>
     </div>
 
@@ -406,7 +470,7 @@
       </div>
     </div>
 
-    
+
     <!-- NEW.CARD -->
 
   </div>
