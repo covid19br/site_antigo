@@ -11,8 +11,7 @@ library(knitr)
 ################################################################################
 plot.formatos <- theme_bw()+
     theme(axis.text= element_text(size=12, face="bold"),
-          axis.title.y = element_text(size=14, face="bold"),
-          plot.margin=unit(c(0,0,0,0),"mm"))
+          axis.title.y = element_text(size=14, face="bold"))
 
 ################################################################################
 ## Grafico da serie observada e do previsto pelo modelo exponencial

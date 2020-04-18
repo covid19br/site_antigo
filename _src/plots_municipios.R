@@ -9,8 +9,7 @@ library(zoo)
 plot.formatos <- theme_bw()+
     theme(axis.text= element_text(size=12, face="bold"),
           axis.title = element_text(size=14, face="bold"),
-          legend.text = element_text(size=12),
-          plot.margin=unit(c(0,0,0,0),"mm"))
+          legend.text = element_text(size=12))
 
 
 ################################################################################
