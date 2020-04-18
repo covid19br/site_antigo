@@ -167,17 +167,26 @@ serie.temp.table <- kable(ex.dt.df, "html", col.names=c("Estimado", "IC-inferior
 ######################################################################
 ## Tabela para preencher o minimo e o máximo
 ######################################################################
+# Create a dataframe with all the locations as row names. Add VR
 estados.minmax.casos <- data.frame(row.names = c(names(estados.exp.5d), "BR"))
-
+# Get all the places in a dataframe
 minmax.lugares <- estados.exp.5d
 minmax.lugares[[length(estados.exp.5d)+1]] <- exp.5d
+# Create vectors for keeping minimun, maximun and date.
 min <- vector()
 max <- vector()
 data <- vector()
+# Fill the vectors
 for (i in 1:length(minmax.lugares)) {
   min[i] <- as.integer(minmax.lugares[[i]][max(nrow(minmax.lugares[[i]])),2])
   max[i] <- as.integer(minmax.lugares[[i]][max(nrow(minmax.lugares[[i]])),3])
   data[i] <- format(max(time(minmax.lugares[[i]])), "%d/%m/%Y")
 }
+# Fill the table
 estados.minmax.casos <- cbind(estados.minmax.casos, min, max, data)
-write.csv(estados.minmax.casos, file="../web/minmaxcasos_estados.csv", row.names = TRUE)
+# Order table by max cases
+estados.minmax.casos <- estados.minmax.casos[order(-max),] 
+# Save to a csv
+write.table(estados.minmax.casos, file="../web/data_forecast_exp_estados.csv", row.names = TRUE, col.names = FALSE)
+# Important to notice this is not generic
+

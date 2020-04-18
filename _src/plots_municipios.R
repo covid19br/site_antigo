@@ -85,13 +85,15 @@ plot.estimate.R0.municipio <-
 ######################################################################
 ## Tabela para preencher o minimo e o máximo
 ######################################################################
+# Create a dataframe with names as rows
 municipios.minmax.casos <- data.frame(row.names = c("SP"))
-
+# Take min, max and data
 min <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])
 max <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])
 data <- format(max(time(now.proj.zoo)), "%d/%m/%Y")
-
+# FIll the table
 municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
-write.csv(municipios.minmax.casos, file="../web/minmaxcasos_municipios.csv", row.names = TRUE)
-
+# Save the table
+write.table(municipios.minmax.casos, file="../web/data_forecasr_exp_municipios.csv", row.names = TRUE, col.names = FALSE)
+# This is not generic
 
