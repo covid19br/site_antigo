@@ -99,6 +99,8 @@ partir de um ponto de vista científico.</b>
 
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
 
+* Gabriela Rodrigues de Araujo (doutoranda @ Zurique, Suíça) | [CV](http://lattes.cnpq.br/7844601776901468)
+
 * Gustavo Burin (pós doc @[IB-USP](https://www.gburin.com) ) | [CV](http://lattes.cnpq.br/3740948585907265)
 
 * Irina B. Barros (doutoranda @ University of California) | [CV](http://lattes.cnpq.br/3183781480200250)
