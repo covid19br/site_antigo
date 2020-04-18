@@ -236,6 +236,13 @@ function updateWidget() {
     $("iframe").attr("src", new_src);
 }
 
+function updateCases(current_uf) {
+    jQuery.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/minmaxcasos.csv', function(readData) {
+        csv_data = readData.split(',');
+        alert(csv_data);
+    });
+}
+
 function updateStatic() {
     // Get Current State
     const current_uf = getCurrentUF();
@@ -295,6 +302,8 @@ function updateStatic() {
     $(".codegena_iframe").attr("data-src", new_src);
     // SVG Placeholder
     $(".placeholder_svg").attr("src", new_svg);
+    // Update Cases
+    updateCases(current_uf);
 }
 
 /* Main */

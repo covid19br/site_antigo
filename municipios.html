@@ -136,8 +136,6 @@
               próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-        <!-- CARD.DATE -->
-        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
         <!-- CARD.TEXT -->
         <p class="text-justify">
           <b>A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de São
@@ -160,12 +158,11 @@
     <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
     <div class="card">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
           data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
           data-responsive="true">
-          <img src=./web/plot.nowcast.cum.svg class="placeholder_svg" width="100%">
+          <img src=./fig/municipio_1.png class="placeholder_svg" width="100%">
         </div>
         <script src="./js/async-iframe.js"></script>
       </div>
@@ -182,14 +179,12 @@
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_transmission.svg" width=64px alt="Transmissão da doença" class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_graph.svg" width=64px alt="Transmissão da doença" class="card-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Velocidade de propagação em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Quão rápido a doença se propaga?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-        <!-- CARD.DATE -->
-        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
         <!-- CARD.TEXT -->
         <p class="text-justify">
           O tempo de duplicação indica <b>quanto tempo leva para dobrar o número de casos graves (hospitalizados)</b> na cidade de São Paulo. Quanto menor esse número, mais rápido a doença está se espalhando. Esse número depende muito das medidas de contenção da doença. <b>A estimativa de hoje é entre 26,9 e 47,2 dias.</b>
@@ -206,7 +201,7 @@
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
-          <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+          <img src=./fig/municipio_2.png class="placeholder_svg" width="100%">
         </div>
       <script src="./js/async-iframe.js"></script>
       </div>
@@ -223,14 +218,12 @@
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_replication.svg" width=64px alt="RNA se replicando" class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_transmission.svg" width=64px alt="RNA se replicando" class="card-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Taxa de infecção em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Para quantas pessoas cada infectado transmite a doença?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-        <!-- CARD.DATE -->
-        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
         <!-- CARD.TEXT -->
         <p class="text-justify">
           O Número Reprodutivo efetivo \((R_e)\) é a média de pessoas contaminadas por um infectado. <b>Números reprodutivos maiores que 1 indicam que a doença está se espalhando</b>. Marcamos este limite com uma linha vermelha.
@@ -250,7 +243,7 @@
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
-          <img src=./web/plot.estimate.R0.municipio.svg class="placeholder_svg" width="100%">
+          <img src=./fig/municipio_3.png class="placeholder_svg" width="100%">
         </div>
       <script src="./js/async-iframe.js"></script>
       </div>

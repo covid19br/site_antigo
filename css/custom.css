@@ -61,6 +61,10 @@ body {
     } 
 }
 
+.navbar-nav {
+    margin: 0 0 0 1rem;
+}
+
 .navbar-logo {
     height: 45px;
 }
@@ -162,6 +166,9 @@ body {
         column-count: 2!important;
         width: 65%;
         margin: 1rem auto!important;
+    }
+    .four {
+        column-count: 4!important;
     }
 }
 
