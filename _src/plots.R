@@ -169,7 +169,7 @@ serie.temp.table <- kable(ex.dt.df, "html", col.names=c("Estimado", "IC-inferior
 ######################################################################
 estados.minmax.casos <- data.frame(row.names = c(names(estados.exp.5d), "BR"))
 
-estados.minmax.lugares <- estados.exp.5d
+minmax.lugares <- estados.exp.5d
 minmax.lugares[[length(estados.exp.5d)+1]] <- exp.5d
 min <- vector()
 max <- vector()

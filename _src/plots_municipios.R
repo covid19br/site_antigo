@@ -56,7 +56,7 @@ plot.nowcast.cum <-
     theme(legend.position = c(0.2,0.8)) +
     scale_y_log10() 
 
-
+plot.nowcast.cum
 ################################################################################
 ## Plot do tempo de duplicação em função do tempo
 ################################################################################
