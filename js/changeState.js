@@ -237,10 +237,9 @@ function updateWidget() {
 }
 
 function updateCases(current_uf) {
-    jQuery.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/minmaxcasos.csv', function(readData) {
-        csv_data = readData.split(',');
-        alert(csv_data);
-    });
+    var csv = $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/minmaxcasos.csv', function(readData) {
+        console.log(readData.split("\n"));
+     });
 }
 
 function updateStatic() {
