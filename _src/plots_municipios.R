@@ -9,7 +9,8 @@ library(zoo)
 plot.formatos <- theme_bw()+
     theme(axis.text= element_text(size=12, face="bold"),
           axis.title = element_text(size=14, face="bold"),
-          legend.text = element_text(size=12))
+          legend.text = element_text(size=12),
+          plot.margin=unit(c(0,0,0,0),"mm"))
 
 
 ################################################################################
@@ -56,7 +57,6 @@ plot.nowcast.cum <-
     theme(legend.position = c(0.2,0.8)) +
     scale_y_log10() 
 
-plot.nowcast.cum
 ################################################################################
 ## Plot do tempo de duplicação em função do tempo
 ################################################################################
