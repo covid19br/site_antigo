@@ -225,8 +225,8 @@ Modifique uma imagem estática e sua legenda buscando por `<!-- CARD.IMAGE -->` 
 Modifique um GGPlot interativo buscando por `<!-- CARD.GGPLOT -->` ou insira um novo utilizando:
 ```
 <!-- CARD.GGPLOT -->
-  <div data-src="./graphs/IDENTIFICADOR.DO.GRAFICO.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
-    <img src=./graphs/IDENTIFICADOR.DO.GRAFICO.svg class="placeholder_svg" width="100%">
+  <div data-src="./web/IDENTIFICADOR.DO.GRAFICO.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
+    <img src=./web/IDENTIFICADOR.DO.GRAFICO.svg class="placeholder_svg" width="100%">
   </div>
 <script src="./js/async-iframe.js"></script>
 ```
