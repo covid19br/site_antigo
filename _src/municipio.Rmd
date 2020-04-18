@@ -102,11 +102,10 @@ plotly::layout(p = ggplotly(plot.estimate.R0), legend = list(orientation = "h", 
 
 O Número Reprodutivo efetivo ($R_e$) é a média de pessoas contaminadas
 por um infectado.  **Números reprodutivos maiores que 1 indicam que o
-número de novos casos está aumentando**.  Marcamos este limite com uma
-linha vermelha. Números próximos de um indicam que o número de casos
-novos está constante. Números muito abaixo de um indicam que o número
-de novos casos está caindo. Marcamos o limite de $R_e=1$ com uma linha
-vermelha.
+número de novos casos está aumentando**.  Valores próximos de um
+indicam que o número de novos casos está estável e valores bem abaixo
+de um indicam que a cada dia temos menos casos novos. Marcamos o limite de
+$R_e=1$ com uma linha vermelha.
 
 Estimamos o $R_e$ da epidemia de COVID-19 diariamente na cidade de `r municipio`
 baseando-se nos dados estimados de casos graves.
