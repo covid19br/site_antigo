@@ -364,6 +364,11 @@ th {
     background: #fafcfe;
 }
 
+/* CSV */
+
+.min, .max, .data {
+    display: inline-block;
+}
 /* FOOTER */
 body {
     min-height: 100vh;
