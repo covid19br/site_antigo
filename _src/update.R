@@ -10,8 +10,8 @@ source('ajuste_projecao_exponencial.R')
 source("analises_municipio.R")
 
 # Geracao dos graficos
-source('plots.R')
 source("plots_municipios.R")
+source('plots.R')
 
 # Atualizacao do conteudo do site
 # Graficos, tabelas e horário
