@@ -29,6 +29,7 @@ body {
 .nav-item {
     font-family: 'Poppins', sans-serif;
     font-size: .85rem;
+    text-align: center;
 }
 
 /* TYPE: MENU RESTING */
@@ -46,6 +47,18 @@ body {
     color: #007bff;
     font-size: .9rem;
     font-weight: 500;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #007bff;
+    font-size: .9rem;
+    font-weight: 500;
+}
+/* TYPE: DESTAQUE HIDING */
+@media (min-width: 1200px) {
+    .destaque {
+        display: none;
+    } 
 }
 
 .navbar-logo {

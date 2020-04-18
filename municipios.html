@@ -13,8 +13,8 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
-    rel="stylesheet"> <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
   <link href="./css/custom.css" rel="stylesheet">
 
   <!-- Favicons -->
@@ -52,7 +52,7 @@
 
 <body>
   <!-- Barra Superior -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-xl navbar-light">
     <!-- BOTAO DO MENU -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,18 +65,11 @@
     </a>
 
     <!-- DESTAQUE -->
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Visão Detalhada
+    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="nav-link" href="#">
+        São Paulo
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="./estados.html#br">Brasil</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="./estados.html#sp">São Paulo</a>
-        <a class="dropdown-item" href="./estados.html#rj">Rio de Janeiro</a>
-        <!-- ESTADOS.ITEM -->
-      </div>
     </div>
 
     <!-- MENU -->
@@ -84,6 +77,15 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" href="./index.html">Visão Geral</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./progressao.html#sp">Avanço da doença</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">São Paulo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./leitos.html">Leitos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
@@ -122,40 +124,54 @@
 
     <!-- HOSPITALIZAÇÕES.CARD -->
     <div class="card">
-      <div class="card-body">        
+      <div class="card-body">
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_hospital.svg" width=64px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_hospital.svg" width=64px alt="Ícone de hospital" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quantas hospitalizações estimamos ter na cidade de São Paulo? Quantos teremos nos próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            <p class="card-text">Quantas hospitalizações estimamos ter na cidade de São Paulo? Quantos teremos nos
+              próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
         <!-- CARD.DATE -->
         <p class="card-date"><small class="updateDate">Última atualização: </small></p>
         <!-- CARD.TEXT -->
         <p class="text-justify">
-          <b>A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de São Paulo até a data, e a linha vermelha a estimativa corrigindo atrasos de notificação.</b> Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é, adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou leves que não são testados.
+          <b>A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de São
+            Paulo até a data, e a linha vermelha a estimativa corrigindo atrasos de notificação.</b> Para calcular este
+          número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da
+          base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é,
+          adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
+          notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou
+          leves que não são testados.
         </p>
         <p class="text-justify">
-          Como o método utiliza um algoritmo de correção do passado com pontos presvistos, <b>os pontos tracejados da linha vermelha são as previsões para os últimos 2 dias e para os próximos 5 dias (entre 4769 e 6249 casos graves em 22/04/2020)</b> , se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. Em cinza é mostrado o intervalo de confiança dessa previsão. Acesse a página <a href="informacoes.html">informações</a> para saber mais sobre o método. [INSERIR NUMERO DE CASOS]
+          Como o método utiliza um algoritmo de correção do passado com pontos presvistos, <b>os pontos tracejados da
+            linha vermelha são as previsões para os últimos 2 dias e para os próximos 5 dias (entre 4769 e 6249 casos
+            graves em 22/04/2020)</b> , se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7
+          dias. Em cinza é mostrado o intervalo de confiança dessa previsão. Acesse a página <a
+            href="informacoes.html">informações</a> para saber mais sobre o método. [INSERIR NUMERO DE CASOS]
         </p>
         <p class="text-justify">
-          
+
         </p>
       </div>
     </div>
 
     <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
     <div class="card">
-      <div class="card-body">        
+      <div class="card-body">
         <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
+        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
           <img src=./web/plot.nowcast.cum.svg class="placeholder_svg" width="100%">
         </div>
-      <script src="./js/async-iframe.js"></script>
+        <script src="./js/async-iframe.js"></script>
       </div>
     </div>
 

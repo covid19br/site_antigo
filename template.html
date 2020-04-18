@@ -13,8 +13,8 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap"
-    rel="stylesheet"> <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
   <link href="./css/custom.css" rel="stylesheet">
 
   <!-- Favicons -->
@@ -52,7 +52,7 @@
 
 <body>
   <!-- Barra Superior -->
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-xl navbar-light">
     <!-- BOTAO DO MENU -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,31 +65,30 @@
     </a>
 
     <!-- DESTAQUE -->
-    <div class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Avanço da doença
+    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="nav-link" href="#">
+        Visão Geral
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="./progressao.html#br">Brasil</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="./progressao.html#sp">São Paulo</a>
-        <a class="dropdown-item" href="./progressao.html#rj">Rio de Janeiro</a>
-        <!-- ESTADOS.ITEM -->
-      </div>
     </div>
 
     <!-- MENU -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="./index.html">Visão Geral</a>
+          <a class="nav-link active" href="#">Visão Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+          <a class="nav-link" href="./progressao.html#sp">Avanço da doença</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./municipios.html">São Paulo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./leitos.html">Leitos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>

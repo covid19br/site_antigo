@@ -52,7 +52,7 @@
 
 <body>
     <!-- Barra Superior -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-xl navbar-light">
         <!-- BOTAO DO MENU -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,6 +82,12 @@
                     <a class="nav-link" href="./progressao.html#sp">Avanço da doença</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="./municipios.html">São Paulo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Leitos</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
                 </li>
                 <li class="nav-item">
@@ -89,7 +95,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./midia.html">Reportagens</a>
-                  </li>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./fontes.html">Fontes</a>
                 </li>
@@ -140,10 +146,13 @@
                     de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o
                     número de casos da doença duplicava rapidamente (a cada 2.4 dias, estimado entre os dias 14 e 19 de
                     março). Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam
-                    ocupados por pacientes de COVID-19 em apenas 18 dias (dia 6 de abril) <b>se nenhuma medida de controle
-                    de contágio tivesse sido tomada</b> e o número de leitos se mantivesse constante (<a href="#fig1">Fig. 1 e 2</a>). A
+                    ocupados por pacientes de COVID-19 em apenas 18 dias (dia 6 de abril) <b>se nenhuma medida de
+                        controle
+                        de contágio tivesse sido tomada</b> e o número de leitos se mantivesse constante (<a
+                        href="#fig1">Fig. 1 e 2</a>). A
                     simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos
-                    leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (<a href="#fig3">Fig. 3 e 4</a>).
+                    leitos de UTI seriam ocupados somente com pacientes de COVID-19 em apenas 14 dias (<a
+                        href="#fig3">Fig. 3 e 4</a>).
                 </p>
             </div>
         </div>
@@ -160,7 +169,8 @@
                     <div class="media-body">
                         <h5 class="card-title">Os efeitos do distanciamento social</h5>
                         <!-- CARD.TITLE.TEXT -->
-                        <p class="card-text">Por que modelar um cenário sem distanciamento social?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                        <p class="card-text">Por que modelar um cenário sem distanciamento social?</p>
+                        <!-- CARD.TITLE.DESCRIPTION -->
                     </div>
                 </div>
 
@@ -189,7 +199,7 @@
         <!-- NEW.CARD -->
 
         <!-- Figura 1 -->
-        <div class="card" >
+        <div class="card">
             <div class="card-body">
                 <!-- CARD.HEADER -->
                 <h5 class="card-title mb-3" style="text-align: center;">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
@@ -283,7 +293,8 @@
 
                 <!-- CARD.TEXT -->
                 <p class="text-justify mt-2" id="fig3">
-                    De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) <a href="#ref1">[Ref. 1]</a>, a cidade de São
+                    De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) <a href="#ref1">[Ref. 1]</a>,
+                    a cidade de São
                     Paulo possui 4.205 leitos de UTI para adultos, dos quais 25% são SUS, e 27.847 leitos simples para
                     adultos dos quais 52% são SUS. Esses leitos estão disponíveis para pacientes com diversos tipos de
                     enfermidades. Até o momento, tem sido difícil saber com precisão quantos leitos estão disponíveis
@@ -360,7 +371,8 @@
                 <p class="text-justify">
                     Utilizamos número de hospitalizados (casos graves) por faixa etária da base oficial de notificações
                     SIVEP-GRIPE entre os dias 14 e 19 de março (período anterior às medidas de quarentena, que entraram
-                    em vigor dis 24 de março, <a href="#ref1">(Ref. 1)</a>. Usamos um método de ajuste bayesiano para ajustar os valores dos
+                    em vigor dis 24 de março, <a href="#ref1">(Ref. 1)</a>. Usamos um método de ajuste bayesiano para
+                    ajustar os valores dos
                     parâmetros do modelo aos dados observados.
                 </p>
                 <p class="text-justify">
@@ -372,9 +384,11 @@
                 </p>
                 <p class="text-justify">
                     Para a estimativa de número de infectados, utilizamos a
-                    distribuição etária de hospitalizados proposta na <a href="#ref2">Ref. 2</a>. A conversão de hospitalizados em pessoas
+                    distribuição etária de hospitalizados proposta na <a href="#ref2">Ref. 2</a>. A conversão de
+                    hospitalizados em pessoas
                     que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados
-                    que necessitam de UTI proposta na <a href="#ref3">Ref. 3</a>. Nós não consideramos possíveis mudanças no tempo de
+                    que necessitam de UTI proposta na <a href="#ref3">Ref. 3</a>. Nós não consideramos possíveis
+                    mudanças no tempo de
                     duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes
                     variações e incertezas no tempo de duplicação.
                 </p>
@@ -393,10 +407,12 @@
                     <li id="ref1">Governo de SP determina quarentena em todo o Estado. <a
                             href="https://www.saopaulo.sp.gov.br/ultimas-noticias/ao-vivo-governo-de-sp-anuncia-novas-medidas-para-combate-ao-coronavirus-no-estado/"
                             target="_blank">Leia no Portal do Governo</a>.<a href="#card4">↩</a></li>
-                    <li id="ref2"><a href="https://doi.org/10.1101/2020.03.09.20033357" target="_blank">Verity, R., Okell,
+                    <li id="ref2"><a href="https://doi.org/10.1101/2020.03.09.20033357" target="_blank">Verity, R.,
+                            Okell,
                             L.C., Dorigatti, I., et al. Estimates of the severity of COVID-19 disease. medRxiv
                             2020.03.09.20033357.</a></li>
-                    <li id="ref3"><a href="http://dx.doi.org/10.15585/mmwr.mm6912e2" target="_blank">Severe Outcomes Among
+                    <li id="ref3"><a href="http://dx.doi.org/10.15585/mmwr.mm6912e2" target="_blank">Severe Outcomes
+                            Among
                             Patients with Coronavirus Disease 2019 (COVID-19), United States, February 12 – March 16,
                             2020. Morb Mortal Wkly Rep 2020; 69:343-346.</a></li>
                 </ol>
