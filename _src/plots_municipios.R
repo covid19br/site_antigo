@@ -60,7 +60,7 @@ plot.nowcast.cum <-
 ################################################################################
 ## Plot do tempo de duplicação em função do tempo
 ################################################################################
-plot.tempo.dupl <-
+plot.tempo.dupl.municipio <-
     ggplot(td.now, aes(Index, estimativa)) +
     geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill = "lightgrey") +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(3, "Dark2")[1]) +
@@ -72,7 +72,7 @@ plot.tempo.dupl <-
 ################################################################################
 ## Plot do R efetivo em função do tempo
 ################################################################################
-plot.estimate.R0 <-
+plot.estimate.R0.municipio <-
     ggplot(data = Re.now.zoo, aes(Index, Mean.R)) +
     geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill = "lightgrey") +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(4, "Dark2")[3]) +
