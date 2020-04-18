@@ -116,16 +116,15 @@
     </div> <!-- PAGE.TITLE -->
   </div>
 
-  <!-- Cards -->
-  <div class="card-columns two">
+  <!-- Menu-->
+  <div class="card-columns three-one">
     <!-- COLUMNS.NUM -->
-
     <!-- NEW.CARD -->
 
-    <!-- HOSPITALIZAÇÕES.CARD -->
+    <!-- HOSPITALIZAÇÕES.MENU.CARD -->
     <div class="card">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
+
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_hospital.svg" width=64px alt="Ícone de hospital" class="card-icon">
@@ -136,81 +135,214 @@
               próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          <b>A linha azul mostra o número de casos graves de COVID-19 (hospitalizados) notificados na cidade de São
-            Paulo até a data, e a linha vermelha a estimativa corrigindo atrasos de notificação.</b> Para calcular este
-          número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome Respiratória Aguda Grave) da
-          base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é,
-          adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
-          notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou
-          leves que não são testados.
-        </p>
-        <p class="text-justify csv">
-          Como o método utiliza um algoritmo de correção do passado com pontos presvistos, os pontos tracejados da linha
-          vermelha são as <b>previsões para os últimos 2 dias e para os próximos 5 dias (entre $min e $max casos em
-            $data)</b>, se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. Em cinza
-          é mostrado o intervalo de confiança dessa previsão. Acesse a página <a href="informacoes.html">informações</a>
-          para saber mais sobre o método.
-        </p>
-        <p class="text-justify">
-          <b>Por que só 5 dias?</b> Porque quando o crescimento é exponencial as incertezas também crescem
-          exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o
-          tempo. Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
-        </p>
+
+        <!-- CARD.BUTTON -->
+        <a href="#hosp"><button class="btn btn-primary mt-3" type="button">
+            Veja o gráfico
+          </button></a>
+
       </div>
     </div>
 
-    <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
+    <!-- NEW.CARD -->
+
+    <!-- VELOCIDADE.MENU.CARD -->
     <div class="card">
       <div class="card-body">
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
-          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-          data-responsive="true">
-          <img src=./fig/municipio_1.png class="placeholder_svg" width="100%">
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_graph.svg" width=64px alt="Ícone que representa um gráfico" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Quão rápido a doença se propaga em São Paulo?
+            </p> <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
         </div>
-        <script src="./js/async-iframe.js"></script>
+
+        <!-- CARD.BUTTON -->
+        <a href="#vel"><button class="btn btn-primary mt-3" type="button">
+            Confira a estimativa
+          </button></a>
+
+      </div>
+    </div>
+
+    <!-- NEW.CARD -->
+
+    <!-- MIDIA.CARD -->
+    <div class="card">
+      <div class="card-body">
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_transmission.svg" width=64px alt="Ícone que representa um gráfico" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Para quantas pessoas cada infectado transmite a doença em São Paulo?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.BUTTON -->
+        <a href="#infec"><button class="btn btn-primary mt-3" type="button">
+            Saiba mais
+          </button></a>
+
       </div>
     </div>
 
   </div>
 
-  <div class="card-columns two">
+  <!-- Hospital -->
+  <div class="card-deck flex-nowrap">
     <!-- COLUMNS.NUM -->
-
-    <!-- VELOCIDADE.CARD -->
-    <div class="card">
+    <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
+    <div class="card cd-30 hosp">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
+
         <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_graph.svg" width=64px alt="Transmissão da doença" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Velocidade de propagação em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quão rápido a doença se propaga?</p> <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
+        <h5 class="card-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantas hospitalizações estimamos ter atualmente?
+            <span class="badge badge-primary badge-pill">14</span>
+          </li>
+        </ul>
         <!-- CARD.TEXT -->
-        <p class="text-justify">
-          O tempo de duplicação indica <b>quanto tempo leva para dobrar o número de casos graves (hospitalizados)</b> na
-          cidade de São Paulo. Quanto menor esse número, mais rápido a doença está se espalhando. Esse número depende
-          muito das medidas de contenção da doença. <b>A estimativa de hoje é entre 26,9 e 47,2 dias.</b>
+        <p class="text-justify mt-3 mb-2">
+          A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (hospitalizados)
+          notificados na cidade de São
+          Paulo até a data, e a <b style="color:#dc3545">linha vermelha</b> a <b>estimativa</b> corrigindo atrasos</b>
+          de
+          notificação.
         </p>
-        <p class="text-justify">
-          A linha verde no gráfico mostra o tempo de duplicação estimado a intervalos de 5 dias (as datas indicam o fim
-          de cada um desses intervalos). A faixa cinza é o intervalo de confiança desses tempos de duplicação. O
-          intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação variam à
-          medida que o tempo passa.
+
+
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+          aria-expanded="false" aria-controls="collapseHosp1">
+          Como calculamos este número? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-2" id="collapseHosp1">
+          <p class="text-justify">
+            Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
+            Respiratória Aguda Grave) da
+            base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é,
+            adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
+            notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou
+            leves que não são testados.
+          </p>
+        </div>
+
+        <!-- CARD.TEXT -->
+        <ul class="list-group mt-4">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantas hospitalizações estimamos ter nos próximos dias?
+            <span class="badge badge-primary badge-pill">2</span>
+          </li>
+        </ul>
+        <p class="text-justify csv mt-3">
+          Os <b style="color:#dc3545">pontos tracejados da linha
+            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre $min e $max
+          casos
+          em
+          $data), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. A <b
+            style="color:#6c757d">faixa cinza</b>
+          mostra o <b>intervalo de confiança</b> dessa previsão.
         </p>
+
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+          aria-expanded="false" aria-controls="collapseHosp2">
+          Por que só 5 dias? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-2" id="collapseHosp2">
+          <p class="text-justify">
+            Porque quando o crescimento é exponencial as incertezas também crescem
+            exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o
+            tempo. Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
+          <p class="text-justify">
+            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
+        </div>
+
+        <!-- CARD.SIGNATURE -->
+        <p class="mb-0">Acesse a página <a href="informacoes.html">informações</a>
+          para saber mais sobre o método.</p>
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+      </div>
+    </div>
+
+    <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
+    <div class="card cd-70 hosp">
+      <div class="card-body">
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./fig/municipio_1.png class="placeholder_svg" width="75%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Velocidade-->
+  <div class="card-deck flex-nowrap">
+    <!-- VELOCIDADE.CONTENT.CARD -->
+    <div class="card cd-30 vel">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Velocidade de propagação em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quão rápido a doença se propaga?
+          </li>
+        </ul>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3 mb-3">
+          O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
+          graves (hospitalizados) na cidade
+          de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. Esse número depende
+          muito das
+          medidas de contenção da doença. <b>A estimativa de hoje é entre 26,9 e 47,2 dias.</b>
+        </p>
+
+
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseVel"
+          aria-expanded="false" aria-controls="collapseVel">
+          Como interpretar o gráfico? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-2" id="collapseVel">
+          <p class="text-justify">
+            A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
+            intervalos de 5 dias (as datas indicam o
+            fim de cada um desses intervalos).</p>
+          <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
+            tempos de duplicação. O
+            intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação variam à
+            medida que o tempo passa.
+          </p>
+        </div>
+
       </div>
     </div>
 
     <!-- VELOCIDADE.GRAFICO.CARD -->
-    <div class="card">
+    <div class="card cd-70 vel">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe"
           data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
@@ -220,26 +352,23 @@
         <script src="./js/async-iframe.js"></script>
       </div>
     </div>
-
   </div>
 
-  <div class="card-columns two">
+   <!-- Taxa -->
+   <div class="card-deck flex-nowrap">
     <!-- COLUMNS.NUM -->
-
-    <!-- R0.CARD -->
-    <div class="card">
+    <!-- TAXA.CONTENT.CARD -->
+    <div class="card cd-30 hosp">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
+
         <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_transmission.svg" width=64px alt="RNA se replicando" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Taxa de infecção em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Para quantas pessoas cada infectado transmite a doença?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
+        <h5 class="card-title">Taxa de infecção em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Para quantas pessoas cada infectado transmite a doença?
+          </li>
+        </ul>
         <!-- CARD.TEXT -->
         <p class="text-justify">
           O Número Reprodutivo efetivo \((R_e)\) é a média de pessoas contaminadas por um infectado. <b>Números
@@ -260,10 +389,9 @@
       </div>
     </div>
 
-    <!-- VELOCIDADE.GRAFICO.CARD -->
-    <div class="card">
+    <!-- TAXA.GRAFICO.CARD -->
+    <div class="card cd-70 hosp">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe"
           data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
@@ -273,7 +401,6 @@
         <script src="./js/async-iframe.js"></script>
       </div>
     </div>
-
   </div>
 
   <!-- Footer -->
