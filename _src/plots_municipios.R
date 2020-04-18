@@ -82,4 +82,16 @@ plot.estimate.R0.municipio <-
     ylab("Número de reprodução da epidemia") +
     plot.formatos
 
+######################################################################
+## Tabela para preencher o minimo e o máximo
+######################################################################
+municipios.minmax.casos <- data.frame(row.names = c("SP"))
+
+min <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])
+max <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])
+data <- format(max(time(now.proj.zoo)), "%d/%m/%Y")
+
+municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
+write.csv(municipios.minmax.casos, file="../web/minmaxcasos_municipios.csv", row.names = TRUE)
+
 
