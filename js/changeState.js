@@ -257,7 +257,8 @@ function updateCases(current_uf) {
         $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/' + filename + '.csv', function(raw_data) {
             // data processing
             full_data = raw_data.split("\n");
-            current_data = full_data[current_index].replace(regex, '').split(",");
+            current_data = full_data[current_index].replace(regex, '').split(" ");
+            console.log(current_data);
             // updates text with data
             $("#"+filename).children(".min").text(current_data[1]);
             $("#"+filename).children(".max").text(current_data[2]);

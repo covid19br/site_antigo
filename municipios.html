@@ -122,32 +122,35 @@
     <!-- NEW.CARD -->
 
     <!-- HOSPITALIZAÇÕES.MENU.CARD -->
-    <div class="card">
-      <div class="card-body">
+    <a class="text-reset" href="#hosp">
+      <div class="card menu selected" card-id="hosp">
+        <div class="card-body">
 
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_hospital.svg" width=64px alt="Ícone de hospital" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quantas hospitalizações estimamos ter na cidade de São Paulo? Quantos teremos nos
-              próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+          <!-- CARD.HEADER -->
+          <div class="media">
+            <img src="./img/icon_hospital.svg" width=64px alt="Ícone de hospital" class="card-icon">
+            <!-- CARD.TITLE.ICON -->
+            <div class="media-body">
+              <h5 class="card-menu-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Quantas hospitalizações estimamos ter na cidade de São Paulo? Quantos teremos nos
+                próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
           </div>
+
+          <!-- CARD.BUTTON -->
+          <a href="#hosp"><button class="btn btn-primary mt-3" type="button">
+              Veja o gráfico
+            </button></a>
+
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="#hosp"><button class="btn btn-primary mt-3" type="button">
-            Veja o gráfico
-          </button></a>
-
       </div>
-    </div>
+    </a>
 
     <!-- NEW.CARD -->
 
     <!-- VELOCIDADE.MENU.CARD -->
-    <div class="card">
+    <a class="text-reset" href="#vel">
+    <div class="card menu" card-id="vel">
       <div class="card-body">
         <!-- CARD.HEADER -->
         <div class="media">
@@ -167,11 +170,12 @@
 
       </div>
     </div>
-
+   </a>
     <!-- NEW.CARD -->
 
     <!-- MIDIA.CARD -->
-    <div class="card">
+    <a class="text-reset" href="#infec">
+    <div class="card menu" card-id="infec">
       <div class="card-body">
         <!-- CARD.HEADER -->
         <div class="media">
@@ -191,14 +195,14 @@
 
       </div>
     </div>
-
+    </a>
   </div>
 
   <!-- Hospital -->
-  <div class="card-deck flex-nowrap">
+  <div class="card-deck hosp flex-nowrap">
     <!-- COLUMNS.NUM -->
     <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
-    <div class="card cd-30 hosp">
+    <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
@@ -279,7 +283,7 @@
     </div>
 
     <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
-    <div class="card cd-70 hosp">
+    <div class="card cd-70">
       <div class="card-body">
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
@@ -293,9 +297,9 @@
   </div>
 
   <!-- Velocidade-->
-  <div class="card-deck flex-nowrap">
+  <div class="card-deck vel flex-nowrap">
     <!-- VELOCIDADE.CONTENT.CARD -->
-    <div class="card cd-30 vel">
+    <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
@@ -328,7 +332,7 @@
     </div>
 
     <!-- VELOCIDADE.GRAFICO.CARD -->
-    <div class="card cd-70 vel">
+    <div class="card cd-70">
       <div class="card-body">
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe"
@@ -342,10 +346,10 @@
   </div>
 
   <!-- Taxa -->
-  <div class="card-deck flex-nowrap">
+  <div class="card-deck infec flex-nowrap">
     <!-- COLUMNS.NUM -->
     <!-- TAXA.CONTENT.CARD -->
-    <div class="card cd-30 hosp">
+    <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
@@ -378,7 +382,7 @@
     </div>
 
     <!-- TAXA.GRAFICO.CARD -->
-    <div class="card cd-70 hosp">
+    <div class="card cd-70">
       <div class="card-body">
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe"
@@ -411,6 +415,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="js/updateMenu.js"></script>
   <script src="js/updateDate.js"></script>
   <!-- SCRIPT PARA USAR TABELAS -->
   <script src="js/updateTable.js"></script>
@@ -420,14 +425,12 @@
   <!-- UPDATE CSV -->
   <script>
     const regex = /"/gi;
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/minmaxcasos.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_forecasr_exp_municipios.csv', function (raw_data) {
       // data processing
       full_data = raw_data.split("\n");
-      current_data = full_data[0].replace(regex, '').split(",");
+      current_data = full_data[0].replace(regex, '').split(" ");
       full_text = $(".csv").html();
-      new_text = full_text.replace("$min", current_data[1]);
-      new_text = new_text.replace("$max", current_data[2]);
-      new_text = new_text.replace("$data", current_data[3]);
+      new_text = full_text.replace("$min", current_data[1]).replace("$max", current_data[2]).replace("$data", current_data[3]);
       $(".csv").html(new_text);
     });
   </script>

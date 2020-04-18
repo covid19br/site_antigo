@@ -193,6 +193,21 @@ body {
 }
 
 /* CARD CONTENT */
+a.text-reset {
+    text-decoration: none;
+}
+a.text-reset:hover {
+    color: #007bff!important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.card.menu:hover {
+    border-color: #007bff!important;
+    background-color: #f9f9f9;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.card.selected {
+    border-color: #007bff!important;
+}
 .card-body {
     padding: 0!important;
 }
