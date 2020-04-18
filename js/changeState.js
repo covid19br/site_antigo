@@ -3,6 +3,11 @@
 var estados =
     [
         {
+            uf: "br",
+            prep: "no",
+            verbose: "Brasil",
+        },
+        {
             uf: "sp",
             prep: "em",
             verbose: "São Paulo"
@@ -11,11 +16,6 @@ var estados =
             uf: "rj",
             prep: "no",
             verbose: "Rio de Janeiro"
-        },
-        {
-            uf: "br",
-            prep: "no",
-            verbose: "Brasil",
         },
         {
             uf: "ac",
@@ -162,6 +162,15 @@ function getVerbose(uf) {
     return ("sp");
 }
 
+function getIndex(uf) {
+    for (i = 0; i < estados.length; i++) {
+        if (estados[i].uf == uf) return (i);
+    }
+
+    // UF not found: returns to SP
+    return (1);    
+}
+
 function getCurrentUF() {
     var current = $("#page-title").text()
     return (getUFCode(current));
@@ -237,6 +246,7 @@ function updateWidget() {
 }
 
 function updateCases(current_uf) {
+    current_index = getIndex(current_uf);
     var csv = $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/minmaxcasos.csv', function(readData) {
         console.log(readData.split("\n"));
      });
