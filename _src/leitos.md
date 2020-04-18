@@ -23,7 +23,7 @@ output:
 ---
 
 
-Row  {data-height=400}
+Row  {data-height=350}
 ---------------------
   
 ### Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem distanciamento social?
@@ -35,7 +35,7 @@ No início da epidemia no município de São Paulo, a ocupação dos leitos com 
 ![**Fig. 1**: Previsão da porcentagem de **leitos hospitalares** ocupados por COVID-19 no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).](fig/leitos_fig1.png){ width=100% }
 
 
-Row  {data-height=400}
+Row {data-height=350}
 ---------------------
   
 ### Por que modelar um cenário sem distanciamento social?
@@ -47,7 +47,7 @@ Nosso modelo representa um cenário do avanço da epidemia de COVID-19 no munic�
 ![**Fig. 2**:  Fig. 1 em escala logarítmica. Previsão da porcentagem (em escala logarítmica) de **leitos hospitalares** ocupados por COVID-19 no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados observados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).](fig/leitos_fig2.png){ width=100% }
 
 
-Row  {data-height=400}
+Row {data-height=350}
 ---------------------
 
 ### É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?
@@ -59,7 +59,7 @@ Nosso modelo sugere que sim. Mesmo em cidades onde pacientes com COVID-19 ocupam
 ![**Fig. 3**: Previsão da porcentagem de **leitos de UTI** ocupados por COVID-19 no município de São Paulo entre os dias 15/03 e 13/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo.](fig/leitos_fig3.png){ width=100% }
   
 
-Row  {data-height=400}
+Row {data-height=350}
 ---------------------
 
 ### Quantos leitos existem na cidade de São Paulo?
