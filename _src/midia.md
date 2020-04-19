@@ -23,7 +23,7 @@ output:
 ---
 
 
-### O Observatório Covid-19 BR na mídia
+### O Observatório Covid-19 BR na mídia {data-height=600}
 
 * [Programa Fantástico](https://globoplay.globo.com/v/8401335/), Rede Globo, 15 de março de 2020.
 * ["Contra epidemia de coronavírus, Brasil precisa parar, afirmam especialistas"](https://www1.folha.uol.com.br/equilibrioesaude/2020/03/contra-epidemia-brasil-precisa-parar-afirmam-especialistas.shtml), Folha de São Paulo, 16 de março de 2020.
