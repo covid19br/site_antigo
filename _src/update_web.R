@@ -29,31 +29,37 @@ filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-    graph <- ggplotly(plots.para.atualizar[[i]]) # GGPlot -> Plotly
+    graph.html <- ggplotly(plots.para.atualizar[[i]]) # GGPlot -> Plotly
+    graph.svg <- plots.para.atualizar[[i]]
     filepath <- paste("../web/",filenames[i],sep="")
-    orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
-    saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
-}
+    #orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
+    saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+    save_plot(paste(filepath,".svg",sep=""), graph.svg)
+    }
 
 municipios.para.atualizar <- makeNamedList(plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio)
 filenames <- names(municipios.para.atualizar)
 n <- length(municipios.para.atualizar)
 
 for (i in 1:n){
-    graph <- ggplotly(municipios.para.atualizar[[i]]) # GGPlot -> Plotly
+    graph.html <- ggplotly(municipios.para.atualizar[[i]]) # GGPlot -> Plotly
+    graph.svg <- municipios.para.atualizar[[i]]
     filepath <- paste("../web/",filenames[i],sep="")
-    saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
-    orca(graph, paste(filepath,".svg",sep=""), width="1600", height="800") # SVG Static Plot
+    saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+    #orca(graph, paste(filepath,".svg",sep=""), width="1600", height="800") # SVG Static Plot
+    save_plot(paste(filepath,".svg",sep=""), graph.svg)
 }
 
 ################################################################################
 ## Atualiza plot.forecast.exp por estado
 ################################################################################
 for (st in estados.para.atualizar) {
-  graph <- ggplotly(estados.plot.forecast.exp.br[[st]]) # GGPlot -> Plotly
+  graph.html <- ggplotly(estados.plot.forecast.exp.br[[st]]) # GGPlot -> Plotly
+  graph.svg <- estados.plot.forecast.exp.br[[st]] 
   filepath <- paste("../web/plot.forecast.exp.", tolower(st), sep="") # Atualiza plot.forecast.exp para estados
-  orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
-  saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+  #orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
+  save_plot(paste(filepath,".svg",sep=""), graph.svg)
+  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
 }
 
 ################################################################################

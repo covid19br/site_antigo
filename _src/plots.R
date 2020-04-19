@@ -5,11 +5,12 @@ library(zoo)
 library(EpiEstim) 
 library(readr)
 library(knitr)
+library(cowplot)
 
 ################################################################################
 ## Parametros de formatacao comum aos plots
 ################################################################################
-plot.formatos <- theme_bw()+
+plot.formatos <- theme_bw() +
     theme(axis.text= element_text(size=12, face="bold"),
           axis.title.y = element_text(size=14, face="bold"))
 
