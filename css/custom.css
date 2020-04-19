@@ -419,6 +419,38 @@ th {
     background: #fafcfe;
 }
 
+/* accordion */
+.card-header {
+    background-color: rgba(0,0,0,.02);
+}
+
+.btn-link {
+    font-weight: 500;
+}
+
+.accordion {
+    margin: 1rem 0 0 0;
+}
+
+.accordion>.card {
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    display: flex!important;
+    padding: 0;
+    margin-bottom: 0;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.collapse>.card-body {
+    padding: 1.25rem!important;
+}
+.collapsing>.card-body {
+    padding: 1.25rem!important;
+}
+
+
 /* CSV */
 
 .min, .max, .data, .csv {
