@@ -179,7 +179,7 @@ Modifique a **descrição** do card buscando por `<!-- CARD.TITLE.DESCRIPTION --
 ```
 <!-- CARD.HEADER -->
 <div class="media">
-  <img src="./img/NOME_DO_ARQUIVO.svg" width=64px alt="DESCRIÇÃO ACESSÍVEL" class="card-icon"> <!-- CARD.TITLE.ICON -->
+  <img src="./img/NOME_DO_ARQUIVO.svg" width=48px alt="DESCRIÇÃO ACESSÍVEL" class="card-icon"> <!-- CARD.TITLE.ICON -->
   <div class="media-body">
     <h5 class="card-title">TITULO DO CARD</h5> <!-- CARD.TITLE.TEXT -->
     <p class="card-text">BREVE DESCRICAO</p> <!-- CARD.TITLE.DESCRIPTION -->
