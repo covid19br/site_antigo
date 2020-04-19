@@ -23,7 +23,7 @@ output:
    in_header: header.html
 ---
 
-### Como epidemias se espalham por um país continental? E por um estado?
+### Como epidemias se espalham por um país continental?
 
 <a href="https://guimaraeslabbr.weebly.com/voos.html">
 ![](fig/voos_brasil.jpg)
@@ -51,7 +51,9 @@ de COVID-19 atualizados em 04/04/2020 para gerar informações
 estratégicas sobre a propagação geográfica da pandemia de SARS-CoV-2
 no Estado de São Paulo. Identificamos microrregiões que podem atuar
 como núcleos propagadores da epidemia ou que têm alta vulnerabilidade
-a receber pessoas infectadas. Desta forma, atualizamos a identificação das microrregiões mais vulneráveis à propagação
-geográfica da pandemia do novo coronavírus (SARS-CoV-2) no estado de SP.
+a receber pessoas infectadas. Desta forma, atualizamos a identificação das microrregiões mais vulneráveis à propagação geográfica da pandemia do novo coronavírus (SARS-CoV-2) no estado de SP.
 
-[<b>Leia o relatório na íntegra aqui</b>](https://preprints.scielo.org/index.php/scielo/preprint/view/49).
+[<b>Leia o relatório na íntegra aqui para o Estado de São Paulo.</b>](https://preprints.scielo.org/index.php/scielo/preprint/view/49)
+
+
+[<b>Leia o relatório na íntegra aqui para os Estados do Nordeste.</b>](https://preprints.scielo.org/index.php/scielo/preprint/view/35/version/39)
