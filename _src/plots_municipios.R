@@ -95,4 +95,3 @@ municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
 # Save the table
 write.table(municipios.minmax.casos, file="../web/data_forecasr_exp_municipios.csv", row.names = TRUE, col.names = FALSE)
 # This is not generic
-

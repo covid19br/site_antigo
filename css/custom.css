@@ -262,16 +262,26 @@ a.text-reset:hover {
     flex: 1 0 65.815%!important;
 }
 
+.card-deck {
+    flex-flow: row wrap;
+}
+@media (max-width: 1030px) {
+    .card-deck .card {
+        margin-bottom: 0.75rem!important;
+        margin-right: 1rem!important;
+    }
+}
+
 @media (min-width: 576px){
 .card-deck {
     margin: 1rem!important;
 }}
 
 @media (min-width: 576px){
-.card-deck .card {
-    margin-right: 0;
-    margin-left: 0;
-}
+    .card-deck .card {
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
 
 .badge-gray {

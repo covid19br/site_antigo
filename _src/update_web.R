@@ -24,7 +24,7 @@ close(file)
 ## Atualiza Plots
 ################################################################################
 print("Atualizando plots...")
-plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, plot.tempo.dupl, est.tempo.dupl, proj.num.casos, plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio) # Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, plot.tempo.dupl, est.tempo.dupl, proj.num.casos) # Graficos a serem atualizados
 filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
 
@@ -33,6 +33,17 @@ for (i in 1:n){
     filepath <- paste("../web/",filenames[i],sep="")
     orca(graph, paste(filepath,".svg",sep="")) # SVG Static Plot
     saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+}
+
+municipios.para.atualizar <- makeNamedList(plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio)
+filenames <- names(municipios.para.atualizar)
+n <- length(municipios.para.atualizar)
+
+for (i in 1:n){
+    graph <- ggplotly(municipios.para.atualizar[[i]]) # GGPlot -> Plotly
+    filepath <- paste("../web/",filenames[i],sep="")
+    saveWidget(frameableWidget(graph), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+    orca(graph, paste(filepath,".svg",sep=""), width="1600", height="800") # SVG Static Plot
 }
 
 ################################################################################

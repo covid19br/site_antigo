@@ -59,3 +59,8 @@ td.now <- dt.rw(now.pred.zoo$estimate.merged.c, window.width = 7)
 ## Conveniencia: reordena e renomeia as colunas do objeto resultante
 td.now <- td.now[,c(1,3,2)]
 names(td.now) <- c("estimativa", "ic.inf", "ic.sup")
+
+#### Corta a partir do dia com >= 10 casos ####
+dia.zero <- time(now.pred.zoo)[min(which(now.pred.zoo$n.casos>=10, arr.ind=TRUE))]
+now.pred.zoo <- window(now.pred.zoo, start=dia.zero)
+now.proj.zoo <- window(now.proj.zoo, start=dia.zero)
