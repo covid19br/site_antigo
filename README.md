@@ -38,38 +38,7 @@ Para instalar o Rstudio, primeiro, entre [aqui](https://rstudio.com/products/rst
 
 ## Instalação das bibliotecas em R
 
-A instalação da maioria das bibliotecas se resolve com `install.packages("package_name")`, em R. No entanto, a Orca, usada para renderizar os plots interativos, não pode ser instalada assim. Para usar a Orca, é necessário anaconda. Veja [aqui](https://docs.anaconda.com/anaconda/install/) sobre como instalar Anaconda, e [aqui](https://github.com/plotly/orca) sobre como instalar Orca.
-
-Ao instalar o conda e ativá-lo, seu prompt aparecerá assim:
-
-```bash
-(base) user@user: 
-```
-
-Quando rodamos o comando `$ orca`, o output esperado é
-
-```bash
-Plotly`s image-exporting utilities
-
-  Usage: orca [--version] [--help] <command> [<args>]
-
-  Available commands:
-  - graph [or plotly-graph, plotly_graph]
-    Generates an image of plotly graph from inputted plotly.js JSON attributes.
-    For more info, run `orca graph --help`.
-  - serve [or server]
-    Boots up a server with one route per available export component
-    For more info, run `orca serve --help`.
-```
-
-Se houver erros na instalação do orca por conda, tente executar os seguintes comandos, em `bash`:
-
-```bash
-$ conda install -c conda-forge nodejs
-$ npm install -g electron@1.8.4 orca
-```
-
-Para instalar o restante das bibliotecas necessárias, execute o arquivo "./_src/install_packages.R". São as bibliotecas a seguir:
+A instalação da maioria das bibliotecas se resolve com `install.packages("package_name")`, em R.Para instalar todas as bibliotecas necessárias, execute o arquivo "./_src/install_packages.R". São as bibliotecas a seguir:
 ```r
 install.packages("ggplot2")
 install.packages("tidyverse")
@@ -83,6 +52,7 @@ install.packages("zoo")
 install.packages("EpiEstim")
 install.packages("lubridate")
 install.packages("readr")
+install.packages("cowplot")
 ```
 
 Se por acaso precisar instalar novas bibliotecas, lembre-se de adicionar aqui e no arquivo.
