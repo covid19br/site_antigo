@@ -65,6 +65,10 @@ Se o que quer é executar as funções para os modelos referentes aos estados, e
 $ Rscript update_estado.R
 ```
 
+Se quer executar todos ao mesmo tempo,
+```bash
+$ Rscript update_web.R
+```
 Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos `.html` estarão atualizados, e podem ser vistos diretamente no navegador.
 
 ## Criando novos gráficos
