@@ -82,16 +82,21 @@ plot.estimate.R0.municipio <-
     plot.formatos
 
 ######################################################################
-## Tabela para preencher o minimo e o máximo
+## Tabelas para preencher o html
 ######################################################################
-# Create a dataframe with names as rows
+## Tabela que preenche o minimo e o maximo do nowcast
 municipios.minmax.casos <- data.frame(row.names = c("SP"))
-# Take min, max and data
 min <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])
 max <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])
 data <- format(max(time(now.proj.zoo)), "%d/%m/%Y")
-# FIll the table
 municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
-# Save the table
 write.table(municipios.minmax.casos, file="../web/data_forecasr_exp_municipios.csv", row.names = TRUE, col.names = FALSE)
-# This is not generic
+# Não é generico, é apenas para o municipio de sp. Tendo mais, tem que atualizar
+
+## Tabela do tempo de dublicação
+municipios.temp.dupl <- data.frame(row.names = c("SP"))
+min.dias <- as.vector(round(td.now[max(nrow(td.now)),2], 1))
+max.dias <- as.vector(round(td.now[max(nrow(td.now)),3], 1))
+municipios.temp.dupl <- cbind(municipios.temp.dupl, min.dias, max.dias)
+municipios.temp.dupl
+write.table(municipios.minmax.casos, file="../web/data_tempo_dupli_municipio.csv", row.names = TRUE, col.names = FALSE)
