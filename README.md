@@ -40,19 +40,9 @@ Para instalar o Rstudio, primeiro, entre [aqui](https://rstudio.com/products/rst
 
 A instalação da maioria das bibliotecas se resolve com `install.packages("package_name")`, em R.Para instalar todas as bibliotecas necessárias, execute o arquivo "./_src/install_packages.R". São as bibliotecas a seguir:
 ```r
-install.packages("ggplot2")
-install.packages("tidyverse")
-install.packages("knitr")
-install.packages("plotly")
-install.packages("tidyr")
-install.packages("dplyr")
-install.packages("widgetframe")
-install.packages("rmarkdown")
-install.packages("zoo")
-install.packages("EpiEstim")
-install.packages("lubridate")
-install.packages("readr")
-install.packages("cowplot")
+packages <- c("ggplot2", "tidyverse", "knitr", "plotly", "tidyr", "dplyr", "widgetframe", "rmarkdown", "zoo", "EpiEstim", "lubridate", "readr", "cowplot", "svglite")
+for (p in packages) if(!require(p, character.only=T)) install.packages(p)
+
 ```
 
 Se por acaso precisar instalar novas bibliotecas, lembre-se de adicionar aqui e no arquivo.
