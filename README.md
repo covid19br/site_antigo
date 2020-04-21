@@ -53,32 +53,43 @@ install.packages("EpiEstim")
 install.packages("lubridate")
 install.packages("readr")
 install.packages("cowplot")
+install.packages("optparse")
 ```
 
 Se por acaso precisar instalar novas bibliotecas, lembre-se de adicionar aqui e no arquivo.
 
 ## Como baixar e executar
 
-Para executar o programa, rode o `update.R` da linha de comando, mas antes, verifique a instalação das dependências necessárias.
+Clone o repositório na linha de comando. Dependendo do que será alterado (pagina de estados, municípios ou do país todo), o comando será diferente.
 
+Caso queira executar as funções para o modelo referente ao brasil inteiro, execute
 ```bash
 $ Rscript update.R
 ```
 
-Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos `.html` estarão atualizados, e podem ser vistos diretamente no navegador.
+Se executar as funções para os modelos referentes ao município é o que você procura, execute
+```bash
+$ Rscript update_municipio.R
+```
 
-É importante que ele seja compilado no terminal, pois precisa do Orca, e este não funciona compilado por `source`. É possível utilizar o terminal do RStudio.
+Se o que quer é executar as funções para os modelos referentes aos estados, execute
+```bash
+$ Rscript update_estado.R
+```
+
+Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos `.html` estarão atualizados, e podem ser vistos diretamente no navegador.
 
 ## Criando novos gráficos
 Após terminar de criar um gráfico novo, para que ele seja incluído no html, o primeiro passo é fazer com que ele seja transformado em imagem ".svg" e um código ".html" com ggplotly (que garante a interatividade do gráfico no site).
 
 No arquivo `render_graphs.R`, simplesmente adicione o nome do seu gráfico à lista de gráficos a serem renderizados:
+
 ```r
-## No arquivo render_graphs.R
-# Graphs
-plots <- makeNamedList(..., seu.gráfico.ggplot) # Graficos a serem atualizados
+## No arquivo de update em questão
+# Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plot.forecast.exp.br)
 ```
-IMPORTANTE: ele deve ser um ggplot. Ele deve ser codado no arquivo `plots.R`.
+IMPORTANTE: ele deve ser um ggplot. Ele deve ser codado no arquivo `plots.R` ou `plots_municipio.R`. Caso seja uma análise para estado, enviar uma mensagem.
 
 ## Atualizando e criando novas páginas
 O arquivo `template.html` é um bom ponto de partida para criação de novas páginas. Ele inclui as barras de navegação superiores e inferiores pré-fabricadas, bem como a estrutura principal do corpo.
