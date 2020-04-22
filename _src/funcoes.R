@@ -20,14 +20,21 @@ fitP.exp <- function(zoo.obj, only.coef = TRUE){
     ## if(class(zoo.obj)!="zoo"|!is.null(ncol(zoo.obj)))
     ##    stop("'zoo.obj' deve ser um objeto da classe zoo com uma única variável")
     ndias <- as.vector ( rev(max(time(zoo.obj)) - time(zoo.obj)) )
-    fit <- glm(zoo.obj ~ ndias, family = poisson)
+    fit <- try(glm(zoo.obj ~ ndias, family = poisson))
     if(only.coef){
-        ci <- confint(fit) 
-        results <- c(coef(fit),ci[1,], ci[2,])
-        names(results) <- c("intercept", "coef", "int.low", "int.upp", "coef.low", "coef.upp")
+            ci <- try(confint(fit))
+            if(any(class(fit)=="try-error")||any(class(ci)=="try-error"))
+                results <- rep(NA,6)
+            else
+                results <- c(coef(fit),ci[1,], ci[2,])
+            names(results) <- c("intercept", "coef", "int.low", "int.upp", "coef.low", "coef.upp")
     }
-    else
-        results  <-  fit
+    if(!only.coef){
+        if(class(fit)=="try-error")
+            results <- NA
+        else
+            results  <-  fit
+    }
     return(results)
 }
 
