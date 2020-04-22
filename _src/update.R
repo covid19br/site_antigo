@@ -35,7 +35,7 @@ filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-  graph.html <- ggplotly(plots.para.atualizar[[i]]) # GGPlot -> Plotly
+  graph.html <- ggplotly(plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 50, b = 50, t = 50, pad = 4), title = list(y = 0.94))
   graph.svg <- plots.para.atualizar[[i]]
   filepath <- paste("../web/",filenames[i],sep="")
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot

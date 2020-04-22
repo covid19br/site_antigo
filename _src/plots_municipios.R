@@ -8,10 +8,11 @@ library(zoo)
 ## Parametros de formatacao comum aos plots
 ################################################################################
 plot.formatos <- theme_bw()+
-    theme(axis.text= element_text(size=10, face="bold"),
-          axis.title = element_text(size=10, face="bold"),
+    theme(axis.text= element_text(size=12, face="bold", family = "arial"),
+          axis.title = element_text(size=12, face="bold", family = "arial"),
           legend.text = element_text(size=12),
-          title = element_text(size = 12))
+          title = element_text(size = 12, family = "arial"),
+          plot.margin = margin(2, 0, 0, 0, "pt"))
 
 
 ################################################################################

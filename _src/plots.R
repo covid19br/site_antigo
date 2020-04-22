@@ -10,9 +10,13 @@ library(cowplot)
 ################################################################################
 ## Parametros de formatacao comum aos plots
 ################################################################################
-plot.formatos <- theme_bw() +
-    theme(axis.text= element_text(size=12, face="bold"),
-          axis.title.y = element_text(size=14, face="bold"))
+plot.formatos <- theme_bw()+
+  theme(axis.text= element_text(size=10, face="bold", family = "arial"),
+        axis.title = element_text(size=10, face="bold", family = "arial"),
+        legend.text = element_text(size=12),
+        title = element_text(size = 12),
+        plot.margin = margin(5, 0, 0, 0, "pt", family = "arial"))
+  
 
 ################################################################################
 ## Grafico da serie observada e do previsto pelo modelo exponencial
@@ -133,3 +137,4 @@ minmax.casos <- cbind(minmax.casos, min, max, data)
 minmax.casos <- minmax.casos[order(-max),] 
 # Save to a csv
 write.table(minmax.casos, file="../web/data_forecast_exp_br.csv", row.names = TRUE, col.names = FALSE)
+

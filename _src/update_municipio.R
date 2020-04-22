@@ -4,6 +4,7 @@ library(tidyverse)
 library(plotly)
 library(lubridate)
 library(optparse)
+library(cowplot)
 
 # Helper Function
 makeNamedList <- function(...) {
@@ -52,7 +53,7 @@ file <- file("../web/last.update.municipio.txt") # coloco o nome do municipio?
 writeLines(c(paste(now())), file)
 close(file)
 
-################################################################################
+################################################################# ###############
 ## Atualiza gráficos por estado
 ################################################################################
 print("Atualizando plots...")
@@ -62,8 +63,9 @@ filenames <- names(plots.para.atualizar.municipio)
 n <- length(plots.para.atualizar.municipio)
 
 for (i in 1:n){
-  graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) # GGPlot -> Plotly
-  graph.svg <- plots.para.atualizar.municipio[[i]]
+  graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
+  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text= element_text(size=10, face="bold"),
+                                                           axis.title = element_text(size=10, face="bold"))
   filepath <- paste("../web/",filenames[i],sep="")
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
   save_plot(paste(filepath,".svg",sep=""), graph.svg)

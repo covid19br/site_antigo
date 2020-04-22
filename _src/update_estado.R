@@ -29,8 +29,9 @@ close(file)
 ################################################################################
 
 for (st in estados.para.atualizar) {
-  graph.html <- ggplotly(estados.plot.forecast.exp.br[[st]]) # GGPlot -> Plotly
-  graph.svg <- estados.plot.forecast.exp.br[[st]] 
+  graph.html <- ggplotly(estados.plot.forecast.exp.br[[st]])  %>% layout(margin = list(l = 50, r = 50, b = 50, t = 50, pad = 4), title = list(y = 0.94))
+  graph.svg <- estados.plot.forecast.exp.br[[st]] + theme(axis.text= element_text(size=10, face="bold"),
+                                                          axis.title = element_text(size=10, face="bold"))
   filepath <- paste("../web/plot.forecast.exp.", tolower(st), sep="") # Atualiza plot.forecast.exp para estados
   save_plot(paste(filepath,".svg",sep=""), graph.svg)
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
