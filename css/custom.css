@@ -99,7 +99,7 @@ body {
 }
 
 /* PAGE TITLE & UPDATE DATE */
-#page-title {
+.main-title {
     margin-left: 1.3rem;
 }
 .display {
@@ -450,12 +450,6 @@ th {
     padding: 1.25rem!important;
 }
 
-
-/* CSV */
-
-.min, .max, .data, .csv {
-    display: inline-block;
-}
 /* FOOTER */
 body {
     min-height: 100vh;

@@ -1,6 +1,6 @@
 /* Data Structure */
 // "Nome do Estado" <-> "UF" <-> Preposicao
-var estados =
+const estados =
     [
         {
             uf: "br",
@@ -158,8 +158,8 @@ function getVerbose(uf) {
         if (estados[i].uf == uf) return (estados[i].verbose);
     }
 
-    // UF not found: returns to SP
-    return ("sp");
+    // UF not found: returns to default
+    return ("br");
 }
 
 function getIndex(uf) {
@@ -195,7 +195,7 @@ function hasUF(split_src) {
     return (false);
 }
 
-function setActive(active) {
+function updateActiveDropdown(active) {
     // cleans
     $(".dropdown-item").removeClass("active");
 
@@ -204,15 +204,19 @@ function setActive(active) {
     $(selector).addClass("active");
 }
 
-function setRequest(uf) {
-    state = getVerbose(uf.toLowerCase());
+function updateCurrentState(current_state) {
+    $("#page-title").text(current_state);
+    $(".card-state-text").text(getPreposicao(current_state) + " " + current_state);
+}
+
+function updateViaHash(uf) {
+    current_state = getVerbose(uf.toLowerCase());
 
     // Updates text
-    $("#page-title").text(state);
-    $(".card-state-text").text(getPreposicao(state) + " " + state);
+    updateCurrentState(current_state);
 
     // Updates dropdown
-    setActive(state);
+    updateActiveDropdown(current_state);
 }
 
 function updateWidget() {
@@ -351,7 +355,7 @@ function updateStatic() {
 // First Load
 // Sets requested state on #page-title via hash URL
 var requested = $(location).attr('hash').substring(1);
-if (requested.length == 2) setRequest(requested);
+if (requested.length == 2) updateViaHash(requested);
 
 // Updates states based on #page-title
 updateStatic();
@@ -360,14 +364,13 @@ updateStatic();
 $(".dropdown-item").click(function () {
     // se nao eh o item atual
     if (!$(this).hasClass("active")) {
-        var state = $(this).text();
+        var current_state = $(this).text();
 
         // troca o titulo o card-text
-        $("#page-title").text(state);
-        $(".card-state-text").text(getPreposicao(state) + " " + state);
+        updateCurrentState(current_state);
 
         // troca o estado ativo
-        setActive(state);
+        updateActiveDropdown(current_state);
 
         // troca os gráficos
         if ($(".placeholder_svg").length) updateStatic();

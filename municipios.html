@@ -111,9 +111,20 @@
   <!-- Titulo Principal -->
   <div class="container-fluid mt-2">
     <div class="main-title">
-      <h1 class="display" id="page-title">Município de São Paulo</h1><small class="page-title-update updateDate">Última
-        atualização: </small>
-    </div> <!-- PAGE.TITLE -->
+      <h1 class="display">Município de&nbsp;</h1>
+      <div class="dropdown">
+        <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="text-reset">
+            <h1 class="display" id="page-title">São Paulo</h1> <!-- PAGE.TITLE -->
+          </a> 
+        </div>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left" aria-labelledby="titleDropdown">
+          <a class="dropdown-item active" href="#sp_sp">São Paulo</a>
+        </div>
+      </div>
+      <small class="page-title-update updateDate">Última atualização: </small>
+    </div>
   </div>
 
   <!-- Menu-->
@@ -131,8 +142,8 @@
             <img src="./img/icon_hospital.svg" width=48px alt="Ícone de hospital" class="card-icon">
             <!-- CARD.TITLE.ICON -->
             <div class="media-body">
-              <h5 class="card-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quantas hospitalizações estimamos ter na cidade de São Paulo? Quantos teremos nos
+              <h5 class="card-title">Hospitalizações em $municipio</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Quantas hospitalizações estimamos ter no município de $municipio? Quantos teremos nos
                 próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
@@ -158,7 +169,7 @@
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quão rápido a doença se propaga em São Paulo?
+            <p class="card-text">Quão rápido a doença se propaga em $municipio?
             </p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
@@ -183,7 +194,7 @@
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Para quantas pessoas cada infectado transmite a doença em São Paulo?</p>
+            <p class="card-text">Para quantas pessoas cada infectado transmite a doença em $municipio?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
@@ -206,7 +217,7 @@
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Hospitalizações em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Hospitalizações em $municipio</h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -216,10 +227,8 @@
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
           A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (hospitalizados)
-          notificados na cidade de São
-          Paulo até a data, e a <b style="color:#dc3545">linha vermelha</b> a <b>estimativa</b> corrigindo atrasos</b>
-          de
-          notificação.
+          notificados no município de $municipio até a data, e a <b style="color:#dc3545">linha vermelha</b> a
+          <b>estimativa</b> corrigindo atrasos</b> de notificação.
         </p>
 
 
@@ -247,12 +256,12 @@
             Quantas hospitalizações estimamos ter nos próximos dias?
           </li>
         </ul>
-        <p class="text-justify csv mt-3">
+        <p class="text-justify forecast_exp mt-3">
           Os <b style="color:#dc3545">pontos tracejados da linha
-            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre $min e $max
-          casos em $data), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. A <b
-            style="color:#6c757d">faixa cinza</b>
-          mostra o <b>intervalo de confiança</b> dessa previsão.
+            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre $forecast_min
+            e $forecast_max casos em $forecast_data), se a taxa de crescimento dos valores corrigidos continuar a mesma
+            dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessa
+            previsão.
         </p>
 
 
@@ -301,7 +310,7 @@
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Velocidade de propagação em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Velocidade de propagação em $municipio</h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -309,12 +318,12 @@
           </li>
         </ul>
         <!-- CARD.TEXT -->
-        <p class="text-justify mt-3 mb-3">
+        <p class="text-justify tempo_dupli mt-3 mb-3">
           O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
-          graves (hospitalizados) na cidade
+          graves (hospitalizados) no município
           de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. Esse número depende
           muito das
-          medidas de contenção da doença. <b>A estimativa de hoje é entre 26,9 e 47,2 dias.</b>
+          medidas de contenção da doença. <b>A estimativa de hoje é entre $tempo_dupli_min e $tempo_dupli_max dias.</b>
         </p>
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <p class="text-justify">
@@ -351,7 +360,7 @@
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Taxa de infecção em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Taxa de infecção em $municipio</h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3 mb-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -365,9 +374,9 @@
           linha
           vermelha.
         </p>
-        <p class="text-justify">
-          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente na cidade de São Paulo baseando-se nos dados
-          estimados de casos graves. <b>No momento o \(R_e\) está entre 0,8 e 0,9.</b>
+        <p class="text-justify re">
+          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos dados
+          estimados de casos graves. <b>No momento o \(R_e\) está entre $re_min e $re_max.</b>
         </p>
         <p class="text-justify">
           A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
@@ -375,6 +384,9 @@
           chance de incluir o valor real de \(R_e\). No momento há uma grande incerteza quanto ao valor de \(R_e\). No
           entanto, mesmo <b>o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está
             em declínio.</b>
+        </p>
+        <p class="text-justify re">
+          $re_analise
         </p>
       </div>
     </div>
@@ -416,10 +428,10 @@
   <!-- R Integration -->
   <!-- Hora de atualizacao -->
   <script src="js/updateDate.js"></script>
-  <!-- Menu Dinamico de Cards -->
+  <!-- Menu Dinamico -->
   <script src="js/updateMunicipioMenu.js"></script>
   <!-- Conteudo Dinamico -->
-  <script src="js/updateMunicipioContent.js"></script>
+  <script src="js/updateMunicipio.js"></script>
   <!-- MathJax: Equacoes -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>

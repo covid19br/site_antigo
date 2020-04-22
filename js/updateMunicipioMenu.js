@@ -1,4 +1,4 @@
-function updateContent(current) {
+function updateExibition(current) {
     const selector = "." + current;
     
     //cleans
@@ -16,17 +16,3 @@ function updateMenu(current) {
     var selector = ".card.menu[card-id='" + current +"']" ;
     $(selector).addClass("selected");
 }
-
-updateContent($(".card.menu.selected").attr("card-id"));
-
-// JQuery OnClick Update
-$(".card.menu").click(function () {
-    // se nao eh o item atual
-    if (!$(this).hasClass("selected")) {
-        const current = $(this).attr("card-id");
-        updateMenu(current);
-        updateContent(current);
-        // esconde os outros
-        // aparece o do link
-    }
-})
