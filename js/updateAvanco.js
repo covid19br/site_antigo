@@ -155,6 +155,7 @@ function hasUF(split_src) {
 }
 
 function getIndex(uf) {
+    if(uf == 'br') return (0);
     for (i = 0; i < estados.length; i++) {
         if (estados[i].uf == uf) return (i-1); // move um index para cima para ignorar o index do brasil
     }
