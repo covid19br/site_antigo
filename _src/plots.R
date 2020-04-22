@@ -11,11 +11,11 @@ library(cowplot)
 ## Parametros de formatacao comum aos plots
 ################################################################################
 plot.formatos <- theme_bw()+
-  theme(axis.text= element_text(size=10, face="bold", family = "arial"),
-        axis.title = element_text(size=10, face="bold", family = "arial"),
+  theme(axis.text= element_text(size=10, face="bold"),
+        axis.title = element_text(size=10, face="bold"),
         legend.text = element_text(size=12),
         title = element_text(size = 12),
-        plot.margin = margin(5, 0, 0, 0, "pt", family = "arial"))
+        plot.margin = margin(5, 0, 0, 0, "pt"))
   
 
 ################################################################################
