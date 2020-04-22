@@ -1,3 +1,4 @@
+# libraries
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -7,9 +8,10 @@ library(zoo)
 ## Parametros de formatacao comum aos plots
 ################################################################################
 plot.formatos <- theme_bw()+
-    theme(axis.text= element_text(size=12, face="bold"),
-          axis.title = element_text(size=14, face="bold"),
-          legend.text = element_text(size=12))
+    theme(axis.text= element_text(size=10, face="bold"),
+          axis.title = element_text(size=10, face="bold"),
+          legend.text = element_text(size=12),
+          title = element_text(size = 12))
 
 
 ################################################################################
@@ -98,7 +100,7 @@ municipios.temp.dupl <- data.frame(row.names = c("SP"))
 min.dias <- as.vector(round(td.now[max(nrow(td.now)),2], 1))
 max.dias <- as.vector(round(td.now[max(nrow(td.now)),3], 1))
 municipios.temp.dupl <- cbind(municipios.temp.dupl, min.dias, max.dias)
-write.table(municipios.minmax.casos, file="../web/data_tempo_dupli_municipio.csv", row.names = TRUE, col.names = FALSE)
+write.table(municipios.temp.dupl, file="../web/data_tempo_dupli_municipio.csv", row.names = TRUE, col.names = FALSE)
 
 
 ## Tabela do Re
@@ -106,4 +108,4 @@ municipios.Re <- data.frame(row.names = c("SP"))
 min <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 5],1))
 max <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 11],1))
 municipios.Re <- cbind(municipios.Re, min, max)
-write.table(municipios.minmax.casos, file="../web/data_Re_municipio.csv", row.names = TRUE, col.names = FALSE)
+write.table(municipios.Re, file="../web/data_Re_municipio.csv", row.names = TRUE, col.names = FALSE)
