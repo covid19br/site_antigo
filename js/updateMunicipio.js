@@ -6,8 +6,7 @@ const municipios =
             id: "sp_sp",
             verbose: "São Paulo"
         }
-    ]
-;
+    ];
 
 function getIndex(id) {
     for (i = 0; i < municipios.length; i++) {
@@ -39,11 +38,12 @@ function getId(verbose) {
 }
 
 /* Functions */
-
+/* 1. Atualiza Municipio */
 function updatePage(current_id) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_id);
     var current_index = getIndex(current_id);
+    
     // titulo
     $("#page-title").text(current_state);
 
@@ -91,6 +91,26 @@ function updatePage(current_id) {
         else $(".re_analise").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, $R_e$ pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
     });
     
+}
+
+/* 2. Menu Dinamico */
+function updateExibition(current) {
+    const selector = "." + current;
+    
+    //cleans
+    $(".card-deck").css( "display", "none" );
+    
+    //updates
+    $(selector).css( "display", "flex" );
+}
+
+function updateMenu(current) {
+    // cleans
+    $(".card.menu").removeClass("selected");
+
+    // updates
+    var selector = ".card.menu[card-id='" + current +"']" ;
+    $(selector).addClass("selected");
 }
 
 /* Main */

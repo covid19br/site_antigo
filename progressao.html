@@ -119,9 +119,9 @@
           </a> <!-- PAGE.TITLE -->
         </div>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left" aria-labelledby="titleDropdown">
-          <a class="dropdown-item" href="#br">Brasil</a>
+          <a class="dropdown-item active" href="#br">Brasil</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item active" href="#sp">São Paulo</a>
+          <a class="dropdown-item" href="#sp">São Paulo</a>
           <a class="dropdown-item" href="#rj">Rio de Janeiro</a>
         </div>
       </div>
@@ -144,8 +144,8 @@
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <h5 class="card-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text inline">Quantos casos notificados já temos <div class="card-state-text">em São Paulo
-              </div>? Quantos teremos nos próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            <p class="card-text inline">Quantos casos notificados já temos em <span class="estado"></span>?
+              Quantos teremos nos próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
 
@@ -169,11 +169,9 @@
         <!-- CARD.TEXT -->
         <p class="text-justify inline">
           Pontos pretos indicam o número de casos confirmados notificados <div class="card-state-text">em São Paulo</div>
-          por dia. <b>Pontos em azul são a previsão para os próximos 5 dias (entre 
-          <div class="csv" id="data_forecast_exp">
-            <div class="min"></div> e <div class="max"></div> casos em <div class="data"></div>
-          </div>)</b>, se a taxa de crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança
-          dessa previsão.
+          por dia. <b>Pontos em azul são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
+          e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>)</b>, se a taxa de
+          crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.
         </p>
       </div>
     </div>
@@ -271,7 +269,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="js/updateDate.js"></script>
-  <script src="js/updateForecast.js"></script>
+  <script src="js/updateAvanco.js"></script>
 </body>
 
 </html>
