@@ -24,7 +24,6 @@ window.FlexDashboardComponents = [];
 <script id="flexdashboard-navbar" type="application/json">
 [{"title":"Início","href":"index.html","align":"left"},{"title":"+Info","href":"informacoes.html","align":"left"},{"title":"+Perguntas","href":"perguntas.html","align":"left"},{"title":"Fontes","href":"fontes.html","align":"left"},{"title":"Na Mídia","href":"midia.html","align":"left"},{"title":"Sobre","href":"sobre.html","align":"left"},{"icon":"fa-share-alt","items":[{"title":"Twitter","icon":"fa-twitter"},{"title":"Facebook","icon":"fa-facebook"},{"title":"Google+","icon":"fa-google-plus"},{"title":"LinkedIn","icon":"fa-linkedin"},{"title":"Pinterest","icon":"fa-pinterest"}]},{"title":"Source Code","icon":"fa-github","href":"https://github.com/covid19br/covid19br.github.io","align":"right"}]
 </script>
-<script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -2588,11 +2587,11 @@ window.FlexDashboardComponents.push({
 <div id="dashboard-container">
 
 <div id="row" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<h2>Row</h2>
 <div id="estimativa-do-tempo-de-duplicação" class="section level3">
 <h3>Estimativa do tempo de duplicação</h3>
 <p>No início das epidemias o número de infectados cresce exponencialmente, o que implica que o tempo para que o número de casos duplique é constante em <span class="math inline">\(\ln(2)/r\)</span>, onde <span class="math inline">\(r\)</span> é a taxa de crescimento de número de casos. Um crescimento exponencial a taxa constante também implica em uma relação linear entre o logaritmo do número de casos e o tempo. Essa expectativa em geral vale para pequenos intervalos de tempo, na fase inicial de epidemias. É o que vemos para o Brasil, por exemplo, nos cincos dias a partir do dia em que o número de casos chegou a 15 (gráfico ao lado)</p>
-<p>A linha reta no gráfico mostra o previsto por um modelo linear em escala log para dados de contagem <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, ajustado a estes dados. Esse modelo estima o valor da taxa de crescimento da epidemia neste período (<span class="math inline">\(r\)</span>), com a qual estimamos o tempo de duplicação.</p>
+<p>A linha reta no gráfico mostra o previsto por um modelo linear em escala log para dados de contagem <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, ajustado a estes dados. Esse modelo estima o valor da taxa de crescimento da epidemia neste período (<span class="math inline">\(r\)</span>), com a qual estimamos o tempo de duplicação.</p>
 </div>
 <div id="section" class="section level3">
 <h3></h3>
@@ -2608,7 +2607,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de 2020
 </div>
 </div>
 <div id="row-1" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<h2>Row</h2>
 <div id="projeções-de-número-de-casos" class="section level3">
 <h3>Projeções de número de casos</h3>
 <p>Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de confiança dos valores previstos (gráfico ao lado).</p>
@@ -2628,7 +2627,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 </div>
 </div>
 <div id="row-2" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<h2>Row</h2>
 <div id="análise-de-erro-das-nossas-previsões" class="section level3">
 <h3>Análise de erro das nossas previsões</h3>
 <p>Estamos há 20 dias no ar fazendo previsões do número de casos confirmados para os próximos 5 dias. Fizemos, neste momento, uma análise de nossas previsões. Para tanto, contruímos um histograma da diferença entre o valor predito e o valor observado, divida pelo intervalo de confiança do valor predito. Isso significa dizer que o valor observado ficou dentro do intervalo de confiança de valor previsto caso ele apareça entre +100% ou -100%. Indicamos esses limites como linhas horizontais em vermelho.</p>
@@ -2638,7 +2637,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div id="section-2" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/erros.jpeg" style="width:100.0%" alt="" />
+<img src="fig/erros.jpeg" alt="Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)" style="width:100.0%" />
 <p class="caption">Análises do erro dos primeiros 20 dias de previsões. (Por Rafael Lopes Paixão da Silva/IFT-Unesp)</p>
 </div>
 </div>
@@ -2716,7 +2715,7 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div id="section-4" class="section level3">
 <h3></h3>
 <div class="figure">
-<img src="fig/R0_prsc.png" style="width:50.0%" alt="" />
+<img src="fig/R0_prsc.png" alt="Resultado das análises utilizando dados brasileiros da epidemia de Covid-19." style="width:50.0%" />
 <p class="caption">Resultado das análises utilizando dados brasileiros da epidemia de Covid-19.</p>
 </div>
 </div>
@@ -2728,8 +2727,8 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <p>Para calcular uma estimativa do número de casos graves a cada dia, utilizamos os dados de notificação de <strong>hospitalizações</strong> por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo. É nesta base que são notificados os casos graves suspeitos de COVID-19, que são os casos SRAG hospitalizados. Cada um desses casos deve ser investigado para confirmação ou não como caso de COVID-19.</p>
 <p>A este conjunto de dados é aplicada uma técnica estatística Bayesiana de <em>nowcasting</em>, um método que corrige os atrasos do sistema de notificação vigente, isto é, adianta-se as notificações oficiais futuras pelo tempo médio entre a ocorrência dos primeiros sintomas no paciente e a hospitalização, quando há o registro dos seus dados no sistema de vigilância.</p>
 <p>Esse tempo abrange várias etapas: desde procurar um hospital, coletar o exame, o exame ser realizado e o resultado do teste positivo para Covid-19 estar disponível para ser incluído no banco de dados. O tempo acumulado entre essas etapas do processo causa atrasos de vários dias entre o número de casos confirmados no SIVEP-Gripe e os casos ainda não disponíveis no sistema, que são compensados somando aos casos já confirmados uma estimativa de casos que devem ser confirmados no futuro. O método que usamos foi proposto por McGough et.al. (2019) e implementado usando o pacote NobBS do R (McGough et.al. 2020).</p>
-<p>Essa <strong>não é uma estimativa do número total</strong> de pessoas infectadas pelo novo coronavírus, apenas de casos graves hospitalizados e notificados no sistema de vigilância. Isso porque os casos notificados oficialmente diferem do número de casos reais na mesma data pois são distorcidos tanto por atrasos de notificação (corrigidos pelo <em>nowcasting</em>) quanto por subnotificação (corrigida por outros métodos). Uma das razões da subnotificação é o próprio modelo de vigilância. No Brasil, por exemplo, nem todos os possíveis infectados são testados, então casos leves e casos assintomáticos não são detectados pela base de dados do SRAG <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. No caso de transmissão comunitária, como temos hoje, seria necessário testar toda a população para eliminar a subnotificação. Hoje, no Brasil, o protocolo assegura exames prioritariamente para casos graves (hospitalizações), profissionais da saúde e óbitos.</p>
-<p>Créditos: Observatório COVID-19 BR em parceria com o Grupo Técnico de Assessoramento em Epidemiologia e Modelagem Matemática COVID19 (SMS SP), composto por Ana Freitas Ribeiro (medica sanitarista @ IIER – professora Uninove e USCS, <a href="http://lattes.cnpq.br/2580724337528147">CV</a> ), Hélio Neves (medico sanitarista @ SMS-SP – professor FCMSCSP, <a href="http://lattes.cnpq.br/2581276764223304">CV</a> ), José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP), Karina de Cassia Braga Ribeiro (professora @ FCMSCSP, <a href="http://lattes.cnpq.br/6967301297739351">CV</a> ), Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP, <a href="http://lattes.cnpq.br/7977489515345196">CV</a> ), Paulo Carrara de Castro (professor @ FCMSCSP, <a href="http://lattes.cnpq.br/1797989230776090">CV</a> ) e Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP, <a href="http://lattes.cnpq.br/4067424355078812">CV</a> ).</p>
+<p>Essa <strong>não é uma estimativa do número total</strong> de pessoas infectadas pelo novo coronavírus, apenas de casos graves hospitalizados e notificados no sistema de vigilância. Isso porque os casos notificados oficialmente diferem do número de casos reais na mesma data pois são distorcidos tanto por atrasos de notificação (corrigidos pelo <em>nowcasting</em>) quanto por subnotificação (corrigida por outros métodos). Uma das razões da subnotificação é o próprio modelo de vigilância. No Brasil, por exemplo, nem todos os possíveis infectados são testados, então casos leves e casos assintomáticos não são detectados pela base de dados do SRAG <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. No caso de transmissão comunitária, como temos hoje, seria necessário testar toda a população para eliminar a subnotificação. Hoje, no Brasil, o protocolo assegura exames prioritariamente para casos graves (hospitalizações), profissionais da saúde e óbitos.</p>
+<p><a href="/sobre_sampa.html">Créditos</a>: Observatório COVID-19 BR em parceria com o Grupo Técnico de Assessoramento em Epidemiologia e Modelagem Matemática COVID19 (SMS SP).</p>
 </div>
 <div id="referências" class="section level3">
 <h3>Referências</h3>
@@ -2743,8 +2742,8 @@ ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores previs
 <div class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>Modelo linear generalizado Poisson (glm), com função de ligação logarítimica.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num sistema separado, chamado <em>E-SUS VE</em>, o que inclui casos leves. Profissionais de saúde são testados e se positivam passam a casos confirmados nessa base.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn1"><p>Modelo linear generalizado Poisson (glm), com função de ligação logarítimica.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num sistema separado, chamado <em>E-SUS VE</em>, o que inclui casos leves. Profissionais de saúde são testados e se positivam passam a casos confirmados nessa base.<a href="#fnref2">↩</a></p></li>
 </ol>
 </div>
 
@@ -2785,7 +2784,6 @@ src="https://c.statcounter.com/12220607/0/18092bfd/1/"
 alt="Web Analytics Made Easy -
 StatCounter"></a></div></noscript>
 <!-- End of Statcounter Code -->
-
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
