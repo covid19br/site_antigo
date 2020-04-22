@@ -340,6 +340,10 @@ function updateStatic() {
     $(".placeholder_svg").attr("src", new_svg);
     // Update Cases
     updateCases(current_uf);
+    // Updates date and hour
+    if(current_uf == "br") updateDate("last.update.br"); // atualiza para o brasil
+    else updateDate("last.update.estado"); // atualiza para os estados
+    
 }
 
 /* Main */

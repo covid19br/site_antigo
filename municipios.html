@@ -250,9 +250,7 @@
         <p class="text-justify csv mt-3">
           Os <b style="color:#dc3545">pontos tracejados da linha
             vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre $min e $max
-          casos
-          em
-          $data), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. A <b
+          casos em $data), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 7 dias. A <b
             style="color:#6c757d">faixa cinza</b>
           mostra o <b>intervalo de confiança</b> dessa previsão.
         </p>
@@ -415,25 +413,16 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="js/updateMenu.js"></script>
+  <!-- R Integration -->
+  <!-- Hora de atualizacao -->
   <script src="js/updateDate.js"></script>
-  <!-- SCRIPT PARA USAR TABELAS -->
-  <script src="js/updateTable.js"></script>
-  <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES -->
+  <!-- Menu Dinamico de Cards -->
+  <script src="js/updateMunicipioMenu.js"></script>
+  <!-- Conteudo Dinamico -->
+  <script src="js/updateMunicipioContent.js"></script>
+  <!-- MathJax: Equacoes -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
-  <!-- UPDATE CSV -->
-  <script>
-    const regex = /"/gi;
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_forecasr_exp_municipios.csv', function (raw_data) {
-      // data processing
-      full_data = raw_data.split("\n");
-      current_data = full_data[0].replace(regex, '').split(" ");
-      full_text = $(".csv").html();
-      new_text = full_text.replace("$min", current_data[1]).replace("$max", current_data[2]).replace("$data", current_data[3]);
-      $(".csv").html(new_text);
-    });
-  </script>
 </body>
 
 </html>
