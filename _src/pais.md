@@ -57,3 +57,6 @@ a receber pessoas infectadas. Desta forma, atualizamos a identificação das mic
 
 
 [<b>Leia o relatório na íntegra aqui para os Estados do Nordeste.</b>](https://preprints.scielo.org/index.php/scielo/preprint/view/35/version/39)
+
+
+[<b>Leia o relatório na íntegra aqui para os Estados do Sul.</b>](https://preprints.scielo.org/index.php/scielo/preprint/view/128)
