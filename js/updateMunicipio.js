@@ -80,7 +80,7 @@ function updatePage(current_id) {
     });
 
     // tempo_dupli (velocidade)
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_forecasr_exp_municipios.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_tempo_dupli_municipios.csv', function (raw_data) {
         var regex = /"/gi;
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
@@ -89,7 +89,7 @@ function updatePage(current_id) {
     });
 
     // RE (taxa)
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_forecasr_exp_municipios.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_Re_municipios.csv', function (raw_data) {
         var regex = /"/gi;
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
