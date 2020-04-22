@@ -1,5 +1,5 @@
-// Declaration
-// "Nome do Estado" <-> "UF"
+/* Data Structure */
+// "Nome do Estado" <-> "UF" <-> Preposicao
 var estados =
     [
         {
@@ -164,16 +164,11 @@ function getVerbose(uf) {
 
 function getIndex(uf) {
     for (i = 0; i < estados.length; i++) {
-        if (estados[i].uf == uf) return (i);
+        if (estados[i].uf == uf) return (i-1); // move um index para cima para ignorar o index do brasil
     }
 
-    // UF not found: returns to SP
-    return (1);    
-}
-
-function getCurrentUF() {
-    var current = $("#page-title").text()
-    return (getUFCode(current));
+    // UF not found: returns to BR
+    return (0);
 }
 
 function getPreposicao(verbose) {
@@ -182,6 +177,13 @@ function getPreposicao(verbose) {
     }
 
     return ("em");
+}
+
+/* Modify HTML */
+
+function getCurrentUF() {
+    var current = $("#page-title").text()
+    return (getUFCode(current));
 }
 
 function hasUF(split_src) {
@@ -248,17 +250,27 @@ function updateWidget() {
 function updateCases(current_uf) {
     // Helper
     const regex = /"/gi;
+    var isBrasil = false;
+
     // Gets current state
-    current_index = getIndex(current_uf);
+    if(current_uf == "br") isBrasil = true;
+    if(isBrasil) current_index = 0;
+    else current_index = getIndex(current_uf);
 
     // For every .csv returns filename (as id)
     $(".csv").each( function() {
+        // seleciona o arquivo .csv a ser usado
         var filename = this.id;
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/' + filename + '.csv', function(raw_data) {
+
+        if(isBrasil) extension = "_br.csv";
+        else extension = "_estados.csv";
+
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/' + filename + extension, function(raw_data) {
             // data processing
             full_data = raw_data.split("\n");
-            current_data = full_data[current_index].replace(regex, '').split(" ");
-            console.log(current_data);
+            if(isBrasil) current_data = full_data[0].replace(regex, '').split(" "); // remove "" e separa por espaco branco
+            else current_data = full_data[current_index].replace(regex, '').split(" ");
+
             // updates text with data
             $("#"+filename).children(".min").text(current_data[1]);
             $("#"+filename).children(".max").text(current_data[2]);
