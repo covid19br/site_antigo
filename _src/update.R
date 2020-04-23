@@ -30,7 +30,7 @@ close(file)
 ################################################################################
 print("Atualizando plots...")
 # Graficos a serem atualizados
-plots.para.atualizar <- makeNamedList(plot.forecast.exp.br)
+plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, est.tempo.dupl, proj.num.casos)
 filenames <- names(plots.para.atualizar)
 n <- length(plots.para.atualizar)
 
