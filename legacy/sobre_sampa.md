@@ -24,11 +24,11 @@ output:
 
 ### Página COVID-19 BR do Muncípio de São Paulo
 
-O [Observatório Covid-19 BR](/sobre.html) participa do **Grupo Técnico de
-Assessoramento em Epidemiologia e Modelagem Matemática COVID19** (GT
-COVID-19 Sampa) da Secretaria de Saúde do Município de São Paulo. Este
-grupo bases de dados oficiais para o município, para prover
-análises para tomada de decisão.
+O [Observatório Covid-19 BR](/sobre.html) participa do **Grupo Técnico
+de Assessoramento em Epidemiologia e Modelagem Matemática COVID19**
+(GT COVID-19 Sampa) da Secretaria de Saúde do Município de São
+Paulo. Este grupo analisa as bases de dados oficiais para o município,
+para subsidiar tomada de decisão.
 
 Com as notificações de casos graves suspeitos e confirmados de
 COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
@@ -42,6 +42,8 @@ epidemia.
 
 * Ana Freitas Ribeiro (médica sanitarista @ IIER – professora Uninove e USCS) | [CV](http://lattes.cnpq.br/2580724337528147) 
 
+* Breno Souza de Aguiar (assessor técnico @ SMS-SP) | [CV](http://lattes.cnpq.br/3614173324900214)
+
 * Diogo Melo (pós doc @ IB-USP) | [CV](http://lattes.cnpq.br/7012154595546796)
 
 * Flávia Maria Darcie Marquitti (pós doc @ [IFGW e IB - Unicamp](https://www.ifi.unicamp.br/~flaviam/)) | [CV](http://lattes.cnpq.br/750889398476891)
@@ -51,6 +53,10 @@ epidemia.
 * José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP)
 
 * Karina de Cassia Braga Ribeiro (professora @ FCMSCSP) | [CV](http://lattes.cnpq.br/6967301297739351) 
+
+* Marcelo Antunes Failla (mestrando @ USP) | [CV](http://lattes.cnpq.br/7348318962497209)
+
+* Marcia Caldas de Castro (professora @ Harvard T.H. Chan SPH) | [CV](http://lattes.cnpq.br/3247288157664157)
 
 * Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | [CV](http://lattes.cnpq.br/7977489515345196) 
 
