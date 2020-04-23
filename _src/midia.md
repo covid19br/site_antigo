@@ -44,6 +44,8 @@ output:
 * [Ferramenta permite monitorar em tempo real o avanço da COVID-19 na cidade de São Paulo](http://agencia.fapesp.br/ferramenta-permite-monitorar-em-tempo-real-o-avanco-da-covid-19-na-cidade-de-sao-paulo/32987/), Agência FAPESP, 17 de abril de 2020.
 * [Aquela última: Especialista explica que futebol deve voltar sem público até final de 2020](http://globoesporte.globo.com/ge/videos/v/aquela-ultima-especialista-explica-que-futebol-deve-voltar-sem-publico-ate-final-de-2020/8491743/), Globo Esporte, 18 de abril de 2020.
 * [Coronavírus pode já ter matado entre 3.800 e 15,6 mil no Brasil, diz estudo](https://noticias.uol.com.br/saude/ultimas-noticias/redacao/2020/04/18/projecao-mortes-coronavirus-brasil-observatorio.htm), UOL, 18 de abril de 2020.
+* [Mortes por Covid-19 no Brasil podem ser ainda maiores em função dos atrasos nas estatísticas da Saúde, diz pesquisador](https://oglobo.globo.com/sociedade/coronavirus/mortes-por-covid-19-no-brasil-podem-ser-ainda-maiores-em-funcao-dos-atrasos-nas-estatisticas-da-saude-diz-pesquisador-24381446), O Globo, 18 de abril de 2020.
+* [Avanço da COVID-19 na capital paulista é monitorado em tempo real](https://www.saopaulo.sp.gov.br/noticias-coronavirus/avanco-da-covid-19-na-capital-paulista-e-monitorado-em-tempo-real), Portal do Governo do Estado de São Paulo, 20 de abril de 2020.
 
 
 ### Boletins diários da mídia
