@@ -64,3 +64,4 @@ names(td.now) <- c("estimativa", "ic.inf", "ic.sup")
 dia.zero <- time(now.pred.zoo)[min(which(now.pred.zoo$n.casos>=10, arr.ind=TRUE))]
 now.pred.zoo <- window(now.pred.zoo, start=dia.zero)
 now.proj.zoo <- window(now.proj.zoo, start=dia.zero)
+
