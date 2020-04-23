@@ -4,7 +4,6 @@ library(tidyverse)
 library(plotly)
 library(lubridate)
 library(optparse)
-library(cowplot)
 
 # Helper Function
 makeNamedList <- function(...) {
@@ -64,9 +63,9 @@ n <- length(plots.para.atualizar.municipio)
 
 for (i in 1:n){
   graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
-  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text= element_text(size=10, face="bold"),
-                                                           axis.title = element_text(size=10, face="bold"))
+  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
+                                                           axis.title = element_text(size=14, family="Arial", face="plain")) # title
   filepath <- paste("../web/",filenames[i],sep="")
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
-  save_plot(paste(filepath,".svg",sep=""), graph.svg)
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 421, height = 285, units = "mm")
 }

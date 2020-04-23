@@ -36,10 +36,12 @@ n <- length(plots.para.atualizar)
 
 for (i in 1:n){
   graph.html <- ggplotly(plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 50, b = 50, t = 50, pad = 4), title = list(y = 0.94))
-  graph.svg <- plots.para.atualizar[[i]]
+  graph.svg <- plots.para.atualizar[[i]] + theme(axis.text= element_text(size=11, face="plain"),
+                                                 axis.title = element_text(size=14, face="plain"))
   filepath <- paste("../web/",filenames[i],sep="")
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
-  save_plot(paste(filepath,".svg",sep=""), graph.svg)
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 421, height = 285, units = "mm")
+
 }
 
 ################################################################################

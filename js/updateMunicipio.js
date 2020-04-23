@@ -43,7 +43,7 @@ function updatePage(current_id) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_id);
     var current_index = getIndex(current_id);
-    
+
     // titulo
     $("#page-title").text(current_state);
 
@@ -88,7 +88,7 @@ function updatePage(current_id) {
         $(".re_max").text(current_data[2]);
         if(current_data[1] >= 1) $(".re_analise").text("Mas mesmo o limite mínimo do intervalo de confiança está acima de um, indicando que a epidemia continua em expansão rápida.");
         else if(current_data[2] < 1) $(".re_analise").text("No entanto, mesmo o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
-        else $(".re_analise").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, $R_e$ pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
+        else $(".re_analise").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, \(R_e\) pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
     });
     
 }
