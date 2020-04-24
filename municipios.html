@@ -127,8 +127,7 @@
   </div>
 
   <!-- Menu-->
-  <div class="card-columns three-one">
-    <!-- COLUMNS.NUM -->
+  <div class="card-columns four-one"> <!-- COLUMNS.NUM -->
     <!-- NEW.CARD -->
 
     <!-- HOSPITALIZAÇÕES.MENU.CARD -->
@@ -142,17 +141,11 @@
             <!-- CARD.TITLE.ICON -->
             <div class="media-body">
               <h5 class="card-title">Hospitalizações em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quantas hospitalizações estimamos ter no município de <span
+              <p class="card-text">Quantas hospitalizações estimamos em <span
                   class="municipio"></span>? Quantos teremos nos
                 próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
-
-          <!-- CARD.BUTTON -->
-          <a href="#hosp"><button class="btn btn-primary mt-3" type="button">
-              Veja o gráfico
-            </button></a>
-
         </div>
       </div>
     </a>
@@ -169,16 +162,10 @@
             <!-- CARD.TITLE.ICON -->
             <div class="media-body">
               <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quão rápido a doença se propaga em <span class="municipio"></span>?
+              <p class="card-text">O quão rápido a doença se propaga no município de <span class="municipio"></span>?
               </p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
-
-          <!-- CARD.BUTTON -->
-          <a href="#vel"><button class="btn btn-primary mt-3" type="button">
-              Confira a estimativa
-            </button></a>
-
         </div>
       </div>
     </a>
@@ -199,12 +186,24 @@
               <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
+        </div>
+      </div>
+    </a>
 
-          <!-- CARD.BUTTON -->
-          <a href="#infec"><button class="btn btn-primary mt-3" type="button">
-              Saiba mais
-            </button></a>
-
+    <!-- SOBRE.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu" card-id="sobre">
+        <div class="card-body">
+          <!-- CARD.HEADER -->
+          <div class="media">
+            <img src="./img/icon_questions.svg" width=48px alt="Ícone que representa um menino" class="card-icon">
+            <!-- CARD.TITLE.ICON -->
+            <div class="media-body">
+              <h5 class="card-title">Sobre</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Saiba mais sobre a equipe envolvida nestas análises</p>
+              <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
         </div>
       </div>
     </a>
@@ -412,11 +411,102 @@
   </div>
 
   <!-- Sobre -->
-  <div class="card-columns">
-    <!-- SOBRE.MUNINICIPIO.CARD -->
-    <div class="card">
+  <div class="card-deck sobre">
+    <!-- SOBRE.CONTENT.CARD -->
+    <div class="card cd-30">
       <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Sobre os dados no município de <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <p class="text-justify">
+          O <i>Observatório Covid-19 BR</i> participa do <b>Grupo Técnico
+            de Assessoramento em Epidemiologia e Modelagem Matemática COVID19</b>
+          (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São
+          Paulo. Este grupo analisa as bases de dados oficiais para o município,
+          para subsidiar tomada de decisão.
+        </p>
+        <p class="text-justify">
+          Com as notificações de casos graves suspeitos e confirmados de
+          COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
+          Sivep-Gripe), o GT COVID-19 Sampa <b>estima o número de casos graves que
+            já ocorreram mas ainda não foram notificados</b>. Com esses dados
+          corrigidos é possível obter estimativas mais confiáveis da evolução da
+          epidemia.
+        </p>
+      </div>
+    </div>
+
+    <!-- TAXA.GRAFICO.CARD -->
+    <div class="card cd-70">
+      <div class="card-body">
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <ion-icon name="people-circle-outline" size="large" class="card-icon"></ion-icon> <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Equipe</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Conheça a equipe que trabalha para trazer o Observatório COVID-19 BR</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.UNORDERED.LIST -->
+        <ul class="list-group mt-2">
+          <li class="list-group-item">Ana Freitas Ribeiro (médica sanitarista @ IIER – professora Uninove e USCS) | <a
+              target="_blank" rel="noopener" href="http://lattes.cnpq.br/2580724337528147">CV</a></li>
+
+          <li class="list-group-item">Breno Souza de Aguiar (assessor técnico @ SMS-SP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/3614173324900214">CV</a></li>
+
+          <li class="list-group-item">Diogo Melo (pós doc @ IB-USP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/7012154595546796">CV</a></li>
+
+          <li class="list-group-item">Flávia Maria Darcie Marquitti (pós doc @ <a target="_blank" rel="noopener"
+              href="https://www.ifi.unicamp.br/~flaviam/">IFGW e IB</a>) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/750889398476891">CV</a></li>
+
+          <li class="list-group-item">Hélio Neves (médico sanitarista @ SMS-SP – professor FCMSCSP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/2581276764223304">CV</a></li>
+
+          <li class="list-group-item">José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP)
+
+          <li class="list-group-item">Karina de Cassia Braga Ribeiro (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/6967301297739351">CV</a></li>
+
+          <li class="list-group-item">Marcelo Antunes Failla (mestrando @ USP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/7348318962497209">CV</a></li>
+
+          <li class="list-group-item">Marcia Caldas de Castro (professora @ Harvard T.H. Chan SPH) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/3247288157664157">CV</a></li>
+
+          <li class="list-group-item">Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/7977489515345196">CV</a></li>
+
+          <li class="list-group-item">Paulo Carrara de Castro (professor @ FCMSCSP) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/1797989230776090">CV</a></li>
+
+          <li class="list-group-item">Paulo Inácio Prado (professor @ <a target="_blank" rel="noopener"
+              href="http://ecologia.ib.usp.br/let/">IB-USP)</a> | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
+
+          <li class="list-group-item">Rafael Lopes Paixão da Silva (doutorando @ <a target="_blank" rel="noopener"
+              href="https://www.ift.unesp.br">IFT - UNESP</a>) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/3085324638663546">CV</a></li>
+
+          <li class="list-group-item">Renato Mendes Coutinho (professor @ <a target="_blank" rel="noopener"
+              href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
+
+          <li class="list-group-item">Roberto Kraenkel (professor @ <a target="_blank" rel="noopener"
+              href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
+
+          <li class="list-group-item">Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP) | <a
+              target="_blank" rel="noopener" href="http://lattes.cnpq.br/4067424355078812">CV</a></li>
+
+          <li class="list-group-item">Tatiana P. Portella Zenker (doutoranda @ <a target="_blank" rel="noopener"
+              href="http://ecologia.ib.usp.br/">Ecologia - USP</a> ) | <a target="_blank" rel="noopener"
+              href="http://lattes.cnpq.br/8988655613888832">CV</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -425,7 +515,7 @@
   <footer class="container-fluid">
     <div class="footer-content">
       <ion-icon name="logo-github"></ion-icon>
-      <p class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank"
+      <p class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></p>
     </div>
     <!-- FOOTER.ITEM -->

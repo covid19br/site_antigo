@@ -170,6 +170,9 @@ body {
     .four {
         column-count: 4!important;
     }
+    .four-one {
+        column-count: 4!important;
+    }
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -183,6 +186,9 @@ body {
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .card-columns {
         column-count: 2;
+    }
+    .four-one {
+        column-count: 1!important;
     }
     .three-one {
         column-count: 1!important;
