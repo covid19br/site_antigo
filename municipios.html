@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description"
     content="O Observatório COVID-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
-  <!-- SEO: https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions -->
-  <title>Observatório COVID-19 BR</title>
+  <title>Municípios · Observatório COVID-19 BR</title>
 
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +22,7 @@
   <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
   <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
   <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+  <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
   <meta name="theme-color" content="#007bff">
 
   <!-- Twitter -->
@@ -31,16 +30,16 @@
   <meta name="twitter:title" content="Observatório COVID-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
-  <meta property="og:title" content="Bootstrap">
+  <meta property="og:title" content="Observatório COVID-19 BR">
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/bootstrap-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -117,7 +116,7 @@
           aria-haspopup="true" aria-expanded="false">
           <a href="#" class="text-reset">
             <h1 class="display" id="page-title">São Paulo</h1> <!-- PAGE.TITLE -->
-          </a> 
+          </a>
         </div>
         <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left" aria-labelledby="titleDropdown">
           <a class="dropdown-item active" href="#sp_sp">São Paulo</a>
@@ -143,7 +142,8 @@
             <!-- CARD.TITLE.ICON -->
             <div class="media-body">
               <h5 class="card-title">Hospitalizações em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quantas hospitalizações estimamos ter no município de <span class="municipio"></span>? Quantos teremos nos
+              <p class="card-text">Quantas hospitalizações estimamos ter no município de <span
+                  class="municipio"></span>? Quantos teremos nos
                 próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
@@ -161,51 +161,52 @@
 
     <!-- VELOCIDADE.MENU.CARD -->
     <a class="text-reset" href="#">
-    <div class="card menu" card-id="vel">
-      <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quão rápido a doença se propaga em <span class="municipio"></span>?
-            </p> <!-- CARD.TITLE.DESCRIPTION -->
+      <div class="card menu" card-id="vel">
+        <div class="card-body">
+          <!-- CARD.HEADER -->
+          <div class="media">
+            <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
+            <!-- CARD.TITLE.ICON -->
+            <div class="media-body">
+              <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Quão rápido a doença se propaga em <span class="municipio"></span>?
+              </p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
           </div>
+
+          <!-- CARD.BUTTON -->
+          <a href="#vel"><button class="btn btn-primary mt-3" type="button">
+              Confira a estimativa
+            </button></a>
+
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="#vel"><button class="btn btn-primary mt-3" type="button">
-            Confira a estimativa
-          </button></a>
-
       </div>
-    </div>
-   </a>
+    </a>
     <!-- NEW.CARD -->
 
     <!-- MIDIA.CARD -->
     <a class="text-reset" href="#">
-    <div class="card menu" card-id="infec">
-      <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="municipio"></span>?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
+      <div class="card menu" card-id="infec">
+        <div class="card-body">
+          <!-- CARD.HEADER -->
+          <div class="media">
+            <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
+            <!-- CARD.TITLE.ICON -->
+            <div class="media-body">
+              <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span
+                  class="municipio"></span>?</p>
+              <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
           </div>
+
+          <!-- CARD.BUTTON -->
+          <a href="#infec"><button class="btn btn-primary mt-3" type="button">
+              Saiba mais
+            </button></a>
+
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="#infec"><button class="btn btn-primary mt-3" type="button">
-            Saiba mais
-          </button></a>
-
       </div>
-    </div>
     </a>
   </div>
 
@@ -227,11 +228,10 @@
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
           A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (hospitalizados)
-          notificados no município de <span class="municipio"></span> até a data, e a <b style="color:#dc3545">linha vermelha</b> a
+          notificados no município de <span class="municipio"></span> até a data, e a <b style="color:#dc3545">linha
+            vermelha</b> a
           <b>estimativa</b> corrigindo atrasos</b> de notificação.
         </p>
-
-
 
         <!-- CARD.BUTTON.EXPAND -->
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
@@ -258,10 +258,13 @@
         </ul>
         <p class="text-justify mt-3">
           Os <b style="color:#dc3545">pontos tracejados da linha
-            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre <span class="forecast_min"></span>
-            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de crescimento dos valores
-            corrigidos continuar a mesma dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b>
-            dessa previsão.
+            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre <span
+            class="forecast_min"></span>
+          e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de crescimento
+          dos valores
+          corrigidos continuar a mesma dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o
+          <b>intervalo de confiança</b>
+          dessa previsão.
         </p>
 
 
@@ -323,8 +326,8 @@
           graves (hospitalizados) no município
           de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. Esse número depende
           muito das
-          medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e 
-          <span class="tempo_dupli_max"></span> dias.</b>
+          medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
+            <span class="tempo_dupli_max"></span> dias.</b>
         </p>
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <p class="text-justify">
@@ -376,9 +379,10 @@
           vermelha.
         </p>
         <p class="text-justify re">
-          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos dados
+          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
+          dados
           estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
-          <span class="re_max"></span>.</b>
+            <span class="re_max"></span>.</b>
         </p>
         <p class="text-justify">
           A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
@@ -403,6 +407,16 @@
           <img src=./web/plot.estimate.R0.municipio.svg class="placeholder_svg" width="100%">
         </div>
         <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobre -->
+  <div class="card-columns">
+    <!-- SOBRE.MUNINICIPIO.CARD -->
+    <div class="card">
+      <div class="card-body">
+        <!-- CONTEÚDO AQUI -->
       </div>
     </div>
   </div>
