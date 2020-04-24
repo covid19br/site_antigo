@@ -48,7 +48,7 @@ fitP.exp <- function(zoo.obj, only.coef = TRUE){
 diazero <- function(zoo.obj, limite){
     dia.zero <- min(which(zoo.obj>=limite, arr.ind=TRUE))
     zoo.obj[dia.zero:length(zoo.obj)]
-    }
+}
 
 #' Tempo de duplicação ao longo de uma serie temporal de n de casos
 #' @details Toma uma série temporal de n de casos, ajusta a função
@@ -132,7 +132,7 @@ estima.not <- function(vetor.casos, NobBS.output, from = length(vetor.casos)-30)
     z <- as.vector(y)
     pred <- rev(cumsum(rev(z*rev(betas))))
     zoo(pred[from:length(z)], time(y)[from:length(z)])
-    }
+}
 
 
 #' Preenche NA's iniciais do vetor de estimado pelo nowcasting
@@ -143,7 +143,7 @@ preenche.now <- function(vetor.now, vetor.casos){
     index <- max(which(is.na(vetor.now), arr.ind=TRUE))
     vetor.now[1:index] <- vetor.casos[1:index]
     return(vetor.now)
-    }
+}
 
 #' Inverso da funcao logito
 inv.logit <- function(x)
@@ -163,12 +163,12 @@ na.zero <- function(x)
 ##   delay : 7 #number of days
 estimate.R0 <- function(novos.casos, day0=8, delay=7, ...){
     config <- make_config(list(si_parametric_distr = "L",
-                           mean_si = 4.8, std_mean_si = 0.71,
-                           min_mean_si = 3.8, max_mean_si = 6.1,
-                           std_si = 2.3, std_std_si = 0.58,
-                           min_std_si = 1.6, max_std_si = 3.5,
-                           t_start = seq(day0,length(novos.casos)-delay),
-                           t_end = seq(delay+day0,length(novos.casos))))
+                               mean_si = 4.8, std_mean_si = 0.71,
+                               min_mean_si = 3.8, max_mean_si = 6.1,
+                               std_si = 2.3, std_std_si = 0.58,
+                               min_std_si = 1.6, max_std_si = 3.5,
+                               t_start = seq(day0,length(novos.casos)-delay),
+                               t_end = seq(delay+day0,length(novos.casos))))
     estimate_R(novos.casos, method = "uncertain_si", config = config)
 }
 

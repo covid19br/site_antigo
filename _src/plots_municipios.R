@@ -1,3 +1,4 @@
+# libraries
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -8,8 +9,10 @@ library(zoo)
 ################################################################################
 plot.formatos <- theme_bw()+
     theme(axis.text= element_text(size=12, face="bold"),
-          axis.title = element_text(size=14, face="bold"),
-          legend.text = element_text(size=12))
+          axis.title = element_text(size=12, face="bold"),
+          legend.text = element_text(size=12),
+          title = element_text(size = 12),
+          plot.margin = margin(2, 0, 0, 0, "pt"))
 
 
 ################################################################################
@@ -56,11 +59,10 @@ plot.nowcast.cum <-
     theme(legend.position = c(0.2,0.8)) +
     scale_y_log10() 
 
-
 ################################################################################
 ## Plot do tempo de duplicação em função do tempo
 ################################################################################
-plot.tempo.dupl <-
+plot.tempo.dupl.municipio <-
     ggplot(td.now, aes(Index, estimativa)) +
     geom_ribbon(aes(ymin = ic.inf, ymax = ic.sup), fill = "lightgrey") +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(3, "Dark2")[1]) +
@@ -72,7 +74,7 @@ plot.tempo.dupl <-
 ################################################################################
 ## Plot do R efetivo em função do tempo
 ################################################################################
-plot.estimate.R0 <-
+plot.estimate.R0.municipio <-
     ggplot(data = Re.now.zoo, aes(Index, Mean.R)) +
     geom_ribbon(aes(ymin = Quantile.0.025.R, ymax = Quantile.0.975.R), fill = "lightgrey") +
     geom_line(size = 1.25, colour = RColorBrewer::brewer.pal(4, "Dark2")[3]) +
@@ -82,4 +84,29 @@ plot.estimate.R0 <-
     ylab("Número de reprodução da epidemia") +
     plot.formatos
 
+######################################################################
+## Tabelas para preencher o html
+######################################################################
+## Tabela que preenche o minimo e o maximo do nowcast
+municipios.minmax.casos <- data.frame(row.names = c("SP"))
+min <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])
+max <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])
+data <- format(max(time(now.proj.zoo)), "%d/%m/%Y")
+municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
+write.table(municipios.minmax.casos, file="../web/data_forecasr_exp_municipios.csv", row.names = TRUE, col.names = FALSE)
+# Não é generico, é apenas para o municipio de sp. Tendo mais, tem que atualizar
 
+## Tabela do tempo de duplicação
+municipios.temp.dupl <- data.frame(row.names = c("SP"))
+min.dias <- as.vector(round(td.now[max(nrow(td.now)),2], 1))
+max.dias <- as.vector(round(td.now[max(nrow(td.now)),3], 1))
+municipios.temp.dupl <- cbind(municipios.temp.dupl, min.dias, max.dias)
+write.table(municipios.temp.dupl, file="../web/data_tempo_dupli_municipio.csv", row.names = TRUE, col.names = FALSE)
+
+
+## Tabela do Re
+municipios.Re <- data.frame(row.names = c("SP"))
+min <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 5],1))
+max <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 11],1))
+municipios.Re <- cbind(municipios.Re, min, max)
+write.table(municipios.Re, file="../web/data_Re_municipio.csv", row.names = TRUE, col.names = FALSE)
