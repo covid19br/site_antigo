@@ -9,7 +9,8 @@ makeNamedList <- function(...) {
   structure(list(...), names = as.list(substitute(list(...)))[-1L])
 }
 
-estados.para.atualizar <- c('SP', 'RJ') # Estados a serem atualizados
+# Estados a serem atualizados
+estados.para.atualizar <- c('SP', 'RJ', 'RO', 'AC', 'AM', 'RR', 'PA', 'AP', 'TO', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA', 'MG', 'ES', 'PR', 'SC', 'RS', 'MS', 'MT', 'GO', 'DF')
 
 # Processamento de Dados -separo por estado?-
 source('prepara_dados_estado.R')
