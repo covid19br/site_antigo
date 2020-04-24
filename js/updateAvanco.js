@@ -309,7 +309,7 @@ function updatePage(current_uf) {
 var requested = $(location).attr('hash').substring(1);
 if (requested.length == 2) updatePage(requested); //uf
 // Via DEFAULT
-else updatePage(def_state_id); //se a entrada é sem hash atualiza para o municipio default
+else updatePage(def_state_uf); //se a entrada é sem hash atualiza para o municipio default
 
 // JQuery OnClick Update
 $('.dropdown-item').click(function () {
