@@ -1,0 +1,440 @@
+<!doctype html> <!-- HTML 5 doctype -->
+<html lang="pt">
+
+<head>
+  <!-- Description meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="O Observatório COVID-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+  <!-- SEO: https://support.google.com/webmasters/answer/35624?hl=en#meta-descriptions -->
+  <title>Observatório COVID-19 BR</title>
+
+  <!-- Bootstrap CSS via BootstrapCDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
+  <link href="./css/custom.css" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="./img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#007bff">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Observatório COVID-19 BR">
+  <meta name="twitter:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="https://covid19br.github.io">
+  <meta property="og:title" content="Bootstrap">
+  <meta property="og:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/bootstrap-social.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/bootstrap-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Ionic Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- Barra Superior -->
+  <nav class="navbar navbar-expand-xl navbar-light">
+    <!-- BOTAO DO MENU -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- LOGO -->
+    <a class="navbar-brand" href="./index.html">
+      <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+    </a>
+
+    <!-- DESTAQUE -->
+    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="nav-link" href="#">
+        São Paulo
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Visão Geral</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./progressao.html#br">Avanço da doença</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">São Paulo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./leitos.html">Leitos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./midia.html">Reportagens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./fontes.html">Fontes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sobre.html">Sobre</a>
+        </li>
+        <!-- MENU.ITEM -->
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Titulo Principal -->
+  <div class="container-fluid mt-2">
+    <div class="main-title">
+      <h1 class="display">Município de&nbsp;</h1>
+      <div class="dropdown">
+        <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="text-reset">
+            <h1 class="display" id="page-title">São Paulo</h1> <!-- PAGE.TITLE -->
+          </a> 
+        </div>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm-left" aria-labelledby="titleDropdown">
+          <a class="dropdown-item active" href="#sp_sp">São Paulo</a>
+        </div>
+      </div>
+      <small class="page-title-update updateDate">Última atualização: </small>
+    </div>
+  </div>
+
+  <!-- Menu-->
+  <div class="card-columns three-one">
+    <!-- COLUMNS.NUM -->
+    <!-- NEW.CARD -->
+
+    <!-- HOSPITALIZAÇÕES.MENU.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu selected" card-id="hosp">
+        <div class="card-body">
+
+          <!-- CARD.HEADER -->
+          <div class="media">
+            <img src="./img/icon_hospital.svg" width=48px alt="Ícone de hospital" class="card-icon">
+            <!-- CARD.TITLE.ICON -->
+            <div class="media-body">
+              <h5 class="card-title">Hospitalizações em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Quantas hospitalizações estimamos ter no município de <span class="municipio"></span>? Quantos teremos nos
+                próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
+
+          <!-- CARD.BUTTON -->
+          <a href="#hosp"><button class="btn btn-primary mt-3" type="button">
+              Veja o gráfico
+            </button></a>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- NEW.CARD -->
+
+    <!-- VELOCIDADE.MENU.CARD -->
+    <a class="text-reset" href="#">
+    <div class="card menu" card-id="vel">
+      <div class="card-body">
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Quão rápido a doença se propaga em <span class="municipio"></span>?
+            </p> <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.BUTTON -->
+        <a href="#vel"><button class="btn btn-primary mt-3" type="button">
+            Confira a estimativa
+          </button></a>
+
+      </div>
+    </div>
+   </a>
+    <!-- NEW.CARD -->
+
+    <!-- MIDIA.CARD -->
+    <a class="text-reset" href="#">
+    <div class="card menu" card-id="infec">
+      <div class="card-body">
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="municipio"></span>?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.BUTTON -->
+        <a href="#infec"><button class="btn btn-primary mt-3" type="button">
+            Saiba mais
+          </button></a>
+
+      </div>
+    </div>
+    </a>
+  </div>
+
+  <!-- Hospital -->
+  <div class="card-deck hosp">
+    <!-- COLUMNS.NUM -->
+    <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Hospitalizações em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantas hospitalizações estimamos ter atualmente?
+          </li>
+        </ul>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3 mb-2">
+          A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (hospitalizados)
+          notificados no município de <span class="municipio"></span> até a data, e a <b style="color:#dc3545">linha vermelha</b> a
+          <b>estimativa</b> corrigindo atrasos</b> de notificação.
+        </p>
+
+
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+          aria-expanded="false" aria-controls="collapseHosp1">
+          Como calculamos este número? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-2" id="collapseHosp1">
+          <p class="text-justify">
+            Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
+            Respiratória Aguda Grave) da
+            base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é,
+            adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
+            notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou
+            leves que não são testados.
+          </p>
+        </div>
+
+        <!-- CARD.TEXT -->
+        <ul class="list-group mt-4">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantas hospitalizações estimamos ter nos próximos dias?
+          </li>
+        </ul>
+        <p class="text-justify mt-3">
+          Os <b style="color:#dc3545">pontos tracejados da linha
+            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre <span class="forecast_min"></span>
+            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de crescimento dos valores
+            corrigidos continuar a mesma dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b>
+            dessa previsão.
+        </p>
+
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+          aria-expanded="false" aria-controls="collapseHosp2">
+          Por que só 5 dias? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-2" id="collapseHosp2">
+          <p class="text-justify">
+            Porque quando o crescimento é exponencial as incertezas também crescem
+            exponencialmente. Por isso a região cinza, que expressa a incerteza da previsão, aumenta de largura com o
+            tempo. Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
+          <p class="text-justify">
+            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
+        </div>
+
+        <!-- CARD.SIGNATURE -->
+        <p class="mb-0">Acesse a página <a href="informacoes.html">informações</a>
+          para saber mais sobre o método.</p>
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+      </div>
+    </div>
+
+    <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
+    <div class="card cd-70">
+      <div class="card-body">
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.nowcast.cum.svg class="placeholder_svg" width="100%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Velocidade-->
+  <div class="card-deck vel">
+    <!-- VELOCIDADE.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Velocidade de propagação em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quão rápido a doença se propaga?
+          </li>
+        </ul>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3 mb-3">
+          O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
+          graves (hospitalizados) no município
+          de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. Esse número depende
+          muito das
+          medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e 
+          <span class="tempo_dupli_max"></span> dias.</b>
+        </p>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <p class="text-justify">
+          A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
+          intervalos de 5 dias (as datas indicam o
+          fim de cada um desses intervalos).</p>
+        <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
+          tempos de duplicação. O
+          intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação variam à
+          medida que o tempo passa.
+        </p>
+      </div>
+    </div>
+
+    <!-- VELOCIDADE.GRAFICO.CARD -->
+    <div class="card cd-70">
+      <div class="card-body">
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Taxa -->
+  <div class="card-deck infec">
+    <!-- COLUMNS.NUM -->
+    <!-- TAXA.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Taxa de infecção em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3 mb-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Para quantas pessoas cada infectado transmite a doença?
+          </li>
+        </ul>
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          O <b style="color:#6f42c1">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
+          infectado. <b>Valores maiores que 1 indicam que a doença está se espalhando</b>. Marcamos este limite com uma
+          linha
+          vermelha.
+        </p>
+        <p class="text-justify re">
+          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos dados
+          estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
+          <span class="re_max"></span>.</b>
+        </p>
+        <p class="text-justify">
+          A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
+          um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
+          chance de incluir o valor real de \(R_e\). No momento há uma grande incerteza quanto ao valor de \(R_e\). No
+          entanto, mesmo <b>o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está
+            em declínio.</b>
+        </p>
+        <p class="text-justify re">
+          <span class="re_analise"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- TAXA.GRAFICO.CARD -->
+    <div class="card cd-70">
+      <div class="card-body">
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.estimate.R0.municipio.svg class="placeholder_svg" width="100%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid">
+    <div class="footer-content">
+      <ion-icon name="logo-github"></ion-icon>
+      <p class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank"
+          class="text-reset">Source Code</a></p>
+    </div>
+    <!-- FOOTER.ITEM -->
+  </footer>
+
+  <!-- JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- R Integration -->
+  <!-- Hora de atualizacao -->
+  <script src="js/updateDate.js"></script>
+  <!-- Conteudo e Menu Dinamico -->
+  <script src="js/updateMunicipio.js"></script>
+  <!-- MathJax: Equacoes -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>

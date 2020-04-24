@@ -1,29 +1,60 @@
-library(rmarkdown)
+# Libraries
+library(widgetframe)
+library(tidyverse)
+library(plotly)
+library(lubridate)
 
-estados.para.atualizar <- c('SP', 'RJ')
-
-source('prepara_dados.R')
-source('ajuste_projecao_exponencial.R')
-source('plots.R')
-
-sigla.estado <- c(AC="Acre", AL="Alagoas", AP="Amapá", AM="Amazonas",
-                  BA="Bahia", CE="Ceará", DF="Distrito Federal", ES="Espírito Santo",
-                  GO="Goiás", MA="Maranhão", MT="Mato Grosso",
-                  MS="Mato Grosso do Sul", MG="Minas Gerais", PA="Pará", PB="Paraíba",
-                  PR="Paraná", PE="Pernambuco", PI="Piauí", RJ="Rio de Janeiro",
-                  RN="Rio Grande do Norte", RS="Rio Grande do Sul",
-                  RO="Rondônia", RR="Roraima", SC="Santa Catarina",
-                  SP="São Paulo", SE="Sergipe", TO="Tocantins")
-
-dynamic_pages <- c('index.Rmd', 'informacoes.Rmd', 'projecao.Rmd')
-# 'propagacao.Rmd', 'transmissao.Rmd'
-# 'casos.Rmd', 
-
-for (f in dynamic_pages){
-    rmarkdown::render(f, output_dir='../')
+# Helper Function
+makeNamedList <- function(...) {
+  structure(list(...), names = as.list(substitute(list(...)))[-1L])
 }
 
-for (st in estados.para.atualizar){
-    rmarkdown::render('estado.Rmd', output_dir='../',
-                      output_file=paste0('../', st, '.html'))
+# Processamento de Dados
+source('prepara_dados.R')
+source('ajuste_projecao_exponencial.R')
+
+# Geracao dos graficos
+source('plots.R')
+
+# Atualizacao do conteudo do site
+# Graficos, tabelas e horário
+
+## Data de Atualizacao
+print("Atualizando data de atualizacao...")
+file <- file("../web/last.update.br.txt") # coloco o nome do municipio?
+writeLines(c(paste(now())), file)
+close(file)
+
+################################################################################
+## Atualiza Plots no site
+################################################################################
+print("Atualizando plots...")
+# Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plot.forecast.exp.br, est.tempo.dupl, proj.num.casos)
+filenames <- names(plots.para.atualizar)
+n <- length(plots.para.atualizar)
+
+for (i in 1:n){
+  graph.html <- ggplotly(plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 50, b = 50, t = 50, pad = 4), title = list(y = 0.94))
+  graph.svg <- plots.para.atualizar[[i]] + theme(axis.text= element_text(size=11, face="plain"),
+                                                 axis.title = element_text(size=14, face="plain"))
+  filepath <- paste("../web/",filenames[i],sep="")
+  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 421, height = 285, units = "mm")
+
+}
+
+################################################################################
+## Atualiza tabelas
+################################################################################
+print("Atualizando tabelas...")
+tables.para.atualizar <- c(serie.temp.table) # Tabelas a serem atualizadas
+names.tables <- makeNamedList(serie.temp.table) # Tabelas a serem atualizadas
+filenames <- names(names.tables)
+n <- length(tables.para.atualizar)
+
+for (i in 1:n){
+  filepath <- paste("../web/",filenames[i],sep="")
+  filename <- paste(filepath,".html",sep="")
+  write_file(tables.para.atualizar[i], filename)
 }
