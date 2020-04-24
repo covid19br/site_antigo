@@ -10,22 +10,28 @@ makeNamedList <- function(...) {
   structure(list(...), names = as.list(substitute(list(...)))[-1L])
 }
 
-## Parsing command line arguments
-#option_list <- list(make_option("--m", default="NULL",
-#                    help = ("Município a ser atualizado"),
-#                    metavar = "m"))
+# if executed from command line, look for arguments
+# else variable `mun` is assumed to be defined
+if (sys.nframe() == 0L) {
+    # Parsing command line arguments
+    option_list <- list(make_option("--m", default="NULL",
+                        help = ("Município a ser atualizado"),
+                        metavar = "m"))
+    
+    parser_object <- OptionParser(usage = "Rscript %prog [Opções] [município]\n", 
+                                  option_list = option_list, 
+                                  description = "Script para atualizar análise e plots do site do OBSERVATORIO COVID-19 BR com resultados por município")
+    
+    opt <- parse_args(parser_object, args = commandArgs(trailingOnly = TRUE), positional_arguments=TRUE)
+    
+    ## aliases
+    mun <- opt$options$m
+}
 
-#parser_object <- OptionParser(usage = "Rscript %prog [Opções] [município]\n", 
-#                              option_list = option_list, 
-#                              description = "Script para atualizar análise e plots do site do OBSERVATORIO COVID-19 BR com resultados por município")
-
-#opt <- parse_args(parser_object, args = commandArgs(trailingOnly = TRUE), positional_arguments=TRUE)
-
-## aliases
-#mun <- opt$options$m
-
-mun = "SP"
-
+if (!exists('mun')){
+    print("Município não definido")
+    quit(status=1)
+}
 print(paste0("Atualizando municipio ", mun))
 
 sigla.municipios <- c(SP="São Paulo")
