@@ -64,7 +64,7 @@ function updatePage(current_id) {
 
     const regex = /"/gi;
     // forecast_exp (hospital)
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_forecasr_exp_municipios.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/data_forecasr_exp_municipios.csv', function (raw_data) {
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
         $(".forecast_min").text(current_data[1]);
@@ -73,7 +73,7 @@ function updatePage(current_id) {
     });
 
     // tempo_dupli (velocidade)
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_tempo_dupli_municipio.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/data_tempo_dupli_municipio.csv', function (raw_data) {
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
         $(".tempo_dupli_min").text(current_data[1]);
@@ -81,7 +81,7 @@ function updatePage(current_id) {
     });
 
     // RE (taxa)
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/data_Re_municipio.csv', function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/data_Re_municipio.csv', function (raw_data) {
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
         $(".re_min").text(current_data[1]);

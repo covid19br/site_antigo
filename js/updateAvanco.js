@@ -289,7 +289,7 @@ function updatePage(current_uf) {
     var filename = 'data_forecast_exp'
     var extension = '_estados.csv';
     if(isBrasil) extension = '_br.csv';
-    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/webdesign/web/' + filename + extension, function (raw_data) {
+    $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/' + filename + extension, function (raw_data) {
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
         $(".forecast_min").text(current_data[1]);
