@@ -154,28 +154,14 @@
   </div>
 
   <!-- Cards -->
-  <div class="card-columns two">
+  <div class="card-deck">
     <!-- COLUMNS.NUM -->
 
     <!-- NEW.CARD -->
 
     <!-- GRAPH.CARD -->
-    <div class="card">
+    <div class="card cd-70 cd-gap">
       <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text inline">Quantos casos notificados já temos <span class="estado-prep"></span>?
-              Quantos teremos nos próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
-
-        <!-- CARD.DATE -->
-        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
-
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.forecast.exp.html" class="codegena_iframe"
           data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
@@ -186,70 +172,67 @@
 
         <!-- CARD.GGPLOT.LEGEND -->
         <div class="card-chartLegend">
-          <small class="chartLegendSquare" id="legendGrey">Casos Confirmados</small>
+          <small class="chartLegendSquare" id="legendBlack">Casos Confirmados</small>
           <small class="chartLegendSquare" id="legendBlue">Previsão</small>
         </div>
 
-        <!-- CARD.TEXT -->
-        <p class="text-justify inline">
-          Pontos pretos indicam o número de casos confirmados notificados <span class="estado-prep"></span>
-          por dia. <b>Pontos em azul são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
-            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>)</b>, se a taxa de
-          crescimento continuar a mesma dos últimos 5 dias. Em cinza é o intervalo de confiança dessa previsão.
-        </p>
+        
       </div>
     </div>
 
     <!-- NEW.CARD -->
 
-    <!-- 5.DAYS.CARD -->
-    <div class="card">
+    <!-- CONTENT.CARD -->
+    <div class="card cd-30">
       <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_calendar.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Precisão da previsão</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Por que somente 5 dias de previsão são exibidos no gráfico?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
+        <!-- AVANCO -->
+        <h5 class="card-title">Avanço da doença <span class="estado-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantos casos notificados temos atualmente?
+          </li>
+        </ul>
 
         <!-- CARD.TEXT -->
-        <p class="text-justify mt-2">
-          Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
-          cinza, que
-          expressa a incerteza da previsão, aumenta de largura com o tempo. E mesmo pequenas mudanças na taxa que
-          aconteçam hoje
-          ou amanhã vão causar enormes variações no futuro.
-        </p>
-        <p class="text-justify">
-          Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+        <p class="text-justify mt-3">
+          Pontos <b>pretos</b> indicam o número de casos confirmados notificados <span class="estado-prep"></span>
+          por dia.
         </p>
 
-        <!-- CARD.SIGNATURE -->
-        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantos casos teremos nos próximos dias?
+          </li>
+        </ul>
 
-      </div>
-    </div>
+        <p class="text-justify mt-3">
+          Pontos em <b style="color:#007bff">azul</b> são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
+            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de
+          crescimento continuar a mesma dos últimos 5 dias. Em <b style="color:#6c757d">cinza</b> é o intervalo de confiança dessa previsão.
+        </p>
 
-    <!-- NEW.CARD -->
-
-    <!-- SPEED.CARD -->
-    <div class="card">
-      <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_virus_double.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">O tempo de duplicação</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quão rápido a doença se propaga?</p> <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#collapse1"
+          aria-expanded="false" aria-controls="collapse1">
+          Por que só 5 dias? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-1" id="collapse1">
+          <p class="text-justify">
+            Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
+            <b style="color:#6c757d">cinza</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
+            E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
+          </p>
+          <p class="text-justify">
+            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
         </div>
 
-        <!-- CARD.TEXT -->
+        <!-- CARD.HEADER 
+
+        <h5 class="card-title">O tempo de duplicação</h5>
+        <p class="card-text">Quão rápido a doença se propaga?</p>
         <p class="text-justify mt-2">
           No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes
           moleculares
@@ -260,16 +243,17 @@
         <p class="text-justify">
           Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria
           irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
-        </p>
+        </p>-->
 
         <!-- CARD.SIGNATURE -->
+        <p class="mb-0 mt-3">Acesse a página <a href="informacoes.html">informações</a>
+          para saber mais sobre o método.</p>
         <div class="blockquote-footer text-right">Observatório COVID-19</div>
 
       </div>
     </div>
 
     <!-- NEW.CARD -->
-
   </div>
 
   <!-- Footer -->

@@ -266,11 +266,14 @@ a.text-reset:hover {
 
 .cd-30 {
     flex: 1 0 32.185%!important;
-    margin-right: 1.25rem!important;
 }
 
 .cd-70 {
     flex: 1 0 65.815%!important;
+}
+
+.cd-gap {
+    margin-right: 1.25rem!important;
 }
 
 .card-deck {
@@ -331,6 +334,10 @@ a.text-reset:hover {
     height: 20px;
     margin: 0 0.5rem 0 0;
     border-radius: 4px;
+}
+
+.chartLegendSquare#legendBlack:before {
+    background-color: #000;
 }
 
 .chartLegendSquare#legendGrey:before {
