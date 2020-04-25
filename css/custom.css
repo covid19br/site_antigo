@@ -468,6 +468,19 @@ th {
     padding: 1.25rem!important;
 }
 
+/* CALENDAR */
+.pagination {
+    margin-bottom: .5rem;
+}
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.month {
+    padding: 0 .5rem 0 0;
+}
+
 /* FOOTER */
 body {
     min-height: 100vh;
