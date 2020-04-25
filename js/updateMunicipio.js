@@ -4,6 +4,7 @@ const municipios =
     [
         {
             id: "sp_sp",
+            prep: "em",
             verbose: "São Paulo"
         }
     ];
@@ -27,6 +28,16 @@ function getVerbose(id) {
     return (def_mun_id);
 }
 
+function getPreposition(id) {
+    for (i = 0; i < municipios.length; i++) {
+        if (municipios[i].id == id) return (municipios[i].prep);
+    }
+
+    // UF not found: returns to default
+    console.log("getVerbose(): id not found "+id);
+    return ("em");
+}
+
 function getId(verbose) {
     for (i = 0; i < municipios.length; i++) {
         if (municipios[i].verbose == verbose) return (municipios[i].id);
@@ -43,6 +54,7 @@ function updatePage(current_id) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_id);
     var current_index = getIndex(current_id);
+    var current_prepo = getPreposition(current_id);
 
     // titulo
     $("#page-title").text(current_state);
@@ -61,6 +73,7 @@ function updatePage(current_id) {
     // conteudo dinamico
     // nome do municipio
     $(".municipio").text(current_state);
+    $(".municipio-prep").text(current_prepo + " " + current_state);
 
     const regex = /"/gi;
     // forecast_exp (hospital)
