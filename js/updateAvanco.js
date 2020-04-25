@@ -174,6 +174,16 @@ function getVerbose(uf) {
     return (def_state_verb);
 }
 
+function getPreposition(uf) {
+    for (i = 0; i < estados.length; i++) {
+        if (estados[i].uf == uf) return (estados[i].prep);
+    }
+
+    // UF not found: returns to default
+    console.log("getPreposition(): uf not found "+uf);
+    return ("em");
+}
+
 function updatePlaceholder(current_uf) {
     // Get Graph's SRCs
     var graph_src = $(".codegena_iframe").attr("data-src");
@@ -265,6 +275,7 @@ function updatePage(current_uf) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_uf);
     var current_index = getIndex(current_uf);
+    var current_prepo = getPreposition(current_uf);
     isBrasil = false;
     if(current_index == 'br') isBrasil = true;
 
@@ -282,6 +293,7 @@ function updatePage(current_uf) {
     // conteudo dinamico
     // nome do estado
     $(".estado").text(current_state);
+    $(".estado-prep").text(current_prepo+" "+current_state);
     
     const regex = /"/gi;
     // forecast_exp
