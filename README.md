@@ -234,6 +234,7 @@ Para manter boa visualização online, cada linha pode conter apenas duas legend
 
 A cor da legenda pode ser alterada substituindo `COR_DA_LEGENDA` por:
 ```
+legendBlack
 legendGrey
 legendBlue
 legendLightBlue
