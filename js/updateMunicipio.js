@@ -99,8 +99,8 @@ function updatePage(current_id) {
         current_data = full_data[current_index].replace(regex, '').split(" ");
         $(".re_min").text(current_data[1]);
         $(".re_max").text(current_data[2]);
-        if(current_data[1] >= 1) $(".re_analise").text("Mas mesmo o limite mínimo do intervalo de confiança está acima de um, indicando que a epidemia continua em expansão rápida.");
-        else if(current_data[2] < 1) $(".re_analise").text("No entanto, mesmo o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
+        if(current_data[1] >= 1) $(".re_analise").text("O limite mínimo do intervalo de confiança está acima de um, indicando que a epidemia continua em expansão rápida.");
+        else if(current_data[2] < 1) $(".re_analise").text("No entanto, o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
         else $(".re_analise").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, \(R_e\) pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
     });
     
