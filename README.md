@@ -173,10 +173,18 @@ Modifique o **título** buscando por `<!-- CARD.TITLE.TEXT -->` e substituindo `
 Existem múltiplos elementos de conteúdo que podem ser combinados livremente em um card:
 
 ##### 2.1.1 Data de atualização (automatica)
-Ao compilar o arquivo `update.R` a hora é atualizada automaticamente. Insira o código a seguir para exibir o horário da última atualização dos gráficos:
+Ao compilar o arquivo `update.R` a hora é atualizada automaticamente para cada página. Insira o código a seguir para exibir o horário da última atualização dos gráficos:
 ```
 <!-- CARD.DATE -->
-<p class="card-date"><small class="updateDate">Última atualização: </small></p>
+<small class="page-title-update updateDate">Última atualização: </small>
+```
+Para cada página, a seguinte função deve ser chamada em `javascript` com o nome do arquivo que contém a data de atualização como argumento:
+```
+updateDate('last.update');
+```
+A página deve incluir o script updateDate.js para correto funcionamento:
+```
+<script src="js/updateDate.js"></script>
 ```
 
 ##### 2.1.2 Data de atualização (manual)
