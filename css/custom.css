@@ -18,7 +18,6 @@ body {
 }
 
 /* TYPE */ 
-
 #navbarDropdown {
     font-family: 'Poppins', sans-serif;
     font-size: .9rem;
@@ -54,13 +53,29 @@ body {
     font-size: .9rem;
     font-weight: 500;
 }
-/* TYPE: DESTAQUE HIDING */
-@media (min-width: 1200px) {
+/* NAVBAR: RESPONSIVE BEHAVIOR */
+@media (max-width: 374px) {
+    .destaque {
+        font-size: .7rem;
+    } 
+}
+
+@media (min-width: 992px) {
     .destaque {
         display: none;
     } 
 }
 
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-item {
+        font-size: .73rem;
+    }
+    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+        font-size: .78rem;
+    }
+}
+
+/* GLOBAL: NAVBAR */
 .navbar-nav {
     margin: 0 0 0 1rem;
 }
@@ -83,6 +98,12 @@ body {
     }
     .nav-link {
         padding: .5rem 0.25rem!important;
+    }
+}
+
+@media (max-width: 374px) {
+    .navbar-logo {
+        height: 28px!important;
     }
 }
 
@@ -208,14 +229,14 @@ body {
     }
 }
 
-/* Auto margin for pages w/ toc */
+/* TOC: Auto margin for pages w/ toc */
 @media (max-width: 1199.98px) {
     .xl-none {
         display: none;
     }
 }
 
-/* CARD CONTENT */
+/* GLOBAL: CARD CONTENT */
 a.text-reset {
     text-decoration: none;
 }
@@ -403,7 +424,7 @@ a.text-reset:hover {
     color: #6c757d;
 }
 
-/* GRAPH */
+/* GLOBAL: GRAPHS */
 #htmlwidget_container {
     position: static!important;
     top: 0px!important;
@@ -418,7 +439,7 @@ iframe {
     height: 350px;
 }
 
-/* TABLES */
+/* GLOBAL: TABLES */
 .horizontal-scroll {
     overflow: hidden;
     overflow-x: auto;

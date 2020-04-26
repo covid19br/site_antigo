@@ -13,10 +13,10 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Bootstrap Table of Contents via jsDelivr -->
-  <link rel="stylesheet" href="./css/toc.css" />
+  <link rel="stylesheet" href="./css/toc.css?ver=1.0" />
   <!-- Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <link href="./css/custom.css?ver=1.0" rel="stylesheet">
+  <link href="./css/custom.css?ver=1.3" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -53,7 +53,7 @@
 
 <body data-spy="scroll" data-target="#toc">
   <!-- Barra Superior -->
-  <nav class="navbar navbar-expand-xl navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <!-- BOTAO DO MENU -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -98,9 +98,6 @@
           <a class="nav-link" href="./midia.html">Reportagens</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./fontes.html">Fontes</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="./sobre.html">Sobre</a>
         </li>
         <!-- MENU.ITEM -->
@@ -128,7 +125,35 @@
       <div class="col-md-8">
         <div class="card-columns one">
 
-          <!-- COLUMNS.NUM -->
+          <!-- NEW.CARD -->
+
+          <!-- Identificador do card -->
+          <div class="card">
+            <div class="card-body">        
+              <!-- CARD.HEADER -->
+              <h5 class="card-title" id="fontes">Fontes</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="mb-3 mt-1">Saiba mais sobre a origem dos dados utilizados em nossas análises</p>
+              <h6 id="fontes-principais" id="fontes-principais">Fontes Principais</h6>
+              <p class="text-justify">
+                Utilizamos os registros das notificações de casos de COVID-19 divulgadas diariamente pelo <b>Ministério da Saúde</b>.
+                A cada atualização na plataforma um programa automático de recuperação de dados nos envia os novos registros e dispara
+                a atualização das análise e gráficos neste site.
+              </p>
+              <h6 id="fontes-principais" id="outras-fontes">Outras Fontes</h6>
+              <p class="text-justify">
+                <ul>
+                  <li>Portal sobre Coronavírus da <a href="https://portal.fiocruz.br/coronavirus">FIOCRUZ</a></li>
+                  <li><a href="https://coronavirus.jhu.edu/map.html">Jonh Hopkins</a> Coronavirus Resource Center</li>
+                  <li>Site sobre epidemia de COVID-19 da <a href="https://www.who.int/health-topics/coronavirus">Organização Mundial da Saúde</a></li>
+                  <li><a href="https://cmmid.github.io/topics/covid19/">CMMID COVID repository</a>, Centre for Mathematical
+                    Modelling of Infectious Diseases, London School of Hygiene and Tropical Medicine.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+
+          <!-- NEW.CARD -->
+
           <div class="card">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -151,6 +176,8 @@
             </div>
           </div>
 
+          <!-- NEW.CARD -->
+
           <div class="card">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -159,8 +186,7 @@
               <!-- CARD.TEXT -->
               <p class="text-justify">
                 Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de
-                confiança
-                dos valores previstos (gráfico ao lado).
+                confiança dos valores previstos (gráfico ao lado).
               </p>
               <img src=./web/proj.num.casos.svg width="45%" style="margin: 0 auto; display: inherit;">
               <p class="card-text legenda"><small> ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de
@@ -173,6 +199,8 @@
               </p>
             </div>
           </div>
+
+          <!-- NEW.CARD -->
 
           <div class="card">
             <!-- CARD.HEADER -->
@@ -206,6 +234,8 @@
             </div>
           </div>
 
+          <!-- NEW.CARD -->
+
           <div class="card">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -227,6 +257,8 @@
               </div>
             </div>
           </div>
+
+          <!-- NEW.CARD -->
 
           <div class="card">
             <!-- CARD.HEADER -->
@@ -264,6 +296,8 @@
               </p>
             </div>
           </div>
+
+          <!-- NEW.CARD -->
 
           <div class="card">
             <!-- CARD.HEADER -->
@@ -321,6 +355,8 @@
             </div>
           </div>
 
+          <!-- NEW.CARD -->
+
           <div class="card">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -360,6 +396,8 @@
               </ol>
             </div>
           </div>
+
+          <!-- NEW.CARD -->
 
           <div class="card">
             <!-- CARD.HEADER -->
