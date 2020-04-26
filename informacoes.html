@@ -12,8 +12,10 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Bootstrap Table of Contents via jsDelivr -->
+  <link rel="stylesheet" href="./css/toc.css" />
   <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <link href="./css/custom.css" rel="stylesheet">
 
   <!-- Favicons -->
@@ -49,7 +51,7 @@
   <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#toc">
   <!-- Barra Superior -->
   <nav class="navbar navbar-expand-xl navbar-light">
     <!-- BOTAO DO MENU -->
@@ -116,272 +118,273 @@
     </div> <!-- PAGE.TITLE -->
   </div>
 
-  <!-- Cards -->
-  <div class="card-columns one">
-    <!-- COLUMNS.NUM -->
-    <div class="card" id="card1">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Estimativa do tempo de duplicação</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          No início das epidemias o número de infectados cresce exponencialmente, o que implica que o tempo para que o
-          número de casos duplique é constante em \(\ln(2)/r\), onde \(r\) é a taxa de crescimento de número de casos.
-          Um crescimento exponencial a taxa constante também implica em uma relação linear entre o logaritmo do número
-          de casos e o tempo. Essa expectativa em geral vale para pequenos intervalos de tempo, na fase inicial de
-          epidemias. É o que vemos para o Brasil, por exemplo, nos cincos dias a partir do dia em que o número de casos
-          chegou a 15 (gráfico ao lado)
-        </p>
-        <img src=./web/est.tempo.dupl.svg width="45%" style="margin: 0 auto; display: inherit;">
-        <p class="text-justify">
-          A linha reta no gráfico mostra o previsto por um modelo linear em escala log para dados de contagem<a
-            href="#1">¹</a>, ajustado a estes dados. Esse modelo estima o valor da taxa de crescimento da epidemia
-          neste período (\(r\), com a qual estimamos o tempo de duplicação.
-        </p>
+  <!-- Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md">
+        <p class="h6 toc-title">Índice</p>
+        <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
       </div>
-    </div>
+      <div class="col-md-8">
+        <div class="card-columns one">
 
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Projeções de número de casos</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de confiança
-          dos valores previstos (gráfico ao lado).
-        </p>
-        <img src=./web/proj.num.casos.svg width="45%" style="margin: 0 auto; display: inherit;">
-        <p class="card-text legenda"><small> ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de
-            2020</small></p> <!-- CARD.IMAGE.LEGENDA -->
-        <p class="text-justify">
-          A extensão da reta de regressão está abaixo dos pontos do número de casos dos próximos cinco dias. Isso mostra
-          que o coeficiente de crescimento exponencial pode variar mesmo na fase inicial da epidemia, o que torna
-          extrapolações de longo prazo muito sujeitas a erros. Apesar disso, o intervalo da previsão do modelo incluiu
-          os números de casos dos cinco dias seguintes, mostrando que essa regressão é útil para fazer previsões de
-          curto prazo.
-        </p>
-      </div>
-    </div>
+          <!-- COLUMNS.NUM -->
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="estimativa-do-tempo-de-duplicação">Estimativa do tempo de duplicação</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                No início das epidemias o número de infectados cresce exponencialmente, o que implica que o tempo para que o número de
+                casos duplique é constante em \(\ln(2)/r\), onde \(r\) é a taxa de crescimento de número de casos. Um crescimento
+                exponencial a taxa constante também implica em uma relação linear entre o logaritmo do número de casos e o tempo. Essa
+                expectativa em geral vale para pequenos intervalos de tempo, na fase inicial de epidemias. É o que vemos para o
+                Brasil, por exemplo, nos cincos dias a partir do dia em que o número de casos chegou a 15 (gráfico ao lado)
+              </p>
+              <img src=./web/est.tempo.dupl.svg width="45%" style="margin: 0 auto; display: inherit;">
+              <p class="text-justify">
+                A linha reta no gráfico mostra o previsto por um modelo linear em escala log para dados de contagem<a
+                  href="#1">¹</a>, ajustado a estes dados. Esse modelo estima o valor da taxa de crescimento da epidemia
+                neste período (\(r\), com a qual estimamos o tempo de duplicação.
+              </p>
+            </div>
+          </div>
 
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Análise de erro das nossas previsões</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          Estamos há 20 dias no ar fazendo previsões do número de casos confirmados para os próximos 5 dias. Fizemos,
-          neste momento, uma análise de nossas previsões. Para tanto, contruímos um histograma da diferença entre o
-          valor predito e o valor observado, divida pelo intervalo de confiança do valor predito. Isso significa dizer
-          que o valor observado ficou dentro do intervalo de confiança de valor previsto caso ele apareça entre +100% ou
-          -100%. Indicamos esses limites como linhas horizontais em vermelho.
-        </p>
-        <img src="./fig/erros.jpeg" width="45%" style="margin: 0 auto; display: inherit;"
-          alt="Gráfico que representa o número de casos em escala logarítmica, com uma regressão linear e a projeção para os próximos 5 dias em um intervalo.">
-        <p class="card-text legenda"><small>ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e valores
-            previstos de 12 a 16 de março de 2020.</small></p> <!-- CARD.IMAGE.LEGENDA -->
-        <p class="text-justify">
-          Os pontos em verde são as previsões acertadas, enquanto que os pontos em vermelho indicam as previsões
-          erradas. Na previsão do dia seguinte, acertamos aprox. 91% das vezes (20 acertos em 22 previsões). Na previsão
-          para dois dias à frente, acertamos aprox. 86% das vezes (18 acertos em 21 previsões). Já nas previsões para
-          três, quatro e cinco dias à frente, acertamos 80%, 68% e 72%, respectivamente.
-        </p>
-        <p class="text-justify">
-          Podemos observar que os erros ocorreram especialmente na última semana (25~29/03), quando ocorreu um grande
-          aumento no tempo de duplicação dos casos confirmados. É notável também que nosso modelo sempre sobrestima
-          quando erra, i.e., prevemos um número maior do que observado quando erramos. Isto é provavelmente relacionado
-          com o fator de subnotificações e atrasos nas notificações.
-        </p>
-      </div>
-    </div>
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="projeções-de-número-de-casos">Projeções de número de casos</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de
+                confiança
+                dos valores previstos (gráfico ao lado).
+              </p>
+              <img src=./web/proj.num.casos.svg width="45%" style="margin: 0 auto; display: inherit;">
+              <p class="card-text legenda"><small> ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de
+                  2020</small></p> <!-- CARD.IMAGE.LEGENDA -->
+              <p class="text-justify">
+                A extensão da reta de regressão está abaixo dos pontos do número de casos dos próximos cinco dias. Isso mostra que o
+                coeficiente de crescimento exponencial pode variar mesmo na fase inicial da epidemia, o que torna extrapolações de
+                longo prazo muito sujeitas a erros. Apesar disso, o intervalo da previsão do modelo incluiu os números de casos dos
+                cinco dias seguintes, mostrando que essa regressão é útil para fazer previsões de curto prazo.
+              </p>
+            </div>
+          </div>
 
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Série temporal dos tempos de duplicação</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          Para avaliar o quanto o crescimento da epidemia varia ao longo do tempo, ajustamos o modelo linear para
-          períodos de cinco dias, a partir de quando foram registrados 15 casos. Estimamos o tempo de duplicação e o
-          respectivo intervalo de confiança para cada um desses modelos. Assim, a primeira estimativa é para o período
-          de 07 de março a 12 de março. A segunda é para o período de 08 de março a 13 de março e assim sucessivamente.
-          A tabela ao lado exemplifica os resultados obtidos para os primeiros 10 dias a partir do dia com 15 casos:
-        </p>
-        <!-- CARD.TABELA -->
-        <div class="horizontal-scroll">
-          <include
-            src="https://raw.githubusercontent.com/badain/covid19br.github.io/master/_src/tabela_serie_temporal.html">
-            Carregando...</include>
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="análise-de-erro-das-nossas-previsões">Análise de erro das nossas previsões</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                Estamos há 20 dias no ar fazendo previsões do número de casos confirmados para os próximos 5 dias. Fizemos, neste
+                momento, uma análise de nossas previsões. Para tanto, contruímos um histograma da diferença entre o valor predito e o
+                valor observado, divida pelo intervalo de confiança do valor predito. Isso significa dizer que o valor observado ficou
+                dentro do intervalo de confiança de valor previsto caso ele apareça entre +100% ou -100%. Indicamos esses limites como
+                linhas horizontais em vermelho.
+              </p>
+              <img src="./fig/erros.jpeg" width="45%" style="margin: 0 auto; display: inherit;"
+                alt="Gráfico que representa o número de casos em escala logarítmica, com uma regressão linear e a projeção para os próximos 5 dias em um intervalo.">
+              <p class="card-text legenda"><small>ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março e
+                  valores previstos de 12 a 16 de março de 2020.</small></p> <!-- CARD.IMAGE.LEGENDA -->
+              <p class="text-justify">
+                Os pontos em verde são as previsões acertadas, enquanto que os pontos em vermelho indicam as previsões erradas. Na
+                previsão do dia seguinte, acertamos aprox. 91% das vezes (20 acertos em 22 previsões). Na previsão para dois dias à
+                frente, acertamos aprox. 86% das vezes (18 acertos em 21 previsões). Já nas previsões para três, quatro e cinco dias à
+                frente, acertamos 80%, 68% e 72%, respectivamente.
+              </p>
+              <p class="text-justify">
+                Podemos observar que os erros ocorreram especialmente na última semana (25~29/03), quando ocorreu um grande aumento no
+                tempo de duplicação dos casos confirmados. É notável também que nosso modelo sempre sobrestima quando erra, i.e.,
+                prevemos um número maior do que observado quando erramos. Isto é provavelmente relacionado com o fator de
+                subnotificações e atrasos nas notificações.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="série-temporal-dos-tempos-de-duplicação">Série temporal dos tempos de duplicação</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                Para avaliar o quanto o crescimento da epidemia varia ao longo do tempo, ajustamos o modelo linear para períodos de
+                cinco dias, a partir de quando foram registrados 15 casos. Estimamos o tempo de duplicação e o respectivo intervalo de
+                confiança para cada um desses modelos. Assim, a primeira estimativa é para o período de 07 de março a 12 de março. A
+                segunda é para o período de 08 de março a 13 de março e assim sucessivamente. A tabela ao lado exemplifica os
+                resultados obtidos para os primeiros 10 dias a partir do dia com 15 casos:
+              </p>
+              <!-- CARD.TABELA -->
+              <div class="horizontal-scroll">
+                <include
+                  src="https://raw.githubusercontent.com/badain/covid19br.github.io/master/_src/tabela_serie_temporal.html">
+                  Carregando...</include>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="estimativa-do-número-de-reprodução-da-epidemia">Estimativa do Número de Reprodução da Epidemia</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                Em epidemiologia, uma das medidas mais importantes é o número reprodutivo basal ou razão de reprodução básica
+                (\(R_0\)). Essa medida indica o número de casos secundários que um indivíduo infeccioso pode gerar em uma população
+                totalmente suscetível. Apesar de ser muito útil para avaliar o potencial de propagação de doenças infecciosas em
+                diferentes contextos, \(R_0\) é uma medida teórica. Com a propagação de doenças infecciosas com altas taxas de
+                transmissibilidade, muitas pessoas se infectam e, em diversos casos, indivíduos que já foram infectados podem
+                tornar-se resistentes, não pertencendo mais ao grupo de suscetíveis. Neste momento, a premissa de uma população
+                totalmente suscetível passa a não ser mais uma boa aproximação da realidade e uma nova medida epidemiológica faz-se
+                necessária. Essa medida é o número reprodutivo efetivo ou razão de reprodução efetiva (\(R_e\)). Esse número indica o
+                número de casos secundários produzidos em uma população na qual nem todos são suscetíveis.
+              </p>
+              <img src="./fig/R0_prsc.png" width="45%" style="margin: 0 auto; display: inherit;"
+                alt="Gráfico que representa o número de casos em escala logarítmica, com uma regressão linear e a projeção para os próximos 5 dias em um intervalo.">
+              <p class="text-justify">
+                Para analisar a dinâmica instantânea de uma doença infecciosa que tem potencial de infectar grande parte da população, o
+                valor de \(R_e\) calculado ao longo do tempo pode informar o quão crítico é o atual estágio de uma epidemia. Podemos
+                calcular o \(R_e\) utilizando séries temporais de dados de incidência (novos casos a cada dia, semana, etc) e a
+                distribuição do intervalo serial, definido como o intervalo de tempo entre o início da doença em um caso primário e o
+                início da doença em um caso secundário. O intervalo serial é uma medida difícil de ser obtida, principalmente para
+                doenças infecciosas com pouco estudo epidemiológico. Para contornar esse problema, pode-se estimar o valor de \(R_e\)
+                considerando incertezas na medida do intervalo serial.
+              </p>
+              <p class="text-justify">
+                Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19 para estimar diariamente os valores de \(R_e\),
+                utilizando a metodologia de Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software R (Cori 2020). Para a
+                medida de intervalo serial, utilizamos uma distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e desvio
+                padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo Nishiura et al. (2020).
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="como-se-estima-o-número-de-casos-graves">Como se estima o número de casos graves?</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <p class="text-justify">
+                Para calcular uma estimativa do número de casos graves a cada dia, utilizamos os dados de notificação de
+                <b>hospitalizações</b> por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo.
+                É nesta base que são notificados os casos graves suspeitos de COVID-19, que são os casos SRAG hospitalizados. Cada um
+                desses casos deve ser investigado para confirmação ou não como caso de COVID-19. </p>
+              <p class="text-justify">
+                A este conjunto de dados é aplicada uma técnica estatística Bayesiana de <i>nowcasting</i>, um método que corrige os
+                atrasos do sistema de notificação vigente, isto é, adianta-se as notificações oficiais futuras pelo tempo médio entre a
+                ocorrência dos primeiros sintomas no paciente e a hospitalização, quando há o registro dos seus dados no sistema de
+                vigilância.
+              </p>
+              <p class="text-justify">
+                Esse tempo abrange várias etapas: desde procurar um hospital, coletar o exame, o exame ser realizado e o resultado do
+                teste positivo para Covid-19 estar disponível para ser incluído no banco de dados. O tempo acumulado entre essas etapas
+                do processo causa atrasos de vários dias entre o número de casos confirmados no SIVEP-Gripe e os casos ainda não
+                disponíveis no sistema, que são compensados somando aos casos já confirmados uma estimativa de casos que devem ser
+                confirmados no futuro. O método que usamos foi proposto por McGough et.al. (2019) e implementado usando o pacote NobBS
+                do R (McGough et.al. 2020).
+              </p>
+              <p class="text-justify">
+                Essa <b>não é uma estimativa do número total</b> de pessoas infectadas pelo novo coronavírus, apenas de casos graves
+                hospitalizados e notificados no sistema de vigilância. Isso porque os casos notificados oficialmente diferem do número
+                de casos reais na mesma data pois são distorcidos tanto por atrasos de notificação (corrigidos pelo nowcasting) quanto
+                por subnotificação (corrigida por outros métodos). Uma das razões da subnotificação é o próprio modelo de vigilância. No
+                Brasil, por exemplo, nem todos os possíveis infectados são testados, então casos leves e casos assintomáticos não são
+                detectados pela base de dados do SRAG <a href="#2">²</a>. No caso de transmissão comunitária, como temos hoje, seria
+                necessário testar toda a população para eliminar a subnotificação. Hoje, no Brasil, o protocolo assegura exames
+                prioritariamente para casos graves (hospitalizações), profissionais da saúde e óbitos. </p>
+              <p class="text-justify">
+                Créditos: Observatório COVID-19 BR em parceria com o Grupo Técnico de Assessoramento em Epidemiologia e
+                Modelagem Matemática COVID19 (SMS SP), composto por Ana Freitas Ribeiro (medica sanitarista @ IIER –
+                professora Uninove e USCS,
+                <a href="http://lattes.cnpq.br/2580724337528147">CV</a>),
+                Hélio Neves (medico sanitarista @ SMS-SP – professor FCMSCSP,
+                <a href="http://lattes.cnpq.br/2581276764223304">CV</a>
+                ), José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP), Karina de Cassia Braga
+                Ribeiro
+                (professora @ FCMSCSP,
+                <a href="http://lattes.cnpq.br/6967301297739351">CV</a>
+                ), Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP,
+                <a href="http://lattes.cnpq.br/7977489515345196">CV</a>
+                ), Paulo Carrara de Castro (professor @ FCMSCSP,
+                <a href="http://lattes.cnpq.br/1797989230776090">CV</a>
+                ) e Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP,
+                <a href="http://lattes.cnpq.br/4067424355078812">CV</a>).
+
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="referências">Referências</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <ol>
+                <li>Ane Cori (2019). EpiEstim: Estimate Time Varying Reproduction Numbers from Epidemic Curves. R
+                  package version 2.2-1. <a href="https://CRAN.R-project.org/package=EpiEstim"
+                    target="_blank">https://CRAN.R-project.org/package=EpiEstim</a>
+                </li>
+                <li>Wallinga J and Teunis P. Different Epidemic Curves for Severe Acute Respiratory Syndrome
+                  Reveal
+                  Similar Impacts of Control Measures, American Journal of Epidemiology, Volume 160, Issue 6, 15
+                  September
+                  2004, Pages 509–516, <a href="https://doi.org/10.1093/aje/kwh255"
+                    target="_blank">https://doi.org/10.1093/aje/kwh255</a>
+                </li>
+                <li>Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novelcoronavirus (COVID-19)
+                  infections. International Journal of Infectious Diseases, 2020. doi: <a
+                    href="https://doi.org/10.1016/j.ijid.2020.02.060"
+                    target="_blank">https://doi.org/10.1016/j.ijid.2020.02.060</a>
+                </li>
+                <li>
+                  McGough, Sarah , Michael A. Johansson, Marc Lipsitch, Nicolas A. Menzies (2019). Nowcasting by
+                  Bayesian
+                  Smoothing: A flexible, generalizable model for real-time epidemic tracking. bioRxiv 663823; doi: <a
+                    href="https://doi.org/10.1101/663823" target="_blank">https://doi.org/10.1101/663823</a>
+                </li>
+                <li>
+                  McGough, Sarah, Nicolas Menzies, Marc Lipsitch and Michael Johansson (2020). NobBS: Nowcasting by
+                  Bayesian
+                  Smoothing. R package version 0.1.0. <a href="https://CRAN.R-project.org/package=NobBS"
+                    target="_blank">https://CRAN.R-project.org/package=NobBS</a>
+                </li>
+
+              </ol>
+            </div>
+          </div>
+
+          <div class="card">
+            <!-- CARD.HEADER -->
+            <div class="card-body">
+              <!-- CONTEÚDO AQUI -->
+              <h5 class="card-title" id="notas">Notas</h5><a class="return" href="#toc">↩</a> <!-- CARD.TITLE.TEXT -->
+              <!-- CARD.TEXT -->
+              <ol>
+                <li id="nota1">Modelo linear generalizado Poisson (glm), com função de ligação logarítimica. <a
+                    href="#estimativa-do-tempo-de-duplicação">↩</a>
+                </li>
+                <li id="2">No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num
+                  sistema
+                  separado, chamado E-SUS VE, o que inclui casos leves. Profissionais de saúde são testados e se
+                  positivam
+                  passam a casos confirmados nessa base. <a href="#como-se-estima-o-número-de-casos-graves">↩</a>
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Estimativa do Número de Reprodução da Epidemia</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          Em epidemiologia, uma das medidas mais importantes é o número reprodutivo basal ou razão de reprodução
-          básica
-          (\(R_0\)). Essa medida indica o número de casos secundários que um indivíduo infeccioso pode gerar em uma
-          população totalmente suscetível. Apesar de ser muito útil para avaliar o potencial de propagação de doenças
-          infecciosas em diferentes contextos, \(R_0\) é uma medida teórica. Com a propagação de doenças infecciosas
-          com
-          altas taxas de transmissibilidade, muitas pessoas se infectam e, em diversos casos, indivíduos que já foram
-          infectados podem tornar-se resistentes, não pertencendo mais ao grupo de suscetíveis. Neste momento, a
-          premissa de uma população totalmente suscetível passa a não ser mais uma boa aproximação da realidade e uma
-          nova medida epidemiológica faz-se necessária. Essa medida é o número reprodutivo efetivo ou razão de
-          reprodução efetiva (\(R_e\)). Esse número indica o número de casos secundários produzidos em uma população
-          na
-          qual nem todos são suscetíveis.
-        </p>
-        <img src="./fig/R0_prsc.png" width="45%" style="margin: 0 auto; display: inherit;"
-          alt="Gráfico que representa o número de casos em escala logarítmica, com uma regressão linear e a projeção para os próximos 5 dias em um intervalo.">
-        <p class="text-justify">
-          Para analisar a dinâmica instantânea de uma doença infecciosa que tem potencial de infectar grande parte da
-          população, o valor de \(R_e\) calculado ao longo do tempo pode informar o quão crítico é o atual estágio de
-          uma epidemia. Podemos calcular o \(R_e\) utilizando séries temporais de dados de incidência (novos casos a
-          cada dia, semana, etc) e a distribuição do intervalo serial, definido como o intervalo de tempo entre o
-          início
-          da doença em um caso primário e o início da doença em um caso secundário. O intervalo serial é uma medida
-          difícil de ser obtida, principalmente para doenças infecciosas com pouco estudo epidemiológico. Para
-          contornar
-          esse problema, pode-se estimar o valor de \(R_e\) considerando incertezas na medida do intervalo serial.
-        </p>
-        <p class="text-justify">
-          Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19 para estimar diariamente os valores de
-          \(R_e\), utilizando a metodologia de Wallinga e Teunis (2004) e implementada no pacote
-          EpiEstim do software R (Cori 2020). Para a medida de intervalo serial, utilizamos uma distribuição
-          log-normal
-          truncada com média 4.8 (IC 95%, 3.8 - 6.1) e desvio padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o
-          estudo Nishiura et al. (2020).
-        </p>
+      <div class="col xl-none">
       </div>
     </div>
-
-    <div class="card" id="card2">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Como se estima o número de casos graves?</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          Para calcular uma estimativa do número de casos graves a cada dia, utilizamos os dados de notificação de
-          <b>hospitalizações</b> por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de
-          São Paulo. É nesta base que são notificados os casos graves suspeitos de COVID-19, que são os casos SRAG
-          hospitalizados. Cada um desses casos deve ser investigado para confirmação ou não como caso de COVID-19.
-        </p>
-        <p class="text-justify">
-          A este conjunto de dados é aplicada uma técnica estatística Bayesiana de <i>nowcasting</i>, um método que
-          corrige os atrasos do sistema de notificação vigente, isto é, adianta-se as notificações oficiais futuras pelo
-          tempo médio entre a ocorrência dos primeiros sintomas no paciente e a hospitalização, quando há o registro dos
-          seus dados no sistema de vigilância.
-        </p>
-        <p class="text-justify">
-          Esse tempo abrange várias etapas: desde procurar um hospital, coletar o exame, o exame ser realizado e o
-          resultado do teste positivo para Covid-19 estar disponível para ser incluído no banco de dados. O tempo
-          acumulado entre essas etapas do processo causa atrasos de vários dias entre o número de casos confirmados no
-          SIVEP-Gripe e os casos ainda não disponíveis no sistema, que são compensados somando aos casos já confirmados
-          uma estimativa de casos que devem ser confirmados no futuro. O método que usamos foi proposto por McGough
-          et.al. (2019) e implementado usando o pacote NobBS do R (McGough et.al. 2020).
-        </p>
-        <p class="text-justify">
-          Essa <b>não é uma estimativa do número total</b> de pessoas infectadas pelo novo coronavírus, apenas de casos
-          graves hospitalizados e notificados no sistema de vigilância. Isso porque os casos notificados oficialmente
-          diferem do número de casos reais na mesma data pois são distorcidos tanto por atrasos de notificação
-          (corrigidos pelo nowcasting) quanto por subnotificação (corrigida por outros métodos). Uma das razões da
-          subnotificação é o próprio modelo de vigilância. No Brasil, por exemplo, nem todos os possíveis infectados são
-          testados, então casos leves e casos assintomáticos não são detectados pela base de dados do SRAG <a
-            href="#2">²</a>. No caso de transmissão comunitária, como temos hoje, seria necessário testar toda a
-          população
-          para eliminar a subnotificação. Hoje, no Brasil, o protocolo assegura exames prioritariamente para casos
-          graves (hospitalizações), profissionais da saúde e óbitos.
-        </p>
-        <p class="text-justify">
-          Créditos: Observatório COVID-19 BR em parceria com o Grupo Técnico de Assessoramento em Epidemiologia e
-          Modelagem Matemática COVID19 (SMS SP), composto por Ana Freitas Ribeiro (medica sanitarista @ IIER –
-          professora Uninove e USCS,
-          <a href="http://lattes.cnpq.br/2580724337528147">CV</a>),
-          Hélio Neves (medico sanitarista @ SMS-SP – professor FCMSCSP,
-          <a href="http://lattes.cnpq.br/2581276764223304">CV</a>
-          ), José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP), Karina de Cassia Braga Ribeiro
-          (professora @ FCMSCSP,
-          <a href="http://lattes.cnpq.br/6967301297739351">CV</a>
-          ), Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP,
-          <a href="http://lattes.cnpq.br/7977489515345196">CV</a>
-          ), Paulo Carrara de Castro (professor @ FCMSCSP,
-          <a href="http://lattes.cnpq.br/1797989230776090">CV</a>
-          ) e Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP,
-          <a href="http://lattes.cnpq.br/4067424355078812">CV</a>).
-
-        </p>
-      </div>
-    </div>
-
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Referências</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <ol>
-          <li>Ane Cori (2019). EpiEstim: Estimate Time Varying Reproduction Numbers from Epidemic Curves. R
-            package version 2.2-1. <a href="https://CRAN.R-project.org/package=EpiEstim"
-              target="_blank">https://CRAN.R-project.org/package=EpiEstim</a>
-          </li>
-          <li>Wallinga J and Teunis P. Different Epidemic Curves for Severe Acute Respiratory Syndrome
-            Reveal
-            Similar Impacts of Control Measures, American Journal of Epidemiology, Volume 160, Issue 6, 15 September
-            2004, Pages 509–516, <a href="https://doi.org/10.1093/aje/kwh255"
-              target="_blank">https://doi.org/10.1093/aje/kwh255</a>
-          </li>
-          <li>Nishiura H, Linton NM, Akhmetzhanov AR, Serial interval of novelcoronavirus (COVID-19)
-            infections. International Journal of Infectious Diseases, 2020. doi: <a
-              href="https://doi.org/10.1016/j.ijid.2020.02.060"
-              target="_blank">https://doi.org/10.1016/j.ijid.2020.02.060</a>
-          </li>
-          <li>
-            McGough, Sarah , Michael A. Johansson, Marc Lipsitch, Nicolas A. Menzies (2019). Nowcasting by Bayesian
-            Smoothing: A flexible, generalizable model for real-time epidemic tracking. bioRxiv 663823; doi: <a
-              href="https://doi.org/10.1101/663823" target="_blank">https://doi.org/10.1101/663823</a>
-          </li>
-          <li>
-            McGough, Sarah, Nicolas Menzies, Marc Lipsitch and Michael Johansson (2020). NobBS: Nowcasting by Bayesian
-            Smoothing. R package version 0.1.0. <a href="https://CRAN.R-project.org/package=NobBS"
-              target="_blank">https://CRAN.R-project.org/package=NobBS</a>
-          </li>
-
-        </ol>
-      </div>
-    </div>
-
-    <!-- NEW.CARD -->
-
-    <div class="card">
-      <!-- CARD.HEADER -->
-      <div class="card-body">
-        <!-- CONTEÚDO AQUI -->
-        <h5 class="card-title">Notas</h5> <!-- CARD.TITLE.TEXT -->
-        <!-- CARD.TEXT -->
-        <ol>
-          <li id="nota1">Modelo linear generalizado Poisson (glm), com função de ligação logarítimica. <a
-              href="#card1">↩</a>
-          </li>
-          <li id="2">No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num sistema
-            separado, chamado E-SUS VE, o que inclui casos leves. Profissionais de saúde são testados e se positivam
-            passam a casos confirmados nessa base. <a href="#card2">↩</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-
-
-    <!-- NEW.CARD -->
   </div>
 
   <!-- Footer -->
@@ -404,8 +407,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <!-- Bootstrap Table of Contents via jsDelivr -->
+  <script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
+  <!-- Custom Scripts -->
   <script src="js/updateDate.js"></script>
   <script src="js/updateTable.js"></script>
+  <!-- MathJAX via JSDelivr -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </body>
