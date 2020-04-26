@@ -480,13 +480,21 @@ th {
     padding: 1.25rem!important;
 }
 
-/* FAVICON */
+/* MIDIA: REPORTAGENS */
+.news-month {
+    margin: 1rem 0 .25rem 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.news-week {
+    margin: .25rem 0 .25rem 1rem;
+}
 .favicon {
     width: 16px;
     margin: 0 .5rem 0 0;
 }
 
-/* CALENDAR */
+/* MIDIA: CALENDAR */
 .pagination {
     margin-bottom: .5rem;
 }
@@ -495,11 +503,11 @@ th {
     flex-wrap: wrap;
     justify-content: center;
 }
-.month {
+.calendar-month {
     padding: 0 .5rem 0 0;
 }
 
-/* FOOTER */
+/* GLOBAL: FOOTER */
 body {
     min-height: 100vh;
     position: relative;
