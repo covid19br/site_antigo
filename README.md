@@ -40,7 +40,7 @@ Para instalar o Rstudio, primeiro, entre [aqui](https://rstudio.com/products/rst
 
 A instalação da maioria das bibliotecas se resolve com `install.packages("package_name")`, em R.Para instalar todas as bibliotecas necessárias, execute o arquivo "./_src/install_packages.R". São as bibliotecas a seguir:
 ```r
-packages <- c("ggplot2", "tidyverse", "knitr", "plotly", "tidyr", "dplyr", "widgetframe", "rmarkdown", "zoo", "EpiEstim", "lubridate", "readr", "cowplot", "svglite")
+packages <- c("ggplot2", "tidyverse", "knitr", "plotly", "tidyr", "dplyr", "widgetframe", "rmarkdown", "zoo", "EpiEstim", "lubridate", "readr", "svglite")
 for (p in packages) if(!require(p, character.only=T)) install.packages(p)
 ```
 
@@ -67,9 +67,9 @@ $ Rscript update_estado.R
 
 Se quer executar todos ao mesmo tempo,
 ```bash
-$ Rscript update_web.R
+$ Rscript update_all.R
 ```
-Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos `.html` estarão atualizados, e podem ser vistos diretamente no navegador.
+Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos referentes aos gráficos em `.html` e `.svg` serão atualizados na pasta `web`, e podem ser vistos individualmente direto no navegador.
 
 ## Criando novos gráficos
 Após terminar de criar um gráfico novo, para que ele seja incluído no html, o primeiro passo é fazer com que ele seja transformado em imagem ".svg" e um código ".html" com ggplotly (que garante a interatividade do gráfico no site).
