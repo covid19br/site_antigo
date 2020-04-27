@@ -57,7 +57,7 @@ $ Rscript update.R
 
 Se executar as funções para os modelos referentes ao município é o que você procura, execute
 ```bash
-$ Rscript update_municipio.R
+$ Rscript update_municipio.R --m SP
 ```
 
 Se o que quer é executar as funções para os modelos referentes aos estados, execute
