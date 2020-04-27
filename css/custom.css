@@ -439,6 +439,23 @@ iframe {
     height: 350px;
 }
 
+/* GLOBAL: TOAST */
+.toast-wrap {
+    width:100%;
+    z-index:1010;
+    position:fixed;
+    bottom: 1.5rem;
+    padding: 0 1.5rem 0 0;
+    justify-content: flex-end;
+}
+
+@media (max-width: 991.98px) { 
+.toast-wrap {
+    padding: 0;
+    justify-content: center;
+}
+}
+
 /* GLOBAL: TABLES */
 .horizontal-scroll {
     overflow: hidden;

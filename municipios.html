@@ -14,7 +14,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <!-- Poppins Font -->
-  <link href="./css/custom.css?ver=1.3" rel="stylesheet">
+  <link href="./css/custom.css?ver=1.4" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -516,6 +516,22 @@
     <!-- FOOTER.ITEM -->
   </footer>
 
+  <!-- Toast -->
+  <div aria-live="polite" aria-atomic="true" class="d-flex toast-wrap">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-grafico">
+      <div class="toast-header">
+        <img src="./img/favicons/favicon-16x16.png" class="rounded mr-2" alt="Logo do Observatório">
+        <strong class="mr-auto">Observatório Covid-19 BR</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Clique no gráfico para explorar os dados
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -531,6 +547,8 @@
   <script src="js/updateDate.js"></script>
   <!-- Conteudo e Menu Dinamico -->
   <script src="js/updateMunicipio.js"></script>
+  <!-- Dispara Toast Messages -->
+  <script src="js/updateToast.js"></script>
   <!-- MathJax: Equacoes -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
