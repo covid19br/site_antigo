@@ -14,7 +14,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <!-- Poppins Font -->
-  <link href="./css/custom.css?ver=1.3" rel="stylesheet">
+  <link href="./css/custom.css?ver=1.5" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -66,7 +66,7 @@
     <!-- DESTAQUE -->
     <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <a class="nav-link" href="#">
+      <a href="#">
         São Paulo
       </a>
     </div>
@@ -137,8 +137,8 @@
             <img src="./img/icon_hospital.svg" width=48px alt="Ícone de hospital" class="card-icon">
             <!-- CARD.TITLE.ICON -->
             <div class="media-body">
-              <h5 class="card-title">Hospitalizações <span class="municipio-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quantas hospitalizações estimamos <span class="municipio-prep"></span></h5>? Quantos teremos nos
+              <h5 class="card-title">Casos graves de COVID-19 <span class="municipio-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Quantos casos graves estimamos <span class="municipio-prep"></span></h5>? Quantos teremos nos
                 próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
@@ -213,18 +213,18 @@
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Hospitalizações em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Casos graves de COVID-19 em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantas hospitalizações estimamos ter atualmente?
+            Quantos casos graves estimamos ter atualmente?
           </li>
         </ul>
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
-          A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (hospitalizados)
+          A <b style="color:#17a2b8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (que estão ou serão hospitalizados)
           notificados no município de <span class="municipio"></span> até a data, e a <b style="color:#dc3545">linha
-            vermelha</b> a <b>estimativa</b> corrigindo atrasos</b> de notificação.
+            vermelha</b> a <b>estimativa</b> corrigindo o tempo entre os primeiros sintomas e </b> a notificação.
         </p>
 
         <!-- CARD.BUTTON.EXPAND -->
@@ -236,18 +236,25 @@
         <div class="collapse mt-2" id="collapseHosp1">
           <p class="text-justify">
             Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
-            Respiratória Aguda Grave) da
-            base SIVEP-Gripe e uma técnica estatística que corrige os atrasos do sistema de notificação, isto é,
+            Respiratória Aguda Grave), que é o quadro grave da COVID-19 e também de outras doenças.
+	    Desde o início da pandemia de
+	    COVID-19 no Brasil todos esses casos graves são notificados como casos suspeitos,
+	    que são então investigados com testes laboratoriais. Se o resultado do teste é positivo o caso
+	    passa de suspeito a confirmado para COVID-19. Essas notificações e confirmações são registradas
+	    numa base de dados do Ministério da Saúde chamada base SIVEP-Gripe.
+	    Estimamos o número atual de casos graves com uma técnica estatística
+	    que corrige os atrasos do sistema de notificação, isto é,
             adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
-            notificado no sistema de vigilância. Essa técnica não corrige a subnotificação de casos assintomáticos ou
-            leves que não são testados.
+            incluído no sistema de vigilância. Essa técnica não corrige subnotificações,
+	    como as causadas  por casos assintomáticos ou
+            leves que não são testados, por exemplo.
           </p>
         </div>
 
         <!-- CARD.TEXT -->
         <ul class="list-group mt-4">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantas hospitalizações estimamos ter nos próximos dias?
+            Quantos casos graves estimamos ter nos próximos dias?
           </li>
         </ul>
         <p class="text-justify mt-3">
@@ -263,7 +270,7 @@
 
 
         <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+        <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
           aria-expanded="false" aria-controls="collapseHosp2">
           Por que só 5 dias? ▾
         </button>
@@ -280,7 +287,7 @@
         </div>
 
         <!-- CARD.SIGNATURE -->
-        <p class="mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+        <p class="mt-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
           para saber mais sobre o método.</p>
         <div class="blockquote-footer text-right">Observatório COVID-19</div>
       </div>
@@ -368,9 +375,10 @@
         <!-- CARD.TEXT -->
         <p class="text-justify">
           O <b style="color:#6f42c1">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
-          infectado. <b>Valores maiores que 1 indicam que a doença está se espalhando</b>. Marcamos este limite com uma
-          linha
-          vermelha.
+          infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
+          linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
+	  E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+	  de casos.
         </p>
         <p class="text-justify re">
           Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
@@ -381,9 +389,7 @@
         <p class="text-justify">
           A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
           um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
-          chance de incluir o valor real de \(R_e\). No momento há uma grande incerteza quanto ao valor de \(R_e\). No
-          entanto, mesmo <b>o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está
-            em declínio.</b>
+          chance de incluir o valor real de \(R_e\). 
         </p>
         <p class="text-justify re">
           <span class="re_analise"></span>
@@ -516,6 +522,22 @@
     <!-- FOOTER.ITEM -->
   </footer>
 
+  <!-- Toast -->
+  <div aria-live="polite" aria-atomic="true" class="d-flex toast-wrap">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-grafico">
+      <div class="toast-header">
+        <img src="./img/favicons/favicon-16x16.png" class="rounded mr-2" alt="Logo do Observatório">
+        <strong class="mr-auto">Observatório Covid-19 BR</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Clique no gráfico para explorar os dados
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -531,6 +553,8 @@
   <script src="js/updateDate.js"></script>
   <!-- Conteudo e Menu Dinamico -->
   <script src="js/updateMunicipio.js"></script>
+  <!-- Dispara Toast Messages -->
+  <script src="js/updateToast.js"></script>
   <!-- MathJax: Equacoes -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>

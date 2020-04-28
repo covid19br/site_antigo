@@ -14,7 +14,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <!-- Poppins Font -->
-  <link href="./css/custom.css?ver=1.3" rel="stylesheet">
+  <link href="./css/custom.css?ver=1.5" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -66,7 +66,7 @@
     <!-- DESTAQUE -->
     <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <a class="nav-link" href="#">
+      <a href="#">
         Visão Geral
       </a>
     </div>
@@ -120,7 +120,8 @@
     <!-- NEW.CARD -->
 
     <!-- PERGUNTAS.CARD -->
-    <div class="card">
+    <a href="./perguntas.html" class="text-reset">
+    <div class="card menu">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
@@ -129,72 +130,53 @@
             class="card-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <a href="./perguntas.html" class="text-reset">
-              <h5 class="card-title">Perguntas</h5> <!-- CARD.TITLE.TEXT -->
-            </a>
+            <h5 class="card-title">Perguntas</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Respostas da nossa equipe para algumas das principais perguntas sobre COVID-19</p>
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="./perguntas.html"><button class="btn btn-primary mt-3" type="button">
-            Veja dúvidas frequentes
-          </button></a>
       </div>
     </div>
+    </a>
 
     <!-- NEW.CARD -->
 
     <!-- DETALHADA.CARD -->
-    <div class="card">
+    <a href="./progressao.html#br" class="text-reset">
+    <div class="card menu">
       <div class="card-body">
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <a href="./progressao.html#br" class="text-reset">
-              <h5 class="card-title">Visão Detalhada</h5> <!-- CARD.TITLE.TEXT -->
-            </a>
+            <h5 class="card-title">Visão Detalhada</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Investigue as análises do Observatório em detalhes e filtre os dados por estados do
               Brasil</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="./progressao.html#br"><button class="btn btn-primary mt-3" type="button">
-            Confira os dados estaduais
-          </button></a>
-
       </div>
     </div>
-
+    </a>
     <!-- NEW.CARD -->
 
     <!-- MIDIA.CARD -->
-    <div class="card">
+    <a href="./midia.html" class="text-reset">
+    <div class="card menu">
       <div class="card-body">
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_news.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <a href="./midia.html" class="text-reset">
-              <h5 class="card-title">Análise do Noticiário</h5> <!-- CARD.TITLE.TEXT -->
-            </a>
+            <h5 class="card-title">Análise do Noticiário</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Confira as aparições do Observatório na mídia e nossas análises diárias dos notíciarios
               no Brasil</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-
-        <!-- CARD.BUTTON -->
-        <a href="./midia.html"><button class="btn btn-primary mt-3" type="button">
-            Clique para ler
-          </button></a>
-
       </div>
     </div>
+    </a>
 
   </div>
 
@@ -276,7 +258,10 @@
         <p class="text-justify">
           Neste relatório, associamos dados da rede de fluxos rodoviários e da demografia das microrregiões paulistas
           com os casos confirmados de COVID-19 atualizados em 04/04/2020 para gerar informações estratégicas sobre a
-          propagação geográfica da pandemia de SARS-CoV-2 no Estado de São Paulo. Identificamos microrregiões que podem
+          propagação geográfica da pandemia de SARS-CoV-2 no Estado de São Paulo.
+        </p>
+        <p class="text-justify">
+          Identificamos microrregiões que podem
           atuar como núcleos propagadores da epidemia ou que têm alta vulnerabilidade a receber pessoas infectadas.
           Desta forma, atualizamos a identificação das microrregiões mais vulneráveis à propagação geográfica da
           pandemia do novo coronavírus (SARS-CoV-2) no estado de SP.
@@ -303,7 +288,7 @@
         <div class="media">
           <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
           <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
+          <div class="media-body mb-2">
             <a href="./progressao.html#br" class="text-reset"> 
               <h5 class="card-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
             </a>
@@ -311,9 +296,6 @@
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-
-        <!-- CARD.DATE -->
-        <p class="card-date"><small class="updateDate">Última atualização: </small></p>
 
         <!-- CARD.GGPLOT -->
         <a href="./progressao.html#br">
