@@ -71,8 +71,14 @@
   }
 
   .toc-title {
-    margin: 1rem 0 0 1.42rem;
+    margin: 1rem 0 0 .28rem;
     color: #212529;
+  }
+
+  @media (min-width: 576px) {
+    .toc-title {
+      margin: 1rem 0 0 1.42rem;
+    }
   }
 
   h5{ padding-top: 100px!important; margin-top: -100px!important; }
@@ -85,6 +91,7 @@
   @media (max-width: 767.98px) {
     .return {
       display: inline;
+      margin: 0 0 0 .3rem;
     }
     .card-title {
         display: inline;
