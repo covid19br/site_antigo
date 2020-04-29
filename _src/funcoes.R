@@ -118,7 +118,7 @@ beta.summary <- function(NobBS.output){
 }
 
 #' Estima numero de notificacoes por dia a partir de um vetor de n de
-#' casos novos e da distribuiçãode probabilidades de notificação do
+#' casos novos e da distribuição de probabilidades de notificação do
 #' nowcasting
 #' @param vetor.casos objeto da classe zoo com n de casos
 #' @param NobBS.output objeto retornado pela função NobBS do pacote de
