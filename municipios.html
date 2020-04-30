@@ -14,7 +14,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <!-- Poppins Font -->
-  <link href="./css/custom.css?ver=1.5" rel="stylesheet">
+  <link href="./css/custom.css?ver=1.6" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -124,7 +124,7 @@
   </div>
 
   <!-- Menu-->
-  <div class="card-columns four-one"> <!-- COLUMNS.NUM -->
+  <div class="card-menu"> <!-- COLUMNS.NUM -->
     <!-- NEW.CARD -->
 
     <!-- HOSPITALIZAÇÕES.MENU.CARD -->
@@ -133,15 +133,14 @@
         <div class="card-body">
 
           <!-- CARD.HEADER -->
-          <div class="media">
-            <img src="./img/icon_hospital.svg" width=48px alt="Ícone de hospital" class="card-icon">
-            <!-- CARD.TITLE.ICON -->
-            <div class="media-body">
-              <h5 class="card-title">Casos graves de COVID-19 <span class="municipio-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Quantos casos graves estimamos <span class="municipio-prep"></span></h5>? Quantos teremos nos
-                próximos dias?</p> <!-- CARD.TITLE.DESCRIPTION -->
+          <div class="card-hero">
+            <img src="./img/icon_hospital.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+                <h5 class="card-title">Casos graves de COVID-19</h5> <!-- CARD.TITLE -->
+                <p class="card-text">Quantos casos graves estimamos atualmente e futuramente <span class="municipio-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
+
         </div>
       </div>
     </a>
@@ -152,54 +151,53 @@
     <a class="text-reset" href="#">
       <div class="card menu" card-id="vel">
         <div class="card-body">
+
           <!-- CARD.HEADER -->
-          <div class="media">
-            <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
-            <!-- CARD.TITLE.ICON -->
-            <div class="media-body">
-              <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">O quão rápido a doença se propaga no município de <span class="municipio"></span>?
-              </p> <!-- CARD.TITLE.DESCRIPTION -->
+          <div class="card-hero">
+            <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+              <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE -->
+              <p class="card-text">O quão rápido a doença se propaga no município de <span class="municipio"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
+
         </div>
       </div>
     </a>
     <!-- NEW.CARD -->
 
-    <!-- MIDIA.CARD -->
+    <!-- TAXA.MENU.CARD -->
     <a class="text-reset" href="#">
       <div class="card menu" card-id="infec">
         <div class="card-body">
+          
           <!-- CARD.HEADER -->
-          <div class="media">
-            <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon">
-            <!-- CARD.TITLE.ICON -->
-            <div class="media-body">
+          <div class="card-hero">
+            <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
               <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span
-                  class="municipio"></span>?</p>
-              <!-- CARD.TITLE.DESCRIPTION -->
+              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="municipio"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
+
         </div>
       </div>
     </a>
 
-    <!-- SOBRE.CARD -->
+    <!-- SOBRE.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu" card-id="sobre">
+      <div class="card menu m-0" card-id="sobre">
         <div class="card-body">
+
           <!-- CARD.HEADER -->
-          <div class="media">
-            <img src="./img/icon_questions.svg" width=48px alt="Ícone que representa um menino" class="card-icon">
-            <!-- CARD.TITLE.ICON -->
-            <div class="media-body">
+          <div class="card-hero">
+            <img src="./img/icon_questions.svg" width=48px alt="Ícone que representa um menino" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
               <h5 class="card-title">Sobre</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Saiba mais sobre a equipe envolvida nestas análises</p>
-              <!-- CARD.TITLE.DESCRIPTION -->
+              <p class="card-text">Saiba mais sobre a equipe envolvida nestas análises</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
+
         </div>
       </div>
     </a>
@@ -377,8 +375,8 @@
           O <b style="color:#6f42c1">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
           infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
           linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
-	  E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
-	  de casos.
+          E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+          de casos.
         </p>
         <p class="text-justify re">
           Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
