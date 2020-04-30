@@ -357,14 +357,6 @@ a.text-reset:hover {
     }
 }
 
-/* CARD HERO */
-.card-hero {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
 /* CARD TYPE */
 .text-justify {
     margin-top: 1rem;
@@ -435,9 +427,14 @@ a.text-reset:hover {
         min-height: 100%;
         height: auto;
     }
-    .card-hero {
-        align-items: end;
-    }
+}
+
+/* GLOBAL: CARD HERO */
+.card-hero {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: end;
 }
 
 /* GLOBAL: BADGES */
