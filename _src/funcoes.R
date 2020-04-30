@@ -117,10 +117,14 @@ beta.summary <- function(NobBS.output){
                row.names = names(df1))    
 }
 
-#' Estima numero de notificacoes por dia a partir de um vetor de n de casos novos
-#' e da distribuiçãode probabilidades de notificação do nowcasting
+#' Estima numero de notificacoes por dia a partir de um vetor de n de
+#' casos novos e da distribuição de probabilidades de notificação do
+#' nowcasting
 #' @param vetor.casos objeto da classe zoo com n de casos
-#' @param from posicao do vetor de casos a partir da qual estimar o numero de notificacões
+#' @param NobBS.output objeto retornado pela função NobBS do pacote de
+#'     mesmo nome
+#' @param from posicao do vetor de casos a partir da qual estimar o
+#'     numero de notificacões
 estima.not <- function(vetor.casos, NobBS.output, from = length(vetor.casos)-30){
     betas <- beta.summary(NobBS.output)$mean
     i <- length(vetor.casos)-length(betas)
@@ -136,9 +140,16 @@ estima.not <- function(vetor.casos, NobBS.output, from = length(vetor.casos)-30)
 
 
 #' Preenche NA's iniciais do vetor de estimado pelo nowcasting
-#' @details O nowcasting estima para os últimos n dias. Esta função
-#'     preenche os dias anteriores com os valores de um outro vetor,
-#'     normalmente o vetor de n de casos observado
+#' @details O nowcasting retornado pela função NobBS usado com janela
+#'     (argumento 'moving_window') ou limite máximo de atraso
+#'     (argumento 'max_D') produz estimativas para os últimos dias,
+#'     definidos por esses argumentos. Esta função preenche os dias
+#'     anteriores com os valores de um outro vetor, normalmente o
+#'     vetor de n de casos observado
+#' @param vetor.now vetor com número de casos estimados pelo
+#'     nowcasting, com NAs nas datas para as quais não há estimativas.
+#' @param vetor.casos vetor com numero de casos o observados. Deve ter
+#'     mesmo comprimento de 'vetor.now'
 preenche.now <- function(vetor.now, vetor.casos){
     index <- max(which(is.na(vetor.now), arr.ind=TRUE))
     vetor.now[1:index] <- vetor.casos[1:index]
