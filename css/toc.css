@@ -10,6 +10,12 @@
     font-weight: 500;
     color: #6c757d
   }
+
+  @media (max-width: 767.98px) {
+    nav[data-toggle=toc] .nav>li>a {
+      padding: 2px 26px;
+    }
+  }
   
   nav[data-toggle=toc] .nav>li>a:focus,
   nav[data-toggle=toc] .nav>li>a:hover {
