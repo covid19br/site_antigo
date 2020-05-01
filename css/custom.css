@@ -140,7 +140,7 @@ body {
     margin-left: 1.8rem!important;
 }
 
-@media (min-width: 446px) {
+@media (min-width: 376px) {
     .display {
         font-size: 2rem;
     }
@@ -391,14 +391,14 @@ a.text-reset:hover {
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
-    margin: 1.25rem .5rem;
+    margin: 1rem .5rem;
 }
 
 .menu {
     flex: 0 0 auto;
     margin: 0 .5rem 0 0;
     min-width: 14rem;
-    height: 8rem;
+    height: 5rem;
 }
 
 .card.menu {
@@ -413,6 +413,13 @@ a.text-reset:hover {
 @media (max-width: 575.98px) {
 .menu > .card-body > .card-hero > .hero-body > .card-text {
     font-size: 65%;
+    display: none;
+}
+.menu > .card-body > .card-hero > .hero-body > .card-title {
+    font-size: 1rem;
+}
+.card-hero {
+    align-items: center!important;
 }
 }
 
