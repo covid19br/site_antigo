@@ -1,3 +1,4 @@
+tryCatch({
 # Libraries
 library(widgetframe)
 library(tidyverse)
@@ -58,3 +59,9 @@ for (i in 1:n){
   filename <- paste(filepath,".html",sep="")
   write_file(tables.para.atualizar[i], filename)
 }
+
+}, error = function(cond){
+    message(cond)
+    quit(status = 1)
+})
+
