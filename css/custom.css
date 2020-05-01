@@ -644,6 +644,12 @@ th {
 .pagination {
     margin-bottom: .5rem;
 }
+@media (max-width: 575.98px) {
+    .page-link {
+        padding: .5rem 0.63rem;
+    }
+}
+
 .calendar {
     display: flex;
     flex-wrap: wrap;
