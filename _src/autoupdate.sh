@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-today=`LANG=en date +'%b %d'`
+today=`LANG=en date +'%b %-d'`
 
 git pull
 git log -- ../dados/BrasilCov19.csv | grep  "$today"
