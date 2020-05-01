@@ -324,37 +324,44 @@ a.text-reset:hover {
     }
 }
 
+/* GLOBAL: CARD DECK */
+.card-deck {
+    margin: 0.5rem;
+    flex-flow: column wrap;
+}
+
+.card-deck > .card {
+    margin: 0 0 1rem 0; /* gap */
+}
+
+.card-deck > .card:last-child {
+    margin: 0; /* gap */
+}
+
+/* tablets: 768px and up */
+@media (min-width: 768px){
+    .card-deck {
+        margin: 1rem;
+    }
+}
+
+/* desktops: 992px and up */
+@media (min-width: 992px) {
+    .card-deck {
+        flex-flow: row nowrap;
+    }
+    .card-deck > .card {
+        margin: 0 1rem 0 0; /* gap */
+    }
+}
+
+/* proportions */
 .cd-30 {
     flex: 1 0 32.185%!important;
 }
 
 .cd-70 {
     flex: 1 0 65.815%!important;
-}
-
-.cd-gap {
-    margin-right: 1.25rem!important;
-}
-
-.card-deck {
-    flex-flow: row wrap;
-}
-
-@media (max-width: 1030px) {
-    .card-deck .card {
-        margin-bottom: 0.75rem!important;
-        margin-right: 1rem!important;
-    }
-}
-
-@media (min-width: 576px){
-    .card-deck {
-        margin: 1rem!important;
-    }
-    .card-deck .card {
-        margin-right: 0;
-        margin-left: 0;
-    }
 }
 
 /* CARD TYPE */
