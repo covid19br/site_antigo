@@ -120,42 +120,57 @@ body {
 }
 
 /* GLOBAL: PAGE TITLE & UPDATE DATE */
+/* extra small: less than 576px */
 .main-title {
+    display: flex;
+    flex-direction: column!important;
     margin-left: 0.2rem;
 }
-
-@media (min-width: 576px) { 
-    .main-title {
-        margin-left: 1.3rem;
-    }
-}
 .display {
-    font-size: 3rem;
+    display: inline-block;
+    font-size: 1.65rem;
     font-weight: 300;
     line-height: 1.2;
-    display: inline-block;
+    margin-bottom: 0!important;
 }
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 767.98px) {
-    .display {
-        font-size: 2.5rem;
-        margin-bottom: 0!important;
-    }
-    .main-title {
-        display: flex;
-        flex-direction: column!important;
-    }
-    .page-title-update {
-        margin-left: 1.8rem!important;
-    }
-}
-
 .page-title-update {
     font-family: 'Poppins', sans-serif;
     font-size: .85rem;
     color: #6c757d;
-    margin-left: .5rem;
+    margin-left: 1.8rem!important;
+}
+
+@media (min-width: 446px) {
+    .display {
+        font-size: 2rem;
+    }
+}
+
+/* small: 576px and up */
+@media (min-width: 576px) { 
+    .display {
+        font-size: 2.5rem;
+    }
+    .main-title {
+        margin-left: 13px;
+    }
+}
+
+/* tablets: 768px and up */
+@media (min-width: 768px) {
+    .display {
+        font-size: 3rem;
+    }
+    .page-title-update {
+        margin-left: .5rem;
+    }
+}
+
+/* desktops: 992px and up */
+@media (min-width: 992px) {
+    .main-title {
+        margin-left: 1.3rem;
+    }
 }
 
 /* Dropdown */
