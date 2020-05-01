@@ -376,19 +376,29 @@ a.text-reset:hover {
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
-    margin: .5rem;
+    margin: 1.25rem .5rem;
 }
 
 .menu {
     flex: 0 0 auto;
     margin: 0 .5rem 0 0;
     min-width: 14rem;
-    height: 11rem;
+    height: 8rem;
+}
+
+.card.menu {
+    padding: 1.25rem 1rem;
 }
 
 .menu > .card-body {
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 575.98px) {
+.menu > .card-body > .card-hero > .hero-body > .card-text {
+    font-size: 65%;
+}
 }
 
 /* small: 576px and up */
@@ -433,6 +443,9 @@ a.text-reset:hover {
         min-width: auto;
         min-height: 100%;
         height: auto;
+    }
+    .menu > .card-body > .card-hero > .hero-body > .card-text {
+        font-size: inherit;
     }
 }
 
