@@ -12,7 +12,7 @@ library(cowplot)
 ################################################################################
 plot.formatos <- theme_bw()+
   theme(axis.text= element_text(size=10, face="bold"),
-        axis.title = element_text(size=12, face="bold"),
+        axis.title = element_text(size=10, face="bold"),
         legend.text = element_text(size=12),
         plot.title = element_text(size = 12),
         plot.margin = margin(5, 0, 0, 0, "pt"))
