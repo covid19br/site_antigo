@@ -1,0 +1,240 @@
+---
+title: "Projeções de curto prazo para número de hospitalizados por `r disease_text` no município de São Paulo"
+subtitle: "Baseado nas notificações de SRAG Hospitalizados na base SIVEP Gripe"
+author: "Observatório COVID-19 BR"
+date: "`r format(Sys.time(), '%d-%m-%Y_%Hh%Mmin%Ss')`"
+output: 
+  pdf_document:
+    latex_engine: xelatex
+keep_tex: true
+header-includes:
+  - \usepackage{float}
+  - \usepackage[brazil]{babel}
+  - \floatplacement{table}{H}
+  - \floatplacement{figure}{H}
+  - \usepackage{pdflscape}
+  - \newcommand{\blandscape}{\begin{landscape}}
+  - \newcommand{\elandscape}{\end{landscape}}
+---
+
+
+```{r tablela nowcasting, echo=FALSE}
+hosp = dplyr::filter(latest_data$hosp, type == disease)
+UTI = dplyr::filter(latest_data$UTI, type == disease)
+prev_exp = tail(data.frame(date = latest_data$fits[[disease]]$Exp$estimate$pred$date,
+                           limite_inferior = latest_data$fits[[disease]]$Exp$lower$pred[, "X20."],
+                           media = latest_data$fits[[disease]]$Exp$estimate$pred$mean,
+                           limite_superior = latest_data$fits[[disease]]$Exp$upper$pred[, "X80."]), 
+                7) %>% filter(date > today())
+prev_Logist = tail(data.frame(date = latest_data$fits[[disease]]$Logist$estimate$pred$date,
+                              limite_inferior = latest_data$fits[[disease]]$Logist$lower$pred[, "X20."],
+                              media = latest_data$fits[[disease]]$Logist$estimate$pred$mean,
+                              limite_superior = latest_data$fits[[disease]]$Logist$upper$pred[, "X80."]), 
+                   7) %>% filter(date > today())
+prev_UTIexp = tail(data.frame(date = latest_data$fits[[disease]]$UTIExp$estimate$pred$date,
+                              limite_inferior = latest_data$fits[[disease]]$UTIExp$lower$pred[, "X20."],
+                              media = latest_data$fits[[disease]]$UTIExp$estimate$pred$mean,
+                              limite_superior = latest_data$fits[[disease]]$UTIExp$upper$pred[, "X80."]), 
+                   7) %>% filter(date > today())
+prev_UTILogist = tail(data.frame(date = latest_data$fits[[disease]]$UTILogist$estimate$pred$date,
+                                 limite_inferior = latest_data$fits[[disease]]$UTILogist$lower$pred[, "X20."],
+                                 media = latest_data$fits[[disease]]$UTILogist$estimate$pred$mean,
+                                 limite_superior = latest_data$fits[[disease]]$UTILogist$upper$pred[, "X80."]), 
+                      7) %>% filter(date > today())
+n_int = hosp[nrow(hosp),]
+n_uti = UTI[nrow(UTI),]
+n_fore_exp = prev_exp[nrow(prev_exp),]
+n_fore_logist = prev_Logist[nrow(prev_Logist),]
+n_fore_UTIexp = prev_UTIexp[nrow(prev_exp),]
+n_fore_UTIlogist = prev_UTILogist[nrow(prev_Logist),]
+data.final = n_fore_exp$date
+```
+
+# Sumário executivo
+
+* Este relatório usa notificações de casos de SRAG Hospitalizados na base **SIVEP-Gripe** do dia `r format(as.Date(data.atual), "%d de %B de %Y")`.
+* Nesta base de dados, observamos `r n_int$observed` casos hospitalizados de **`r disease_text`**. 
+Destes, `r n_uti$observed` estão hospitalizados em UTI. Corrigindo para o atraso de notificação, estimamos que o número de hospitalizados está entre `r n_int$lower` e `r n_int$upper`, e número de casos em UTI está entre `r n_uti$lower` e `r n_uti$upper`.
+* No cenário pessimista, utilizando um crescimento __Exponencial__, a projeção para dia `r format(as.Date(data.final), "%d de %B")` do total de casos hospitalizados é de entre `r round(n_fore_exp$limite_inferior)` e `r round(n_fore_exp$limite_superior)`, e de casos em UTI é de entre `r round(n_fore_UTIexp$limite_inferior)` e `r round(n_fore_UTIexp$limite_superior)`. 
+* No cenário otimista, utilizando um crescimento __Logístico__, a projeção para dia `r format(as.Date(data.final), "%d de %B")` do total de casos hospitalizados é de entre `r round(n_fore_logist$limite_inferior)` e `r round(n_fore_logist$limite_superior)`, e de casos em UTI é de entre `r round(n_fore_UTIlogist$limite_inferior)` e `r round(n_fore_UTIlogist$limite_superior)`. 
+
+## Projeções de número total de casos de `r disease_text` hospitalizados
+
+```{r projecoes_Exp}
+kableExtra::kable(data.frame(prev_exp[,c(1, 3, 2, 4)]),
+      format = "latex",
+      align = "c",
+      digits = 0,
+      col.names = c("Data", "Previsto", "Limite Inferior", "Limite Superior"),
+      row.names = FALSE,
+      caption = paste("Projeção do número de casos hospitalizados de", disease_text, 
+                      "para os próximos", nrow(prev_exp), "dias no cenário pessimista."),
+      escape = FALSE
+      )
+```
+```{r projecoes_Logist}
+kableExtra::kable(data.frame(prev_Logist[,c(1, 3, 2, 4)]),
+      format = "latex",
+      align = "c",
+      digits = 0,
+      col.names = c("Data", "Previsto", "Limite Inferior", "Limite Superior"),
+      row.names = FALSE,
+      caption = paste("Projeção do número de casos hospitalizados de", disease_text, 
+                      "pra os próximos", nrow(prev_Logist), "dias no cenário otimista."),
+      escape = FALSE
+      )
+```
+\newpage
+## Gráfico das projeções
+
+* Pontos pretos : número de casos hospitalizados observados a cada dia.
+* Região e linha vermelha : correção para ao atraso de notificação dos casos hospitalizados. Média e intervalo de confiança de 95%.
+* Região azul e linhas pontilhadas : Previsão usando modelos de curto prazo em diferentes cenários. Média de intervalo de confiança de 95%.
+
+```{r estimativa_crescimento, fig.width = 11,  fig.height = 10, fig.cap = paste0("Estimativas de crescimento (A) exponencial e (B) logistico para os próximos ", nrow(prev_UTIexp), " dias para número de internações por ", disease_text, ".")}
+
+plot_grid(plots$exp$current, plots$lgt$current, ncol = 1, labels = c("A", "B"))
+```
+
+## Projeções de número de casos de `r disease_text` hospitalizados em leitos de UTI
+
+```{r projecoes_UTIExp}
+kableExtra::kable(data.frame(prev_UTIexp[,c(1, 3, 2, 4)]),
+      format = "latex",
+      align = "c",
+      digits = 0,
+      col.names = c("Data", "Previsto", "Limite Inferior", "Limite Superior"),
+      row.names = FALSE,
+      caption = paste("Projeção do número de casos hospitalizados de", disease_text, 
+                      "em leitos de UTI para os próximos", nrow(prev_UTIexp), "dias no cenário pessimista."),
+      escape = FALSE
+      )
+```
+```{r projecoes_UTILogist}
+kableExtra::kable(data.frame(prev_UTILogist[,c(1, 3, 2, 4)]),
+      format = "latex",
+      align = "c",
+      digits = 0,
+      col.names = c("Data", "Previsto", "Limite Inferior", "Limite Superior"),
+      row.names = FALSE,
+      caption = paste("Projeção do número de casos hospitalizados de", disease_text, 
+                      "em leitos de UTI pra os próximos", nrow(prev_UTILogist), "dias no cenário otimista."),
+      escape = FALSE
+      )
+```
+\newpage
+## Gráfico das projeções para número de casos de `r disease_text` hospitalizados em leitos de UTI
+
+* Pontos pretos : número de casos hospitalizados observados a cada dia.
+* Região e linha vermelha : correção para ao atraso de notificação dos casos hospitalizados. Média e intervalo de confiança de 95%.
+* Região azul e linhas pontilhadas : Previsão usando modelos de curto prazo em diferentes cenários. Média de intervalo de confiança de 95%.
+
+```{r estimativa_crescimentoUTI, fig.width = 11,  fig.height = 10, fig.cap = paste0("Estimativas de crescimento (A) exponencial e (B) logistico para os próximos ", nrow(prev_UTIexp), " dias para número de internações em UTI por ", disease_text, ".")}
+
+plot_grid(plots$expU$current, plots$lgtU$current, ncol = 1, labels = c("A", "B"))
+```
+
+# Métodos
+
+## Correção do atraso de notificação pelo método de *Nowcasting*
+
+Para corrigir o efeito de atraso da notificação de casos na tabela de notificações, nós utilizamos o 
+método de *nowcasting* descrito em McGough et al. (2019). Esse método utiliza a diferença 
+entre as datas de primeiro sintoma e notificação do caso no banco de dados para estimar o atraso de
+inclusão de novos casos no sistema de notificação. O pacote NobBS fornece o número de novos casos 
+esperados por dia pelo modelo de atraso nas notificações.
+
+## Tempos de hospitalização em leito comum e UTI
+
+Para modelar a ocupação dos hospitais, nós estimamos a distribuição de tempos entre aparecimento de 
+sintomas e internação, internação e evolução, entrada e saída da UTI, e probabilidade de internação em UTI. 
+
+## Estimando número de hospitalizados
+
+O número estimado de hospitalizados por dia é dado pelos indivíduos notificados na tabela original do 
+Sivep-Gripe + indivíduos não-observados mas esperados pelo *nowcast*, que são incluídos na tabela com datas
+de entrada e evolução simuladas a partir das distribuições de tempos. Esse modelo permite uma avaliação dinâmica da
+curva de hospitalizações já corrigida pelo atraso de notificação e tempos de permanência no hospital.
+
+## Projeções de curto prazo utilizando modelos estatísticos
+
+Para realizar as projeções de curto prazo, nós ajustamos duas curvas ao número de casos hospitalizados.
+As curvas representam cenários diferentes: uma curva exponencial generalizada, que é adequada para modelar
+o começo de uma epidemia, com crescimento rápido, sendo portanto um cenário pessimista; e uma curva 
+logística generalizada, que apresenta um crescimento que se desacelera com o tempo, representando um cenário otimista.
+Ambos os modelos são descritos em Wu et al. (2020).
+
+Os modelos usados são dados pelas seguintes equações diferenciais, nas quais $C(t)$ representa o 
+número de hospitalizados, e os parâmetros são definidos como: $r$ taxa de crescimento, $p$ parâmetro 
+de modulação do crescimento (pode variar entre 0 e 1, valores mais baixos correspondem a curvas de 
+crescimento mais lento), e, no caso da logística, $K$, um parâmetro de assíntota da curva.
+
+- Exponencial generalizada:
+
+$$
+\frac{dC(t)}{dt} = rC(t)^p 
+$$
+
+- Logística generalizada:
+
+$$
+\frac{dC(t)}{dt} = rC(t)^p \left (1-\frac{C(t)}{K} \right) 
+$$
+
+## Limitações
+
+- O método de *nowcasting* utilizado assume que a dinâmica de inclusão de novos casos no banco de 
+dados é parecida com o passado. Se o atraso de inclusão aumenta muito, o modelo vai subestimar 
+quantidade de novos casos. O mesmo se aplica aos modelos de distribuição dos tempos de hospitalização
+e probabilidade de internação em UTI.
+ 
+- As previsões de curto prazo utilizam curvas fenomenológicas que não se prestam a previsões de longo 
+prazo, portanto não são adequadas para prever a dinâmica da epidemia numa escala de tempo maior. Em 
+particular, o uso de uma curva logística não implica que uma assintota no número de hospitalizações
+é sugerida pelos dados.
+
+# Referências
+
+McGough, Sarah , Michael A. Johansson, Marc Lipsitch, Nicolas
+  A. Menzies(2019). Nowcasting by Bayesian Smoothing: A flexible,
+  generalizable model for real-time epidemic tracking. bioRxiv 663823;
+  doi: https://doi.org/10.1101/663823
+
+McGough, Sarah, Nicolas Menzies, Marc Lipsitch and Michael Johansson
+  (2020). NobBS: Nowcasting by Bayesian Smoothing. R package version
+  0.1.0. https://CRAN.R-project.org/package=NobBS
+  
+Wu, Ke, Didier Darcet, Qian Wang, and Didier Sornette (2020). 
+Generalized Logistic Growth Modeling of the COVID-19 Outbreak in 29 
+Provinces in China and in the Rest of the World. arXiv [q-bio.PE]. 
+arXiv. http://arxiv.org/abs/2003.05681.
+
+## Observatório COVID-19 BR
+
+O Observatório Covid-19 BR é uma iniciativa independente, fruto da
+colaboração entre pesquisadores com o desejo de contribuir para a
+disseminação de informação de qualidade baseada em dados atualizados e
+análises cientificamente embasadas. 
+
+Criamos um sítio com códigos de fonte aberta que nos permite
+acompanhar o estado atual da epidemia de Covid-19 no Brasil, incluindo
+análises estatísticas e previsões. Modelos estatísticos e matemáticos
+para previsões da epidemia estão em preparação
+
+**Site:** https://covid19br.github.io/
+
+**Contato:** obscovid19br@gmail.com
+
+## Comparação com previsões anteriores
+
+```{r , fig.width = 12,  fig.height = 15, fig.cap = "", echo=FALSE}
+olderPlots[[length(olderPlots)]]
+```
+
+\newpage
+
+```{r , fig.width = 12,  fig.height = 15, fig.cap = "", echo=FALSE}
+for(i in (length(olderPlots)-1):1)
+  print(olderPlots[[i]])
+```
+
