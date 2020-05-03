@@ -342,7 +342,7 @@ a.text-reset:hover {
 /* GLOBAL: CARD DECK */
 .card-deck {
     margin: 0.5rem;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
 }
 
 .card-deck > .card {
