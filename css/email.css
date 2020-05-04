@@ -1,0 +1,2 @@
+obf-email::after { content: "@" attr(data-domain); } 
+obf-email::before { content: attr(data-user); }
