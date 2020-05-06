@@ -145,6 +145,18 @@ latest_UTI_data$date = as.Date(latest_UTI_data$date)
 FITSPATH =  paste0(O("curve_fits"), "/curve_fits_", data_date,".Rds")
 current_fits = readRDS(FITSPATH)
 
+covid = hospital_data %>% filter(type == "covid")
+latest_covid = latest_hospital_data %>% filter(type == "covid")
+
+covid_UTI = UTI_data %>% filter(type == "covid")
+latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
+
+srag = hospital_data %>% filter(type == "srag")
+latest_srag = latest_hospital_data %>% filter(type == "srag")
+
+srag_UTI = UTI_data %>% filter(type == "srag")
+latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
+
 ########################
 # Covid
 ########################
@@ -152,9 +164,6 @@ current_fits = readRDS(FITSPATH)
 ########################
 # Hospitalized
 ########################
-
-covid = hospital_data %>% filter(type == "covid")
-latest_covid = latest_hospital_data %>% filter(type == "covid")
 
 {
     pce = make_ggplot(covid, latest_covid, current_fits$covid$Exp, 
@@ -184,8 +193,6 @@ latest_covid = latest_hospital_data %>% filter(type == "covid")
 # UTI
 ########################
 
-covid_UTI = UTI_data %>% filter(type == "covid")
-latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
 
 {
     pceU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTIExp, breaks = 500,
@@ -222,8 +229,6 @@ latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
 # Hospitalized
 ########################
 
-srag = hospital_data %>% filter(type == "srag")
-latest_srag = latest_hospital_data %>% filter(type == "srag")
 
 {
     pse = make_ggplot(srag, latest_srag, current_fits$srag$Exp, disease = "srag",
@@ -255,8 +260,6 @@ latest_srag = latest_hospital_data %>% filter(type == "srag")
 # UTI
 ########################
 
-srag_UTI = UTI_data %>% filter(type == "srag")
-latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
 
 {
     pseU = make_ggplot(srag_UTI, latest_srag_UTI, current_fits$srag$UTIExp, disease = "srag",
@@ -288,7 +291,8 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
 # p_srag = make_ggplot_no_model(srag, disease = "srag",  ylabel = "Número de casos SRAG hospitalizados",
 #                               title ="SRAG - Leitos totais", breaks = 2000)
 # p_srag_uti = make_ggplot_no_model(srag_UTI, disease = "srag",  ylabel = "Número de casos SRAG hospitalizados em UTI",
-#                                   title ="SRAG - Leitos UTI") 
+#                                   title ="SRAG - Leitos UTI")
 # ps = plot_grid(p_srag, p_srag_uti, scale = 0.96)
-# save_plot(filename = PLOTPATH("srag_hospitalizados.", format), ps, base_asp = 1.2, base_height = 5.5, ncol = 2)
+# format = "png"
+# save_plot(filename = PLOTPATH(paste0("srag_hospitalizados.", format)), ps, base_asp = 1.2, base_height = 5.5, ncol = 2)
 
