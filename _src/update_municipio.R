@@ -45,12 +45,12 @@ municipio <- sigla.municipios[mun]
 # preparação dos dados específica por município?
 # este arquivo deve se encarregar de procurar na pasta certa pelo arquivo com a
 # data mais recente
-source(paste0('prepara_dados_municipio_', mun, '.R'))
+source(paste0('prepara_dados_municipio_', mun, '_bla.R'))
 
 # códigos de análise e plot genéricos (mas pode usar as variáveis `mun` e
 # `municipio` pra títulos de plot etc.
-source('analises_municipio.R')
-source('plots_municipios.R')
+source('analises_municipio_bla.R')
+source('plots_municipios_bla.R')
 
 ## Data de Atualizacao
 print("Atualizando data de atualizacao...")
@@ -63,7 +63,8 @@ close(file)
 ################################################################################
 print("Atualizando plots...")
 # Graficos a serem atualizados
-plots.para.atualizar.municipio <- makeNamedList(plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio)
+plots.para.atualizar.municipio <- makeNamedList(plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio, 
+                                                plot.nowcast.ob.covid, plot.nowcast.ob.srag) # plots obitos
 filenames <- names(plots.para.atualizar.municipio)
 n <- length(plots.para.atualizar.municipio)
 
