@@ -198,41 +198,23 @@ function updatePlaceholder(current_uf) {
     var new_svg = "";
     
     // change UF
-    if (hasUF(split_src)) {
-            for (i = 0; i < split_src.length; i++) {
-                if (i == (split_src.length - 2)) {
-                    new_src = new_src + "." + current_uf;
-                    new_svg = new_svg + "." + current_uf;
-                }
-                else {
-                    if (i == 0) {
-                        new_src = new_src + split_src[i];
-                        new_svg = new_svg + split_svg[i];
-                    }
-                    else {
-                        new_src = new_src + "." + split_src[i];
-                        new_svg = new_svg + "." + split_svg[i];
-                    }
-                }
+    // change UF: fazer funcao
+    var split_size = split_svg.length;
+    for (i = 1; i < split_size; i++) {
+        if (i == (split_size-2)) {
+            if(!hasUF(split_svg)) {
+                new_src = new_src + "." + split_src[i] + "." + current_uf;
+                new_svg = new_svg + "." + split_svg[i] + "." + current_uf;
             }
-    }
-    else {
-            for (j = 0; j < split_src.length; j++) {
-                if (j == (split_src.length - 2)) {
-                    new_src = new_src + "." + split_src[j] + "." + current_uf;
-                    new_svg = new_svg + "." + split_svg[j] + "." + current_uf;
-                }
-                else {
-                    if (j == 0) {
-                        new_src = new_src + split_src[j];
-                        new_svg = new_svg + split_svg[j];
-                    }
-                    else {
-                        new_src = new_src + "." + split_src[j];
-                        new_svg = new_svg + "." + split_svg[j];
-                    }
-                }
+            else {
+                new_src = new_src + "." + current_uf;
+                new_svg = new_svg + "." + current_uf;
             }
+        }
+        else {
+            new_src = new_src + "." + split_src[i];
+            new_svg = new_svg + "." + split_svg[i];
+        }
     }
     
     // Update SRCs
