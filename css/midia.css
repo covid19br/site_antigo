@@ -1,0 +1,35 @@
+/*  OBSERVATORIO COVID-19 BR */
+/* Designed by Rafael Badain */
+
+/* MIDIA: REPORTAGENS */
+.news-month {
+    margin: 1rem 0 .25rem 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.news-week {
+    margin: .25rem 0 .25rem 1rem;
+}
+.favicon {
+    width: 16px;
+    margin: 0 .5rem 0 0;
+}
+
+/* MIDIA: CALENDAR */
+.pagination {
+    margin-bottom: .5rem;
+}
+@media (max-width: 575.98px) {
+    .page-link {
+        padding: .5rem 0.63rem;
+    }
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.calendar-month {
+    padding: 0 .5rem 0 0;
+}

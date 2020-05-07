@@ -1,0 +1,467 @@
+/*  OBSERVATORIO COVID-19 BR */
+/* Designed by Rafael Badain */
+
+/* BODY */
+body {
+    background-color: #fdfdfd;
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: 0 7px 6px 0 rgba(128, 128, 128, 0.05)!important;
+    border-bottom: solid 1px #f1f1f1!important;
+    background-color: #fff!important;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.nav-item {
+    font-family: 'Poppins', sans-serif;
+    font-size: .85rem;
+    text-align: center;
+}
+
+/* menu resting */
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.7);
+}
+
+/* menu focus */
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(0,0,0,.9);
+}
+
+/* menu active */
+.destaque {
+    color: #007bff;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #007bff;
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+/* responsive behaviour */
+@media (max-width: 374px) {
+    .destaque {
+        font-size: .7rem;
+    } 
+}
+@media (min-width: 992px) {
+    .destaque {
+        display: none;
+    } 
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .nav-item {
+        font-size: .73rem;
+    }
+    .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+        font-size: .78rem;
+    }
+}
+
+/* logo */
+.navbar-nav {
+    margin: 0 0 0 1rem;
+}
+.navbar-logo {
+    height: 45px;
+}
+.navbar-brand {
+    margin-right: auto!important; /*Fixes logo on the right*/
+}
+.navbar-light .navbar-toggler {
+    border-color: transparent!important;
+}
+@media (max-width: 446px) {
+    .navbar-logo {
+        height: 33px!important;
+    }
+    .destaque {
+        padding: .5rem 0.25rem!important;
+    }
+}
+@media (max-width: 374px) {
+    .navbar-logo {
+        height: 28px!important;
+    }
+}
+@media (max-width: 575.98px) { 
+    .navbar-toggler {
+        padding: .25rem .75rem .25rem 0;
+    }
+}
+@media (min-width: 1200px) {
+    .navbar-brand {
+       margin-left: .25rem;
+    }
+}
+
+/* PAGE TITLE & UPDATE DATE */
+/* extra small: less than 576px */
+.main-title {
+    display: flex;
+    flex-direction: column!important;
+    margin-left: 0.2rem;
+}
+.display {
+    display: inline-block;
+    font-size: 1.65rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 0!important;
+}
+.page-title-update {
+    font-family: 'Poppins', sans-serif;
+    font-size: .85rem;
+    color: #6c757d;
+    margin-left: 1.8rem!important;
+}
+@media (min-width: 376px) {
+    .display {
+        font-size: 2rem;
+    }
+}
+
+/* small: 576px and up */
+@media (min-width: 576px) { 
+    .display {
+        font-size: 2.5rem;
+    }
+    .main-title {
+        margin-left: 13px;
+    }
+}
+
+/* tablets: 768px and up */
+@media (min-width: 768px) {
+    .display {
+        font-size: 3rem;
+    }
+    .page-title-update {
+        margin-left: .5rem;
+    }
+}
+
+/* desktops: 992px and up */
+@media (min-width: 992px) {
+    .main-title {
+        margin-left: 1.3rem;
+    }
+}
+
+/* dropdown */
+.dropdown, .dropleft, .dropright, .dropup {
+    display: inline-block;
+}
+.menu-overflow{
+    height: 200px;
+    overflow-y: auto;
+}
+
+/* CARD LAYOUT */
+/* spacing */
+.card-columns {
+    margin: 1rem!important;
+}
+@media (max-width: 767.98px){
+    .card-columns {
+        margin: 1rem .5rem!important;
+    }
+    .card {
+        padding: 1.25rem 1rem;
+    }
+}
+
+/* # of collumns */
+@media (min-width: 1200px) {
+    .one {
+        column-count: 1!important;
+    }
+    .two {
+        column-count: 2!important;
+    }
+    .two-small {
+        column-count: 2!important;
+        width: 65%;
+        margin: 1rem auto!important;
+    }
+    .four {
+        column-count: 4!important;
+    }
+    .four-one {
+        column-count: 4!important;
+    }
+    .xl-small {
+        width: 65%;
+        margin: 1rem auto!important;
+    }
+}
+/* tablets: up tp 992px */
+@media (max-width: 991.98px) {
+    .card-columns {
+        column-count: 1;
+    }
+}
+/* small desktops: 992px up to 1200px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .card-columns {
+        column-count: 2;
+    }
+    .four-one {
+        column-count: 1!important;
+    }
+    .three-one {
+        column-count: 1!important;
+    }
+    .one {
+        column-count: 1!important;
+    }
+    .col-md-8 {
+        padding-left: 0;
+    }
+}
+/* small: up to 768px */
+@media (max-width: 767.98px) {
+    .three-one {
+        margin: 1rem!important;
+    }
+    .four-one {
+        margin: 1rem!important;
+    }
+}
+
+/* CARD CONTENT */
+/* style */
+.card {
+    box-shadow: 0 4px 6px 0 rgba(31,70,88,.04)!important;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: .85rem;
+    padding: 1.25rem;
+}
+.card-body {
+    padding: 0!important;
+}
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    margin: 0;
+}
+.card-icon {
+    float: left;
+    margin-right: .5rem;
+}
+.card-date {
+    color: #6c757d;
+    margin-bottom: 0!important;
+}
+.card-img-top {
+    display: block;
+    margin: 0 auto;
+}
+.text-justify {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+/* small desktops: up to 1200px */
+@media (max-width: 1199.98px) {
+    .card-text {
+        font-size: 85%;
+    }
+    .media {
+        display: block!important;
+    }
+}
+.btn {
+    margin-top: .5rem;
+}
+
+/* card menus */
+a.text-reset {
+    text-decoration: none;
+}
+a.text-reset:hover {
+    color: #007bff!important;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.card.menu:hover {
+    border-color: #007bff!important;
+    background-color: #fdfdfd;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.card.selected {
+    border-color: #7abaff!important;
+}
+
+/* CARD MENU */
+/* extra small: less than 576px */
+.card-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    margin: 1rem .5rem;
+}
+
+.menu {
+    flex: 0 0 auto;
+    margin: 0 .5rem 0 0;
+    min-width: 14rem;
+    height: 5rem;
+}
+
+.card.menu {
+    padding: 1.25rem 1rem;
+}
+
+.menu > .card-body {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 575.98px) {
+.menu > .card-body > .card-hero > .hero-body > .card-text {
+    font-size: 65%;
+    display: none;
+}
+.menu > .card-body > .card-hero > .hero-body > .card-title {
+    font-size: 1rem;
+}
+.card-hero {
+    align-items: center!important;
+}
+}
+
+/* small: 576px and up */
+@media (min-width: 576px) {
+    .menu {
+        min-width: 19rem;
+        height: 9rem;
+    }
+}
+/* tablets: 768px and up */
+@media (min-width: 768px) {
+    .card-menu {
+        margin: 1rem;
+    }
+    .menu {
+        margin: 0 1rem 0 0;
+        min-width: 21rem;
+        height: 7.5rem;
+    }
+}
+
+/* desktops: 992px and up */
+@media (min-width: 992px) {
+    .card-menu {
+        margin: 1rem;
+    }
+    .menu {
+        margin: 0 1rem 0 0;
+        min-width: 24rem;
+        height: 6.5rem;
+    }
+}
+
+/* large desktops: 1200px and up */
+@media (min-width: 1200px) {
+    .card-menu {
+        overflow: visible;
+        margin: 1rem;
+    }
+    .menu {
+        margin: 0 1.25rem 0 0;
+        min-width: auto;
+        min-height: 100%;
+        height: auto;
+    }
+    .menu > .card-body > .card-hero > .hero-body > .card-text {
+        font-size: inherit;
+    }
+}
+
+/* CARD HERO */
+.card-hero {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: end;
+}
+
+/* CARD DECK */
+.card-deck {
+    margin: 0.5rem;
+    flex-flow: column nowrap;
+}
+.card-deck > .card {
+    margin: 0 0 1rem 0; /* gap */
+}
+.card-deck > .card:last-child {
+    margin: 0; /* gap */
+}
+
+/* tablets: 768px and up */
+@media (min-width: 768px){
+    .card-deck {
+        margin: 1rem;
+    }
+}
+
+/* desktops: 992px and up */
+@media (min-width: 992px) {
+    .card-deck {
+        flex-flow: row nowrap;
+    }
+    .card-deck > .card {
+        margin: 0 1rem 0 0; /* gap */
+    }
+}
+
+/* proportions */
+.cd-30 {
+    flex: 1 0 32.185%!important;
+}
+.cd-70 {
+    flex: 1 0 65.815%!important;
+}
+
+/* FOOTER */
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 40px; /* height of the footer (check on dev tools)*/
+}
+footer {
+    /* sticky bottom */
+    position: absolute;
+    bottom: 0;
+    /* item organization */
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: center;
+    /* decoration */
+    color: #6c757d;
+    background-color: #f8f9fa;
+    padding: .5rem; /* footer SIZE */
+}
+.footer-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+.footer-content:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 991.98px) {
+#license {
+    display: none;
+}
+}

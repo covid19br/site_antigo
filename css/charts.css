@@ -1,0 +1,183 @@
+/*  OBSERVATORIO COVID-19 BR */
+/* Designed by Rafael Badain */
+
+/* LEGENDS */
+.card-legend {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-top: .5rem;
+    padding-bottom: 0;
+}
+.legend-square {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-right: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+.legend-square:last-child {
+    margin: 0;
+}
+
+/* legenda: square */
+.legend-square:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin: 0 0.3rem 0 0;
+    border-radius: 4px;
+}
+
+/* legenda: square colors */
+/* wong */
+.legend-square#wong_black:before {
+    background-color: #000;
+}
+.legend-square#wong_orange:before {
+    background-color: #e69f00;
+}
+.legend-square#wong_yellow:before {
+    background-color: #F0E442;
+}
+.legend-square#wong_red:before {
+    background-color: #D55E00;
+}
+.legend-square#wong_pink:before {
+    background-color: #CC79A7;
+}
+.legend-square#wong_green:before {
+    background-color: #009E73;
+}
+.legend-square#wong_darkblue:before {
+    background-color: #0072B2;
+}
+.legend-square#wong_lightblue:before {
+    background-color: #56B4E9;
+}
+/* ibm */
+.legend-square#ibm_ultramarine:before {
+    background-color: #648fff;
+}
+.legend-square#ibm_indigo:before {
+    background-color: #785ef0;
+}
+.legend-square#ibm_magenta:before {
+    background-color: #dc267f;
+}
+.legend-square#ibm_orange:before {
+    background-color: #fe6100;
+}
+.legend-square#ibm_gold:before {
+    background-color: #ffb000;
+}
+/* legacy */
+.legend-square#legendBlack:before {
+    background-color: #000;
+}
+.legend-square#legendBlue:before {
+    background-color: #007bff;
+}
+
+/* texto da legenda */
+.legenda {
+    text-align: center;
+    margin: 0 .5rem;
+    color: #6c757d;
+}
+
+/* inline text color */
+/* wong */
+.wong_black {
+    color: #000;
+}
+.wong_orange {
+    color: #e69f00;
+}
+.wong_yellow {
+    color: #F0E442;
+}
+.wong_red {
+    color: #D55E00;
+}
+.wong_pink {
+    color: #CC79A7;
+}
+.wong_green {
+    color: #009E73;
+}
+.wong_darkblue {
+    color: #0072B2;
+}
+.wong_lightblue {
+    color: #56B4E9;
+}
+/* ibm */
+.ibm_ultramarine {
+    color: #648fff;
+}
+.ibm_indigo {
+    color: #785ef0;
+}
+.ibm_magenta {
+    color: #dc267f;
+}
+.ibm_orange {
+    color: #fe6100;
+}
+.ibm_gold {
+    color: #ffb000;
+}
+.ibm_gold_dark {
+    color: #BC8538;
+}
+/* legacy */
+.legendBlack {
+    color: #000;
+}
+.legendGrey {
+    color: #6c757d;
+}
+.legendBlue {
+    color: #007bff;
+}
+
+/* CHARTS */
+#htmlwidget_container {
+    position: static!important;
+    top: 0px!important;
+    right: 0px!important;
+    bottom: 0px!important;
+    left: 0px!important;
+}
+iframe {
+    border: 0;
+    width: 100%;
+    height: 350px;
+}
+@media (max-width: 575.98px) {
+.chart-fix {
+    padding: 1.25rem 0 !important;
+    margin: 0.5rem -0.25rem !important;
+}
+}
+
+/* TOAST MESSAGES */
+.toast-wrap {
+    width:100%;
+    z-index:1010;
+    position:fixed;
+    bottom: 1.5rem;
+    padding: 0 1.5rem 0 0;
+    justify-content: flex-end;
+}
+@media (max-width: 991.98px) { 
+.toast-wrap {
+    padding: 0;
+    justify-content: center;
+}
+}
