@@ -147,8 +147,8 @@ const estados =
 
 function hasUF(split_src) {
     // verifica se existe codigo uf no penultimo index
-    for (i = 0; i < estados.length; i++) {
-        if (estados[i].uf == split_src[(split_src.length - 2)]) return (true);
+    for (a = 0; a < estados.length; a++) {
+        if (estados[a].uf == split_src[(split_src.length - 2)]) return (true);
     }
 
     return (false);
@@ -156,8 +156,8 @@ function hasUF(split_src) {
 
 function getIndex(uf) {
     if(uf == 'br') return (0);
-    for (i = 0; i < estados.length; i++) {
-        if (estados[i].uf == uf) return (i-1); // move um index para cima para ignorar o index do brasil
+    for (b = 0; b < estados.length; b++) {
+        if (estados[b].uf == uf) return (b-1); // move um index para cima para ignorar o index do brasil
     }
 
     // UF not found: returns to SP
@@ -165,8 +165,8 @@ function getIndex(uf) {
 }
 
 function getVerbose(uf) {
-    for (i = 0; i < estados.length; i++) {
-        if (estados[i].uf == uf) return (estados[i].verbose);
+    for (c = 0; c < estados.length; c++) {
+        if (estados[c].uf == uf) return (estados[c].verbose);
     }
 
     // UF not found: returns to default
@@ -175,8 +175,8 @@ function getVerbose(uf) {
 }
 
 function getPreposition(uf) {
-    for (i = 0; i < estados.length; i++) {
-        if (estados[i].uf == uf) return (estados[i].prep);
+    for (d = 0; d < estados.length; d++) {
+        if (estados[d].uf == uf) return (estados[d].prep);
     }
 
     // UF not found: returns to default
@@ -217,19 +217,19 @@ function updatePlaceholder(current_uf) {
             }
     }
     else {
-            for (i = 0; i < split_src.length; i++) {
-                if (i == (split_src.length - 2)) {
-                    new_src = new_src + "." + split_src[i] + "." + current_uf;
-                    new_svg = new_svg + "." + split_svg[i] + "." + current_uf;
+            for (j = 0; j < split_src.length; j++) {
+                if (j == (split_src.length - 2)) {
+                    new_src = new_src + "." + split_src[j] + "." + current_uf;
+                    new_svg = new_svg + "." + split_svg[j] + "." + current_uf;
                 }
                 else {
-                    if (i == 0) {
-                        new_src = new_src + split_src[i];
-                        new_svg = new_svg + split_svg[i];
+                    if (j == 0) {
+                        new_src = new_src + split_src[j];
+                        new_svg = new_svg + split_svg[j];
                     }
                     else {
-                        new_src = new_src + "." + split_src[i];
-                        new_svg = new_svg + "." + split_svg[i];
+                        new_src = new_src + "." + split_src[j];
+                        new_svg = new_svg + "." + split_svg[j];
                     }
                 }
             }
@@ -253,16 +253,16 @@ function updateWidget(current_uf) {
     var new_src = "";
 
     // change UF
-    for (i = 0; i < split_src.length; i++) {
-        if (i == (split_src.length - 2)) {
+    for (k = 0; k < split_src.length; k++) {
+        if (k == (split_src.length - 2)) {
             new_src = new_src + "." + current_uf;
         }
         else {
-            if (i == 0) {
-                new_src = new_src + split_src[i];
+            if (k == 0) {
+                new_src = new_src + split_src[k];
             }
             else {
-                new_src = new_src + "." + split_src[i];
+                new_src = new_src + "." + split_src[k];
             }
         }
     }
