@@ -266,8 +266,9 @@ function updatePage(current_uf) {
 
     // dropdown
     $(".dropdown-item").removeClass("active"); // cleans
-    var selector = ".dropdown-item:contains(" + current_state + ")"; // updates
-    $(selector).addClass("active"); // updates
+    $(".dropdown-item").filter(function(){
+        return $(this).text() === current_state;
+    }).addClass("active"); // updates
 
     // data e hora
     updateDate('last.update.estado');
