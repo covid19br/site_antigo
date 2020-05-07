@@ -11,7 +11,7 @@ makeNamedList <- function(...) {
 }
 
 # Estados a serem atualizados
-estados.para.atualizar <- c('SP', 'RJ', 'RO', 'AC', 'AM', 'RR', 'PA', 'AP', 'TO', 'MA', 'PI', 'CE', 'RN', 'PB', 'PE', 'AL', 'SE', 'BA', 'MG', 'ES', 'PR', 'SC', 'RS', 'MS', 'MT', 'GO', 'DF')
+estados.para.atualizar <- c('AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO') # manter ordem alfabetica
 
 # Processamento de Dados -separo por estado?-
 source('prepara_dados_estado.R')

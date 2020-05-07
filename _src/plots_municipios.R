@@ -165,6 +165,7 @@ min <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),2])
 max <- as.integer(now.proj.zoo[max(nrow(now.proj.zoo)),3])
 data <- format(max(time(now.proj.zoo)), "%d/%m/%Y")
 municipios.minmax.casos <- cbind(municipios.minmax.casos, min, max, data)
+municipios.minmax.casos <- municipios.minmax.casos[order(row.names(municipios.minmax.casos)),]
 write.table(municipios.minmax.casos, file="../web/data_forecasr_exp_municipios.csv", row.names = TRUE, col.names = FALSE)
 # Não é generico, é apenas para o municipio de sp. Tendo mais, tem que atualizar
 
@@ -173,6 +174,7 @@ municipios.temp.dupl <- data.frame(row.names = c("SP"))
 min.dias <- as.vector(round(td.now[max(nrow(td.now)),2], 1))
 max.dias <- as.vector(round(td.now[max(nrow(td.now)),3], 1))
 municipios.temp.dupl <- cbind(municipios.temp.dupl, min.dias, max.dias)
+municipios.temp.dupl <- municipios.temp.dupl[order(row.names(municipios.temp.dupl)),]
 write.table(municipios.temp.dupl, file="../web/data_tempo_dupli_municipio.csv", row.names = TRUE, col.names = FALSE)
 
 
@@ -181,6 +183,7 @@ municipios.Re <- data.frame(row.names = c("SP"))
 min <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 5],1))
 max <- as.factor(round(Re.now.zoo[nrow(Re.now.zoo), 11],1))
 municipios.Re <- cbind(municipios.Re, min, max)
+municipios.Re <- municipios.Re[order(row.names(municipios.Re)),]
 write.table(municipios.Re, file="../web/data_Re_municipio.csv", row.names = TRUE, col.names = FALSE)
 
 
@@ -192,6 +195,7 @@ min <- as.integer(now.srag.proj.zoo[max(nrow(now.srag.proj.zoo)),2])
 max <- as.integer(now.srag.proj.zoo[max(nrow(now.srag.proj.zoo)),3])
 data <- format(max(time(now.srag.proj.zoo)), "%d/%m/%Y")
 municipios.minmax.casos.srag <- cbind(municipios.minmax.casos.srag, min, max, data)
+municipios.minmax.casos.srag <- municipios.minmax.casos.srag[order(row.names(municipios.minmax.casos.srag)),]
 write.table(municipios.minmax.casos.srag, file="../web/data_forecasr_exp_municipios_srag.csv", row.names = TRUE, col.names = FALSE)
 # Não é generico, é apenas para o municipio de sp. Tendo mais, tem que atualizar
 
@@ -200,6 +204,7 @@ municipios.temp.dupl.srag <- data.frame(row.names = c("SP"))
 min.dias <- as.vector(round(td.now.srag[max(nrow(td.now.srag)),2], 1))
 max.dias <- as.vector(round(td.now.srag[max(nrow(td.now.srag)),3], 1))
 municipios.temp.dupl.srag <- cbind(municipios.temp.dupl.srag, min.dias, max.dias)
+municipios.temp.dupl.srag <- municipios.temp.dupl.srag[order(row.names(municipios.temp.dupl.srag)),]
 write.table(municipios.temp.dupl.srag, file="../web/data_tempo_dupli_municipio_srag.csv", row.names = TRUE, col.names = FALSE)
 
 
@@ -208,6 +213,7 @@ municipios.Re.srag <- data.frame(row.names = c("SP"))
 min <- as.factor(round(Re.now.srag.zoo[nrow(Re.now.srag.zoo), 5],1))
 max <- as.factor(round(Re.now.srag.zoo[nrow(Re.now.srag.zoo), 11],1))
 municipios.Re.srag <- cbind(municipios.Re.srag, min, max)
+municipios.Re.srag <- municipios.Re.srag[order(row.names(municipios.Re.srag)),]
 write.table(municipios.Re.srag, file="../web/data_Re_municipio_srag.csv", row.names = TRUE, col.names = FALSE)
 
 

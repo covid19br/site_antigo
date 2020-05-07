@@ -133,8 +133,8 @@ data <- format(max(time(minmax.lugares)), "%d/%m/%Y")
 
 # Fill the table
 minmax.casos <- cbind(minmax.casos, min, max, data)
-# Order table by max cases
-minmax.casos <- minmax.casos[order(-max),] 
+# Order table by alphabetic order
+minmax.casos <- minmax.casos[order(row.names(minmax.casos)),]
 # Save to a csv
 write.table(minmax.casos, file="../web/data_forecast_exp_br.csv", row.names = TRUE, col.names = FALSE)
 

@@ -68,8 +68,8 @@ for (i in 1:length(minmax.lugares)) {
 }
 # Fill the table
 estados.minmax.casos <- cbind(estados.minmax.casos, min, max, data)
-# Order table by max cases
-estados.minmax.casos <- estados.minmax.casos[order(-max),] 
+# Order table by alphabetic order
+estados.minmax.casos <- estados.minmax.casos[order(row.names(estados.minmax.casos)),]
 # Save to a csv
 write.table(estados.minmax.casos, file="../web/data_forecast_exp_estados.csv", row.names = TRUE, col.names = FALSE)
 

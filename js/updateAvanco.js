@@ -9,54 +9,9 @@ const estados =
             verbose: "Brasil",
         },
         {
-            uf: "sp",
-            prep: "em",
-            verbose: "São Paulo"
-        },
-        {
-            uf: "rj",
+            uf: "ac",
             prep: "no",
-            verbose: "Rio de Janeiro"
-        },
-        {
-            uf: "ce",
-            prep: "no",
-            verbose: "Ceará"
-        },
-        {
-            uf: "pe",
-            prep: "em",
-            verbose: "Pernambuco"
-        },
-        {
-            uf: "am",
-            prep: "no",
-            verbose: "Amazonas"
-        },
-        {
-            uf: "ma",
-            prep: "no",
-            verbose: "Maranhão"
-        },
-        {
-            uf: "ba",
-            prep: "na",
-            verbose: "Bahia"
-        },
-        {
-            uf: "pa",
-            prep: "no",
-            verbose: "Pará"
-        },
-        {
-            uf: "es",
-            prep: "em",
-            verbose: "Espírito Santo"
-        },
-        {
-            uf: "mg",
-            prep: "em",
-            verbose: "Minas Gerais"
+            verbose: "Acre"
         },
         {
             uf: "al",
@@ -64,29 +19,9 @@ const estados =
             verbose: "Alagoas"
         },
         {
-            uf: "sc",
-            prep: "em",
-            verbose: "Santa Catarina"
-        },
-        {
-            uf: "rs",
+            uf: "am",
             prep: "no",
-            verbose: "Rio Grande do Sul"
-        },
-        {
-            uf: "pr",
-            prep: "no",
-            verbose: "Paraná"
-        },
-        {
-            uf: "df",
-            prep: "no",
-            verbose: "Distrito Federal"
-        },
-        {
-            uf: "rn",
-            prep: "no",
-            verbose: "Rio Grande do Norte"
+            verbose: "Amazonas"
         },
         {
             uf: "ap",
@@ -94,14 +29,24 @@ const estados =
             verbose: "Amapá"
         },
         {
-            uf: "pb",
+            uf: "ba",
             prep: "na",
-            verbose: "Paraíba"
+            verbose: "Bahia"
         },
         {
-            uf: "ro",
+            uf: "ce",
+            prep: "no",
+            verbose: "Ceará"
+        },
+        {
+            uf: "df",
+            prep: "no",
+            verbose: "Distrito Federal"
+        },
+        {
+            uf: "es",
             prep: "em",
-            verbose: "Rondônia"
+            verbose: "Espírito Santo"
         },
         {
             uf: "go",
@@ -109,14 +54,19 @@ const estados =
             verbose: "Goiás"
         },
         {
-            uf: "pi",
+            uf: "ma",
             prep: "no",
-            verbose: "Piauí"
+            verbose: "Maranhão"
         },
         {
-            uf: "rr",
+            uf: "mg",
             prep: "em",
-            verbose: "Roraima"
+            verbose: "Minas Gerais"
+        },
+        {
+            uf: "ms",
+            prep: "em",
+            verbose: "Mato Grosso do Sul"
         },
         {
             uf: "mt",
@@ -124,9 +74,59 @@ const estados =
             verbose: "Mato Grosso"
         },
         {
-            uf: "ac",
+            uf: "pa",
             prep: "no",
-            verbose: "Acre"
+            verbose: "Pará"
+        },
+        {
+            uf: "pb",
+            prep: "na",
+            verbose: "Paraíba"
+        },
+        {
+            uf: "pe",
+            prep: "em",
+            verbose: "Pernambuco"
+        },
+        {
+            uf: "pi",
+            prep: "no",
+            verbose: "Piauí"
+        },
+        {
+            uf: "pr",
+            prep: "no",
+            verbose: "Paraná"
+        },
+        {
+            uf: "rj",
+            prep: "no",
+            verbose: "Rio de Janeiro"
+        },
+        {
+            uf: "rn",
+            prep: "no",
+            verbose: "Rio Grande do Norte"
+        },
+        {
+            uf: "ro",
+            prep: "em",
+            verbose: "Rondônia"
+        },
+        {
+            uf: "rr",
+            prep: "em",
+            verbose: "Roraima"
+        },
+        {
+            uf: "rs",
+            prep: "no",
+            verbose: "Rio Grande do Sul"
+        },
+        {
+            uf: "sc",
+            prep: "em",
+            verbose: "Santa Catarina"
         },
         {
             uf: "se",
@@ -134,9 +134,9 @@ const estados =
             verbose: "Sergipe"
         },
         {
-            uf: "ms",
+            uf: "sp",
             prep: "em",
-            verbose: "Mato Grosso do Sul"
+            verbose: "São Paulo"
         },
         {
             uf: "to",
@@ -284,7 +284,6 @@ function updatePage(current_uf) {
     var filename = 'data_forecast_exp'
     var extension = '_estados.csv';
     if(isBrasil) extension = '_br.csv';
-    console.log(isBrasil+" "+extension);
     $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/' + filename + extension, function (raw_data) {
         full_data = raw_data.split("\n");
         current_data = full_data[current_index].replace(regex, '').split(" ");
