@@ -107,17 +107,22 @@
 
   <!-- Titulo Principal -->
   <div class="container-fluid mt-2">
-    <div class="main-title">
+    <div class="main-title" style="display: inline;">
+      <div class="display">Município de&nbsp;</div>
       <div class="dropdown">
         <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" data-display="static">
-          <h1 class="display">Município de <a href="#" style="text-decoration: none;"><span id="page-title">São Paulo</span></a></h1>
+          <a href="#" style="text-decoration: none;">
+            <div class="display" id="page-title">São Paulo</div> <!-- PAGE.TITLE -->
+          </a>
         </div>
         <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="titleDropdown">
           <a class="dropdown-item active" href="#sp_sp">São Paulo</a>
         </div>
       </div>
-      <small class="page-title-update updateDate">Última atualização: </small>
+    </div>
+    <div style="margin-left:1.3rem;">
+      <small class="page-title-update updateDate" style="display:block; margin:">Última atualização: </small>
     </div>
   </div>
 
