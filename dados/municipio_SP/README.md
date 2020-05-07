@@ -9,7 +9,17 @@ Os tipos possíveis (*) são: covid, srag, obitos_covid e obitos_srag
 Data é a data do dia mais recente para o qual há dados, 
 
 ex. 
-+ notificacoes_srag_2020_05_05.csv 
-+ notificacoes_covid_2020_05_05.csv
-+ nowcasting_srag_2020_05_05.csv
-+ nowcasting_covid_2020_05_05.csv
++ notificacoes_srag_2020_05_07.csv 
++ notificacoes_covid_2020_05_07.csv
++ nowcasting_srag_2020_05_07.csv
++ nowcasting_covid_2020_05_07.csv
++ n_casos_data_sintoma_srag_2020_05_07.csv
++ n_casos_data_sintoma_covid_2020_05_07.csv
+
+## Conteúdo das tabelas de nowcasting
+Os arquivos `nowcasting_*` sempre têm as colunas:
+
+  "estimate","lower","upper","onset_date","n.reported"
+
+`onset_date` é a data do caso - usando a data de **primeiro sintoma** para casos, e **de óbito** para óbitos, `estimate` contém a estimativa de casos por *nowcasting* para essa data, `lower` e `upper` têm o mínimo e o máximo das estimativas de casos por *nowcasting* (intervalo de confiança de 95%), e *n.reported* contém o número de casos reportados naquele dia (de novo, por data de sintoma).
+
