@@ -161,19 +161,28 @@
     <div class="card cd-70 chart-fix">
       <div class="card-body">
 
+        <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title text-center">Número de casos em escala logarítimica</h5>
+
+        <!-- CARD.GGPLOT.LEGEND -->
+        <div class="card-legend">
+          <small class="legend-square" id="wong_black">Casos Confirmados</small>
+          <small class="legend-square" id="ibm_ultramarine_dark">Previsão</small>
+        </div>
+
         <!-- CARD.GGPLOT -->
         <div data-src="./web/plot.forecast.exp.html" class="codegena_iframe"
              data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
              data-responsive="true">
-          <img src=./web/plot.forecast.exp.svg class="placeholder_svg" width="100%">
+          <picture>
+            <source media="(max-width: 575.98px)"  srcset="./web/plot.forecast.exp.ex.svg">
+            <source media="(max-width: 767.98px)"  srcset="./web/plot.forecast.exp.sm.svg">
+            <source media="(max-width: 991.98px)"  srcset="./web/plot.forecast.exp.md.svg">
+            <source media="(max-width: 1199.98px)" srcset="./web/plot.forecast.exp.lg.svg">
+            <img src="./web/plot.forecast.exp.svg" class="placeholder_svg" width="100%">
+          </picture>
         </div>
         <script src="./js/async-iframe.js"></script>
-
-        <!-- CARD.GGPLOT.LEGEND -->
-        <div class="card-legend">
-          <small class="legend-square" id="legendBlack">Casos Confirmados</small>
-          <small class="legend-square" id="legendBlue">Previsão</small>
-        </div>
 
       </div>
     </div>
@@ -194,7 +203,7 @@
 
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3">
-          Pontos <b class="legendBlack">pretos</b> indicam o número de casos confirmados notificados <span class="estado-prep"></span>
+          Pontos <b class="wong_black">pretos</b> indicam o número de casos confirmados notificados <span class="estado-prep"></span>
           por dia.
         </p>
 
@@ -205,9 +214,9 @@
         </ul>
 
         <p class="text-justify mt-3">
-          Pontos em <b class="legendBlue">azul</b> são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
+          Pontos em <b class="ibm_ultramarine_dark">azul</b> são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
             e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de
-          crescimento continuar a mesma dos últimos 5 dias. Em <b class="legendGrey">cinza</b> é o intervalo de confiança dessa previsão.
+          crescimento continuar a mesma dos últimos 5 dias. Em <b class="ibm_ultramarine">azul claro</b> é o intervalo de confiança dessa previsão.
         </p>
 
         <!-- CARD.BUTTON.EXPAND -->
