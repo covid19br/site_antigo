@@ -276,10 +276,32 @@ body {
         display: block!important;
     }
 }
+
+/* botoes */
 .btn {
     margin-top: .5rem;
 }
 
+/* card images */
+.card-images {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.side-by-side {
+    flex-grow: 1;
+}
+
+.center {
+    display: grid;
+    height: 100%;
+}
+
+@media (min-width: 768px){
+    .card-images {
+        flex-flow: row nowrap;
+    }
+}
 /* card menus */
 a.text-reset {
     text-decoration: none;
