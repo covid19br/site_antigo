@@ -16,9 +16,11 @@ make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel 
     geom_ribbon(fill="blue", data = fits$lower$pred[mask,],
                 aes(x = date, y = fits$estimate$pred$mean[mask], 
                     ymin = fits$lower$pred[mask, "X20."], 
-                    ymax = fits$upper$pred[mask, "X80."]),alpha=0.15, color = 0) + 
+                    ymax = fits$upper$pred[mask, "X80."]), alpha=0.15, 
+                color = "transparent") + 
     geom_ribbon(fill="indianred3", 
-                aes(ymin=lower, ymax=upper),alpha=0.15, color = 0) +
+                aes(ymin=lower, ymax=upper), alpha=0.15, 
+                color = "transparent") +
     geom_point(data = latest_data, size = 1.5, ) + 
     geom_line(data = latest_data) + 
     geom_line(aes(y = estimate), size = 1, color = "indianred3") + 

@@ -6,6 +6,7 @@ if(!require(cowplot)){install.packages("cowplot"); library(cowplot)}
 if(!require(patchwork)){install.packages("patchwork"); library(patchwork)}
 if(!require(svglite)){install.packages("svglite"); library(svglite)}
 if(!require(plotly)){install.packages("plotly"); library(plotly)}
+if(!require(widgetframe)){install.packages("widgetframe"); library(widgetframe)}
 
 Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
@@ -227,7 +228,7 @@ filenames <- paste0(names(plots.para.atualizar), ".municipio")
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-  graph.html <- ggplotly(plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
+  graph.html <- ggplotly(p = plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
   graph.svg <- plots.para.atualizar[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
                                                            axis.title = element_text(size=14, family="Arial", face="plain")) # title
   filepath <- paste(P("web/"),filenames[i],sep="")
