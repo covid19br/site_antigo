@@ -205,10 +205,12 @@ function updatePlaceholder(current_uf) {
             if(!hasUF(split_svg)) {
                 new_src = new_src + "." + split_src[i] + "." + current_uf;
                 new_svg = new_svg + "." + split_svg[i] + "." + current_uf;
+                responsive = new_svg;
             }
             else {
                 new_src = new_src + "." + current_uf;
                 new_svg = new_svg + "." + current_uf;
+                responsive = new_svg;
             }
         }
         else {
@@ -222,6 +224,11 @@ function updatePlaceholder(current_uf) {
     $(".codegena_iframe").attr("data-src", new_src);
     // SVG Placeholder
     $(".placeholder_svg").attr("src", new_svg);
+    // Responsive SVG
+    $('source[media="(max-width: 575.98px)"]').attr("srcset",(responsive+".ex.svg"));
+    $('source[media="(max-width: 767.98px)"]').attr("srcset",(responsive+".sm.svg"));
+    $('source[media="(max-width: 991.98px)"]').attr("srcset",(responsive+".md.svg"));
+    $('source[media="(max-width: 1199.98px)"]').attr("srcset",(responsive+".lg.svg"));
 }
 
 function updateWidget(current_uf) {
