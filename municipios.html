@@ -152,7 +152,7 @@
 
     <!-- Projecao.leitos.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu selected" card-id="modelo">
+      <div class="card menu" card-id="modelo">
         <div class="card-body">
 
           <!-- CARD.HEADER -->
@@ -193,7 +193,7 @@
     <a class="text-reset" href="#">
       <div class="card menu" card-id="infec">
         <div class="card-body">
-          
+
           <!-- CARD.HEADER -->
           <div class="card-hero">
             <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
@@ -345,9 +345,9 @@
         </ul>
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
-          Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b> 
+          Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
           hospitalizados no município de <span class="municipio"></span> até a data, e a <b style="color:#E41A1C">linha
-            vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação. 
+            vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
         </p>
 
         <!-- CARD.BUTTON.EXPAND -->
@@ -359,7 +359,7 @@
         <div class="collapse mt-2" id="collapseHosp1">
           <p class="text-justify">
             Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-            do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE. 
+            do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
           </p>
         </div>
 
@@ -370,7 +370,7 @@
           </li>
         </ul>
         <p class="text-justify mt-3">
-        Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessa previsão. 
+        Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessa previsão.
 		</p>
 		<p class="text-justify mt-3">
         Para saber mais detalhes, consulte o relatório completo <a href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>. Todos os relatórios anteriores podem ser encontrados <a href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
@@ -495,7 +495,7 @@
         <p class="text-justify">
           A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
           um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
-          chance de incluir o valor real de \(R_e\). 
+          chance de incluir o valor real de \(R_e\).
         </p>
         <p class="text-justify re">
           <span class="re_analise"></span>
@@ -626,7 +626,7 @@
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>
-    
+
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
       <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
@@ -636,7 +636,7 @@
         <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
       </small>
     </div>
-    
+
   </footer>
 
   <!-- Toast -->
@@ -677,9 +677,9 @@
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
   <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
   <script>
-    var sc_project=12220607; 
-    var sc_invisible=1; 
-    var sc_security="18092bfd"; 
+    var sc_project=12220607;
+    var sc_invisible=1;
+    var sc_security="18092bfd";
   </script>
   <script src="https://www.statcounter.com/counter/counter.js" async></script>
   <noscript>
