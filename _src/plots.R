@@ -10,16 +10,7 @@ library(scales)
 ################################################################################
 ## Parametros de formatacao comum aos plots
 ################################################################################
-plot.formatos <- theme_bw() +
-                 theme(axis.text= element_text(size=10, face="plain"),
-                       axis.title = element_text(size=10, face="plain"),
-                       legend.text = element_text(size=12),
-                       title = element_text(size = 12),
-                       plot.margin = margin(0, 0, 0, 0, "pt"),
-                       panel.border = element_blank(),
-                       panel.grid = element_line(size = 0.25),
-                       panel.grid.minor = element_blank(),
-                       panel.grid.major.x = element_blank())
+source("plot.formatos.R")
 plot.breaks <- c(10, 100, 1000, 10000, 100000, 1000000, 1000000)
 
 ################################################################################
