@@ -1,14 +1,15 @@
-# Pacotes necessários para a execução do programa
-install.packages("ggplot2")
-install.packages("tidyverse")
-install.packages("knitr")
-install.packages("plotly")
-install.packages("tidyr")
-install.packages("dplyr")
-install.packages("widgetframe")
-install.packages("rmarkdown")
-install.packages("zoo")
-install.packages("EpiEstim")
-install.packages("lubridate")
-install.packages("readr")
-install.packages("optparse")
+packages <- c("ggplot2", 
+			  "tidyverse", 
+			  "knitr", 
+			  "plotly", 
+			  "tidyr", 
+			  "dplyr", 
+			  "widgetframe", 
+			  "rmarkdown", 
+			  "zoo", 
+			  "EpiEstim", 
+			  "lubridate", 
+			  "readr", 
+			  "svglite",
+			  "scales")
+for (p in packages) if(!require(p, character.only=T)) install.packages(p)

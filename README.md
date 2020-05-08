@@ -40,7 +40,20 @@ Para instalar o Rstudio, primeiro, entre [aqui](https://rstudio.com/products/rst
 
 A instalação da maioria das bibliotecas se resolve com `install.packages("package_name")`, em R.Para instalar todas as bibliotecas necessárias, execute o arquivo "./_src/install_packages.R". São as bibliotecas a seguir:
 ```r
-packages <- c("ggplot2", "tidyverse", "knitr", "plotly", "tidyr", "dplyr", "widgetframe", "rmarkdown", "zoo", "EpiEstim", "lubridate", "readr", "svglite")
+packages <- c("ggplot2", 
+        "tidyverse", 
+        "knitr", 
+        "plotly", 
+        "tidyr", 
+        "dplyr", 
+        "widgetframe", 
+        "rmarkdown", 
+        "zoo", 
+        "EpiEstim", 
+        "lubridate", 
+        "readr", 
+        "svglite",
+        "scales")
 for (p in packages) if(!require(p, character.only=T)) install.packages(p)
 ```
 
@@ -71,30 +84,110 @@ $ Rscript update_all.R
 ```
 Alguns avisos aparecem após a execução, e ela demora um pouco. Espere terminar, e se não houver erros, os arquivos referentes aos gráficos em `.html` e `.svg` serão atualizados na pasta `web`, e podem ser vistos individualmente direto no navegador.
 
-## Criando novos gráficos
-Após terminar de criar um gráfico novo, para que ele seja incluído no html, o primeiro passo é fazer com que ele seja transformado em imagem ".svg" e um código ".html" com ggplotly (que garante a interatividade do gráfico no site).
+## Criando novos gráficos em páginas já existentes
+Após terminar de criar um gráfico novo, para que ele seja incluído no html, o primeiro passo é fazer com que ele seja transformado em imagem ".svg" e um código ".html" com ggplotly (que garante a interatividade do gráfico no site). Para isso, ele deve estar sendo plotado em um dos arquivos R `plots.R` (gráficos referentes ao Brasil todo) ou `plots_municipio.R` (gráficos referentes a todos os municipios). 
 
-No arquivo `render_graphs.R`, simplesmente adicione o nome do seu gráfico à lista de gráficos a serem renderizados:
+Em um dos arquivos `update.R` (gráficos referente Brasil todo) ou  `update_municipio.R` (referente a todos os municípios), adicione o nome do seu gráfico à lista de gráficos a serem renderizados:
 
 ```r
 ## No arquivo de update em questão
-# Graficos a serem atualizados
-plots.para.atualizar <- makeNamedList(plot.forecast.exp.br)
+plots.para.atualizar <- makeNamedList(..., seu.grafico)
+
 ```
-IMPORTANTE: ele deve ser um ggplot. Ele deve ser codado no arquivo `plots.R` ou `plots_municipio.R`. Caso seja uma análise para estado, enviar uma mensagem.
+IMPORTANTE: ele deve ser um ggplot. Caso seja uma análise para estado, enviar uma mensagem.
+
+## Adicionando novas modelagens
+
+Caso você tenha um novo modelo a incluir, que gere uma nova página, crie um arquivo para fazer update do seu modelo, e inclua ele no arquivo `update_all.R` da forma
+```r
+source("update_seumodelo.R")
+```
+
+Este arquivo de update deve conter as seguintes linhas de código, se os seus plots forem interativos:
+```r
+## Data de Atualizacao
+print("Atualizando data de atualizacao...")
+file <- file("../web/last.update.seumodelo.txt") # coloco o nome do municipio?
+writeLines(c(paste(now())), file)
+close(file)
+
+# Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plots.criados)
+filenames <- names(plots.para.atualizar)
+n <- length(plots.para.atualizar)
+
+for (i in 1:n){
+  graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
+  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
+                                                           axis.title = element_text(size=14, family="Arial", face="plain")) # title
+  filepath <- paste("../web/",filenames[i],sep="")
+  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 210, height = 142, units = "mm")
+}
+```
+substituindo apenas o `plots.criados` pela lista dos plots que vão ser colocados na página.
+
+Caso queira plots estáticos:
+```r
+## Data de Atualizacao
+print("Atualizando data de atualizacao...")
+file <- file("../web/last.update.seumodelo.txt") # coloco o nome do municipio?
+writeLines(c(paste(now())), file)
+close(file)
+
+# Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plots.criados)
+filenames <- names(plots.para.atualizar)
+n <- length(plots.para.atualizar)
+
+for (i in 1:n){
+  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
+                                                           axis.title = element_text(size=14, family="Arial", face="plain")) # title
+  filepath <- paste("../web/",filenames[i],sep="")
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 210, height = 142, units = "mm")
+}
+```
+Suas imagenns serão geradas com o mesmo nnome que o plot leva no R.
 
 ## Atualizando e criando novas páginas
 O arquivo `template.html` é um bom ponto de partida para criação de novas páginas. Ele inclui as barras de navegação superiores e inferiores pré-fabricadas, bem como a estrutura principal do corpo.
+
+Primeiro substitua os dados do trecho de código a seguir, que se encontra nas linhas 8 a 11.
+```html
+<!-- TÍTULO E DESCRIÇÃO DA PÁGINA-->
+<meta name="description"
+  content="SUA DESCRIÇÃO AQUI">
+<title>NOME DA SUA PÁGINA · Observatório Covid-19 BR</title>
+```
+
+Escolha também quais arquivos de CSS sua página vai usar, de acordo com o conteúdo. Para adicionar o arquivo, descomente a linha de código referente a ele. Os possíveis CSS se encontram nas linhas 19 a 24, no trecho
+
+```html
+<!-- <link href="./css/tables.css?ver=2.00" rel="stylesheet"> -->
+<!-- <link href="./css/toc.css?ver=2.00" rel="stylesheet"> -->
+<!-- <link href="./css/midia.css?ver=2.00" rel="stylesheet"> -->
+<!-- <link href="./css/email.css?ver=2.00" rel="stylesheet"> -->
+<!-- <link href="./css/accordion.css?ver=2.00" rel="stylesheet"> -->
+<!-- <link href="./css/charts.css?ver=2.00" rel="stylesheet"> -->
+```
+Os aquivos CSS: tables é o estilo para tabelas, o toc é para índices, o midia serve para calendários e listas, email serve para emails ofuscados (que não dá para clicar para evitar span de robôs), accordion serve para criar menus acordeão, e charts serve para estilo de gráficos. Uma pagina simples pode usar apenas o css global, que já está incluido no template. 
+
 A estrutura do site é composta por quatro principais grupos:
 
 ### 1. Barra Superior
 A barra superior é o elemento flutuante que inclui o logo, o menu de estados e o menu de paginas do site.
 
-#### Adicionando itens no menu dos estados
-Inclua os dados do estado no código a seguir e use-o para substituir `<!-- ESTADOS.ITEM -->` no arquivo .html:
-```
-<a class="dropdown-item" href="./siglaAqui.html">Nome do Estado</a>
-<!-- ESTADOS.ITEM -->
+#### Título
+Inclua o título da página no trecho a seguir, na linha 73 a 79.
+
+```r
+<!-- DESTAQUE -->
+<div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a href="#">
+    TITULO DA PÁGINA
+  </a>
+</div>
 ```
 
 #### Adicionando itens no menu principal
@@ -105,7 +198,7 @@ Inclua os dados da página no código a seguir e use-o para substituir `<!-- MEN
 </li>
 <!-- MENU.ITEM -->
 ```
-No arquivo .hmtl do próprio item, o código deve ser o seguinte para correta indicação da página ativa:
+No arquivo .html do próprio item, o código deve ser o seguinte para correta indicação da página ativa:
 ```
 <li class="nav-item active">
   <a class="nav-link" href="./ITEM.html">ITEM</a>
@@ -118,6 +211,7 @@ Busque por `<!-- OBSERV.LOGO.IMAGEM -->` e substitua o conteúdo de `src=""` pel
 
 ### 2. Título Principal
 Este grupo inclui o título principal da página e a data de atualização.
+
 #### Alterando o título da página
 Busque por `<!-- PAGE.TITLE -->` e substitua o conteúdo após `<h1 class="display">` pelo título desejado.
 
@@ -138,11 +232,14 @@ A estrutura básica de um card é formada por:
 
 <!-- NEW.CARD -->
 ```
+
 Cada card distinto deve conter um identificador distinto em `<!-- Identificador do card -->` para facilitar sua edição.
 
 Basta adicionar os componentes desejados em `<!-- CONTEÚDO AQUI -->` de acordo com os códigos pré-fabricados a seguir:
+
 ##### 1. Títulos dos cards
 Títulos são identificados por `<!-- CARD.HEADER -->` *Atenção!* Títulos também devem ser inclusos no **conteúdo** do card.
+
 ##### 1.1 Título com ícone
 Modifique o **ícone** buscando por `<!-- CARD.TITLE.ICON -->` e substituindo `NOME_DO_ARQUIVO.svg`. O ícone deve ser uma imagem em .svg.
 
@@ -152,7 +249,7 @@ Modifique a **descrição** do card buscando por `<!-- CARD.TITLE.DESCRIPTION --
 ```
 <!-- CARD.HEADER -->
 <div class="media">
-  <img src="./img/NOME_DO_ARQUIVO.svg" width=48px alt="DESCRIÇÃO ACESSÍVEL" class="card-icon"> <!-- CARD.TITLE.ICON -->
+  <img src="./img/NOME_DO_ARQUIVO.svg" width=40px alt="DESCRIÇÃO ACESSÍVEL" class="card-icon"> <!-- CARD.TITLE.ICON -->
   <div class="media-body">
     <h5 class="card-title">TITULO DO CARD</h5> <!-- CARD.TITLE.TEXT -->
     <p class="card-text">BREVE DESCRICAO</p> <!-- CARD.TITLE.DESCRIPTION -->
@@ -186,6 +283,7 @@ A página deve incluir o script updateDate.js para correto funcionamento:
 ```
 <script src="js/updateDate.js"></script>
 ```
+Esse script já está incluido no template.
 
 ##### 2.1.2 Data de atualização (manual)
 Se necessário, modifique uma data de atualização manual buscando por `<!-- CARD.DATE.MANUAL -->` ou insira uma nova com o código a seguir:
@@ -198,7 +296,7 @@ Se necessário, modifique uma data de atualização manual buscando por `<!-- CA
 Modifique uma imagem estática e sua legenda buscando por `<!-- CARD.IMAGE -->` ou insira uma nova com o código a seguir:
 ```
 <!-- CARD.IMAGE -->
-<img src="./fig/NOME_DO_ARQUIVO.jpg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL"> 
+<img src="./fig/NOME_DO_ARQUIVO.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL"> 
 <p class="card-text legenda"><small>BREVE LEGENDA AQUI</small></p> <!-- CARD.IMAGE.LEGENDA -->
 ```
 
@@ -211,7 +309,7 @@ Modifique um GGPlot interativo buscando por `<!-- CARD.GGPLOT -->` ou insira um 
   </div>
 <script src="./js/async-iframe.js"></script>
 ```
-Nota: `IDENTIFICADOR.DO.GRAFICO` deve ser substituído pelo mesmo identificador utilizado na geração do gráfico em `render_graphs.R`
+Nota: `IDENTIFICADOR.DO.GRAFICO` deve ser substituído pelo mesmo identificador utilizado na geração do gráfico nos arquivos para plotagem.
 Nota 2: Para correto funcionamento na página `estados.html`, os gráficos devem ser salvos no R com seguinte nomenclatura:
 ```
 IDENTIFICADOR.GRÁFICO.UF
@@ -312,6 +410,21 @@ Adicione o seguinte código em seu card na posição em que gostaria que a tabel
 <include src="./tables/TABELA.html">Carregando...</include>
 ```
 
+##### 2.11 Tabela de Conteúdo
+
+Caso queira uma tabela de conteúdo na sua página, descomente o código
+```html
+<!-- SCRIPT PARA TABELA DE CONTEÚDO-->
+<!---<script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script> -->
+```
+e adicione as seguintes linha de código antes dos cards. 
+```html
+<!-- TABELA DE CONTEÚDO AQUI -->
+<p class="h6 toc-title">Índice</p>
+<nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+```
+ATENÇÃO: lembre de descomentar também o CSS relativo a tabela de conteúdo (toc).
+
 #### Adicionando cards em uma página
 Substitua qualquer `<!-- NEW.CARD -->` pelo código do seu card de acordo com a posição desejada.
 
@@ -329,7 +442,7 @@ A barra inferior é o elemento fixo no final da página e pode conter múltiplos
 #### Adicionando texto
 Substitua `<!-- FOOTER.ITEM -->` pelo texto desejado usando as tags `<div>`
 ```
-<div class="footer-content">Seu texto aqui</div>
+<div class="footer-content"><small>Seu texto aqui</small></div>
 <!-- FOOTER.ITEM -->
 ```
 #### Adicionando texto com ícones
