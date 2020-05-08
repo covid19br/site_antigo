@@ -1,5 +1,6 @@
 source("update.R")
 source("update_estado.R")
+source("update_modelogro.R")
 
 municipios <- c("SP")
 
