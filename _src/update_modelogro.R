@@ -5,6 +5,7 @@ if(!require(ggplot2)){install.packages("ggplot2"); library(ggplot2)}
 if(!require(cowplot)){install.packages("cowplot"); library(cowplot)}
 if(!require(patchwork)){install.packages("patchwork"); library(patchwork)}
 if(!require(svglite)){install.packages("svglite"); library(svglite)}
+if(!require(plotly)){install.packages("plotly"); library(plotly)}
 
 Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
@@ -212,13 +213,16 @@ file <- file(P("web/last.update.modelogro.txt")) # coloco o nome do municipio?
 writeLines(c(paste(now())), file)
 close(file)
 
+makeNamedList <- function(...) {
+  structure(list(...), names = as.list(substitute(list(...)))[-1L])
+}
+
 # Graficos a serem atualizados
 plots.para.atualizar <- makeNamedList(plot.covid.leitos.forecast.exp, plot.covid.leitos.forecast.logistic,
                                       plot.covid.uti.forecast.exp, plot.covid.uti.forecast.logistic,
                                       plot.srag.leitos.forecast.exp, plot.srag.leitos.forecast.logistic,
                                       plot.srag.uti.forecast.exp, plot.srag.uti.forecast.logistic)
 filenames <- paste0(names(plots.para.atualizar), ".municipio")
-
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
