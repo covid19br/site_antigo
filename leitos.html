@@ -134,7 +134,7 @@
                 <p class="text-justify mt-2">
                     No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados
                     de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o
-                    número de casos graves da doença duplicava rapidamente (a cada 2.17 dias, valor estimado entre os dias 14 e 19 de
+                    número de casos graves da doença duplicava rapidamente (a cada 2,17 dias, valor estimado entre os dias 14 e 19 de
                     março).
                 </p>
 
@@ -373,30 +373,32 @@
                 <!-- CARD.TEXT -->
                 <p class="text-justify">
                     Usamos um modelo que simula os números de infectados, suscetíveis e
-                    hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo.
+                    hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo. 
+                    Consideramos como suscetíveis as pessoas que não foram infectadas pela doença.
                 </p>
                 <p class="text-justify">
                     Utilizamos número de hospitalizados (casos graves) por faixa etária da base oficial de notificações
                     SIVEP-GRIPE entre os dias 14 e 19 de março (período anterior às medidas de quarentena, que entraram
-                    em vigor dis 24 de março <a href="#ref1">(Ref. 1)</a>. Usamos um método de ajuste bayesiano para
+                    em vigor dia 24 de março <a href="#ref1">(Ref. 1)</a>. Usamos um método de ajuste bayesiano para
                     ajustar os valores dos parâmetros do modelo aos dados observados.
                 </p>
                 <p class="text-justify">
                     O tempo de duplicação que melhor se ajustou aos dados
-                    observados neste período foi de 2.4 dias. Usamos este valor inicial de tempo de duplicação (2.4
-                    dias) para projetar o número de hospitalizados para os dias subsequentes (20 de março a 13 de
+                    observados neste período foi de 2,17  <span>&#177;</span> 0,17 dias. 
+                    Usamos este valor inicial de tempo de duplicação como estimativa inicial da taxa de propagação da doença 
+                    e projetamos o número de hospitalizados para os dias subsequentes (20 de março a 13 de
                     abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo
-                    com o número de não infectados no tempo t.
+                    com o número de uscetíveis a cada tempo t.
                 </p>
                 <p class="text-justify">
                     Para a estimativa de número de infectados, utilizamos a
                     distribuição etária de hospitalizados proposta na <a href="#ref2">Ref. 2</a>. A conversão de
-                    hospitalizados em pessoas
-                    que necessitam de leitos de UTI foi feita conforme a distribuição etária de pacientes hospitalizados
-                    que necessitam de UTI proposta na <a href="#ref3">Ref. 3</a>. Nós não consideramos possíveis
-                    mudanças no tempo de
-                    duplicação devido às medidas de distanciamento social. Desta forma, nós não consideramos grandes
-                    variações e incertezas no tempo de duplicação.
+                    hospitalizados em pessoas que necessitam de leitos de UTI foi feita conforme a 
+                    distribuição etária de pacientes hospitalizados que necessitam de UTI proposta na <a href="#ref3">Ref. 3</a>. 
+                    Nós não consideramos possíveis mudanças no tempo de duplicação devido às medidas de distanciamento social, 
+                    somente devido a diminuição de suscetíveis. A incerteza (95% C.L.) da estimativa do tempo inicial 
+                    de duplicação é propagada ao modelo e domina as barras de erro dos valores estimados pelo modelo.
+
                 </p>
             </div>
         </div>
