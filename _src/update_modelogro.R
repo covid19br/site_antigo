@@ -9,8 +9,8 @@ if(!require(svglite)){install.packages("svglite"); library(svglite)}
 Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
 pdf(NULL)
-print_plots = FALSE
-format = "svg"
+print_validation_plots = FALSE
+format = "png"
 
 PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)  
 
@@ -20,90 +20,7 @@ P = function(...) file.path(PRJROOT, ...)
 
 PLOTPATH = function(...) file.path(PRJROOT, "outputs/municipio_SP/projecao_leitos/figuras", ...)
 
-make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel = "Hospitalizados", 
-                       title = "Previsões", breaks = 1000){
-  last_date = last(filter(data, type == disease)$date)
-  mask = fits$estimate$pred$date >= last_date
-  plot = ggplot(filter(data, type == disease), aes(date, observed)) + 
-    geom_ribbon(fill="blue", data = fits$lower$pred[mask,],
-                aes(x = date, y = fits$estimate$pred$mean[mask], 
-                    ymin = fits$lower$pred[mask, "X20."], 
-                    ymax = fits$upper$pred[mask, "X80."]),alpha=0.15, color = 0) + 
-    geom_ribbon(fill="indianred3", 
-                aes(ymin=lower, ymax=upper),alpha=0.15, color = 0) +
-    geom_point(data = latest_data, size = 1.5, ) + 
-    geom_line(data = latest_data) + 
-    geom_line(aes(y = estimate), size = 1, color = "indianred3") + 
-    geom_line(data = fits$lower$pred, aes(y = X20.), colour = "blue", linetype= "dotted") + 
-    geom_line(data = fits$upper$pred, aes(y = X80.), colour = "blue", linetype= "dotted") + 
-    geom_line(data = fits$estimate$pred, aes(y = mean), colour = "blue", size = 1) + 
-    theme_bw() + scale_color_manual(values = c("black", "darkgreen")) +
-    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
-    #scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
-    annotate("text", 
-             x = min(data$date) + (0.5 * diff(range(data$date))), 
-             y = max(fits$upper$pred[fits$estimate$pred$date == (last_date+5), "X80."], 
-                     data[data$date == (last_date),"upper"], 
-                     data[data$date == (last_date),"observed"]) * 1.1, 
-             label = "Correção\natraso", color = "indianred3", size = 6, fontface = "bold", 
-             vjust = "top") +
-    annotate("text", x = min(data$date) + (0.75 * diff(range(data$date))), 
-             y = max(fits$upper$pred[fits$estimate$pred$date == (last_date+5), "X80."], 
-                     data[data$date == (last_date),"upper"], 
-                     data[data$date == (last_date),"observed"]) * 1.1,
-             label = "Projeção", color = "blue", size = 6, fontface = "bold", 
-             vjust = "top") +
-    annotate("text", x = min(data$date) + (0.25 * diff(range(data$date))), 
-             y = max(fits$upper$pred[fits$estimate$pred$date == (last_date+5), "X80."], 
-                     data[data$date == (last_date),"upper"], 
-                     data[data$date == (last_date),"observed"]) * 1.1,
-             label = "Observado", color = "black", size = 6, fontface = "bold", 
-             vjust = "top") +
-    theme(legend.position = "none") + 
-    labs(x = "Dia", y = ylabel) + 
-    ggtitle(title)
-  if(!is.null(latest_data)){
-    latest_last_date = last(filter(latest_data, type == disease)$date)
-    plot_validation = plot + geom_ribbon(fill="orange",data = latest_data,
-                                         aes(ymin=lower, ymax=upper),alpha=0.1, color = 0) +
-      geom_line(data = latest_data, aes(y = estimate), color = "orange", size = 1) +
-      annotate("text", x = min(data$date) + (1 * diff(range(data$date))), 
-               y = max(fits$upper$pred[fits$estimate$pred$date == (last_date+5), "X80."], 
-                       data[data$date == (last_date),"upper"], 
-                       data[data$date == (last_date),"observed"]) * 1.1,
-               label = "Correção\natual", color = "orange", size = 6, fontface = "bold", 
-               vjust = "top")  
-    plot_validation
-  } else
-    plot_validation = NULL
-  list(current = plot, validation = plot_validation)
-}
-
-make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados", 
-                       title = "Previsões", breaks = 1000){
-  last_date = last(filter(data, type == disease)$date)
-
-  plot = ggplot(filter(data, type == disease), aes(date, observed)) + 
-    geom_ribbon(fill="blue", 
-                aes(ymin=lower, ymax=upper),alpha=0.15, color = 0) +
-    geom_line(aes(y = estimate), color = "blue", size = 1.5) + 
-    geom_point(size=2) +
-    theme_bw() + scale_color_manual(values = c("black", "darkgreen")) +
-    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
-    scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
-    annotate("text", x = last_date - 6, 
-             y = data[data$date == (last_date-6),"estimate"] * 1.2, 
-             label = "Corrigido", color = "blue", size = 4.5) +
-    annotate("text", x = last_date-2, 
-             y = data[data$date == (last_date-1),"observed"] * 0.83, 
-             label = "Observado", color = "black", size = 4.5)  +
-    theme(legend.position = "none") + 
-    labs(x = "Dia", y = ylabel) + 
-    ggtitle(title)
-  
-
-  return(plot)
-}
+source(P("_src/plot_functions_modelogro.R"))
 
 hospitalized_files = sort(grep("hopitalized_2020", dir(O("hospitalizados"), full.names = TRUE), value = TRUE))
 UTI_files          = sort(grep("hopitalized_UTI_2020", dir(O("hospitalizados"), full.names = TRUE), value = TRUE))
@@ -126,37 +43,38 @@ if(is.null(data_date)){
 # reading vintage and current data
 #######################
 
-hospital_data = read.csv(current_hosp_table)
-hospital_data$date = as.Date(hospital_data$date)
-
-latest_hosp_table = last(hospitalized_files)
-latest_UTI_table = last(UTI_files)
-latest_date = as.Date(gsub(".csv", "", gsub("hopitalized_", "", last(strsplit(latest_hosp_table, "/")[[1]]))), format = "%Y-%m-%d")
-
-latest_hospital_data = read.csv(latest_hosp_table)
-latest_hospital_data$date = as.Date(latest_hospital_data$date)
-
-UTI_data = read.csv(current_UTI_table)
-UTI_data$date = as.Date(UTI_data$date)
-
-latest_UTI_data = read.csv(latest_UTI_table)
-latest_UTI_data$date = as.Date(latest_UTI_data$date)
-
-FITSPATH =  paste0(O("curve_fits"), "/curve_fits_", data_date,".Rds")
-current_fits = readRDS(FITSPATH)
-
-covid = hospital_data %>% filter(type == "covid")
-latest_covid = latest_hospital_data %>% filter(type == "covid")
-
-covid_UTI = UTI_data %>% filter(type == "covid")
-latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
-
-srag = hospital_data %>% filter(type == "srag")
-latest_srag = latest_hospital_data %>% filter(type == "srag")
-
-srag_UTI = UTI_data %>% filter(type == "srag")
-latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
-
+{
+  hospital_data = read.csv(current_hosp_table)
+  hospital_data$date = as.Date(hospital_data$date)
+  
+  latest_hosp_table = last(hospitalized_files)
+  latest_UTI_table = last(UTI_files)
+  latest_date = as.Date(gsub(".csv", "", gsub("hopitalized_", "", last(strsplit(latest_hosp_table, "/")[[1]]))), format = "%Y-%m-%d")
+  
+  latest_hospital_data = read.csv(latest_hosp_table)
+  latest_hospital_data$date = as.Date(latest_hospital_data$date)
+  
+  UTI_data = read.csv(current_UTI_table)
+  UTI_data$date = as.Date(UTI_data$date)
+  
+  latest_UTI_data = read.csv(latest_UTI_table)
+  latest_UTI_data$date = as.Date(latest_UTI_data$date)
+  
+  FITSPATH =  paste0(O("curve_fits"), "/curve_fits_", data_date,".Rds")
+  current_fits = readRDS(FITSPATH)
+  
+  covid = hospital_data %>% filter(type == "covid")
+  latest_covid = latest_hospital_data %>% filter(type == "covid")
+  
+  covid_UTI = UTI_data %>% filter(type == "covid")
+  latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
+  
+  srag = hospital_data %>% filter(type == "srag")
+  latest_srag = latest_hospital_data %>% filter(type == "srag")
+  
+  srag_UTI = UTI_data %>% filter(type == "srag")
+  latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
+}
 ########################
 # Covid
 ########################
@@ -172,7 +90,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     print(plot_grid(pce$current, pce$validation))
     save_plot(PLOTPATH(paste0("/covid_in_hospital_nowcast_Exponential_predictions_", data_date, ".svg")),
               pce$current, base_height = 6.5, base_asp = 1.7, scale = 0.8)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(filename = PLOTPATH(paste0("/covid_in_hospital_nowcast_Exponential_predictions_", data_date, "_validation.", format)),
                 pce$validation, base_height = 6.5, base_asp = 1.7, scale = 0.8)
 } 
@@ -184,7 +102,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     print(plot_grid(pcl$current, pcl$validation))
     save_plot(PLOTPATH(paste0("covid_in_hospital_nowcast_Logistic_predictions_", data_date, ".", format)),
               pcl$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(PLOTPATH(paste0("covid_in_hospital_nowcast_Logistic_predictions_", data_date, "_validation.", format)),
                 pcl$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -202,7 +120,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(PLOTPATH(paste0("covid_in_UTI_nowcast_Exponential_predictions_", data_date, ".", format)),
               pceU$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(PLOTPATH(paste0("covid_in_UTI_nowcast_Exponential_predictions_", data_date, "_validation.", format)),
               pceU$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -215,7 +133,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(PLOTPATH(paste0("covid_in_UTI_nowcast_Logistic_predictions_", data_date, ".", format)),
               pclU$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(PLOTPATH(paste0("covid_in_UTI_nowcast_Logistic_predictions_", data_date, "_validation.", format)),
                 pclU$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -238,7 +156,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(filename = PLOTPATH(paste0("srag_in_hospital_nowcast_Exponential_predictions_", data_date, ".", format)),
               pse$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(filename = PLOTPATH(paste0("srag_in_hospital_nowcast_Exponential_predictions_", data_date, "_validation.", format)),
                 pse$validation, base_height = 6.5, base_asp = 1.7)
 }         
@@ -251,7 +169,8 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(PLOTPATH(paste0("srag_in_hospital_nowcast_Logistic_predictions_", data_date, ".", format)),
               psl$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
+      
       save_plot(PLOTPATH(paste0("srag_in_hospital_nowcast_Logistic_predictions_", data_date, "_validation.", format)),
                 psl$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -269,7 +188,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(PLOTPATH(paste0("srag_in_UTI_nowcast_Exponential_predictions_", data_date, ".", format)),
               pseU$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(PLOTPATH(paste0("srag_in_UTI_nowcast_Exponential_predictions_", data_date, "_validation.", format)),
                 pseU$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -282,7 +201,7 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
     
     save_plot(PLOTPATH(paste0("srag_in_UTI_nowcast_Logistic_predictions_", data_date, ".", format)),
               pslU$current, base_height = 6.5, base_asp = 1.7)
-    if(print_plots)
+    if(print_validation_plots)
       save_plot(PLOTPATH(paste0("srag_in_UTI_nowcast_Logistic_predictions_", data_date, "_validation.", format)),
                 pslU$validation, base_height = 6.5, base_asp = 1.7)
 }
@@ -296,3 +215,21 @@ latest_srag_UTI = latest_UTI_data %>% filter(type == "srag")
 # format = "png"
 # save_plot(filename = PLOTPATH(paste0("srag_hospitalizados.", format)), ps, base_asp = 1.2, base_height = 5.5, ncol = 2)
 
+print("Atualizando data de atualizacao...")
+file <- file("../web/last.update.modelogro.txt") # coloco o nome do municipio?
+writeLines(c(paste(now())), file)
+close(file)
+
+# Graficos a serem atualizados
+plots.para.atualizar <- makeNamedList(plots.criados)
+filenames <- names(plots.para.atualizar)
+n <- length(plots.para.atualizar)
+
+for (i in 1:n){
+  graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
+  graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
+                                                           axis.title = element_text(size=14, family="Arial", face="plain")) # title
+  filepath <- paste(P("web/"),filenames[i],sep="")
+  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 210, height = 142, units = "mm")
+}
