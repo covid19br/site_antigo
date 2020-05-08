@@ -132,6 +132,7 @@ plot.tempo.dupl.municipio <-
     scale_x_date(date_labels = "%d/%b", name="") +
     ##coord_cartesian(ylim = c(0, 50)) +
     ylab("Tempo de duplicação (dias)") +
+  ylim(0, max(ic.sup)) +
     plot.formatos 
 
 plot.tempo.dupl.municipio.srag  <- plot.tempo.dupl.municipio %+% fortify(window(td.now.srag, start=min(time(td.now)))) 
