@@ -347,102 +347,85 @@
   <!-- Sobre -->
   <div class="card-deck sobre">
     <!-- SOBRE.CONTENT.CARD -->
-    <div class="card cd-30">
+    <div class="card">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Sobre os dados no município de <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Sobre o modelo</h5> <!-- CARD.TITLE.TEXT -->
+        
+        <!-- CARD.TEXT -->
         <p class="text-justify">
-          O <i>Observatório Covid-19 BR</i> participa do <b>Grupo Técnico
-            de Assessoramento em Epidemiologia e Modelagem Matemática COVID19</b>
-          (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São
-          Paulo. Este grupo analisa as bases de dados oficiais para o município,
-          para subsidiar tomada de decisão.
+          As previsões de médio prazo apresentadas aqui são feitas utilizando-se um modelo matemático de compartimentos que simula
+          as características epidemiológicas da COVID-19, desenvolvido em colaboração com o Covid-19 International Modelling
+          Consortium [1].
         </p>
         <p class="text-justify">
-          Com as notificações de casos graves suspeitos e confirmados de
-          COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
-          Sivep-Gripe), o GT COVID-19 Sampa <b>estima o número de casos graves que
-            já ocorreram mas ainda não foram notificados</b>. Com esses dados
-          corrigidos é possível obter estimativas mais confiáveis da evolução da
-          epidemia.
+          Cada compartimento populacional representa uma classe de pessoas (suscetíveis, expostas, infectadas e recuperadas,
+          conforme imagem ao lado) e é estruturado por faixas etárias em intervalos de 5 anos.
         </p>
+        <p class="text-justify">
+          Para parametrizar e ajustar o modelo, nos baseamos em estudos clínicos internacionais sobre o espectro de apresentação
+          clínica da doença, matrizes de contato estimadas para o Brasil [2], dados demográficos municipais do IBGE [3] e
+          incidência e número de óbitos de SRAG e COVID-19 em residentes de São Paulo [4], corrigidos pela técnica de correção de
+          atrasos (nowcasting) apresentada na página <i>São Paulo</i>. (COLOCAR LINK AQUI)
+        </p>
+        <!-- CARD.IMAGE -->
+        <img width="90%" src="./web/cenarios/como_diagram.png">
       </div>
     </div>
 
     <!-- SOBRE.EQUIPE.CARD -->
-    <div class="card cd-70">
+    <div class="card">
       <div class="card-body">
+
         <!-- CARD.HEADER -->
-        <div class="media">
-          <ion-icon name="people-circle-outline" size="large" class="card-icon"></ion-icon> <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Equipe</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Conheça a equipe que trabalha para trazer o Observatório COVID-19 BR</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
+        <h5 class="card-title">Covid-19 International Modelling Consortium (CoMo)</h5> <!-- CARD.TITLE.TEXT -->
+                
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          O CoMo é um consórcio internacional de modelagem criado pela Prof. Lisa White (Universidade de Oxford) visando utilizar
+          modelagem matemática para contribuir no planejamento de políticas públicas de combate à pandemia de COVID-19. Dezenas de
+          cientistas de diversas nacionalidades constituem subgrupos do CoMo, cada qual adequando a modelagem ao seu contexto
+          específico regional.
+        </p>
+        <p class="text-justify">
+          O grupo brasileiro adaptou estrutura e parâmetros da modelagem à realidade paulistana, visto que é o local com maior
+          concentração de casos e maior disponibilidade de dados atualmente, devido à nossa colaboração com o GT COVID-19 Sampa.
+        </p>
 
-        <!-- CARD.UNORDERED.LIST -->
-        <ul class="list-group mt-2">
-          <li class="list-group-item">Ana Freitas Ribeiro (médica sanitarista @ IIER – professora Uninove e USCS) | <a
-              target="_blank" rel="noopener" href="http://lattes.cnpq.br/2580724337528147">CV</a></li>
+        <!-- CARD.HEADER -->
+        <h5 class="card-title mt-3">Sobre os dados no município de São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+                
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          O Observatório Covid-19 BR participa do Grupo Técnico de Assessoramento em Epidemiologia e Modelagem Matemática COVID19
+          (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São Paulo. Este grupo analisa as bases de dados oficiais para
+          o município, para subsidiar tomada de decisão.
+        </p>        
 
-          <li class="list-group-item">Breno Souza de Aguiar (assessor técnico @ SMS-SP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3614173324900214">CV</a></li>
-
-          <li class="list-group-item">Diogo Melo (pós doc @ IB-USP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7012154595546796">CV</a></li>
-
-          <li class="list-group-item">Flávia Maria Darcie Marquitti (pós doc @ <a target="_blank" rel="noopener"
-              href="https://www.ifi.unicamp.br/~flaviam/">IFGW e IB</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/750889398476891">CV</a></li>
-
-          <li class="list-group-item">Hélio Neves (médico sanitarista @ SMS-SP – professor FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/2581276764223304">CV</a></li>
-
-          <li class="list-group-item">José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP)
-
-          <li class="list-group-item">Karina de Cassia Braga Ribeiro (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/6967301297739351">CV</a></li>
-
-          <li class="list-group-item">Marcelo Antunes Failla (mestrando @ USP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7348318962497209">CV</a></li>
-
-          <li class="list-group-item">Marcia Caldas de Castro (professora @ Harvard T.H. Chan SPH) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3247288157664157">CV</a></li>
-
-          <li class="list-group-item">Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7977489515345196">CV</a></li>
-
-          <li class="list-group-item">Paulo Carrara de Castro (professor @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/1797989230776090">CV</a></li>
-
-          <li class="list-group-item">Paulo Inácio Prado (professor @ <a target="_blank" rel="noopener"
-              href="http://ecologia.ib.usp.br/let/">IB-USP)</a> | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
-
-          <li class="list-group-item">Rafael Lopes Paixão da Silva (doutorando @ <a target="_blank" rel="noopener"
-              href="https://www.ift.unesp.br">IFT - UNESP</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3085324638663546">CV</a></li>
-
-          <li class="list-group-item">Renato Mendes Coutinho (professor @ <a target="_blank" rel="noopener"
-              href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
-
-          <li class="list-group-item">Roberto Kraenkel (professor @ <a target="_blank" rel="noopener"
-              href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
-
-          <li class="list-group-item">Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP) | <a
-              target="_blank" rel="noopener" href="http://lattes.cnpq.br/4067424355078812">CV</a></li>
-
-          <li class="list-group-item">Tatiana P. Portella Zenker (doutoranda @ <a target="_blank" rel="noopener"
-              href="http://ecologia.ib.usp.br/">Ecologia - USP</a> ) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/8988655613888832">CV</a></li>
-        </ul>
+        <!-- CARD.HEADER -->
+        <h5 class="card-title mt-3">Referências</h5> <!-- CARD.TITLE.TEXT -->
+        <!-- CARD.TEXT -->
+        <ol>
+            <li id="ref1">
+              <a href="http://comomodel.net/" target="_blank" rel="">
+                CoMo COVID-19 App.
+              </a>
+            </li>
+            <li id="ref2">
+              Prem, K.; Cook, A. R.; Jit, M..
+              <a href="https://doi.org/10.1371/journal.pcbi.1005697" target="_blank" rel="noopener">
+                Projecting social contact matrices in 152 countries using contact surveys and demographic data</a>. 2017.
+            </li>
+            <li id="ref3">
+              <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados" target="_blank" rel="noopener">
+                Projeções da População do Brasil e Unidades da Federação por sexo e idade: 2010-2060</a>. IBGE.
+            </li>
+        </ol>
+        
       </div>
     </div>
+
   </div>
 
   <!-- Alert -->
