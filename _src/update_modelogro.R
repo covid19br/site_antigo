@@ -208,7 +208,7 @@ if(is.null(data_date)){
 ########################
 
 print("Atualizando data de atualizacao...")
-file <- file("../web/last.update.modelogro.txt") # coloco o nome do municipio?
+file <- file(P("web/last.update.modelogro.txt")) # coloco o nome do municipio?
 writeLines(c(paste(now())), file)
 close(file)
 
