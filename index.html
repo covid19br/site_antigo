@@ -105,6 +105,16 @@
 
   </nav>
 
+  <!-- Alert -->
+  <div class="container-fluid mt-2">
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <a href="notas/Carta_Observatorio.pdf" target="_blank" rel="noopener" class="alert-link">COVID-19: ainda há muito pela frente</a><br>
+      Clique no título para acessar a nota publicada pelo Observatório COVID-19 BR em 8 de maio de 2020.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
 
   <!-- Date & Hour -->
   <div class="container-fluid mt-2">
@@ -112,12 +122,6 @@
       <h1 class="display" id="page-title">Visão Geral</h1><small class="page-title-update updateDate">Última
         atualização: </small>
     </div> <!-- PAGE.TITLE -->
-  </div>
-
-  <!-- Alert -->
-  <div class="alert alert-primary" role="alert">
-    <a href="notas/Carta_Observatorio.pdf" target="_blank" rel="noopener" class="alert-link">COVID-19: ainda há muito pela frente</a><br>
-    Clique acima para acessar a nota publicada pelo Observatório COVID-19 BR em 8 de maio de 2020
   </div>
 
   <!-- Cards -->
@@ -211,11 +215,13 @@
     <div class="card">
       <div class="card-body">
 
-	  <!-- Alert -->
-	  <div class="alert alert-primary" role="alert">
-	    <a href="municipios.html" target="_blank" rel="noopener" class="alert-link">Novidade no site!</a><br>
-	    Informações detalhadas sobre previsão de leitos ajudam na logística do sistema de hospitalização.
-	  </div>
+        <!-- Alert -->
+        <div class="alert alert-info alert-dismissible fade show mt-2" role="alert">
+          <small><b>Novidade no site!</b></small>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
 
         <!-- CARD.HEADER -->
         <div class="media">
@@ -227,12 +233,14 @@
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
-     <!-- CARD.IMAGE -->
+
+        <!-- CARD.IMAGE -->
         <a href="municipios.html"><img src="./fig/leitosSP.png" class="card-img-top mt-3"
             alt="Gŕafico mostrando o número de leitos ocupados na cidade de São Paulo"></a>
+
         <!-- CARD.TEXT -->
         <p class="text-justify">
-  		Estimamos o número de leitos ocupados no município de São Paulo usando os dados de notificação de hospitalizações por SRAG (Síndrome
+  		    Estimamos o número de leitos ocupados no município de São Paulo usando os dados de notificação de hospitalizações por SRAG (Síndrome
           Respiratória Aguda Grave) da base SIVEP-Gripe corrigidos por atraso.
         </p>
 
@@ -358,21 +366,26 @@
           pandemia do novo coronavírus (SARS-CoV-2) no estado de SP.
         </p>
 
+        <p class="text-justify">Leia os relatórios na íntegra:</p>
+
         <!-- CARD.BUTTON -->
-        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/49" target="_blank" rel="noopener"><button
-            class="btn btn-primary" type="button">
-            Leia o relatório na íntegra aqui para o Estado de São Paulo. 
-          </button></a>
+        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/49" target="_blank" rel="noopener">
+          <button class="btn btn-primary" type="button">
+             Estado de São Paulo
+          </button>
+        </a>
 
-        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/35" target="_blank" rel="noopener"><button
-            class="btn btn-primary" type="button">
-            Leia o relatório na íntegra aqui para a região Nordeste do país. 
-          </button></a>
+        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/35" target="_blank" rel="noopener">
+          <button class="btn btn-primary" type="button">
+            Nordeste
+          </button>
+        </a>
 
-        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/128" target="_blank" rel="noopener"><button
-            class="btn btn-primary" type="button">
-            Leia o relatório na íntegra aqui para a região Sul do país. 
-          </button></a>
+        <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/128" target="_blank" rel="noopener">
+          <button class="btn btn-primary" type="button">
+            Sul
+          </button>
+        </a>
 
       </div>
     </div>
