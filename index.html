@@ -207,6 +207,41 @@
 
     <!-- NEW.CARD -->
 
+    <!-- LEITOS.MODELOGRO.CARD -->
+    <div class="card">
+      <div class="card-body">
+
+	  <!-- Alert -->
+	  <div class="alert alert-primary" role="alert">
+	    <a href="municipios.html" target="_blank" rel="noopener" class="alert-link">Novidade no site!</a><br>
+	    Informações detalhadas sobre previsão de leitos ajudão na logística do sistema de hospitalização.
+	  </div>
+
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_medical-checklist.svg" width=48px alt="Ocupação de leitos"
+            class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
+            <p class="card-text">Quantos leitos precisaremos na cidade de São Paulo nos próximos dias?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+     <!-- CARD.IMAGE -->
+        <a href="municipios.html"><img src="./fig/leitosSP.png" class="card-img-top mt-3"
+            alt="Gŕafico mostrando o número de leitos ocupados na cidade de São Paulo"></a>
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+  		Estimamos o número de leitos ocupados no município de São Paulo usando os dados de notificação de hospitalizações por SRAG (Síndrome
+          Respiratória Aguda Grave) da base SIVEP-Gripe corrigidos por atraso.
+        </p>
+
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+
+      </div>
+    </div>
+
     <!-- BRASIL.MAP.CARD -->
     <div class="card">
       <div class="card-body">
@@ -248,6 +283,43 @@
 
       </div>
     </div>
+
+
+   <!-- GRAVES.CARD -->
+    <div class="card">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <div class="media">
+          <img src="./img/icon_sick_bed.svg" width=48px alt="Menino com garganta tossindo" class="card-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body">
+            <a href="./municipios.html" class="text-reset">
+              <h5 class="card-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
+            </a>
+            <p class="card-text">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.IMAGE -->
+        <a href="./municipios.html"><img src="./web/plot.nowcast.cum.svg" class="card-img-top mt-3"
+            alt="Gŕafico mostrando a porcentagem de ocupação de leitos e o limite do sistema de saúde indicado"></a>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3">
+          Estimamos o número de casos graves usando os dados de notificação de hospitalizações por SRAG (Síndrome
+          Respiratória Aguda Grave) da base SIVEP-Gripe corrigindo atrasos, para o município de São Paulo. Projeções para os próximos 5 dias. 
+        </p>
+
+        <!-- CARD.BUTTON -->
+        <a href="./municipios.html"><button class="btn btn-primary mt-1" type="button">
+            Saiba mais
+          </button></a>
+      </div>
+    </div>
+
+
+
 
     <!-- NEW.CARD -->
 
@@ -327,6 +399,8 @@
           <small class="legend-square" id="legendBlue">Previsão</small>
         </div>
 
+	<p class="card-text">Confira o progresso de casos de COVID-19 notificados no país e em cada estado. Projeções para os próximos 5 dias em cada região. </p>
+
         <!-- CARD.BUTTON.EXPAND -->
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGraph"
           aria-expanded="false" aria-controls="collapseGraph">
@@ -351,67 +425,6 @@
       </div>
     </div>
 
-    <!-- GRAVES.CARD -->
-    <div class="card">
-      <div class="card-body">
-
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_sick_bed.svg" width=48px alt="Menino com garganta tossindo" class="card-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <a href="./municipios.html" class="text-reset">
-              <h5 class="card-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
-            </a>
-            <p class="card-text">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
-
-        <!-- CARD.IMAGE -->
-        <a href="./municipios.html"><img src="./web/plot.nowcast.cum.svg" class="card-img-top mt-3"
-            alt="Gŕafico mostrando a porcentagem de ocupação de leitos e o limite do sistema de saúde indicado"></a>
-        <!-- CARD.TEXT -->
-        <p class="text-justify mt-3">
-          Estimamos o número de casos graves usando os dados de notificação de hospitalizações por SRAG (Síndrome
-          Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo.
-        </p>
-
-        <!-- CARD.BUTTON -->
-        <a href="./municipios.html"><button class="btn btn-primary mt-1" type="button">
-            Saiba mais
-          </button></a>
-      </div>
-    </div>
-
-    <!-- DUPLICACAO.NOTA.CARD -->
-    <div class="card">
-      <div class="card-body">
-
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_medical-checklist.svg" width=48px alt="Ocupação de leitos"
-            class="card-icon"> <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Quantos leitos precisaremos na cidade de São Paulo nos próximos dias?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
-     <!-- CARD.IMAGE -->
-        <a href="municipios.html"><img src="./fig/leitosSP.png" class="card-img-top mt-3"
-            alt="Gŕafico mostrando o número de leitos ocupados na cidade de São Paulo"></a>
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-  		Estimamos o número de leitos ocupados no município de São Paulo usando os dados de notificação de hospitalizações por SRAG (Síndrome
-          Respiratória Aguda Grave) da base SIVEP-Gripe corrigidos por atraso.
-        </p>
-
-        <!-- CARD.SIGNATURE -->
-        <div class="blockquote-footer text-right">Observatório COVID-19</div>
-
-      </div>
-    </div>
 
     <!-- NEW.CARD -->
 
