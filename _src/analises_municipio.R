@@ -128,10 +128,11 @@ names(td.now.srag) <- c("estimativa", "ic.inf", "ic.sup")
 dia.zero <- time(now.pred.zoo)[min(which(now.pred.zoo$n.casos>=10, arr.ind=TRUE))]
 now.pred.zoo <- window(now.pred.zoo, start=dia.zero)
 now.proj.zoo <- window(now.proj.zoo, start=dia.zero)
+td.now <- window(td.now, start = dia.zero)
 
 ## SRAG ##
-dia.zero.srag <- time(now.srag.pred.zoo)[min(which(now.srag.pred.zoo$n.casos>=10, arr.ind=TRUE))]
+dia.zero.srag <- time(now.srag.pred.zoo)[min(which(now.srag.pred.zoo$n.casos>=10, arr.ind = TRUE))]
 now.srag.pred.zoo <- window(now.srag.pred.zoo, start=dia.zero.srag)
 now.srag.proj.zoo <- window(now.srag.proj.zoo, start=dia.zero.srag)
-
+td.now.srag <- window(td.now.srag, start = dia.zero.srag)
 

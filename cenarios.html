@@ -1,0 +1,501 @@
+<!doctype html> <!-- HTML 5 doctype -->
+<html lang="pt">
+
+<head>
+  <!-- Description meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+  <title>Cenários · Observatório Covid-19 BR</title>
+
+  <!-- Bootstrap CSS via BootstrapCDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Poppins Font -->
+  <link href="./css/global.css?ver=2.01" rel="stylesheet">
+  <link href="./css/charts.css?ver=2.00" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#007bff">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Observatório Covid-19 BR">
+  <meta name="twitter:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="https://covid19br.github.io">
+  <meta property="og:title" content="Observatório Covid-19 BR">
+  <meta property="og:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Ionic Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+  <!-- Barra Superior -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- BOTAO DO MENU -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- LOGO -->
+    <a class="navbar-brand" href="./index.html">
+      <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+    </a>
+
+    <!-- DESTAQUE -->
+    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="#">
+        Cenários
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Visão Geral</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./progressao.html#br">Avanço da doença</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./municipios.html#sp_sp">São Paulo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Cenários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./leitos.html">Leitos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./midia.html">Reportagens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sobre.html">Sobre</a>
+        </li>
+        <!-- MENU.ITEM -->
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Titulo Principal -->
+  <div class="container-fluid mt-2">
+    <div class="main-title">
+        <h1 class="display" id="page-title">Comparação entre cenários</h1>
+        <small class="page-title-update">Projeções de médio prazo para a epidemia de Covid-19 no Município de São Paulo</small>
+    </div> <!-- PAGE.TITLE -->
+  </div>
+
+  <!-- Menu-->
+  <div class="card-menu"> <!-- COLUMNS.NUM -->
+    <!-- NEW.CARD -->
+
+    <!-- ABA1.MENU.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu selected" card-id="aba1">
+        <div class="card-body">
+
+          <!-- CARD.HEADER -->
+          <div class="card-hero">
+            <img src="./img/icon_isolamento.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+                <h5 class="card-title">Analisando o passado</h5> <!-- CARD.TITLE -->
+                <p class="card-text">As medidas tomadas até agora surtiram algum efeito?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- NEW.CARD -->
+
+    <!-- ABA2.MENU.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu" card-id="aba2">
+        <div class="card-body">
+
+          <!-- CARD.HEADER -->
+          <div class="card-hero">
+            <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+              <h5 class="card-title">Analisando possíveis futuros</h5> <!-- CARD.TITLE -->
+                <p class="card-text">O que podemos esperar daqui para frente?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+    <!-- NEW.CARD -->
+
+    <!-- ABA3.MENU.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu" card-id="aba3">
+        <div class="card-body">
+          
+          <!-- CARD.HEADER -->
+          <div class="card-hero">
+            <img src="./img/icon_hospital.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+              <h5 class="card-title">Casos hospitalizados</h5> <!-- CARD.TITLE -->
+                <p class="card-text">Qual o impacto que esperamos no sistema hospitalar?</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+
+    <!-- SOBRE.MENU.CARD -->
+    <a class="text-reset" href="#">
+      <div class="card menu m-0" card-id="sobre">
+        <div class="card-body">
+
+          <!-- CARD.HEADER -->
+          <div class="card-hero">
+            <img src="./img/icon_questions.svg" width=48px alt="Ícone que representa um menino" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <div class="hero-body">
+              <h5 class="card-title">Sobre</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Saiba mais sobre a equipe envolvida nestas análises</p> <!-- CARD.TITLE.DESCRIPTION -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Texto Principal -->
+
+  <!-- ABA1 -->
+  <div class="card-deck aba1"> <!-- COLUMNS.NUM -->
+    <!-- ABA1.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">As medidas tomadas até agora surtiram algum efeito?</h5> <!-- CARD.TITLE.TEXT -->
+
+        <p class="text-justify mt-3 mb-2">
+          As simulações apresentadas nas figuras ao lado ilustram o importante efeito das medidas de distanciamento social
+          implementadas até agora: o pico de infectados, em um cenário sem quaisquer medidas de distanciamento adotadas, poderia
+          já ter ocorrido no início de abril e contado com milhões de casos (<b class="ibm_ultramarine">cenário azul claro</b>), mas devido às medidas de mitigação já
+          tomadas, esse pico foi adiado e achatado. 
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Estima-se que o número real de infectados no começo de abril foi, ao menos, 10
+          vezes menor, se comparado ao pico que teria sido observado no cenário hipotético de evolução descontrolada da doença.
+        </p>
+
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+      </div>
+    </div>
+
+    <!-- ABA1.GRAFICO.CARD -->
+    <div class="card cd-70 chart-fix">
+      <div class="card-body">
+        <div class="center">
+          <div class="card-images">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/site_cases_cen_base_now_PT_begining.svg">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_PT_begining.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABA2 -->
+  <div class="card-deck aba2"> <!-- COLUMNS.NUM -->
+    <!-- ABA2.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">O que podemos esperar daqui para frente?</h5> <!-- CARD.TITLE.TEXT -->
+
+        <p class="text-justify mt-3 mb-2">
+          Se expandirmos os resultados da simulação para os próximos meses, podemos ter uma idéia da importância das medidas de distanciamento social a médio prazo.
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Abaixo comparamos cenários em que, a partir de 11 de maio de 2020, (b) as medidas atuais são completamente
+          descontinuadas e (c) as medidas atuais são mantidas indefinidamente com cobertura contínua e consistente com a do início
+          das recomendações de distanciamento no município.
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Nota-se que o pico de infectados, que poderia ter ocorrido no início de abril e contado com milhões de casos (cenário
+          (a)), foi adiado e achatado (cenários (b) e (c), que aparecem sobrepostos nas figuras até 11 de maio).
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Note-se, no entanto, que se abandonássemos as atuais medidas de mitigação no dia 11 de maio, a epidemia voltaria a se
+          expandir formando um novo pico ao final do mês de maio, com um número de mortes quase tão alto quanto ao do cenário de
+          expansão descontrolada da doença. Assim, o esforço feito até então seria em grande parte perdido.
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Já no caso de manutenção de medidas (cenário (c)), a curva epidêmica se manteria com pico estimado para o final de maio
+          e o achatamento evidente implicaria em cerca de 10 vezes menos infectados e mortos.
+        </p>
+
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+      </div>
+    </div>
+
+    <!-- ABA2.GRAFICO.CARD -->
+    <div class="card cd-70 chart-fix">
+      <div class="card-body">
+        <div class="center">
+          <div class="card-images">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/site_base_now_and_endofyear_PT.svg">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_and_endofyear_PT.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABA3 -->
+  <div class="card-deck aba3"> <!-- COLUMNS.NUM -->
+    <!-- ABA3.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Qual o impacto que esperamos no sistema hospitalar?</h5> <!-- CARD.TITLE.TEXT -->
+
+        <p class="text-justify mt-3 mb-2">
+          Aqui apresentamos uma comparação entre casos hospitalizados em leitos comuns (à esquerda) e casos hospitalizados em
+          unidades de tratamento intensivo (UTI) (à direita) nos cenários em que (a) nenhuma medida de distanciamento social
+          tivesse sido aplicada; (b) as medidas e aderências nos níveis atuais fossem mantidas apenas até 11 de maio e (c) as
+          medidas atuais fossem mantidas indefinidamente, com níveis de adesão iguais aos do início do distanciamento social. As
+          linhas horizontais tracejadas indicam a capacidade aproximada do sistema de saúde municipal para cada tipo de leito,
+          baseada em dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) de fevereiro de 2020.
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Note que o cenário (c) é o único entre os três cenários estudados que não prevê um colapso iminente do sistema de saúde,
+          dado que o número de hospitalizações em leitos comuns e unidades de tratamento intensivo (UTI) ficariam em valores
+          inferiores ao limite máximo comportado pelo município de São Paulo.
+        </p>
+
+        <p class="text-justify mt-3 mb-2">
+          Ressaltamos ainda que os limiares representados nos gráficos devem ser apenas tomados como escala, pois estimam o total
+          de leitos no município em fevereiro de 2020 e não o total atual disponível para tratamento de casos COVID-19. Como
+          outras doenças requerem os mesmos leitos, poderíamos já estar em um nível de ocupação que baixasse muito este limiar.
+          Por outro lado o número de leitos pode ter variado, inclusive pode ter crescido, desde o início da epidemia. No entanto,
+          dados atualizados de número e ocupação de leitos no município não estão publicamente disponíveis, dificultando uma
+          análise mais assertiva.
+        </p>
+
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+      </div>
+    </div>
+
+    <!-- ABA3.GRAFICO.CARD -->
+    <div class="card cd-70 chart-fix">
+      <div class="card-body">
+        <div class="center">
+          <div class="card-images">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/lcomum_cen_base_now_and_endofyear_PT.svg">
+          <!-- CARD.IMAGE -->
+          <img class="side-by-side" src="./web/cenarios/UTI_cen_base_now_and_endofyear_PT.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Sobre -->
+  <div class="card-deck sobre">
+    <!-- SOBRE.CONTENT.CARD -->
+    <div class="card">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Sobre o modelo</h5> <!-- CARD.TITLE.TEXT -->
+        
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          As previsões de médio prazo apresentadas aqui são feitas utilizando-se um modelo matemático de compartimentos que simula
+          as características epidemiológicas da COVID-19, desenvolvido em colaboração com o Covid-19 International Modelling
+          Consortium [1].
+        </p>
+        <p class="text-justify">
+          Cada compartimento populacional representa uma classe de pessoas (suscetíveis, expostas, infectadas e recuperadas,
+          conforme imagem ao lado) e é estruturado por faixas etárias em intervalos de 5 anos.
+        </p>
+        <p class="text-justify">
+          Para parametrizar e ajustar o modelo, nos baseamos em estudos clínicos internacionais sobre o espectro de apresentação
+          clínica da doença, matrizes de contato estimadas para o Brasil [2], dados demográficos municipais do IBGE [3] e
+          incidência e número de óbitos de SRAG e COVID-19 em residentes de São Paulo [4], corrigidos pela técnica de correção de
+          atrasos (nowcasting) apresentada na página <i>São Paulo</i>. (COLOCAR LINK AQUI)
+        </p>
+        <!-- CARD.IMAGE -->
+        <img width="90%" src="./web/cenarios/como_diagram.png">
+      </div>
+    </div>
+
+    <!-- SOBRE.EQUIPE.CARD -->
+    <div class="card">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Covid-19 International Modelling Consortium (CoMo)</h5> <!-- CARD.TITLE.TEXT -->
+                
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          O CoMo é um consórcio internacional de modelagem criado pela Prof. Lisa White (Universidade de Oxford) visando utilizar
+          modelagem matemática para contribuir no planejamento de políticas públicas de combate à pandemia de COVID-19. Dezenas de
+          cientistas de diversas nacionalidades constituem subgrupos do CoMo, cada qual adequando a modelagem ao seu contexto
+          específico regional.
+        </p>
+        <p class="text-justify">
+          O grupo brasileiro adaptou estrutura e parâmetros da modelagem à realidade paulistana, visto que é o local com maior
+          concentração de casos e maior disponibilidade de dados atualmente, devido à nossa colaboração com o GT COVID-19 Sampa.
+        </p>
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title mt-3">Sobre os dados no município de São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+                
+        <!-- CARD.TEXT -->
+        <p class="text-justify">
+          O Observatório Covid-19 BR participa do Grupo Técnico de Assessoramento em Epidemiologia e Modelagem Matemática COVID19
+          (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São Paulo. Este grupo analisa as bases de dados oficiais para
+          o município, para subsidiar tomada de decisão.
+        </p>        
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title mt-3">Referências</h5> <!-- CARD.TITLE.TEXT -->
+        <!-- CARD.TEXT -->
+        <ol>
+            <li id="ref1">
+              <a href="http://comomodel.net/" target="_blank" rel="">
+                CoMo COVID-19 App.
+              </a>
+            </li>
+            <li id="ref2">
+              Prem, K.; Cook, A. R.; Jit, M..
+              <a href="https://doi.org/10.1371/journal.pcbi.1005697" target="_blank" rel="noopener">
+                Projecting social contact matrices in 152 countries using contact surveys and demographic data</a>. 2017.
+            </li>
+            <li id="ref3">
+              <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados" target="_blank" rel="noopener">
+                Projeções da População do Brasil e Unidades da Federação por sexo e idade: 2010-2060</a>. IBGE.
+            </li>
+        </ol>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Alert -->
+  <div class="container-fluid mt-2">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <h6>Os limites das previsões</h6>
+      Todos os resultados aqui apresentados se baseiam em projeções de cenários hipotéticos, alguns mais plausíveis
+      que outros. Como a adesão a tais intervenções é dependente de comportamentos da população, os resultados são melhor
+      utilizados no contexto de comparação qualitativa entre cenários. Números devem ser lidos apenas como estimativas da
+      ordem de grandeza de casos ou mortes e não como previsões absolutas.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>  
+
+  <!-- Footer -->
+  <footer class="container-fluid">
+    <!-- FOOTER.ITEM -->
+    <div class="footer-content">
+      <ion-icon name="logo-github"></ion-icon>
+      <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
+          class="text-reset">Source Code</a></small>
+    </div>
+    
+    <!-- FOOTER.ITEM -->
+    <div class="footer-content">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+        <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+      </a>
+      <small id="license">
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
+      </small>
+    </div>
+    
+  </footer>
+
+  <!-- JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- R Integration -->
+  <!-- Hora de atualizacao -->
+  <script src="js/updateDate.js"></script>
+  <!-- Atualiza Menu -->
+  <script src="js/updateMenu.js"></script>
+  <!-- MathJax: Equacoes -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+  <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
+  <script>
+    var sc_project=12220607; 
+    var sc_invisible=1; 
+    var sc_security="18092bfd"; 
+  </script>
+  <script src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+</html>
