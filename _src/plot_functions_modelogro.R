@@ -76,8 +76,11 @@ make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados
 
   plot = ggplot(filter(data, type == disease), aes(date, observed)) + 
     geom_line(aes(y = estimate), color = "blue", size = 1.5) + 
+    geom_ribbon(fill="blue", 
+                aes(ymin=lower, ymax=upper), alpha=0.15, 
+                color = "transparent") +
     geom_point(size=2) +
-    theme_cowplot() + scale_color_manual(values = c("black", "darkgreen")) +
+    theme_cowplot() + 
     scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
     scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
     background_grid(major = "xy", minor = "y") + 
@@ -91,7 +94,6 @@ make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados
     labs(x = "Dia", y = ylabel) + 
     ggtitle(title)
   
-
   return(plot)
 }
 
