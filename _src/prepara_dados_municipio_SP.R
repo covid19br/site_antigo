@@ -10,8 +10,8 @@ nome.dir <- "../dados/municipio_SP/"
 ################################################################################
 ## Retira datas dos sufixos dos nomes das bases e identifica a maior data
 ## Só funciona se os nomes das bases forem mantidos no padrão
-data.base <- dir(nome.dir, pattern = "nowcasting_covid_20") %>%
-    substr(start = 18, stop = 27) %>%
+data.base <- dir(nome.dir, pattern = "nowcasting_covid_previstos_20") %>%
+    substr(start = 28, stop = 37) %>%
     as.Date(format = "%Y_%m_%d") %>%
     max() %>%
     format("%Y_%m_%d")
@@ -52,15 +52,15 @@ now.pred$onset_date <- as.Date(rownames(now.pred))
 now.pred <- now.pred[,c(11,1:10)]
 
 ## Lista com todos os resultados no nowcasting
-now.lista <- readRDS(paste0(nome.dir, "nowcasting_covid_",data.base,".rds"))
+## now.lista <- readRDS(paste0(nome.dir, "nowcasting_covid_",data.base,".rds"))
 
 ################################################################################
 ## Dados e nowcastings SRAG
 ################################################################################
 ## Retira datas dos sufixos dos nomes das bases e identifica a maior data
 ## Só funciona se os nomes das bases forem mantidos no padrão
-data.base <- dir(nome.dir, pattern = "nowcasting_srag_20") %>%
-    substr(start = 17, stop = 26) %>%
+data.base <- dir(nome.dir, pattern = "nowcasting_srag_previstos_20") %>%
+    substr(start = 27, stop = 36) %>%
     as.Date(format = "%Y_%m_%d") %>%
     max() %>%
     format("%Y_%m_%d")
@@ -101,4 +101,4 @@ now.srag.pred$onset_date <- as.Date(rownames(now.srag.pred))
 now.srag.pred <- now.srag.pred[,c(11,1:10)]
 
 ## Lista com todos os resultados no nowcasting
-now.srag.lista <- readRDS(paste0(nome.dir, "nowcasting_srag_",data.base,".rds"))
+## now.srag.lista <- readRDS(paste0(nome.dir, "nowcasting_srag_",data.base,".rds"))

@@ -30,7 +30,7 @@ fitP.exp <- function(zoo.obj, only.coef = TRUE){
             names(results) <- c("intercept", "coef", "int.low", "int.upp", "coef.low", "coef.upp")
     }
     if(!only.coef){
-        if(class(fit)=="try-error")
+        if(any(class(fit)=="try-error"))
             results <- NA
         else
             results  <-  fit

@@ -116,6 +116,21 @@
     </div> <!-- PAGE.TITLE -->
   </div>
 
+
+  <!-- Alert -->
+  <div class="container-fluid mt-2">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <h6>Os limites das previsões</h6>
+      Todos os resultados aqui apresentados se baseiam em projeções de cenários hipotéticos, alguns mais plausíveis
+      que outros. Como a adesão a tais intervenções é dependente de comportamentos da população, os resultados são melhor
+      utilizados no contexto de comparação qualitativa entre cenários. Números devem ser lidos apenas como estimativas da
+      ordem de grandeza de casos ou mortes e não como previsões absolutas.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>  
+  
   <!-- Menu-->
   <div class="card-menu"> <!-- COLUMNS.NUM -->
     <!-- NEW.CARD -->
@@ -228,10 +243,12 @@
       <div class="card-body">
         <div class="center">
           <div class="card-images">
+           <!-- CARD.IMAGE -->
+           <img class="side-by-side" src="./web/cenarios/site_cases_cen_base_now_PT_begining.svg">
+          </div>
           <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/site_cases_cen_base_now_PT_begining.svg">
-          <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_PT_begining.svg">
+          <div class="card-images">
+            <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_PT_begining.svg">
           </div>
         </div>
       </div>
@@ -283,9 +300,11 @@
         <div class="center">
           <div class="card-images">
           <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/site_base_now_and_endofyear_PT.svg">
+          <img class="side-by-side" src="./web/cenarios/site_base_now_and_endofyear_31may_PT.svg">
+          </div>
           <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_and_endofyear_PT.svg">
+          <div class="card-images">
+          <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_and_endofyear_31may_PT.svg">
           </div>
         </div>
       </div>
@@ -307,7 +326,7 @@
           tivesse sido aplicada; (b) as medidas e aderências nos níveis atuais fossem mantidas apenas até 11 de maio e (c) as
           medidas atuais fossem mantidas indefinidamente, com níveis de adesão iguais aos do início do distanciamento social. As
           linhas horizontais tracejadas indicam a capacidade aproximada do sistema de saúde municipal para cada tipo de leito,
-          baseada em dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) de fevereiro de 2020.
+          baseada em dados do Cadastro Nacional de Estabelecimentos de Saúde (CNES) de fevereiro de 2020 [3].
         </p>
 
         <p class="text-justify mt-3 mb-2">
@@ -335,9 +354,11 @@
         <div class="center">
           <div class="card-images">
           <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/lcomum_cen_base_now_and_endofyear_PT.svg">
+          <img class="side-by-side" src="./web/cenarios/lcomum_cen_base_now_and_endofyear_31may_PT.svg">
+          </div>
           <!-- CARD.IMAGE -->
-          <img class="side-by-side" src="./web/cenarios/UTI_cen_base_now_and_endofyear_PT.svg">
+          <div class="card-images">
+          <img class="side-by-side" src="./web/cenarios/UTI_cen_base_now_and_endofyear_31may_PT.svg">
           </div>
         </div>
       </div>
@@ -357,7 +378,7 @@
         <p class="text-justify">
           As previsões de médio prazo apresentadas aqui são feitas utilizando-se um modelo matemático de compartimentos que simula
           as características epidemiológicas da COVID-19, desenvolvido em colaboração com o Covid-19 International Modelling
-          Consortium [1].
+          Consortium.
         </p>
         <p class="text-justify">
           Cada compartimento populacional representa uma classe de pessoas (suscetíveis, expostas, infectadas e recuperadas,
@@ -365,8 +386,8 @@
         </p>
         <p class="text-justify">
           Para parametrizar e ajustar o modelo, nos baseamos em estudos clínicos internacionais sobre o espectro de apresentação
-          clínica da doença, matrizes de contato estimadas para o Brasil [2], dados demográficos municipais do IBGE [3] e
-          incidência e número de óbitos de SRAG e COVID-19 em residentes de São Paulo [4], corrigidos pela técnica de correção de
+          clínica da doença, matrizes de contato estimadas para o Brasil [1], dados demográficos municipais do IBGE [2] e
+          incidência e número de óbitos de SRAG e COVID-19 em residentes de São Paulo, corrigidos pela técnica de correção de
           atrasos (nowcasting) apresentada na página <i><a href="municipios.html#sp_sp">São Paulo</a></i>.
         </p>
         <!-- CARD.IMAGE -->
@@ -407,19 +428,22 @@
         <h5 class="card-title mt-3">Referências</h5> <!-- CARD.TITLE.TEXT -->
         <!-- CARD.TEXT -->
         <ol>
-            <li id="ref1">
+            <!-- <li id="ref1">
               <a href="http://comomodel.net/" target="_blank" rel="">
                 CoMo COVID-19 App.
               </a>
-            </li>
-            <li id="ref2">
+            </li> --> 
+            <li id="ref1">
               Prem, K.; Cook, A. R.; Jit, M..
               <a href="https://doi.org/10.1371/journal.pcbi.1005697" target="_blank" rel="noopener">
                 Projecting social contact matrices in 152 countries using contact surveys and demographic data</a>. 2017.
             </li>
-            <li id="ref3">
+            <li id="ref2">
               <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados" target="_blank" rel="noopener">
                 Projeções da População do Brasil e Unidades da Federação por sexo e idade: 2010-2060</a>. IBGE.
+            </li>
+            <li id="ref3">
+               Banco de dados do <a href="http://cnes.datasus.gov.br/pages/downloads/arquivosBaseDados.jsp" target="_blank" rel="noopener">Cadastro Nacional de Estabelecimentos de Saúde (CNES)</a> em "Recursos Físicos" do TABNET. Dados de fevereiro de 2020.
             </li>
         </ol>
         
@@ -427,20 +451,6 @@
     </div>
 
   </div>
-
-  <!-- Alert -->
-  <div class="container-fluid mt-2">
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-      <h6>Os limites das previsões</h6>
-      Todos os resultados aqui apresentados se baseiam em projeções de cenários hipotéticos, alguns mais plausíveis
-      que outros. Como a adesão a tais intervenções é dependente de comportamentos da população, os resultados são melhor
-      utilizados no contexto de comparação qualitativa entre cenários. Números devem ser lidos apenas como estimativas da
-      ordem de grandeza de casos ou mortes e não como previsões absolutas.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  </div>  
 
   <!-- Footer -->
   <footer class="container-fluid">
