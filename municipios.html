@@ -79,7 +79,7 @@
           <a class="nav-link" href="./index.html">Visão Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./progressao.html#br">Avanço da doença</a>
+          <a class="nav-link" href="./progressao.html?uf=br">Avanço da doença</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#">São Paulo</a>
@@ -122,7 +122,7 @@
       </div>
     </div>
     <div style="margin-left:1.3rem;">
-      <small class="page-title-update updateDate" style="display:block; margin:">Última atualização: </small>
+      <small class="page-title-update updateDate" style="display:block;">Última atualização: </small>
     </div>
   </div>
 
@@ -132,7 +132,7 @@
 
     <!-- HOSPITALIZAÇÕES.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu selected" card-id="hosp">
+      <div class="card menu selected" card-id="aba1">
         <div class="card-body">
 
           <!-- CARD.HEADER -->
@@ -140,7 +140,7 @@
             <img src="./img/icon_hospital.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
                 <h5 class="card-title">Casos graves de COVID-19</h5> <!-- CARD.TITLE -->
-                <p class="card-text">Quantos casos graves estimamos atualmente e futuramente <span class="municipio-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                <p class="card-text">Quantos casos graves estimamos atualmente e futuramente <span class="locale-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
 
@@ -152,7 +152,7 @@
 
     <!-- Projecao.leitos.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu" card-id="modelo">
+      <div class="card menu" card-id="aba2">
         <div class="card-body">
 
           <!-- CARD.HEADER -->
@@ -160,7 +160,7 @@
             <img src="./img/icon_medical-checklist.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
                 <h5 class="card-title">Leitos ocupados</h5> <!-- CARD.TITLE -->
-                <p class="card-text">Quantos casos graves internados temos atualmente e futuramente <span class="municipio-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
+                <p class="card-text">Quantos casos graves internados temos atualmente e futuramente <span class="locale-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
 
@@ -172,7 +172,7 @@
 
     <!-- VELOCIDADE.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu" card-id="vel">
+      <div class="card menu" card-id="aba3">
         <div class="card-body">
 
           <!-- CARD.HEADER -->
@@ -180,7 +180,7 @@
             <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
               <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE -->
-              <p class="card-text">O quão rápido a doença se propaga no município de <span class="municipio"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
+              <p class="card-text">O quão rápido a doença se propaga no município de <span class="locale"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
 
@@ -191,7 +191,7 @@
 
     <!-- TAXA.MENU.CARD -->
     <a class="text-reset" href="#">
-      <div class="card menu" card-id="infec">
+      <div class="card menu" card-id="aba4">
         <div class="card-body">
 
           <!-- CARD.HEADER -->
@@ -199,7 +199,7 @@
             <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
               <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="municipio"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
+              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="locale"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
 
@@ -227,14 +227,14 @@
   </div>
 
   <!-- Hospital -->
-  <div class="card-deck hosp">
+  <div class="card-deck aba1">
     <!-- COLUMNS.NUM -->
     <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Casos graves de COVID-19 em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Casos graves de COVID-19 em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -244,7 +244,7 @@
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
           A <b style="color:#377EB8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (que estão ou serão hospitalizados)
-          notificados no município de <span class="municipio"></span> até a data, e a <b style="color:#E41A1C">linha
+          notificados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
             vermelha</b> a <b>estimativa</b> corrigindo o tempo entre os primeiros sintomas e </b> a notificação.
         </p>
 
@@ -329,14 +329,14 @@
   </div>
 
   <!-- Modelo -->
-  <div class="card-deck modelo">
+  <div class="card-deck aba2">
     <!-- COLUMNS.NUM -->
     <!-- MODELO.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Casos de SRAG internados em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Casos de SRAG internados em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -346,7 +346,7 @@
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-2">
           Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
-          hospitalizados no município de <span class="municipio"></span> até a data, e a <b style="color:#E41A1C">linha
+          hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
             vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
         </p>
 
@@ -414,13 +414,13 @@
   </div>
 
   <!-- Velocidade-->
-  <div class="card-deck vel">
+  <div class="card-deck aba3">
     <!-- VELOCIDADE.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Velocidade de propagação em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Velocidade de propagação em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -466,14 +466,14 @@
   </div>
 
   <!-- Taxa -->
-  <div class="card-deck infec">
+  <div class="card-deck aba4">
     <!-- COLUMNS.NUM -->
     <!-- TAXA.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Taxa de infecção em <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Taxa de infecção em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
 
         <ul class="list-group mt-3 mb-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -528,7 +528,7 @@
       <div class="card-body">
 
         <!-- CARD.HEADER -->
-        <h5 class="card-title">Sobre os dados no município de <span class="municipio"></span></h5> <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title">Sobre os dados no município de <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
         <p class="text-justify">
           O <i>Observatório Covid-19 BR</i> participa do <b>Grupo Técnico
             de Assessoramento em Epidemiologia e Modelagem Matemática COVID19</b>
@@ -672,8 +672,11 @@
   <!-- R Integration -->
   <!-- Hora de atualizacao -->
   <script src="js/updateDate.js"></script>
-  <!-- Conteudo e Menu Dinamico -->
-  <script src="js/updateMunicipio.js"></script>
+  <!-- Conteudo Dinamico -->
+  <script src="js/data_municipios.js?ver=2.00"></script>
+  <script src="js/lib_locale.js?ver=2.00"></script>
+  <script src="js/lib_abas.js?ver=2.00"></script>
+  <script src="js/updateContent.js?ver=2.00"></script>
   <!-- Dispara Toast Messages -->
   <script src="js/updateToast.js"></script>
   <!-- MathJax: Equacoes -->

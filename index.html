@@ -79,10 +79,10 @@
           <a class="nav-link active" href="#">Visão Geral</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./progressao.html#br">Avanço da doença</a>
+          <a class="nav-link" href="./progressao.html?uf=br">Avanço da doença</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./municipios.html">São Paulo</a>
+          <a class="nav-link" href="./municipios.html?aba=aba2">São Paulo</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./leitos.html">Leitos</a>
@@ -228,14 +228,16 @@
           <img src="./img/icon_medical-checklist.svg" width=48px alt="Ocupação de leitos"
             class="card-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
+            <a href="./progressao.html?aba=aba2" class="text-reset">
+              <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
+            </a>
             <p class="card-text">Quantos leitos precisaremos na cidade de São Paulo nos próximos dias?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
 
         <!-- CARD.IMAGE -->
-        <a href="municipios.html"><img src="./web/plot.srag.leitos.forecast.logistic.municipio.svg" class="card-img-top mt-3"
+        <a href="municipios.html?aba=aba2"><img src="./web/plot.srag.leitos.forecast.logistic.municipio.svg" class="card-img-top mt-3"
             alt="Gŕafico mostrando o número de leitos ocupados na cidade de São Paulo"></a>
 
         <!-- CARD.TEXT -->
@@ -302,7 +304,7 @@
           <img src="./img/icon_sick_bed.svg" width=48px alt="Menino com garganta tossindo" class="card-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <a href="./municipios.html" class="text-reset">
+            <a href="./municipios.html?aba=aba1" class="text-reset">
               <h5 class="card-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</p>
@@ -400,7 +402,7 @@
           <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body mb-2">
-            <a href="./progressao.html#br" class="text-reset">
+            <a href="./progressao.html?uf=br" class="text-reset">
               <h5 class="card-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos casos notificados já temos no Brasil? Quantos teremos nos próximos dias?</p>
@@ -412,7 +414,7 @@
         <h5 class="card-title text-center">Número de casos em escala logarítimica</h5>
 
         <!-- CARD.GGPLOT -->
-        <a href="./progressao.html#br">
+        <a href="./progressao.html?uf=br">
           <img src=./web/plot.forecast.exp.br.sm.svg class="placeholder_svg" width="100%">
         </a>
 
