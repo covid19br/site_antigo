@@ -35,7 +35,6 @@ else if($(".card-menu").length) updateExibition($(".card.menu.selected").attr("c
 // Via JQuery OnClick Update
 $(".card.menu").click(function () {
     if (!$(this).hasClass("selected")) { // se nao eh o item atual
-        console.log($(this).attr("card-id"));
         updateExibition($(this).attr("card-id"));
         if (history.pushState) updateURL(); // checks if history.pushState is available
     }

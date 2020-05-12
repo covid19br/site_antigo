@@ -119,7 +119,7 @@ function updatePage(current_uf) {
     var current_state = getVerbose(current_uf);
     var current_index = getIndex(current_uf);
     var current_prepo = getPreposition(current_uf);
-    console.log(current_index);
+
     // titulo
     $("#page-title").text(current_state);
 
