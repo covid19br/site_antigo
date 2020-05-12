@@ -228,7 +228,7 @@
           <img src="./img/icon_medical-checklist.svg" width=48px alt="Ocupação de leitos"
             class="card-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
-            <a href="./progressao.html?aba=aba2" class="text-reset">
+            <a href="./municipios.html?aba=aba2" class="text-reset">
               <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos leitos precisaremos na cidade de São Paulo nos próximos dias?</p>
@@ -237,7 +237,7 @@
         </div>
 
         <!-- CARD.IMAGE -->
-        <a href="municipios.html?aba=aba2"><img src="./web/plot.srag.leitos.forecast.logistic.municipio.svg" class="card-img-top mt-3"
+        <a href="./municipios.html?aba=aba2"><img src="./web/plot.srag.leitos.forecast.logistic.municipio.svg" class="card-img-top mt-3"
             alt="Gŕafico mostrando o número de leitos ocupados na cidade de São Paulo"></a>
 
         <!-- CARD.TEXT -->
@@ -245,6 +245,15 @@
   		    Estimamos o número de leitos ocupados no município de São Paulo usando os dados de notificação de hospitalizações por SRAG (Síndrome
           Respiratória Aguda Grave) da base SIVEP-Gripe corrigidos por atraso.
         </p>
+
+        <!-- CARD.BUTTON -->
+	<center>
+        <a href="./municipios.html?aba=aba2" target="_blank" rel="noopener">
+          <button class="btn btn-primary" type="button">
+            Veja mais
+          </button>
+        </a>
+	</center>
 
         <!-- CARD.SIGNATURE -->
         <div class="blockquote-footer text-right">Observatório COVID-19</div>
@@ -285,11 +294,17 @@
         </p>
 
         <!-- CARD.BUTTON -->
+	<center>
         <a href="https://guimaraeslabbr.weebly.com/voos.html" target="_blank" rel="noopener">
           <button class="btn btn-primary" type="button">
             Leia mais sobre
           </button>
         </a>
+	</center>
+
+ 	<!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Guimarães Lab</div>
+
 
       </div>
     </div>
@@ -322,9 +337,12 @@
         </p>
 
         <!-- CARD.BUTTON -->
+	<center>
         <a href="./municipios.html"><button class="btn btn-primary mt-1" type="button">
             Saiba mais
-          </button></a>
+          </button>
+	</a>
+	</center>
       </div>
     </div>
 
@@ -371,6 +389,7 @@
         <p class="text-justify">Leia os relatórios na íntegra:</p>
 
         <!-- CARD.BUTTON -->
+	<center>
         <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/49" target="_blank" rel="noopener">
           <button class="btn btn-primary" type="button">
              Estado de São Paulo
@@ -379,15 +398,19 @@
 
         <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/35" target="_blank" rel="noopener">
           <button class="btn btn-primary" type="button">
-            Nordeste
+            Região Nordeste
           </button>
         </a>
 
         <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/128" target="_blank" rel="noopener">
           <button class="btn btn-primary" type="button">
-            Sul
+            Região Sul
           </button>
         </a>
+	</center>
+
+          <!-- CARD.SIGNATURE -->
+          <div class="blockquote-footer text-right">Guimarães Lab</div>
 
       </div>
     </div>
@@ -397,6 +420,15 @@
     <!-- GRAPH.CARD -->
     <div class="card">
       <div class="card-body">
+
+        <!-- Alert -->
+        <div class="alert alert-info alert-dismissible fade show mt-2" role="alert">
+          <small><b>Acompanhe as projeções por estado!</b></small>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
@@ -424,13 +456,15 @@
           <small class="legend-square" id="legendBlue">Previsão</small>
         </div>
 
-	<p class="card-text">Confira o progresso de casos de COVID-19 notificados no país e em cada estado. Projeções para os próximos 5 dias em cada região. </p>
+	<p class="card-text"><br>Confira o progresso de casos de COVID-19 notificados no país e em cada estado. Projeções para os próximos 5 dias em cada região. </p>
 
         <!-- CARD.BUTTON.EXPAND -->
+	<center>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseGraph"
           aria-expanded="false" aria-controls="collapseGraph">
           Por que só 5 dias? ▾
         </button>
+	</center>
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <div class="collapse mt-2" id="collapseGraph">
           <p class="text-justify">
@@ -484,9 +518,12 @@
         </p>
 
         <!-- CARD.BUTTON -->
+	<center>
         <a href="./leitos.html"><button class="btn btn-primary mt-1" type="button">
             Saiba mais
-          </button></a>
+          </button>
+	</a>
+	</center>
       </div>
     </div>
 
@@ -526,12 +563,17 @@
         </p>
 
         <!-- CARD.BUTTON -->
+	<center>
         <a href="https://guimaraeslabbr.weebly.com/COVID19.html" target="_blank" rel="noopener">
           <button class="btn btn-primary mt-1"
             type="button">
             Simule diferentes cenários
           </button>
         </a>
+	</center>
+
+ 	<!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Guimarães Lab</div>
 
       </div>
     </div>
