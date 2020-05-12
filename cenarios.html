@@ -225,7 +225,7 @@
         <p class="text-justify mt-3 mb-2">
           As simulações apresentadas nas figuras ao lado ilustram o importante efeito das medidas de distanciamento social
           implementadas até agora: o pico de infectados, em um cenário sem quaisquer medidas de distanciamento adotadas, poderia
-          já ter ocorrido no início de abril e contado com milhões de casos (<b class="ibm_ultramarine">cenário azul claro</b>), mas devido às medidas de mitigação já
+          já ter ocorrido no início de abril e contado com milhões de casos (cenário (a)<!--<b class="ibm_ultramarine">cenário azul claro</b>-->), mas devido às medidas de mitigação já
           tomadas, esse pico foi adiado e achatado. 
         </p>
 
@@ -250,6 +250,7 @@
           <div class="card-images">
             <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_PT_begining.svg">
           </div>
+          <div class="blockquote-footer text-right"><i>Pontos pretos: dados de SRAG corrigidos por nocasting</i>.</div>
         </div>
       </div>
     </div>
@@ -306,6 +307,7 @@
           <div class="card-images">
           <img class="side-by-side" src="./web/cenarios/mort_cen_base_now_and_endofyear_31may_PT.svg">
           </div>
+          <div class="blockquote-footer text-right"><i>Pontos pretos: dados de SRAG corrigidos por nocasting</i>.</div>
         </div>
       </div>
     </div>
@@ -339,7 +341,7 @@
           Ressaltamos ainda que os limiares representados nos gráficos devem ser apenas tomados como escala, pois estimam o total
           de leitos no município em fevereiro de 2020 e não o total atual disponível para tratamento de casos COVID-19. Como
           outras doenças requerem os mesmos leitos, poderíamos já estar em um nível de ocupação que baixasse muito este limiar.
-          Por outro lado o número de leitos pode ter variado, inclusive pode ter crescido, desde o início da epidemia. No entanto,
+          Por outro lado o número de leitos pode ter variado, podendo inclusive ter crescido, desde o início da epidemia. No entanto,
           dados atualizados de número e ocupação de leitos no município não estão publicamente disponíveis, dificultando uma
           análise mais assertiva.
         </p>
@@ -436,14 +438,38 @@
             <li id="ref1">
               Prem, K.; Cook, A. R.; Jit, M..
               <a href="https://doi.org/10.1371/journal.pcbi.1005697" target="_blank" rel="noopener">
-                Projecting social contact matrices in 152 countries using contact surveys and demographic data</a>. 2017.
+                Projecting social contact matrices in 152 countries using contact surveys and demographic data</a>. PLoS Comput Biol 13(9): e1005697. 2017.
             </li>
             <li id="ref2">
               <a href="https://www.ibge.gov.br/estatisticas/sociais/populacao/9109-projecao-da-populacao.html?=&t=resultados" target="_blank" rel="noopener">
-                Projeções da População do Brasil e Unidades da Federação por sexo e idade: 2010-2060</a>. IBGE.
+                Projeções da População do Brasil e Unidades da Federação por sexo e idade: 2010-2060</a>, IBGE. Dados de 2020 e 2018.
             </li>
             <li id="ref3">
                Banco de dados do <a href="http://cnes.datasus.gov.br/pages/downloads/arquivosBaseDados.jsp" target="_blank" rel="noopener">Cadastro Nacional de Estabelecimentos de Saúde (CNES)</a> em "Recursos Físicos" do TABNET. Dados de fevereiro de 2020.
+            </li>
+            <li id="ref4">
+               <a href="https://sidra.ibge.gov.br/tabela/2679" target="_blank" rel="noopener">Tabela 2679: Nascidos vivos, por ano de nascimento, idade da mãe na ocasião do parto, sexo e lugar do registro</a>, IBGE. Dados de 2018.
+            </li>
+            <li id="ref5">
+               <a href="https://biblioteca.ibge.gov.br/visualizacao/periodicos/3097/tcmb_2018.pdf" target="_blank" rel="noopener">Tábua completa de mortalidade para o Brasil - 2018</a>, IBGE. Dados de 2018.
+            </li>
+            <li id="ref6">
+               Tapiwa Ganyani, Cecile Kremer, Dongxuan Chen, Andrea Torneri, Christel Faes, Jacco Wallinga, Niel Hens. <a href="https://www.medrxiv.org/content/10.1101/2020.03.05.20031815v1" target="_blank" rel="noopener">Estimating the generation interval for COVID-19 based on symptom onset data</a>. medRxiv 2020.03.05.20031815
+            </li>
+            <li id="ref7">
+               <a href="https://annals.org/AIM/FULLARTICLE/2762808/INCUBATION-PERIOD-CORONAVIRUS-DISEASE-2019-COVID-19-FROM-PUBLICLY-REPORTED" target="_blank" rel="noopener">The Incubation Period of COVID-19 From Publicly Reported Confirmed Cases</a>.
+            </li>
+            <li id="ref8">
+               Roman Woelfel, Victor Max Corman, Wolfgang Guggemos, Michael Seilmaier, Sabine Zange, Marcel A Mueller, Daniela Niemeyer, Patrick Vollmar, Camilla Rothe, Michael Hoelscher, Tobias Bleicker, Sebastian Bruenink, Julia Schneider, Rosina Ehmann, Katrin Zwirglmaier, Christian Drosten, Clemens Wendtner. <a href="https://www.medrxiv.org/content/10.1101/2020.03.05.20030502v1" target="_blank" rel="noopener">Clinical presentation and virological assessment of hospitalized cases of coronavirus disease 2019 in a travel-associated transmission cluster</a>. medRxiv 2020.03.05.20030502
+            </li>
+            <li id="ref9">
+               Linton, N.M.; Kobayashi, T.; Yang, Y.; Hayashi, K.; Akhmetzhanov, A.R.; Jung, S.-M.; Yuan, B.; Kinoshita, R.; Nishiura, H. <a href="https://www.mdpi.com/2077-0383/9/2/538" target="_blank" rel="noopener">Incubation Period and Other Epidemiological Characteristics of 2019 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case Data</a>. J. Clin. Med. 2020, 9, 538.
+            </li>
+            <li id="ref10">
+               Steven Sanche, Yen Ting Lin, Chonggang Xu, Ethan Romero-Severson, Nick Hengartner, Ruian Ke. <a href="https://www.medrxiv.org/content/10.1101/2020.02.07.20021154v1" target="_blank" rel="noopener">The Novel Coronavirus, 2019-nCoV, is Highly Contagious and More Infectious Than Initially Estimated</a>. medRxiv 2020.02.07.20021154
+            </li>
+            <li id="ref11">
+               <a href="https://www.gstatic.com/covid19/mobility/2020-03-29_BR_Mobility_Report_en.pdf" target="_blank" rel="noopener">Google COVID-19 Community Mobility Report</a>. Dados de março de 2020.
             </li>
         </ol>
         
