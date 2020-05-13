@@ -119,7 +119,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: .85rem;
     color: #6c757d;
-    margin-left: 1.8rem!important;
+    margin-left: 1.8rem;
 }
 @media (min-width: 376px) {
     .display {
@@ -143,7 +143,7 @@ body {
         font-size: 3rem;
     }
     .page-title-update {
-        margin-left: .5rem;
+        margin-left: 2.8rem;
     }
 }
 
@@ -158,6 +158,45 @@ body {
 .dropdown, .dropleft, .dropright, .dropup {
     display: inline-block;
 }
+
+.dropdown {
+    margin: 0 0 0 3px;
+    padding: 0 0.23rem .25rem;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: .85rem;
+    box-shadow: 0 4px 6px 0 rgba(31,70,88,.04);
+}
+
+.dropdown-toggle::after {
+    color: #007bff;
+    vertical-align: .30em;
+}
+
+@media (min-width: 376px) {
+    .dropdown {
+        padding: 0 0.31rem .25rem;
+    }
+}
+
+/* small: 576px and up */
+@media (min-width: 576px) {
+    .dropdown {
+        margin: 0 0 0 0.5rem;
+        padding: 0 0.75rem .25rem;
+    }
+    .dropdown-toggle::after {
+        vertical-align: .55em;
+    }
+}
+
+/* tablets: 768px and up */
+@media (min-width: 768px) {
+    .dropdown-toggle::after {
+        vertical-align: .75em;
+    }    
+}
+
 .menu-overflow{
     height: 200px;
     overflow-y: auto;
@@ -310,7 +349,7 @@ a.text-reset:hover {
     color: #007bff!important;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-.card.menu:hover {
+.card.menu:hover, .dropdown:hover {
     border-color: #007bff!important;
     background-color: #fdfdfd;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
