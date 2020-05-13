@@ -258,16 +258,15 @@
           <p class="text-justify">
             Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
             Respiratória Aguda Grave), que é o quadro grave da COVID-19 e também de outras doenças.
-	    Desde o início da pandemia de
-	    COVID-19 no Brasil todos esses casos graves são notificados como casos suspeitos,
-	    que são então investigados com testes laboratoriais. Se o resultado do teste é positivo o caso
-	    passa de suspeito a confirmado para COVID-19. Essas notificações e confirmações são registradas
-	    numa base de dados do Ministério da Saúde chamada base SIVEP-Gripe.
-	    Estimamos o número atual de casos graves com uma técnica estatística
-	    que corrige os atrasos do sistema de notificação, isto é,
+            Desde o início da pandemia de COVID-19 no Brasil todos esses casos graves são notificados como casos suspeitos,
+            que são então investigados com testes laboratoriais. Se o resultado do teste é positivo o caso
+            passa de suspeito a confirmado para COVID-19. Essas notificações e confirmações são registradas
+            numa base de dados do Ministério da Saúde chamada base SIVEP-Gripe.
+            Estimamos o número atual de casos graves com uma técnica estatística
+            que corrige os atrasos do sistema de notificação, isto é,
             adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
             incluído no sistema de vigilância. Essa técnica não corrige subnotificações,
-	    como as causadas  por casos assintomáticos ou
+            como as causadas por casos assintomáticos ou
             leves que não são testados, por exemplo.
           </p>
         </div>
@@ -334,10 +333,10 @@
     <!-- MODELO.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
-
+    
         <!-- CARD.HEADER -->
         <h5 class="card-title">Casos de SRAG internados em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-
+    
         <ul class="list-group mt-3">
           <li class="list-group-item d-flex justify-content-between align-items-center">
             Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
@@ -349,7 +348,7 @@
           hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
             vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
         </p>
-
+    
         <!-- CARD.BUTTON.EXPAND -->
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
           aria-expanded="false" aria-controls="collapseHosp1">
@@ -358,11 +357,15 @@
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <div class="collapse mt-2" id="collapseHosp1">
           <p class="text-justify">
-            Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-            do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+            Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
+            aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
+            do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
+            distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
+            entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
+            datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
           </p>
         </div>
-
+    
         <!-- CARD.TEXT -->
         <ul class="list-group mt-4">
           <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -370,13 +373,20 @@
           </li>
         </ul>
         <p class="text-justify mt-3">
-        Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessa previsão.
-		</p>
-		<p class="text-justify mt-3">
-        Para saber mais detalhes, consulte o relatório completo <a href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>. Todos os relatórios anteriores podem ser encontrados <a href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
+          Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
+          tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
+          modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
+          <b>intervalo de
+            confiança</b> dessa previsão.
         </p>
-
-
+        <p class="text-justify mt-3">
+          Para saber mais detalhes, consulte o relatório completo <a
+            href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
+          Todos os relatórios anteriores podem ser encontrados <a
+            href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
+        </p>
+    
+    
         <!-- CARD.BUTTON.EXPAND -->
         <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
           aria-expanded="false" aria-controls="collapseHosp2">
@@ -385,15 +395,18 @@
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <div class="collapse mt-2" id="collapseHosp2">
           <p class="text-justify">
-            O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG tem subido de forma consistente, sem sinal de saturação.
+            O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
+            se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
+            tem subido de forma consistente, sem sinal de saturação.
           </p>
           <p class="text-justify">
             Por isso avaliamos que é inadequado fazer previsões para mais de 7 dias com este método.
           </p>
         </div>
-
+    
         <!-- CARD.SIGNATURE -->
-        <p class="mt-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+        <p class="mt-3 mb-0">Acesse a página <a
+            href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
           para saber mais sobre o método de correção de atrasos.</p>
         <div class="blockquote-footer text-right">Observatório COVID-19</div>
       </div>
@@ -430,21 +443,17 @@
         <!-- CARD.TEXT -->
         <p class="text-justify mt-3 mb-3">
           O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
-          graves (hospitalizados) no município
-          de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. Esse número depende
-          muito das
-          medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
-            <span class="tempo_dupli_max"></span> dias.</b>
+          graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. 
+          Esse número depende muito das medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
+          <span class="tempo_dupli_max"></span> dias.</b>
         </p>
         <!-- CARD.BUTTON.EXPAND.CONTENT -->
         <p class="text-justify">
           A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
-          intervalos de 5 dias (as datas indicam o
-          fim de cada um desses intervalos).</p>
+          intervalos de 5 dias (as datas indicam o fim de cada um desses intervalos).</p>
         <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
-          tempos de duplicação. O
-          intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação variam à
-          medida que o tempo passa.
+          tempos de duplicação. O intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação
+          variam à medida que o tempo passa.
         </p>
  	<p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação <a href="/informacoes.html#estimativa-do-tempo-de-duplicação">aqui</a>.
         </p>
@@ -490,8 +499,7 @@
         </p>
         <p class="text-justify re">
           Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
-          dados
-          estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
+          dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
             <span class="re_max"></span>.</b>
         </p>
         <p class="text-justify">
@@ -499,7 +507,7 @@
           um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
           chance de incluir o valor real de \(R_e\).
         </p>
- 	<p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
+ 	      <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
         </p>
         <p class="text-justify re">
           <span class="re_analise"></span>
