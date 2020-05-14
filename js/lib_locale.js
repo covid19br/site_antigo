@@ -124,8 +124,8 @@ function updatePage(current_uf) {
     $("#page-title").text(current_state);
 
     // dropdown
-    $(".dropdown-item").removeClass("active"); // cleans
-    $(".dropdown-item").filter(function(){
+    $(".main-title>.dropdown>.dropdown-menu>.dropdown-item").removeClass("active"); // cleans
+    $(".main-title>.dropdown>.dropdown-menu>.dropdown-item").filter(function(){
         return $(this).text() === current_state;
     }).addClass("active"); // updates
 

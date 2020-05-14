@@ -168,7 +168,7 @@ body {
     box-shadow: 0 4px 6px 0 rgba(31,70,88,.04);
 }
 
-.dropdown-toggle::after {
+.main-title > .dropdown > .dropdown-toggle::after {
     color: #007bff;
     vertical-align: .30em;
 }
@@ -185,14 +185,14 @@ body {
         margin: 0 0 0 0.5rem;
         padding: 0 0.75rem .25rem;
     }
-    .dropdown-toggle::after {
+    .main-title > .dropdown > .dropdown-toggle::after {
         vertical-align: .55em;
     }
 }
 
 /* tablets: 768px and up */
 @media (min-width: 768px) {
-    .dropdown-toggle::after {
+    .main-title > .dropdown > .dropdown-toggle::after {
         vertical-align: .75em;
     }    
 }
