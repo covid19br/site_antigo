@@ -85,11 +85,10 @@ if (existe.srag) {
     plot.nowcast.cum.srag <- plot.nowcast.acumulado(df.srag.cum)
     
     ### tempo de duplicação
-    # ö fazendo o filtro na mão para municipio SP, mas precisa resolver no repo nowcasting e tirar o if ###
-    if (adm == "municipio" & sigla.adm == "SP") {
-        df.td.srag <- df.td.srag %>%
-            filter(data > "2020-03-01")
-    }
+    # ö fazendo o filtro na mão para todo mundo, mas depois pode sair daqui ja está no repo nowcasting
+    df.td.srag <- df.td.srag %>%
+        filter(data > "2020-03-15")
+    
     plot.tempo.dupl.srag <- plot.tempo.dupl(df.td.srag)
     
     ### R efetivo
