@@ -442,6 +442,13 @@ a.text-reset:hover {
     .menu > .card-body > .card-hero > .hero-body > .card-text {
         font-size: inherit;
     }
+    .card-menu.textless > a.text-reset {
+        width: calc(100%/5.5);
+    }
+}
+
+.card-menu.textless > .text-reset > .menu {
+    height: auto!important;
 }
 
 /* CARD HERO */
@@ -450,6 +457,10 @@ a.text-reset:hover {
     display: flex;
     -ms-flex-align: end;
     align-items: end;
+}
+.card-menu.textless > .text-reset > .card.menu > .card-body > .card-hero {
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 /* CARD DECK */
