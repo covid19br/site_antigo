@@ -14,6 +14,6 @@ plot.nowcast.diario <- function(df) {
         xlab("Dia do primeiro sintoma") +
         ylab("Número de novos casos") +
         plot.formatos +
-        theme(legend.position = c(0.2, 0.8))
+        theme(legend.position = "none")
     plot        
 }

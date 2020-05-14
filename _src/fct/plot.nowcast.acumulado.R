@@ -25,7 +25,7 @@ plot.nowcast.acumulado <- function(df){
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[1:2]) +
         xlab("Dia do primeiro sintoma") +
         ylab("Número acumulado de casos") +
-        theme(legend.position = c(0.2, 0.8)) +
+        theme(legend.position = "none") +
         scale_y_log10()
     plot
 }
