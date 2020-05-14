@@ -302,13 +302,23 @@ Modifique uma imagem estática e sua legenda buscando por `<!-- CARD.IMAGE -->` 
 
 ##### 2.3 Gráfico GGPlot interativo
 Modifique um GGPlot interativo buscando por `<!-- CARD.GGPLOT -->` ou insira um novo utilizando:
+
 ```
-<!-- CARD.GGPLOT -->
-  <div data-src="./web/IDENTIFICADOR.DO.GRAFICO.html" class="codegena_iframe" data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"  data-responsive="true">
-    <img src=./web/IDENTIFICADOR.DO.GRAFICO.svg class="placeholder_svg" width="100%">
-  </div>
+<!-- CARD.GGPLOT.INTERATIVO -->
+<div data-src="./web/IDENTIFICADOR.DO.GRAFICO.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+     data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+     data-responsive="true">
+  <picture class="side-by-side">
+    <source media="(max-width: 575.98px)"  srcset="./web/plot.forecast.exp.ex.svg">
+    <source media="(max-width: 767.98px)"  srcset="./web/plot.forecast.exp.sm.svg">
+    <source media="(max-width: 991.98px)"  srcset="./web/plot.forecast.exp.md.svg">
+    <source media="(max-width: 1199.98px)" srcset="./web/plot.forecast.exp.lg.svg">
+    <img src="./web/IDENTIFICADOR.DO.GRAFICO.svg" class="placeholder_svg side-by-side" width="100%">
+  </picture>
+</div>
 <script src="./js/async-iframe.js"></script>
 ```
+
 Nota: `IDENTIFICADOR.DO.GRAFICO` deve ser substituído pelo mesmo identificador utilizado na geração do gráfico nos arquivos para plotagem.
 Nota 2: Para correto funcionamento na página `estados.html`, os gráficos devem ser salvos no R com seguinte nomenclatura:
 ```
