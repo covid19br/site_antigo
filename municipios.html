@@ -341,7 +341,7 @@
     </div>
   </div>
 
-  <!-- Modelo -->
+  <!-- Leitos -->
   <div class="card-deck aba2">
     <!-- COLUMNS.NUM -->
     <!-- MODELO.CONTENT.CARD -->
@@ -440,8 +440,88 @@
     </div>
   </div>
 
-  <!-- Velocidade-->
+  <!-- Obitos -->
   <div class="card-deck aba3">
+    <!-- OBITOS.CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+
+        <!-- CARD.HEADER -->
+        <h5 class="card-title">Óbitos em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quão rápido a doença se propaga?
+          </li>
+        </ul>
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3 mb-3">
+          O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
+          graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. 
+          Esse número depende muito das medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
+          <span class="tempo_dupli_max"></span> dias.</b>
+        </p>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <p class="text-justify">
+          A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
+          intervalos de 5 dias (as datas indicam o fim de cada um desses intervalos).</p>
+        <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
+          tempos de duplicação. O intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação
+          variam à medida que o tempo passa.
+        </p>
+ 	<p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação <a href="/informacoes.html#estimativa-do-tempo-de-duplicação">aqui</a>.
+        </p>
+      </div>
+    </div>
+
+    <!-- OBITOS.GRAFICO.CARD -->
+    <div class="card cd-30 chart-fix">
+      <!-- CARD.TITLE.TEXT -->
+      <h5 class="card-title text-center">PLACEHOLDER 1</h5>
+
+      <!-- CARD.GGPLOT.LEGEND -->
+      <div class="card-legend mb-1">
+        <small class="legend-square" id="wong_black">Lorem Ipsun</small>
+        <small class="legend-square" id="ibm_ultramarine_dark">Dolor Sit</small>
+      </div>
+
+      <div class="card-body">
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+
+    <!-- OBITOS.GRAFICO.CARD -->
+    <div class="card cd-30 chart-fix">
+      <div class="card-body">
+        <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title text-center">PLACEHOLDER 2</h5>
+
+        <!-- CARD.GGPLOT.LEGEND -->
+        <div class="card-legend mb-1">
+          <small class="legend-square" id="wong_black">consectetur set</small>
+          <small class="legend-square" id="ibm_ultramarine_dark">adipiscing elit</small>
+        </div>
+
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+          data-responsive="true">
+          <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+        </div>
+        <script src="./js/async-iframe.js"></script>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Velocidade-->
+  <div class="card-deck aba4">
     <!-- VELOCIDADE.CONTENT.CARD -->
     <div class="card cd-30">
       <div class="card-body">
@@ -489,7 +569,7 @@
   </div>
 
   <!-- Taxa -->
-  <div class="card-deck aba4">
+  <div class="card-deck aba5">
     <!-- COLUMNS.NUM -->
     <!-- TAXA.CONTENT.CARD -->
     <div class="card cd-30">
