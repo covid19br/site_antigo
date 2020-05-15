@@ -132,6 +132,7 @@ function updatePage(current_uf) {
     // conteudo dinamico
     // nome do local
     $(".locale").text(current_state);
+    $(".prep").text(current_prepo);
     $(".locale-prep").text(current_prepo+" "+current_state);
     
     const regex = /"/gi;
