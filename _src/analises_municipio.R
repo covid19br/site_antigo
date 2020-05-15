@@ -31,15 +31,15 @@ now.proj.zoo <- merge(
 ndias.now <- nrow(now.pred.original)
 now.proj.zoo$not.mean <- c(now.pred.zoo$n.casos,
                            estima.not(diff(now.proj.zoo$now.mean.c[(nrow(now.proj.zoo)-ndias.now):nrow(now.proj.zoo)]),
-                                           now.lista,
+                                           NobBS.params.post = now.post,
                                       from = ndias.now-days.to.forecast+1))
 now.proj.zoo$not.low <- c(now.pred.zoo$n.casos,
                            estima.not(diff(now.proj.zoo$now.low.c[(nrow(now.proj.zoo)-ndias.now):nrow(now.proj.zoo)]),
-                                           now.lista,
+                                           NobBS.params.post = now.post,
                                       from = ndias.now-days.to.forecast+1))
 now.proj.zoo$not.upp <- c(now.pred.zoo$n.casos,
                            estima.not(diff(now.proj.zoo$now.upp.c[(nrow(now.proj.zoo)-ndias.now):nrow(now.proj.zoo)]),
-                                           now.lista,
+                                           NobBS.params.post = now.post,
                                            from = ndias.now-days.to.forecast+1))
 ##Calcula n de casos cumulativos
 now.proj.zoo$not.mean.c <- cumsum(now.proj.zoo$not.mean)
@@ -75,15 +75,15 @@ now.srag.proj.zoo <- merge(
 ndias.now.srag <- nrow(now.srag.pred.original)
 now.srag.proj.zoo$not.mean <- c(now.srag.pred.zoo$n.casos,
                            estima.not(diff(now.srag.proj.zoo$now.mean.c[(nrow(now.srag.proj.zoo)-ndias.now.srag):nrow(now.srag.proj.zoo)]),
-                                           now.srag.lista,
+                                      NobBS.params.post = now.srag.post,
                                       from = ndias.now.srag-days.to.forecast.srag+1))
 now.srag.proj.zoo$not.low <- c(now.srag.pred.zoo$n.casos,
                            estima.not(diff(now.srag.proj.zoo$now.low.c[(nrow(now.srag.proj.zoo)-ndias.now.srag):nrow(now.srag.proj.zoo)]),
-                                           now.srag.lista,
+                                      NobBS.params.post = now.srag.post,
                                       from = ndias.now.srag-days.to.forecast.srag+1))
 now.srag.proj.zoo$not.upp <- c(now.srag.pred.zoo$n.casos,
                            estima.not(diff(now.srag.proj.zoo$now.upp.c[(nrow(now.srag.proj.zoo)-ndias.now.srag):nrow(now.srag.proj.zoo)]),
-                                           now.srag.lista,
+                                           NobBS.params.post = now.srag.post,
                                            from = ndias.now.srag-days.to.forecast.srag+1))
 ##Calcula n de casos cumulativos
 now.srag.proj.zoo$not.mean.c <- cumsum(now.srag.proj.zoo$not.mean)

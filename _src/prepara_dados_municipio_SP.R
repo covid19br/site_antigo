@@ -51,6 +51,9 @@ now.pred <- as.data.frame(now.pred.zoo)
 now.pred$onset_date <- as.Date(rownames(now.pred))
 now.pred <- now.pred[,c(11,1:10)]
 
+## Distribuições posteriores dos parâmetros do nowcasting
+now.post <- read.csv(paste0(nome.dir, "nowcasting_covid_post_",data.base,".csv"))
+
 ## Lista com todos os resultados no nowcasting
 ## now.lista <- readRDS(paste0(nome.dir, "nowcasting_covid_",data.base,".rds"))
 
@@ -99,6 +102,9 @@ now.srag.pred.zoo$upper.merged.c <- cumsum(now.srag.pred.zoo$upper.merged)
 now.srag.pred <- as.data.frame(now.srag.pred.zoo)
 now.srag.pred$onset_date <- as.Date(rownames(now.srag.pred))
 now.srag.pred <- now.srag.pred[,c(11,1:10)]
+
+## Distribuições posteriores dos parâmetros do nowcasting
+now.srag.post <- read.csv(paste0(nome.dir, "nowcasting_srag_post_",data.base,".csv"))
 
 ## Lista com todos os resultados no nowcasting
 ## now.srag.lista <- readRDS(paste0(nome.dir, "nowcasting_srag_",data.base,".rds"))

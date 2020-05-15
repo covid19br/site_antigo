@@ -97,9 +97,14 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
     zoo(df1[,c("predito","ic.low","ic.upp")], datas.forecast)
 }
 
+
 #' Médias e ICs das probabilidades de notificação a cada dia
 #' @param NobBS.output objeto retornado pela função NobBS do pacote de
-#'     mesmo nome
+#'     mesmo nome Este argumento é ignorado se o argumento
+#'     NobBS.params.post é usado.
+#' @param NobBS.params.post data frame com as distribuicoes
+#'     posteriores dos parâmetros estimados pela função NobBS. Está
+#'     contido na lista que é retornada pela função.
 #' @return data frame com média e quantis 2.5% e 97.5% das
 #'     distribuições a posteriori dos parâmetros de atraso de
 #'     notificação pelo método de nowcasting da função NobBS. Os
@@ -107,8 +112,11 @@ forecast.exponential <- function(zoo.obj, start, end = length(zoo.obj), days.for
 #'     portanto podem ser interpretado como a probabilidade de um caso
 #'     ser notificado D dias após o dias o primeiro sintoma, sendo que
 #'     vai de zero ao máximo definido pelos argumentos do nowcasting
-beta.summary <- function(NobBS.output){
-    df <- NobBS.output$params.post
+beta.summary <- function(NobBS.output, NobBS.params.post){
+    if(missing(NobBS.params.post))
+        df <- NobBS.output$params.post
+    else
+        df <- NobBS.params.post
     df1 <- df[, names(df)[grepl("Beta",names(df))]]
     data.frame(atraso = as.integer(substr(names(df1), 6, 8)),
                mean = exp(apply(df1, 2, mean)),
@@ -122,11 +130,18 @@ beta.summary <- function(NobBS.output){
 #' nowcasting
 #' @param vetor.casos objeto da classe zoo com n de casos
 #' @param NobBS.output objeto retornado pela função NobBS do pacote de
-#'     mesmo nome
+#'     mesmo nome. Este argumento é ignorado se o argumento
+#'     NobBS.params.post é usado.
+#' @param NobBS.params.post data frame com as distribuicoes
+#'     posteriores dos parâmetros estimados pela função NobBS. Está
+#'     contido na lista que é retornada pela função.
 #' @param from posicao do vetor de casos a partir da qual estimar o
 #'     numero de notificacões
-estima.not <- function(vetor.casos, NobBS.output, from = length(vetor.casos)-30){
-    betas <- beta.summary(NobBS.output)$mean
+estima.not <- function(vetor.casos, NobBS.output, NobBS.params.post, from = length(vetor.casos)-30){
+    if(missing(NobBS.params.post))
+        betas <- beta.summary(NobBS.output)$mean
+    else
+        betas <- beta.summary(NobBS.params.post = NobBS.params.post)$mean
     i <- length(vetor.casos)-length(betas)
     if(i<0) stop(paste("vetor.casos deve ter comprimento maior ou igual a", length(betas))) 
     else if(i>0)
@@ -137,7 +152,6 @@ estima.not <- function(vetor.casos, NobBS.output, from = length(vetor.casos)-30)
     pred <- rev(cumsum(rev(z*rev(betas))))
     zoo(pred[from:length(z)], time(y)[from:length(z)])
 }
-
 
 #' Preenche NA's iniciais do vetor de estimado pelo nowcasting
 #' @details O nowcasting retornado pela função NobBS usado com janela
