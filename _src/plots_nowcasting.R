@@ -86,8 +86,8 @@ if (existe.srag) {
     
     ### tempo de duplicação
     # ö fazendo o filtro na mão para todo mundo, mas depois pode sair daqui ja está no repo nowcasting
-    df.td.srag <- df.td.srag %>%
-        filter(data > "2020-03-15")
+    #df.td.srag <- df.td.srag %>%
+     #   filter(data > "2020-03-15")
     
     plot.tempo.dupl.srag <- plot.tempo.dupl(df.td.srag)
     
