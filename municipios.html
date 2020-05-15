@@ -120,7 +120,7 @@
             <div class="display" id="page-title">São Paulo</div> <!-- PAGE.TITLE -->
           </a>
         </div>
-        <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="titleDropdown">
+        <div class="dropdown-menu dropdown-menu-md-right" id="locale" aria-labelledby="titleDropdown">
           <a class="dropdown-item active" uf="sp_sp" href="#">São Paulo</a>
         </div>
       </div>
@@ -257,18 +257,18 @@
         <!-- CARD.DROPDOWN -->
         <div class="text-center mt-2">
           <div class="btn-group">
-            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-outline-info dropdown-toggle acumdia" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Acumulados
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item active" href="#">Acumulados</a>
-              <a class="dropdown-item" href="#">Diário</a>
+            <div class="dropdown-menu acumdia">
+              <a q="acu" href="#" class="dropdown-item active" >Acumulados</a>
+              <a q="dia" href="#" class="dropdown-item">Diário</a>
             </div>
           </div>
         </div>
 
         <!-- ACUMULADOS -->
-        <div class="acumulados">
+        <div class="acumdia-text acu">
           <ul class="list-group mt-3">
             <li class="list-group-item d-flex justify-content-between align-items-center">
               Quantos casos graves estimamos ter atualmente?
@@ -349,8 +349,8 @@
           </div>
         </div>
 
-        <!-- DIARIOS -->
-        <div class="diarios" style="display: none;">
+        <!-- Dia -->
+        <div class="acumdia-text dia">
           <!-- CARD.TEXT -->
           <p class="text-justify mt-3 mb-2">
             Os <b class="ibm_magenta">pontos em vermelho</b> são os <b>casos notificados</b> há mais de 40 dias, para os quais assumimos que não é preciso estimar futuras notificações.
@@ -558,18 +558,18 @@
         <!-- CARD.DROPDOWN -->
         <div class="text-center mt-2">
           <div class="btn-group">
-            <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btn-outline-info dropdown-toggle acumdia" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Acumulados
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item active" href="#">Acumulados</a>
-              <a class="dropdown-item" href="#">Diário</a>
+            <div class="dropdown-menu acumdia">
+              <a q="acu" href="#" class="dropdown-item active" >Acumulados</a>
+              <a q="dia" href="#" class="dropdown-item">Diário</a>
             </div>
           </div>
         </div>
 
         <!-- ACUMULADOS -->
-        <div class="acumulados">
+        <div class="acumdia-text acu">
           <!-- CARD.TEXT -->
           <p class="text-justify mt-3">
             As <b class="ibm_magenta">linhas contínuas em vermelho</b> indicam o <b>número de casos observados acumulados</b>.
@@ -609,8 +609,8 @@
 
         </div>
 
-        <!-- DIARIOS -->
-        <div class="diarios" style="display: none;">
+        <!-- Dia -->
+        <div class="acumdia-text dia">
           <!-- CARD.TEXT -->
           <p class="text-justify mt-3">
             Os <b class="ibm_magenta">pontos vermelhos</b> são de <b>casos observados</b> há mais de 40 dias, para os quais não é preciso prever futuras notificações.
@@ -1045,6 +1045,7 @@
   <!-- Conteudo Dinamico -->
   <script src="./js/async-iframe.js"></script>
   <script src="js/data_municipios.js?ver=2.00"></script>
+  <script src="js/lib_acumdia.js?ver=2.00"></script>
   <script src="js/lib_locale.js?ver=2.00"></script>
   <script src="js/lib_abas.js?ver=2.00"></script>
   <script src="js/updateContent.js?ver=2.00"></script>

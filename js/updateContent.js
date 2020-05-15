@@ -16,7 +16,8 @@ function updateURL() {
     var params = [];
     
     if($(".card-menu").length) params.push("aba=" + $(".card.menu.selected").attr("card-id"));
-    if(typeof default_uf !== 'undefined') params.push("uf=" + $(".dropdown-item.active").attr('uf'));
+    if(typeof default_uf !== 'undefined') params.push("uf=" + $("#locale > .dropdown-item.active").attr('uf'));
+    if($(".acumdia").length) params.push("q=" + $(".acumdia > .dropdown-item.active").attr("q"));
 
     // assemble query
     for(i = 0; i < params.length; i++) query = query + params[i] + "&";
@@ -40,7 +41,7 @@ $(".card.menu").click(function () {
     }
 })
 
-// Dropdown Selection
+// Locale Dropdown
 // Via QUERY REQUEST
 if("uf" in urlParams && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);
 
@@ -48,10 +49,23 @@ if("uf" in urlParams && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);
 else if(typeof default_uf !== 'undefined') updatePage(default_uf); //se a entrada é sem hash atualiza para o municipio default
 
 // JQuery OnClick Update
-$(".dropdown-item").click(function () {
+$("#locale > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
-        var current_uf = $(this).attr('uf');
-        updatePage(current_uf);
+        updatePage($(this).attr('uf'));
+        if (history.pushState) updateURL(); // checks if history.pushState is available
+    }
+})
+
+// Acumulado-Diario Dropdown
+// Via QUERY REQUEST
+if("q" in urlParams && (urlParams["q"] == "acu" || urlParams["q"] == "dia")) updateAcumDia(urlParams["q"]); // verifica se existe o parametro e verifica a legitimidade
+
+// Via DEFAULT
+else if($(".acumdia > .dropdown-item").length) updateAcumDia($(".acumdia > .dropdown-item.active").attr("q")); //se a entrada é sem hash atualiza pelo ativo
+// JQuery OnClick Update
+$(".acumdia > .dropdown-item").click(function () {
+    if (!$(this).hasClass("active")) { // se nao eh o item atual
+        updateAcumDia($(this).attr("q"));
         if (history.pushState) updateURL(); // checks if history.pushState is available
     }
 })
