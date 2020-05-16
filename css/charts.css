@@ -109,8 +109,14 @@
 .legend-square#legendBlack:before {
     background-color: #000;
 }
+.legend-square#legendGrey:before {
+    background-color: #6c757d;
+}
 .legend-square#legendBlue:before {
-    background-color: #007bff;
+    background-color: #377eb8;
+}
+.legend-square#legendRed:before {
+    background-color: #e41a1c;
 }
 
 /* texto da legenda */

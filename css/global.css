@@ -443,12 +443,12 @@ a.text-reset:hover {
         font-size: inherit;
     }
     .card-menu.textless > a.text-reset {
-        width: calc(100%/5.5);
+        width: calc(100%/4.5);
     }
 }
 
 .card-menu.textless > .text-reset > .menu {
-    height: auto!important;
+    height: 4rem!important;
 }
 
 /* CARD HERO */
