@@ -13,59 +13,57 @@ knitr::opts_chunk$set(echo = TRUE)
 <!-- # Nowcasting de óbitos a partir dos boletins epidemiológicos do Ministério da Saúde -->
 
 ```{r libraries, message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-if(!require(plyr)){install.packages("plyr"); library(plyr)}
-if(!require(tidyverse)){install.packages("tidyverse"); library(tidyverse)}
-if(!require(NobBS)){install.packages("NobBS"); library(NobBS)}
-if(!require(aweek)){install.packages("aweek"); library(aweek)}
-if(!require(cowplot)){install.packages("cowplot"); library(cowplot)}
-if(!require(lubridate)){install.packages("lubridate"); library(lubridate)}
-if(!require(zoo)){install.packages("zoo"); library(zoo)}
-if(!require(EpiEstim)){install.packages("EpiEstim"); library(EpiEstim)}
-if(!require(foreign)){install.packages("foreign"); library(foreign)}
-if(!require(viridis)){install.packages("viridis"); library(viridis)}
-if(!require(ggpubr)){install.packages("ggpubr"); library(ggpubr)}
+if (!require(plyr)) {install.packages("plyr"); library(plyr)}
+if (!require(tidyverse)) {install.packages("tidyverse"); library(tidyverse)}
+if (!require(NobBS)) {install.packages("NobBS"); library(NobBS)}
+if (!require(aweek)) {install.packages("aweek"); library(aweek)}
+if (!require(cowplot)) {install.packages("cowplot"); library(cowplot)}
+if (!require(lubridate)) {install.packages("lubridate"); library(lubridate)}
+if (!require(zoo)) {install.packages("zoo"); library(zoo)}
+if (!require(EpiEstim)) {install.packages("EpiEstim"); library(EpiEstim)}
+if (!require(foreign)) {install.packages("foreign"); library(foreign)}
+if (!require(viridis)) {install.packages("viridis"); library(viridis)}
+if (!require(ggpubr)) {install.packages("ggpubr"); library(ggpubr)}
 
 source("https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/_src/funcoes.R")
 ```
 
 ## Boletins do Ministério da Saúde
 
-A partir dos boletins epidemiológicos do ministério da saúde compilamos os óbitos por SRAG com confirmação
+A partir dos boletins epidemiológicos do Ministério da Saúde compilamos os óbitos por SRAG com confirmação
 de Covid-19, cada boletim traz um gráfico de barras que conta os óbitos por data de óbito, ou seja, a data
-da ocorrência do óbito. É importante deixar claro que não há somete este modo de informar óbitos, o ministério
+da ocorrência do óbito. É importante deixar claro que não há somente este modo de informar óbitos, o Ministério
 mesmo já informou em alguns de seus boletins óbitos via a data de notificação do óbito. 
-Todo o objetivo do nowcasting é realizar uma correçãopara se chegar à um número mais próximo da realidade, 
+Todo o objetivo do _nowcasting_ é realizar uma correção para se chegar a um número mais próximo da realidade, 
 sem que se tenha que esperar para isso a chegada de dados no sistema.
-O nowcasting corrige esses atrasos que são inerentes do sistema de notificação.
+O _nowcasting_ corrige esses atrasos que são inerentes ao sistema de notificação.
 
 ```{r boletins, echo=TRUE}
-uol<-read_csv("SRAGs-tabela-last-updated_revised2.csv")
-uol<-as.data.frame(uol)
-uol$Data<-as.Date(uol$Data, format = "%d/%m/%Y")
-uol_melted<-reshape::melt(uol, id.vars = "Data")
+uol <- read_csv("SRAGs-tabela-last-updated_revised2.csv")
+uol <- as.data.frame(uol)
+uol$Data <- as.Date(uol$Data, format = "%d/%m/%Y")
+uol_melted <- reshape::melt(uol, id.vars = "Data")
 
 p.uol <-
   ggplot(uol_melted, aes(x = Data, y = value, col = variable)) +
-  geom_point(shape = 1)+
-  geom_line()+
-  geom_vline(xintercept = as.Date("2020-03-17", format = "%Y-%m-%d"), colour = "indianred3", size = 0.45, linetype = "dashed")+
-  scale_color_viridis_d(name = "Data Boletim", option = "viridis", direction = 1)+
+  geom_point(shape = 1) +
+  geom_line() +
+  geom_vline(xintercept = as.Date("2020-03-17", format = "%Y-%m-%d"), colour = "indianred3", size = 0.45, linetype = "dashed") +
+  scale_color_viridis_d(name = "Data Boletim", option = "viridis", direction = 1) +
   labs(x = "Data", y = "Número de Óbitos") +
   theme_bw() +
-  theme(legend.position = "right")+
-  theme(axis.text= element_text(size=14),
-        axis.title = element_text(size=14))
+  theme(legend.position = "right") +
+  theme(axis.text= element_text(size = 14),
+        axis.title = element_text(size = 14))
 p.uol
 ```
 
-O efeito dos atrasos nos boletins é o deslocamento do pico para a direita, mais perto do presente, 
-e aumento do número de óbitos até pra datas do passado. 
+Com cada boletim publicado, o pico (número máximo) de óbitos se desloca para a direita -mais perto do presente-. 
+Porém, os óbitos não constam instantaneamente no sistema de notificação, e portanto no final da série há sempre uma queda abrupta. Esta queda é corrigida nos dias seguintes, com a publicação de novos boletins.
+O efeito do atraso na notificação também pode ser observado no aumento do pico -que indica que nem todos os óbitos tinham sido confirmados e notificados-. Com cada novo boletim também há um aumento do número de óbitos que aconteceram vários dias atrás. Observe no gráfico como os bolteins mais recentes (em roxo) ainda contribuem bastante para a quantificação de óbitos que aconteceram no passado (mais à esquerda). 
 A linha pontilhada vermelha marca o dia de anúncio do primeiro óbito, 
-veja-se que há óbitos ocorridos antes dessa data, os boletins mais recentes realizaram essa correção.
-Outro efeito é no fim da série, em que há uma queda abrupta, mais perto do presente. 
-Como se demora algum tempo para que o óbito já ocorrido seja confirmado como devido à Covid-19, 
-os dias mais pertos do presente sempre terão menos óbitos que a atualidade. 
-Em resumo, os óbitos não constam instantaneamente no sistema de notificação.
+veja que há óbitos ocorridos antes dessa data, mas os boletins mais recentes realizaram essa correção.
+
 
 ## Montando as matrizes de datas
 
@@ -73,26 +71,26 @@ Com a tabela de boletins do MS, montamos a seguinte matriz:
 
 ```{r matrizes, echo=TRUE}
 uol <- read.csv("SRAGs-tabela-last-updated_revised2.csv") ##load da CSV Utilizada
-uol2<-uol #variavel auxiliar
+uol2 <- uol #variavel auxiliar
 uol2[is.na(uol2)] <- 0 ##preenchendo com 0 onde não há dados ###
-uol2.1<-uol2 ###variavel auxiliar
+uol2.1 <- uol2 ###variavel auxiliar
 ###loop pra contar os valores do boletins mais antigo e contabilizar esse valor nos boletins mais recentes###
 ###para manter a data de divulgação como a data do boletim em que a morte é contada pela primeira vez #######
-for(i in 3:length(uol2)){
-  for(k in 1:dim(uol2)[1]){
-    if(uol2.1[k,i]>uol2.1[k,(i-1)] & uol2.1[k,i]>0){
-      uol2.1[k,i]=uol2.1[k,(i-1)]
+for (i in 3:length(uol2)) {
+  for (k in 1:dim(uol2)[1]) {
+    if (uol2.1[k, i] > uol2.1[k,(i - 1)] & uol2.1[k, i] > 0){
+      uol2.1[k, i] = uol2.1[k,(i - 1)]
     }
   }
 }
-uol2<-uol2.1 ###devolvendo o resultado na variável utilizada ###
+uol2 <- uol2.1 ###devolvendo o resultado na variável utilizada ###
 ## matriz para guardar os resultados
-uol3 <- matrix( nrow=nrow(uol2), ncol=ncol(uol2)-1)
+uol3 <- matrix(nrow = nrow(uol2), ncol = ncol(uol2) - 1)
 ## Coloca a ultima coluna dos dados na ultima coluna da matriz
-uol3[,ncol(uol3)] <- uol2[,ncol(uol2)]
-## Loop que vai preenchendo a nova matriz com a difreença da coluna mais a direita pra seguinte
-for(i in ncol(uol2):3){
-  uol3[,(i-2)] <- uol2[,(i-1)] - uol2[,i]
+uol3[,ncol(uol3)] <- uol2[, ncol(uol2)]
+## Loop que vai preenchendo a nova matriz com a diferença da coluna mais a direita pra seguinte
+for (i in ncol(uol2):3) {
+  uol3[,(i - 2)] <- uol2[,(i - 1)] - uol2[, i]
 }
 ## Conferindo
 all(apply(uol3, 1, sum) == uol2[,2]) ## ok!
@@ -100,23 +98,23 @@ all(apply(uol3, 1, sum) == uol2[,2]) ## ok!
 head(uol3)
 ```
 
-As colunas mais a esquerda são os boletins mais recentes.
-As linhas são as data em que ocorreram óbitos, mais a abaixo mais perto do presente.
+As colunas mais à esquerda são os boletins mais recentes.
+As linhas são as data em que ocorreram óbitos, mais abaixo mais perto do presente.
 
 ```{r Criação de vetores de datas, echo=TRUE}
 ## Junta com coluna de datas dos boletins e nomeia as colunas
 uol3.df <- as.data.frame(uol3)
 names(uol3.df) <- names(uol2)[-1]
-uol4 <- cbind(data=uol2[,1], uol3.df)
+uol4 <- cbind(data = uol2[,1], uol3.df)
 ## Monta data.frame de datas de obito e de regitro
 datas.boletins <- as.character(as.Date(names(uol3.df), "X%d.%m.%y"))
 datas.obito <- as.character(as.Date(as.character(uol4$data), "%d/%m/%y"))
 ## Vetores para guardar as datas de evento e 
 onset.dates <- record.dates <- c()
 ## Loop sobre as linhas e então colunas da matriz
-for(i in 1:length(datas.obito)){
-  for(j in 1:length(datas.boletins)){
-    if(uol3[i,j]>0){
+for (i in 1:length(datas.obito)) {
+  for (j in 1:length(datas.boletins)) {
+    if (uol3[i,j] > 0) {
       onset.dates <- c(onset.dates, rep(datas.obito[i], uol3[i,j]))
       record.dates <- c(record.dates, rep(datas.boletins[j], uol3[i,j]))
     }
@@ -130,14 +128,12 @@ sum(uol2[,2])
 ```
 
 Vamos percorrendo a matriz de modo que os óbitos para cada data são atualizados conforme se percorre os boletins, colunas.
-Com isso criamos vetores de datas, teremos que ter dois vetores de tamanho igual a soma da segunda (teste no fim do chunk)
-coluna da matriz original, boletim mais recente. 
+Com isso criamos vetores de datas, teremos que ter dois vetores de tamanho igual à soma da segunda (teste no fim do chunk) coluna da matriz original, boletim mais recente. 
 Assim teremos para cada óbito um par de datas, a data de óbito e a data de reporte
 do óbito, que aqui tomamos com a data do boletim. 
 Como não temos uma data em que realmente o óbito foi notificado no sistema sivep-gripe, 
 tomamos a data de notificação como as datas dos boletins. 
-Conforme novos óbitos são notificados para um mesmo dia, 
-somente somamos a esse dias esse novo óbito e lhe damos a data de notificação conforme a data do boletim que ele começou a constar.
+Conforme novos óbitos são notificados para um mesmo dia, somente somamos a esse dias esse novo óbito e lhe damos a data de notificação conforme a data do boletim que ele começou a constar.
 
 ```{r montando data frames, echo=TRUE}
 ## Monta o data.frame
@@ -149,8 +145,8 @@ uol_df = uol_df %>%
   as.data.frame()
 ### somando os óbitos ###
 uol_df2 = uol_df %>%
-  group_by(Death_date)%>%
-  dplyr::summarise(N=n())%>%
+  group_by(Death_date) %>%
+  dplyr::summarise(N = n()) %>%
   as.data.frame()
 
 print(head(uol_df))
@@ -162,20 +158,20 @@ Temos dois dataframes, um com o total de óbitos em cada data, e outro com o par
 ## *Nowcasting*
 
 A função *NobBS*, recebe o par de datas, utilizamos como unidade de tempo 1 dia. 
-Os specs são o default, eles dão os *priors* que serão ajustados aos atrasos e computarão uma distribuição para eles.
-O atributo *now* recebe a última data do vetor de datas de ocorência de eventos.
+Os specs são o _default_, eles dão os *priors* que serão ajustados aos atrasos e computarão uma distribuição para eles.
+O atributo *now* recebe a última data do vetor de datas de ocorrência de eventos.
 Os atributos *onset_date* e *report_date*, recebem respectivamente a coluna das datas de ocorrência do evento, e a data de notificação do evento.
 
 ```{r nowcasting, echo=TRUE}
 ###Nowcasting ###
-nowcasting<- NobBS(data = uol_df,
+nowcasting <- NobBS(data = uol_df,
                     now = max(uol_df$Death_date),
                     onset_date = "Death_date",
                     report_date = "Report_date",
                     units = "1 day",
                     specs = list(nAdapt = 3000, nBurnin = 3000, nThin = 1, nSamp = 10000)
 )
-betas<-beta.summary(nowcasting) #### função em funcoes.R
+betas <- beta.summary(nowcasting) #### função em funcoes.R
 ```
 ## Plots
 
@@ -192,14 +188,14 @@ p.betas <-
   xlab("Dias após dia do óbito") +
   ylab("Probabilidade de notificação") +
   theme_bw() +
-  theme(legend.position="none")+
+  theme(legend.position = "none") +
   ggtitle("Atraso de notificação de óbito")
 
 ## N de casos previstos e seus ICS ##
 p.prev.ic <- ggplot(nowcasting$estimates, aes(x = onset_date, y = estimate)) +
   geom_line(data = uol_df2, aes(x = Death_date, y = N),
             col = "skyblue", lwd = 1.2) +
-  geom_line(aes(x = onset_date, y = n.reported), col = "blue", lwd = 1.2)+
+  geom_line(aes(x = onset_date, y = n.reported), col = "blue", lwd = 1.2) +
   geom_line(col = "indianred3") +
   geom_ribbon(aes(ymin = lower, ymax = upper), alpha =0.15, fill = "indianred3") +
   xlab("Dia do Óbito") +
@@ -220,25 +216,27 @@ Linha azul é a série temporal de óbitos que o ministério divulga.
 ### Plot do *Nowcasting* para números acumulados
 
 ```{r plots acumulados, echo=TRUE}
-uol_final<-nowcasting$estimates
-uol_final<-uol_final[, c("estimate", "lower", "upper")]
-uol_final2<-as.data.frame(cbind(uol_final, 
-                                "Data" = as.Date(uol_df2$Death_date, "%Y-%m-%d"), 
-                                "Boletim ultimo" = uol[,2]))
+uol_final <- nowcasting$estimates
+uol_final <- uol_final[, c("estimate", "lower", "upper")]
+uol_final2 <- as.data.frame(cbind(uol_final,
+                                  "Data" = as.Date(uol_df2$Death_date, "%Y-%m-%d"),
+                                  "Boletim ultimo" = uol[,2]))
 
-uol_final3<-apply(t(uol_final2[,-4]), 1, cumsum)
-colnames(uol_final3)<-c("estimate Cumsum", "lower Cumsum", "upper Cumsum", "Boletim Cumsum")
+uol_final3 <- apply(t(uol_final2[,-4]), 1, cumsum)
+colnames(uol_final3) <- c("estimate Cumsum", "lower Cumsum", "upper Cumsum", "Boletim Cumsum")
 
-uol_final4<-as.data.frame(cbind("Data" = uol_final2$Data, uol_final2[,-4], uol_final3))
+uol_final4 <- as.data.frame(cbind("Data" = uol_final2$Data, uol_final2[,-4], uol_final3))
 
 p.prev.ic.cumsum <- ggplot(uol_final4, aes(x = Data, y = `estimate Cumsum`)) +
-    geom_line(data = uol_final4, aes(x = Data, y = `Boletim Cumsum`, color="Notificados"), lwd = 1.5) +
+    geom_line(data = uol_final4, aes(x = Data, y = `Boletim Cumsum`, color = "Notificados"), lwd = 1.5) +
     geom_line(aes(col = "Estimado")) +
-    geom_ribbon(aes(ymin =`lower Cumsum`, ymax = `upper Cumsum`), fill="red", alpha =0.15) +
+    geom_ribbon(aes(ymin = `lower Cumsum`, ymax = `upper Cumsum`),
+                fill = "red",
+                alpha = 0.15) +
     xlab("Dia do Óbito") +
     ylab("Nº de Óbitos Acumulados") +
     theme_bw() +
-    theme(legend.position = c(0.2,0.8), legend.title= element_blank()) +
+    theme(legend.position = c(0.2,0.8), legend.title = element_blank()) +
     scale_colour_manual(values = c("red", "blue"), aesthetics = c("colour", "fill")) +
     ggtitle("Nowcasting de óbitos de COVID-19 cumulativo")
 p.prev.ic.cumsum
