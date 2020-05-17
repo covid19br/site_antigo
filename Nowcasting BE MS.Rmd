@@ -19,15 +19,11 @@ if(!require(NobBS)){install.packages("NobBS"); library(NobBS)}
 if(!require(aweek)){install.packages("aweek"); library(aweek)}
 if(!require(cowplot)){install.packages("cowplot"); library(cowplot)}
 if(!require(lubridate)){install.packages("lubridate"); library(lubridate)}
-# if(!require(brms)){install.packages("brms"); library(brms)}
-if(!require(rprojroot)){install.packages("rprojroot"); library(rprojroot)}
 if(!require(zoo)){install.packages("zoo"); library(zoo)}
 if(!require(EpiEstim)){install.packages("EpiEstim"); library(EpiEstim)}
 if(!require(foreign)){install.packages("foreign"); library(foreign)}
 if(!require(viridis)){install.packages("viridis"); library(viridis)}
 if(!require(ggpubr)){install.packages("ggpubr"); library(ggpubr)}
-
-PRJROOT  = rprojroot::find_root(".here")
 
 source("https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/_src/funcoes.R")
 ```
@@ -43,7 +39,7 @@ sem que se tenha que esperar para isso a chegada de dados no sistema.
 O nowcasting corrige esses atrasos que são inerentes do sistema de notificação.
 
 ```{r boletins, echo=TRUE}
-uol<-read_csv("./SRAGs-tabela-last-updated_revised2.csv")
+uol<-read_csv("SRAGs-tabela-last-updated_revised2.csv")
 uol<-as.data.frame(uol)
 uol$Data<-as.Date(uol$Data, format = "%d/%m/%Y")
 uol_melted<-reshape::melt(uol, id.vars = "Data")
@@ -76,7 +72,7 @@ Em resumo, os óbitos não constam instantaneamente no sistema de notificação.
 Com a tabela de boletins do MS, montamos a seguinte matriz:
 
 ```{r matrizes, echo=TRUE}
-uol <- read.csv("./SRAGs-tabela-last-updated_revised2.csv") ##load da CSV Utilizada
+uol <- read.csv("SRAGs-tabela-last-updated_revised2.csv") ##load da CSV Utilizada
 uol2<-uol #variavel auxiliar
 uol2[is.na(uol2)] <- 0 ##preenchendo com 0 onde não há dados ###
 uol2.1<-uol2 ###variavel auxiliar

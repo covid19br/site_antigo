@@ -365,7 +365,7 @@ summary {
 <h1 class="title toc-ignore"><em>Nowcasting</em> de óbitos</h1>
 <h3 class="subtitle">a partir dos boletins epidemiológicos do Ministério da Saúde</h3>
 <h4 class="author">Observatório Covid-19 BR</h4>
-<h4 class="date">17/05/2020 15:37:00</h4>
+<h4 class="date">17/05/2020 15:48:41</h4>
 
 </div>
 
@@ -374,7 +374,7 @@ summary {
 <div id="boletins-do-ministério-da-saúde" class="section level2">
 <h2>Boletins do Ministério da Saúde</h2>
 <p>A partir dos boletins epidemiológicos do ministério da saúde compilamos os óbitos por SRAG com confirmação de Covid-19, cada boletim traz um gráfico de barras que conta os óbitos por data de óbito, ou seja, a data da ocorrência do óbito. É importante deixar claro que não há somete este modo de informar óbitos, o ministério mesmo já informou em alguns de seus boletins óbitos via a data de notificação do óbito. Todo o objetivo do nowcasting é realizar uma correçãopara se chegar à um número mais próximo da realidade, sem que se tenha que esperar para isso a chegada de dados no sistema. O nowcasting corrige esses atrasos que são inerentes do sistema de notificação.</p>
-<pre class="r"><code>uol&lt;-read_csv(&quot;./SRAGs-tabela-last-updated_revised2.csv&quot;)</code></pre>
+<pre class="r"><code>uol&lt;-read_csv(&quot;SRAGs-tabela-last-updated_revised2.csv&quot;)</code></pre>
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   .default = col_double(),
@@ -405,7 +405,7 @@ p.uol</code></pre>
 <div id="montando-as-matrizes-de-datas" class="section level2">
 <h2>Montando as matrizes de datas</h2>
 <p>Com a tabela de boletins do MS, montamos a seguinte matriz:</p>
-<pre class="r"><code>uol &lt;- read.csv(&quot;./SRAGs-tabela-last-updated_revised2.csv&quot;) ##load da CSV Utilizada
+<pre class="r"><code>uol &lt;- read.csv(&quot;SRAGs-tabela-last-updated_revised2.csv&quot;) ##load da CSV Utilizada
 uol2&lt;-uol #variavel auxiliar
 uol2[is.na(uol2)] &lt;- 0 ##preenchendo com 0 onde não há dados ###
 uol2.1&lt;-uol2 ###variavel auxiliar
