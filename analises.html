@@ -494,7 +494,40 @@
 
       <!-- Texto Principal -->
       <div class="card-columns one xl-small">
-  
+
+              <!-- Texto Principal -->
+      <div class="card-columns one xl-small">
+        <!-- COLUMNS.NUM -->
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-body">
+                <!-- CARD.HEADER -->
+                <div class="card-hero">
+                    <img src="./img/icon_graph.svg" width=40px alt="Ícone que representa dados"
+                        class="card-icon"> <!-- CARD.TITLE.ICON -->
+                    <div class="hero-body">
+                        <h5 class="card-title">Correção no atraso no número de óbitos anunciados</h5>
+                    </div>
+                </div>
+
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-0"><br>
+                  O número de óbitos divulgado pelo Ministério da Saúde em seus boletins epidemiológicos 
+                  não refletem a atualidade de mortes por Covid-19. Para dar um panorama mais real da 
+                  atualidade aplicamos uma técnica estatística que, através dos atrasos entre o óbito e a 
+                  notificação, estima quantos óbitos já ocorreram mas ainda não constam no sistema de 
+                  notificação. Essa estimativa é o que chamamos de nowcasting e nos dá uma visão mais 
+                  realista da atualidade. Estimamos que no limite inferior temos 1,67 mais óbitos para 
+                  cada óbito notificado e no limite superior estimamos que há 2,72 óbitos não notificados 
+                  para cada óbito já notificado.
+                  </p>
+            </div>
+        </div>
+
+        <!-- NEW.CARD -->
+    </div>
+
+
       <!-- Texto Principal -->
       <div class="card-columns one xl-small">
           <!-- COLUMNS.NUM -->
@@ -506,7 +539,7 @@
                       <img src="./img/icon_graph.svg" width=40px alt="Ícone que representa dados"
                           class="card-icon"> <!-- CARD.TITLE.ICON -->
                       <div class="hero-body">
-                          <h5 class="card-title">De onde vem os atrasos e porque corrigi-los?</h5>
+                          <h5 class="card-title">De onde vêm os atrasos e porque corrigí-los?</h5>
                       </div>
                   </div>
   
@@ -597,9 +630,9 @@
                   <p class="text-justify mt-0"><br>
                     Os dados de número de óbitos por data de notificação, como feito pelo Ministério da Saúde refletem a situação do passado e não a realidade atual. 
                     Para podermos fazer um gráfico do número de óbitos por data do óbito para datas recentes, 
-                    precisamos considerar que no futuro ainda virão o resultado de exames de pessoas que já faleceram, 
+                    precisamos considerar que no futuro ainda virá o resultado de exames de pessoas que já faleceram, 
                     fazendo com que os números de óbitos nas datas recentes aumentem. 
-                    Para isso, supomos que a estatística de atrasos dos casos futuros é semelhante a dos últimos dias. 
+                    Para isso, supomos que a estatística de atrasos dos casos futuros é semelhante à dos últimos dias. 
                     Na <a href="#fig2">Figura 2</a>, mostramos o número de óbitos por dia do óbito, ou seja, 
                     com a correção de atrasos já incorporada. Por ser uma estimava há no método uma faixa (mais clara) de 95% de confiança 
                     para a estimativa (em vermelho). Em azul, temos o número de óbitos divulgados até o último boletim epidemiológico 
@@ -646,9 +679,9 @@
                   <!-- CARD.TEXT -->
                   <p class="text-justify">
                     O método de nowcasting faz uma correção  da atualidade, ou seja, 
-                    estima como está o presente baseando-se naquilo que se sabe até o momento sobre o passado recente. 
-                    Cada óbito que ocorre tem duas datas que lhe podem ser atribuídas: (i)  de ocorrência do óbito em si, e 
-                    (ii)  data de confirmação desse óbito devido à COVID-19 pelos órgãos responsáveis, no caso a data de divulgação do boletim. 
+                    estima como está o presente baseando-se naquilo que se sabe até agora sobre o passado recente. 
+                    Cada óbito que ocorre tem duas datas que lhe podem ser atribuídas: (i) de ocorrência do óbito em si, e 
+                    (ii) data de confirmação desse óbito devido à COVID-19 pelos órgãos responsáveis, no caso a data de divulgação do boletim. 
                     Com essa duas datas podemos verificar como se distribui o tempo entre um óbito ocorrer e ele ser incluído no sistema de 
                     notificação como um óbito confirmado por COVID-19. A partir dessa distribuição de atrasos, obtemos a probabilidade de 
                     notificação do óbito para cada dia de atraso, e estimamos quantos óbitos que já ocorreram mas ainda não constam como 
@@ -723,7 +756,13 @@
                     <!-- CARD.TEXT -->
                     <p class="text-justify">
                         Os dados compilados dos boletins do Ministério da Saúde 
-                        e os <a href="Nowcasting-BE-MS.html">códigos das análises</a> estão disponíveis em nosso repositório público.
+                        e os <a href="Nowcasting-BE-MS.html">códigos das análises</a> 
+                        estão disponíveis em nosso repositório público 
+                        (dados <a href="SRAGs-tabela-last-updated_revised2.csv">aqui</a> e 
+                        códigos <a href="Nowcasting BE MS.Rmd">aqui</a>). 
+                        As análises de nowcasting que apresentamos foram feitas em R usando o 
+                        pacote NobBS ([1]).
+
                     </p>
                 </div>
             </div>
