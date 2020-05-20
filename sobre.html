@@ -12,9 +12,11 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <!-- Poppins Font -->
-  <link href="./css/global.css?ver=2.02" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.50" rel="stylesheet">
   <link href="./css/email.css?ver=1.0" rel="stylesheet">
 
   <!-- Favicons -->
@@ -31,7 +33,7 @@
   <meta name="twitter:title" content="Observatório Covid-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-sobre.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
@@ -39,15 +41,11 @@
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-sobre.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-sobre.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -108,12 +106,37 @@
 
   </nav>
 
+  <!-- Titulo Principal + Abas -->
+  <div class="container-fluid main-title-bg mb-2">
+    <!-- PAGE.TITLE -->
+    <div class="main-title">
+      <h1 class="display" id="page-title">Sobre</h1>
+      <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 11 de maio, 2020 (16:55, Horário de Brasília) </small>
+      <p class="text-justify mt-4 ml-0">Quem somos nós e a motivação por trás do Observatório.
+      </p>
+    </div>
+    <!-- Separator -->
+    <hr class="my-4" style="margin-left: 1.3rem;">
+    <!-- Footer -->
+    <div class="d-flex justify-content-start mt-4 pb-2" style="margin-left: 1.3rem;">
+      <img src="img/license_cc.svg" width="13px">
+      <img src="img/license_by.svg" width="13px">
+      <img src="img/license_nc.svg" width="13px">
+      <small class="page-subtitle ml-1">
+      <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+      </small>
+      <small class="page-subtitle ml-1 mr-1">·</small>
+      <img src="img/icon_github.svg" width="13px">
+      <small class="page-subtitle ml-1">
+      <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+      </small>
+    </div>
+  </div>  
 
   <!-- Titulo Principal -->
   <div class="container-fluid mt-3">
     <div class="main-title">
-      <h1 class="display" id="page-title">Sobre</h1><small class="page-title-update">Quem somos nós e a motivação por
-        trás do Observatório</small>
+      <h1 class="display" id="page-title"></h1><small class="page-title-update"></small>
     </div> <!-- PAGE.TITLE -->
   </div>
 
@@ -131,7 +154,7 @@
 
         <!-- CARD.TEXT -->
         <p class="text-justify">
-          O <i>Observatório Covid-19 BR</i> é uma iniciativa independente, fruto da colaboração entre pesquisadores com
+          O <b>Observatório Covid-19 BR</b> é uma iniciativa independente, fruto da colaboração entre pesquisadores com
           o desejo de contribuir para a disseminação de informação de qualidade baseada em dados atualizados e análises
           cientificamente embasadas.
           Criamos este sítio com códigos de fonte aberta que nos permite acompanhar o estado atual da epidemia de
@@ -214,14 +237,9 @@
     <div class="card">
       <div class="card-body">
         <!-- CARD.HEADER -->
-        <div class="media">
-          <ion-icon name="people-circle-outline" size="large" class="card-icon"></ion-icon> <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Equipe</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Conheça a equipe que trabalha para trazer o Observatório COVID-19 BR</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
+        <h5 class="card-title">Equipe</h5>
+
+        <p class="text-justify">Conheça a equipe que trabalha para trazer a página Municípios do Observatório COVID-19 BR:</p>
 
         <!-- CARD.UNORDERED.LIST -->
         <ul class="list-group mt-2">
@@ -366,7 +384,7 @@
   <footer class="container-fluid">
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
+      <img src="img/icon_github.svg" width="16px">
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>

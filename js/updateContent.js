@@ -15,7 +15,7 @@ function updateURL() {
     var query = "?";
     var params = [];
     
-    if($(".card-menu").length) params.push("aba=" + $(".card.menu.selected").attr("card-id"));
+    if($("#main-title-aba-pills").length) params.push("aba=" + $(".aba-pill > .nav-link.active").attr("card-id"));
     if(typeof default_uf !== 'undefined') params.push("uf=" + $(".dropdown-item.active").attr('uf'));
 
     // assemble query
@@ -27,14 +27,14 @@ function updateURL() {
 
 // Menu (Abas)
 // Via QUERY REQUEST
-if("aba" in urlParams && ($(".card-deck").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); //verifica se o parametro aba foi passado
+if("aba" in urlParams && ($(".aba-group").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); //verifica se o parametro aba foi passado
 
 // Via DEFAULT
-else if($(".card-menu").length) updateExibition($(".card.menu.selected").attr("card-id")); //se a entrada é sem hash busca pelo menu selecionado no html
+else if($("#main-title-aba-pills").length) updateExibition($(".nav-item.aba-pill > .active").attr("card-id")); //se a entrada é sem query busca pelo menu selecionado no html
 
 // Via JQuery OnClick Update
-$(".card.menu").click(function () {
-    if (!$(this).hasClass("selected")) { // se nao eh o item atual
+$(".nav-item.aba-pill > .nav-link").click(function () {
+    if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateExibition($(this).attr("card-id"));
         if (history.pushState) updateURL(); // checks if history.pushState is available
     }

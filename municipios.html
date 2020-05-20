@@ -12,9 +12,11 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <!-- Poppins Font -->
-  <link href="./css/global.css?ver=2.02" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.50" rel="stylesheet">
   <link href="./css/charts.css?ver=2.00" rel="stylesheet">
 
   <!-- Favicons -->
@@ -31,7 +33,7 @@
   <meta name="twitter:title" content="Observatório Covid-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-municipios.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
@@ -39,15 +41,11 @@
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-municipios.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-municipios.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -108,527 +106,507 @@
 
   </nav>
 
-  <!-- Titulo Principal -->
-  <div class="container-fluid mt-3">
-    <div class="main-title" style="display: inline;">
-      <div class="display">Município de</div>
-      <div class="dropdown">
-        <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" data-display="static">
-          <a href="#" style="text-decoration: none;">
-            <div class="display" id="page-title">São Paulo</div> <!-- PAGE.TITLE -->
-          </a>
-        </div>
-        <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="titleDropdown">
-          <a class="dropdown-item active" uf="sp_sp" href="#">São Paulo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-      <small class="page-title-update updateDate">Última atualização: </small>
-  </div>
-
-  <!-- Menu-->
-  <div class="card-menu"> <!-- COLUMNS.NUM -->
-    <!-- NEW.CARD -->
-
-    <!-- HOSPITALIZAÇÕES.MENU.CARD -->
-    <a class="text-reset" href="#">
-      <div class="card menu selected" card-id="aba1">
-        <div class="card-body">
-
-          <!-- CARD.HEADER -->
-          <div class="card-hero">
-            <img src="./img/icon_hospital.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
-            <div class="hero-body">
-                <h5 class="card-title">Casos graves de COVID-19</h5> <!-- CARD.TITLE -->
-                <p class="card-text">Quantos casos graves estimamos atualmente e futuramente <span class="locale-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
+  <!-- Titulo Principal + Abas -->
+  <div class="container-fluid main-title-bg">
+        <!-- PAGE.TITLE -->
+        <div class="main-title" style="display: inline;">
+          <div class="display" id="page-title-pre">Município de</div>
+          <div class="dropdown">
+            <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" data-display="static">
+              <a href="#" style="text-decoration: none;">
+                <div class="display" id="page-title">São Paulo</div> <!-- PAGE.TITLE -->
+              </a>
+            </div>
+            <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="titleDropdown">
+              <a class="dropdown-item active" uf="sp_sp" href="#">São Paulo</a>
             </div>
           </div>
-
         </div>
-      </div>
-    </a>
 
-    <!-- NEW.CARD -->
-
-    <!-- Projecao.leitos.MENU.CARD -->
-    <a class="text-reset" href="#">
-      <div class="card menu" card-id="aba2">
-        <div class="card-body">
-
-          <!-- CARD.HEADER -->
-          <div class="card-hero">
-            <img src="./img/icon_medical-checklist.svg" width=40px alt="Ícone de hospital" class="card-icon"> <!-- CARD.TITLE.ICON -->
-            <div class="hero-body">
-                <h5 class="card-title">Leitos ocupados</h5> <!-- CARD.TITLE -->
-                <p class="card-text">Quantos casos graves internados temos atualmente e futuramente <span class="locale-prep"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
-            </div>
-          </div>
-
+        <div class="main-title">
+          <small class="page-subtitle updateDate ml-1">Última atualização</small>
         </div>
-      </div>
-    </a>
 
-    <!-- NEW.CARD -->
+        <!-- Separator -->
+        <hr class="my-4" style="margin-left: 1.3rem;"> 
 
-    <!-- VELOCIDADE.MENU.CARD -->
-    <a class="text-reset" href="#">
-      <div class="card menu" card-id="aba3">
-        <div class="card-body">
-
-          <!-- CARD.HEADER -->
-          <div class="card-hero">
-            <img src="./img/icon_graph.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
-            <div class="hero-body">
-              <h5 class="card-title">Velocidade de propagação</h5> <!-- CARD.TITLE -->
-              <p class="card-text">O quão rápido a doença se propaga no município de <span class="locale"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
-            </div>
-          </div>
-
+        <!-- Menu -->
+        <div class="main-title">
+            <small class="page-subtitle m-0">Selecione uma análise ></small>
+            <!-- ABAS PILL -->
+            <ul class="nav nav-pills nav-fill" id="main-title-aba-pills">
+                <li class="nav-item aba-pill">
+                  <a class="nav-link active" href="#" card-id="aba1">Casos graves de COVID-19</a>
+                </li>
+                <li class="nav-item aba-pill">
+                  <a class="nav-link" href="#" card-id="aba2">Leitos ocupados</a>
+                </li>
+                <li class="nav-item aba-pill">
+                  <a class="nav-link" href="#" card-id="aba3">Tempo de duplicação</a>
+                </li>
+                <li class="nav-item aba-pill">
+                  <a class="nav-link" href="#" card-id="aba4">Taxa de infecção</a>
+                </li>
+                <li class="nav-item aba-pill">
+                  <a class="nav-link" href="#" card-id="sobre">Sobre</a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </a>
-    <!-- NEW.CARD -->
 
-    <!-- TAXA.MENU.CARD -->
-    <a class="text-reset" href="#">
-      <div class="card menu" card-id="aba4">
-        <div class="card-body">
-
-          <!-- CARD.HEADER -->
-          <div class="card-hero">
-            <img src="./img/icon_transmission.svg" width=48px alt="Ícone que representa um gráfico" class="card-icon"> <!-- CARD.TITLE.ICON -->
-            <div class="hero-body">
-              <h5 class="card-title">Taxa de infecção</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Para quantas pessoas cada infectado transmite a doença em <span class="locale"></span>?</p> <!-- CARD.TITLE.DESCRIPTION -->
-            </div>
-          </div>
-
+        <!-- Footer -->
+        <div class="d-flex justify-content-start mt-4 pb-2" style="margin-left: 1.3rem;">
+            <img src="img/license_cc.svg" width="13px">
+            <img src="img/license_by.svg" width="13px">
+            <img src="img/license_nc.svg" width="13px">
+            <small class="page-subtitle ml-1">
+                <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+            </small>
+            <small class="page-subtitle ml-1 mr-1">·</small>
+            <img src="img/icon_github.svg" width="13px">
+            <small class="page-subtitle ml-1">
+                <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+            </small>
         </div>
-      </div>
-    </a>
 
-    <!-- SOBRE.MENU.CARD -->
-    <a class="text-reset" href="#">
-      <div class="card menu m-0" card-id="sobre">
-        <div class="card-body">
-
-          <!-- CARD.HEADER -->
-          <div class="card-hero">
-            <img src="./img/icon_questions.svg" width=48px alt="Ícone que representa um menino" class="card-icon"> <!-- CARD.TITLE.ICON -->
-            <div class="hero-body">
-              <h5 class="card-title">Sobre</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Saiba mais sobre a equipe envolvida nestas análises</p> <!-- CARD.TITLE.DESCRIPTION -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </a>
   </div>
 
   <!-- Hospital -->
-  <div class="card-deck aba1">
-    <!-- COLUMNS.NUM -->
-    <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
+  <div class="aba-group aba1">
 
-        <!-- CARD.HEADER -->
-        <h5 class="card-title">Casos graves de COVID-19 em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-
-        <ul class="list-group mt-3">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos graves estimamos ter atualmente?
-          </li>
-        </ul>
-        <!-- CARD.TEXT -->
-        <p class="text-justify mt-3 mb-2">
-          A <b style="color:#377EB8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (que estão ou serão hospitalizados)
-          notificados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
-            vermelha</b> a <b>estimativa</b> corrigindo o tempo entre os primeiros sintomas e </b> a notificação.
-        </p>
-
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
-          aria-expanded="false" aria-controls="collapseHosp1">
-          Como calculamos este número? ▾
-        </button>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-2" id="collapseHosp1">
-          <p class="text-justify">
-            Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
-            Respiratória Aguda Grave), que é o quadro grave da COVID-19 e também de outras doenças.
-            Desde o início da pandemia de COVID-19 no Brasil todos esses casos graves são notificados como casos suspeitos,
-            que são então investigados com testes laboratoriais. Se o resultado do teste é positivo o caso
-            passa de suspeito a confirmado para COVID-19. Essas notificações e confirmações são registradas
-            numa base de dados do Ministério da Saúde chamada base SIVEP-Gripe.
-            Estimamos o número atual de casos graves com uma técnica estatística
-            que corrige os atrasos do sistema de notificação, isto é,
-            adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
-            incluído no sistema de vigilância. Essa técnica não corrige subnotificações,
-            como as causadas por casos assintomáticos ou
-            leves que não são testados, por exemplo.
-          </p>
-        </div>
-
-        <!-- CARD.TEXT -->
-        <ul class="list-group mt-4">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos graves estimamos ter nos próximos dias?
-          </li>
-        </ul>
-        <p class="text-justify mt-3">
-          Os <b style="color:#E41A1C">pontos tracejados da linha
-            vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre <span
-            class="forecast_min"></span>
-          e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de crescimento
-          dos valores
-          corrigidos continuar a mesma dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o
-          <b>intervalo de confiança</b>
-          dessa previsão.
-        </p>
-
-
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
-          aria-expanded="false" aria-controls="collapseHosp2">
-          Por que só 5 dias? ▾
-        </button>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-2" id="collapseHosp2">
-          <p class="text-justify">
-            Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
-            <b style="color:#6c757d">cinza</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
-            E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
-          </p>
-          <p class="text-justify">
-            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
-          </p>
-        </div>
-
-        <!-- CARD.SIGNATURE -->
-        <p class="mt-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
-          para saber mais sobre o método.</p>
-        <div class="blockquote-footer text-right">Observatório COVID-19</div>
-      </div>
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-5 mb-5">
+      <div class="main-title">
+          <h1 class="display text-center">Casos graves de COVID-19 em <span class="locale"></span></h1>
+      </div> <!-- PAGE.TITLE -->
     </div>
 
-    <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
-    <div class="card cd-70 chart-fix">
-      <div class="card-body">
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-          data-responsive="true">
-          <img src=./web/plot.nowcast.cum.svg class="placeholder_svg" width="100%">
+    <!-- Conteudo -->
+    <div class="card-deck">
+      <!-- COLUMNS.NUM -->
+      <!-- HOSPITALIZAÇÕES.CONTENT.CARD -->
+      <div class="card cd-30">
+        <div class="card-body">
+
+          <!-- CARD.HEADER -->
+
+          <ul class="list-group mt-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Quantos casos graves estimamos ter atualmente?
+            </li>
+          </ul>
+          <!-- CARD.TEXT -->
+          <p class="text-justify mt-3 mb-2">
+            A <b style="color:#377EB8">linha azul</b> mostra o <b>número de casos graves</b> de COVID-19 (que estão ou serão hospitalizados)
+            notificados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
+              vermelha</b> a <b>estimativa</b> corrigindo o tempo entre os primeiros sintomas e </b> a notificação.
+          </p>
+
+          <!-- CARD.BUTTON.EXPAND -->
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+            aria-expanded="false" aria-controls="collapseHosp1">
+            Como calculamos este número? ▾
+          </button>
+          <!-- CARD.BUTTON.EXPAND.CONTENT -->
+          <div class="collapse mt-2" id="collapseHosp1">
+            <p class="text-justify">
+              Para calcular este número, utilizamos os dados de notificação de hospitalizações por SRAG (Síndrome
+              Respiratória Aguda Grave), que é o quadro grave da COVID-19 e também de outras doenças.
+              Desde o início da pandemia de COVID-19 no Brasil todos esses casos graves são notificados como casos suspeitos,
+              que são então investigados com testes laboratoriais. Se o resultado do teste é positivo o caso
+              passa de suspeito a confirmado para COVID-19. Essas notificações e confirmações são registradas
+              numa base de dados do Ministério da Saúde chamada base SIVEP-Gripe.
+              Estimamos o número atual de casos graves com uma técnica estatística
+              que corrige os atrasos do sistema de notificação, isto é,
+              adianta-se às notificações oficiais pelo tempo médio entre um infectado sentir os sintomas e seu dado ser
+              incluído no sistema de vigilância. Essa técnica não corrige subnotificações,
+              como as causadas por casos assintomáticos ou
+              leves que não são testados, por exemplo.
+            </p>
+          </div>
+
+          <!-- CARD.TEXT -->
+          <ul class="list-group mt-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Quantos casos graves estimamos ter nos próximos dias?
+            </li>
+          </ul>
+          <p class="text-justify mt-3">
+            Os <b style="color:#E41A1C">pontos tracejados da linha
+              vermelha</b> são as <b>previsões</b> para os últimos 2 dias e para os próximos 5 dias (entre <span
+              class="forecast_min"></span>
+            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de crescimento
+            dos valores
+            corrigidos continuar a mesma dos últimos 7 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o
+            <b>intervalo de confiança</b>
+            dessa previsão.
+          </p>
+
+
+          <!-- CARD.BUTTON.EXPAND -->
+          <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+            aria-expanded="false" aria-controls="collapseHosp2">
+            Por que só 5 dias? ▾
+          </button>
+          <!-- CARD.BUTTON.EXPAND.CONTENT -->
+          <div class="collapse mt-2" id="collapseHosp2">
+            <p class="text-justify">
+              Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
+              <b style="color:#6c757d">cinza</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
+              E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
+            </p>
+            <p class="text-justify">
+              Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+            </p>
+          </div>
+
+          <!-- CARD.SIGNATURE -->
+          <p class="mt-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+            para saber mais sobre o método.</p>
+          <div class="blockquote-footer text-right">Observatório COVID-19</div>
         </div>
-        <script src="./js/async-iframe.js"></script>
-        </div>
+      </div>
+
+      <!-- HOSPITALIZAÇÕES.GRAFICO.CARD -->
+      <div class="card cd-70 chart-fix">
+        <div class="card-body">
+          <!-- CARD.GGPLOT -->
+          <div data-src="./web/plot.nowcast.cum.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+            data-responsive="true">
+            <img src=./web/plot.nowcast.cum.svg class="placeholder_svg" width="100%">
+          </div>
+          <script src="./js/async-iframe.js"></script>
+          </div>
+      </div>
     </div>
   </div>
 
   <!-- Modelo -->
-  <div class="card-deck aba2">
-    <!-- COLUMNS.NUM -->
-    <!-- MODELO.CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
-    
-        <!-- CARD.HEADER -->
-        <h5 class="card-title">Casos de SRAG internados em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-    
-        <ul class="list-group mt-3">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
-          </li>
-        </ul>
-        <!-- CARD.TEXT -->
-        <p class="text-justify mt-3 mb-2">
-          Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
-          hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
-            vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
-        </p>
-    
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
-          aria-expanded="false" aria-controls="collapseHosp1">
-          Como calculamos este número? ▾
-        </button>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-2" id="collapseHosp1">
-          <p class="text-justify">
-            Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
-            aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-            do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
-            distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
-            entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
-            datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
-          </p>
-        </div>
-    
-        <!-- CARD.TEXT -->
-        <ul class="list-group mt-4">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos de SRAG internados estimamos ter nos próximos dias?
-          </li>
-        </ul>
-        <p class="text-justify mt-3">
-          Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-          tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
-          modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
-          <b>intervalo de
-            confiança</b> dessa previsão.
-        </p>
-        <p class="text-justify mt-3">
-          Para saber mais detalhes, consulte o relatório completo <a
-            href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
-          Todos os relatórios anteriores podem ser encontrados <a
-            href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
-        </p>
-    
-    
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
-          aria-expanded="false" aria-controls="collapseHosp2">
-          Por que só 7 dias? ▾
-        </button>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-2" id="collapseHosp2">
-          <p class="text-justify">
-            O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
-            se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
-            tem subido de forma consistente, sem sinal de saturação.
-          </p>
-          <p class="text-justify">
-            Por isso avaliamos que é inadequado fazer previsões para mais de 7 dias com este método.
-          </p>
-        </div>
-    
-        <!-- CARD.SIGNATURE -->
-        <p class="mt-3 mb-0">Acesse a página <a
-            href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
-          para saber mais sobre o método de correção de atrasos.</p>
-        <div class="blockquote-footer text-right">Observatório COVID-19</div>
-      </div>
+  <div class="aba-group aba2">
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-5 mb-5">
+      <div class="main-title">
+          <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
+      </div> <!-- PAGE.TITLE -->
     </div>
 
-    <!-- MODELO.GRAFICO.CARD -->
-    <div class="card cd-70 chart-fix">
-      <div class="card-body">
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.srag.leitos.forecast.logistic.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-          data-responsive="true">
-          <img src=./web/plot.srag.leitos.forecast.logistic.municipio.svg class="placeholder_svg" width="100%">
+    <!-- Conteudo -->
+    <div class="card-deck">
+      <!-- COLUMNS.NUM -->
+      <!-- MODELO.CONTENT.CARD -->
+      <div class="card cd-30">
+        <div class="card-body">
+            
+          <ul class="list-group mt-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
+            </li>
+          </ul>
+          <!-- CARD.TEXT -->
+          <p class="text-justify mt-3 mb-2">
+            Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
+            hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
+              vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
+          </p>
+      
+          <!-- CARD.BUTTON.EXPAND -->
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+            aria-expanded="false" aria-controls="collapseHosp1">
+            Como calculamos este número? ▾
+          </button>
+          <!-- CARD.BUTTON.EXPAND.CONTENT -->
+          <div class="collapse mt-2" id="collapseHosp1">
+            <p class="text-justify">
+              Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
+              aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
+              do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
+              distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
+              entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
+              datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+            </p>
+          </div>
+      
+          <!-- CARD.TEXT -->
+          <ul class="list-group mt-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Quantos casos de SRAG internados estimamos ter nos próximos dias?
+            </li>
+          </ul>
+          <p class="text-justify mt-3">
+            Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
+            tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
+            modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
+            <b>intervalo de
+              confiança</b> dessa previsão.
+          </p>
+          <p class="text-justify mt-3">
+            Para saber mais detalhes, consulte o relatório completo <a
+              href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
+            Todos os relatórios anteriores podem ser encontrados <a
+              href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
+          </p>
+      
+      
+          <!-- CARD.BUTTON.EXPAND -->
+          <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+            aria-expanded="false" aria-controls="collapseHosp2">
+            Por que só 7 dias? ▾
+          </button>
+          <!-- CARD.BUTTON.EXPAND.CONTENT -->
+          <div class="collapse mt-2" id="collapseHosp2">
+            <p class="text-justify">
+              O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
+              se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
+              tem subido de forma consistente, sem sinal de saturação.
+            </p>
+            <p class="text-justify">
+              Por isso avaliamos que é inadequado fazer previsões para mais de 7 dias com este método.
+            </p>
+          </div>
+      
+          <!-- CARD.SIGNATURE -->
+          <p class="mt-3 mb-0">Acesse a página <a
+              href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+            para saber mais sobre o método de correção de atrasos.</p>
+          <div class="blockquote-footer text-right">Observatório COVID-19</div>
         </div>
-        <script src="./js/async-iframe.js"></script>
+      </div>
+
+      <!-- MODELO.GRAFICO.CARD -->
+      <div class="card cd-70 chart-fix">
+        <div class="card-body">
+          <!-- CARD.GGPLOT -->
+          <div data-src="./web/plot.srag.leitos.forecast.logistic.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+            data-responsive="true">
+            <img src=./web/plot.srag.leitos.forecast.logistic.municipio.svg class="placeholder_svg" width="100%">
+          </div>
+          <script src="./js/async-iframe.js"></script>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Velocidade-->
-  <div class="card-deck aba3">
-    <!-- VELOCIDADE.CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
-
-        <!-- CARD.HEADER -->
-        <h5 class="card-title">Velocidade de propagação em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-
-        <ul class="list-group mt-3">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quão rápido a doença se propaga?
-          </li>
-        </ul>
-        <!-- CARD.TEXT -->
-        <p class="text-justify mt-3 mb-3">
-          O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
-          graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. 
-          Esse número depende muito das medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
-          <span class="tempo_dupli_max"></span> dias.</b>
-        </p>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <p class="text-justify">
-          A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
-          intervalos de 5 dias (as datas indicam o fim de cada um desses intervalos).</p>
-        <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
-          tempos de duplicação. O intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação
-          variam à medida que o tempo passa.
-        </p>
- 	<p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação <a href="/informacoes.html#estimativa-do-tempo-de-duplicação">aqui</a>.
-        </p>
-      </div>
+  <div class="aba-group aba3">
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-5 mb-5">
+      <div class="main-title">
+          <h1 class="display text-center">Tempo de duplicação em <span class="locale"></span></h1>
+      </div> <!-- PAGE.TITLE -->
     </div>
+    
+    <!-- Conteudo -->
+    <div class="card-deck">
+      <!-- VELOCIDADE.CONTENT.CARD -->
+      <div class="card cd-30">
+        <div class="card-body">
 
-    <!-- VELOCIDADE.GRAFICO.CARD -->
-    <div class="card cd-70 chart-fix">
-      <div class="card-body">
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-          data-responsive="true">
-          <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+          <ul class="list-group mt-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Quão rápido a doença se propaga?
+            </li>
+          </ul>
+          <!-- CARD.TEXT -->
+          <p class="text-justify mt-3 mb-3">
+            O <b style="color: #28a745;">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
+            graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>. 
+            Esse número depende muito das medidas de contenção da doença. <b>A estimativa de hoje é entre <span class="tempo_dupli_min"></span> e
+            <span class="tempo_dupli_max"></span> dias.</b>
+          </p>
+          <!-- CARD.BUTTON.EXPAND.CONTENT -->
+          <p class="text-justify">
+            A <b style="color: #28a745;">linha verde</b> no gráfico mostra o <b>tempo de duplicação</b> estimado a
+            intervalos de 5 dias (as datas indicam o fim de cada um desses intervalos).</p>
+          <p class="text-justify"> A <b style="color:#6c757d"> faixa cinza</b> é o <b>intervalo de confiança</b> desses
+            tempos de duplicação. O intervalo largo mostra que a incerteza é grande, mas mesmo assim vemos que tempos de duplicação
+            variam à medida que o tempo passa.
+          </p>
+    <p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação <a href="/informacoes.html#estimativa-do-tempo-de-duplicação">aqui</a>.
+          </p>
         </div>
-        <script src="./js/async-iframe.js"></script>
+      </div>
+
+      <!-- VELOCIDADE.GRAFICO.CARD -->
+      <div class="card cd-70 chart-fix">
+        <div class="card-body">
+          <!-- CARD.GGPLOT -->
+          <div data-src="./web/plot.tempo.dupl.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+            data-responsive="true">
+            <img src=./web/plot.tempo.dupl.municipio.svg class="placeholder_svg" width="100%">
+          </div>
+          <script src="./js/async-iframe.js"></script>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Taxa -->
-  <div class="card-deck aba4">
-    <!-- COLUMNS.NUM -->
-    <!-- TAXA.CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
-
-        <!-- CARD.HEADER -->
-        <h5 class="card-title">Taxa de infecção em <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-
-        <ul class="list-group mt-3 mb-3">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Para quantas pessoas cada infectado transmite a doença?
-          </li>
-        </ul>
-        <!-- CARD.TEXT -->
-        <p class="text-justify">
-          O <b style="color:#6f42c1">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
-          infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
-          linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
-          E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
-          de casos.
-        </p>
-        <p class="text-justify re">
-          Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
-          dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
-            <span class="re_max"></span>.</b>
-        </p>
-        <p class="text-justify">
-          A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
-          um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
-          chance de incluir o valor real de \(R_e\).
-        </p>
- 	      <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
-        </p>
-        <p class="text-justify re">
-          <span class="re_analise"></span>
-        </p>
-      </div>
+  <div class="aba-group aba4">
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-5 mb-5">
+      <div class="main-title">
+          <h1 class="display text-center">Taxa de infecção em <span class="locale"></span></h1>
+      </div> <!-- PAGE.TITLE -->
     </div>
+    
+    <!-- Conteudo -->
+    <div class="card-deck">
+      <!-- COLUMNS.NUM -->
+      <!-- TAXA.CONTENT.CARD -->
+      <div class="card cd-30">
+        <div class="card-body">
 
-    <!-- TAXA.GRAFICO.CARD -->
-    <div class="card cd-70 chart-fix">
-      <div class="card-body">
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-          data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-          data-responsive="true">
-          <img src=./web/plot.estimate.R0.municipio.svg class="placeholder_svg" width="100%">
+          <ul class="list-group mt-3 mb-3">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Para quantas pessoas cada infectado transmite a doença?
+            </li>
+          </ul>
+          <!-- CARD.TEXT -->
+          <p class="text-justify">
+            O <b style="color:#6f42c1">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
+            infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
+            linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
+            E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+            de casos.
+          </p>
+          <p class="text-justify re">
+            Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
+            dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min"></span> e
+              <span class="re_max"></span>.</b>
+          </p>
+          <p class="text-justify">
+            A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
+            um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
+            chance de incluir o valor real de \(R_e\).
+          </p>
+          <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
+          </p>
+          <p class="text-justify re">
+            <span class="re_analise"></span>
+          </p>
         </div>
-        <script src="./js/async-iframe.js"></script>
+      </div>
+
+      <!-- TAXA.GRAFICO.CARD -->
+      <div class="card cd-70 chart-fix">
+        <div class="card-body">
+          <!-- CARD.GGPLOT -->
+          <div data-src="./web/plot.estimate.R0.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+            data-responsive="true">
+            <img src=./web/plot.estimate.R0.municipio.svg class="placeholder_svg" width="100%">
+          </div>
+          <script src="./js/async-iframe.js"></script>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Sobre -->
-  <div class="card-deck sobre">
-    <!-- SOBRE.CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
-
-        <!-- CARD.HEADER -->
-        <h5 class="card-title">Sobre os dados no município de <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
-        <p class="text-justify">
-          O <i>Observatório Covid-19 BR</i> participa do <b>Grupo Técnico
-            de Assessoramento em Epidemiologia e Modelagem Matemática COVID19</b>
-          (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São
-          Paulo. Este grupo analisa as bases de dados oficiais para o município,
-          para subsidiar tomada de decisão.
-        </p>
-        <p class="text-justify">
-          Com as notificações de casos graves suspeitos e confirmados de
-          COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
-          Sivep-Gripe), o GT COVID-19 Sampa <b>estima o número de casos graves que
-            já ocorreram mas ainda não foram notificados</b>. Com esses dados
-          corrigidos é possível obter estimativas mais confiáveis da evolução da
-          epidemia.
-        </p>
-      </div>
+  <div class="aba-group sobre">
+    <!-- Titulo Principal -->
+    <div class="container-fluid mt-5 mb-5">
+      <div class="main-title">
+          <h1 class="display text-center">Sobre</h1>
+      </div> <!-- PAGE.TITLE -->
     </div>
+    
+    <!-- Conteudo -->
+    <div class="card-deck">
+      <!-- SOBRE.CONTENT.CARD -->
+      <div class="card cd-30">
+        <div class="card-body">
 
-    <!-- SOBRE.EQUIPE.CARD -->
-    <div class="card cd-70">
-      <div class="card-body">
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <ion-icon name="people-circle-outline" size="large" class="card-icon"></ion-icon> <!-- CARD.TITLE.ICON -->
-          <div class="media-body">
-            <h5 class="card-title">Equipe</h5> <!-- CARD.TITLE.TEXT -->
-            <p class="card-text">Conheça a equipe que trabalha para trazer o Observatório COVID-19 BR</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
+          <!-- CARD.HEADER -->
+          <h5 class="card-title">Sobre os dados no município de <span class="locale"></span></h5> <!-- CARD.TITLE.TEXT -->
+          <p class="text-justify">
+            O <i>Observatório Covid-19 BR</i> participa do <b>Grupo Técnico
+              de Assessoramento em Epidemiologia e Modelagem Matemática COVID19</b>
+            (GT COVID-19 Sampa) da Secretaria de Saúde do Município de São
+            Paulo. Este grupo analisa as bases de dados oficiais para o município,
+            para subsidiar tomada de decisão.
+          </p>
+          <p class="text-justify">
+            Com as notificações de casos graves suspeitos e confirmados de
+            COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
+            Sivep-Gripe), o GT COVID-19 Sampa <b>estima o número de casos graves que
+              já ocorreram mas ainda não foram notificados</b>. Com esses dados
+            corrigidos é possível obter estimativas mais confiáveis da evolução da
+            epidemia.
+          </p>
         </div>
+      </div>
 
-        <!-- CARD.UNORDERED.LIST -->
-        <ul class="list-group mt-2">
-          <li class="list-group-item">Ana Freitas Ribeiro (médica sanitarista @ IIER – professora Uninove e USCS) | <a
-              target="_blank" rel="noopener" href="http://lattes.cnpq.br/2580724337528147">CV</a></li>
+      <!-- SOBRE.EQUIPE.CARD -->
+      <div class="card cd-70">
+        <div class="card-body">
+          <!-- CARD.HEADER -->
+          <h5 class="card-title">Equipe</h5>
 
-          <li class="list-group-item">Breno Souza de Aguiar (assessor técnico @ SMS-SP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3614173324900214">CV</a></li>
+          <p class="text-justify">Conheça a equipe que trabalha para trazer a página Municípios do Observatório COVID-19 BR:</p>
 
-          <li class="list-group-item">Diogo Melo (pós doc @ IB-USP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7012154595546796">CV</a></li>
+          <!-- CARD.UNORDERED.LIST -->
+          <ul class="list-group mt-2">
+            <li class="list-group-item">Ana Freitas Ribeiro (médica sanitarista @ IIER – professora Uninove e USCS) | <a
+                target="_blank" rel="noopener" href="http://lattes.cnpq.br/2580724337528147">CV</a></li>
 
-          <li class="list-group-item">Flávia Maria Darcie Marquitti (pós doc @ <a target="_blank" rel="noopener"
-              href="https://www.ifi.unicamp.br/~flaviam/">IFGW e IB</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/750889398476891">CV</a></li>
+            <li class="list-group-item">Breno Souza de Aguiar (assessor técnico @ SMS-SP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/3614173324900214">CV</a></li>
 
-          <li class="list-group-item">Hélio Neves (médico sanitarista @ SMS-SP – professor FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/2581276764223304">CV</a></li>
+            <li class="list-group-item">Diogo Melo (pós doc @ IB-USP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/7012154595546796">CV</a></li>
 
-          <li class="list-group-item">José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP)
+            <li class="list-group-item">Flávia Maria Darcie Marquitti (pós doc @ <a target="_blank" rel="noopener"
+                href="https://www.ifi.unicamp.br/~flaviam/">IFGW e IB</a>) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/750889398476891">CV</a></li>
 
-          <li class="list-group-item">Karina de Cassia Braga Ribeiro (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/6967301297739351">CV</a></li>
+            <li class="list-group-item">Hélio Neves (médico sanitarista @ SMS-SP – professor FCMSCSP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/2581276764223304">CV</a></li>
 
-          <li class="list-group-item">Marcelo Antunes Failla (mestrando @ USP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7348318962497209">CV</a></li>
+            <li class="list-group-item">José Olimpio Moura de Albuquerque (medico sanitarista @ COVISA SMS-SP)
 
-          <li class="list-group-item">Marcia Caldas de Castro (professora @ Harvard T.H. Chan SPH) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3247288157664157">CV</a></li>
+            <li class="list-group-item">Karina de Cassia Braga Ribeiro (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/6967301297739351">CV</a></li>
 
-          <li class="list-group-item">Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/7977489515345196">CV</a></li>
+            <li class="list-group-item">Marcelo Antunes Failla (mestrando @ USP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/7348318962497209">CV</a></li>
 
-          <li class="list-group-item">Paulo Carrara de Castro (professor @ FCMSCSP) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/1797989230776090">CV</a></li>
+            <li class="list-group-item">Marcia Caldas de Castro (professora @ Harvard T.H. Chan SPH) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/3247288157664157">CV</a></li>
 
-          <li class="list-group-item">Paulo Inácio Prado (professor @ <a target="_blank" rel="noopener"
-              href="http://ecologia.ib.usp.br/let/">IB-USP)</a> | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
+            <li class="list-group-item">Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/7977489515345196">CV</a></li>
 
-          <li class="list-group-item">Rafael Lopes Paixão da Silva (doutorando @ <a target="_blank" rel="noopener"
-              href="https://www.ift.unesp.br">IFT - UNESP</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/3085324638663546">CV</a></li>
+            <li class="list-group-item">Paulo Carrara de Castro (professor @ FCMSCSP) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/1797989230776090">CV</a></li>
 
-          <li class="list-group-item">Renato Mendes Coutinho (professor @ <a target="_blank" rel="noopener"
-              href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
+            <li class="list-group-item">Paulo Inácio Prado (professor @ <a target="_blank" rel="noopener"
+                href="http://ecologia.ib.usp.br/let/">IB-USP)</a> | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
 
-          <li class="list-group-item">Roberto Kraenkel (professor @ <a target="_blank" rel="noopener"
-              href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
+            <li class="list-group-item">Rafael Lopes Paixão da Silva (doutorando @ <a target="_blank" rel="noopener"
+                href="https://www.ift.unesp.br">IFT - UNESP</a>) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/3085324638663546">CV</a></li>
 
-          <li class="list-group-item">Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP) | <a
-              target="_blank" rel="noopener" href="http://lattes.cnpq.br/4067424355078812">CV</a></li>
+            <li class="list-group-item">Renato Mendes Coutinho (professor @ <a target="_blank" rel="noopener"
+                href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
 
-          <li class="list-group-item">Tatiana P. Portella Zenker (doutoranda @ <a target="_blank" rel="noopener"
-              href="http://ecologia.ib.usp.br/">Ecologia - USP</a> ) | <a target="_blank" rel="noopener"
-              href="http://lattes.cnpq.br/8988655613888832">CV</a></li>
-        </ul>
+            <li class="list-group-item">Roberto Kraenkel (professor @ <a target="_blank" rel="noopener"
+                href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
+
+            <li class="list-group-item">Sylvia Christina de Andrade Grimm (assessora técnica @ CEInfo SMS-SP) | <a
+                target="_blank" rel="noopener" href="http://lattes.cnpq.br/4067424355078812">CV</a></li>
+
+            <li class="list-group-item">Tatiana P. Portella Zenker (doutoranda @ <a target="_blank" rel="noopener"
+                href="http://ecologia.ib.usp.br/">Ecologia - USP</a> ) | <a target="_blank" rel="noopener"
+                href="http://lattes.cnpq.br/8988655613888832">CV</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -637,7 +615,7 @@
   <footer class="container-fluid">
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
+      <img src="img/icon_github.svg" width="16px">
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>
@@ -686,8 +664,8 @@
   <!-- Conteudo Dinamico -->
   <script src="js/data_municipios.js?ver=2.00"></script>
   <script src="js/lib_locale.js?ver=2.00"></script>
-  <script src="js/lib_abas.js?ver=2.00"></script>
-  <script src="js/updateContent.js?ver=2.00"></script>
+  <script src="js/lib_abas.js?ver=2.10"></script>
+  <script src="js/updateContent.js?ver=2.10"></script>
   <!-- Dispara Toast Messages -->
   <script src="js/updateToast.js"></script>
   <!-- MathJax: Equacoes -->

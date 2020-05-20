@@ -12,9 +12,11 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <!-- Poppins Font -->
-  <link href="./css/global.css?ver=2.02" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.50" rel="stylesheet">
   <link href="./css/charts.css?ver=2.00" rel="stylesheet">
 
   <!-- Favicons -->
@@ -44,10 +46,6 @@
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -108,6 +106,14 @@
 
   </nav>
 
+  <!-- Destaque -->
+  <div class="container-fluid main-title-bg" style="padding-bottom: 2rem; border-color:#34c1ad;">
+    <!-- PAGE.TITLE -->
+    <div class="main-title">
+      <h1 class="display" id="page-title">Destaques</h1>
+    </div>
+  </div>  
+
   <!-- Alert
   <div class="container-fluid mt-2">
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -119,9 +125,8 @@
     </div>
   </div> -->
 
-  <!-- Cards -->
   <!-- CARD.MENU -->
-  <div class="card-menu"> <!-- COLUMNS.NUM -->
+  <div class="card-menu mt-4 mb-5"> <!-- COLUMNS.NUM -->
     <!-- NEW.CARD -->
 
     <!-- PERGUNTAS.CARD -->
@@ -131,9 +136,9 @@
 
         <!-- CARD.HEADER -->
         <div class="card-hero">
-          <img src="./img/icon_questions.svg" width=48px alt="Desenho que representa um profissional da saúde" class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_questions.svg" width=48px alt="Desenho que representa um profissional da saúde" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
           <div class="hero-body">
-            <h5 class="card-title">Perguntas Comuns</h5> <!-- CARD.TITLE.TEXT -->
+            <h5 class="card-title index-title">Perguntas Comuns</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Respostas da nossa equipe para algumas das principais perguntas sobre COVID-19</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
@@ -151,9 +156,9 @@
 
           <!-- CARD.HEADER -->
           <div class="card-hero">
-            <img src="./img/icon_death.svg" width=48px alt="Ícone que representa luto" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <img src="./img/icon_death.svg" width=48px alt="Ícone que representa luto" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
-              <h5 class="card-title">Quantos óbitos temos no Brasil?</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Quantos óbitos temos no Brasil?</h5> <!-- CARD.TITLE.TEXT -->
               <p class="card-text">Para cada óbito por COVID-19 registrado estimamos que haja outros 2 ou 3 aguardando o resultado</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
@@ -163,15 +168,15 @@
       </a>
 
     <!-- DETALHADA.CARD -->
-    <a href="./notas/Carta_Observatorio.pdf" class="text-reset">
+    <a href="./notas/Carta_Observatorio.pdf" target="_blank" rel="noopener" class="text-reset">
     <div class="card menu">
       <div class="card-body">
 
         <!-- CARD.HEADER -->
         <div class="card-hero">
-          <img src="./img/icon_news.svg" width=48px alt="Ícone que representa uma carta" class="card-icon"> <!-- CARD.TITLE.ICON -->
+          <img src="./img/icon_news.svg" width=48px alt="Ícone que representa uma carta" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
           <div class="hero-body">
-            <h5 class="card-title">COVID-19: ainda há muito pela frente</h5> <!-- CARD.TITLE.TEXT -->
+            <h5 class="card-title index-title">COVID-19: ainda há muito pela frente</h5> <!-- CARD.TITLE.TEXT -->
             <p class="card-text">Leia a nota publicada pelo Observatório COVID-19 BR em 8 de maio de 2020</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
         </div>
@@ -189,9 +194,9 @@
 
           <!-- CARD.HEADER -->
           <div class="card-hero">
-            <img src="./img/icon_hazmat.svg" width=48px alt="Ícone que representa um menino" class="card-icon"> <!-- CARD.TITLE.ICON -->
+            <img src="./img/icon_hazmat.svg" width=48px alt="Ícone que representa um menino" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
-              <h5 class="card-title">Sobre nós</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Sobre nós</h5> <!-- CARD.TITLE.TEXT -->
               <p class="card-text">Saiba mais sobre a equipe responsável pelo Observatório COVID-19</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
@@ -201,13 +206,14 @@
     </a>
   </div>
 
-    <!-- Date & Hour -->
-    <div class="container-fluid mt-2">
-      <div class="main-title"><br>
-        <h1 class="display" id="page-title">Visão Geral</h1><small class="page-title-update updateDate">Última
-          atualização: </small>
-      </div> <!-- PAGE.TITLE -->
+  <!-- VISAO GERAL -->
+  <div class="container-fluid main-title-bg mb-4" style="padding-bottom: 2rem; margin-top: 2rem!important;">
+    <!-- PAGE.TITLE -->
+    <div class="main-title align-items-center" style="flex-direction: row!important;">
+      <h1 class="display" id="page-title">Visão Geral</h1>
+      <small class="page-subtitle updateDate ml-2">Última atualização: </small>
     </div>
+  </div>
 
   <div class="card-columns">
     <!-- COLUMNS.NUM -->
@@ -229,10 +235,10 @@
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_calendar.svg" width=48px alt="Cenarios"
-            class="card-icon"> <!-- CARD.TITLE.ICON -->
+            class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="./cenarios.html" class="text-reset">
-              <h5 class="card-title">Simulação de cenários</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Simulação de cenários</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Modelo epidemiológico para a cidade de São Paulo</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -259,6 +265,8 @@
           </a>
         </div>
 
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
 
       </div>
     </div>
@@ -272,10 +280,10 @@
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_medical-checklist.svg" width=48px alt="Ocupação de leitos"
-            class="card-icon"> <!-- CARD.TITLE.ICON -->
+            class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="./municipios.html?aba=aba2" class="text-reset">
-              <h5 class="card-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Estimativa do número de leitos</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos leitos precisaremos na cidade de São Paulo nos próximos dias?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -301,6 +309,8 @@
           </a>
         </div>
 
+        <!-- CARD.SIGNATURE -->
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
 
       </div>
     </div>
@@ -311,11 +321,11 @@
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_globe.svg" class="card-icon" width=48px alt="Avião sobrevoando o globo terrestre">
+          <img src="./img/icon_globe.svg" class="card-icon index-icon" width=48px alt="Avião sobrevoando o globo terrestre">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="https://guimaraeslabbr.weebly.com/voos.html" class="text-reset" target="_blank" rel="noopener">
-              <h5 class="card-title">Dinâmicas de contágio</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Dinâmicas de contágio</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Como epidemias se espalham por um país continental?</p> <!-- CARD.TITLE.DESCRIPTION -->
           </div>
@@ -346,8 +356,6 @@
         </a>
         </div>
 
-
-
       </div>
     </div>
 
@@ -358,11 +366,11 @@
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_sick_bed.svg" width=48px alt="Menino com garganta tossindo" class="card-icon">
+          <img src="./img/icon_sick_bed.svg" width=48px alt="Menino com garganta tossindo" class="card-icon index-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="./municipios.html?aba=aba1" class="text-reset">
-              <h5 class="card-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Acompanhando casos graves</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos casos graves (hospitalizações) temos hoje na cidade de São Paulo?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -399,11 +407,11 @@
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_globe.svg" class="card-icon" width=48px alt="Avião sobrevoando o globo terrestre">
+          <img src="./img/icon_globe.svg" class="card-icon index-icon" width=48px alt="Avião sobrevoando o globo terrestre">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/49" class="text-reset" target="_blank" rel="noopener">
-              <h5 class="card-title">Dinâmicas de contágio 2</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Dinâmicas de contágio 2</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">E como as epidemias se espalham por dentro de um estado?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -451,7 +459,6 @@
         </a>
         </div>
 
-
       </div>
     </div>
 
@@ -461,11 +468,11 @@
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_sick_bed.svg" class="card-icon" width=48px alt="Cada doente">
+          <img src="./img/icon_sick_bed.svg" class="card-icon index-icon" width=48px alt="Cada doente">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="https://preprints.scielo.org/index.php/scielo/preprint/view/381" class="text-reset" target="_blank" rel="noopener">
-              <h5 class="card-title">Rede de hospitais e cemitérios</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Rede de hospitais e cemitérios</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Vulnerabilidade estrutural dos hospitais e cemitérios ecrematórios da cidade de São Paulo à COVID-19</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -511,11 +518,11 @@
 
         <!-- CARD.HEADER -->
         <div class="media">
-          <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon">
+          <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon index-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body mb-2">
             <a href="./progressao.html?uf=br" class="text-reset">
-              <h5 class="card-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Quantos casos notificados já temos no Brasil? Quantos teremos nos próximos dias?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -523,7 +530,7 @@
         </div>
 
         <!-- CARD.TITLE.TEXT -->
-        <h5 class="card-title text-center">Número de casos em escala logarítimica</h5>
+        <h5 class="card-title index-title text-center">Número de casos em escala logarítimica</h5>
 
         <!-- CARD.GGPLOT -->
         <a href="./progressao.html?uf=br">
@@ -559,11 +566,11 @@
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_hospital.svg" width=48px
-            alt="Previsão de quando os leitos de São Paulo se esgotariam sem isolamento social" class="card-icon">
+            alt="Previsão de quando os leitos de São Paulo se esgotariam sem isolamento social" class="card-icon index-icon">
           <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="./analises.html?aba=aba1" class="text-reset">
-              <h5 class="card-title">Esgotamento de leitos em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Esgotamento de leitos em São Paulo</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem
               distanciamento social?</p>
@@ -601,10 +608,10 @@
         <!-- CARD.HEADER -->
         <div class="media">
           <img src="./img/icon_people.svg" width=48px alt="Desenho que representa a transmissão da doença entre pessoas"
-            class="card-icon"> <!-- CARD.TITLE.ICON -->
+            class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
           <div class="media-body">
             <a href="https://guimaraeslabbr.weebly.com/COVID19.html" class="text-reset" target="_blank" rel="noopener">
-              <h5 class="card-title">Isolamento Social</h5> <!-- CARD.TITLE.TEXT -->
+              <h5 class="card-title index-title">Isolamento Social</h5> <!-- CARD.TITLE.TEXT -->
             </a>
             <p class="card-text">Como o isolamento social influencia a dinâmica de propagação da epidemia?</p>
             <!-- CARD.TITLE.DESCRIPTION -->
@@ -649,7 +656,7 @@
   <footer class="container-fluid">
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
+      <img src="img/icon_github.svg" width="16px">
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>

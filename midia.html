@@ -12,9 +12,11 @@
     <!-- Bootstrap CSS via BootstrapCDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-    <!-- Poppins Font -->
-    <link href="./css/global.css?ver=2.02" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Observatorio CSS -->
+    <link href="./css/global.css?ver=2.50" rel="stylesheet">
     <link href="./css/midia.css?ver=2.00" rel="stylesheet">
 
     <!-- Favicons -->
@@ -31,7 +33,7 @@
     <meta name="twitter:title" content="Observatório Covid-19 BR">
     <meta name="twitter:description"
         content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-reportagens.png">
 
     <!-- Facebook -->
     <meta property="og:url" content="https://covid19br.github.io">
@@ -39,15 +41,11 @@
     <meta property="og:description"
         content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
-    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+    <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-reportagens.png">
+    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-reportagens.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
-    <!-- Ionic Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -108,12 +106,35 @@
 
     </nav>
 
-    <!-- Titulo Principal -->
-    <div class="container-fluid mt-3">
+    <!-- Titulo Principal + Abas -->
+    <div class="container-fluid main-title-bg mb-2">
+
+        <!-- PAGE.TITLE -->
         <div class="main-title">
-            <h1 class="display" id="page-title">Reportagens</h1><small class="page-title-update">Confira as aparições do
-                Observatório na mídia e nossas análises diárias dos notíciarios no Brasil</small>
-        </div> <!-- PAGE.TITLE -->
+            <h1 class="display" id="page-title">Reportagens</h1>
+            <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 19 de maio, 2020 (15:33, Horário de Brasília) </small>
+            <p class="text-justify mt-4 ml-0">Confira as aparições do Observatório COVID-19 BR na mídia e análises diárias dos notíciarios no Brasil.
+            </p>
+        </div>
+
+        <!-- Separator -->
+        <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+        <!-- Footer -->
+        <div class="d-flex justify-content-start mt-4 pb-2" style="margin-left: 1.3rem;">
+            <img src="img/license_cc.svg" width="13px">
+            <img src="img/license_by.svg" width="13px">
+            <img src="img/license_nc.svg" width="13px">
+            <small class="page-subtitle ml-1">
+                <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+            </small>
+            <small class="page-subtitle ml-1 mr-1">·</small>
+            <img src="img/icon_github.svg" width="13px">
+            <small class="page-subtitle ml-1">
+                <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+            </small>
+        </div>
+
     </div>
 
     <!-- Cards -->
@@ -138,7 +159,7 @@
                 <!-- MAIO -->
                 <p class="news-month">
                     <a class="text-reset" data-toggle="collapse" href="#collapseMaio" role="button"
-                        aria-expanded="false" aria-controls="collapseMaio">
+                        aria-expanded="true" aria-controls="collapseMaio">
                         Maio ▾
                     </a>
                 </p>
@@ -148,14 +169,14 @@
 
                         <p class="news-week">
                             <a class="text-reset" data-toggle="collapse" href="#collapseMaioSem3" role="button"
-                                aria-expanded="true" aria-controls="collapseMaioSe32">
+                                aria-expanded="true" aria-controls="collapseMaioSem3">
                                 Semana 3 ▾
                             </a>
                         </p>
                         <div class="collapse show" id="collapseMaioSem3">
                             <div class="list-group">
 
- 			<a href="https://www.facebook.com/watch/live/?v=235629277727155&ref=watch_permalink"
+                                <a href="https://www.facebook.com/watch/live/?v=235629277727155&ref=watch_permalink"
                                     target="_blank" rel="noopener"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
@@ -165,7 +186,6 @@
                                     <p class="mb-1">A matemática da pandemia. A jornalista Paloma Cotes conversa com Roberto Kraenkel, pesquisador do Instituto de Física Teórica da Unesp, para explicar como os números podem nos ajudar a entender e combater o novo coronavírus.
                                     </p>
                                 </a>
-
 
                                 <a href="https://noticias.uol.com.br/saude/ultimas-noticias/redacao/2020/05/14/mortes-coronavirus-brasil-projecao-maio-observatorio.htm"
                                     target="_blank" rel="noopener"
@@ -178,16 +198,17 @@
                                     </p>
                                 </a>
 
-                                 <a href="https://www.bbc.com/portuguese/brasil-52595760"
-                                    target="_blank" rel="noopener"
+                                <a href="https://www.bbc.com/portuguese/brasil-52595760" target="_blank" rel="noopener"
                                     class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between">
-                                        <h5 class="mb-1"><img src="https://static.bbc.co.uk/news/1.314.03587/apple-touch-icon-57x57-precomposed.png" class="favicon">BBC News Brasil</h5>
+                                        <h5 class="mb-1"><img src="https://static.bbc.co.uk/news/1.314.03587/apple-touch-icon-57x57-precomposed.png"
+                                                class="favicon">BBC News Brasil</h5>
                                         <small>13/05/2020</small>
                                     </div>
                                     <p class="mb-1">Coronavírus: 10 gráficos para entender a situação atual do Brasil na pandemia
                                     </p>
                                 </a>
+
 
                                 <a href="https://www.abrasco.org.br/site/noticias/coloquio-debate-uso-de-dados-na-projecao-de-respostas-a-pandemia/48182"
                                     target="_blank" rel="noopener"
@@ -233,8 +254,76 @@
                                 Semana 2 ▾
                             </a>
                         </p>
-                        <div class="collapse show" id="collapseMaioSem2">
+                        <div class="collapse" id="collapseMaioSem2">
                             <div class="list-group">
+
+                                <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/05/08/sao-paulo-teria-10-vezes-mais-casos-sem-medidas-de-isolamento-diz-grupo-de-pesquisadores.ghtml"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://g1.globo.com/favicon.ico" class="favicon">Portal G1</h5>
+                                        <small>08/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">São Paulo teria 10 vezes mais casos sem medidas de isolamento, diz grupo de pesquisadores
+                                    </p>
+                                </a>
+
+                                 <a href="https://www.facebook.com/watch/live/?v=235629277727155&ref=watch_permalink"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://statics.estadao.com.br/s2016/favicon.ico" class="favicon">TV Estadão</h5>
+                                        <small>14/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">A matemática da pandemia. A jornalista Paloma Cotes conversa com Roberto Kraenkel, pesquisador do Instituto de Física Teórica da Unesp, para explicar como os números podem nos ajudar a entender e combater o novo coronavírus.
+                                    </p>
+                                </a>
+
+                                <a href="https://noticias.uol.com.br/saude/ultimas-noticias/redacao/2020/05/14/mortes-coronavirus-brasil-projecao-maio-observatorio.htm"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://noticias.uol.com.br/favicon.ico" class="favicon">UOL notícias</h5>
+                                        <small>14/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">Brasil pode ter mais do que o dobro das mortes já confirmadas por covid-19
+                                    </p>
+                                </a>
+
+                                <a href="https://www.abrasco.org.br/site/noticias/coloquio-debate-uso-de-dados-na-projecao-de-respostas-a-pandemia/48182"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://www.abrasco.org.br/site/wp-content/uploads/2016/12/logo-ico.png" class="favicon">Abrasco</h5>
+                                        <small>13/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">Colóquio debate uso de dados na projeção de respostas à pandemia
+                                    </p>
+                                </a>
+
+
+                                <a href="https://globoplay.globo.com/v/8548382"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://s3.glbimg.com/v1/AUTH_2caf29d99e86401197555831070efae8/secure/favicon-ec0f47f.ico" class="favicon">Globoplay</h5>
+                                        <small>12/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">Projeções de casos respiratórios graves ajudam no combate à pandemia
+                                    </p>
+                                </a>
+
+
+                                <a href="https://g1.globo.com/sp/sao-paulo/noticia/2020/05/12/cidade-de-sao-paulo-ja-tem-dez-vezes-mais-casos-de-sindrome-respiratoria-do-que-em-2019-estimam-pesquisadores.ghtml"
+                                    target="_blank" rel="noopener"
+                                    class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1"><img src="https://g1.globo.com/favicon.ico" class="favicon">Portal G1</h5>
+                                        <small>12/05/2020</small>
+                                    </div>
+                                    <p class="mb-1">Cidade de São Paulo já tem dez vezes mais casos de síndrome respiratória do que em 2019, estimam pesquisadores
+                                    </p>
+                                </a>
 
                                 <a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/05/08/sao-paulo-teria-10-vezes-mais-casos-sem-medidas-de-isolamento-diz-grupo-de-pesquisadores.ghtml"
                                     target="_blank" rel="noopener"
@@ -278,7 +367,7 @@
                                 Semana 1 ▾
                             </a>
                         </p>
-                        <div class="collapse show" id="collapseMaioSem1">
+                        <div class="collapse" id="collapseMaioSem1">
                             <div class="list-group">
                             
 
@@ -875,7 +964,7 @@
     <footer class="container-fluid">
         <!-- FOOTER.ITEM -->
         <div class="footer-content">
-        <ion-icon name="logo-github"></ion-icon>
+        <img src="img/icon_github.svg" width="16px">
         <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
             class="text-reset">Source Code</a></small>
         </div>

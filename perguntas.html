@@ -12,9 +12,11 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <!-- Poppins Font -->
-  <link href="./css/global.css?ver=2.02" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.50" rel="stylesheet">
   <link href="./css/accordion.css?ver=2.00" rel="stylesheet">
 
   <!-- Favicons -->
@@ -31,7 +33,7 @@
   <meta name="twitter:title" content="Observatório Covid-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-perguntas.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
@@ -39,15 +41,11 @@
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-perguntas.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-perguntas.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
@@ -108,17 +106,40 @@
 
   </nav>
 
-  <!-- Titulo Principal -->
-  <div class="container-fluid mt-3">
+  <!-- Titulo Principal + Abas -->
+  <div class="container-fluid main-title-bg mb-2">
+
+    <!-- PAGE.TITLE -->
     <div class="main-title">
-      <h1 class="display" id="page-title">Perguntas Comuns</h1><small class="page-title-update">Respostas da nossa
-        equipe para algumas das principais perguntas sobre COVID-19</small>
-    </div> <!-- PAGE.TITLE -->
+        <h1 class="display" id="page-title">Perguntas Comuns</h1>
+        <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 27 de abril, 2020 (08:02, Horário de Brasília) </small>
+        <p class="text-justify mt-4 ml-0">Respostas da nossa equipe para algumas das principais perguntas sobre COVID-19.
+        </p>
+    </div>
+
+    <!-- Separator -->
+    <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+    <!-- Footer -->
+    <div class="d-flex justify-content-start mt-4 pb-2" style="margin-left: 1.3rem;">
+        <img src="img/license_cc.svg" width="13px">
+        <img src="img/license_by.svg" width="13px">
+        <img src="img/license_nc.svg" width="13px">
+        <small class="page-subtitle ml-1">
+            <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+        </small>
+        <small class="page-subtitle ml-1 mr-1">·</small>
+        <img src="img/icon_github.svg" width="13px">
+        <small class="page-subtitle ml-1">
+            <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+        </small>
+    </div>
+
   </div>
 
   <!-- Cards -->
 
-  <div class="card-columns two">
+  <div class="card-deck">
     <!-- COLUMNS.NUM -->
     <!-- NEW.CARD -->
 
@@ -405,13 +426,13 @@
             <div class="card-header" id="headingThree">
               <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                  data-target="#collapseComportamentoThree" aria-expanded="true"
+                  data-target="#collapseComportamentoThree" aria-expanded="false"
                   aria-controls="collapseComportamentoThree">
                   O número de habitantes da região influencia na dinâmica da epidemia nesse lugar?
                 </button>
               </h2>
             </div>
-            <div id="collapseComportamentoThree" class="collapse show" aria-labelledby="headingThree"
+            <div id="collapseComportamentoThree" class="collapse" aria-labelledby="headingThree"
               data-parent="#accordionComportamento">
               <div class="card-body">
                 <p>
@@ -666,7 +687,7 @@
   <footer class="container-fluid">
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
+      <img src="img/icon_github.svg" width="16px">
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>
