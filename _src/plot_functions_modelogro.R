@@ -28,7 +28,7 @@ make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel 
     geom_line(data = fits$upper$pred, aes(y = X80.), colour = "black", linetype= "dotted") + 
     geom_line(data = fits$estimate$pred, aes(y = mean), colour = "black") + 
     theme_cowplot() + 
-    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
+    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 15), date_labels = "%b %d") +
     #scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
     #background_grid(major = "xy", color.major = "grey90", size.major = 0.3) + 
     annotate("text", 
