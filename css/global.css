@@ -130,14 +130,7 @@ p, small {
     border-width: 0 0 0px 20px;
     border-color: #007bff;
 }
-.main-title-footer {
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-}
+
 /* extra small: less than 576px */
 .main-title {
     display: -ms-flexbox;
