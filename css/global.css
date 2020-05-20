@@ -597,9 +597,9 @@ a.text-reset:hover {
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    -ms-flex-align: end;
-    -webkit-box-align: end;
-            align-items: end;
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+            align-items: start;
 }
 
 /* CARD DECK */
