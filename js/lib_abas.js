@@ -4,7 +4,6 @@ function updateMenu(request) {
     
     // updates
     var selector = ".nav-item.aba-pill > .nav-link[card-id='" + request +"']" ;
-    
     $(selector).addClass("active");
 }
 
