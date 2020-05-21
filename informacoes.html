@@ -12,9 +12,11 @@
   <!-- Bootstrap CSS via BootstrapCDN -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Poppins Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
-  <link href="./css/global.css?ver=2.01" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.52" rel="stylesheet">
   <link href="./css/tables.css?ver=2.00" rel="stylesheet">
   <link href="./css/toc.css?ver=2.00" rel="stylesheet">
 
@@ -32,7 +34,7 @@
   <meta name="twitter:title" content="Observatório Covid-19 BR">
   <meta name="twitter:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-info.png">
 
   <!-- Facebook -->
   <meta property="og:url" content="https://covid19br.github.io">
@@ -40,15 +42,11 @@
   <meta property="og:description"
     content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social.png">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-info.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-info.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Ionic Icons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body data-spy="scroll" data-target="#toc">
@@ -86,7 +84,10 @@
           <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./leitos.html">Análises</a>
+          <a class="nav-link" href="./cenarios.html">Cenários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./analises.html">Análises</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
@@ -106,14 +107,35 @@
 
   </nav>
 
+  <!-- Titulo Principal + Abas -->
+  <div class="container-fluid main-title-bg mb-2">
 
-  <!-- Titulo Principal -->
-  <div class="container-fluid mt-2">
+    <!-- PAGE.TITLE -->
     <div class="main-title">
-      <h1 class="display" id="page-title">Informações Técnicas</h1><small class="page-title-update">Entenda como o
-        Observatório gera suas análises</small>
-    </div> <!-- PAGE.TITLE -->
+        <h1 class="display" id="page-title">Informações Técnicas</h1>
+        <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 27 de abril, 2020 (13:30, Horário de Brasília) </small>
+        <p class="text-justify mt-4 ml-0">Entenda os detalhes de como o Observatório COVID-19 gera suas análises.
+        </p>
+    </div>
+
+    <!-- Separator -->
+    <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+    <!-- Footer -->
+    <div class="mt-4 pb-2" style="margin-left: 1.3rem;">
+      <img src="img/license_cc.svg" width="13px" class="m-0">
+      <small class="page-subtitle">
+          <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+      </small>
+      <small class="page-subtitle ml-1 mr-1">·</small>
+      <img src="img/icon_github.svg" width="13px">
+      <small class="page-subtitle">
+          <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+      </small>
+    </div>
+
   </div>
+
 
   <!-- Content -->
   <div class="container-fluid">
@@ -430,7 +452,7 @@
   <footer class="container-fluid">
     <!-- FOOTER.ITEM -->
     <div class="footer-content">
-      <ion-icon name="logo-github"></ion-icon>
+      <img src="img/icon_github.svg" width="16px">
       <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
           class="text-reset">Source Code</a></small>
     </div>

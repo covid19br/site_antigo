@@ -15,9 +15,9 @@ function updateURL() {
     var query = "?";
     var params = [];
     
-    if($(".card-menu").length) params.push("aba=" + $(".card.menu.selected").attr("card-id"));
-    if(typeof default_uf !== 'undefined') params.push("uf=" + $("#locale > .dropdown-item.active").attr('uf'));
-    if($(".acumdia").length) params.push("q=" + $(".acumdia > .dropdown-item.active").attr("q"));
+    if($("#main-title-aba-pills").length) params.push("aba=" + $(".aba-pill > .nav-link.active"     ).attr("card-id")); // aba query
+    if(typeof default_uf !== 'undefined') params.push("uf="  + $("#locale   > .dropdown-item.active").attr('uf'));      // locale query
+    if($(".acumdia").length)              params.push("q="   + $(".acumdia   > .dropdown-item.active").attr("q"));      // acumdia query
 
     // assemble query
     for(i = 0; i < params.length; i++) query = query + params[i] + "&";
@@ -28,14 +28,14 @@ function updateURL() {
 
 // Menu (Abas)
 // Via QUERY REQUEST
-if("aba" in urlParams && ($(".card-deck").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); //verifica se o parametro aba foi passado
+if("aba" in urlParams && ($(".aba-group").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); //verifica se o parametro aba foi passado
 
 // Via DEFAULT
-else if($(".card-menu").length) updateExibition($(".card.menu.selected").attr("card-id")); //se a entrada é sem hash busca pelo menu selecionado no html
+else if($("#main-title-aba-pills").length) updateExibition($(".nav-item.aba-pill > .active").attr("card-id")); //se a entrada é sem query busca pelo menu selecionado no html
 
 // Via JQuery OnClick Update
-$(".card.menu").click(function () {
-    if (!$(this).hasClass("selected")) { // se nao eh o item atual
+$(".nav-item.aba-pill > .nav-link").click(function () {
+    if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateExibition($(this).attr("card-id"));
         if (history.pushState) updateURL(); // checks if history.pushState is available
     }
@@ -62,10 +62,18 @@ if("q" in urlParams && (urlParams["q"] == "acu" || urlParams["q"] == "dia")) upd
 
 // Via DEFAULT
 else if($(".acumdia > .dropdown-item").length) updateAcumDia($(".acumdia > .dropdown-item.active").attr("q")); //se a entrada é sem hash atualiza pelo ativo
+
 // JQuery OnClick Update
 $(".acumdia > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateAcumDia($(this).attr("q"));
         if (history.pushState) updateURL(); // checks if history.pushState is available
+    }
+})
+
+// JQuery OnClick Update
+$(".casobi > .dropdown-item").click(function () {
+    if (!$(this).hasClass("active")) { // se nao eh o item atual
+        updateCasObi($(this).attr("r"));
     }
 })

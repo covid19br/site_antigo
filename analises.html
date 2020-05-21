@@ -1,0 +1,897 @@
+<!doctype html> <!-- HTML 5 doctype -->
+<html lang="pt">
+
+<head>
+    <!-- Description meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+    <title>Análises · Observatório Covid-19 BR</title>
+
+    <!-- Bootstrap CSS via BootstrapCDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Observatorio CSS -->
+    <link href="./css/global.css?ver=2.52" rel="stylesheet">
+    <link href="./css/charts.css?ver=2.01" rel="stylesheet">
+    <link href="./css/toc.css?ver=2.00" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#007bff">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Observatório Covid-19 BR">
+    <meta name="twitter:description"
+          content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="https://covid19br.github.io">
+    <meta property="og:title" content="Observatório Covid-19 BR">
+    <meta property="og:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+</head>
+
+<body>
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- BOTAO DO MENU -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+            <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+        </a>
+
+        <!-- DESTAQUE -->
+        <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="#">
+                Análises
+            </a>
+        </div>
+        
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Visão Geral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./progressao.html?uf=br">Estados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./cenarios.html">Cenários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Análises</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./midia.html">Reportagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./sobre.html">Sobre</a>
+                </li>
+                <!-- MENU.ITEM -->
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Titulo Principal + Abas -->
+    <div class="container-fluid main-title-bg">
+        <!-- PAGE.TITLE -->
+        <div class="main-title">
+            <h1 class="display" id="page-title">Análises comentadas</h1>
+            <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 17 de maio, 2020 (19:02, Horário de Brasília) </small>
+            <p class="text-justify mt-4 ml-0">Nesta seção, exibimos pequenos artigos com leituras pertinentes de análises realizadas em
+                conjunto pelos colaboradores do Observatório COVID-19 BR. Nosso objetivo aqui é trazer ao público geral análises
+                cientificamente fundamentadas que contenham conceitos-chave e lições para o enfrentamento da pandemia de COVID-19 no
+                Brasil.
+            </p>
+        </div>
+
+        <!-- Separator -->
+        <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+        <!-- Menu -->
+        <div class="main-title">
+            <small class="page-subtitle m-0">Selecione uma análise ></small>
+            <!-- ABAS PILL -->
+            <ul class="nav nav-pills nav-fill" id="main-title-aba-pills">
+                <li class="nav-item aba-pill">
+                <a class="nav-link active" href="#" card-id="aba1">Esgotamento dos Leitos</a>
+                </li>
+                <li class="nav-item aba-pill">
+                <a class="nav-link" href="#" card-id="aba2">Óbitos por COVID-19</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 pb-2" style="margin-left: 1.3rem;">
+            <img src="img/license_cc.svg" width="13px" class="m-0">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+            </small>
+            <small class="page-subtitle ml-1 mr-1">·</small>
+            <img src="img/icon_github.svg" width="13px">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+            </small>
+        </div>
+
+    </div>
+    
+    <!-- ABA 1: Esgotamento dos Leitos -->
+    <div class="aba-group aba1">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Esgotamento dos Leitos</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    Potencial de leitos necessários somente para COVID-19 na ausência de medidas preventivas na cidade de São Paulo
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center mt-2">
+                        <img src="./img/icon_sick_bed.svg" width=40px alt="Ícone que representa o leito de um hospital"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba1-card1">Modelando a ocupação dos leitos em São Paulo</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-4">
+                        No início da epidemia no município de São Paulo, a ocupação dos leitos com casos graves confirmados
+                        de COVID-19 era de 0.8% dos leitos totais (dados da base oficial de notificações SIVEP-GRIPE), e o
+                        número de casos graves da doença duplicava rapidamente (a cada 2,17 dias, valor estimado entre os dias 14 e 19 de
+                        março).
+                    </p>
+
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0">Em quanto tempo 100% dos leitos de São Paulo estariam ocupados com COVID-19, sem distanciamento social?</h6>
+                        </li>
+                    </ul>
+
+                    <p class="text-justify">
+                        Usando estes dados, nosso modelo mostra que 100% dos leitos disponíveis em São Paulo seriam
+                        ocupados somente por pacientes de COVID-19 <b>entre os dias 1 e 5 de abril</b> se nenhuma medida de
+                        controle de contágio tivesse sido tomada e o número de leitos se mantivesse constante (<a
+                        href="#aba1-fig1">Fig. 1 e 2</a>).
+                    </p>
+                    <p class="text-justify">
+                        A simulação de leitos de UTI mostra resultados parecidos: sem nenhuma medida de controle, 100% dos
+                        leitos de UTI seriam ocupados somente com pacientes de COVID-19 entre os dias 29 de março e 1 de abril.
+                        (<a href="#aba1-fig3">Fig. 3 e 4</a>).
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 2 -->
+            <div class="card" id="card2">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_people.svg" width=40px alt="Ícone que representa o contágio por proximidade"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba1-card2">Os efeitos do distanciamento social</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-4" id="fig1">
+                        Nosso modelo representa um cenário hipotético do avanço da epidemia de COVID-19 no município de São Paulo 
+                        que nos permite explorar o que aconteceria se medidas de distanciamento não tivessem sido tomadas 
+                        e a propagação da doença não tivesse desacelerado.
+                    </p>
+
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0">Por que modelar um cenário sem distanciamento social?</h6>
+                        </li>
+                    </ul>
+
+                    <p class="text-justify">
+                        Ao comparar os resultados do nosso modelo com a atual ocupação de leitos na cidade de São
+                        Paulo, podemos <b>quantificar quantos leitos (e vidas!) foram salvos pelas as medidas de distanciamento social</b>
+                        (trabalho em andamento). A comparação é importante, por exemplo, para o gestor público ter as
+                        condições necessárias para tomar a melhor decisão em termos de administração e de política pública,
+                        em especial em um momento de extrema gravidade como é o atual.
+                    </p>
+                    <p class="text-justify">
+                        Nosso modelo, apesar de hipotético,
+                        utiliza dados reais de número de leitos e de hospitalizados por faixa etária na cidade. Para representar o cenário sem medidas
+                        de distanciamento social, estimamos o tempo de duplicação da doença num período anterior a estas
+                        medidas em São Paulo (dias 14 a 19 de março, <a href="#aba1-fig1">Fig. 1 e 2</a>).
+                    </p>
+                </div>
+            </div>
+            <!-- NEW.CARD -->
+        </div>
+
+        <!-- Figuras 1 e 2 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 1 -->
+            <div class="card" >
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba1-fig1">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./web/leitos_fig1.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Previsão da porcentagem de leitos hospitalares ocupados por COVID-19 no município de São Paulo entre os dias 14/03 e
+                            07/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os casos estimados pelo modelo, e os
+                            pontos pretos são os dadosobservados de casos graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial
+                            de notificações SIVEP-GRIPE).
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 2 -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" style="text-align: center;" id="aba1-fig2">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./web/leitos_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Versão em escala logarítmica da Fig 1. Previsão da porcentagem (em escala logarítmica) de leitos hospitalares
+                            ocupados por COVID-19 no município de São Paulo entre os dias 14/03 e 07/04 em um cenário sem distanciamento social.
+                            A linha e os pontos amarelos são os casos estimados pelo modelo, e os pontos pretos são os dados observados de casos
+                            graves hospitalizados entre os dias 14 e 19/03 (dados da base oficial de notificações SIVEP-GRIPE).
+                        </small>
+                    </p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_public.svg" width=40px alt="Ícone que representa um público de pessoas"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba1-card3">A redução do isolamento social</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0">É arriscado reduzir o isolamento social em municípios com mais de 50% dos leitos disponíveis?</h6>
+                        </li>
+                    </ul>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        <b>Nosso modelo sugere que sim.</b> Mesmo em cidades onde pacientes com COVID-19 ocupam atualmente uma
+                        porcentagem baixa dos leitos, a ocupação total de leitos pode ser atingida muito rapidamente sem
+                        medidas preventivas. Medidas preventivas, como o isolamento social, aumentam o tempo de duplicação
+                        da doença e, portanto, diminuem a velocidade de ocupação dos leitos de hospitais.
+                    </p>
+                    <p class="text-justify">
+                        Iniciar as medidas preventivas somente quando 50% dos leitos estiverem ocupados pode ser muito tarde, já que o
+                        número de hospitalizados por COVID-19 aumenta exponencialmente, e os efeitos de medidas preventivas podem demorar
+                        para afetar o número de hospitalizações por COVID-19.
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_hospital.svg" width=40px alt="Ícone que representa um hospital"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba1-card4">Capacidade atual de leitos</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0">Quantos leitos existem na cidade de São Paulo?</h6>
+                        </li>
+                    </ul>                    
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-2" id="fig3">
+                        De acordo com o Cadastro Nacional de Estabelecimentos de Saúde (CNES) <a href="#aba1-card6">[Ref. 1]</a>, a cidade de São
+                        Paulo possui <b>4.205 leitos de UTI</b> para adultos, dos quais 25% são SUS, e <b>27.847 leitos simples</b> para adultos dos quais
+                        52% são SUS. Esses leitos estão disponíveis para pacientes com diversos tipos de enfermidades. Até o momento, tem
+                        sido difícil saber com precisão quantos leitos estão disponíveis exclusivamente para acolherem pessoas acometidas de
+                        COVID-19 ou Síndrome Respiratória Aguda Grave (SRAG).
+                    </p>
+                    <p class="text-justify">
+                        Há informes oficiais que os gestores das redes hospitalares, tanto pública quanto privada, suspenderam os chamados
+                        procedimentos eletivos (não urgentes), re-alocaram doentes entre enfermarias, adequaram e ainda vêm adequando espaços
+                        físicos, dentro e fora dos hospitais, para aumentar a disponibilidade de leitos para os casos de COVID-19.
+                    </p>
+                    <p class="text-right"><i>Fonte: Secretaria Municipal de São Paulo</i></p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+        </div>
+
+        <!-- Figuras 3 e 4 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 3 -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba1-fig3" style="text-align: center;">Figura 3</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./web/leitos_fig3.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Previsão da porcentagem de leitos de UTI ocupados por COVID-19
+                            no município de São Paulo entre os dias 14/03 e 07/04 em um cenário sem distanciamento social. A
+                            linha e os pontos amarelos são os casos estimados pelo modelo.
+                        </small></p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 4 -->
+            <div class="card" id="fig4">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" id="aba1-fig4" style="text-align: center;">Figura 4</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./web/leitos_fig4.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Versão em escala logarítmica da Fig. 3. Previsão da porcentagem (em
+                            escala logarítmica) de leitos de UTI ocupados por COVID-19 no município de São Paulo entre os
+                            dias 14/03 e 07/04 em um cenário sem distanciamento social. A linha e os pontos amarelos são os
+                            casos estimados pelo modelo.
+                        </small></p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Metodos e Referencias -->
+        <div class="card-columns one xl-small">
+            <!-- NEW.CARD -->
+
+            <!-- Metodos -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba1-card5">Método</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Usamos um modelo que simula os números de infectados, suscetíveis e
+                        hospitalizados por classe etária, de acordo com a distribuição etária da população do município de São Paulo. 
+                        Consideramos como suscetíveis as pessoas que não foram infectadas pela doença.
+                    </p>
+                    <p class="text-justify">
+                        Utilizamos número de hospitalizados (casos graves) por faixa etária da base oficial de notificações
+                        SIVEP-GRIPE entre os dias 14 e 19 de março (período anterior às medidas de quarentena, que entraram
+                        em vigor dia 24 de março <a href="#aba1-card6">(Ref. 1)</a>. Usamos um método de ajuste bayesiano para
+                        ajustar os valores dos parâmetros do modelo aos dados observados.
+                    </p>
+                    <p class="text-justify">
+                        O tempo de duplicação que melhor se ajustou aos dados
+                        observados neste período foi de 2,17  <span>&#177;</span> 0,17 dias. 
+                        Usamos este valor inicial de tempo de duplicação como estimativa inicial da taxa de propagação da doença 
+                        e projetamos o número de hospitalizados para os dias subsequentes (20 de março a 13 de
+                        abril). A taxa de crescimento da doença, contudo, não é uma constante, e varia no modelo de acordo
+                        com o número de uscetíveis a cada tempo t.
+                    </p>
+                    <p class="text-justify">
+                        Para a estimativa de número de infectados, utilizamos a
+                        distribuição etária de hospitalizados proposta na <a href="#aba1-card6">Ref. 2</a>. A conversão de
+                        hospitalizados em pessoas que necessitam de leitos de UTI foi feita conforme a 
+                        distribuição etária de pacientes hospitalizados que necessitam de UTI proposta na <a href="#aba1-card6">Ref. 3</a>. 
+                        Para estimar o número de hospitalizados a cada tempo t, levamos em conta a distribuição do tempo de hospitalização 
+                        de pacientes com COVID-19, a qual é estimada a partir dos dados do SIVEP-GRIPE e possui média de aproximadamente 11 dias. 
+                        Nós não consideramos possíveis mudanças no tempo de duplicação devido às medidas de distanciamento social, 
+                        somente devido a diminuição de suscetíveis. A incerteza (95% C.L.) da estimativa do tempo inicial 
+                        de duplicação é propagada ao modelo e domina as barras de erro dos valores estimados pelo modelo.
+
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Referencias -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3"  id="aba1-card6">Referências</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li>Governo de SP determina quarentena em todo o Estado. <a
+                                href="https://www.saopaulo.sp.gov.br/ultimas-noticias/ao-vivo-governo-de-sp-anuncia-novas-medidas-para-combate-ao-coronavirus-no-estado/"
+                                target="_blank">Leia no Portal do Governo</a>. <a href="#aba1-card4"><img src="./img/icon_arrow_up.svg"></a></li>
+                        <li><a href="https://doi.org/10.1101/2020.03.09.20033357" target="_blank">Verity, R.,
+                                Okell, L.C., Dorigatti, I., et al. Estimates of the severity of COVID-19 disease. medRxiv
+                                2020.03.09.20033357.</a></li>
+                        <li><a href="http://dx.doi.org/10.15585/mmwr.mm6912e2" target="_blank">Severe Outcomes
+                                Among Patients with Coronavirus Disease 2019 (COVID-19), United States, February 12 – March 16,
+                                2020. Morb Mortal Wkly Rep 2020; 69:343-346.</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+        </div>
+    </div>
+
+    <!-- ABA 2: Nowcasting Obitos -->
+    <div class="aba-group aba2" style="display: none;">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Óbitos por COVID-19</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    Quantos casos fatais estimamos ter atualmente no país?
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center mt-2">
+                        <img src="./img/icon_calendar.svg" width=40px alt="Ícone que representa um calendário"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba2-card1">Correção no atraso no número de óbitos anunciados</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-4">
+                        O número de óbitos divulgado pelo Ministério da Saúde em seus boletins epidemiológicos 
+                        não refletem a atualidade de mortes por Covid-19. Para dar um panorama mais real da 
+                        atualidade aplicamos uma técnica estatística que, através dos atrasos entre o óbito e a 
+                        notificação, estima quantos óbitos já ocorreram mas ainda não constam no sistema de 
+                        notificação. Essa estimativa é o que chamamos de nowcasting e nos dá uma visão mais 
+                        realista da atualidade. Estimamos que no limite inferior temos 1,67 mais óbitos para 
+                        cada óbito notificado e no limite superior estimamos que há 2,72 óbitos não notificados 
+                        para cada óbito já notificado.
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 2 -->
+            <div class="card" id="card2">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_graph.svg" width=40px alt="Ícone que representa dados"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba2-card2">De onde vêm os atrasos e porque corrigí-los?</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-4">
+                        Para que um óbito causado por COVID-19 seja contabilizado nas estatísticas oficiais do Ministério da Saúde (MS), 
+                        é necessário esperar o resultado do teste laboratorial. Normalmente,  este teste é feito com material coletado 
+                        quando a pessoa ainda estava viva (em geral por coleta de secreções) ou, raramente, após o óbito. 
+                        Por isso, o número de óbitos diários divulgados pelo MS reflete, na verdade, somente o número de resultados de exames 
+                        para SARS-Cov-2 que já foram concluídos para óbitos, e não os que realmente ocorreram na data de divulgação.
+                    </p>
+
+                    <p class="text-justify">
+                        A <a href="#aba2-fig1">Figura 1</a> mostra o número de óbitos por COVID em cada data, 
+                        conforme anunciados em boletins de diferentes dias, pelo  governo federal. 
+                        Nesta figura vemos que muitos óbitos são anunciados vários dias depois de realmente terem ocorrido -
+                        basta notar como a curva cresce a cada data de boletim, o que significa que a cada novo boletim o número de 
+                        óbitos aumenta mesmo em dias anteriores a essa data. Com esses dados, <b>podemos estimar que a maioria do óbitos 
+                        (61%) leva mais de dez dias para ser confirmado e notificado</b>.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Figura 1 -->
+            <div class="card mt-3 mb-4">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig1">Figura 1</h5>
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/obitos_tempo_mai14.gif" class="card-img-top mt-3" alt="Evolução dos óbitos por data de óbitos">
+
+                    <!-- CARD.TEXT -->
+                    <p class="card-text legenda mt-2">
+                        <small>
+                          Número de óbitos por COVID por data no Brasil, reportados em boletins epidemiológicos do Ministério da Saúde. 
+                          Cada linha mostra o número de óbitos reportados até o respectivo boletim. 
+                          Mesmo boletins de datas muito posteriores incrementam o número de óbitos em datas anteriores. 
+                          A curva cai para datas próximas do dia do boletim pois há poucos óbitos que são notificados e 
+                          confirmados próximos de sua data de ocorrência - efeito de atraso de notificação. 
+                          Nos boletins seguintes estas são as datas pras quais são acrescentados mais óbitos, em geral.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 3 -->
+            <div class="card" id="card3">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_death.svg" width=40px alt="Ícone de um laço"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba2-card3">Quantas pessoas já faleceram devido à COVID-19?</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-4">
+                        Infelizmente, este número é maior do que o número oficial divulgado a cada dia. O nowcasting estima um número de óbitos
+                        para o último boletim, que é entre 21789 e 30396 óbitos até a data deste boletim (8 de maio). Isso significa que, para
+                        cada óbito registrado nos boletins deve haver 1,67 outros óbitos que ainda não constam como confirmados por COVID-19, no
+                        limite inferior da estimativa, e até 2,72 outros óbitos que não constam no limite superior da estimativa.
+                    </p>
+
+                    <p class="text-justify">
+                        Os dados de número de óbitos por data de notificação, como feito pelo Ministério da Saúde, refletem a situação do
+                        passado e não a realidade atual. Para podermos fazer um gráfico do número de óbitos por data do óbito para datas
+                        recentes, precisamos considerar que no futuro ainda virá o resultado de exames de pessoas que já faleceram, fazendo com
+                        que os números de óbitos nas datas recentes aumentem. Para isso, supomos que a estatística de atrasos dos casos futuros
+                        é semelhante à dos últimos dias. Na <a href="#aba2-fig2">Figura 2</a>, mostramos o número de óbitos por dia do óbito, ou seja, com a correção de
+                        atrasos já incorporada. Por ser uma estimava há no método uma faixa (mais clara) de 95% de confiança para a estimativa
+                        (em vermelho). Em azul, temos o número de óbitos divulgados até o último boletim epidemiológico (8 de maio), isto é, sem
+                        correções de atraso.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Figura 2-->
+            <div class="card mt-3 mb-4">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig2">Figura 2</h5>
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/nowcasting_BE_MS_08_maio_cumsum.svg" class="card-img-top mt-3" alt="Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data">
+
+                    <!-- CARD.TEXT -->
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data. Linha azul é o número de óbitos acumulados
+                            até cada data até o último boletim do MS do dia 08 de maio. A linha vermelha é o valor estimado de óbitos acumulados
+                            através da técnica de nowcasting e a faixa vermelha indica o intervalo de 95% de credibilidade da análise.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 4 -->
+            <div class="card" id="card4">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" id="aba2-card4">Método</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-3">
+                        O método de nowcasting faz uma correção da atualidade, ou seja, estima como está o presente baseando-se naquilo que se
+                        sabe até agora sobre o passado recente. Cada óbito que ocorre tem duas datas que lhe podem ser atribuídas: (i) de
+                        ocorrência do óbito em si, e (ii) data de confirmação desse óbito devido à COVID-19 pelos órgãos responsáveis, no caso a
+                        data de divulgação do boletim. Com essa duas datas podemos verificar como se distribui o tempo entre um óbito ocorrer e
+                        ele ser incluído no sistema de notificação como um óbito confirmado por COVID-19. A partir dessa distribuição de
+                        atrasos, obtemos a probabilidade de notificação do óbito para cada dia de atraso, e estimamos quantos óbitos que já
+                        ocorreram mas ainda não constam como confirmados devido à COVID-19.
+                    </p>
+                    
+                    <p class="text-justify">
+                        Devemos ressaltar que, como toda estimava, há uma margem de erro, que depende da qualidade do dado disponível.
+                        Os dados que temos para o Brasil são agregados e irregulares, pois nem todo dia o boletim foi divulgado ou mesmo nem
+                        sempre o boletim divulgou as datas de óbito. As análises poderiam ser ainda melhores se o Ministério da Saúde
+                        disponibilizasse os microdados dos óbitos confirmados em nível nacional sobre a epidemia, como a base SIVEP - Gripe,
+                        com atualizações frequentes ou até mesmo diárias. Nestes microdados constam as datas de cada caso , com as quais
+                        poderíamos estimar o atraso em cada etapa de investigação de um óbito.
+                    </p>
+                    
+                    <p class="text-justify">
+                        É importante ressaltar que o método só corrige atrasos de notificação, isto é, corrige somente o fato de existirem
+                        óbitos ainda causados por COVID-19 que ainda não foram confirmados mas o serão em algum momento. As estimativas que
+                        apresentamos aqui não corrigem subnotificação de mortes, i.e., óbitos devido a COVID-19 que não foram detectados,
+                        e que portanto podem nunca serem conhecidos. É possível que essa subnotificação aconteça por diversos fatores,
+                        um deles é que os testes não têm sensibilidade de 100%, e podem ter resultados que são falsos-negativos.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 5 -->
+            <div class="card" id="card5">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" id="aba2-card5">Com todas as limitações, o quão boa é a correção do atraso?</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify mt-3">
+                        Para efeito de validação do método, criamos um nowcasting retroativo com a primeira metade dos boletins 
+                        lançados até hoje (os 12 primeiros dos 25 boletins). Apenas com a informação contida nos 12 primeiros boletins 
+                        epidemiológicos, estimamos com o método de nowcasting o valor esperado e o intervalo de confiança até o dia 14 de abril. 
+                        Este seria o dia até o qual seria possível fazer a estimativa, se voltássemos ao dia 14 de abril e usássemos os boletins disponíveis então. 
+                        Na Figura 3, comparamos esse nowcasting do dia 14 de abril (linha e intervalo vermelhos) com a curva de óbitos divulgados até o dia 14 de abril (linha azul).  
+                        Também mostramos com a curva acumulada dos óbitos divulgados até o último boletim em 8 de maio (linha laranja). A curva laranja se situa dentro do intervalo 
+                        previsto pelo nowcasting do dia 14 de abril. Ou seja, a estimativa feita com dados de até 14 de abril previu um máximo de 3510 óbitos até este dia. 
+                        Após 13 boletins, o número acumulado oficial foi de 2838, o que é bem pŕoximo do estimado e está na margem de erro da estimativa. 
+                        Veja também que a maior parte da curva laranja passa pelo limite superior da faixa vermelha, que é a margem de erro. 
+                        Isso indica que a correção foi muito otimista, e que o número real de óbitos em várias datas quase a ultrapassou.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Figura 3 -->
+            <div class="card mt-3 mb-4" id="fig3">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig3">Figura 3</h5>
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/sensibilidade_nowcasting_BE_MS_08_maio_cumsum.svg" class="card-img-top mt-3" alt="Nowcasting em comparação aos boletins de Abril e Maio">
+
+                    <!-- CARD.TEXT -->
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            A linha azul representa os óbitos por COVID anunciados nos boletins, acumulados até o dia 14 de abril. A linha laranja
+                            representa os óbitos por COVID acumulados até o dia 14 de abril, apresentados no boletim de 08 de maio. A linha vermelha
+                            representa a média e a faixa vermelha mais clara representa o intervalo de confiança do nowcasting feito com dados até
+                            dia 14 de abril.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 6 -->
+            <div class="card" id="card6">
+                <div class="card-body">
+            
+                    <!-- CARD.HEADER --> 
+                    <h5 class="card-title mb-3" id="aba2-card6">Reprodutibilidade</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Os dados compilados dos boletins do Ministério da Saúde
+                        e os <a target="_blank" rel="noopener" href="Nowcasting-BE-MS.html">códigos das análises</a>
+                        estão disponíveis em nosso repositório público
+                        (dados <a target="_blank" rel="noopener" href="SRAGs-tabela-last-updated_revised2.csv">aqui</a> e
+                        códigos <a target="_blank" rel="noopener" href="Nowcasting BE MS.Rmd">aqui</a>).
+                        As análises de nowcasting que apresentamos foram feitas em R usando o
+                        pacote NobBS ([1]).
+                    </p>
+            
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 7 -->
+            <div class="card" id="card7">
+                <div class="card-body" id="aba2-card7">
+            
+                    <div class="h5 card-title mb-3">Divulgação na mídia</div> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li>UOL.
+                            <a href="https://noticias.uol.com.br/saude/ultimas-noticias/redacao/2020/05/14/mortes-coronavirus-brasil-projecao-maio-observatorio.htm"
+                               target="_blank" rel="noopener">
+                                Brasil pode ter mais do que o dobro das mortes já confirmadas por covid-19.
+                            </a>
+                        </li>
+                        <li>UOL.
+                            <a href="https://noticias.uol.com.br/reportagens-especiais/as-vitimas-do-coronavirus/index.htm#tematico-5"
+                               target="_blank" rel="noopener">
+                                Para cada óbito registrado, até outros 3 fora das estatísticas.
+                            </a>
+                        </li>
+                        <li>UOL.
+                            <a href="https://noticias.uol.com.br/saude/ultimas-noticias/redacao/2020/04/18/projecao-mortes-coronavirus-brasil-observatorio.htm"
+                               target="_blank" rel="noopener">                            
+                                Coronavírus pode já ter matado entre 3.800 e 15,6 mil no Brasil, diz estudo.
+                            </a>
+                        </li>
+                        <li>O Globo.
+                            <a href="https://oglobo.globo.com/sociedade/coronavirus/mortes-por-covid-19-no-brasil-podem-ser-ainda-maiores-em-funcao-dos-atrasos-nas-estatisticas-da-saude-diz-pesquisador-24381446"
+                               target="_blank" rel="noopener">
+                                Mortes por Covid-19 no Brasil podem ser ainda maiores em função dos atrasos nas estatísticas da Saúde, diz pesquisador.
+                            </a>
+                        </li>
+                    </ol>
+            
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 8 -->
+            <div class="card" id="card8">
+                <div class="card-body">
+            
+                    <!-- CARD.HEADER -->
+                    <div class="h5 card-title mb-3" id="aba2-card8">Referências</div> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li>
+                            Sarah McGough, Nicolas Menzies, Marc Lipsitch and Michael Johansson (2020).
+                            <b>NobBS: Nowcasting by Bayesian Smoothing. R package version 0.1.0.</b>
+                            <a href="https://CRAN.R-project.org/package=NobBS">https://CRAN.R-project.org/package=NobBS</a>
+                        </li>
+                        <li>
+                            Sarah F. McGough, Michael A. Johansson, Marc Lipsitch, Nicolas A. Menzies (2019).
+                            <b>Nowcasting by Bayesian Smoothing: A flexible, generalizable model for real-time epidemic
+                            tracking.</b> bioRxiv 663823; doi:
+                            <a href="https://doi.org/10.1101/663823" target="_blank" rel="noopener">https://doi.org/10.1101/663823</a>
+                        </li>
+                        <li>
+                            McGough SF, Johansson MA, Lipsitch M, Menzies NA (2020). <b>Nowcasting by Bayesian Smoothing:
+                            A flexible, generalizable model for realtime epidemic tracking.</b> PLoS Comput Biol 16(4): e1007735.
+                            <a href="https://doi.org/10.1371/journal.pcbi.1007735">https://doi.org/10.1371/journal.pcbi.1007735</a>
+                        </li>
+                    </ol>
+            
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+        </div>
+
+    </div>
+   
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <img src="img/icon_github.svg" width="16px">
+        <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
+            class="text-reset">Source Code</a></small>
+        </div>
+        
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+            <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+        </a>
+        <small id="license">
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
+        </small>
+        </div>
+        
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Conteudo Dinamico -->
+    <script src="js/lib_abas.js?ver=2.10"></script>
+    <script src="js/updateContent.js?ver=2.10"></script>
+    <!-- SCRIPT PARA USAR TABELAS 
+    <script src="js/updateTable.js"></script> -->
+    <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> -->
+    <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
+  <script>
+    var sc_project=12220607; 
+    var sc_invisible=1; 
+    var sc_security="18092bfd"; 
+  </script>
+  <script src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+</html>

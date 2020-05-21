@@ -132,6 +132,7 @@ function updatePage(current_uf) {
     // conteudo dinamico
     // nome do local
     $(".locale").text(current_state);
+    $(".prep").text(current_prepo);
     $(".locale-prep").text(current_prepo+" "+current_state);
     
     const regex = /"/gi;
@@ -158,75 +159,66 @@ function updatePage(current_uf) {
     if(page_id == "municipios") {
         // data e hora
         updateDate("last.update.municipio");
-
         // forecast_exp_covid (graves)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_forecasr_exp_municipio_sp_covid.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_covid_min").text(current_data[1]);
             $(".nowcast_covid_min").text(current_data[2]);
             $(".nowcast_data").text(current_data[3]);
         });
-
         // forecast_exp_srag (graves)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_forecasr_exp_municipio_sp_srag.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_srag.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_srag_min").text(current_data[1]);
             $(".nowcast_srag_min").text(current_data[2]);
         });
-
         // forecast_exp_covid (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_covid.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_ob_covid_min").text(current_data[1]);
             $(".nowcast_ob_covid_max").text(current_data[2]);
             $(".nowcast_ob_data").text(current_data[3]);
         });
-
         // forecast_exp_srag (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_ob_srag_min").text(current_data[1]);
             $(".nowcast_ob_srag_max").text(current_data[2]);
         });        
-
         // tempo_dupli_covid (casos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_tempo_dupli_municipio_sp_covid.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".tempo_dupli_covid_min").text(current_data[1]);
             $(".tempo_dupli_covid_max").text(current_data[2]);
         });
-
         // tempo_dupli_srag (casos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_tempo_dupli_municipio_sp_srag.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_srag.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".tempo_dupli_srag_min").text(current_data[1]);
             $(".tempo_dupli_srag_max").text(current_data[2]);
         });
-
         // tempo_dupli_covid (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_covid.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".tempo_dupli_ob_covid_min").text(current_data[1]);
             $(".tempo_dupli_ob_covid_max").text(current_data[2]);
         });
-
         // tempo_dupli_srag (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".tempo_dupli_ob_srag_min").text(current_data[1]);
             $(".tempo_dupli_ob_srag_max").text(current_data[2]);
         });
-
         // RE_covid (taxa)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_Re_municipio_sp_covid.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_Re_municipio_sp_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".re_min_covid").text(current_data[1]);
@@ -235,9 +227,8 @@ function updatePage(current_uf) {
             else if(current_data[2] < 1) $(".re_analise_covid").text("No entanto, o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
             else $(".re_analise_covid").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
-
         // RE_srag (taxa)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/dev_nowcasting/web/municipio_SP/data_Re_municipio_sp_srag.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_Re_municipio_sp_srag.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".re_min_srag").text(current_data[1]);

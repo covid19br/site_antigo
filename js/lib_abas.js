@@ -1,19 +1,19 @@
-function updateMenu(current) {
+function updateMenu(request) {
     // cleans
-    $(".card.menu").removeClass("selected");
-
+    $(".nav-item.aba-pill > .nav-link").removeClass("active");
+    
     // updates
-    var selector = ".card.menu[card-id='" + current +"']" ;
-    $(selector).addClass("selected");
+    var selector = ".nav-item.aba-pill > .nav-link[card-id='" + request +"']" ;
+    $(selector).addClass("active");
 }
 
-function updateExibition(current) {
-    var selector = "." + current;
+function updateExibition(request) {
+    var selector = "." + request;
     
     //cleans
-    $(".card-deck").css( "display", "none" );
+    $(".aba-group").css( "display", "none" );
     
     //updates
-    $(".card-deck"+selector).css( "display", "flex" );
-    updateMenu(current);
+    $(".aba-group"+selector).css( "display", "block" );
+    updateMenu(request);
 }
