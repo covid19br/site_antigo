@@ -4,9 +4,11 @@
 /* LEGENDS */
 .card-legend {
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
+       -ms-flex-pack: center;
+     justify-content: center;
+    -webkit-box-pack: center;
     padding-top: .5rem;
     padding-bottom: 0;
 }
@@ -16,9 +18,10 @@
     font-weight: 500;
     margin-right: 1rem;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     -ms-flex-item-align: center;
-    align-self: center;
+             align-self: center;
 }
 .legend-square:last-child {
     margin: 0;
@@ -234,11 +237,28 @@ iframe {
     position:fixed;
     bottom: 1.5rem;
     padding: 0 1.5rem 0 0;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+       -ms-flex-pack: end;
+     justify-content: flex-end;
 }
 @media (max-width: 991.98px) { 
 .toast-wrap {
     padding: 0;
-    justify-content: center;
+    -webkit-box-pack: center;
+       -ms-flex-pack: center;
+     justify-content: center;
 }
+}.example {
+    display: -ms-grid;
+    display: grid;
+    -webkit-transition: all .5s;
+         -o-transition: all .5s;
+            transition: all .5s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), to(black));
+    background: -o-linear-gradient(top, white, black);
+    background: linear-gradient(to bottom, white, black);
 }
