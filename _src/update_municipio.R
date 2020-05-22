@@ -27,6 +27,9 @@ if (sys.nframe() == 0L) {
     ## aliases
     mun <- opt$options$m
 }
+# transicao suave pros novos scripts
+adm <- "municipio"
+sigla.adm <- mun
 
 if (!exists('mun')){
     print("Município não definido")
@@ -45,16 +48,17 @@ municipio <- sigla.municipios[mun]
 # preparação dos dados específica por município?
 # este arquivo deve se encarregar de procurar na pasta certa pelo arquivo com a
 # data mais recente
-source(paste0('prepara_dados_municipio_', mun, '.R'))
+#source(paste0('prepara_dados_municipio_', mun, '.R'))
 
 # códigos de análise e plot genéricos (mas pode usar as variáveis `mun` e
 # `municipio` pra títulos de plot etc.
-source('analises_municipio.R')
-source('plots_municipios.R')
+#source('analises_municipio.R')
+source('plots_nowcasting.R')
 
 ## Data de Atualizacao
 print("Atualizando data de atualizacao...")
-file <- file("../web/last.update.municipio.txt") # coloco o nome do municipio?
+file <- file(paste0("../web/", adm, "_", sigla.adm, "/last.update.", adm, "_",
+                    tolower(sigla.adm), ".txt"))
 writeLines(c(paste(now())), file)
 close(file)
 
@@ -63,15 +67,43 @@ close(file)
 ################################################################################
 print("Atualizando plots...")
 # Graficos a serem atualizados
-plots.para.atualizar.municipio <- makeNamedList(plot.nowcast.cum, plot.tempo.dupl.municipio, plot.estimate.R0.municipio)
-filenames <- names(plots.para.atualizar.municipio)
+plots.para.atualizar.municipio <-
+    makeNamedList(plot.estimate.R0.covid,
+                  plot.estimate.R0.srag,
+                  plot.nowcast.covid,
+                  plot.nowcast.cum.covid,
+                  plot.nowcast.cum.ob.covid,
+                  plot.nowcast.cum.ob.srag,
+                  plot.nowcast.cum.srag,
+                  plot.nowcast.ob.covid,
+                  plot.nowcast.ob.srag,
+                  plot.nowcast.srag,
+                  plot.tempo.dupl.covid,
+                  plot.tempo.dupl.ob.covid,
+                  plot.tempo.dupl.ob.srag,
+                  plot.tempo.dupl.srag)
+filenames <- str_replace_all(names(plots.para.atualizar.municipio), '\\.', '_')
 n <- length(plots.para.atualizar.municipio)
+
+saveWidgetFix <- function (widget, file, ...) {
+    ## A wrapper to saveWidget which compensates for arguable BUG in
+    ## saveWidget which requires `file` to be in current working
+    ## directory.
+    # https://stackoverflow.com/questions/48690837/saving-interactive-plotly-graph-to-a-path-using-htmlwidget
+    wd<-getwd()
+    on.exit(setwd(wd))
+    outDir<-dirname(file)
+    file<-basename(file)
+    setwd(outDir);
+    saveWidget(widget,file=file,...)
+}
 
 for (i in 1:n){
   graph.html <- ggplotly(plots.para.atualizar.municipio[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
   graph.svg <- plots.para.atualizar.municipio[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
                                                            axis.title = element_text(size=14, family="Arial", face="plain")) # title
-  filepath <- paste("../web/",filenames[i],sep="")
-  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
+  filepath <- paste0("../web/", adm, "_", sigla.adm, "/", filenames[i])
+  saveWidgetFix(frameableWidget(graph.html), file = paste0(filepath,".html"),
+             libdir="./libs") # HTML Interative Plot
   ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 210, height = 142, units = "mm")
 }
