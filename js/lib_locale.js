@@ -164,7 +164,7 @@ function updatePage(current_uf) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_covid_min").text(current_data[1]);
-            $(".nowcast_covid_min").text(current_data[2]);
+            $(".nowcast_covid_max").text(current_data[2]);
             $(".nowcast_data").text(current_data[3]);
         });
         // forecast_exp_srag (graves)
@@ -172,7 +172,7 @@ function updatePage(current_uf) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_srag_min").text(current_data[1]);
-            $(".nowcast_srag_min").text(current_data[2]);
+            $(".nowcast_srag_max").text(current_data[2]);
         });
         // forecast_exp_covid (obitos)
         $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_covid.csv', function (raw_data) {
