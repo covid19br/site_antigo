@@ -18,7 +18,7 @@ tabelas.web <- function(sigla.adm, # sigla da unidade administrativa
   # TEMPO DE DUPLICACAO ####
   temp.dupl <- data.frame(row.names = sigla.adm)
   min.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.inf"], 1))
-  max.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.inf"], 1))
+  max.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.sup"], 1))
   temp.dupl <- cbind(temp.dupl, min.dias, max.dias)
   write.table(temp.dupl, 
               file = paste0(output.dir, "data_tempo_dupli_", adm, "_", tolower(sigla.adm), "_", tipo, ".csv"), 
