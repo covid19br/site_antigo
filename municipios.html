@@ -273,6 +273,11 @@
                             As <b class="legendRed">linhas vermelhas contínuas</b> indicam o <b>número de casos graves estimados</b> acumulados, corrigindo o tempo entre os primeiros sintomas e a notificação.  
                         </p>
 
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+                        <p class="text-justify">
+                            Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
+                       </p>
+
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
@@ -289,12 +294,8 @@
                                 base de dados do sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios, chamado
                                 base <b>SIVEP-Gripe</b>.
                             </p>
-                            <!-- TOOLTIP: oq eh escala logaritimica? -->
-                            <p class="text-justify">
-                                Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
-                            </p>
                         </div>
-
+                           
                         <!-- DESTAQUE -->
                         <ul class="list-group mt-4">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -392,10 +393,10 @@
                         </div>
                         <div class="collapse mt-2" id="collapseSRAG">
                             <p class="text-justify">
-                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
-                            </p>
-                            <p class="text-justify">
-                                Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. 
+                                Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, 
+                                que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da 
+                                pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
                             </p>
                         </div>
                     </div>
@@ -614,6 +615,12 @@
                             As <b class="legendRed">linhas contínuas em vermelho</b> indicam o <b>número de casos observados acumulados</b>.
                             As <b class="legendBlue">linhas contínuas em azul</b> indicam o <b>número de óbitos acumulados estimados</b>, corrigindo o atraso entre as datas do primeiro sintoma e da notificação.
                         </p>
+
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+                        <p class="text-justify">
+                            Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
+                        </p>
+
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
                             <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp1" aria-expanded="false" aria-controls="collapseHosp1">
@@ -631,10 +638,6 @@
                             <p class="text-justify">
                                 Para calcular o <b>número de óbitos por COVID-19</b> utilizamos a base <b>SIVEP-gripe</b>, que contém informações sobre resultado de
                                 confirmação de COVID-19.
-                            </p>
-                            <!-- TOOLTIP: oq eh escala logaritimica? -->
-                            <p class="text-justify">
-                                Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
                             </p>
                         </div>
                         <p class="text-justify mt-3">
@@ -720,10 +723,10 @@
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
                         <div class="collapse mt-2" id="collapseSRAG">
                             <p class="text-justify">
-                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
-                            </p>
-                            <p class="text-justify">
-                                Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. 
+                                Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, 
+                                que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da 
+                                pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
                             </p>
                         </div>
 
@@ -859,9 +862,6 @@
                                 <b class="legendGrey">cinza</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
                                 E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
                             </p>
-                            <p class="text-justify">
-                                Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
-                            </p>
                         </div>
 
                         <p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação
@@ -958,9 +958,6 @@
                                 Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
                                 <b class="legendGrey">cinza</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
                                 E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
-                            </p>
-                            <p class="text-justify">
-                                Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
                             </p>
                         </div>
                         <p class="text-justify"> Mais informações técnicas sobre o cálculo do tempo de duplicação
