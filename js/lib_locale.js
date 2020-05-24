@@ -183,7 +183,7 @@ function updatePage(current_uf) {
             $(".nowcast_ob_data").text(current_data[3]);
         });
         // forecast_exp_srag (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_forecasr_exp_municipio_sp_obitos_srag.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".nowcast_ob_srag_min").text(current_data[1]);
@@ -211,7 +211,7 @@ function updatePage(current_uf) {
             $(".tempo_dupli_ob_covid_max").text(current_data[2]);
         });
         // tempo_dupli_srag (obitos)
-        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_srag_proaim.csv', function (raw_data) {
+        $.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/municipio_SP/data_tempo_dupli_municipio_sp_obitos_srag.csv', function (raw_data) {
             full_data = raw_data.split("\n");
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".tempo_dupli_ob_srag_min").text(current_data[1]);
