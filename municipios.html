@@ -233,7 +233,7 @@
                 <div class="card-body">
 
                     <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Casos graves de SRAG <span class="acum_ou_dia"></span></h5>
+                    <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
 
                     <!-- CARD.GGPLOT.LEGEND -->
                     <div class="card-legend mb-3">
@@ -354,11 +354,11 @@
 
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendRed">pontos em vermelho</b> são os <b>casos notificados</b> há mais de 40 dias, para os quais assumimos que não é preciso estimar futuras notificações.
+                            Os <b class="legendBlue">pontos em azul</b> são os <b>casos notificados</b> há mais de 40 dias, para os quais assumimos que não é preciso estimar futuras notificações.
                             <!-- TOOLTIP: oq eh tendencia estimada?-->
                         </p>
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendBlue">pontos em azul</b> são os <b>casos diários estimados</b> através da correção do atraso entre a data dos primeiros sintomas e a notificação.
+                            Os <b class="legendRed">pontos em vermelho</b> são os <b>casos diários estimados</b> através da correção do atraso entre a data dos primeiros sintomas e a notificação.
                         </p>
                         <p class="text-justify mt-3 mb-2">
                             A <b>linha preta</b> é a <b>tendência estimada</b>, com média móvel para um período de 10 dias.
@@ -405,7 +405,7 @@
                     <p class="mt-3">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
                         para saber mais sobre o método.
                     </p>
-                    <div class="blockquote-footer">Fonte: casos de residentes do Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>
+                    <!--<div class="blockquote-footer">Fonte: casos de residentes do Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
                     <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
                 </div>
             </div>
@@ -520,7 +520,7 @@
                     href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
                     para saber mais sobre o método de correção de atrasos.</p>
 
-                <div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>
+                <!--<div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
                 <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
                 </div>
             </div>
@@ -656,8 +656,8 @@
                     <div class="acumdia-text dia">
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3">
-                            Os <b class="legendRed">pontos vermelhos</b> são de <b>casos observados</b> há mais de 40 dias, para os quais não é preciso prever futuras notificações.
-                            Os <b class="legendBlue">pontos em azul</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
+                            Os <b class="legendBlue">pontos azuis</b> são de <b>óbitos ocorridos</b> há mais de 40 dias, para os quais não é preciso prever futuras notificações.
+                            Os <b class="legendRed">pontos em azul</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
                         </p>
                         <p class="text-justify mt-3">
                             A <b>linha preta</b> é a <b>tendência estimada</b> com média móvel para um período de 10 dias. 
@@ -729,18 +729,18 @@
                         </div>
 
                         <!-- Alert -->
-                        <div class="alert alert-warning mt-3" role="alert">
+                        <!--<div class="alert alert-warning mt-3" role="alert">
                             <small><b>Os dados da base de dados PROAIM são atualizados semanalmente.</b></small>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                        </div>
+                        </div>-->
 
                         <!-- CARD.SIGNATURE -->
                         <p class="mt-3">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
                             para saber mais sobre o método de correção de atrasos.</p>
                         
-                            <div class="blockquote-footer">Fonte: casos de óbitos no Município de São Paulo constantes na base PROAIM consultada dia 13 de maio de 2020.</div>
+                        <!--<div class="blockquote-footer">Fonte: casos de óbitos no Município de São Paulo constantes na base PROAIM consultada dia 13 de maio de 2020.</div>-->
                         <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
                     </div>
                 
@@ -907,10 +907,10 @@
                             <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
                         </div>
                         <!-- CARD.GGPLOT -->
-                        <div data-src="./web/municipio_SP/plot_tempo_dupl_ob_srag_proaim.html" class="codegena_iframe"
+                        <div data-src="./web/municipio_SP/plot_tempo_dupl_ob_srag.html" class="codegena_iframe"
                             data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
                             data-responsive="true">
-                            <img src=./web/municipio_SP/plot_tempo_dupl_ob_srag_proaim.svg class="placeholder_svg" width="100%">
+                            <img src=./web/municipio_SP/plot_tempo_dupl_ob_srag.svg class="placeholder_svg" width="100%">
                         </div>
                         <script src="./js/async-iframe.js"></script>
                     </div>
@@ -993,8 +993,8 @@
                     <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
                     <!-- CARD.GGPLOT.LEGEND -->
                     <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Notificados</small>
-                        <small class="legend-square" id="legendGrey">Estimados</small>
+                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
                     </div>
                     <!-- CARD.GGPLOT -->
                     <div data-src="./web/municipio_SP/plot_estimate_R0_covid.html" class="codegena_iframe"
@@ -1014,8 +1014,8 @@
                     <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
                     <!-- CARD.GGPLOT.LEGEND -->
                     <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Notificados</small>
-                        <small class="legend-square" id="legendGrey">Estimados</small>
+                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
                     </div>
                     <!-- CARD.GGPLOT -->
                     <div data-src="./web/municipio_SP/plot_estimate_R0_srag.html" class="codegena_iframe"
