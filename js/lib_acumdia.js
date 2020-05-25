@@ -1,3 +1,15 @@
+function updateSRC(selection, src, svg) {
+    var selector_html = ".codegena_iframe" +  selection;
+    var selector_svg = "picture" +  selection;
+
+    $(selector_html).attr("data-src", src);
+    $((selector_svg + ' > img.placeholder_svg')).attr("src", svg);
+    $((selector_svg + ' > source[media="(max-width: 575.98px)"]')).attr("srcset",svg.replace(".svg", ".ex.svg"));
+    $((selector_svg + ' > source[media="(max-width: 767.98px)"]')).attr("srcset",svg.replace(".svg", ".sm.svg"));
+    $((selector_svg + ' > source[media="(max-width: 991.98px)"]')).attr("srcset",svg.replace(".svg", ".md.svg"));
+    $((selector_svg + ' > source[media="(max-width: 1199.98px)"]')).attr("srcset",svg.replace(".svg", ".lg.svg"));
+}
+
 function updateWidgetAcumdia(request_id, current_id, current_uf) {
     var new_src = ""; // prepare strings
     var UF, municipio;
@@ -35,20 +47,11 @@ function updatePlaceholderAcumdia(request_id, current_id, current_uf) {
     
     // Update SRCs
     // HTML Widget
-    $(".codegena_iframe.acumdia.cov.nowcast").attr("data-src", new_src);
-    $(".codegena_iframe.acumdia.srag.nowcast").attr("data-src", new_src.replace("covid", "srag"));
-    $(".codegena_iframe.acumdia.cov.ob").attr("data-src", new_src.replace("_covid", "_ob_covid"));
-    $(".codegena_iframe.acumdia.srag.ob").attr("data-src", new_src.replace("_covid", "_ob_srag"));
-    // SVG Placeholder
-    $(".placeholder_svg.acumdia.cov.nowcast").attr("src", new_svg);
-    $(".placeholder_svg.acumdia.srag.nowcast").attr("src", new_svg.replace("covid", "srag"));
-    $(".placeholder_svg.acumdia.cov.ob").attr("src", new_svg.replace("_covid", "_ob_covid"));
-    $(".placeholder_svg.acumdia.srag.ob").attr("src", new_svg.replace("_covid", "_ob_srag"));
-    // Responsive SVG
-    $('source[media="(max-width: 575.98px)"]').attr("srcset",(responsive+".ex.svg"));
-    $('source[media="(max-width: 767.98px)"]').attr("srcset",(responsive+".sm.svg"));
-    $('source[media="(max-width: 991.98px)"]').attr("srcset",(responsive+".md.svg"));
-    $('source[media="(max-width: 1199.98px)"]').attr("srcset",(responsive+".lg.svg"));
+    updateSRC(".acumdia.cov.nowcast", new_src, new_svg);
+
+    updateSRC(".acumdia.srag.nowcast", new_src.replace("covid", "srag"), new_svg.replace("covid", "srag"));
+    updateSRC(".acumdia.cov.ob", new_src.replace("_covid", "_ob_covid"), new_svg.replace("_covid", "_ob_covid"));
+    updateSRC(".acumdia.srag.ob", new_src.replace("_covid", "_ob_srag"), new_svg.replace("_covid", "_ob_srag"));
 }
 
 function updateAcumDia(request_id) {
