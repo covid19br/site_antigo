@@ -310,6 +310,15 @@ p, small {
                 column-count: 4!important;
     }
     .xl-small {
+        width: 75%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
+@media (min-width: 1400px) {
+    .xl-small {
         width: 65%;
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -647,6 +656,42 @@ a.text-reset:hover {
     -webkit-box-flex: 1!important;
         -ms-flex: 1 0 65.815%!important;
             flex: 1 0 65.815%!important;
+}
+.cd-auto {
+    -webkit-box-flex: 1!important;
+        -ms-flex: 1 0 20%!important;
+            flex: 1 0 20%!important;
+}
+@media (min-width: 1200px) {
+    .cd-30 {
+        -webkit-box-flex: 1!important;
+            -ms-flex: 1 0 32.185%!important;
+                flex: 1 0 32.185%!important;
+    }
+}
+@media (min-width: 1800px) {
+    .row-cols-xxl-2>* {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* fixes */
+.whitespace-fix {
+    display: flex;
+    flex-flow: column nowrap;
+    -webkit-box-flex: 1!important;
+    -ms-flex: 1 0 32.185%!important;
+        flex: 1 0 32.185%!important;
+}
+@media (min-width: 1700px) {
+    .whitespace-fix {
+        flex-flow: row nowrap;
+        -webkit-box-flex: 1!important;
+        -ms-flex: 1 0 65.815%!important;
+            flex: 1 0 65.815%!important;
+    }
 }
 
 /* FOOTER */

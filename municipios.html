@@ -202,75 +202,69 @@
 
         <!-- Conteudo -->
         <div class="card-deck">
+            <div class="card chart-fix cd-auto">
+                <div class="container-fluid p-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Casos graves de COVID-19 <span class="acum_ou_dia"></span></h5>
 
-            <!-- CASOS GRAVES COVID GRAFICO -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Casos graves de COVID-19 <span class="acum_ou_dia"></span></h5>
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia cov nowcast">
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.html" class="codegena_iframe acumdia cov nowcast"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia cov nowcast">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.svg" class="placeholder_svg acumdia cov nowcast" width="100%">
+                                    </picture>
+                                </div>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
+                        <div class="col p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
 
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
 
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia cov nowcast">
-                        <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.html" class="codegena_iframe acumdia cov nowcast"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia cov nowcast">
-                                <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.lg.svg">
-                                <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_covid.svg" class="placeholder_svg acumdia cov nowcast" width="100%">
-                            </picture>
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia srag nowcast">
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.html" class="codegena_iframe acumdia srag nowcast"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia srag nowcast">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.svg" class="placeholder_svg acumdia srag nowcast" width="100%">
+                                    </picture>
+                                </div>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
                         </div>
                     </div>
-                    <script src="./js/async-iframe.js"></script>
                 </div>
             </div>
-
-            <!-- CASOS GRAVES SRAG GRAFICO -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
-
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
-
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia srag nowcast">
-                        <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.html" class="codegena_iframe acumdia srag nowcast"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia srag nowcast">
-                                <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.lg.svg">
-                                <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_srag.svg" class="placeholder_svg acumdia srag nowcast" width="100%">
-                            </picture>
-                        </div>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
-
-            <!-- CASOS GRAVES CONTEUDO -->
-            <div class="card cd-30">
+            <div class="card">
                 <div class="card-body">
 
                     <!-- ACUMULADOS.ABA1 -->
-                    <div class="acumdia-text acu">
+                    <div class="acumdia-text acu" class="sticky-top">
 
                         <!-- DESTAQUE -->
                         <ul class="list-group mt-3">
@@ -420,9 +414,10 @@
                     <!--<div class="blockquote-footer">Fonte: casos de residentes do Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
                     <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
                 </div>
-            </div>
-
+            </div>            
         </div>
+
+
 
     </div>
 
