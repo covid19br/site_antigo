@@ -16,7 +16,7 @@ format = "png"
 
 PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)  
 
-O = function(...) file.path(PRJROOT, "/dados/municipio_SP/projecao_leitos", ...)
+O = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/", ...)
 R = function(...) file.path(PRJROOT, "/outputs/municipio_SP/projecao_leitos/relatorios", ...)
 P = function(...) file.path(PRJROOT, ...)
 
