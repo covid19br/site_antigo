@@ -17,10 +17,10 @@ function updateWidgetAcumdia(request_id, current_id, current_uf) {
 
     if (request_id == current_id) return;
     else if (request_id == "dia") {
-        new_src = "./web/municipios/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
+        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
-        new_src = "./web/municipios/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
+        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
     }
 
     // Update SRCs
@@ -37,10 +37,10 @@ function updatePlaceholderAcumdia(request_id, current_id, current_uf) {
 
     if (request_id == current_id) return;
     else if (request_id == "dia") {
-        new_src = "./web/municipios/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
+        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
-        new_src = "./web/municipios/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
+        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
     }
 
     var new_svg = new_src.replace("html", "svg");

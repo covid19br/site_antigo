@@ -156,11 +156,12 @@ function updatePage(current_uf) {
             $(".forecast_data").text(current_data[3]);
         });
     }
-    // municipios.html
-    if(page_id == "municipios") {
+    // municipios.html e DRS.html
+    if(page_id == "municipios" || page_id == "DRS") {
+        console.log("entrei aqui com page_id=" + page_id + " e current_uf=" + current_uf);
         var UF, municipio;
         [UF, municipio] = current_uf.split('-');
-        folder_mun = "municipios/" + UF + "/" + municipio + "/";
+        folder_mun = page_id + "/" + UF + "/" + municipio + "/";
         url_muni = repo_url + "web/" + folder_mun;
         // data e hora
         updateDate(folder_mun + "last.update");
