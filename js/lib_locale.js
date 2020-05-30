@@ -308,6 +308,10 @@ function updatePage(current_uf) {
                 $(".nav-item.aba-pill > .nav-link[card-id='aba2']").addClass("disabled").attr("href", "");
                 $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
             }
+            else {
+                $(".nav-item.aba-pill > .nav-link[card-id='aba2']").removeClass("disabled").attr("href", "#");
+                $(".nav-item.aba-pill").removeClass("disabled");
+            }
         }
 
     }
