@@ -257,7 +257,6 @@ function updatePage(current_uf) {
             // TODO: nao atualiza svgs responsivos
             if ($(".placeholder_svg").length) {
                 $(".codegena_iframe:not(.responsive_iframe)").each(function() {
-                    console.log($(this));
                     var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
                     $(this).attr("data-src", new_src);
                 })
@@ -286,7 +285,6 @@ function updatePage(current_uf) {
             // widget interativo
             if ($(".responsive_iframe").length) {
                 $(".responsive_iframe > iframe").each(function() {
-                    console.log($(this).attr("src"));
                     var new_src = "./web/" + folder_mun + basename($(this).attr("src"));
                     $(this).attr("src", new_src);
                 })
