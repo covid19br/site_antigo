@@ -305,6 +305,11 @@ function updatePage(current_uf) {
         // desabilita modelogro seletivamente
         if(page_id == "DRS") {
             if(!hasModelogro(current_uf)) {
+                // atualiza aba
+                if($(".nav-item.aba-pill > .nav-link[card-id='aba2']").hasClass("active")) updateExibition("aba1");
+                if(history.pushState) updateURL();
+                
+                // atualiza botao
                 $(".nav-item.aba-pill > .nav-link[card-id='aba2']").addClass("disabled").attr("href", "");
                 $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
             }
