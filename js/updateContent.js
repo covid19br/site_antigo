@@ -34,7 +34,7 @@ if("aba" in urlParams && ($(".aba-group").hasClass(urlParams["aba"]))) updateExi
 else if($("#main-title-aba-pills").length) updateExibition($(".nav-item.aba-pill > .active").attr("card-id")); //se a entrada é sem query busca pelo menu selecionado no html
 
 // Via JQuery OnClick Update
-$(".nav-item.aba-pill > .nav-link").click(function () {
+$(".nav-item.aba-pill > .nav-link:not(.disabled)").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateExibition($(this).attr("card-id"));
         if (history.pushState) updateURL(); // checks if history.pushState is available

@@ -38,6 +38,16 @@ function getPreposition(uf) {
     return ("em");
 }
 
+function hasModelogro(uf) {
+    for (c = 0; c < locale.length; c++) {
+        if (locale[c].uf == uf) return (locale[c].has_modelogro);
+    }
+
+    // UF not found: returns to default
+    console.log("hasModelogro(): uf not found "+uf);
+    return (false);
+}
+
 function updatePlaceholder(current_uf) {
     // Get Graph's SRCs
     var graph_src = $(".codegena_iframe").attr("data-src");
@@ -142,6 +152,7 @@ function updatePage(current_uf) {
     
     const regex = /"/gi;
     // texto dinamico
+
     // progressao.html
     if(page_id == "estados") {
         // data e hora
@@ -164,6 +175,7 @@ function updatePage(current_uf) {
         if ($(".placeholder_svg").length) updatePlaceholder(current_uf) // placeholder image
         else if ($(".responsive_iframe").length) updateWidget(current_uf); // widget
     }
+
     // municipios.html e DRS.html
     if(page_id == "municipios" || page_id == "DRS") {
         var UF, municipio;
@@ -251,10 +263,9 @@ function updatePage(current_uf) {
             else $(".re_analise_srag").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
 
-        // atualiza os gráficos por departamento
+        // atualiza os gráficos por departamento//municipio
         if(page_id == "DRS") {
             // placeholders
-            // TODO: nao atualiza svgs responsivos
             if ($(".placeholder_svg").length) {
                 $(".codegena_iframe:not(.responsive_iframe)").each(function() {
                     var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
@@ -289,6 +300,11 @@ function updatePage(current_uf) {
                     $(this).attr("src", new_src);
                 })
             }
+        }
+
+        // desabilita modelogro seletivamente
+        if(page_id == "DRS") {
+            if(!hasModelogro(current_uf)) $(".nav-item.aba-pill > .nav-link[card-id='aba2']").addClass("disabled").attr("href", "");
         }
 
     }
