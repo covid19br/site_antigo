@@ -189,7 +189,13 @@
                 expectativa em geral vale para pequenos intervalos de tempo, na fase inicial de epidemias. É o que vemos para o
                 Brasil, por exemplo, nos cincos dias a partir do dia em que o número de casos chegou a 15 (gráfico ao lado)
               </p>
-              <img src=./web/est.tempo.dupl.svg width="70%" style="margin: 0 auto; display: inherit;">
+              <picture>
+                <source media="(max-width: 575.98px)"  srcset="./web/est.tempo.dupl.ex.svg">
+                <source media="(max-width: 767.98px)"  srcset="./web/est.tempo.dupl.sm.svg">
+                <source media="(max-width: 991.98px)"  srcset="./web/est.tempo.dupl.md.svg">
+                <source media="(max-width: 1199.98px)" srcset="./web/est.tempo.dupl.lg.svg">
+                <img src="./web/est.tempo.dupl.svg" class="placeholder_svg" width="100%">
+              </picture>
               <p class="text-justify">
                 A linha reta no gráfico mostra o previsto por um modelo linear em escala log para dados de contagem<a
                   href="#1">¹</a>, ajustado a estes dados. Esse modelo estima o valor da taxa de crescimento da epidemia
@@ -199,7 +205,7 @@
           </div>
 
           <!-- NEW.CARD -->
-
+ss
           <div class="card" style="z-index: 1070;">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -210,7 +216,13 @@
                 Com o modelo linear ajustado estimamos o número de casos para os próximos dias, e os intervalos de
                 confiança dos valores previstos (gráfico ao lado).
               </p>
-              <img src=./web/proj.num.casos.svg width="70%" style="margin: 0 auto; display: inherit;">
+              <picture>
+                <source media="(max-width: 575.98px)"  srcset="./web/proj.num.casos.ex.svg">
+                <source media="(max-width: 767.98px)"  srcset="./web/proj.num.casos.sm.svg">
+                <source media="(max-width: 991.98px)"  srcset="./web/proj.num.casos.md.svg">
+                <source media="(max-width: 1199.98px)" srcset="./web/proj.num.casos.lg.svg">
+                <img src="./web/proj.num.casos.svg" class="placeholder_svg" width="100%">
+              </picture>
               <p class="card-text legenda"><small> ln do n de casos de COVID-19 no Brasil, entre 07 e 12 de março de
                   2020</small></p> <!-- CARD.IMAGE.LEGENDA -->
               <p class="text-justify">
