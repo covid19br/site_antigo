@@ -118,38 +118,6 @@ function basename(path) {
     return path.split(/[\\/]/).pop();
 }
 
-function updateWidget_escala(current_uf) {
-    // NÃO ESTÁ SENDO USADO?
-
-    // Get Widget's SRCs
-    var widget_src = $("iframe").attr("src");
-
-    // Process Current Graph's SRC
-    var split_src = widget_src.split('.');
-
-    // remove UF
-    var new_src = "";
-
-    // change UF
-    for (k = 0; k < split_src.length; k++) {
-        if (k == (split_src.length - 2)) {
-            new_src = new_src + "." + current_uf;
-        }
-        else {
-            if (k == 0) {
-                new_src = new_src + split_src[k];
-            }
-            else {
-                new_src = new_src + "." + split_src[k];
-            }
-        }
-    }
-
-    // Update SRCs
-    $("iframe").attr("src", new_src);
-}
-
-
 function updatePage(current_uf) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_uf);
@@ -283,22 +251,47 @@ function updatePage(current_uf) {
             else $(".re_analise_srag").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
 
-        // grafico - loop sobre todos
-        if ($(".placeholder_svg").length) {
-            $(".codegena_iframe").each(function() {
-                var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
-                $(this).attr("data-src", new_src);
-            })
-            $(".placeholder_svg").each(function() {
-                var new_svg = "./web/" + folder_mun + basename($(this).attr("src"));
-                $(this).attr("src", new_svg);
-            })
-            $(".codegena_iframe > source").each(function() {
-                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
-                this.attr("srcset", new_src);
-            })
+        // atualiza os gráficos por departamento
+        if(page_id == "DRS") {
+            // placeholders
+            // TODO: nao atualiza svgs responsivos
+            if ($(".placeholder_svg").length) {
+                $(".codegena_iframe:not(.responsive_iframe)").each(function() {
+                    console.log($(this));
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
+                    $(this).attr("data-src", new_src);
+                })
+                $(".placeholder_svg").each(function() {
+                    var new_svg = "./web/" + folder_mun + basename($(this).attr("src"));
+                    $(this).attr("src", new_svg);
+                })
+                $("source[media='(max-width: 575.98px)']").each(function() {
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                    $(this).attr("srcset", new_src);
+                })
+                $("source[media='(max-width: 767.98px)']").each(function() {
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                    $(this).attr("srcset", new_src);
+                })
+                $("source[media='(max-width: 991.98px)']").each(function() {
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                    $(this).attr("srcset", new_src);
+                })
+                $("source[media='(max-width: 1199.98px)']").each(function() {
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                    $(this).attr("srcset", new_src);
+                })
+            }
+            
+            // widget interativo
+            if ($(".responsive_iframe").length) {
+                $(".responsive_iframe > iframe").each(function() {
+                    console.log($(this).attr("src"));
+                    var new_src = "./web/" + folder_mun + basename($(this).attr("src"));
+                    $(this).attr("src", new_src);
+                })
+            }
         }
-        // TODO Renato: precisa corrigir esse update_widget também, mas não sei testar
-        else if ($(".responsive_iframe").length) updateWidget_escala(current_uf); // widget
+
     }
 }
