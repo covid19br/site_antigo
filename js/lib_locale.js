@@ -118,34 +118,6 @@ function basename(path) {
     return path.split(/[\\/]/).pop();
 }
 
-function updatePlaceholder_escala(current_uf) {
-    // Get Graph's SRCs
-    var graph_src = $(".codegena_iframe").attr("data-src");
-    var graph_svg = $(".placeholder_svg").attr("src");
-
-    var plot_src = basename(graph_src)
-    var plot_svg = basename(graph_svg)
-
-    var UF, municipio;
-    [UF, municipio] = current_uf.split('-');
-    var basepath = "./web/" + page_id + "/" + UF + "/" + municipio + "/";
-    var new_src = basepath + plot_src
-    var new_svg = basepath + plot_svg;
-
-    var responsive = new_svg.slice(0, -4);
-
-    // Update SRCs
-    // HTML Widget
-    $(".codegena_iframe").attr("data-src", new_src);
-    // SVG Placeholder
-    $(".placeholder_svg").attr("src", new_svg);
-    // Responsive SVG
-    $('source[media="(max-width: 575.98px)"]').attr("srcset",(responsive+".ex.svg"));
-    $('source[media="(max-width: 767.98px)"]').attr("srcset",(responsive+".sm.svg"));
-    $('source[media="(max-width: 991.98px)"]').attr("srcset",(responsive+".md.svg"));
-    $('source[media="(max-width: 1199.98px)"]').attr("srcset",(responsive+".lg.svg"));
-}
-
 function updateWidget_escala(current_uf) {
     // NÃO ESTÁ SENDO USADO?
 
@@ -311,8 +283,22 @@ function updatePage(current_uf) {
             else $(".re_analise_srag").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
 
-        // grafico
-        if ($(".placeholder_svg").length) updatePlaceholder_escala(current_uf) // placeholder image
+        // grafico - loop sobre todos
+        if ($(".placeholder_svg").length) {
+            $(".codegena_iframe").each(function() {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
+                $(this).attr("data-src", new_src);
+            })
+            $(".placeholder_svg").each(function() {
+                var new_svg = "./web/" + folder_mun + basename($(this).attr("src"));
+                $(this).attr("src", new_svg);
+            })
+            $(".codegena_iframe > source").each(function() {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                this.attr("srcset", new_src);
+            })
+        }
+        // TODO Renato: precisa corrigir esse update_widget também, mas não sei testar
         else if ($(".responsive_iframe").length) updateWidget_escala(current_uf); // widget
     }
 }
