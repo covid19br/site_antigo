@@ -16,7 +16,7 @@ format = "png"
 
 PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)  
 
-O = function(...) file.path(PRJROOT, "/dados/municipio_SP/projecao_leitos", ...)
+O = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/", ...)
 R = function(...) file.path(PRJROOT, "/outputs/municipio_SP/projecao_leitos/relatorios", ...)
 P = function(...) file.path(PRJROOT, ...)
 
@@ -228,10 +228,29 @@ filenames <- paste0(names(plots.para.atualizar), ".municipio")
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-  graph.html <- ggplotly(p = plots.para.atualizar[[i]]) %>% layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
-  graph.svg <- plots.para.atualizar[[i]] + theme(axis.text = element_text(size=11, family="Arial", face="plain"), # ticks
-                                                           axis.title = element_text(size=14, family="Arial", face="plain")) # title
   filepath <- paste(P("web/"),filenames[i],sep="")
-  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs") # HTML Interative Plot
-  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale= .8, width= 210, height = 142, units = "mm")
+  # widget interativo
+  graph.html <- ggplotly(plots.para.atualizar[[i]])
+  saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs")
+  
+  # svg placeholder
+  # extra large
+  graph.svg <- plots.para.atualizar[[i]] + theme(axis.text=element_text(size=6.65), # corrige a diferenca do tamanho do texto entre svg e html
+                                                 plot.margin = margin(10, 0, 0, 7, "pt")) # corrige a margem inserida pelo plotly
+  ggsave(paste(filepath,".svg",sep=""), plot = graph.svg, device = svg, scale = 1, width = 215, height = 146, units = "mm")
+  # tamanho calculado usando ppi = 141.21
+  # o tamanho do texto no placeholder deve ser um fator de 0.665 do tamanho original
+  
+  # large
+  graph.sm.svg <- graph.svg + theme(axis.text=element_text(size=8.65)) # corrige a diferenca do tamanho do texto entre svg e html
+  ggsave(paste(filepath,".lg.svg",sep=""), plot = graph.sm.svg, device = svg, scale = 1, width = 215, height = 146, units = "mm")
+  # medium
+  graph.sm.svg <- graph.svg + theme(axis.text=element_text(size=12.65)) # corrige a diferenca do tamanho do texto entre svg e html
+  ggsave(paste(filepath,".md.svg",sep=""), plot = graph.sm.svg, device = svg, scale = 1, width = 215, height = 146, units = "mm")
+  # small
+  graph.sm.svg <- graph.svg + theme(axis.text=element_text(size=16.65)) # corrige a diferenca do tamanho do texto entre svg e html
+  ggsave(paste(filepath,".sm.svg",sep=""), plot = graph.sm.svg, device = svg, scale = 1, width = 215, height = 146, units = "mm")
+  # extra small
+  graph.sm.svg <- graph.svg + theme(axis.text=element_text(size=20.65)) # corrige a diferenca do tamanho do texto entre svg e html
+  ggsave(paste(filepath,".ex.svg",sep=""), plot = graph.sm.svg, device = svg, scale = 1, width = 215, height = 146, units = "mm")
 }
