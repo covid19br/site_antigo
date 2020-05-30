@@ -72,7 +72,7 @@ function updatePlaceholder(current_uf) {
             new_svg = new_svg + "." + split_svg[i];
         }
     }
-    
+
     // Update SRCs
     // HTML Widget
     $(".codegena_iframe").attr("data-src", new_src);
@@ -113,6 +113,70 @@ function updateWidget(current_uf) {
     // Update SRCs
     $("iframe").attr("src", new_src);
 }
+
+function basename(path) {
+    return path.split(/[\\/]/).pop();
+}
+
+function updatePlaceholder_escala(current_uf) {
+    // Get Graph's SRCs
+    var graph_src = $(".codegena_iframe").attr("data-src");
+    var graph_svg = $(".placeholder_svg").attr("src");
+
+    var plot_src = basename(graph_src)
+    var plot_svg = basename(graph_svg)
+
+    var UF, municipio;
+    [UF, municipio] = current_uf.split('-');
+    var basepath = "./web/" + page_id + "/" + UF + "/" + municipio + "/";
+    var new_src = basepath + plot_src
+    var new_svg = basepath + plot_svg;
+
+    var responsive = new_svg.slice(0, -4);
+
+    // Update SRCs
+    // HTML Widget
+    $(".codegena_iframe").attr("data-src", new_src);
+    // SVG Placeholder
+    $(".placeholder_svg").attr("src", new_svg);
+    // Responsive SVG
+    $('source[media="(max-width: 575.98px)"]').attr("srcset",(responsive+".ex.svg"));
+    $('source[media="(max-width: 767.98px)"]').attr("srcset",(responsive+".sm.svg"));
+    $('source[media="(max-width: 991.98px)"]').attr("srcset",(responsive+".md.svg"));
+    $('source[media="(max-width: 1199.98px)"]').attr("srcset",(responsive+".lg.svg"));
+}
+
+function updateWidget_escala(current_uf) {
+    // NÃO ESTÁ SENDO USADO?
+
+    // Get Widget's SRCs
+    var widget_src = $("iframe").attr("src");
+
+    // Process Current Graph's SRC
+    var split_src = widget_src.split('.');
+
+    // remove UF
+    var new_src = "";
+
+    // change UF
+    for (k = 0; k < split_src.length; k++) {
+        if (k == (split_src.length - 2)) {
+            new_src = new_src + "." + current_uf;
+        }
+        else {
+            if (k == 0) {
+                new_src = new_src + split_src[k];
+            }
+            else {
+                new_src = new_src + "." + split_src[k];
+            }
+        }
+    }
+
+    // Update SRCs
+    $("iframe").attr("src", new_src);
+}
+
 
 function updatePage(current_uf) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
@@ -155,10 +219,13 @@ function updatePage(current_uf) {
             $(".forecast_max").text(current_data[2]);
             $(".forecast_data").text(current_data[3]);
         });
+
+        // grafico
+        if ($(".placeholder_svg").length) updatePlaceholder(current_uf) // placeholder image
+        else if ($(".responsive_iframe").length) updateWidget(current_uf); // widget
     }
     // municipios.html e DRS.html
     if(page_id == "municipios" || page_id == "DRS") {
-        console.log("entrei aqui com page_id=" + page_id + " e current_uf=" + current_uf);
         var UF, municipio;
         [UF, municipio] = current_uf.split('-');
         folder_mun = page_id + "/" + UF + "/" + municipio + "/";
@@ -243,12 +310,9 @@ function updatePage(current_uf) {
             else if(current_data[2] < 1) $(".re_analise_srag").text("No entanto, o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
             else $(".re_analise_srag").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
-    }
 
-    // grafico
-    if(page_id == "estados") { // REMOVER QUANDO MUNICIPIOS TIVER OUTROS MUNICIPIOS
-        if ($(".placeholder_svg").length) updatePlaceholder(current_uf) // placeholder image
-        else if ($(".responsive_iframe").length)updateWidget(current_uf); // widget
+        // grafico
+        if ($(".placeholder_svg").length) updatePlaceholder_escala(current_uf) // placeholder image
+        else if ($(".responsive_iframe").length) updateWidget_escala(current_uf); // widget
     }
-
 }
