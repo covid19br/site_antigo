@@ -29,7 +29,7 @@ make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel 
     geom_line(data = fits$estimate$pred, aes(y = mean), colour = "black") + 
     theme_cowplot() + 
     scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 15), date_labels = "%b %d") +
-    #scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
+    scale_y_continuous(labels = label_number_si()) +
     #background_grid(major = "xy", color.major = "grey90", size.major = 0.3) + 
     annotate("text", 
              x = min(data$date) + (0.5 * diff(range(data$date))), 
@@ -82,7 +82,7 @@ make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados
     geom_point(size=2) +
     theme_cowplot() + 
     scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
-    scale_y_continuous(breaks = seq(0, 30000, by = breaks)) +
+    scale_y_continuous(labels = label_number_si(), breaks = seq(0, 30000, by = breaks)) +
     background_grid(major = "xy", minor = "y") + 
     annotate("text", x = last_date - 6, 
              y = data[data$date == (last_date-6),"estimate"] * 1.2, 
