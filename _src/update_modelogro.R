@@ -8,19 +8,56 @@ if(!require(svglite)){install.packages("svglite"); library(svglite)}
 if(!require(plotly)){install.packages("plotly"); library(plotly)}
 if(!require(widgetframe)){install.packages("widgetframe"); library(widgetframe)}
 
+if(!require(optparse)){install.packages("optparse"); library(optparse)}
+if(!require(Hmisc)){install.packages("Hmisc"); library(Hmisc)}
+if(!require(rprojroot)){install.packages("rprojroot"); library(rprojroot)}
+
+
+if (sys.nframe() == 0L) {
+  option_list <- list(
+    make_option("--out_dir",
+                help = ("Caminho até o diretório com os arquivos da projecao de leitos"),
+                default = "../dados",
+                metavar = "out_dir"),
+    make_option("--escala", default = "municipio",
+                 help = ("Nível administrativo, um de: municipio, micro, meso, estado, país"),
+                 metavar = "escala"),
+    make_option("--sigla", default = "SP", # ainda nao estamos usando
+                 help = ("Sigla do estado a ser atualizado"),
+                 metavar = "sigla"),
+    make_option("--geocode", default = 355030,
+                help = ("Geocode de município, micro-mesorregião ou estado"),
+                metavar = "geocode")
+  )
+  parser_object <- OptionParser(usage = "Rscript %prog [Opções] [ARQUIVO]\n",
+                                option_list = option_list,
+                                description = "Script para importar csv da sivep gripe,
+                                executar nowcasting e salvar os resultados")
+  
+  ## aliases
+  opt <- parse_args(parser_object, args = commandArgs(trailingOnly = TRUE), positional_arguments = TRUE)
+  out.root <- if(is.null(opt$options$out_dir)) {"../dados"} else opt$options$out_dir
+  escala <- opt$options$escala
+  sigla <- opt$options$sigla
+  geocode <- opt$options$geocode
+}
+
 Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
 pdf(NULL)
 print_validation_plots = FALSE
 format = "png"
 
-PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)  
+PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)
+P = function(...) file.path(PRJROOT, ...)  
+source(P("_src/funcoes.R"))
 
-O = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/", ...)
-R = function(...) file.path(PRJROOT, "/outputs/municipio_SP/projecao_leitos/relatorios", ...)
-P = function(...) file.path(PRJROOT, ...)
+name_path <- check.geocode(escala = escala, geocode = geocode, sigla = sigla)#ast falta checar outras escalas e fontes de dados e destinos para push
+output.dir <- file.path(out.root, "projecao_leitos", name_path)
 
-PLOTPATH = function(...) file.path(PRJROOT, "outputs/municipio_SP/projecao_leitos/figuras", ...)
+O = function(...) file.path(output.dir, ...)
+
+PLOTPATH = function(...) file.path(output.dir, "figuras", ...)
 
 source(P("_src/plot.formatos.R"))
 source(P("_src/plot_functions_modelogro.R"))
@@ -224,11 +261,13 @@ plots.para.atualizar <- makeNamedList(plot.covid.leitos.forecast.exp, plot.covid
                                       plot.covid.uti.forecast.exp, plot.covid.uti.forecast.logistic,
                                       plot.srag.leitos.forecast.exp, plot.srag.leitos.forecast.logistic,
                                       plot.srag.uti.forecast.exp, plot.srag.uti.forecast.logistic)
-filenames <- paste0(names(plots.para.atualizar), ".municipio")
+filenames <- paste0(names(plots.para.atualizar))
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-  filepath <- paste(P("web/"),filenames[i],sep="")
+  filepath <- paste(P("web/projecao_leitos/"), name_path, "/",filenames[i],sep="")
+  if (!file.exists(filepath))
+    dir.create(filepath, showWarnings = TRUE, recursive = TRUE)
   # widget interativo
   graph.html <- ggplotly(plots.para.atualizar[[i]])
   saveWidget(frameableWidget(graph.html), file = paste(filepath,".html",sep=""), libdir="./libs")
