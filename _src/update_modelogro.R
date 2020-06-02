@@ -15,6 +15,10 @@ if(!require(rprojroot)){install.packages("rprojroot"); library(rprojroot)}
 
 if (sys.nframe() == 0L) {
   option_list <- list(
+    make_option("--out_dir",
+                help = ("Caminho até o diretório com os arquivos da projecao de leitos"),
+                default = "../dados",
+                metavar = "out_dir"),
     make_option("--escala", default = "municipio",
                  help = ("Nível administrativo, um de: municipio, micro, meso, estado, país"),
                  metavar = "escala"),
@@ -32,6 +36,7 @@ if (sys.nframe() == 0L) {
   
   ## aliases
   opt <- parse_args(parser_object, args = commandArgs(trailingOnly = TRUE), positional_arguments = TRUE)
+  out.root <- if(is.null(opt$options$out_dir)) {"../dados"} else opt$options$out_dir
   escala <- opt$options$escala
   sigla <- opt$options$sigla
   geocode <- opt$options$geocode
@@ -44,7 +49,6 @@ print_validation_plots = FALSE
 format = "png"
 
 PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)
-out.root = file.path(PRJROOT, "dados")
 P = function(...) file.path(PRJROOT, ...)  
 source(P("_src/funcoes.R"))
 
