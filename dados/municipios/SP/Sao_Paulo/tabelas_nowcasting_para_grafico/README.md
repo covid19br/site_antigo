@@ -21,7 +21,7 @@ Os arquivos seguem o mesmo padrão de nomes de colunas. Os dados de estimados po
 - `now.upp.c.proj` - intervalo de credibilidade superior para a projeção
 
 ### Valores de casos  **notificados** por data de notificação e respectivas projeções
-- `not.mean.c`- valor observado médio acumulado por data de notificação
+- `not.mean.c`- valor observado acumulado por data de notificação
 - `not.mean.c.proj`- projeção do valor médio acumulado por data de notificação
 - `not.mean.c.proj` - intervalo de credibilidade inferior para a projeção
 - `not.upp.c.proj` - intervalo de credibilidade superior para a projeção
