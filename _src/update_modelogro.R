@@ -248,7 +248,7 @@ if(is.null(data_date)){
 ########################
 
 print("Atualizando data de atualizacao...")
-file <- file(P("web/last.update.modelogro.txt")) # coloco o nome do municipio?
+file <- file(P("web/last.update.modelogro.txt")) # coloco o nome do municipio? Renato: o last.update deve ser específico de cada plot, melhor deixar sem nome mas *dentro da pasta do municipio*
 writeLines(c(paste(now())), file)
 close(file)
 
