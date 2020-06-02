@@ -265,7 +265,7 @@ filenames <- paste0(names(plots.para.atualizar))
 n <- length(plots.para.atualizar)
 
 for (i in 1:n){
-  filepath <- paste(P("web/projecao_leitos/"), name_path, "/",filenames[i],sep="")
+  filepath <- paste(P("web/"), name_path, "/",filenames[i],sep="")
   if (!file.exists(filepath))
     dir.create(filepath, showWarnings = TRUE, recursive = TRUE)
   # widget interativo

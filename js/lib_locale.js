@@ -48,6 +48,10 @@ function hasModelogro(uf) {
     return (false);
 }
 
+function basename(path) {
+    return path.split(/[\\/]/).pop();
+}
+
 function updatePlaceholder(current_uf) {
     // Get Graph's SRCs
     var graph_src = $(".codegena_iframe").attr("data-src");
@@ -124,10 +128,6 @@ function updateWidget(current_uf) {
     $("iframe").attr("src", new_src);
 }
 
-function basename(path) {
-    return path.split(/[\\/]/).pop();
-}
-
 function updatePage(current_uf) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var current_state = getVerbose(current_uf);
@@ -182,8 +182,10 @@ function updatePage(current_uf) {
         [UF, municipio] = current_uf.split('-');
         folder_mun = page_id + "/" + UF + "/" + municipio + "/";
         url_muni = repo_url + "web/" + folder_mun;
+
         // data e hora
         updateDate(folder_mun + "last.update");
+        
         // forecast_exp_covid (graves)
         $.get(url_muni + 'data_forecast_exp_covid.csv', function (raw_data) {
             full_data = raw_data.split("\n");
