@@ -17,10 +17,10 @@ format = "png"
 PRJROOT =  rprojroot::find_root(criterion=rprojroot::is_git_root)  
 
 O = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/", ...)
-R = function(...) file.path(PRJROOT, "/outputs/municipio_SP/projecao_leitos/relatorios", ...)
+R = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios", ...)
 P = function(...) file.path(PRJROOT, ...)
 
-PLOTPATH = function(...) file.path(PRJROOT, "outputs/municipio_SP/projecao_leitos/figuras", ...)
+PLOTPATH = function(...) file.path(PRJROOT, "/dados/projecao_leitos/municipios/SP/Sao_Paulo/figuras", ...)
 
 source(P("_src/plot.formatos.R"))
 source(P("_src/plot_functions_modelogro.R"))
