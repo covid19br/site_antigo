@@ -258,48 +258,46 @@ function updatePage(current_uf) {
             current_data = full_data[current_index].replace(regex, '').split(" ");
             $(".re_min_srag").text(current_data[1]);
             $(".re_max_srag").text(current_data[2]);
-            if(current_data[1] >= 1) $(".re_analise_srag").text("O limite mínimo do intervalo de confiança está acima de um, indicando que a epidemia de continua em expansão rápida.");
-            else if(current_data[2] < 1) $(".re_analise_srag").text("No entanto, o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
+            if (current_data[1] >= 1) $(".re_analise_srag").text("O limite mínimo do intervalo de confiança está acima de um, indicando que a epidemia de continua em expansão rápida.");
+            else if (current_data[2] < 1) $(".re_analise_srag").text("No entanto, o limite máximo do intervalo de confiança está abaixo de um, indicando que a epidemia está em declínio");
             else $(".re_analise_srag").text("O limiar de 1 está dentro do intervalo de confiança, ou seja, Re pode ser maior ou menor que 1, então a epidemia pode estar em lento declínio ou expansão");
         });
 
         // atualiza os gráficos por departamento//municipio
-        if(page_id == "DRS") {
-            // placeholders
-            if ($(".placeholder_svg").length) {
-                $(".codegena_iframe:not(.responsive_iframe)").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
-                    $(this).attr("data-src", new_src);
-                })
-                $(".placeholder_svg").each(function() {
-                    var new_svg = "./web/" + folder_mun + basename($(this).attr("src"));
-                    $(this).attr("src", new_svg);
-                })
-                $("source[media='(max-width: 575.98px)']").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
-                    $(this).attr("srcset", new_src);
-                })
-                $("source[media='(max-width: 767.98px)']").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
-                    $(this).attr("srcset", new_src);
-                })
-                $("source[media='(max-width: 991.98px)']").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
-                    $(this).attr("srcset", new_src);
-                })
-                $("source[media='(max-width: 1199.98px)']").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
-                    $(this).attr("srcset", new_src);
-                })
-            }
-            
-            // widget interativo
-            if ($(".responsive_iframe").length) {
-                $(".responsive_iframe > iframe").each(function() {
-                    var new_src = "./web/" + folder_mun + basename($(this).attr("src"));
-                    $(this).attr("src", new_src);
-                })
-            }
+        // placeholders
+        if ($(".placeholder_svg").length) {
+            $(".codegena_iframe:not(.responsive_iframe)").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("data-src"));
+                $(this).attr("data-src", new_src);
+            })
+            $(".placeholder_svg").each(function () {
+                var new_svg = "./web/" + folder_mun + basename($(this).attr("src"));
+                $(this).attr("src", new_svg);
+            })
+            $("source[media='(max-width: 575.98px)']").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                $(this).attr("srcset", new_src);
+            })
+            $("source[media='(max-width: 767.98px)']").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                $(this).attr("srcset", new_src);
+            })
+            $("source[media='(max-width: 991.98px)']").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                $(this).attr("srcset", new_src);
+            })
+            $("source[media='(max-width: 1199.98px)']").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("srcset"));
+                $(this).attr("srcset", new_src);
+            })
+        }
+
+        // widget interativo
+        if ($(".responsive_iframe").length) {
+            $(".responsive_iframe > iframe").each(function () {
+                var new_src = "./web/" + folder_mun + basename($(this).attr("src"));
+                $(this).attr("src", new_src);
+            })
         }
 
         // desabilita modelogro seletivamente
