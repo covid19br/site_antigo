@@ -13,16 +13,16 @@ Os arquivos seguem o mesmo padrão de nomes de colunas. Os dados de estimados po
 
 - `data` - data em formato ISO 8601 YYYY-MM-DD
 
-### Valores de casos **estimados** por *nowcasting* e respectivas projeções
+### Valores de casos observados e **estimados** por *nowcasting* por data de sintoma e respectivas projeções
 
-- `now.mean.c` - valor médio acumulado por data
-- `now.mean.c.proj` - valor médio acumulado por data para a projeção
+- `now.mean.c` - valor observado e estimado médio acumulado por data de sintoma
+- `now.mean.c.proj` - projeção do valor médio acumulado por data de sintoma
 - `now.low.c.proj` - intervalo de credibilidade inferior para a projeção
 - `now.upp.c.proj` - intervalo de credibilidade superior para a projeção
 
-### Valores de casos **notificados** e respectivas projeções
-- `not.mean.c`- valor médio acumulado por data
-- `not.mean.c.proj`- valor médio acumulado por data para a projeção
+### Valores de casos  **notificados** por data de notificação e respectivas projeções
+- `not.mean.c`- valor observado acumulado por data de notificação
+- `not.mean.c.proj`- projeção do valor médio acumulado por data de notificação
 - `not.mean.c.proj` - intervalo de credibilidade inferior para a projeção
 - `not.upp.c.proj` - intervalo de credibilidade superior para a projeção
 
