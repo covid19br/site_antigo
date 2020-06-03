@@ -48,6 +48,16 @@ function hasModelogro(uf) {
     return (false);
 }
 
+function hasTempoDupli(uf) {
+    for (c = 0; c < locale.length; c++) {
+        if (locale[c].uf == uf) return (locale[c].has_td);
+    }
+
+    // UF not found: returns to default
+    console.log("hasTempoDupli(): uf not found "+uf);
+    return (false);
+}
+
 function basename(path) {
     return path.split(/[\\/]/).pop();
 }
@@ -302,7 +312,7 @@ function updatePage(current_uf) {
             })
         }
 
-        // desabilita modelogro seletivamente
+        // desabilita modelogro seletivamente (ABA2)
         if (!hasModelogro(current_uf)) {
             // atualiza aba
             if ($(".nav-item.aba-pill > .nav-link[card-id='aba2']").hasClass("active")) updateExibition("aba1");
@@ -314,6 +324,21 @@ function updatePage(current_uf) {
         }
         else {
             $(".nav-item.aba-pill > .nav-link[card-id='aba2']").removeClass("disabled").attr("href", "#");
+            $(".nav-item.aba-pill").removeClass("disabled");
+        }
+
+        // desabilita Tempo de Duplicacao seletivamente (ABA4)
+        if (!hasTempoDupli(current_uf)) {
+            // atualiza aba
+            if ($(".nav-item.aba-pill > .nav-link[card-id='aba4']").hasClass("active")) updateExibition("aba1");
+            if (history.pushState) updateURL();
+
+            // atualiza botao
+            $(".nav-item.aba-pill > .nav-link[card-id='aba4']").addClass("disabled").attr("href", "");
+            $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
+        }
+        else {
+            $(".nav-item.aba-pill > .nav-link[card-id='aba4']").removeClass("disabled").attr("href", "#");
             $(".nav-item.aba-pill").removeClass("disabled");
         }
 
