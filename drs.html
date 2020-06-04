@@ -242,7 +242,7 @@
                                         <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.ex.svg">
                                         <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.sm.svg">
                                         <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.md.svg">
-                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.lg.svg">
                                         <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_covid.md.svg" class="placeholder_svg acumdia cov nowcast" width="100%">
                                     </picture>
                                 </div>
@@ -268,7 +268,7 @@
                                         <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.ex.svg">
                                         <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.sm.svg">
                                         <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.md.svg">
-                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.lg.svg">
                                         <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_srag.md.svg" class="placeholder_svg acumdia srag nowcast" width="100%">
                                     </picture>
                                 </div>
@@ -456,13 +456,21 @@
             <div class="card cd-70 chart-fix">
                 <div class="card-body">
                 <!-- CARD.GGPLOT -->
-                <div data-src="./web/plot.srag.leitos.forecast.logistic.municipio.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                    data-responsive="true">
-                    <img src=./web/plot.srag.leitos.forecast.logistic.municipio.svg class="placeholder_svg" width="100%">
-                </div>
-                <script src="./js/async-iframe.js"></script>
-                </div>
+	                <div class="hospt srag nowcast">
+	                    <div data-src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt srag nowcast"
+	                        data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+	                        data-responsive="true">
+	                        <picture class="hospt srag nowcast">
+	                            <source media="(max-width: 575.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.ex.svg">
+	                            <source media="(max-width: 767.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.sm.svg">
+	                            <source media="(max-width: 991.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.md.svg">
+	                            <source media="(max-width: 1199.98px)" srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.lg.svg">
+	                            <img src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.svg" class="placeholder_svg hospt srag nowcast" width="100%">
+	                        </picture>
+	                    </div>
+	                </div>
+	                <script src="./js/async-iframe.js"></script>
+	            </div>
             </div>
 
             <!-- MODELO.CONTENT.CARD -->
@@ -1161,20 +1169,21 @@
 
                     <!-- CARD.HEADER -->
                     <h5 class="card-title">Sobre os dados do estado de São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-
                     <p class="text-justify">
-                    As atualizações desta página são feitas a partir da base SIVEP-Gripe divulgadas pelo Ministério da Saúde. 
+                        As atualizações desta página são feitas a partir da base SIVEP-Gripe divulgadas pelo Ministério da Saúde. 
                     </p>
 
                     <h5 class="card-title mt-4">Departamentos Regionais de Saúde de São Paulo</h5> <!-- CARD.TITLE.TEXT -->
                     <p class="text-justify mt-3">
-                        Os Departamentos Regionais de Saúde de São Paulo estão definidos <a
-                            href="http://www.saude.sp.gov.br/ses/institucional/departamentos-regionais-de-saude/regionais-de-saude">neste
-                            documento</a> e são mostradas no mapa abaixo.
+                        Os Departamentos Regionais de Saúde de São Paulo estão definidos
+                        <a href="http://www.saude.sp.gov.br/ses/institucional/departamentos-regionais-de-saude/regionais-de-saude"></a>
+                            neste documento
+                        </a>
+                        e são mostradas no mapa abaixo.
                     </p>
 
                     <div class="text-center">
-                        <img src="./web/DRS/SP/map_DRS_SP.svg" width="80%">
+                        <img src="./web/DRS/SP/map_DRS_SP.jpg" width="100%">
                     </div>
 
                 </div>

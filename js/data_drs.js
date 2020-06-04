@@ -15,9 +15,9 @@ const locale =
         { prep: "em", verbose: "Piracicaba",            uf: "SP-Piracicaba",            has_modelogro: true, has_td: false },
         { prep: "em", verbose: "Presidente Prudente",   uf: "SP-Presidente_Prudente",   has_modelogro: true, has_td: false },
         { prep: "em", verbose: "Registro",              uf: "SP-Registro",              has_modelogro: true, has_td: false },
-        { prep: "em", verbose: "Ribeirão Preto",        uf: "SP-Ribeirao_Preto",        has_modelogro: false, has_td: false },
-        { prep: "em", verbose: "São João da Boa Vista", uf: "SP-Sao_Joao_da_Boa_Vista", has_modelogro: false, has_td: false },
-        { prep: "em", verbose: "São José do Rio Preto", uf: "SP-Sao_Jose_do_Rio_Preto", has_modelogro: false, has_td: false },
-        { prep: "em", verbose: "Sorocaba",              uf: "SP-Sorocaba",              has_modelogro: false, has_td: false },
-        { prep: "em", verbose: "Taubaté",               uf: "SP-Taubate",               has_modelogro: false, has_td: false }
+        { prep: "em", verbose: "Ribeirão Preto",        uf: "SP-Ribeirao_Preto",        has_modelogro: true, has_td: false },
+        { prep: "em", verbose: "São João da Boa Vista", uf: "SP-Sao_Joao_da_Boa_Vista", has_modelogro: true, has_td: false },
+        { prep: "em", verbose: "São José do Rio Preto", uf: "SP-Sao_Jose_do_Rio_Preto", has_modelogro: true, has_td: false },
+        { prep: "em", verbose: "Sorocaba",              uf: "SP-Sorocaba",              has_modelogro: true, has_td: false },
+        { prep: "em", verbose: "Taubaté",               uf: "SP-Taubate",               has_modelogro: true, has_td: false }
     ];
