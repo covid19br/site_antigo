@@ -3,7 +3,7 @@ const default_uf = "SP-Grande_Sao_Paulo";
 const default_verb = "Grande São Paulo";
 const locale =
     [
-        { prep: "na", verbose: "Grande São Paulo",      uf: "SP-Grande_Sao_Paulo",      has_modelogro: false, has_td: false },
+        { prep: "na", verbose: "Grande São Paulo",      uf: "SP-Grande_Sao_Paulo",      has_modelogro: false, has_td: true },
         { prep: "em", verbose: "Araçatuba",             uf: "SP-Aracatuba",             has_modelogro: false, has_td: false },
         { prep: "em", verbose: "Araraquara",            uf: "SP-Araraquara",            has_modelogro: false, has_td: false },
         { prep: "na", verbose: "Baixada Santista",      uf: "SP-Baixada_Santista",      has_modelogro: false, has_td: false },
