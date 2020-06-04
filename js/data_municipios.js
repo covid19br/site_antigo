@@ -7,5 +7,5 @@ const locale =
         { prep: "em", uf: "SP-Jundiai",          verbose: "Jundiaí",          has_modelogro: false, has_td: false },
         { prep: "em", uf: "MG-Belo_Horizonte",   verbose: "Belo Horizonte",   has_modelogro: false, has_td: true  },
         { prep: "no", uf: "RJ-Rio_de_Janeiro",   verbose: "Rio de Janeiro",   has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "PR-Florianopolis",    verbose: "Florianópolis",    has_modelogro: false, has_td: true  }
+        { prep: "em", uf: "SC-Florianopolis",    verbose: "Florianópolis",    has_modelogro: false, has_td: true  }
     ];
