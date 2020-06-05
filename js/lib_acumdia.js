@@ -7,7 +7,7 @@ function updateSRC(selection, src, svg) {
     $((selector_svg + ' > source[media="(max-width: 575.98px)"]')).attr("srcset",svg.replace(".svg", ".ex.svg"));
     $((selector_svg + ' > source[media="(max-width: 767.98px)"]')).attr("srcset",svg.replace(".svg", ".sm.svg"));
     $((selector_svg + ' > source[media="(max-width: 991.98px)"]')).attr("srcset",svg.replace(".svg", ".md.svg"));
-    $((selector_svg + ' > source[media="(max-width: 1199.98px)"]')).attr("srcset",svg.replace(".svg", ".md.svg"));
+    $((selector_svg + ' > source[media="(max-width: 1199.98px)"]')).attr("srcset",svg.replace(".svg", ".lg.svg"));
 }
 
 function updateWidgetAcumdia(request_id, current_id, current_uf) {
