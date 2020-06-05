@@ -8,4 +8,5 @@ const locale =
         { prep: "em", uf: "MG-Belo_Horizonte",   verbose: "Belo Horizonte",   has_modelogro: false, has_td: true  },
         { prep: "no", uf: "RJ-Rio_de_Janeiro",   verbose: "Rio de Janeiro",   has_modelogro: false, has_td: true  },
         { prep: "em", uf: "SC-Florianopolis",    verbose: "Florianópolis",    has_modelogro: false, has_td: true  }
+        { prep: "em", uf: "PB-Joao_Pessoa",      verbose: "João Pessoa",      has_modelogro: false, has_td: true  }
     ];
