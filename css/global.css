@@ -582,8 +582,15 @@ a.text-reset:hover {
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: .25rem;
-    margin: 0 .75rem 0 0;
 }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .aba-pill {
+        margin: 0 .75rem 0 0;
+    }
+}
+
 .aba-pill:last-child {
     margin: 0;
 }
