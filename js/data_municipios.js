@@ -24,5 +24,8 @@ const locale =
         { prep: "em", uf: "RJ-Duque_de_Caxias",        verbose: "Duque de Caxias",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "BA-Salvador",        verbose: "Salvador",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PA-Ananindeua",        verbose: "Ananindeua",        has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "SP-Santo_Andre",        verbose: "Santo André",        has_modelogro: false, has_td: true  }
+        { prep: "em", uf: "SP-Santo_Andre",        verbose: "Santo André",        has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "MA-Sao_Luis",       verbose: "São Luís",        has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "ES-Vitoria",        verbose: "Vitória",        has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "ES-Alegre",        verbose: "Alegre",        has_modelogro: false, has_td: true  }
     ];
