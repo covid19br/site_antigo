@@ -5,6 +5,7 @@ library(geobr)
 library(ggthemes)
 library(viridis)
 library(htmlwidgets)
+library(withr)
 
 munSP <- read_municipality(code_muni="SP", year=2018)
 drs <- read.csv("../dados/DRS_SP.csv")
