@@ -15,9 +15,10 @@ function updateURL() {
     var query = "?";
     var params = [];
     
-    if($("#main-title-aba-pills").length) params.push("aba=" + $(".aba-pill > .nav-link.active"     ).attr("card-id")); // aba query
-    if(typeof default_uf !== 'undefined') params.push("uf="  + $("#locale   > .dropdown-item.active").attr('uf'));      // locale query
-    if($(".acumdia").length)              params.push("q="   + $(".acumdia   > .dropdown-item.active").attr("q"));      // acumdia query
+    if($("#main-title-aba-pills").length)  params.push("aba="  + $(".aba-pill  > .nav-link.active"     ).attr("card-id"));  // aba query
+    if(typeof default_uf  !== 'undefined') params.push("uf="   + $("#locale    > .dropdown-item.active").attr('uf'));       // locale uf query
+    if(typeof default_mun !== 'undefined') params.push("mun="  + $("#locale    > .dropdown-item.active").attr('mun'));      // locale mun query
+    if($(".acumdia").length)               params.push("q="    + $(".acumdia   > .dropdown-item.active").attr("q"));        // acumdia query
 
     // assemble query
     for(i = 0; i < params.length; i++) query = query + params[i] + "&";
@@ -42,16 +43,20 @@ $(".nav-item.aba-pill > .nav-link:not(.disabled)").click(function () {
 })
 
 // Locale Dropdown
-// Via QUERY REQUEST
-if("uf" in urlParams && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);
-
-// Via DEFAULT
-else if(typeof default_uf !== 'undefined') updatePage(default_uf); //se a entrada é sem hash atualiza para o municipio default
+if(typeof default_mun !== 'undefined') {
+    if("mun" in urlParams && "uf" in urlParams && isMun(urlParams["mun"]) && isUF(urlParams["uf"])) updatePage(urlParams["uf"], urlParams["mun"]); // Via QUERY REQUEST
+    else if(typeof default_uf !== 'undefined' && typeof default_mun !== 'undefined') updatePage(default_uf, default_mun); // Via DEFAULT
+}
+else {
+    if("uf" in urlParams && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);
+    else if(typeof default_uf !== 'undefined') updatePage(default_uf);
+} //se a entrada é sem hash atualiza para o municipio default
 
 // JQuery OnClick Update
 $("#locale > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
-        updatePage($(this).attr('uf'));
+        if(typeof default_mun !== 'undefined') updatePage($(this).attr('uf'), $(this).attr('mun'));
+        else updatePage($(this).attr('uf'));
         if (history.pushState) updateURL(); // checks if history.pushState is available
     }
 })
