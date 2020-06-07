@@ -285,10 +285,10 @@ p, small {
     margin: 0 5px 0 0;
 }
 
-.dropdown-item[uf='GO']::before {
+.dropdown-item[data-uf='GO']::before {
     content:"GO";
 }
-.dropdown-item[uf='SP']::before {
+.dropdown-item[data-uf='SP']::before {
     content:"SP";
 }
 
