@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- Observatorio CSS -->
-    <link href="./css/global.css?ver=2.55" rel="stylesheet">
+    <link href="./css/global.css?ver=2.54" rel="stylesheet">
     <link href="./css/charts.css?ver=2.02" rel="stylesheet">
 
     <!-- Favicons -->
@@ -125,10 +125,10 @@
                 </a>
                 </div>
                 <div class="dropdown-menu dropdown-menu-md-right" id="locale" aria-labelledby="titleDropdown">
-                    <a class="dropdown-item" href="#" uf="SP" mun="Sao_Paulo">São Paulo</a>
-                    <a class="dropdown-item" href="#" uf="SP" mun="Jundiai"  >Jundiaí</a>
+                    <a class="dropdown-item" href="#" data-uf="SP" uf="SP-Sao_Paulo">São Paulo</a>
+                    <a class="dropdown-item" href="#" data-uf="SP" uf="SP-Jundiai"  >Jundiaí</a>
                     <div class="dropdown-divider"></div> <!-- SEPARA ESTADOS -->
-                    <a class="dropdown-item" href="#" uf="GO" mun="Goiania"  >Goiânia</a>
+                    <a class="dropdown-item" href="#" data-uf="GO" uf="GO-Goiania"  >Goiânia</a>
                     <!-- UNSORTED: precisa adicionar data-uf E adicionar seu content correspondente no global.css -->
                     <a class="dropdown-item invisivel" uf="MG-Belo_Horizonte" href="#" style="display:none;">Belo Horizonte</a>
                     <a class="dropdown-item invisivel" uf="RJ-Rio_de_Janeiro" href="#" style="display:none;">Rio de Janeiro</a>
@@ -153,6 +153,8 @@
                     <a class="dropdown-item invisivel" uf="ES-Vitoria" href="#" style="display:none;">Vitória</a>
                     <a class="dropdown-item invisivel" uf="ES-Alegre" href="#" style="display:none;">Alegre</a>
                     <a class="dropdown-item invisivel" uf="AM-Macapa" href="#" style="display:none;">Macapá</a>
+                    <a class="dropdown-item invisivel" uf="AM-Manacapuru" href="#" style="display:none;">Manacapuru</a>
+                    <a class="dropdown-item invisivel" uf="RJ-Niteroi" href="#" style="display:none;">Niterói</a>
                 </div>
             </div>
             </div>
@@ -1126,7 +1128,7 @@
                         pequenas diferenças em \(R_e\) causam grandes diferenças na curva epidêmica. 
                     </p>
                     <p class="text-justify re">
-                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de <span class="locale"></span> baseando-se nos
+                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
                         dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
                         <span class="re_max_covid"></span>.</b>
                     </p>
@@ -1300,12 +1302,12 @@
     <!-- Hora de atualizacao -->
     <script src="js/updateDate.js"></script>
     <!-- Conteudo Dinamico -->
-    <script src="js/data_municipios.js?ver=3.00"></script>
-    <script src="js/lib_locale_mun.js?ver=3.00"></script>
+    <script src="js/data_municipios.js?ver=2.00"></script>
+    <script src="js/lib_locale.js?ver=2.00"></script>
     <script src="js/lib_acumdia.js?ver=2.10"></script>
     <script src="js/lib_casobi.js?ver=2.00"></script>
     <script src="js/lib_abas.js?ver=2.10"></script>
-    <script src="js/updateContent.js?ver=2.50"></script>
+    <script src="js/updateContent.js?ver=2.10"></script>
     <!-- Dispara Toast Messages -->
     <script src="js/updateToast.js"></script>
     <!-- MathJax: Equacoes -->
