@@ -14,7 +14,7 @@ const locale =
         { prep: "em", uf: "AM-Tabatinga",        verbose: "Tabatinga",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PR-Curitiba",        verbose: "Curitiba",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "SP-Santos",        verbose: "Santos",        has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "RS-Porto_Alegre",        verbose: "Porto Alegre",        has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "RS-Porto_Alegre",        verbose: "Porto Alegre",        has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP-Sao_Bernardo_do_Campo",        verbose: "São Bernardo do Campo",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "SP-Guarulhos",        verbose: "Guarulhos",        has_modelogro: false, has_td: true  },
         { prep: "em", uf: "SP-Osasco",        verbose: "Osasco",        has_modelogro: false, has_td: true  },
