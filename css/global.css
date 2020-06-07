@@ -267,6 +267,31 @@ p, small {
     display: none;
 }
 
+.dropdown-item::before {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 10rem;
+    color: #212529;
+    background-color: #f8f9fa;
+    margin: 0 5px 0 0;
+}
+
+.dropdown-item[data-uf='GO']::before {
+    content:"GO";
+}
+.dropdown-item[data-uf='SP']::before {
+    content:"SP";
+}
+
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
@@ -582,8 +607,15 @@ a.text-reset:hover {
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: .25rem;
-    margin: 0 .75rem 0 0;
 }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .aba-pill {
+        margin: 0 .75rem 0 0;
+    }
+}
+
 .aba-pill:last-child {
     margin: 0;
 }
