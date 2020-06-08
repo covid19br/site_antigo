@@ -3,7 +3,8 @@ tabelas.web <- function(output.dir,
                         tipo,
                         df.cum, # data frame com os casos acumulados
                         df.td, # data frame com o tempo de duplicacao
-                        df.re = NULL) { # data frame com o r efetivo
+                        df.re = NULL, # data frame com o r efetivo
+                        data_base) { #data real da última atualização de cada objeto
   # MIN-MAX ####
   ## com n casos min e maximo na data maxima de projecao
   # minmax.casos <- data.frame(row.names = sigla.adm)
@@ -22,19 +23,32 @@ tabelas.web <- function(output.dir,
   write.table(temp.dupl,
               file = paste0(output.dir, "data_tempo_dupli_", tipo, ".csv"),
               row.names = TRUE, col.names = FALSE)
+  #data_atualizacao
+  data_atualizacao <- format(as.Date(data_base, "%Y_%m_%d"), "%d/%m/%Y")
+  write.table(data_atualizacao,
+              file = paste0(output.dir, "data_atualizacao_", tipo, ".csv"),
+              row.names = TRUE, col.names = FALSE)
+
   if (tipo %in% c("covid", "srag")) { #so calcula re para covid e srag
     # R EFETIVO ####
     #Re.efe <- data.frame(row.names = sigla.adm)
-    min <- as.factor(round(df.re[nrow(df.re), "Quantile.0.025.R"], 1))
-    max <- as.factor(round(df.re[nrow(df.re), "Quantile.0.975.R"], 1))
+    min <- as.vector(round(df.re[nrow(df.re), "Quantile.0.025.R"], 2))
+    max <- as.vector(round(df.re[nrow(df.re), "Quantile.0.975.R"], 2))
     Re.efe <- cbind(min, max)
     write.table(Re.efe,
                 file = paste0(output.dir, "data_Re_", tipo, ".csv"),
                 row.names = TRUE, col.names = FALSE)
-    lista <- list(minmax.casos = minmax.casos, temp.dupl = temp.dupl, Re = Re.efe)
+
+
+    lista <- list(minmax.casos = minmax.casos,
+                  temp.dupl = temp.dupl,
+                  Re = Re.efe,
+                  data_atualizacao = data_atualizacao)
   }
   if (tipo %in% c("obitos_covid", "obitos_srag", "obitos_srag_proaim")) {
-    lista <- list(minmax.casos = minmax.casos, temp.dupl = temp.dupl)
+    lista <- list(minmax.casos = minmax.casos,
+                  temp.dupl = temp.dupl,
+                  data_atualizacao = data_atualizacao)
   }
   return(lista)
 }
