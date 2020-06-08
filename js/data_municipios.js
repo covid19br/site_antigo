@@ -29,7 +29,7 @@ const locale =
         { prep: "em", uf: "MA", mun:"Sao_Luis",              verbose: "São Luís",              has_modelogro: false, has_td: true  },
         { prep: "em", uf: "ES", mun:"Vitoria",               verbose: "Vitória",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "ES", mun:"Alegre",                verbose: "Alegre",                has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "AM", mun:"Macapa",                verbose: "Macapá",                has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "AP", mun:"Macapa",                verbose: "Macapá",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "AM", mun:"Manacapuru",            verbose: "Manacapuru",            has_modelogro: false, has_td: true  },
         { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "SP", mun:"Ribeirao_Preto",        verbose: "Ribeirão Preto",        has_modelogro: false, has_td: true  },
