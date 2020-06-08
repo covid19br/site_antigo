@@ -369,7 +369,7 @@
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
                         <div class="collapse mt-2" id="collapseHosp1">
                             <p class="text-justify">
-                                Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de COVID-19</b>, e são investigados com testes laboratoriais. As notificações e confirmações são retiradas por nós da base de dados oficial <b>SIVEP-GRIPE</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
+                                Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de COVID-19</b>, e são investigados com testes laboratoriais. As notificações e confirmações são retiradas por nós da base de dados oficial <b>SIVEP-Gripe</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
                             </p>
                         </div>
 
@@ -540,7 +540,6 @@
                             </div>   
                             <script src="./js/async-iframe.js"></script>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -597,7 +596,7 @@
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
                         <div class="collapse mt-2" id="collapseHosp1">
                             <p class="text-justify">
-                            	Para calcular o número de óbitos por COVID-19 e SRAG utilizamos a base oficial de notificações <b>SIVEP-GRIPE</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
+                            	Para calcular o número de óbitos por COVID-19 e SRAG utilizamos a base oficial de notificações <b>SIVEP-Gripe</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
 
                             	 <!-- utilizamos a base de dados do <b>PRO-AIM</b> (Programa de Aprimoramento das Informações sobre Mortalidade), da Secretaria Municipal da Saúde de São Paulo. O PRO-AIM processa e classifica todos os óbitos ocorridos no município de São Paulo,e que possui um critério mais rigoroso e inclusivo na classificação de óbitos por SRAG. Neste gráficos, filtramos os dados para o município de São Paulo a partir da base da PRO-AIM.-->
                             </p>
@@ -674,60 +673,76 @@
         
         <!-- Conteudo -->
         <div class="card-deck">
+            <div class="card chart-fix cd-auto">
+                <div class="container-fluid p-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
 
-            <!-- COVID GRAFICO -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
+                        <!-- COVID GRAFICO -->
+                        <div class="card cd-30 chart-fix">
+                            <!--<div class="card-body">-->
+                            <div class="col p-0">
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">\(R_e\)</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
+
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="ibm_indigo">\(R_e\)</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
+                                     data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                     data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+
+                                <script src="./js/async-iframe.js"></script>
+                            </div>
+                        </div>
+
+                        <p> </p>
+
+                        <!-- SRAG GRAFICO  -->
+                        <div class="card cd-30 chart-fix">
+                            <!--<div class="card-body">-->
+                            <div class="col p-0">
+
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="ibm_indigo">\(R_e\)</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
+                                     data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                     data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+                            </div>
+                        </div>
+
                     </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.lg.svg">
-                            <img src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
                 </div>
             </div>
 
-            <!-- SRAG GRAFICO  -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">\(R_e\)</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                    </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.lg.svg">
-                            <img src="./web/municipios/SP/Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
 
             <!-- TAXA.CONTENT.CARD -->
             <div class="card cd-30">
@@ -761,9 +776,7 @@
             </div>
 
         </div>
-
     </div>
-
 
     <!-- Aba: Leitos Ocupados -->
     <div class="aba-group aba2">
@@ -815,7 +828,7 @@
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapseHosp1">
                     <p class="text-justify">
-                    Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos primeiros sintomas e a notificação do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros. Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+                    Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos primeiros sintomas e a notificação do caso no sistema SIVEP-Gripe. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros. Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-Gripe.
                     </p>
                 </div>
             
