@@ -26,10 +26,43 @@ function isMun(request) {
     return (false);
 }
 
-function getVerbose(mun) {
+function isPair(uf, mun) {
+    var c = 0;
+    for (c = 0; c < locale.length; c++) {
+        if (locale[c].uf == uf && locale[c].mun == mun) return (true);
+    }
+
+    // pair not found: returns to default
+    console.log("isPair(): pair not found "+uf+ " "+mun);
+    return (false);
+}
+
+function getFirstUF(mun) {
     var d = 0;
     for (d = 0; d < locale.length; d++) {
-        if (locale[d].mun == mun) return (locale[d].verbose);
+        if (locale[d].mun == mun) return (locale[d].uf);
+    }
+
+    // mun not found: returns to default
+    console.log("getFirstUF(): mun not found "+mun);
+    return (default_uf);
+}
+
+function getFirstMun(uf) {
+    var e = 0;
+    for (e = 0; e < locale.length; e++) {
+        if (locale[e].uf == uf) return (locale[e].mun);
+    }
+
+    // mun not found: returns to default
+    console.log("getFirstMun(): uf not found "+uf);
+    return (default_mun);
+}
+
+function getVerbose(mun) {
+    var f = 0;
+    for (f = 0; f < locale.length; f++) {
+        if (locale[f].mun == mun) return (locale[f].verbose);
     }
 
     // UF not found: returns to default
@@ -38,9 +71,9 @@ function getVerbose(mun) {
 }
 
 function getPreposition(mun) {
-    var e = 0;
-    for (e = 0; e < locale.length; e++) {
-        if (locale[e].mun == mun) return (locale[e].prep);
+    var g = 0;
+    for (g = 0; g < locale.length; g++) {
+        if (locale[g].mun == mun) return (locale[g].prep);
     }
 
     // UF not found: returns to default
@@ -49,9 +82,9 @@ function getPreposition(mun) {
 }
 
 function hasModelogro(mun) {
-    var f = 0;
-    for (f = 0; f < locale.length; f++) {
-        if (locale[f].mun == mun) return (locale[f].has_modelogro);
+    var h = 0;
+    for (h = 0; h < locale.length; h++) {
+        if (locale[h].mun == mun) return (locale[h].has_modelogro);
     }
 
     // UF not found: returns to default
@@ -60,9 +93,9 @@ function hasModelogro(mun) {
 }
 
 function hasTempoDupli(mun) {
-    var g = 0;
-    for (g = 0; g < locale.length; g++) {
-        if (locale[g].mun == mun) return (locale[g].has_td);
+    var i = 0;
+    for (i = 0; i < locale.length; i++) {
+        if (locale[i].mun == mun) return (locale[i].has_td);
     }
 
     // UF not found: returns to default

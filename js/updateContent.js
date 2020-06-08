@@ -27,14 +27,75 @@ function updateURL() {
     window.history.pushState(null, null, query.slice(0, -1));
 }
 
-// Menu (Abas)
-// Via QUERY REQUEST
-if("aba" in urlParams && ($(".aba-group").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); //verifica se o parametro aba foi passado
+// Abas no Jumbotron
+function updateAbas() {
+    
+    if("aba" in urlParams && ($(".aba-group").hasClass(urlParams["aba"]))) updateExibition(urlParams["aba"]); // Via QUERY REQUEST: verifica se o parametro foi passado e valida
+    else updateExibition($(".nav-item.aba-pill > .active").attr("card-id")); //Via DEFAULT: usa o item ativo no html
+    
+    return null;
+}
 
-// Via DEFAULT
-else if($("#main-title-aba-pills").length) updateExibition($(".nav-item.aba-pill > .active").attr("card-id")); //se a entrada é sem query busca pelo menu selecionado no html
+// Locale Dropdown
+function updateLocale() {
+    var hasMun = "mun" in urlParams;
+    var hasUF  = "uf"  in urlParams;
 
-// Via JQuery OnClick Update
+    if(typeof default_mun !== 'undefined') {
+        // existe de municipios na pagina
+        if (hasUF && urlParams["uf"].length > 2 && urlParams["uf"].includes('-')) {
+            // handles legacy URL
+            var legacy_UF, legacy_mun;
+            [legacy_UF, legacy_mun] = urlParams["uf"].split('-');
+            updatePage(legacy_UF, legacy_mun);
+        }
+        else if(hasMun && isMun(urlParams["mun"])) {
+            // municipio existe
+            if( (hasUF && isUF(urlParams["uf"])) && isPair(urlParams["uf"], urlParams["mun"]) ) {
+                // UF foi enviado e eh valido
+                updatePage(urlParams["uf"], urlParams["mun"]); // Via QUERY REQUEST
+            }
+            else {
+                // UF nao foi enviado ou eh invalido ou o par uf//mun nao eh valido
+                updatePage(getFirstUF(urlParams["mun"]), urlParams["mun"]); // Via QUERY REQUEST
+            }
+        }
+        else {
+            // municipio nao existe
+            if(hasUF && isUF(urlParams["uf"])) {
+                // pega o primeiro mun se existe uf valido
+                updatePage(urlParams["uf"], getFirstMun(urlParams["uf"])); // Via QUERY REQUEST
+            }
+            else if(typeof default_uf !== 'undefined') {
+                // nem mun ou uf sao validos
+                updatePage(default_uf, default_mun); // Via DEFAULT
+            }
+            else {
+                console.log("updateLocale(): default_uf not found")
+            }
+        }
+    }
+    else {
+        if(hasUF && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);    // Via QUERY REQUEST
+        else if(typeof default_uf !== 'undefined') updatePage(default_uf); // Via DEFAULT
+    } 
+}
+
+// Acumulado-Diario Dropdown
+function updateDropdowns() {
+    if("q" in urlParams && (urlParams["q"] == "acu" || urlParams["q"] == "dia")) updateAcumDia(urlParams["q"]); // Via QUERY REQUEST: verifica se existe o parametro e valida
+    else if($(".acumdia > .dropdown-item").length) updateAcumDia($(".acumdia > .dropdown-item.active").attr("q")); // Via DEFAULT: se a entrada é sem hash atualiza pelo ativo
+}
+
+// Window load update
+$(document).ready ( function(){
+    if(typeof locale !== 'undefined')               updateLocale();    // Locale: verifica se a pagina tem dados de locale
+    if($("#main-title-aba-pills").length)           updateAbas();      // Abas: verifica se a pagina tem abas
+    if($('.dropdown-toggle').not('#titleDropdown')) updateDropdowns(); // Dropdowns: verifica se a pagina tem dropdowns (que nao sejam o de locale)
+    if(history.pushState)                           updateURL();       // checks if history.pushState is available
+});
+
+// JQuery OnClick Updates
 $(".nav-item.aba-pill > .nav-link:not(.disabled)").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateExibition($(this).attr("card-id"));
@@ -42,17 +103,6 @@ $(".nav-item.aba-pill > .nav-link:not(.disabled)").click(function () {
     }
 })
 
-// Locale Dropdown
-if(typeof default_mun !== 'undefined') {
-    if("mun" in urlParams && "uf" in urlParams && isMun(urlParams["mun"]) && isUF(urlParams["uf"])) updatePage(urlParams["uf"], urlParams["mun"]); // Via QUERY REQUEST
-    else if(typeof default_uf !== 'undefined' && typeof default_mun !== 'undefined') updatePage(default_uf, default_mun); // Via DEFAULT
-}
-else {
-    if("uf" in urlParams && isUF(urlParams["uf"])) updatePage(urlParams["uf"]);
-    else if(typeof default_uf !== 'undefined') updatePage(default_uf);
-} //se a entrada é sem hash atualiza para o municipio default
-
-// JQuery OnClick Update
 $("#locale > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         if(typeof default_mun !== 'undefined') updatePage($(this).attr('uf'), $(this).attr('mun'));
@@ -61,14 +111,6 @@ $("#locale > .dropdown-item").click(function () {
     }
 })
 
-// Acumulado-Diario Dropdown
-// Via QUERY REQUEST
-if("q" in urlParams && (urlParams["q"] == "acu" || urlParams["q"] == "dia")) updateAcumDia(urlParams["q"]); // verifica se existe o parametro e verifica a legitimidade
-
-// Via DEFAULT
-else if($(".acumdia > .dropdown-item").length) updateAcumDia($(".acumdia > .dropdown-item.active").attr("q")); //se a entrada é sem hash atualiza pelo ativo
-
-// JQuery OnClick Update
 $(".acumdia > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateAcumDia($(this).attr("q"));
@@ -76,7 +118,6 @@ $(".acumdia > .dropdown-item").click(function () {
     }
 })
 
-// JQuery OnClick Update
 $(".casobi > .dropdown-item").click(function () {
     if (!$(this).hasClass("active")) { // se nao eh o item atual
         updateCasObi($(this).attr("r"));
