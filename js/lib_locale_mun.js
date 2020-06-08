@@ -29,7 +29,7 @@ function isMun(request) {
 function isPair(uf, mun) {
     var c = 0;
     for (c = 0; c < locale.length; c++) {
-        if (locale[c].uf == uf && locale[c].mun == mun) return (true);
+        if (locale[c].mun == mun && locale[c].uf == uf) return (true);
     }
 
     // pair not found: returns to default
@@ -306,5 +306,6 @@ function updatePage(request_uf, request_mun) {
         $("#sobre-gt-sp").show();
     else
         $("#sobre-gt-sp").hide();
+
 
 }
