@@ -301,5 +301,10 @@ function updatePage(request_uf, request_mun) {
         $(".nav-item.aba-pill").removeClass("disabled");
     }
 
+    // página sobre SP
+    if (request_mun == "Sao_Paulo" & request_uf == "SP")
+        $("#sobre-gt-sp").show();
+    else
+        $("#sobre-gt-sp").hide();
 
 }
