@@ -267,6 +267,105 @@ p, small {
     display: none;
 }
 
+.dropdown-item::before {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding-right: .6em;
+    padding-left: .6em;
+    border-radius: 10rem;
+    color: #212529;
+    background-color: #f8f9fa;
+    margin: 0 5px 0 0;
+}
+
+.dropdown-item[uf='AC']::before {
+    content:"AC"; }
+    
+.dropdown-item[uf='AL']::before {
+    content:"AL"; }
+
+.dropdown-item[uf='AP']::before {
+    content:"AP"; }
+
+.dropdown-item[uf='AM']::before {
+    content:"AM"; }
+
+.dropdown-item[uf='BA']::before {
+    content:"BA"; }
+
+.dropdown-item[uf='CE']::before {
+    content:"CE"; }
+
+.dropdown-item[uf='DF']::before {
+    content:"DF"; }
+
+.dropdown-item[uf='ES']::before {
+    content:"ES"; }
+
+.dropdown-item[uf='GO']::before {
+    content:"GO"; }
+
+.dropdown-item[uf='MA']::before {
+    content:"MA"; }
+
+.dropdown-item[uf='MS']::before {
+    content:"MS"; }
+
+.dropdown-item[uf='MT']::before {
+    content:"MT"; }
+
+.dropdown-item[uf='MG']::before {
+    content:"MG"; }
+
+.dropdown-item[uf='PA']::before {
+    content:"PA"; }
+
+.dropdown-item[uf='PB']::before {
+    content:"PB"; }
+
+.dropdown-item[uf='PR']::before {
+    content:"PR"; }
+
+.dropdown-item[uf='PE']::before {
+    content:"PE"; }
+
+.dropdown-item[uf='PI']::before {
+    content:"PI"; }
+
+.dropdown-item[uf='RJ']::before {
+    content:"RJ"; }
+
+.dropdown-item[uf='RN']::before {
+    content:"RN"; }
+
+.dropdown-item[uf='RS']::before {
+    content:"RS"; }
+
+.dropdown-item[uf='RO']::before {
+    content:"RO"; }
+
+.dropdown-item[uf='RR']::before {
+    content:"RR"; }
+
+.dropdown-item[uf='SC']::before {
+    content:"SC"; }
+
+.dropdown-item[uf='SP']::before {
+    content:"SP"; }
+
+.dropdown-item[uf='SE']::before {
+    content:"SE"; }
+
+.dropdown-item[uf='TO']::before {
+    content:"TO"; }
+
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
@@ -582,8 +681,15 @@ a.text-reset:hover {
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: .25rem;
-    margin: 0 .75rem 0 0;
 }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .aba-pill {
+        margin: 0 .75rem 0 0;
+    }
+}
+
 .aba-pill:last-child {
     margin: 0;
 }
