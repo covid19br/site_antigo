@@ -221,7 +221,7 @@
         <!-- Conteudo -->
         <div class="card-deck">
             <div class="card chart-fix cd-auto">
-                <div class="container-fluid p-0">
+                <div class="container-fluid mt-3 mb-2 m-xl-0 p-xl-0">
                     <div class="row row-cols-1 row-cols-xxl-2">
                         <div class="col p-0">
                             <!-- CARD.TITLE.TEXT -->
@@ -249,7 +249,7 @@
                             </div>
                             <script src="./js/async-iframe.js"></script>
                         </div>
-                        <div class="col p-0">
+                        <div class="col mt-4 m-xxl-0 p-0">
                             <!-- CARD.TITLE.TEXT -->
                             <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
 
@@ -293,14 +293,46 @@
 
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-2">
-                            As <b class="legendBlue">linhas azuis contínuas</b> indicam o <b>número de casos graves observados</b> acumulados até a última data.
-                            As <b class="legendRed">linhas vermelhas contínuas</b> indicam o <b>número de casos graves estimados</b> acumulados, corrigindo o tempo entre os primeiros sintomas e a notificação.  
+                            As <b class="legendBlue">linhas azuis contínuas</b> indicam o número de casos graves <b>notificados</b> (observados) acumulados até a data mais recente.
+                            As <b class="legendRed">linhas vermelhas contínuas</b> indicam o número de casos graves <b>estimados</b> acumulados, incluindo correção do tempo entre o primeiro sintoma e a notificação.  
                         </p>
 
                         <!-- TOOLTIP: oq eh escala logaritimica? -->
                         <p class="text-justify">
-                            Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
+                            Por se tratar de números altos ao longo do tempo, o número de casos acumulados no gráfico está em <b>escala logarítmica</b>.
                        </p>
+
+                        <!-- DESTAQUE -->
+                        <ul class="list-group mt-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quantos casos graves estimamos ter no futuro?
+                            </li>
+                        </ul>
+                        <!-- TODO: Adicionar o texto dinamico como badge -->
+                        <p class="text-justify mt-3">
+                            As <b>linhas tracejadas</b> são as <b>projeções</b> para <!--os últimos 2 dias e--> os próximos 5 dias, considerando a mesma taxa de crescimento dos últimos 5 dias.
+                            <!-- (entre <span class="nowcast_covid_min"></span> e <span class="nowcast_covid_max"></span> casos de
+                            COVID-19 e entre <span class="nowcast_srag_min"></span> e <span class="nowcast_srag_max"></span> casos de SRAG em
+                            <span class="nowcast_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 5 dias. -->
+                            A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> da projeção.
+                        </p>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
+                                aria-expanded="false" aria-controls="collapse5DIAS">
+                                Por que só 5 dias? ▾
+                            </button>
+                        </div>
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2 mb-2" id="collapse5DIAS">
+                            <p class="text-justify">
+                                Quando o crescimento é exponencial, as <b>incertezas também crescem exponencialmente</b>. Por isso a região
+                                <b style="color:#6c757d">cinza</b> do gráfico, que expressa a incerteza da projeção, aumenta de largura com o tempo.
+                                Pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro. Por isso avaliamos que é
+                                inadequado fazer projeções para mais de 5 dias com este método.
+                            </p>
+                        </div>
 
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
@@ -314,43 +346,8 @@
                         <div class="collapse mt-2" id="collapseHosp1">
                             <p class="text-justify">
                                 Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de
-                                COVID-19</b>, que são então investigados com testes laboratoriais. As notificações e confirmações exibidas são retiradas da
-                                base de dados do sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios, chamado
-                                base <b>SIVEP-Gripe</b>.
-                            </p>
-                        </div>
-                           
-                        <!-- DESTAQUE -->
-                        <ul class="list-group mt-4">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Quantos casos graves estimamos ter nos próximos dias?
-                            </li>
-                        </ul>
-                        <!-- TODO: Adicionar o texto dinamico como badge -->
-                        <p class="text-justify mt-3">
-                            Os <b class="legendRed">pontos tracejados da linha vermelha</b> são as <b>projeções</b> para os últimos 2 dias e para
-                            os próximos 5 dias (entre <span class="nowcast_covid_min"></span> e <span class="nowcast_covid_max"></span> casos de
-                            COVID-19 e entre <span class="nowcast_srag_min"></span> e <span class="nowcast_srag_max"></span> casos de SRAG em
-                            <span class="nowcast_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 5
-                            dias. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> dessa projeção.
-                        </p>
-
-                        <!-- CARD.BUTTON.EXPAND -->
-                        <div class="text-center">
-                        <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
-                            aria-expanded="false" aria-controls="collapse5DIAS">
-                        Por que só 5 dias? ▾
-                        </button>
-                        </div>
-                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                        <div class="collapse mt-2 mb-2" id="collapse5DIAS">
-                            <p class="text-justify">
-                                Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
-                                <b style="color:#6c757d">cinza</b>, que expressa a incerteza da projeção, aumenta de largura com o tempo.
-                                E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
-                            </p>
-                            <p class="text-justify">
-                                Por isso avaliamos que é inadequado fazer projeções para mais de 5 dias com este método.
+                                COVID-19</b>, e são investigados com testes laboratoriais. As notificações e confirmações são retiradas por nós da
+                                base de dados <b>SIVEP-Gripe</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
                             </p>
                         </div>
 
@@ -364,11 +361,7 @@
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
                         <div class="collapse mt-2" id="collapseSRAG">
                             <p class="text-justify">
-                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação
-                                depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais,
-                                que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro
-                                mais completo da pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras
-                                causas.
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar semanas além de terem uma taxa de erro. Desta forma, acompanhar os casos de SRAG também é importante para termos um quadro mais completo da pandemia de COVID-19 no Brasil. Porém, é importante lembrar que SRAG é uma síndrome que pode também ser causada por outros motivos que não o COVID-19.  
                             </p>
                         </div>
                     </div>
@@ -378,24 +371,24 @@
 
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendBlue">pontos em azul</b> são os <b>casos notificados</b> há mais de 40 dias, para os quais assumimos que não é preciso estimar futuras notificações.
+                            Os <b class="legendBlue">pontos em azul</b> são os números de casos <b>notificados</b> (observados) há mais de 40 dias, para os quais julgamos não ser mais necessário corrigir para atrasos de notificações.
                             <!-- TOOLTIP: oq eh tendencia estimada?-->
                         </p>
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendRed">pontos em vermelho</b> são os <b>casos diários estimados</b> através da correção do atraso entre a data dos primeiros sintomas e a notificação.
+                            Os <b class="legendRed">pontos em vermelho</b> são os números de casos diários <b>estimados</b> através da correção do atraso entre a data do primeiro sintoma e a notificação.
                         </p>
                         <p class="text-justify mt-3 mb-2">
                             A <b>linha preta</b> é a <b>tendência estimada</b>, com média móvel para um período de 10 dias.
                         </p>
 
-                        <!-- CARD.BUTTON.EXPAND -->
+                        <!-- CARD.BUTTON.EXPAND 
                         <div class="text-center">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
                                 aria-expanded="false" aria-controls="collapseHosp1">
                             Como calculamos este número? ▾
                             </button>
-                        </div>
-                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        </div> -->
+                        <!-- CARD.BUTTON.EXPAND.CONTENT
                         <div class="collapse mt-2 mb-2" id="collapseHosp1">
                             <p class="text-justify">
                                 Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de
@@ -403,11 +396,12 @@
                                 base de dados do sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios, chamado
                                 base <b>SIVEP-Gripe</b>.
                             </p>
-                            <!-- TOOLTIP: oq eh escala logaritimica? -->
                             <p class="text-justify">
                                 Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
                             </p>
-                        </div>
+                        </div>-->
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+
 
                         <div class="text-center">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSRAG"
@@ -417,10 +411,7 @@
                         </div>
                         <div class="collapse mt-2" id="collapseSRAG">
                             <p class="text-justify">
-                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. 
-                                Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, 
-                                que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da 
-                                pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar semanas além de terem uma taxa de erro. Desta forma, acompanhar os casos de SRAG também é importante para termos um quadro mais completo da pandemia de COVID-19 no Brasil. Porém, é importante lembrar que SRAG é uma síndrome que pode também ser causada por outros motivos que não o COVID-19. 
                             </p>
                         </div>
                     </div>
@@ -434,8 +425,6 @@
                 </div>
             </div>            
         </div>
-
-
 
     </div>
 
@@ -465,70 +454,69 @@
         
         <!-- Conteudo -->
         <div class="card-deck">
+            <div class="card chart-fix cd-auto">
+                <div class="container-fluid mt-3 mb-2 m-xl-0 p-xl-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
 
-            <!-- COVID -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por COVID-19 <span class="acum_ou_dia"></span></h5>
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Óbitos por COVID-19 <span class="acum_ou_dia"></span></h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
 
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia cov ob">
+                                <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.html" class="codegena_iframe acumdia cov ob"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia cov ob"> 
+                                        <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.lg.svg">
+                                        <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.svg" class="placeholder_svg acumdia cov ob" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+                            </div>
 
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia cov ob">
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.html" class="codegena_iframe acumdia cov ob"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia cov ob"> 
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_covid.svg" class="placeholder_svg acumdia cov ob" width="100%">
-                            </picture>
                         </div>
-                        <script src="./js/async-iframe.js"></script>
-                    </div>
+                        <div class="col mt-4 m-xxl-0 p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por SRAG <span class="acum_ou_dia"></span></h5>
 
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
+
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia srag ob">
+                                <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.html" class="codegena_iframe acumdia srag ob"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia srag ob">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.lg.svg">
+                                        <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.svg" class="placeholder_svg acumdia srag ob" width="100%">
+                                    </picture>
+                                    <script src="./js/async-iframe.js"></script>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- SRAG -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Óbitos por SRAG <span class="acum_ou_dia"></span></h5>
-
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
-
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia srag ob">
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.html" class="codegena_iframe acumdia srag ob"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia srag ob">
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_nowcast_cum_ob_srag.svg" class="placeholder_svg acumdia srag ob" width="100%">
-                            </picture>
-                            <script src="./js/async-iframe.js"></script>
-                        </div>
-                    </div>                    
-                </div>
-            </div>
-
-            <div class="card cd-30">
+            <div class="card">
                 <div class="card-body">
 
                     <!-- ACUMULADOS -->
@@ -536,40 +524,23 @@
 
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3">
-                            As <b class="legendBlue">linhas contínuas em azul</b> indicam o <b>número de casos observados acumulados</b>.
-                            As <b class="legendRed">linhas contínuas em vermelho</b> indicam o <b>número de óbitos acumulados estimados</b>, corrigindo o atraso entre as datas do primeiro sintoma e da notificação.
+                            As <b class="legendBlue">linhas azuis contínuas</b> indicam o número de óbitos <b>notificados</b> (observados) acumulados até a data mais recente.
+                            As <b class="legendRed">linhas vermelhas contínuas</b> indicam o número de óbitos <b>estimados</b> acumulados, incluindo correção do tempo entre o primeiro sintoma e a notificação.
                         </p>
 
                         <!-- TOOLTIP: oq eh escala logaritimica? -->
                         <p class="text-justify">
-                            Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
+                            Por se tratar de números altos ao longo do tempo, o número de casos acumulados no gráfico está em <b>escala logarítmica</b>.
                         </p>
 
-                        <!-- CARD.BUTTON.EXPAND -->
-                        <div class="text-center">
-                            <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp1" aria-expanded="false" aria-controls="collapseHosp1">
-                                Como calculamos estes números? ▾
-                            </button>
-                        </div>
-                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                        <div class="collapse mt-2" id="collapseHosp1">
-                            <p class="text-justify">
-                                Para os <b>óbitos por SRAG</b> utilizamos a base do Programa de Aprimoramento das Informações sobre Mortalidade, da Secretaria
-                                Municipal da Saúde de São Paulo, <b>(PRO-AIM)</b>que processa e classifica todos os óbitos ocorridos no município de São Paulo,
-                                e que possui um critério mais rigoroso e inclusivo na classificação de óbitos por SRAG. Neste gráficos, filtramos os dados para o
-                                município de São Paulo a partir da base da PRO-AIM.
-                            </p>
-                            <p class="text-justify">
-                                Para calcular o <b>número de óbitos por COVID-19</b> utilizamos a base <b>SIVEP-gripe</b>, que contém informações sobre resultado de
-                                confirmação de COVID-19.
-                            </p>
-                        </div>
                         <p class="text-justify mt-3">
-                            As <b>linhas tracejadas</b> indicam a <b>projeção estimada de óbitos</b> por cada condição para os próximos 5 dias
-                            (entre <span class="nowcast_ob_covid_min"></span> e <span class="nowcast_ob_covid_max"></span> óbitos por
-                            COVID-19 e <span class="nowcast_ob_srag_min"></span> e <span class="nowcast_ob_srag_max"></span> óbitos por SRAG em
-                            <span class="nowcast_ob_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 5
-                            dias. A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> dessa projeção.
+                            As <b>linhas tracejadas</b> indicam a projeção estimada de óbitos por cada condição para os próximos 5 dias,
+                            considerando a mesma taxa de aumento de óbitos dos últimos 5 dias.
+                            <!--(entre <span class="nowcast_ob_covid_min"></span> e <span class="nowcast_ob_covid_max"></span> óbitos por
+                            COVID-19 e <span class="nowcast_ob_srag_min"></span> e <span class="nowcast_ob_srag_max"></span> óbitos por SRAG
+                            em <span class="nowcast_ob_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos
+                            últimos 5 dias. -->
+                            A <b style="color:#6c757d">faixa cinza</b> mostra o intervalo de 95% de confiança dessa projeção.
                         </p>
 
                     </div>
@@ -579,11 +550,18 @@
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3">
                             Os <b class="legendBlue">pontos azuis</b> são de <b>óbitos ocorridos</b> há mais de 40 dias, para os quais não é preciso prever futuras notificações.
-                            Os <b class="legendRed">pontos em azul</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
+                            Os <b class="legendRed">pontos vermelhos</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
                         </p>
                         <p class="text-justify mt-3">
-                            A <b>linha preta</b> é a <b>tendência estimada</b> com média móvel para um período de 10 dias. 
+                            Estes pontos estão sujeitos à alteraçōes devido à atualizaçōes das bases de dados, dentro do <b>intervalo de
+                                confiança</b> indicado em <b class="legendBlue_light">azul claro</b>. A <b>linha preta</b> é a <b>tendência
+                                estimada</b> com média móvel para um período de 10 dias.
                         </p>
+                    </div>
+
+                    <!-- GLOBAIS -->
+                    <div class="global-text">
+
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
                             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
@@ -594,31 +572,24 @@
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
                         <div class="collapse mt-2" id="collapseHosp1">
                             <p class="text-justify">
-                                Para os <b>óbitos por SRAG</b> utilizamos a base do Programa de Aprimoramento das Informações sobre Mortalidade, da Secretaria
-                                Municipal da Saúde de São Paulo, <b>(PRO-AIM)</b>, que processa e classifica todos os óbitos ocorridos no município de São
-                                Paulo, e que possui um critério mais rigoroso na classificação de óbitos por SRAG. Neste gráficos, filtramos os dados para o
-                                município de São Paulo a partir da base da PRO-AIM.
+                                Para calcular o número de óbitos por SRAG utilizamos a base de dados do <b>PRO-AIM</b> (Programa de Aprimoramento
+                                das Informações sobre Mortalidade), da Secretaria Municipal da Saúde de São Paulo. O PRO-AIM processa e classifica
+                                todos os óbitos ocorridos no município de São Paulo,e que possui um critério mais rigoroso e inclusivo na
+                                classificação de óbitos por SRAG. Neste gráficos, filtramos os dados para o município de São Paulo a partir da base
+                                da PRO-AIM.
                             </p>
                             <p class="text-justify">
-                                Para calcular o <b>número de óbitos por COVID-19</b> utilizamos a base <b>SIVEP-gripe</b>, que contém informações sobre resultado de
-                                confirmação de COVID-19.
+                                Para calcular o número de óbitos por COVID-19 utilizamos a base oficial de notificações <b>SIVEP-GRIPE</b>, um
+                                sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
                             </p>
                         </div>
-                        <!-- CARD.TEXT -->
-                        <p class="text-justify mt-3">
-                            Estes pontos estão sujeitos a alteração devido à atualização da base de dados, dentro do <b>intervalo de confiança</b> indicado em <b class="legendBlue_light">azul claro</b>.
-                        </p>
-                    </div>
-
-                    <!-- GLOBAIS -->
-                    <div class="global-text">
 
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
                             <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
                                 aria-expanded="false" aria-controls="collapse5DIAS">
                                 Por que só 5 dias? ▾
-                        </button>
+                            </button>
                         </div>
 
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
@@ -684,62 +655,61 @@
         <!-- Conteudo -->
         <div class="card-deck">
 
-            <!-- COVID GRAFICO -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
+            <div class="card chart-fix cd-auto">
+                <div class="container-fluid mt-3 mb-2 m-xl-0 p-xl-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                    </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.lg.svg">
-                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                                <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                            </div>
+                            <!-- CARD.GGPLOT -->
+                            <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                data-responsive="true">
+                                <picture>
+                                    <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.ex.svg">
+                                    <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.sm.svg">
+                                    <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.md.svg">
+                                    <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.lg.svg">
+                                    <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
+                                </picture>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
 
-            <!-- SRAG GRAFICO  -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                        </div>
+                        <div class="col mt-4 m-xxl-0 p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                                <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                            </div>
+                            <!-- CARD.GGPLOT -->
+                            <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                data-responsive="true">
+                                <picture>
+                                    <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.ex.svg">
+                                    <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.sm.svg">
+                                    <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.md.svg">
+                                    <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.lg.svg">
+                                    <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
+                                </picture>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
                     </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.lg.svg">
-                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
                 </div>
             </div>
 
             <!-- TAXA.CONTENT.CARD -->
-            <div class="card cd-30">
+            <div class="card">
                 <div class="card-body">
 
                     <!-- CARD.TITLE.TEXT -->
@@ -753,12 +723,13 @@
                     <p class="text-justify">
                         O <b class="ibm_indigo">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
                         infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
-                        linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
-                        E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
-                        de casos.
+                        linha vermelha. Valores de \(R_e\) próximo de um indicam que a cada dia temos um número constante de casos.
+                        E apenas valores de \(R_e\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+                        de casos. Importante destacar que um crescimento exponencial é sensível ao valor de \(R_e\), e, portanto,
+                        pequenas diferenças em \(R_e\) causam grandes diferenças na curva epidêmica. 
                     </p>
                     <p class="text-justify re">
-                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
+                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de <span class="locale"></span> baseando-se nos
                         dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
                         <span class="re_max_covid"></span>.</b>
                     </p>
@@ -778,7 +749,7 @@
 
         </div>
 
-    </div>    
+    </div>
 
     <!-- Aba 4: Leitos Ocupados -->
     <div class="aba-group aba4">
@@ -786,7 +757,7 @@
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5">
         <div class="main-title">
-            <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
+            <h1 class="display text-center">Casos de SRAG internados <span class="locale-prep"></span></h1>
         </div> <!-- PAGE.TITLE -->
         </div>
 
@@ -796,7 +767,8 @@
             <!-- MODELO.GRAFICO.CARD -->
             <div class="card cd-70 chart-fix">
                 <div class="card-body">
-                <!-- CARD.GGPLOT -->
+                    
+                    <!-- CARD.GGPLOT -->
 	                <div class="hospt srag nowcast">
 	                    <div data-src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt srag nowcast"
 	                        data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
@@ -809,9 +781,9 @@
 	                            <img src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.svg" class="placeholder_svg hospt srag nowcast" width="100%">
 	                        </picture>
 	                    </div>
-	                </div>
-	                <script src="./js/async-iframe.js"></script>
-	            </div>
+                    </div>
+                    
+                </div>
             </div>
 
             <!-- MODELO.CONTENT.CARD -->
@@ -820,53 +792,51 @@
                     
                 <ul class="list-group mt-3">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
+                        Quantos casos de SRAG internados estimamos ter atualmente?
                     </li>
                 </ul>
                 <!-- CARD.TEXT -->
                 <p class="text-justify mt-3 mb-2">
-                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
-                    hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
-                    vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
+                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de pessoas hospitalizadas por síndrome respiratória aguda grave (SRAG)</b>
+                    no município de <span class="locale"></span> até a data atual. A <b style="color:#E41A1C">linha
+                    vermelha</b> mostra a nossa <b>estimativa</b>, que corrige o número de casos pelo atraso de notificação.
                 </p>
             
                 <!-- CARD.BUTTON.EXPAND -->
                 <div class="text-center">
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
                         aria-expanded="false" aria-controls="collapseHosp1">
-                        Como calculamos este número? ▾
+                        Como calculamos esta estimativa? ▾
                     </button>
                 </div>
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapseHosp1">
                     <p class="text-justify">
-                    Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
-                    aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-                    do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
-                    distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
-                    entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
-                    datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+                        Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos
+                        primeiros sintomas e a notificação do caso no sistema SIVEP-Gripe. Depois disso, utilizando o mesmo banco de dados,
+                        calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas
+                        e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros.
+                        Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema
+                        SIVEP-Gripe.
                     </p>
                 </div>
             
                 <!-- CARD.TEXT -->
                 <ul class="list-group mt-4">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de SRAG internados estimamos ter nos próximos dias?
+                        Quantos casos de SRAG internados estimamos ter no futuro?
                     </li>
                 </ul>
                 <p class="text-justify mt-3">
                     Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
-                    modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
-                    <b>intervalo de
-                    confiança</b> dessa projeção.
+                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b>(contínua e pontilhada) mostram o resultado do ajuste do modelo de projeção logístico para o número de internações.
+                    A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> desta projeção.
                 </p>
                 <p class="text-justify mt-3">
                     Para saber mais detalhes, consulte o relatório completo <a
-                    href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
+                    href="https://github.com/covid19br/covid19br.github.io/raw/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
                     Todos os relatórios anteriores podem ser encontrados <a
-                    href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
+                    href="https://github.com/covid19br/covid19br.github.io/tree/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios">aqui</a>.
                 </p>
             
             
@@ -930,60 +900,61 @@
         <div class="casobi-text cas">
             <div class="card-deck">
 
-                <!-- VELOCIDADE.COVID.CARD -->
-                <div class="card cd-30 chart-fix">
-                    <div class="card-body">
-                        <!-- CARD.TITLE.TEXT -->
-                        <h5 class="card-title text-center">Tempo de duplicação dos casos de COVID-19</h5>
-                        <!-- CARD.GGPLOT.LEGEND -->
-                        <div class="card-legend mb-3">
-                            <small class="legend-square" id="wong_green">Tempo de duplicação</small>
-                            <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                <div class="card chart-fix cd-auto">
+                    <div class="container-fluid mt-3 mb-2 m-xl-0 p-xl-0">
+                        <div class="row row-cols-1 row-cols-xxl-2">
+                            <div class="col p-0">
+    
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Tempo de duplicação dos casos de COVID-19</h5>
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="wong_green">Tempo de duplicação</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.html" class="codegena_iframe"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.lg.svg">
+                                        <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+    
+                            </div>
+                            <div class="col mt-4 m-xxl-0 p-0">
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Tempo de duplicação dos casos de SRAG</h5>
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="wong_green">Tempo de duplicação</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.html" class="codegena_iframe"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.lg.svg">
+                                        <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+                            </div>
                         </div>
-                        <!-- CARD.GGPLOT -->
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.html" class="codegena_iframe"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture>
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_covid.svg" class="placeholder_svg" width="100%">
-                            </picture>
-                        </div>
-                        <script src="./js/async-iframe.js"></script>
-                    </div>
-                </div>
-                
-                <!-- VELOCIDADE.SRAG.CARD -->
-                <div class="card cd-30 chart-fix">
-                    <div class="card-body">
-                        <!-- CARD.TITLE.TEXT -->
-                        <h5 class="card-title text-center">Tempo de duplicação dos casos de SRAG</h5>
-                        <!-- CARD.GGPLOT.LEGEND -->
-                        <div class="card-legend mb-3">
-                            <small class="legend-square" id="wong_green">Tempo de duplicação</small>
-                            <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                        </div>
-                        <!-- CARD.GGPLOT -->
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.html" class="codegena_iframe"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture>
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_srag.svg" class="placeholder_svg" width="100%">
-                            </picture>
-                        </div>
-                        <script src="./js/async-iframe.js"></script>
                     </div>
                 </div>
 
                 <!-- VELOCIDADE.CONTENT.CARD -->
-                <div class="card cd-30">
+                <div class="card">
                     <div class="card-body">
 
                         <ul class="list-group mt-3">
@@ -995,7 +966,7 @@
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-3">
                             O <b class="wong_green">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
-                            graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>.
+                            graves (hospitalizados) no município de <span class="locale"></span>. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>.
                         </p>
                         <p class="text-justify mt-3 mb-3">
                             Esse número depende muito das medidas de contenção da doença, como o isolamento social e outras medidas não farmacológicas.
@@ -1043,58 +1014,63 @@
         <div class="casobi-text obi" style="display: none;">
             <div class="card-deck">
 
-                <div class="card cd-30 chart-fix">
-                    <div class="card-body">
-                        <!-- CARD.TITLE.TEXT -->
-                        <h5 class="card-title text-center">Tempo de duplicação dos óbitos por COVID-19</h5>
-                        <!-- CARD.GGPLOT.LEGEND -->
-                        <div class="card-legend mb-3">
-                            <small class="legend-square" id="wong_green">Tempo de duplicação</small>
-                            <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                <div class="card chart-fix cd-auto">
+                    <div class="container-fluid mt-3 mb-2 m-xl-0 p-xl-0">
+                        <div class="row row-cols-1 row-cols-xxl-2">
+                            <div class="col p-0">
+    
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Tempo de duplicação dos óbitos por COVID-19</h5>
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="wong_green">Tempo de duplicação</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.html" class="codegena_iframe"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_covid.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+    
+                            </div>
+                            <div class="col mt-4 m-xxl-0 p-0">
+
+                                <!-- CARD.TITLE.TEXT -->
+                                <h5 class="card-title text-center">Tempo de duplicação dos óbitos por SRAG</h5>
+                                <!-- CARD.GGPLOT.LEGEND -->
+                                <div class="card-legend mb-3">
+                                    <small class="legend-square" id="wong_green">Tempo de duplicação</small>
+                                    <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                                </div>
+                                <!-- CARD.GGPLOT -->
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.html" class="codegena_iframe"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture>
+                                        <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.lg.svg">
+                                        <img src="./web/municipios/SP/Sao_Paulo/plot_tempo_dupl_ob_srag.svg" class="placeholder_svg" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+                                
+                            </div>
                         </div>
-                        <!-- CARD.GGPLOT -->
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.html" class="codegena_iframe"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture>
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_covid.svg" class="placeholder_svg" width="100%">
-                            </picture>
-                        </div>
-                        <script src="./js/async-iframe.js"></script>
                     </div>
                 </div>
 
-                <div class="card cd-30 chart-fix">
-                    <div class="card-body">
-                        <!-- CARD.TITLE.TEXT -->
-                        <h5 class="card-title text-center">Tempo de duplicação dos óbitos por SRAG</h5>
-                        <!-- CARD.GGPLOT.LEGEND -->
-                        <div class="card-legend mb-3">
-                            <small class="legend-square" id="wong_green">Tempo de duplicação</small>
-                            <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                        </div>
-                        <!-- CARD.GGPLOT -->
-                        <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.html" class="codegena_iframe"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture>
-                                <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.lg.svg">
-                                <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_tempo_dupl_ob_srag.svg" class="placeholder_svg" width="100%">
-                            </picture>
-                        </div>
-                        <script src="./js/async-iframe.js"></script>
-                    </div>
-                </div>
-                
                 <!-- TEXTO -->
-                <div class="card cd-30">
+                <div class="card">
                     <div class="card-body">
 
                         <ul class="list-group mt-3">
