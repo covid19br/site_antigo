@@ -31,5 +31,7 @@ const locale =
         { prep: "em", uf: "ES", mun:"Alegre",                verbose: "Alegre",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "AM", mun:"Macapa",                verbose: "Macapá",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "AM", mun:"Manacapuru",            verbose: "Manacapuru",            has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false  }
+        { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Ribeirao_Preto",        verbose: "Ribeirão Preto",        has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "PR", mun:"Maringa",               verbose: "Maringá",               has_modelogro: false, has_td: true  }
     ];
