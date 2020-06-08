@@ -29,7 +29,7 @@ function isMun(request) {
 function isPair(uf, mun) {
     var c = 0;
     for (c = 0; c < locale.length; c++) {
-        if (locale[c].uf == uf && locale[c].mun == mun) return (true);
+        if (locale[c].mun == mun && locale[c].uf == uf) return (true);
     }
 
     // pair not found: returns to default
@@ -271,23 +271,8 @@ function updatePage(request_uf, request_mun) {
         })
     }
 
-    // desabilita modelogro seletivamente (ABA2)
+    // desabilita modelogro seletivamente (ABA4)
     if (!hasModelogro(request_mun)) {
-        // atualiza aba
-        if ($(".nav-item.aba-pill > .nav-link[card-id='aba2']").hasClass("active")) updateExibition("aba1");
-        if (history.pushState) updateURL();
-
-        // atualiza botao
-        $(".nav-item.aba-pill > .nav-link[card-id='aba2']").addClass("disabled").attr("href", "");
-        $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
-    }
-    else {
-        $(".nav-item.aba-pill > .nav-link[card-id='aba2']").removeClass("disabled").attr("href", "#");
-        $(".nav-item.aba-pill").removeClass("disabled");
-    }
-
-    // desabilita Tempo de Duplicacao seletivamente (ABA4)
-    if (!hasTempoDupli(request_mun)) {
         // atualiza aba
         if ($(".nav-item.aba-pill > .nav-link[card-id='aba4']").hasClass("active")) updateExibition("aba1");
         if (history.pushState) updateURL();
@@ -301,10 +286,26 @@ function updatePage(request_uf, request_mun) {
         $(".nav-item.aba-pill").removeClass("disabled");
     }
 
+    // desabilita Tempo de Duplicacao seletivamente (ABA5)
+    if (!hasTempoDupli(request_mun)) {
+        // atualiza aba
+        if ($(".nav-item.aba-pill > .nav-link[card-id='aba5']").hasClass("active")) updateExibition("aba1");
+        if (history.pushState) updateURL();
+
+        // atualiza botao
+        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").addClass("disabled").attr("href", "");
+        $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
+    }
+    else {
+        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").removeClass("disabled").attr("href", "#");
+        $(".nav-item.aba-pill").removeClass("disabled");
+    }
+
     // página sobre SP
     if (request_mun == "Sao_Paulo" & request_uf == "SP")
         $("#sobre-gt-sp").show();
     else
         $("#sobre-gt-sp").hide();
+
 
 }

@@ -51,7 +51,7 @@ function updateLocale() {
         }
         else if(hasMun && isMun(urlParams["mun"])) {
             // municipio existe
-            if( (hasUF && isUF(urlParams["uf"])) && isPair(urlParams["uf"], urlParams["mun"]) ) {
+            if( hasUF && isPair(urlParams["uf"], urlParams["mun"]) ) {
                 // UF foi enviado e eh valido
                 updatePage(urlParams["uf"], urlParams["mun"]); // Via QUERY REQUEST
             }
