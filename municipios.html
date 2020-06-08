@@ -269,6 +269,9 @@
                             </div>
                             <script src="./js/async-iframe.js"></script>
                         </div>
+
+                        <p> </p>
+
                         <div class="col p-0">
                             <!-- CARD.TITLE.TEXT -->
                             <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
@@ -477,65 +480,68 @@
         <!-- Conteudo -->
         <div class="card-deck">
 
-            <!-- COVID -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
+            <div class="card chart-fix cd-auto">
+                <div class="container-fluid p-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por COVID-19 <span class="acum_ou_dia"></span></h5>
 
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Óbitos por COVID-19 <span class="acum_ou_dia"></span></h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                               <small class="legend-square" id="legendBlue">Notificados</small>
+                               <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
 
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
-
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia cov ob">
-                        <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.html" class="codegena_iframe acumdia cov ob"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia cov ob"> 
-                                <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.lg.svg">
-                                <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.svg" class="placeholder_svg acumdia cov ob" width="100%">
-                            </picture>
-                        </div>
-                        <script src="./js/async-iframe.js"></script>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- SRAG -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Óbitos por SRAG <span class="acum_ou_dia"></span></h5>
-
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="legendBlue">Notificados</small>
-                        <small class="legend-square" id="legendRed">Estimados</small>
-                    </div>
-
-                    <!-- CARD.GGPLOT -->
-                    <div class="acumdia srag ob">
-                        <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.html" class="codegena_iframe acumdia srag ob"
-                            data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                            data-responsive="true">
-                            <picture class="acumdia srag ob">
-                                <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.ex.svg">
-                                <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.sm.svg">
-                                <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.md.svg">
-                                <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.lg.svg">
-                                <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.svg" class="placeholder_svg acumdia srag ob" width="100%">
-                            </picture>
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia cov ob">
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.html" class="codegena_iframe acumdia cov ob"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                data-responsive="true">
+	                                <picture class="acumdia cov ob"> 
+	                                  <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.ex.svg">
+	                                  <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.sm.svg">
+	                                  <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.md.svg">
+	                                  <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.lg.svg">
+	                                  <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_covid.svg" class="placeholder_svg acumdia cov ob" width="100%">
+	                                </picture>
+                                </div>
+                    		</div>
                             <script src="./js/async-iframe.js"></script>
                         </div>
-                    </div>                    
+
+                        <p> </p>
+
+                        <div class="col p-0">
+
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por SRAG <span class="acum_ou_dia"></span></h5>
+
+
+                            <!-- CARD.GGPLOT.LEGEND -->
+                           <div class="card-legend mb-3">
+                             <small class="legend-square" id="legendBlue">Notificados</small>
+                             <small class="legend-square" id="legendRed">Estimados</small>
+                           </div>
+
+                            <!-- CARD.GGPLOT -->
+                           <div class="acumdia srag ob">
+                                <div data-src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.html" class="codegena_iframe acumdia srag ob"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                 data-responsive="true">
+                                <picture class="acumdia srag ob">
+                                   <source media="(max-width: 575.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.ex.svg">
+                                   <source media="(max-width: 767.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.sm.svg">
+                                   <source media="(max-width: 991.98px)"  srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.md.svg">
+                                   <source media="(max-width: 1199.98px)" srcset="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.lg.svg">
+                                   <img src="./web/municipios/SP/Sao_Paulo/plot_nowcast_cum_ob_srag.svg" class="placeholder_svg acumdia srag ob" width="100%">
+                                </picture>
+                                </div>
+                            </div>   
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -572,7 +578,7 @@
                             Os <b class="legendRed">pontos em azul</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação. 
                         </p>
                         <p class="text-justify mt-3">
-                            Estes pontos estão sujeitos à alteraçōes devido à atualizaçōes das bases de dados, dentro do <b>intervalo de confiança</b> indicado em <b class="legendBlue_light">azul claro</b>. A <b>linha preta</b> é a <b>tendência estimada</b> com média móvel para um período de 10 dias. 
+                            Estes pontos estão sujeitos à alteraçōes devido à atualizaçōes das bases de dados, dentro do <b>intervalo de confiança</b> indicado em <b style="color:#377EB8">azul claro</b>. A <b>linha preta</b> é a <b>tendência estimada</b> com média móvel para um período de 10 dias. 
                         </p>
 
                     </div>
@@ -747,7 +753,7 @@
                     </p> -->
                     <p class="text-justify">
                     	Estimamos o \(R_e\) da epidemia diariamente no município de <span class="locale"></span> usando os dados estimados de casos graves.
-                        A linha roxa no gráfico mostra a estimativa de \(R_e\) em intervalos de 7 dias (as datas indicam o fim de cada um desses intervalos). A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessas estimativas. Esse intervalo tem 95% de chance de incluir o valor real de \(R_e\). Se a linha tracejada (\(R_e\) = 1) está dentro do intervalo de confiança, \(R_e\) pode ser menor ou maior que 1, então a epidemia pode estar em lento declínio ou expansão, respectivamente.
+                        A linha roxa no gráfico mostra a estimativa de \(R_e\) em intervalos de 7 dias (as datas indicam o fim de cada um desses intervalos). A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> dessas estimativas. Este intervalo tem 95% de chance de incluir o valor real de \(R_e\). Se a linha tracejada (\(R_e\) = 1) está dentro do intervalo de confiança, \(R_e\) pode ser menor ou maior que 1, então a epidemia pode estar, respectivamente, em lento declínio ou expansão.
                     </p>
                     <p class="text-justify"> Para mais informações sobre o cálculo do número de reprodução, leia as <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">Informaçōes Técnicas</a>, e sobre os dados utilizados, leia a aba Casos graves do município de <span class="locale"></span>.
 
@@ -791,47 +797,37 @@
                     
                 <ul class="list-group mt-3">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
+                    	Quantos casos de SRAG internados estimamos ter atualmente?
                     </li>
                 </ul>
                 <!-- CARD.TEXT -->
                 <p class="text-justify mt-3 mb-2">
-                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
-                    hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
-                    vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
+                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de pessoas hospitalizadas por síndrome respiratória aguda grave (SRAG)</b> no município de <span class="locale"></span> até a data atual. A <b style="color:#E41A1C">linha vermelha</b> mostra a nossa <b>estimativa</b>, que corrige o número de casos pelo atraso de notificação.
                 </p>
             
                 <!-- CARD.BUTTON.EXPAND -->
                 <div class="text-center">
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
                         aria-expanded="false" aria-controls="collapseHosp1">
-                        Como calculamos este número? ▾
+                        Como calculamos esta estimativa? ▾
                     </button>
                 </div>
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapseHosp1">
                     <p class="text-justify">
-                    Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
-                    aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-                    do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
-                    distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
-                    entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
-                    datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+                    Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos primeiros sintomas e a notificação do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros. Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
                     </p>
                 </div>
             
                 <!-- CARD.TEXT -->
                 <ul class="list-group mt-4">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de SRAG internados estimamos ter nos próximos dias?
+                    Quantos casos de SRAG internados estimamos ter no futuro?
                     </li>
                 </ul>
                 <p class="text-justify mt-3">
-                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
-                    modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
-                    <b>intervalo de
-                    confiança</b> dessa projeção.
+                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> (contínua e pontilhada) mostram o resultado do ajuste do modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
+                    <b>intervalo de confiança</b> desta projeção.
                 </p>
                 <p class="text-justify mt-3">
                     Para saber mais detalhes, consulte o relatório completo <a
@@ -851,12 +847,7 @@
                 <!-- CARD.BUTTON.EXPAND.CONTENT -->
                 <div class="collapse mt-2" id="collapseHosp2">
                     <p class="text-justify">
-                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
-                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
-                    tem subido de forma consistente, sem sinal de saturação.
-                    </p>
-                    <p class="text-justify">
-                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
+                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG tem subido de forma consistente, sem sinal de saturação. Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
                     </p>
                 </div>
             
