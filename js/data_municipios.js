@@ -17,7 +17,7 @@ const locale =
         { prep: "em", uf: "SP", mun:"Santos",                verbose: "Santos",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "RS", mun:"Porto_Alegre",          verbose: "Porto Alegre",          has_modelogro: false, has_td: false },
         { prep: "em", uf: "SP", mun:"Sao_Bernardo_do_Campo", verbose: "São Bernardo do Campo", has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "SP", mun:"Guarulhos",             verbose: "Guarulhos",             has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "SP", mun:"Guarulhos",             verbose: "Guarulhos",             has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Osasco",                verbose: "Osasco",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PA", mun:"Belem",                 verbose: "Belém",                 has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PE", mun:"Recife",                verbose: "Recife",                has_modelogro: false, has_td: true  },
@@ -31,5 +31,5 @@ const locale =
         { prep: "em", uf: "ES", mun:"Alegre",                verbose: "Alegre",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "AM", mun:"Macapa",                verbose: "Macapá",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "AM", mun:"Manacapuru",            verbose: "Manacapuru",            has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: true  }
+        { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false  }
     ];
