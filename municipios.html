@@ -213,7 +213,7 @@
 
     </div>
 
-    <!-- Aba 1: Casos Graves -->
+    <!-- Aba: Casos Graves -->
     <div class="aba-group aba1">
 
         <!-- Titulo Principal -->
@@ -450,7 +450,7 @@
 
     </div>
 
-    <!-- Aba 3: Óbitos -->
+    <!-- Aba: Óbitos -->
     <div class="aba-group aba3">
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5">
@@ -666,7 +666,7 @@
         </div>
     </div>
 
-    <!-- Aba 5: R efetivo -->
+    <!-- Aba: R efetivo -->
     <div class="aba-group aba5">
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5">
@@ -774,7 +774,120 @@
 
     </div>
 
-    <!-- Aba 4: Tempo de Duplicacao -->
+    <!-- Aba: Leitos Ocupados -->
+    <div class="aba-group aba2">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+        <div class="main-title">
+            <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
+        </div> <!-- PAGE.TITLE -->
+        </div>
+
+        <!-- Conteudo -->
+        <div class="card-deck">
+
+            <!-- MODELO.GRAFICO.CARD -->
+            <div class="card cd-70 chart-fix">
+                <div class="card-body">
+                <!-- CARD.GGPLOT -->
+                <div data-src="./web/projecao_leitos/municipios/SP/Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt center d-flex flex-column justify-content-center"
+                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                    data-responsive="true">
+                    <img src=./web/projecao_leitos/municipios/SP/Sao_Paulo/plot.srag.leitos.forecast.logistic.svg class="placeholder_svg hospt" width="100%">
+                </div>
+                <script src="./js/async-iframe.js"></script>
+                </div>
+            </div>
+
+            <!-- MODELO.CONTENT.CARD -->
+            <div class="card cd-30">
+                <div class="card-body">
+                    
+                <ul class="list-group mt-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Quantos casos de SRAG internados estimamos ter atualmente?
+                    </li>
+                </ul>
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-3 mb-2">
+                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de pessoas hospitalizadas por síndrome respiratória aguda grave (SRAG)</b>
+                    no município de <span class="locale"></span> até a data atual. A <b style="color:#E41A1C">linha
+                    vermelha</b> mostra a nossa <b>estimativa</b>, que corrige o número de casos pelo atraso de notificação.
+                </p>
+            
+                <!-- CARD.BUTTON.EXPAND -->
+                <div class="text-center">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+                        aria-expanded="false" aria-controls="collapseHosp1">
+                        Como calculamos esta estimativa? ▾
+                    </button>
+                </div>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapseHosp1">
+                    <p class="text-justify">
+                        Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos
+                        primeiros sintomas e a notificação do caso no sistema SIVEP-Gripe. Depois disso, utilizando o mesmo banco de dados,
+                        calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas
+                        e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros.
+                        Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema
+                        SIVEP-Gripe.
+                    </p>
+                </div>
+            
+                <!-- CARD.TEXT -->
+                <ul class="list-group mt-4">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Quantos casos de SRAG internados estimamos ter no futuro?
+                    </li>
+                </ul>
+                <p class="text-justify mt-3">
+                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
+                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b>(contínua e pontilhada) mostram o resultado do ajuste do modelo de projeção logístico para o número de internações.
+                    A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> desta projeção.
+                </p>
+                <p class="text-justify mt-3">
+                    Para saber mais detalhes, consulte o relatório completo <a
+                    href="https://github.com/covid19br/covid19br.github.io/raw/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
+                    Todos os relatórios anteriores podem ser encontrados <a
+                    href="https://github.com/covid19br/covid19br.github.io/tree/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios">aqui</a>.
+                </p>
+            
+            
+                <!-- CARD.BUTTON.EXPAND -->
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+                        aria-expanded="false" aria-controls="collapseHosp2">
+                        Por que só 7 dias? ▾
+                    </button>
+                </div>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapseHosp2">
+                    <p class="text-justify">
+                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
+                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
+                    tem subido de forma consistente, sem sinal de saturação.
+                    </p>
+                    <p class="text-justify">
+                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
+                    </p>
+                </div>
+            
+                <!-- CARD.SIGNATURE -->
+                <p class="mt-3">Acesse a página <a
+                    href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+                    para saber mais sobre o método de correção de atrasos.</p>
+
+                <!--<div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
+                <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+   
+    <!-- Aba: Tempo de Duplicacao -->
     <div class="aba-group aba4">
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5">
@@ -1025,119 +1138,6 @@
 
             </div>
         </div>
-    </div>
-
-    <!-- Aba 2: Leitos Ocupados -->
-    <div class="aba-group aba2">
-
-        <!-- Titulo Principal -->
-        <div class="container-fluid mt-5 mb-5">
-        <div class="main-title">
-            <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
-        </div> <!-- PAGE.TITLE -->
-        </div>
-
-        <!-- Conteudo -->
-        <div class="card-deck">
-
-            <!-- MODELO.GRAFICO.CARD -->
-            <div class="card cd-70 chart-fix">
-                <div class="card-body">
-                <!-- CARD.GGPLOT -->
-                <div data-src="./web/projecao_leitos/municipios/SP/Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt center d-flex flex-column justify-content-center"
-                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                    data-responsive="true">
-                    <img src=./web/projecao_leitos/municipios/SP/Sao_Paulo/plot.srag.leitos.forecast.logistic.svg class="placeholder_svg hospt" width="100%">
-                </div>
-                <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
-
-            <!-- MODELO.CONTENT.CARD -->
-            <div class="card cd-30">
-                <div class="card-body">
-                    
-                <ul class="list-group mt-3">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Quantos casos de SRAG internados estimamos ter atualmente?
-                    </li>
-                </ul>
-                <!-- CARD.TEXT -->
-                <p class="text-justify mt-3 mb-2">
-                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de pessoas hospitalizadas por síndrome respiratória aguda grave (SRAG)</b>
-                    no município de <span class="locale"></span> até a data atual. A <b style="color:#E41A1C">linha
-                    vermelha</b> mostra a nossa <b>estimativa</b>, que corrige o número de casos pelo atraso de notificação.
-                </p>
-            
-                <!-- CARD.BUTTON.EXPAND -->
-                <div class="text-center">
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
-                        aria-expanded="false" aria-controls="collapseHosp1">
-                        Como calculamos esta estimativa? ▾
-                    </button>
-                </div>
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapseHosp1">
-                    <p class="text-justify">
-                        Para estimar o número de hospitalizados atual, utilizamos uma técnica de correção de atraso entre o aparecimento dos
-                        primeiros sintomas e a notificação do caso no sistema SIVEP-Gripe. Depois disso, utilizando o mesmo banco de dados,
-                        calculamos uma série de distribuições de tempos característicos da progressão da doença, como o tempo entre sintomas
-                        e internação, o tempo entre internação e alta hospitalar, o tempo entre entrada e saída da UTI, entre outros.
-                        Utilizando estes tempos, simulamos datas de internação para os indivíduos que ainda não foram notificados no sistema
-                        SIVEP-Gripe.
-                    </p>
-                </div>
-            
-                <!-- CARD.TEXT -->
-                <ul class="list-group mt-4">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Quantos casos de SRAG internados estimamos ter no futuro?
-                    </li>
-                </ul>
-                <p class="text-justify mt-3">
-                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b>(contínua e pontilhada) mostram o resultado do ajuste do modelo de projeção logístico para o número de internações.
-                    A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> desta projeção.
-                </p>
-                <p class="text-justify mt-3">
-                    Para saber mais detalhes, consulte o relatório completo <a
-                    href="https://github.com/covid19br/covid19br.github.io/raw/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
-                    Todos os relatórios anteriores podem ser encontrados <a
-                    href="https://github.com/covid19br/covid19br.github.io/tree/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios">aqui</a>.
-                </p>
-            
-            
-                <!-- CARD.BUTTON.EXPAND -->
-                <div class="text-center">
-                    <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
-                        aria-expanded="false" aria-controls="collapseHosp2">
-                        Por que só 7 dias? ▾
-                    </button>
-                </div>
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapseHosp2">
-                    <p class="text-justify">
-                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
-                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
-                    tem subido de forma consistente, sem sinal de saturação.
-                    </p>
-                    <p class="text-justify">
-                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
-                    </p>
-                </div>
-            
-                <!-- CARD.SIGNATURE -->
-                <p class="mt-3">Acesse a página <a
-                    href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
-                    para saber mais sobre o método de correção de atrasos.</p>
-
-                <!--<div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
-                <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
     <!-- Sobre -->
