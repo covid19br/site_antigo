@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <!-- Observatorio CSS -->
-    <link href="./css/global.css?ver=2.54" rel="stylesheet">
+    <link href="./css/global.css?ver=2.56" rel="stylesheet">
     <link href="./css/charts.css?ver=2.02" rel="stylesheet">
 
     <!-- Favicons -->
@@ -80,7 +80,7 @@
             <a class="nav-link" href="./index.html">Visão Geral</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="./progressao.html?uf=br">Estados</a>
+            <a class="nav-link" href="./estados.html?uf=br">Estados</a>
             </li>
             <li class="nav-item">
             <a class="nav-link active" href="#">Municípios</a>
@@ -125,36 +125,37 @@
                 </a>
                 </div>
                 <div class="dropdown-menu dropdown-menu-md-right" id="locale" aria-labelledby="titleDropdown">
-                    <a class="dropdown-item" href="#" data-uf="SP" uf="SP-Sao_Paulo">São Paulo</a>
-                    <a class="dropdown-item" href="#" data-uf="SP" uf="SP-Jundiai"  >Jundiaí</a>
-                    <div class="dropdown-divider"></div> <!-- SEPARA ESTADOS -->
-                    <a class="dropdown-item" href="#" data-uf="GO" uf="GO-Goiania"  >Goiânia</a>
+                    <a class="dropdown-item" href="#" uf="SP" mun="Sao_Paulo">São Paulo</a>
+                    <a class="dropdown-item" href="#" uf="SP" mun="Jundiai"  >Jundiaí</a>
+                    <div class="dropdown-divider"></div> <!-- GO -->
+                    <a class="dropdown-item" href="#" uf="GO" mun="Goiania"  >Goiânia</a>
+                    <div class="dropdown-divider"></div> <!-- RS -->
+                    <a class="dropdown-item" href="#" uf="RS" mun="Porto_Alegre">Porto Alegre</a>
                     <!-- UNSORTED: precisa adicionar data-uf E adicionar seu content correspondente no global.css -->
-                    <a class="dropdown-item invisivel" uf="MG-Belo_Horizonte" href="#" style="display:none;">Belo Horizonte</a>
-                    <a class="dropdown-item invisivel" uf="RJ-Rio_de_Janeiro" href="#" style="display:none;">Rio de Janeiro</a>
-                    <a class="dropdown-item invisivel" uf="SC-Florianopolis" href="#" style="display:none;">Florianópolis</a>
-                    <a class="dropdown-item invisivel" uf="PB-Joao_Pessoa" href="#" style="display:none;">João Pessoa</a>
-                    <a class="dropdown-item invisivel" uf="AM-Manaus" href="#" style="display:none;">Manaus</a>
-                    <a class="dropdown-item invisivel" uf="AM-Tabatinga" href="#" style="display:none;">Tabatinga</a>
-                    <a class="dropdown-item invisivel" uf="PR-Curitiba" href="#" style="display:none;">Curitiba</a>
-                    <a class="dropdown-item invisivel" uf="SP-Santos" href="#" style="display:none;">Santos</a>
-                    <a class="dropdown-item" uf="RS-Porto_Alegre" href="#">Porto Alegre</a>
-                    <a class="dropdown-item invisivel" uf="SP-Sao_Bernardo_do_Campo" href="#" style="display:none;">São Bernardo do Campo</a>
-                    <a class="dropdown-item invisivel" uf="SP-Guarulhos" href="#" style="display:none;">Guarulhos</a>
-                    <a class="dropdown-item invisivel" uf="SP-Osasco" href="#" style="display:none;">Osasco</a>
-                    <a class="dropdown-item invisivel" uf="PA-Belem" href="#" style="display:none;">Belém</a>
-                    <a class="dropdown-item invisivel" uf="PE-Recife" href="#" style="display:none;">Recife</a>
-                    <a class="dropdown-item invisivel" uf="CE-Fortaleza" href="#" style="display:none;">Fortaleza</a>
-                    <a class="dropdown-item invisivel" uf="RJ-Duque_de_Caxias" href="#" style="display:none;">Duque de Caxias</a>
-                    <a class="dropdown-item invisivel" uf="BA-Salvador" href="#" style="display:none;">Salvador</a>
-                    <a class="dropdown-item invisivel" uf="PA-Ananindeua" href="#" style="display:none;">Ananindeua</a>
-                    <a class="dropdown-item invisivel" uf="SP-Santo_Andre" href="#" style="display:none;">Santo André</a>
-                    <a class="dropdown-item invisivel" uf="MA-Sao_Luis" href="#" style="display:none;">São Luís</a>
-                    <a class="dropdown-item invisivel" uf="ES-Vitoria" href="#" style="display:none;">Vitória</a>
-                    <a class="dropdown-item invisivel" uf="ES-Alegre" href="#" style="display:none;">Alegre</a>
-                    <a class="dropdown-item invisivel" uf="AM-Macapa" href="#" style="display:none;">Macapá</a>
-                    <a class="dropdown-item invisivel" uf="AM-Manacapuru" href="#" style="display:none;">Manacapuru</a>
-                    <a class="dropdown-item invisivel" uf="RJ-Niteroi" href="#" style="display:none;">Niterói</a>
+                    <a class="dropdown-item invisivel" href="#" uf="MG" mun="Belo_Horizonte">Belo Horizonte</a>
+                    <a class="dropdown-item invisivel" href="#" uf="RJ" mun="Rio_de_Janeiro">Rio de Janeiro</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SC" mun="Florianopolis">Florianópolis</a>
+                    <a class="dropdown-item invisivel" href="#" uf="PB" mun="Joao_Pessoa">João Pessoa</a>
+                    <a class="dropdown-item invisivel" href="#" uf="AM" mun="Manaus">Manaus</a>
+                    <a class="dropdown-item invisivel" href="#" uf="AM" mun="Tabatinga">Tabatinga</a>
+                    <a class="dropdown-item invisivel" href="#" uf="PR" mun="Curitiba">Curitiba</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SP" mun="Santos">Santos</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SP" mun="Sao_Bernardo_do_Campo">São Bernardo do Campo</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SP" mun="Guarulhos">Guarulhos</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SP" mun="Osasco">Osasco</a>
+                    <a class="dropdown-item invisivel" href="#" uf="PA" mun="Belem">Belém</a>
+                    <a class="dropdown-item invisivel" href="#" uf="PE" mun="Recife">Recife</a>
+                    <a class="dropdown-item invisivel" href="#" uf="CE" mun="Fortaleza">Fortaleza</a>
+                    <a class="dropdown-item invisivel" href="#" uf="RJ" mun="Duque_de_Caxias">Duque de Caxias</a>
+                    <a class="dropdown-item invisivel" href="#" uf="BA" mun="Salvador">Salvador</a>
+                    <a class="dropdown-item invisivel" href="#" uf="PA" mun="Ananindeua">Ananindeua</a>
+                    <a class="dropdown-item invisivel" href="#" uf="SP" mun="Santo_Andre">Santo André</a>
+                    <a class="dropdown-item invisivel" href="#" uf="MA" mun="Sao_Luis">São Luís</a>
+                    <a class="dropdown-item invisivel" href="#" uf="ES" mun="Vitoria">Vitória</a>
+                    <a class="dropdown-item invisivel" href="#" uf="ES" mun="Alegre">Alegre</a>
+                    <a class="dropdown-item invisivel" href="#" uf="AM" mun="Macapa">Macapá</a>
+                    <a class="dropdown-item invisivel" href="#" uf="AM" mun="Manacapuru">Manacapuru</a>
+                    <a class="dropdown-item invisivel" href="#" uf="RJ" mun="Niteroi">Niterói</a>
                 </div>
             </div>
             </div>
@@ -886,7 +887,7 @@
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-3">
                             O <b class="wong_green">tempo de duplicação</b> indica quanto tempo leva para dobrar o número de casos
-                            graves (hospitalizados) no município de São Paulo. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>.
+                            graves (hospitalizados) no município de <span class="locale"></span>. <b>Quanto menor esse número, mais rápido a doença está se espalhando</b>.
                         </p>
                         <p class="text-justify mt-3 mb-3">
                             Esse número depende muito das medidas de contenção da doença, como o isolamento social e outras medidas não farmacológicas.
@@ -1128,7 +1129,7 @@
                         pequenas diferenças em \(R_e\) causam grandes diferenças na curva epidêmica. 
                     </p>
                     <p class="text-justify re">
-                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
+                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de <span class="locale"></span> baseando-se nos
                         dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
                         <span class="re_max_covid"></span>.</b>
                     </p>
@@ -1303,11 +1304,11 @@
     <script src="js/updateDate.js"></script>
     <!-- Conteudo Dinamico -->
     <script src="js/data_municipios.js?ver=2.00"></script>
-    <script src="js/lib_locale.js?ver=2.00"></script>
-    <script src="js/lib_acumdia.js?ver=2.10"></script>
+    <script src="js/lib_locale_mun.js?ver=3.01"></script>
+    <script src="js/lib_acumdia.js?ver=3.00"></script>
     <script src="js/lib_casobi.js?ver=2.00"></script>
     <script src="js/lib_abas.js?ver=2.10"></script>
-    <script src="js/updateContent.js?ver=2.10"></script>
+    <script src="js/updateContent.js?ver=2.20"></script>
     <!-- Dispara Toast Messages -->
     <script src="js/updateToast.js"></script>
     <!-- MathJax: Equacoes -->
