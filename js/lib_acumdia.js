@@ -10,17 +10,15 @@ function updateSRC(selection, src, svg) {
     $((selector_svg + ' > source[media="(max-width: 1199.98px)"]')).attr("srcset",svg.replace(".svg", ".lg.svg"));
 }
 
-function updateWidgetAcumdia(request_id, current_id, current_uf) {
+function updateWidgetAcumdia(request_id, current_id, current_uf, current_mun) {
     var new_src = ""; // prepare strings
-    var UF, municipio;
-    [UF, municipio] = current_uf.split('-');
 
     if (request_id == current_id) return;
     else if (request_id == "dia") {
-        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
+        new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
-        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
+        new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_cum_covid.html";
     }
 
     // Update SRCs
@@ -30,17 +28,15 @@ function updateWidgetAcumdia(request_id, current_id, current_uf) {
     $(".acumdia.srag.ob > .codegena_iframe > iframe").attr("src", new_src.replace("_covid", "_ob_srag"));
 }
 
-function updatePlaceholderAcumdia(request_id, current_id, current_uf) {
+function updatePlaceholderAcumdia(request_id, current_id, current_uf, current_mun) {
     var new_src = ""; // prepare strings
-    var UF, municipio;
-    [UF, municipio] = current_uf.split('-');
 
     if (request_id == current_id) return;
     else if (request_id == "dia") {
-        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_covid.html";
+        new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
-        new_src = "./web/" + page_id + "/" + UF + "/" + municipio + "/plot_nowcast_cum_covid.html";
+        new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_cum_covid.html";
     }
 
     var new_svg = new_src.replace("html", "svg");
@@ -56,8 +52,9 @@ function updatePlaceholderAcumdia(request_id, current_id, current_uf) {
 
 function updateAcumDia(request_id) {
     var selector = "." + request_id;
-    var current_id = $(".acumdia > .dropdown-item.active").attr("q");
-    var current_uf = $(".main-title>.dropdown>.dropdown-menu>.dropdown-item.active").attr("uf")
+    var current_id  = $(".acumdia > .dropdown-item.active").attr("q");
+    var current_uf  = $(".main-title>.dropdown>.dropdown-menu>.dropdown-item.active").attr("uf");
+    var current_mun = $(".main-title>.dropdown>.dropdown-menu>.dropdown-item.active").attr("mun");
 
     // DROPDOWN
     // list
@@ -79,6 +76,6 @@ function updateAcumDia(request_id) {
     $(".acum_ou_dia").text(request_verbose.toLowerCase());
 
     // GRAPHS
-    if ($(".placeholder_svg.acumdia").length) updatePlaceholderAcumdia(request_id, current_id, current_uf) // placeholder image
-    if ($(".responsive_iframe").length) updateWidgetAcumdia(request_id, current_id, current_uf);
+    if ($(".placeholder_svg.acumdia").length) updatePlaceholderAcumdia(request_id, current_id, current_uf, current_mun) // placeholder image
+    if ($(".responsive_iframe").length) updateWidgetAcumdia(request_id, current_id, current_uf, current_mun);
 }
