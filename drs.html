@@ -161,16 +161,16 @@
                         <a class="nav-link active" href="#" card-id="aba1">Casos graves</a>
                     </li>
                     <li class="nav-item aba-pill">
-                        <a class="nav-link" href="#" card-id="aba2">Leitos ocupados</a>
+                        <a class="nav-link" href="#" card-id="aba2">Óbitos</a>
                     </li>
                     <li class="nav-item aba-pill">
-                        <a class="nav-link" href="#" card-id="aba3">Óbitos</a>
+                        <a class="nav-link" href="#" card-id="aba3">R efetivo</a>
                     </li>
                     <li class="nav-item aba-pill">
-                        <a class="nav-link" href="#" card-id="aba4">Tempo de duplicação</a>
+                        <a class="nav-link" href="#" card-id="aba4">Leitos ocupados</a>
                     </li>
                     <li class="nav-item aba-pill">
-                        <a class="nav-link" href="#" card-id="aba5">R efetivo</a>
+                        <a class="nav-link" href="#" card-id="aba5">Tempo de duplicação</a>
                     </li>
                     <li class="nav-item aba-pill">
                         <a class="nav-link" href="#" card-id="sobre">Sobre</a>
@@ -439,131 +439,8 @@
 
     </div>
 
-    <!-- Aba 2: Leitos Ocupados -->
+    <!-- Aba 2: Óbitos -->
     <div class="aba-group aba2">
-
-        <!-- Titulo Principal -->
-        <div class="container-fluid mt-5 mb-5">
-        <div class="main-title">
-            <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
-        </div> <!-- PAGE.TITLE -->
-        </div>
-
-        <!-- Conteudo -->
-        <div class="card-deck">
-
-            <!-- MODELO.GRAFICO.CARD -->
-            <div class="card cd-70 chart-fix">
-                <div class="card-body">
-                <!-- CARD.GGPLOT -->
-	                <div class="hospt srag nowcast">
-	                    <div data-src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt srag nowcast"
-	                        data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-	                        data-responsive="true">
-	                        <picture class="hospt srag nowcast">
-	                            <source media="(max-width: 575.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.ex.svg">
-	                            <source media="(max-width: 767.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.sm.svg">
-	                            <source media="(max-width: 991.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.md.svg">
-	                            <source media="(max-width: 1199.98px)" srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.lg.svg">
-	                            <img src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.svg" class="placeholder_svg hospt srag nowcast" width="100%">
-	                        </picture>
-	                    </div>
-	                </div>
-	                <script src="./js/async-iframe.js"></script>
-	            </div>
-            </div>
-
-            <!-- MODELO.CONTENT.CARD -->
-            <div class="card cd-30">
-                <div class="card-body">
-                    
-                <ul class="list-group mt-3">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
-                    </li>
-                </ul>
-                <!-- CARD.TEXT -->
-                <p class="text-justify mt-3 mb-2">
-                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
-                    hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
-                    vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
-                </p>
-            
-                <!-- CARD.BUTTON.EXPAND -->
-                <div class="text-center">
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
-                        aria-expanded="false" aria-controls="collapseHosp1">
-                        Como calculamos este número? ▾
-                    </button>
-                </div>
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapseHosp1">
-                    <p class="text-justify">
-                    Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
-                    aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
-                    do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
-                    distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
-                    entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
-                    datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
-                    </p>
-                </div>
-            
-                <!-- CARD.TEXT -->
-                <ul class="list-group mt-4">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                    Quantos casos de SRAG internados estimamos ter nos próximos dias?
-                    </li>
-                </ul>
-                <p class="text-justify mt-3">
-                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
-                    modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
-                    <b>intervalo de
-                    confiança</b> dessa projeção.
-                </p>
-                <p class="text-justify mt-3">
-                    Para saber mais detalhes, consulte o relatório completo <a
-                    href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
-                    Todos os relatórios anteriores podem ser encontrados <a
-                    href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
-                </p>
-            
-            
-                <!-- CARD.BUTTON.EXPAND -->
-                <div class="text-center">
-                    <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
-                        aria-expanded="false" aria-controls="collapseHosp2">
-                        Por que só 7 dias? ▾
-                    </button>
-                </div>
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapseHosp2">
-                    <p class="text-justify">
-                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
-                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
-                    tem subido de forma consistente, sem sinal de saturação.
-                    </p>
-                    <p class="text-justify">
-                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
-                    </p>
-                </div>
-            
-                <!-- CARD.SIGNATURE -->
-                <p class="mt-3">Acesse a página <a
-                    href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
-                    para saber mais sobre o método de correção de atrasos.</p>
-
-                <!--<div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
-                <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Aba 3: Óbitos -->
-    <div class="aba-group aba3">
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5">
             <div class="main-title">
@@ -795,8 +672,239 @@
         </div>
     </div>
 
-    <!-- Aba 4: Tempo de Duplicacao -->
+    <!-- Aba 3: R efetivo -->
+    <div class="aba-group aba3">
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+        <div class="main-title">
+            <h1 class="display text-center">R efetivo <span class="locale-prep"></span></h1>
+        </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Conteudo -->
+        <div class="card-deck">
+
+            <!-- COVID GRAFICO -->
+            <div class="card cd-30 chart-fix">
+                <div class="card-body">
+
+                    <!-- CARD.TITLE.TEXT -->
+                    <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
+                    <!-- CARD.GGPLOT.LEGEND -->
+                    <div class="card-legend mb-3">
+                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                    </div>
+                    <!-- CARD.GGPLOT -->
+                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
+                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                         data-responsive="true">
+                        <picture>
+                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.ex.svg">
+                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.sm.svg">
+                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.md.svg">
+                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.lg.svg">
+                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
+                        </picture>
+                    </div>
+                    <script src="./js/async-iframe.js"></script>
+                </div>
+            </div>
+
+            <!-- SRAG GRAFICO  -->
+            <div class="card cd-30 chart-fix">
+                <div class="card-body">
+
+                    <!-- CARD.TITLE.TEXT -->
+                    <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
+                    <!-- CARD.GGPLOT.LEGEND -->
+                    <div class="card-legend mb-3">
+                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                    </div>
+                    <!-- CARD.GGPLOT -->
+                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
+                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                         data-responsive="true">
+                        <picture>
+                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.ex.svg">
+                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.sm.svg">
+                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.md.svg">
+                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.lg.svg">
+                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
+                        </picture>
+                    </div>
+                    <script src="./js/async-iframe.js"></script>
+                </div>
+            </div>
+
+            <!-- TAXA.CONTENT.CARD -->
+            <div class="card cd-30">
+                <div class="card-body">
+
+                    <!-- CARD.TITLE.TEXT -->
+                    <ul class="list-group mt-3 mb-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Para quantas pessoas cada infectado transmite a doença?
+                        </li>
+                    </ul>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        O <b class="ibm_indigo">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
+                        infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
+                        linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
+                        E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+                        de casos.
+                    </p>
+                    <p class="text-justify re">
+                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
+                        dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
+                        <span class="re_max_covid"></span>.</b>
+                    </p>
+                    <!-- analise dinamica re covid -->
+                    <p class="text-justify re">
+                        <span class="re_analise_covid"></span>
+                    </p>
+                    <p class="text-justify">
+                        A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
+                        um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
+                        chance de incluir o valor real de \(R_e\).
+                    </p>
+                    <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>    
+
+    <!-- Aba 4: Leitos Ocupados -->
     <div class="aba-group aba4">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+        <div class="main-title">
+            <h1 class="display text-center">Casos de SRAG internados em <span class="locale"></span></h1>
+        </div> <!-- PAGE.TITLE -->
+        </div>
+
+        <!-- Conteudo -->
+        <div class="card-deck">
+
+            <!-- MODELO.GRAFICO.CARD -->
+            <div class="card cd-70 chart-fix">
+                <div class="card-body">
+                <!-- CARD.GGPLOT -->
+	                <div class="hospt srag nowcast">
+	                    <div data-src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.html" class="codegena_iframe hospt srag nowcast"
+	                        data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+	                        data-responsive="true">
+	                        <picture class="hospt srag nowcast">
+	                            <source media="(max-width: 575.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.ex.svg">
+	                            <source media="(max-width: 767.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.sm.svg">
+	                            <source media="(max-width: 991.98px)"  srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.md.svg">
+	                            <source media="(max-width: 1199.98px)" srcset="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.lg.svg">
+	                            <img src="./web/projecao_leitos/DRS/SP/Grande_Sao_Paulo/plot.srag.leitos.forecast.logistic.svg" class="placeholder_svg hospt srag nowcast" width="100%">
+	                        </picture>
+	                    </div>
+	                </div>
+	                <script src="./js/async-iframe.js"></script>
+	            </div>
+            </div>
+
+            <!-- MODELO.CONTENT.CARD -->
+            <div class="card cd-30">
+                <div class="card-body">
+                    
+                <ul class="list-group mt-3">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Quantos casos de síndrome respiratória aguda grave (SRAG) internados estimamos ter atualmente?
+                    </li>
+                </ul>
+                <!-- CARD.TEXT -->
+                <p class="text-justify mt-3 mb-2">
+                    Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de casos de SRAG</b>
+                    hospitalizados no município de <span class="locale"></span> até a data, e a <b style="color:#E41A1C">linha
+                    vermelha</b> a <b>estimativa</b> corrigida pelo atraso de </b> notificação.
+                </p>
+            
+                <!-- CARD.BUTTON.EXPAND -->
+                <div class="text-center">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+                        aria-expanded="false" aria-controls="collapseHosp1">
+                        Como calculamos este número? ▾
+                    </button>
+                </div>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapseHosp1">
+                    <p class="text-justify">
+                    Para estimar o número de hospitalizações atual, utilizamos uma técnica de correção de atraso entre o
+                    aparecimento dos sintomas da doença que ocasionou a SRAG e a notificação
+                    do caso no sistema SIVEP-GRIPE. Depois disso, utilizando o mesmo banco de dados, calculamos uma série de
+                    distribuições de tempos cateterísticos da progressão da doença, como tempo entre sintomas e internação, tempo
+                    entre internação e alta, tempo entre entrada e saída da UTI, entre outros. Utilizando esses tempos, simulamos
+                    datas de internação para os indivíduos que ainda não foram notificados no sistema SIVEP-GRIPE.
+                    </p>
+                </div>
+            
+                <!-- CARD.TEXT -->
+                <ul class="list-group mt-4">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Quantos casos de SRAG internados estimamos ter nos próximos dias?
+                    </li>
+                </ul>
+                <p class="text-justify mt-3">
+                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
+                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b> mostram o resultado do ajuste de um
+                    modelo de projeção logístico para o número de internações. A <b style="color:#6c757d">faixa cinza</b> mostra o
+                    <b>intervalo de
+                    confiança</b> dessa projeção.
+                </p>
+                <p class="text-justify mt-3">
+                    Para saber mais detalhes, consulte o relatório completo <a
+                    href="https://github.com/covid19br/covid19br.github.io/raw/master/outputs/municipio_SP/projecao_leitos/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
+                    Todos os relatórios anteriores podem ser encontrados <a
+                    href="https://github.com/covid19br/covid19br.github.io/tree/master/outputs/municipio_SP/projecao_leitos/relatorios">aqui</a>.
+                </p>
+            
+            
+                <!-- CARD.BUTTON.EXPAND -->
+                <div class="text-center">
+                    <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
+                        aria-expanded="false" aria-controls="collapseHosp2">
+                        Por que só 7 dias? ▾
+                    </button>
+                </div>
+                <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                <div class="collapse mt-2" id="collapseHosp2">
+                    <p class="text-justify">
+                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
+                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
+                    tem subido de forma consistente, sem sinal de saturação.
+                    </p>
+                    <p class="text-justify">
+                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
+                    </p>
+                </div>
+            
+                <!-- CARD.SIGNATURE -->
+                <p class="mt-3">Acesse a página <a
+                    href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+                    para saber mais sobre o método de correção de atrasos.</p>
+
+                <!--<div class="blockquote-footer">Fonte: casos de hospitalizados no Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
+                <div class="blockquote-footer">Dados sujeitos a modificações devido a atualizações da base.</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Aba 5: Tempo de Duplicacao -->
+    <div class="aba-group aba5">
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5">
             <div class="main-title">
@@ -1042,114 +1150,6 @@
         </div>
     </div>
 
-    <!-- Aba 5: R efetivo -->
-    <div class="aba-group aba5">
-        <!-- Titulo Principal -->
-        <div class="container-fluid mt-5 mb-5">
-        <div class="main-title">
-            <h1 class="display text-center">R efetivo <span class="locale-prep"></span></h1>
-        </div> <!-- PAGE.TITLE -->
-        </div>
-        
-        <!-- Conteudo -->
-        <div class="card-deck">
-
-            <!-- COVID GRAFICO -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                    </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.lg.svg">
-                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
-
-            <!-- SRAG GRAFICO  -->
-            <div class="card cd-30 chart-fix">
-                <div class="card-body">
-
-                    <!-- CARD.TITLE.TEXT -->
-                    <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
-                    <!-- CARD.GGPLOT.LEGEND -->
-                    <div class="card-legend mb-3">
-                        <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
-                        <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
-                    </div>
-                    <!-- CARD.GGPLOT -->
-                    <div data-src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.html" class="codegena_iframe"
-                         data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-                         data-responsive="true">
-                        <picture>
-                            <source media="(max-width: 575.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.ex.svg">
-                            <source media="(max-width: 767.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.sm.svg">
-                            <source media="(max-width: 991.98px)"  srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.md.svg">
-                            <source media="(max-width: 1199.98px)" srcset="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.lg.svg">
-                            <img src="./web/DRS/SP/Grande_Sao_Paulo/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
-                        </picture>
-                    </div>
-                    <script src="./js/async-iframe.js"></script>
-                </div>
-            </div>
-
-            <!-- TAXA.CONTENT.CARD -->
-            <div class="card cd-30">
-                <div class="card-body">
-
-                    <!-- CARD.TITLE.TEXT -->
-                    <ul class="list-group mt-3 mb-3">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Para quantas pessoas cada infectado transmite a doença?
-                        </li>
-                    </ul>
-
-                    <!-- CARD.TEXT -->
-                    <p class="text-justify">
-                        O <b class="ibm_indigo">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
-                        infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
-                        linha vermelha. Valores de \((R_e)\) próximo de um indicam que a cada dia temos um número constante de casos.
-                        E apenas valores de \((R_e)\) abaixo de um por muitos dias indica seguramente tendência de redução no número
-                        de casos.
-                    </p>
-                    <p class="text-justify re">
-                        Estimamos o \(R_e\) da epidemia de COVID-19 no Brasil diariamente no município de São Paulo baseando-se nos
-                        dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
-                        <span class="re_max_covid"></span>.</b>
-                    </p>
-                    <!-- analise dinamica re covid -->
-                    <p class="text-justify re">
-                        <span class="re_analise_covid"></span>
-                    </p>
-                    <p class="text-justify">
-                        A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
-                        um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
-                        chance de incluir o valor real de \(R_e\).
-                    </p>
-                    <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
     <!-- Sobre -->
     <div class="aba-group sobre">
 
@@ -1245,7 +1245,7 @@
     <script src="js/updateDate.js"></script>
     <!-- Conteudo Dinamico -->
     <script src="js/data_drs.js?ver=1.00"></script>
-    <script src="js/lib_locale_mun.js?ver=3.02"></script>
+    <script src="js/lib_locale_mun.js?ver=3.03"></script>
     <script src="js/lib_acumdia.js?ver=3.00"></script>
     <script src="js/lib_casobi.js?ver=2.00"></script>
     <script src="js/lib_abas.js?ver=2.10"></script>

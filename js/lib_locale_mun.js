@@ -271,23 +271,8 @@ function updatePage(request_uf, request_mun) {
         })
     }
 
-    // desabilita modelogro seletivamente (ABA2)
+    // desabilita modelogro seletivamente (ABA4)
     if (!hasModelogro(request_mun)) {
-        // atualiza aba
-        if ($(".nav-item.aba-pill > .nav-link[card-id='aba2']").hasClass("active")) updateExibition("aba1");
-        if (history.pushState) updateURL();
-
-        // atualiza botao
-        $(".nav-item.aba-pill > .nav-link[card-id='aba2']").addClass("disabled").attr("href", "");
-        $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
-    }
-    else {
-        $(".nav-item.aba-pill > .nav-link[card-id='aba2']").removeClass("disabled").attr("href", "#");
-        $(".nav-item.aba-pill").removeClass("disabled");
-    }
-
-    // desabilita Tempo de Duplicacao seletivamente (ABA4)
-    if (!hasTempoDupli(request_mun)) {
         // atualiza aba
         if ($(".nav-item.aba-pill > .nav-link[card-id='aba4']").hasClass("active")) updateExibition("aba1");
         if (history.pushState) updateURL();
@@ -298,6 +283,21 @@ function updatePage(request_uf, request_mun) {
     }
     else {
         $(".nav-item.aba-pill > .nav-link[card-id='aba4']").removeClass("disabled").attr("href", "#");
+        $(".nav-item.aba-pill").removeClass("disabled");
+    }
+
+    // desabilita Tempo de Duplicacao seletivamente (ABA5)
+    if (!hasTempoDupli(request_mun)) {
+        // atualiza aba
+        if ($(".nav-item.aba-pill > .nav-link[card-id='aba5']").hasClass("active")) updateExibition("aba1");
+        if (history.pushState) updateURL();
+
+        // atualiza botao
+        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").addClass("disabled").attr("href", "");
+        $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
+    }
+    else {
+        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").removeClass("disabled").attr("href", "#");
         $(".nav-item.aba-pill").removeClass("disabled");
     }
 
