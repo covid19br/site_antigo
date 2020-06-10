@@ -21,7 +21,7 @@ const locale =
         { prep: "em", uf: "SP", mun:"Osasco",                verbose: "Osasco",                has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PA", mun:"Belem",                 verbose: "Belém",                 has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PE", mun:"Recife",                verbose: "Recife",                has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "CE", mun:"Fortaleza",             verbose: "Fortaleza",             has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "CE", mun:"Fortaleza",             verbose: "Fortaleza",             has_modelogro: false, has_td: false },
         { prep: "em", uf: "RJ", mun:"Duque_de_Caxias",       verbose: "Duque de Caxias",       has_modelogro: false, has_td: false },
         { prep: "em", uf: "BA", mun:"Salvador",              verbose: "Salvador",              has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PA", mun:"Ananindeua",            verbose: "Ananindeua",            has_modelogro: false, has_td: true  },
