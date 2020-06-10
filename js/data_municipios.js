@@ -8,7 +8,7 @@ const locale =
         { prep: "em", uf: "SP", mun:"Jundiai",               verbose: "Jundiaí",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "MG", mun:"Belo_Horizonte",        verbose: "Belo Horizonte",        has_modelogro: false, has_td: true  },
         { prep: "no", uf: "RJ", mun:"Rio_de_Janeiro",        verbose: "Rio de Janeiro",        has_modelogro: false, has_td: true  },
-        { prep: "em", uf: "SC", mun:"Florianopolis",         verbose: "Florianópolis",         has_modelogro: false, has_td: true  },
+        { prep: "em", uf: "SC", mun:"Florianopolis",         verbose: "Florianópolis",         has_modelogro: false, has_td: false },
         { prep: "em", uf: "PB", mun:"Joao_Pessoa",           verbose: "João Pessoa",           has_modelogro: false, has_td: true  },
         { prep: "em", uf: "GO", mun:"Goiania",               verbose: "Goiânia",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "AM", mun:"Manaus",                verbose: "Manaus",                has_modelogro: false, has_td: false },
