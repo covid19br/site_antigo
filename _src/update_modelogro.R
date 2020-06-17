@@ -142,11 +142,12 @@ if(is.null(data_date)){
                     ylabel = "Número de casos COVID-19 hospitalizados",
                     title = "COVID-19 - Leitos Totais - Logistica")  
   plot.covid.leitos.forecast.logistic = pcl$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic.", format)),
-            pcl$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic_validation.", format)),
-              pcl$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic.", format)),
+                pcl$current, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic_validation.", format)),
+                pcl$validation, base_height = 6.5, base_asp = 1.7)
+  }
 }
 
 ########################
@@ -158,23 +159,27 @@ if(is.null(data_date)){
                      ylabel = "Número de casos COVID-19 hospitalizados em UTI",
                      title = "COVID-19 - Leitos UTI - Exponencial") 
   plot.covid.uti.forecast.exp = pceU$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp.", format)),
-            pceU$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp_validation.", format)),
-              pceU$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp.", format)),
+                pceU$current, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp_validation.", format)),
+                pceU$validation, base_height = 6.5, base_asp = 1.7)
+
+  }
 }
+
 
 {
   pclU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTILogist, breaks = 500,
                      ylabel = "Número de casos COVID-19 hospitalizados em UTI",
                      title = "COVID-19 - Leitos UTI - Logistico") 
   plot.covid.uti.forecast.logistic = pclU$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic.", format)),
-            pclU$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic_validation.", format)),
-              pclU$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic.", format)),
+                pclU$current, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic_validation.", format)),
+                pclU$validation, base_height = 6.5, base_asp = 1.7)
+  }
 }
 
 ########################
@@ -190,11 +195,12 @@ if(is.null(data_date)){
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Exponencial")
   plot.srag.leitos.forecast.exp = pse$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Exp.", format)),
-            pse$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Exp_validation.", format)),
-              pse$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Exp.", format)),
+                pse$current, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Exp_validation.", format)),
+                pse$validation, base_height = 6.5, base_asp = 1.7)
+  }         
 }         
 
 {
@@ -202,11 +208,13 @@ if(is.null(data_date)){
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Logistico")
   plot.srag.leitos.forecast.logistic = psl$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic.", format)),
-            psl$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic_validation.", format)),
-              psl$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic.", format)),
+                psl$current, base_height = 6.5, base_asp = 1.7)
+      if(print_validation_plots)
+          save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic_validation.", format)),
+                    psl$validation, base_height = 6.5, base_asp = 1.7)
+  }
 }
 
 ########################
@@ -218,11 +226,12 @@ if(is.null(data_date)){
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Exponencial")
   plot.srag.uti.forecast.exp = pseU$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Exp.", format)),
-            pseU$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Exp_validation.", format)),
-              pseU$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Exp.", format)),
+                pseU$current, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Exp_validation.", format)),
+                pseU$validation, base_height = 6.5, base_asp = 1.7)
+  }
 }
 
 {
@@ -230,11 +239,13 @@ if(is.null(data_date)){
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Logistico")
   plot.srag.uti.forecast.logistic = pslU$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic.", format)),
-            pslU$current, base_height = 6.5, base_asp = 1.7)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic_validation.", format)),
-              pslU$validation, base_height = 6.5, base_asp = 1.7)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic.", format)),
+                pslU$current, base_height = 6.5, base_asp = 1.7)
+      if(print_validation_plots)
+          save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic_validation.", format)),
+                    pslU$validation, base_height = 6.5, base_asp = 1.7)
+  }
 }
 
 # p_srag = make_ggplot_no_model(srag, disease = "srag",  ylabel = "Número de casos SRAG hospitalizados",
