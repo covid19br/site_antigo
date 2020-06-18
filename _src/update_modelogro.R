@@ -130,11 +130,12 @@ if(is.null(data_date)){
                     ylabel = "Número de casos COVID-19 hospitalizados",
                     title = "COVID-19 - Leitos Totais - Exponencial") 
   plot.covid.leitos.forecast.exp = pce$current + plot.formatos + ggtitle("")
-  save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp.", format)),
-            pce$current, base_height = 6.5, base_asp = 1.7, scale = 0.8)
-  if(print_validation_plots)
-    save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp_validation.", format)),
-              pce$validation, base_height = 6.5, base_asp = 1.7, scale = 0.8)
+  if(print_validation_plots){
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp.", format)),
+                pce$current, base_height = 6.5, base_asp = 1.7, scale = 0.8)
+      save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp_validation.", format)),
+                pce$validation, base_height = 6.5, base_asp = 1.7, scale = 0.8)
+  } 
 } 
 
 {
@@ -211,9 +212,8 @@ if(is.null(data_date)){
   if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic.", format)),
                 psl$current, base_height = 6.5, base_asp = 1.7)
-      if(print_validation_plots)
-          save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic_validation.", format)),
-                    psl$validation, base_height = 6.5, base_asp = 1.7)
+      save_plot(PLOTPATH(paste0(data_date, "_srag_leitos_Logistic_validation.", format)),
+                psl$validation, base_height = 6.5, base_asp = 1.7)
   }
 }
 
@@ -242,7 +242,6 @@ if(is.null(data_date)){
   if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic.", format)),
                 pslU$current, base_height = 6.5, base_asp = 1.7)
-      if(print_validation_plots)
           save_plot(PLOTPATH(paste0(data_date, "_srag_UTI_Logistic_validation.", format)),
                     pslU$validation, base_height = 6.5, base_asp = 1.7)
   }
