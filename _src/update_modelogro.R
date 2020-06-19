@@ -68,7 +68,7 @@ hospitalized_files = sort(grep("hopitalized_2020", dir(O("hospitalizados"), full
 UTI_files          = sort(grep("hopitalized_UTI_2020", dir(O("hospitalizados"), full.names = TRUE), value = TRUE))
 
 ### Set if looking for specific date
-#data_date = as.Date("2020-05-05")
+#data_date = as.Date("2020-06-16")
 data_date = NULL
 
 if(is.null(data_date)){
