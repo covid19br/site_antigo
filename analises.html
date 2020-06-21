@@ -1344,7 +1344,7 @@
     </div>
 
     <!-- ABA 5: Impacto Economico -->
-    <div class="aba-group aba5">
+    <div class="aba-group aba5" style="display: none;">
 
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5 xl-small">
@@ -2254,7 +2254,7 @@
     </div>
 
     <!-- ABA 8: Distribuição etária de hospitalizados por COVID-19 -->
-    <div class="aba-group aba8">
+    <div class="aba-group aba8" style="display: none;">
 
         <!-- Titulo Principal -->
         <div class="container-fluid mt-5 mb-5 xl-small">
@@ -2439,6 +2439,347 @@
             <!-- NEW.CARD -->
         </div>
     </div>
+
+    <!-- ABA 9: Renda básica emergencial -->
+    <div class="aba-group aba9">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Análise da cobertura da Renda Básica Emergencial nos municípios brasileiros</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    17 de junho de 2020 - Caio Jardim e Mel Veneroso, da Rede Análise COVID, em parceria com o 
+                    Observatório COVID-19 BR, analisam a distribuição da Renda Básica Emergencial no país. 
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+
+            <!-- 1:1 aspect ratio --> 
+            <div class="card-body">
+                <div class="card-body"> 
+                    <iframe class="embed-responsive-item" title="A territorialização da Renda Básica Emergencial no Brasil" 
+                    src="https://arcgis.com/apps/Embed/index.html?webmap=ed9b432a4e014d87afafcd510951dc18&extent=-97.3596,-39.7767,5.1208,11.5206&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=false&details=true&legend=true&active_panel=details&disable_scroll=false&theme=light">
+                    </iframe> 
+                </div>
+                <p class="card-text legenda mt-2">
+                    <small>
+                        Plataforma interativa com os dados da distribuição de RBE no Brasil. Explore o mapa e pesquise por cidades!
+                    </small>
+                </p> <!-- CARD.IMAGE.LEGENDA -->
+            </div>
+  
+            <!-- Card 1 -->
+            <div class="card" style="z-index: 1110;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center mt-2">
+                        <img src="./img/icon_social.svg" width=40px alt="Ícone que representa o leito de um hospital"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba9-card1">Quantas pessoas receberam o auxílio em cada estado?</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Com a chegada do novo coronavírus ao Brasil, a situação de crise econômica atingiu uma parte ainda 
+                        maior da população. Uma vez que encontramos comércios fechados, serviços suspensos, e a necessidade 
+                        do isolamento social, a população desempregada ou que realizava atividades no mercado informal necessitou 
+                        recorrer à Renda Básica Emergencial (RBE), liberada pelo Governo Federal no início de abril deste ano. 
+                        Cerca de 50 milhões de brasileiros já foram beneficiados com a RBE. De acordo com um levantamento feito 
+                        pelo jornal O Globo, a proporção de beneficiários de transferência de renda no Brasil praticamente dobrou 
+                        em relação aos até então apenas beneficiários do Programa Bolsa Família (PBF). Segundo nossas estimativas, 
+                        o resultado para cada UF segue na <a href="#aba9-fig1">Figura 1</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Figura 1 -->
+            <div class="card" style="z-index: 1090;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba9-fig1">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <div style="text-align: center;"><img src="./fig/rbe_fig1.png" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Número absoluto de beneficiários da Renda Básica Emergencial por Unidade Federativa no país
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+
+
+            <!-- NEW.CARD -->
+            <!-- Card 3 -->
+            <div class="card" style="z-index: 1070;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <div class="d-flex align-items-center">
+                        <img src="./img/icon_brasil.svg" width=40px alt="Ícone que representa um público de pessoas"
+                            class="card-icon"> <!-- CARD.TITLE.ICON -->
+                        <div class="hero-body">
+                            <h5 class="card-title" id="aba1-card3">Como os benecifiários da RBE estão distribuídos pelo país?</h5>
+                        </div>
+                    </div>
+
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0"> Para analisar a distribuição da RBE no país, produzimos 4 mapas, que serão apresentados.</h6>
+                        </li>
+                    </ul>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        A Figura 2 mostra o percentual da população vulnerável à pobreza, em que é possível observar que há 
+                        maior prevalência de pessoas nessas condições nas regiões Nordeste (NE) e Norte (N). A Figura 3 mostra que no Norte, 
+                        analisando a cobertura da RBE nos municípios brasileiros, evidencia-se que a política está bem focalizada, 
+                        estando mais presente nos territórios de maior vulnerabilidade à pobreza.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Figuras 2 e 3 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 3 -->
+            <div class="card" style="z-index: 1050;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba9-fig2" style="text-align: center;">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig2.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Fração da população do município vunerável à pobreza. 
+                        </small></p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 4 -->
+            <div class="card" id="fig4" style="z-index: 1040;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" id="aba9-fig3" style="text-align: center;">Figura 3</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig3.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Razão entre o número de beneficiários da RBE e população por município.
+                        </small></p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Situacao atual, metodos e Referencias -->
+        <div class="card-columns one xl-small">
+            <!-- NEW.CARD -->
+            <!-- Leitos situacao atual -->
+            <div class="card" style="z-index: 1030;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Tanto o mapa da Figura 3 quanto o gráfico da Figura 4 incluem os beneficiários do Programa Bolsa Família (PBF), 
+                        uma vez que quase a totalidade deles passaram a receber o valor referente à RBE. Como o PBF é um programa 
+                        que faz uso do CadÚnico para promover a busca ativa da população em situação de pobreza e oferecê-la benefícios, 
+                        espera-se observar maior cobertura da RBE onde já havia uma maior proporção beneficiários do PBF antes da 
+                        pandemia (N e NE).
+                    </p>
+                </div>
+            </div>        
+        </div>
+
+        <!-- Figuras 4 e 5 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 3 -->
+            <div class="card" style="z-index: 1050;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba9-fig4" style="text-align: center;">Figura 4</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig4.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Relação entre população vulnerável à pobreza e proporção da população com acesso à RBE, nos municípios. 
+                        </small></p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 4 -->
+            <div class="card" id="fig4" style="z-index: 1040;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" id="aba9-fig5" style="text-align: center;">Figura 5</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig5.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small> Proporção de beneficiários por Unidade Federativa.
+                        </small></p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Situacao atual, metodos e Referencias -->
+        <div class="card-columns one xl-small">
+            <!-- NEW.CARD -->
+            <!-- Metodos -->
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Entretanto, a RBE não foi implementada via busca ativa – o cidadão que deve fazer a busca e o cadastro por conta 
+                        própria para conseguir o benefício. Dito isso, o terceiro mapa apresenta a proporção de beneficiários da RBE que 
+                        não estão inseridos no Cadastro Único. Como é possível ver, São Paulo, Santa Catarina, o Centro-Sul mineiro e a 
+                        Serra Gaúcha são as regiões onde há maior concentração de beneficiários do auxílio emergencial que não fazem parte 
+                        do CadÚnico.
+                    </p>
+
+                    <p class="text-justify">
+                        Essa situação pode apontar uma maior vulnerabilidade dos beneficiários que não estão no Cadastro Único. 
+                        Tanto quanto à continuidade do benefício ou quanto à inclusão em outras futuras políticas de distribuição de renda. 
+                        É relevante destacar que nos próximos meses há a chance de crescimento do número de desempregados em todo o país, 
+                        podendo alcançar uma taxa de 17,8% segundo estudo da Fundação Getúlio Vargas. 
+                    </p>
+
+                    <p class="text-justify">
+                        O próximo mapa mostra a razão de proporções entre o acesso à RBE e a vulnerabilidade à pobreza. 
+                        No Centro-Sul brasileiro, mais pessoas que não se encontravam em situação vulnerável foram beneficiadas 
+                        que em relação às regiões Norte e Nordeste. Esta informação pode apontar um novo cenário de vulnerabilidade 
+                        no Centro-Sul, que antes não a havia nessa proporção. Contudo, vale também analisar se os elegíveis à RBE nas 
+                        regiões N e NE conseguiram ou não acessar o benefício. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Figuras 6 e 7 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 6 -->
+            <div class="card" style="z-index: 1050;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba9-fig6" style="text-align: center;">Figura 6</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig6.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>Municípios onde pessoas cadastradas no CadÚnico são maioria ou não dos beneficiários RBE. 
+                        </small></p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 7 -->
+            <div class="card" id="fig4" style="z-index: 1040;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" id="aba9-fig7" style="text-align: center;">Figura 7</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/rbe_fig7.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small>  Locais onde a proporção de beneficiários é maior ou menor que a proporção de vulneráveis à pobreza.
+                        </small></p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <div class="card-columns one xl-small">
+            <!-- NEW.CARD -->
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Aconselha-se que o Estado realize a busca ativa e o cadastro dos que não estão no CadÚnico, 
+                        e amplie o rastreio da pobreza nessas regiões. Assim, esta população pode ser acolhida sob o 
+                        “guarda-chuva” da assistência social frente à atual instabilidade econômica.Recomenda-se também 
+                        a extensão da distribuição da RBE aos cidadãos nos próximos meses, para possibilitar maior consumo 
+                        e aquecimento das economias (sobretudo locais), além mais tributos arrecadados pelo Estado. Um estudo 
+                        feito pelo CEDEPLAR/UFMG mostrou que, caso a RBE seja estendida até dezembro de 2020, o PIB do país seria 
+                        beneficiado em 0,55% e não em 0,44%, caso dure apenas até junho. 
+                    </p>
+
+                    <p class="text-justify">
+                        Os dados utilizados na produção dos gráficos foram retirados dos Relatórios de Informações Sociais da SAGI, 
+                        do Relatório Sintético de beneficiários da RBE (Portal da Transparência da CGU) e do Censo Demográfico do 
+                        IBGE de 2010. Como não foi divulgado o número de beneficiários do PBF com acesso à RBE, ele foi estimado por 
+                        metodologia própria. Multiplicou-se o número de famílias com o PBF por 1 + a fração de domicílios com mães solo 
+                        na UF correspondente, baseando-se na PNADC Anual de 2019. Para mais detalhes, ler Anexos 1 e 2 ao final deste texto. 
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+
+                    <div class="hero-body">
+                        <h5 class="card-title" id="aba1-card3">Observações</h5>
+                    </div>
+
+                    <ol>
+                        <li><p class="text-justify">
+                            Para realizar a estimativa de famílias cadastradas no Programa Bolsa Familia que fizeram uso do benefício, 
+                            partiu-se do pressuposto que cada uma das cadastradas no CadÚnico e no PBF recebeu o teto permitido (2 benefício), 
+                            de acordo com a proporção de famílias com outro adulto além do chefe de domicílio.</p></li>
+                        <li><p class="text-justify">Em alguns poucos municípios, o número de cadastrados no CADÚnico excede o da população projetada pelo IBGE, 
+                            e publicada no TCU em 2019. O tratamento a cada um deles é especificado abaixo:</p></li>
+                            <ul>
+                                <li><p class="text-justify">Devido à imprecisão na estimativa da população municipal calculada pelo IBGE em 2019, 
+                                    33 municípios tinham mais pessoas cadastradas no CADÚnico do que habitantes (estimativa IBGE). 
+                                    Passou-se a considerar o número de cadastrados + beneficiários sem cadastro no CadÚnico como a 
+                                    população destes municípios.</p></li>
+                                <li><p class="text-justify">Outros 32 municípios tiveram cobertura do benefício na população não cadastrada no CADÚnico 
+                                    superior a 1, pois o número de não cadastrados excedeu o da população projetada em 2019. 
+                                    Passou-se a considerar o número de cadastrados + beneficiários sem cadastro no CadÚnico como a 
+                                    população destes municípios.</p></li>
+                            </ul>   
+                        <li><p class="text-justify">Foi considerada a % de pessoas vulneráveis à pobreza como definida pelo Atlas do Desenvolvimento Humano, 
+                            usando dados do Censo do IBGE de 2010. Vulneráveis são aqueles que moram em domicílios cuja renda per capita 
+                            é igual ou inferior a meio salário mínimo.</p></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+
+                    <div class="hero-body">
+                        <h5 class="card-title" id="aba1-card3">Metodologia</h5>
+                    </div>
+
+                    <p class="text-justify">
+                            TEXTO
+                    </p>
+                    
+                </div>
+            </div>
+
+
+
+            <!-- Referencias -->
+            <div class="card" style="z-index: 1010;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3"  id="aba1-card6">Referências</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li>aaaaaa<img src="./img/icon_arrow_up.svg"></li>
+                        <li>aaaaaa<img src="./img/icon_arrow_up.svg"></li>
+                        <li>aaaaaa<img src="./img/icon_arrow_up.svg"></li>
+                        <li>aaaaaa<img src="./img/icon_arrow_up.svg"></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+        </div>
+    </div>
+
 
     <!-- Footer -->
     <footer class="container-fluid">
