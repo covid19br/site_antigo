@@ -2458,20 +2458,6 @@
         <div class="card-columns one xl-small">
             <!-- COLUMNS.NUM -->
 
-            <!-- 1:1 aspect ratio --> 
-            <div class="card-body">
-                <div class="card-body"> 
-                    <iframe class="embed-responsive-item" title="A territorialização da Renda Básica Emergencial no Brasil" 
-                    src="https://arcgis.com/apps/Embed/index.html?webmap=ed9b432a4e014d87afafcd510951dc18&extent=-97.3596,-39.7767,5.1208,11.5206&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=false&details=true&legend=true&active_panel=details&disable_scroll=false&theme=light">
-                    </iframe> 
-                    <p class="card-text legenda mt-2">
-                        <small>
-                            Plataforma interativa com os dados da distribuição de RBE no Brasil. Explore o mapa e pesquise por cidades!<br><br><br>
-                        </small>
-                    </p> <!-- CARD.IMAGE.LEGENDA -->
-                </div>
-            </div>
-  
             <!-- Card 1 -->
             <div class="card" style="z-index: 1110;">
                 <div class="card-body">
@@ -2505,7 +2491,7 @@
                     <h5 class="card-title mb-3" style="text-align: center;" id="aba9-fig1">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
 
                     <!-- CARD.IMAGE -->
-                    <div style="text-align: center;"><img src="./fig/rbe_fig1.png" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <div style="text-align: center;"><img src="./fig/rbe_fig1.tif" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
                     <p class="card-text legenda mt-2">
                         <small>
                             Número absoluto de beneficiários da Renda Básica Emergencial por Unidade Federativa no país
@@ -2541,8 +2527,8 @@
                         A <a href="#aba9-fig2">Figura 2</a> mostra o percentual da população vulnerável à pobreza, onde a cor azul indica maiores
                         proporções de população vulnerável à pobreza em relação a população municipal total. No mapa é possível observar que há 
                         maior prevalência de pessoas nessas condições nas regiões Nordeste (NE) e Norte (N). Já a <a href="#aba9-fig3">Figura 3</a> 
-                        apresenta fração da população municipal beneficiada pela RBE. Tons mais escuros indicam uma fração maior de beneficiários. 
-                        Na comparação das Figuras 2 e 3, portanto, <b>destaca-se que a política de distribuição de renda está bem focalizada no Norte e Nordeste, 
+                        apresenta a fração da população municipal beneficiada pela RBE. Tons mais escuros indicam uma fração maior de beneficiários. 
+                        Na comparação das Figuras 2 e 3, portanto, <b>destaca-se que a política de distribuição da renda emergencial está bem focalizada no Norte e Nordeste, 
                         que são os territórios de maior vulnerabilidade à pobreza</b>.
                     </p>
                 </div>
@@ -2560,7 +2546,7 @@
 
                     <!-- CARD.IMAGE -->
                     <img src="./fig/rbe_fig2.svg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
-                    <p class="card-text legenda mt-2"><small>Fração da população do município vunerável à pobreza. 
+                    <p class="card-text legenda mt-2"><small>Razão da população do município vunerável à pobreza. 
                         </small></p> <!-- CARD.IMAGE.LEGENDA -->
                 </div>
             </div>
@@ -2589,8 +2575,8 @@
                     <p class="text-justify">
                         O gráfico da <a href="#aba9-fig4">Figura 4</a> relaciona a fração da população vulnerável à pobreza
                         com a fração de munícipes que receberam a RBE - no gráfico, cada ponto corresponde à um município. 
-                        Interessante notar que <b>mesmo em cidades em que a população vunerável à pobreza abrange cerca de 80% dos munícipes,
-                        a cobertura da RBE raramente ultrapassou metade dos mesmos</b>.  
+                        Interessante notar que, <b>mesmo em cidades onde a população vunerável à pobreza abrange cerca de 80% dos munícipes,
+                        a cobertura da RBE raramente ultrapassou metade deles</b>.  
                     </p>
                     <p class="text-justify">
                         Ressaltamos que tanto o mapa da <a href="#aba9-fig3">Figura 3</a> 
@@ -2614,7 +2600,7 @@
                     <h5 class="card-title mb-3" id="aba9-fig4" style="text-align: center;">Figura 4</h5> <!-- CARD.TITLE.TEXT -->
 
                     <!-- CARD.IMAGE -->
-                    <img src="./fig/rbe_fig4.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <img src="./fig/rbe_fig4.tif" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
                     <p class="card-text legenda mt-2"><small>Relação entre população vulnerável à pobreza e proporção da população com acesso à RBE, nos municípios. 
                         </small></p> <!-- CARD.IMAGE.LEGENDA -->
                 </div>
@@ -2626,7 +2612,7 @@
                     <!-- CARD.HEADER -->
                     <h5 class="card-title mb-2" id="aba9-fig5" style="text-align: center;">Figura 5</h5> <!-- CARD.TITLE.TEXT -->
                     <!-- CARD.IMAGE -->
-                    <img src="./fig/rbe_fig5.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <img src="./fig/rbe_fig5.tif" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
                     <p class="card-text legenda mt-2"><small> Proporção de beneficiários por Unidade Federativa.
                         </small></p>
                     <!-- CARD.IMAGE.LEGENDA -->
@@ -2643,7 +2629,7 @@
                     <!-- CARD.TEXT -->
                     <p class="text-justify">
                         Entretanto, a RBE não foi implementada via busca ativa – isto é, o cidadão que deve fazer a busca e o cadastro por conta 
-                        própria para conseguir o benefício, necessitando <i>smartphone</i> e conexão de <i>internet</i>. 
+                        própria para conseguir o benefício. 
                         Dito isso, o mapa da <a href="#aba9-fig6">Figura 6</a> apresenta a proporção de beneficiários da RBE que 
                         não estão inseridos no Cadastro Único - tons verdes indicam cidades em que a maioria dos beneficiários não participa do CadÚnico. 
                         Como é possível ver, São Paulo, Santa Catarina, o Centro-Sul mineiro e a 
@@ -2660,7 +2646,7 @@
 
                     <p class="text-justify">
                         O último mapa, na <a href="#aba9-fig7">Figura 7</a>, mostra a razão entre o acesso à RBE e a vulnerabilidade à pobreza. 
-                        Nela, municípios em tons mais escuros mostram entre 10 e 300% mais beneficiários da RBE do que vulneráveis à pobreza. 
+                        Nela, municípios nos três tons mais escuros mostram entre 10 e 300% mais beneficiários da RBE do que vulneráveis à pobreza. 
                         <b>No Centro-Sul brasileiro, mais pessoas que não se encontravam em situação vulnerável foram beneficiadas 
                         que em relação às regiões Norte e Nordeste.</b> Esta informação pode apontar para um novo cenário de vulnerabilidade 
                         no Centro-Sul, não outrora registrado nessa proporção. Contudo, vale também analisar se os elegíveis à RBE nas 
@@ -2721,7 +2707,7 @@
                         a extensão da distribuição da RBE aos cidadãos nos próximos meses, para possibilitar maior consumo 
                         e aquecimento das economias (sobretudo locais), além mais tributos arrecadados pelo Estado. Um estudo 
                         feito pelo CEDEPLAR/UFMG mostrou que, caso a RBE seja estendida até dezembro de 2020, o PIB do país seria 
-                        beneficiado em 0,55% e não em 0,44%, caso dure apenas até junho [<a href="#aba9-ref7">7</a>]. 
+                        beneficiado em 0,55% e não em 0,44%, caso dure apenas até junho [<a href="#aba9-ref7" >7</a>]. 
                     </p>
                 </div>
             </div>
@@ -2842,7 +2828,7 @@
                             DOMICÍLIOS CONTÍNUA ANUAL – PNADC/A<img src="./img/icon_arrow_up.svg"></a>.
                             In: IBGE. Sidra: sistema IBGE de recuperação automática. Rio de Janeiro, 2010. 
                             Acesso em: 12 jun. 2020.</li>
-                        <li id="aba9-ref7">RIGUEIRA JR., Itama et al. <a href="https://outline.com/m99SbL" target="_blank">
+                        <li id="aba9-ref7"> RIGUEIRA JR., Itama et al. <a href="https://outline.com/m99SbL" target="_blank">
                             Estudo do Cedeplar defende extensão do programa de renda emergencial até dezembro: 
                             Além de ajudar milhões de famílias, pagamento do benefício mensal de R$ 600 por mais 
                             dois trimestres teria efeitos positivos sobre o PIB e a receita tributária<img src="./img/icon_arrow_up.svg"></a>. 
@@ -2856,6 +2842,19 @@
             </div>
 
             <!-- NEW.CARD -->
+                        <!-- 1:1 aspect ratio --> 
+                        <div class="card-body">
+                            <div class="card-body"> 
+                                <iframe class="embed-responsive-item" title="A territorialização da Renda Básica Emergencial no Brasil" 
+                                src="https://arcgis.com/apps/Embed/index.html?webmap=ed9b432a4e014d87afafcd510951dc18&extent=-97.3596,-39.7767,5.1208,11.5206&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=false&details=true&legend=true&active_panel=details&disable_scroll=false&theme=light">
+                                </iframe> 
+                                <p class="card-text legenda mt-2">
+                                    <small>
+                                        Plataforma interativa com os dados da distribuição de RBE no Brasil. Explore o mapa e pesquise por cidades!<br><br><br>
+                                    </small>
+                                </p> <!-- CARD.IMAGE.LEGENDA -->
+                            </div>
+                        </div>
         </div>
     </div>
 
