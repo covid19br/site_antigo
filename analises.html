@@ -135,9 +135,6 @@
                     <a class="nav-link active" href="#" card-id="aba1">Esgotamento dos Leitos</a>
                 </li>
                 <li class="nav-item aba-pill">
-                    <a class="nav-link" href="#" card-id="aba2">Óbitos por COVID-19 no país</a>
-                </li>
-                <li class="nav-item aba-pill">
                     <a class="nav-link" href="#" card-id="aba3">COVID-19: ainda há muito pela frente</a>
                 </li>
                 <li class="nav-item aba-pill">
@@ -154,6 +151,9 @@
                 </li>
                 <li class="nav-item aba-pill">
                     <a class="nav-link" href="#" card-id="aba8">Distribuição etária de hospitalizados por COVID-19</a>
+                </li>
+                <li class="nav-item aba-pill">
+                    <a class="nav-link" href="#" card-id="aba2">Óbitos por COVID-19 no país</a>
                 </li>
             </ul>
         </div>
@@ -541,9 +541,10 @@
                         atualidade aplicamos uma técnica estatística que, através dos atrasos entre o óbito e a 
                         notificação, estima quantos óbitos já ocorreram mas ainda não constam no sistema de 
                         notificação. Essa estimativa é o que chamamos de nowcasting e nos dá uma visão mais 
-                        realista da atualidade. Estimamos que no limite inferior temos 1,67 mais óbitos para 
-                        cada óbito notificado e no limite superior estimamos que há 2,72 óbitos não notificados 
-                        para cada óbito já notificado.
+                        realista da atualidade. <b>Estimamos que no limite inferior temos mais 21 óbitos para 
+                        cada 100 óbitos notificados e no limite superior estimamos que haja 41 óbitos não 
+                        notificados para cada centena de óbitos já notificados. Ou seja, um aumento entre 
+                        21 e 41% no número de óbitos. </b>
                     </p>
                 </div>
             </div>
@@ -578,13 +579,24 @@
                         Nesta figura vemos que muitos óbitos são anunciados vários dias depois de realmente terem ocorrido -
                         basta notar como a curva cresce a cada data de boletim, o que significa que a cada novo boletim o número de 
                         óbitos aumenta mesmo em dias anteriores a essa data. Com esses dados, <b>podemos estimar que a maioria do óbitos 
-                        (61%) leva mais de dez dias para ser confirmado e notificado</b>.
+                        (61%) leva mais de dez dias para ser confirmado e notificado</b>. Já a <a href="#aba2-fig2">Figura 2</a> mostra que somente 3% dos óbitos são 
+                        de notificados com até 1 dia de atraso. Se olharmos para outros intervalos de dias de atrasos para 
+                        notificação de um óbito, vemos que a grande minoria dos óbitos são confirmados na data de ocorrência, 
+                        uma porcentagem de aproximadamente de 0,17% e, poranto, estamos falando de um evento extremamente raro de ser 
+                        observado no sistema de notificação. Já no caso da proporção de óbitos que são notificados 
+                        com até 3 dias de atraso com relação a data de ocorrência, esse número aumenta para apenas 13% das 
+                        notificações. Só se atinge uma maioria em percentagem de notificações, após o intervalo 15 dias de atraso entre 
+                        a data de notificação e a data de ocorrência do óbito, quando atingimos 51,4% de notificações. Mais de um quarto dos
+                        óbitos são notificados apenas 1 mês depois de ocorrerem.
                     </p>
 
                 </div>
             </div>
 
-            <!-- NEW.CARD -->
+        </div>
+
+        <!-- Figuras 1 e 2 -->
+        <div class="card-deck two-small mb-4">
 
             <!-- Figura 1 -->
             <div class="card mt-3 mb-4" style="z-index: 1090;">
@@ -594,7 +606,7 @@
                     <h5 class="card-title" style="text-align: center;" id="aba2-fig1">Figura 1</h5>
 
                     <!-- CARD.IMAGE -->
-                    <div class="text-center"><img src="./fig/obitos_tempo_mai14.gif" class="tamanho_dinamico" alt="Evolução dos óbitos por data de óbitos"></div>
+                    <img src="./fig/gif_BE_05_junho.gif" class="card-img-top" alt="Evolução dos óbitos por data de óbitos">
 
                     <!-- CARD.TEXT -->
                     <p class="card-text legenda mt-2">
@@ -607,11 +619,33 @@
                           Nos boletins seguintes estas são as datas pras quais são acrescentados mais óbitos, em geral.
                         </small>
                     </p> <!-- CARD.IMAGE.LEGENDA -->
-
                 </div>
             </div>
 
+            <div class="card mt-3 mb-4" style="z-index: 1070;">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig2">Figura 2</h5>
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/cpf_atrasos_05_junho.png" class="card-img-top" alt="Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data">
+
+                    <!-- CARD.TEXT -->
+                    <p class="card-text legenda mt-2">
+                        <small>
+                           Distribuição de probabilidade acumulada de notificação, isto é, o eixo veritical indicada a fração de óbitos
+                           notificados com atrasos indicados no eixo horizontal. Os pontos indicados correpondem a 7, 14, 30 e 60 dias. 
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+
+                </div>
+            </div>
             <!-- NEW.CARD -->
+
+
+        </div>
+        <div class="container-fluid mt-5 mb-5 xl-small">
 
             <!-- Card 3 -->
             <div class="card" id="card3" style="z-index: 1080;">
@@ -629,9 +663,12 @@
                     <!-- CARD.TEXT -->
                     <p class="text-justify mt-4">
                         Infelizmente, este número é maior do que o número oficial divulgado a cada dia. O nowcasting estima um número de óbitos
-                        para o último boletim, que é entre 21789 e 30396 óbitos até a data deste boletim (8 de maio). Isso significa que, para
-                        cada óbito registrado nos boletins deve haver 1,67 outros óbitos que ainda não constam como confirmados por COVID-19, no
-                        limite inferior da estimativa, e até 2,72 outros óbitos que não constam no limite superior da estimativa.
+                        para o último boletim, que é entre 32.716 e 38.090 óbitos até a data deste boletim (5 de junho). 
+                        No dia 5 de junho, havia 26.888 óbitos notificados, ou seja, um número menor. 
+                        Isso significa que, para cada óbito registrado nos boletins deve haver 1,21 
+                        óbitos que ainda não constam como confirmados por COVID-19, no limite inferior 
+                        da estimativa, e até 1,41 outros óbitos que não constam no limite superior da 
+                        estimativa.
                     </p>
 
                     <p class="text-justify">
@@ -639,12 +676,21 @@
                         passado e não a realidade atual. Para podermos fazer um gráfico do número de óbitos por data do óbito para datas
                         recentes, precisamos considerar que no futuro ainda virá o resultado de exames de pessoas que já faleceram, fazendo com
                         que os números de óbitos nas datas recentes aumentem. Para isso, supomos que a estatística de atrasos dos casos futuros
-                        é semelhante à dos últimos dias. Na <a href="#aba2-fig2">Figura 2</a>, mostramos o número de óbitos por dia do óbito, ou seja, com a correção de
+                        é semelhante à dos últimos dias. Na <a href="#aba2-fig3">Figura 3</a>, mostramos o número de óbitos por dia do óbito, ou seja, com a correção de
                         atrasos já incorporada. Por ser uma estimava há no método uma faixa (mais clara) de 95% de confiança para a estimativa
-                        (em vermelho). Em azul, temos o número de óbitos divulgados até o último boletim epidemiológico (8 de maio), isto é, sem
+                        (em vermelho). Em azul, temos o número de óbitos divulgados até o último boletim epidemiológico (5 de junho), isto é, sem
                         correções de atraso.
                     </p>
 
+                    <p class="text-justify">
+                        O nowcasting é uma estimativa que é sensível a frequência com que os dados 
+                        são disponibilizados. Fazemos a análise extraindo os dados dos boletins, 
+                        mas nem todos os boletins informam óbitos por data. Além disso, houve dias 
+                        em que não houve boletins.  Essa intermitência afeta o nowcasting, fazendo 
+                        pois períodos longos em que não há dados levam a uma subestimativa na técnica. 
+                        Por isso, é possível que o número de óbitos que estimamos ainda seja menor do 
+                        que o real. 
+                    </p>
                 </div>
             </div>
 
@@ -655,16 +701,16 @@
                 <div class="card-body">
 
                     <!-- CARD.HEADER -->
-                    <h5 class="card-title" style="text-align: center;" id="aba2-fig2">Figura 2</h5>
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig3">Figura 3</h5>
 
                     <!-- CARD.IMAGE -->
-                    <div class="text-center"><img src="./fig/nowcasting_BE_MS_08_maio_cumsum.svg" class="tamanho_dinamico" alt="Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data"></div>
+                    <div class="text-center"><img src="./fig/nowcasting_BE_MS_05_junho_cumsum.svg" class="tamanho_dinamico" alt="Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data"></div>
 
                     <!-- CARD.TEXT -->
                     <p class="card-text legenda mt-2">
                         <small>
                             Número de óbitos por COVID no Brasil acumulados e o nowcasting a cada data. Linha azul é o número de óbitos acumulados
-                            até cada data até o último boletim do MS do dia 08 de maio. A linha vermelha é o valor estimado de óbitos acumulados
+                            até cada data até o último boletim do MS do dia 05 de junho. A linha vermelha é o valor estimado de óbitos acumulados
                             através da técnica de nowcasting e a faixa vermelha indica o intervalo de 95% de credibilidade da análise.
                         </small>
                     </p> <!-- CARD.IMAGE.LEGENDA -->
@@ -745,7 +791,7 @@
                 <div class="card-body">
 
                     <!-- CARD.HEADER -->
-                    <h5 class="card-title" style="text-align: center;" id="aba2-fig3">Figura 3</h5>
+                    <h5 class="card-title" style="text-align: center;" id="aba2-fig4">Figura 4</h5>
 
                     <!-- CARD.IMAGE -->
                     <div class="text-center"><img src="./fig/sensibilidade_nowcasting_BE_MS_08_maio_cumsum.svg" class="tamanho_dinamico" alt="Nowcasting em comparação aos boletins de Abril e Maio"></div>
