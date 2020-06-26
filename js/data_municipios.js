@@ -69,5 +69,6 @@ const locale =
         { prep: "em", uf: "RO", mun:"Porto_Velho",           verbose: "Porto Velho",           has_modelogro: false, has_td: false  },
         { prep: "em", uf: "RR", mun:"Boa_Vista",             verbose: "Boa Vista",             has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SE", mun:"Aracaju",               verbose: "Aracaju",               has_modelogro: false, has_td: false  },
-        { prep: "em", uf: "TO", mun:"Palmas",                verbose: "Palmas",                has_modelogro: false, has_td: false  }
+        { prep: "em", uf: "TO", mun:"Palmas",                verbose: "Palmas",                has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Taboao_da_Serra",       verbose: "Taboão da Serra",       has_modelogro: false, has_td: false  }
     ];
