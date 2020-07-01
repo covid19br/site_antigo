@@ -42,6 +42,7 @@ const locale =
         { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "SP", mun:"Ribeirao_Preto",        verbose: "Ribeirão Preto",        has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Santa_Barbara_dOeste",  verbose: "Santa Bárbara d'Oeste", has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Barueri",               verbose: "Barueri",               has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Botucatu",              verbose: "Botucatu",              has_modelogro: false, has_td: false  },
         { prep: "em", uf: "PR", mun:"Londrina",              verbose: "Londrina",              has_modelogro: false, has_td: true  },
         { prep: "em", uf: "PR", mun:"Maringa",               verbose: "Maringá",               has_modelogro: false, has_td: false  },
