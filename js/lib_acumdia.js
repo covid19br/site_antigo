@@ -13,8 +13,7 @@ function updateSRC(selection, src, svg) {
 function updateWidgetAcumdia(request_id, current_id, current_uf, current_mun) {
     var new_src = ""; // prepare strings
 
-    if (request_id == current_id) return;
-    else if (request_id == "dia") {
+    if (request_id == "dia") {
         new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
@@ -31,8 +30,7 @@ function updateWidgetAcumdia(request_id, current_id, current_uf, current_mun) {
 function updatePlaceholderAcumdia(request_id, current_id, current_uf, current_mun) {
     var new_src = ""; // prepare strings
 
-    if (request_id == current_id) return;
-    else if (request_id == "dia") {
+    if (request_id == "dia") {
         new_src = "./web/" + page_id + "/" + current_uf + "/" + current_mun + "/plot_nowcast_covid.html";
     }
     else if (request_id == "acu") {
