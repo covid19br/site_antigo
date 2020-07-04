@@ -114,17 +114,6 @@ function hasModelogro(mun) {
     return (false);
 }
 
-function hasTempoDupli(mun) {
-    var i = 0;
-    for (i = 0; i < locale.length; i++) {
-        if (locale[i].mun == mun) return (locale[i].has_td);
-    }
-
-    // UF not found: returns to default
-    console.log("hasTempoDupli(): mun not found "+mun);
-    return (false);
-}
-
 function updatePage(request_uf, request_mun) {
     /* comportamento: atualiza conteudo dinamico de acordo com o municipio id */
     var request_mun_verbose = getVerbose(request_mun);
@@ -192,34 +181,6 @@ function updatePage(request_uf, request_mun) {
         current_data = full_data[0].replace(regex, '').split(" ");
         $(".nowcast_ob_srag_min").text(current_data[1]);
         $(".nowcast_ob_srag_max").text(current_data[2]);
-    });
-    // tempo_dupli_covid (casos)
-    $.get(url_muni + 'data_tempo_dupli_covid.csv', function (raw_data) {
-        full_data = raw_data.split("\n");
-        current_data = full_data[0].replace(regex, '').split(" ");
-        $(".tempo_dupli_covid_min").text(current_data[1]);
-        $(".tempo_dupli_covid_max").text(current_data[2]);
-    });
-    // tempo_dupli_srag (casos)
-    $.get(url_muni + 'data_tempo_dupli_srag.csv', function (raw_data) {
-        full_data = raw_data.split("\n");
-        current_data = full_data[0].replace(regex, '').split(" ");
-        $(".tempo_dupli_srag_min").text(current_data[1]);
-        $(".tempo_dupli_srag_max").text(current_data[2]);
-    });
-    // tempo_dupli_covid (obitos)
-    $.get(url_muni + 'data_tempo_dupli_obitos_covid.csv', function (raw_data) {
-        full_data = raw_data.split("\n");
-        current_data = full_data[0].replace(regex, '').split(" ");
-        $(".tempo_dupli_ob_covid_min").text(current_data[1]);
-        $(".tempo_dupli_ob_covid_max").text(current_data[2]);
-    });
-    // tempo_dupli_srag (obitos)
-    $.get(url_muni + 'data_tempo_dupli_obitos_srag.csv', function (raw_data) {
-        full_data = raw_data.split("\n");
-        current_data = full_data[0].replace(regex, '').split(" ");
-        $(".tempo_dupli_ob_srag_min").text(current_data[1]);
-        $(".tempo_dupli_ob_srag_max").text(current_data[2]);
     });
     // RE_covid (taxa)
     $.get(url_muni + 'data_Re_covid.csv', function (raw_data) {
@@ -312,21 +273,6 @@ function updatePage(request_uf, request_mun) {
     }
     else {
         $(".nav-item.aba-pill > .nav-link[card-id='aba4']").removeClass("disabled").attr("href", "#");
-        $(".nav-item.aba-pill").removeClass("disabled");
-    }
-
-    // desabilita Tempo de Duplicacao seletivamente (ABA5)
-    if (!hasTempoDupli(request_mun)) {
-        // atualiza aba
-        if ($(".nav-item.aba-pill > .nav-link[card-id='aba5']").hasClass("active")) updateExibition("aba1");
-        if (history.pushState) updateURL();
-
-        // atualiza botao
-        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").addClass("disabled").attr("href", "");
-        $(".nav-item.aba-pill").has(".disabled").addClass("disabled");
-    }
-    else {
-        $(".nav-item.aba-pill > .nav-link[card-id='aba5']").removeClass("disabled").attr("href", "#");
         $(".nav-item.aba-pill").removeClass("disabled");
     }
 
