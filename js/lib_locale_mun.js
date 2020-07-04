@@ -70,6 +70,17 @@ function getVerbose(mun) {
     return (default_verb);
 }
 
+function getVerboseUF(uf) {
+    var d = 0;
+    for (d = 0; d < locale.length; d++) {
+        if (locale[d].uf == uf) return (locale[d].verbose);
+    }
+
+    // UF not found: returns to default
+    console.log("getVerbose(): uf not found "+uf);
+    return (default_verb);
+}
+
 function getPreposition(mun) {
     var g = 0;
     for (g = 0; g < locale.length; g++) {
@@ -78,6 +89,17 @@ function getPreposition(mun) {
 
     // UF not found: returns to default
     console.log("getPreposition(): uf not found "+mun);
+    return ("em");
+}
+
+function getPrepositionUF(uf) {
+    var g = 0;
+    for (g = 0; g < locale.length; g++) {
+        if (locale[g].uf == uf) return (locale[g].prep);
+    }
+
+    // UF not found: returns to default
+    console.log("getPreposition(): uf not found "+uf);
     return ("em");
 }
 
@@ -108,6 +130,13 @@ function updatePage(request_uf, request_mun) {
     var request_mun_verbose = getVerbose(request_mun);
     var request_mun_prepo   = getPreposition(request_mun);
     var repo_url = 'https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/';
+
+    if (page_id == "estado") {
+        // POG
+        request_mun = "";
+        request_mun_verbose = getVerboseUF(request_uf);
+        request_mun_prepo   = getPrepositionUF(request_uf);
+    }
 
     // titulo
     $("#page-title").text(request_mun_verbose);

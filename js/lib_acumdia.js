@@ -53,6 +53,8 @@ function updateAcumDia(request_id) {
     var current_id  = $(".acumdia > .dropdown-item.active").attr("q");
     var current_uf  = $(".main-title>.dropdown>.dropdown-menu>.dropdown-item.active").attr("uf");
     var current_mun = $(".main-title>.dropdown>.dropdown-menu>.dropdown-item.active").attr("mun");
+    if (page_id == "estado")
+        current_mun = "";
 
     // DROPDOWN
     // list
