@@ -378,6 +378,14 @@ p, small {
 .dropdown-item[uf='TO']::before {
     content:"TO"; }
 
+/* JUMBOTRON INDEX */
+.bg-brasil {
+    background-image: url(../img/contorno_brasil.svg);
+    background-repeat: no-repeat;
+    background-size: 105%;
+    background-position-y: 15%;
+}
+
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
