@@ -135,12 +135,22 @@ p, small {
 }
 
 /* PAGE TITLE & UPDATE DATE */
-.main-title-bg {
-    padding: 2rem 2rem 0 2rem;
-    background-color: #f7f7f7;
+.border-destaque {
     border: solid;
     border-width: 0 0 0px 20px;
-    border-color: #007bff;
+}
+.border-primary { border-color: #007bff; }
+.border-teal    { border-color: #34c1ad; }
+.background-destaque { background-color: #fff; }
+.background-light    { background-color: #fdfdfd; }
+.background-dark     { background-color: #f7f7f7; }
+
+.main-title-bg {
+	padding: 2rem 2rem 0 2rem;
+	background-color: #f7f7f7;
+	border: solid;
+	border-width: 0 0 0px 20px;
+	border-color: #007bff;
 }
 
 /* extra small: less than 576px */
@@ -389,11 +399,11 @@ p, small {
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
-    margin: 1rem!important;
+    margin: 1rem;
 }
 @media (max-width: 767.98px){
     .card-columns {
-        margin: 1rem .5rem!important;
+        margin: 1rem .5rem;
     }
     .card {
         padding: 1.25rem 1rem;
