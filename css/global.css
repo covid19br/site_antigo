@@ -716,13 +716,12 @@ a.text-reset:hover {
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
     .aba-pill {
-        margin: 0 .75rem 0 0;
+        margin: 0 .75rem .5rem 0;
     }
 }
 
-.aba-pill:last-child {
-    margin: 0;
-}
+/*.aba-pill:last-child { margin: 0; }*/
+
 .aba-pill:hover {
     -webkit-box-shadow:inset 0px 0px 0px 1px #007bff;
             box-shadow:inset 0px 0px 0px 1px #007bff;
