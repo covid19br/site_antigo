@@ -2,6 +2,9 @@
 /* Designed by Rafael Badain */
 
 /* BODY */
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: #fdfdfd;
 }
@@ -399,6 +402,13 @@ p, small {
      align-items: center;
 }
 
+.logo-press > * { margin:  15px; }
+.logo-press     { margin: -15px; }
+
+@media (min-width: 768px) {
+.logo-press > * { margin:  5px; }
+.logo-press     { margin: -5px; }
+}
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
