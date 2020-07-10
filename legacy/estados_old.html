@@ -1,0 +1,368 @@
+<!doctype html> <!-- HTML 5 doctype -->
+<html lang="pt">
+
+<head>
+  <!-- Description meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+  <title>Estados · Observatório Covid-19 BR</title>
+
+  <!-- Bootstrap CSS via BootstrapCDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Observatorio CSS -->
+  <link href="./css/global.css?ver=2.57" rel="stylesheet">
+  <link href="./css/charts.css?ver=2.02" rel="stylesheet">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+  <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#007bff">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Observatório Covid-19 BR">
+  <meta name="twitter:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+
+  <!-- Facebook -->
+  <meta property="og:url" content="https://covid19br.github.io">
+  <meta property="og:title" content="Observatório Covid-19 BR">
+  <meta property="og:description"
+    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+</head>
+
+<body>
+  <!-- Barra Superior -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <!-- BOTAO DO MENU -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- LOGO -->
+    <a class="navbar-brand" href="./index.html">
+      <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+    </a>
+
+    <!-- DESTAQUE -->
+    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="#">
+        Estados
+      </a>
+    </div>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Visão Geral</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Estados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./drs.html">DRS - SP</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./cenarios.html">Cenários</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./analises.html">Análises</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./midia.html">Reportagens</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sobre.html">Sobre</a>
+        </li>
+        <!-- MENU.ITEM -->
+      </ul>
+    </div>
+
+  </nav>
+
+  <!-- Titulo Principal + Abas -->
+  <div class="container-fluid main-title-bg">
+      <!-- PAGE.TITLE -->
+      <div class="main-title" style="display: inline;">
+        <div class="display" id="page-title-pre">Avanço da COVID-19 <span class="prep"></span></div>
+        <div class="dropdown">
+          <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <a href="#" style="text-decoration: none;">
+              <h1 class="display" id="page-title">Brasil</h1>
+            </a> <!-- PAGE.TITLE -->
+          </div>
+          <div class="dropdown-menu menu-overflow" id="locale" aria-labelledby="titleDropdown">
+            <a class="dropdown-item active" href="#" uf="br">Brasil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" uf="sp">São Paulo</a>
+            <a class="dropdown-item" href="#" uf="rj">Rio de Janeiro</a>
+            <a class="dropdown-item" href="#" uf="ac">Acre</a>
+            <a class="dropdown-item" href="#" uf="al">Alagoas</a>
+            <a class="dropdown-item" href="#" uf="ap">Amapá</a>
+            <a class="dropdown-item" href="#" uf="am">Amazonas</a>
+            <a class="dropdown-item" href="#" uf="ba">Bahia</a>
+            <a class="dropdown-item" href="#" uf="ce">Ceará</a>
+            <a class="dropdown-item" href="#" uf="df">Distrito Federal</a>
+            <a class="dropdown-item" href="#" uf="es">Espírito Santo</a>
+            <a class="dropdown-item" href="#" uf="go">Goiás</a>
+            <a class="dropdown-item" href="#" uf="ma">Maranhão</a>
+            <a class="dropdown-item" href="#" uf="mt">Mato Grosso</a>
+            <a class="dropdown-item" href="#" uf="ms">Mato Grosso do Sul</a>
+            <a class="dropdown-item" href="#" uf="mg">Minas Gerais</a>
+            <a class="dropdown-item" href="#" uf="pa">Pará</a>
+            <a class="dropdown-item" href="#" uf="pb">Paraíba</a>
+            <a class="dropdown-item" href="#" uf="pr">Paraná</a>
+            <a class="dropdown-item" href="#" uf="pe">Pernambuco</a>
+            <a class="dropdown-item" href="#" uf="pi">Piauí</a>
+            <a class="dropdown-item" href="#" uf="rn">Rio Grande do Norte</a>
+            <a class="dropdown-item" href="#" uf="rs">Rio Grande do Sul</a>
+            <a class="dropdown-item" href="#" uf="ro">Rondônia</a>
+            <a class="dropdown-item" href="#" uf="rr">Roraima</a>
+            <a class="dropdown-item" href="#" uf="sc">Santa Catarina</a>
+            <a class="dropdown-item" href="#" uf="se">Sergipe</a>
+            <a class="dropdown-item" href="#" uf="to">Tocantins</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-title">
+        <small class="page-subtitle updateDate ml-1">Última atualização</small>
+      </div>
+
+      <!-- Separator -->
+      <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+      <!-- Footer -->
+      <div class="mt-4 pb-2" style="margin-left: 1.3rem;">
+        <img src="img/license_cc.svg" width="13px" class="m-0">
+        <small class="page-subtitle">
+            <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+        </small>
+        <small class="page-subtitle ml-1 mr-1">·</small>
+        <img src="img/icon_github.svg" width="13px">
+        <small class="page-subtitle">
+            <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+        </small>
+    </div>
+
+  </div>
+
+  <!-- Cards -->
+  <div class="card-deck">
+    <!-- COLUMNS.NUM -->
+
+    <!-- NEW.CARD -->
+
+    <!-- GRAPH.CARD -->
+    <div class="card cd-70 chart-fix">
+      <div class="card-body">
+
+        <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title text-center">Número de casos em escala logarítimica</h5>
+
+        <!-- CARD.GGPLOT.LEGEND -->
+        <div class="card-legend">
+          <small class="legend-square" id="wong_black">Casos Confirmados</small>
+          <small class="legend-square" id="ibm_ultramarine_dark">Previsão</small>
+        </div>
+
+        <!-- CARD.GGPLOT -->
+        <div data-src="./web/plot.forecast.exp.html" class="codegena_iframe center d-flex flex-column justify-content-center"
+             data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+             data-responsive="true">
+          <picture>
+            <source media="(max-width: 575.98px)"  srcset="./web/plot.forecast.exp.ex.svg">
+            <source media="(max-width: 767.98px)"  srcset="./web/plot.forecast.exp.sm.svg">
+            <source media="(max-width: 991.98px)"  srcset="./web/plot.forecast.exp.md.svg">
+            <source media="(max-width: 1199.98px)" srcset="./web/plot.forecast.exp.lg.svg">
+            <img src="./web/plot.forecast.exp.svg" class="placeholder_svg" width="100%">
+          </picture>
+        </div>
+        <script src="./js/async-iframe.js"></script>
+
+      </div>
+    </div>
+
+    <!-- NEW.CARD -->
+
+    <!-- CONTENT.CARD -->
+    <div class="card cd-30">
+      <div class="card-body">
+        <!-- AVANCO -->
+        <h5 class="card-title">Avanço da doença <span class="estado-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
+
+        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantos casos notificados temos atualmente?
+          </li>
+        </ul>
+
+        <!-- CARD.TEXT -->
+        <p class="text-justify mt-3">
+          Pontos <b class="wong_black">pretos</b> indicam o número de casos confirmados notificados <span class="estado-prep"></span>
+          por dia.
+        </p>
+
+        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Quantos casos teremos nos próximos dias?
+          </li>
+        </ul>
+
+        <p class="text-justify mt-3">
+          Pontos em <b class="ibm_ultramarine_dark">azul</b> são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
+            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de
+          crescimento continuar a mesma dos últimos 5 dias. Em <b class="ibm_ultramarine">azul claro</b> é o intervalo de confiança dessa previsão.
+        </p>
+
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#collapse1"
+          aria-expanded="false" aria-controls="collapse1">
+          Por que só 5 dias? ▾
+        </button>
+        <!-- CARD.BUTTON.EXPAND -->
+        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#collapse2"
+          aria-expanded="false" aria-controls="collapse2">
+          Quão rápido a doença se propaga? ▾
+        </button>
+
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-1" id="collapse1">
+          <p class="text-justify">
+            Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
+            <b class="ibm_ultramarine">azul claro</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
+            E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
+          </p>
+          <p class="text-justify">
+            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
+          </p>
+        </div>
+        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+        <div class="collapse mt-1" id="collapse2">
+          <p class="text-justify">
+            No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes
+            moleculares sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora
+            faz com que os números disponíveis publicamente (número de notificações) cresça de maneira artificialmente
+            lenta.
+          </p>
+          <p class="text-justify">
+            Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria
+            irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
+          </p>
+        </div>
+
+        <!-- CARD.SIGNATURE -->
+        <p class="mb-0 mt-3">Acesse a página <a href="informacoes.html#estimativa-do-tempo-de-duplicação">informações</a>
+          para saber mais sobre o método.</p>
+        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+
+      </div>
+    </div>
+
+    <!-- NEW.CARD -->
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid">
+    <!-- FOOTER.ITEM -->
+    <div class="footer-content">
+      <img src="img/icon_github.svg" width="16px">
+      <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
+          class="text-reset">Source Code</a></small>
+    </div>
+    
+    <!-- FOOTER.ITEM -->
+    <div class="footer-content">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+        <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+      </a>
+      <small id="license">
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
+      </small>
+    </div>
+    
+  </footer>
+
+  <!-- Toast -->
+  <div aria-live="polite" aria-atomic="true" class="d-flex toast-wrap">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-grafico">
+      <div class="toast-header">
+        <img src="./img/favicons/favicon-16x16.png" class="rounded mr-2" alt="Logo do Observatório">
+        <strong class="mr-auto">Observatório Covid-19 BR</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Clique no gráfico para explorar os dados
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- R Integration -->
+  <!-- Hora de atualizacao -->
+  <script src="js/updateDate.js"></script>
+  <!-- Conteudo e Menu Dinamico -->
+  <script src="js/data_estados.js?ver=2.00"></script>
+  <script src="js/lib_locale_uf.js?ver=3.01"></script>
+  <script src="js/updateContent.js?ver=2.21"></script>
+  <!-- Dispara Toast Messages -->
+  <script src="js/updateToast.js"></script>
+  <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
+  <script>
+    var sc_project=12220607; 
+    var sc_invisible=1; 
+    var sc_security="18092bfd"; 
+  </script>
+  <script src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+</html>
