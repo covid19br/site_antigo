@@ -179,10 +179,10 @@
   
           <!-- CARD.HEADER -->
           <div class="card-hero">
-            <img src="./img/icon_news.svg" width=48px alt="Ícone que representa uma carta" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
+            <img src="./img/icon_virus.svg" width=48px alt="Ícone que representa uma carta" class="card-icon index-icon"> <!-- CARD.TITLE.ICON -->
             <div class="hero-body">
-              <h5 class="card-title index-title">Nota sobre o Plano São Paulo</h5> <!-- CARD.TITLE.TEXT -->
-              <p class="card-text">Condições escolhidas no Plano SP abrem espaço para flexibilização com epidemia ainda em expansão</p> <!-- CARD.TITLE.DESCRIPTION -->
+              <h5 class="card-title index-title">Acompanhe seu estado</h5> <!-- CARD.TITLE.TEXT -->
+              <p class="card-text">Acompanhe casos e óbitos diários corrigidos por nowcasting para cada estado.</p> <!-- CARD.TITLE.DESCRIPTION -->
             </div>
           </div>
         </div>
@@ -222,6 +222,50 @@
 
   <div class="card-columns">
     <!-- COLUMNS.NUM -->
+
+        <!-- CARD.HEADER -->
+        <div class="card">
+	        <div class="card-body">
+        <div class="media">
+          <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon index-icon">
+          <!-- CARD.TITLE.ICON -->
+          <div class="media-body mb-2">
+            <a href="./estados.html?uf=br" class="text-reset">
+              <h5 class="card-title index-title">Acompanhe seu estado!</h5> <!-- CARD.TITLE.TEXT -->
+            </a>
+            <p class="card-text">Quantos casos e óbitos temos em cada estado brasileiro?</p>
+            <!-- CARD.TITLE.DESCRIPTION -->
+          </div>
+        </div>
+
+        <!-- CARD.TITLE.TEXT -->
+        <h5 class="card-title index-title text-center">Número de casos em escala logarítimica</h5>
+
+        <!-- CARD.GGPLOT -->
+        <a href="./estados.html?uf=br">
+          <img src=./web/plot.forecast.exp.br.sm.svg class="placeholder_svg" width="100%">
+        </a>
+
+        <!-- CARD.GGPLOT.LEGEND -->
+        <div class="card-legend">
+          <small class="legend-square" id="legendBlack"> Casos Confirmados</small>
+          <small class="legend-square" id="legendBlue">  Previsão</small>
+        </div>
+
+	      <p class="card-text"><br>Confira o progresso de casos e óbitos de COVID-19 corrigidos por nowcasting no país e em cada estado. </p>
+
+        <!-- CARD.BUTTON -->
+        <div class="text-center">
+        <a href="./estados.html?uf=br">
+          <button class="btn btn-primary mt-1" type="button">
+             Saiba mais
+          </button></a>
+        </div>
+      		</div>
+      </div>
+
+
+
   <!-- NEW.CARD -->
     <!-- RBE -->
     <div class="card">
@@ -610,59 +654,7 @@
     </div>
 
 
-    <!-- NEW.CARD -->
 
-    <!-- GRAPH.CARD -->
-    <div class="card">
-      <div class="card-body">
-
-        <!-- Alert -->
-        <div class="alert alert-info alert-dismissible fade show" role="alert">
-          <small><b>Acompanhe as projeções por estado!</b></small>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <!-- CARD.HEADER -->
-        <div class="media">
-          <img src="./img/icon_virus.svg" width=48px alt="Desenho do coronavírus" class="card-icon index-icon">
-          <!-- CARD.TITLE.ICON -->
-          <div class="media-body mb-2">
-            <a href="./estados.html?uf=br" class="text-reset">
-              <h5 class="card-title index-title">Avanço da doença</h5> <!-- CARD.TITLE.TEXT -->
-            </a>
-            <p class="card-text">Quantos casos notificados já temos no Brasil? Quantos teremos nos próximos dias?</p>
-            <!-- CARD.TITLE.DESCRIPTION -->
-          </div>
-        </div>
-
-        <!-- CARD.TITLE.TEXT -->
-        <h5 class="card-title index-title text-center">Número de casos em escala logarítimica</h5>
-
-        <!-- CARD.GGPLOT -->
-        <a href="./estados.html?uf=br">
-          <img src=./web/plot.forecast.exp.br.sm.svg class="placeholder_svg" width="100%">
-        </a>
-
-        <!-- CARD.GGPLOT.LEGEND -->
-        <div class="card-legend">
-          <small class="legend-square" id="legendBlack">Casos Confirmados</small>
-          <small class="legend-square" id="legendBlue">Previsão</small>
-        </div>
-
-	      <p class="card-text"><br>Confira o progresso de casos de COVID-19 notificados no país e em cada estado. Projeções para os próximos 5 dias em cada região. </p>
-
-        <!-- CARD.BUTTON -->
-        <div class="text-center">
-        <a href="./estados.html?uf=br">
-          <button class="btn btn-primary mt-1" type="button">
-             Saiba mais
-          </button></a>
-        </div>
-
-      </div>
-    </div>
 
 
     <!-- NEW.CARD -->
