@@ -71,5 +71,8 @@ const locale =
         { prep: "em", uf: "RR", mun:"Boa_Vista",             verbose: "Boa Vista",             has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SE", mun:"Aracaju",               verbose: "Aracaju",               has_modelogro: false, has_td: false  },
         { prep: "em", uf: "TO", mun:"Palmas",                verbose: "Palmas",                has_modelogro: false, has_td: false  },
-        { prep: "em", uf: "SP", mun:"Taboao_da_Serra",       verbose: "Taboão da Serra",       has_modelogro: false, has_td: false  }
+        { prep: "em", uf: "SP", mun:"Taboao_da_Serra",       verbose: "Taboão da Serra",       has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Diadema",               verbose: "Diadema",               has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Maua",                  verbose: "Mauá",                  has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Sao_Caetano_do_Sul",    verbose: "São Caetano do Sul",    has_modelogro: false, has_td: false  }
     ];
