@@ -50,6 +50,8 @@ if (sys.nframe() == 0L) {
     geocode <- opt$options$geocode
     data <- opt$options$dataBase
     update.git <- opt$options$updateGit
+
+    options(error = function() quit(save="no", status=1))
 }
 
 if (update.git)
