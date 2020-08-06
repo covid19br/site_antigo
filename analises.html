@@ -161,6 +161,9 @@
                 <li class="nav-item aba-pill">
                     <a class="nav-link" href="#" card-id="aba9">Cobertura da Renda Básica Emergencial nos municípios brasileiros</a>
                 </li>
+                <li class="nav-item aba-pill">
+                    <a class="nav-link" href="#" card-id="aba10">Notas sobre rastreamento de contatos</a>
+                </li>
             </ul>
         </div>
 
@@ -2919,6 +2922,298 @@
                                 </p> <!-- CARD.IMAGE.LEGENDA -->
                             </div>
                         </div>
+        </div>
+    </div>
+
+    <!-- ABA 10: Rastreamento de contatos -->
+    <div class="aba-group aba10">
+
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+
+         <!-- Alert -->
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <small><b>Conteúdo novo!</b></small>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+
+            <div class="main-title">
+                <h1 class="display">Nota sobre rastreamento de contato</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    5 de agosto de 2020 - É hora de falar de rastreamento de contatos. 
+                    Este é um assunto importante no controle da Covid-19 e vamos explicar 
+                    alguns detalhes nesta nota. 
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+
+            <!-- Card 1 -->
+            <div class="card" style="z-index: 1110;">
+                <div class="card-body">
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Primeiramente, é importante ressaltar que o <b>rastreamento de contatos não 
+                        substitui outras intervenções não-farmacológicas</b> para o controle da pandemia, 
+                        como distanciamento físico e uso de máscara, e deve ser enxergado como complemento a outras medidas.
+                    </p>
+
+                    <p class="text-justify">
+                        Num cenário ideal em que o número de novos casos não esteja fora de 
+                        controle e com alta disponibilidade de testes RT-PCR o rastreamento de 
+                        contatos seria bastante facilitado, uma vez que seria possível detectar 
+                        com rapidez os infectados mesmo que assintomáticos ou pré sintomáticos. 
+                        Porém, infelizmente, essa é uma realidade distante da maioria dos municípios 
+                        brasileiros. 
+                    </p>
+                    
+                    <!-- CARD.DESTAQUE -->
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            <h6 class="mb-0">Neste contexto, como tentar reduzir a propagação do vírus?</h6>
+                        </li>
+                    </ul>
+
+                    <p class="text-justify">
+                        É importante entender a dinâmica da doença. Em média, o início dos sintomas acontece 5 
+                        dias após a exposição ao vírus e em 60-80% dos casos o período infeccioso se inicia por 
+                        volta de 2 a 3 dias antes do início dos sintomas [<a href="https://arxiv.org/abs/2007.06602">Ref 1</a>]. 
+                        Para simplificar a explicação, vamos considerar que o início do período infeccioso ocorre 2 
+                        dias antes do início de sintomas. Na Figura 1 temos a Linha do tempo da Covid-19. 
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Figura 1 -->
+            <div class="card" style="z-index: 1090;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba10-fig1">Figura 1</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <div style="text-align: center;"><img src="./fig/folder_covid2-03.png" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Linha do tempo da Covid-19 considerando 5 dias entre a exposição e sintomas e 2 dias entre infeciosidade e sintomas.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+            <!-- Card 3 -->
+            <div class="card" style="z-index: 1070;">
+                <div class="card-body">
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Por exemplo, um indivíduo que apresentou sintomas dia 04/08 possivelmente foi 
+                        exposto ao vírus no dia 30/07 e desde o dia 02/08 está infectando outras pessoas 
+                        mesmo sem apresentar sintomas. <b>A chave para um rastreamento de contatos bem sucedido 
+                        é justamente essa janela de 3 dias</b>, entre os dias 30/07 e 01/08 onde a pessoa foi 
+                        exposta mas ainda não transmite o vírus.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Figura 2 -->
+            <div class="card" style="z-index: 1090;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba10-fig2">Figura 2</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <div style="text-align: center;"><img src="./fig/calend_covid2-02.png" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <p class="card-text legenda mt-2">
+                        <small>
+                            Calendário exemplifiativo para rastreamento de casos de Covid-19.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+    
+            <div class="card" style="z-index: 1030;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Uma vez conhecida a dinâmica da doença, vamos ao rastreamento de contatos propriamente dito. 
+                        Utilizaremos nas próximas imagens as seguintes representações 
+                        traduzidas de <a href="https://ncase.me/covid-19/">What Happens Next?</a> por 
+                        Marcel Salathé (epidemiologista) e Nicky Case (artista/programador).  
+                    </p>
+                    <p class="text-justify">
+                        Na Figura 3 temos uma legenda para esta representação, e na Figura 4 temos uma 
+                        suposição em que só isolamos as pessoas quando estas apresentam sintomas.
+                    </p>
+                </div>
+            </div>        
+        </div>
+
+        <!-- Figuras 4 e 5 -->
+        <div class="card-deck two-small mb-4">
+            <!-- Figura 3 -->
+            <div class="card" style="z-index: 1050;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba10-fig3" style="text-align: center;">Figura 3</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/tracking_01.jpeg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small> Legenda da representação usada de <a href="https://ncase.me/covid-19/">What Happens Next?</a> 
+                        </small></p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <!-- Figura 4 -->
+            <div class="card" id="fig4" style="z-index: 1040;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-2" id="aba10-fig4" style="text-align: center;">Figura 4</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.IMAGE -->
+                    <img src="./fig/tracking_02.jpeg" class="card-img-top" alt="DESCRIÇÃO ACESSÍVEL">
+                    <p class="card-text legenda mt-2"><small> Suposição em que só isolamos as pessoas quando estas apresentam sintomas.
+                        </small></p>
+                    <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+        </div>
+
+        <div class="card-columns one xl-small">
+            <!-- NEW.CARD -->
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Na situação da Figura 4, o paciente 1 infectou o paciente 2 no quarto dia 
+                        após a exposição e um dia antes do início dos sintomas. Seguindo a mesma 
+                        dinâmica o paciente 2 infectou o paciente 3 e a doença continua se espalhando.
+                    </p>
+
+                    <p class="text-justify">
+                        Vamos pegar o caso em que isolamos não só quem apresenta sintomas como 
+                        também os contatos dos indivíduos que apresentaram sintomas na Figura 5.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Figura 5 -->
+            <div class="card" style="z-index: 1090;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba10-fig5">Figura 5</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <div style="text-align: center;"><img src="./fig/tracking_03.jpeg" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <p class="card-text legenda mt-2">
+                        <small>
+                        Caso em que isolamos não só quem apresenta sintomas como 
+                        também os contatos dos indivíduos que apresentaram sintomas.
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+             <!-- NEW.CARD -->
+             <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Apesar do paciente 1 transmitir o vírus para o paciente 2, 
+                        o paciente 2 foi quarentenado <b>antes</b> de entrar no período infeccioso. 
+                        Dessa forma, o paciente 2 não transmitiu o vírus para mais ninguém e a 
+                        cadeia de transmissão foi cortada. Para isso é fundamental que o rastreamento 
+                        e o isolamento dos contatos sejam feitos de forma pró-ativa e o mais rápido possível.
+                    </p>
+
+                    <p class="text-justify">
+                        Se com o rastreio de contatos cada infectado passar a infectar somente 
+                        uma outra pessoa em vez de duas, o resultado é que em 3 ciclos de 
+                        transmissão teremos apenas 4 infectados em vez de 17 [<a href="https://www.coursera.org/learn/covid-19-contact-tracing?edocomorp=covid-19-contact-tracing">Ref 2</a>],
+                        como ilustra a Figura 6. 
+                    </p>
+                </div>
+            </div>           
+
+            <div class="card" style="z-index: 1090;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" style="text-align: center;" id="aba10-fig6">Figura 6</h5> <!-- CARD.TITLE.TEXT -->
+
+                    <!-- CARD.IMAGE -->
+                    <div style="text-align: center;"><img src="./fig/tracking_04.jpeg" class="tamanho_dinamico" alt="DESCRIÇÃO ACESSÍVEL"></div>
+                    <p class="card-text legenda mt-2">
+                        <small>
+                        Com rastreio de contatos cada infectado passar a infectar um número contido de pessoas, 
+                        o resultado é que em poucos ciclos de transmissão teremos uma redução significativa de casos. 
+                        </small>
+                    </p> <!-- CARD.IMAGE.LEGENDA -->
+                </div>
+            </div>
+
+            <div class="card" style="z-index: 1020;">
+                <div class="card-body">
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Sem testes do tipo RT-PCR, capazes de detectar a presença do vírus no indivíduo, 
+                        a única forma de fazer o rastreamento de contatos é a partir dos sintomas. Sugere-se 
+                        que qualquer pessoa que apresente qualquer um dos sintomas da Covid se isole em um 
+                        local protegido e arejado, evitando a infecção de outros moradores da residência. 
+                        Atenção especial deve ser dada a pessoas que apresentarem perda de olfato e paladar 
+                        (sintomas altamente específicos da Covid) e pessoas que apresentarem sintomas de gripe 
+                        mesmo tendo sido vacinadas para a gripe.
+                    </p>
+
+                    <p class="text-justify">
+                        Com relação aos assintomáticos, sem uma quantidade suficiente de testes do 
+                        tipo RT-PCR fica impossível detectá-los. Porém, <b>com um sistema eficiente de vigilância, 
+                        podemos isolar casos assintomáticos futuros originários de uma pessoa sintomática</b>.
+                    </p>
+
+                    <p class="text-justify">
+                        <b>A profundidade do rastreamento depende da capacidade do município em buscar os contatos de 
+                        casos suspeitos</b>. Familiares que dividem a mesma residência de um caso suspeito têm alta 
+                        probabilidade de se infectar, ao mesmo tempo que a proximidade também facilita o rastreamento. 
+                        Por outro lado, é difícil identificar pessoas que frequentaram o mesmo supermercado na mesma 
+                        hora que o caso suspeito. Dessa forma, é importante uma avaliação de como detectar o maior 
+                        número de casos possível levando em conta as limitações de recursos.  
+                    </p>
+
+                    <p class="text-justify">
+                        Apesar de adventos tecnológicos como aplicativos para rastreamento de contatos 
+                        serem muito bem-vindos e terem um potencial enorme de facilitar esse processo, 
+                        ferramentas como o WhatsApp, o telefone e, principalmente, os agentes comunitários 
+                        de saúde são suficientes para a implementação do rastreamento de contatos. 
+                        Diversas cidades brasileiras possuem uma rede ampla e capilarizada de UBS com ACS 
+                        que já mantêm um forte vínculo com as comunidades. Da mesma forma, acompanhamentos 
+                        por telefone e WhastApp podem ajudar a identificar casos suspeitos e seus respectivos contatos.  
+                    </p>
+
+                    <p class="text-justify">
+                        Em resumo, <b>o rastreamento de contatos é relativamente simples no conceito mas requer uma 
+                        mobilização de diversos níveis do poder público e organização por parte dos gestores</b>. 
+                        Países como Singapura e Coréia do Sul, que são exemplos de sucesso no controle da pandemia, 
+                        têm no rastreio de contatos uma das suas principais armas. Mesmo sem testes RT-PCR, realizar 
+                        o rastreio a partir de sintomas ainda é possível; podemos avançar muito com uma população bem 
+                        informada e agentes de saúde bem apoiados. E a partir de um sistema bem estruturado e organizado, 
+                        a chegada de mais testes pode ser facilmente adicionada à estrutura pré-existente de rastreio. 
+                        O Observatório Covid-19 Brasil fica à disposição para conversar com secretarias municipais que 
+                        tenham alguma dúvida e precisem de ajuda na implementação do rastreamento de contatos. 
+                    </p>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
