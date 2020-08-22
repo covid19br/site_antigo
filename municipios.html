@@ -872,11 +872,6 @@
             <div class="card cd-30">
                 <div class="card-body">
                     
-                <ul class="list-group mt-3">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Quantos casos de SRAG internados estimamos ter atualmente?
-                    </li>
-                </ul>
                 <!-- CARD.TEXT -->
                 <p class="text-justify mt-3 mb-2">
                     Os <b style="color:#377EB8">pontos e linha azuis</b> mostram o <b>número de pessoas hospitalizadas por síndrome respiratória aguda grave (SRAG)</b>
@@ -904,16 +899,6 @@
                 </div>
             
                 <!-- CARD.TEXT -->
-                <ul class="list-group mt-4">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Quantos casos de SRAG internados estimamos ter no futuro?
-                    </li>
-                </ul>
-                <p class="text-justify mt-3">
-                    Para projetar o número de hospitalizações no futuro, utilizamos um ajuste estatístico de uma curva logística, que
-                    tem provido a melhor capacidade preditiva nesses dados. As <b>linhas em preto</b>(contínua e pontilhada) mostram o resultado do ajuste do modelo de projeção logístico para o número de internações.
-                    A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de confiança</b> desta projeção.
-                </p>
                 <p class="text-justify mt-3">
                     Para saber mais detalhes, consulte o relatório completo <a
                     href="https://github.com/covid19br/covid19br.github.io/raw/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios/relatorio_demanda_hospitalar_srag.pdf">aqui</a>.
@@ -921,26 +906,7 @@
                     href="https://github.com/covid19br/covid19br.github.io/tree/master/dados/projecao_leitos/municipios/SP/Sao_Paulo/relatorios">aqui</a>.
                 </p>
             
-            
-                <!-- CARD.BUTTON.EXPAND -->
-                <div class="text-center">
-                    <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseHosp2"
-                        aria-expanded="false" aria-controls="collapseHosp2">
-                        Por que só 7 dias? ▾
-                    </button>
-                </div>
-                <!-- CARD.BUTTON.EXPAND.CONTENT -->
-                <div class="collapse mt-2" id="collapseHosp2">
-                    <p class="text-justify">
-                    O crescimento do número de internações tem sido bem ajustado por uma logística no curto prazo, mas esse ajuste
-                    se deteriora no longo prazo, pois a curva logística tende a um ponto de saturação, enquanto as internações por SRAG
-                    tem subido de forma consistente, sem sinal de saturação.
-                    </p>
-                    <p class="text-justify">
-                    Por isso avaliamos que é inadequado fazer projeções para mais de 7 dias com este método.
-                    </p>
-                </div>
-            
+   
                 <!-- CARD.SIGNATURE -->
                 <p class="mt-3">Acesse a página <a
                     href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
