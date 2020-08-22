@@ -73,27 +73,31 @@ make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel 
 make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados", 
                        title = "Previsões", breaks = 1000){
   last_date = last(filter(data, type == disease)$date)
-
   plot = ggplot(filter(data, type == disease), aes(date, observed)) + 
-    geom_line(aes(y = estimate), color = "blue", size = 1.5) + 
-    geom_ribbon(fill="blue", 
+    geom_ribbon(fill="#E41A1C", 
                 aes(ymin=lower, ymax=upper), alpha=0.15, 
                 color = "transparent") +
-    geom_point(size=2) +
+    geom_line(aes(y = estimate), size = 1, color = "#E41A1C") + 
+    geom_point(data = latest_data, size = 0.7, color = "#377EB8") + 
+    geom_line(data = latest_data, color = "#377EB8") + 
     theme_cowplot() + 
-    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 7), date_labels = "%b %d") +
-    scale_y_continuous(labels = label_number_si(), breaks = seq(0, 30000, by = breaks)) +
-    background_grid(major = "xy", minor = "y") + 
-    annotate("text", x = last_date - 6, 
-             y = data[data$date == (last_date-6),"estimate"] * 1.2, 
-             label = "Corrigido", color = "blue", size = 4.5) +
-    annotate("text", x = last_date-2, 
-             y = data[data$date == (last_date-1),"observed"] * 0.83, 
-             label = "Observado", color = "black", size = 4.5)  +
+    scale_x_date(breaks = seq(as.Date("2020-03-08"), today()+7, by = 15), date_labels = "%b %d") +
+    scale_y_continuous(labels = label_number_si()) +
+    #background_grid(major = "xy", color.major = "grey90", size.major = 0.3) + 
+    annotate("text", 
+             x = min(data$date) + (0.5 * diff(range(data$date))), 
+             y = max(data[data$date == (last_date),"upper"], 
+                     data[data$date == (last_date),"observed"]) * 1.1, 
+             label = "Correção\natraso", color = "#E41A1C", size = 4, fontface = "bold", 
+             vjust = "top") +
+    annotate("text", x = min(data$date) + (0.25 * diff(range(data$date))), 
+             y = max(data[data$date == (last_date),"upper"], 
+                     data[data$date == (last_date),"observed"]) * 1.1,
+             label = "Observado", color = "#377EB8", size = 4, fontface = "bold", 
+             vjust = "top") +
     theme(legend.position = "none") + 
     labs(x = "Dia", y = ylabel) + 
     ggtitle(title)
-  
-  return(plot)
+  list(current = plot)
 }
 
