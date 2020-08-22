@@ -70,7 +70,7 @@ make_ggplot = function(data, latest_data = NULL, fits, disease ="covid", ylabel 
   list(current = plot, validation = plot_validation)
 }
 
-make_ggplot_no_model = function(data, disease ="covid", ylabel = "Hospitalizados", 
+make_ggplot_no_model = function(data, latest_data = NULL, disease ="covid", ylabel = "Hospitalizados", 
                        title = "Previsões", breaks = 1000){
   last_date = last(filter(data, type == disease)$date)
   plot = ggplot(filter(data, type == disease), aes(date, observed)) + 

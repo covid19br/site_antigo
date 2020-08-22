@@ -196,7 +196,7 @@ if(plot_covid){
 ########################
 
 {
-  pse = make_ggplot(srag, latest_srag, current_fits$srag$Exp, disease = "srag",
+  pse = make_ggplot_no_model(srag, latest_srag, disease = "srag",
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Exponencial")
   plot.srag.leitos.forecast.exp = pse$current + plot.formatos + ggtitle("")
@@ -209,7 +209,7 @@ if(plot_covid){
 }         
 
 {
-  psl = make_ggplot(srag, latest_srag, current_fits$srag$Logist, disease = "srag",
+  psl = make_ggplot_no_model(srag, latest_srag, disease = "srag",
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Logistico")
   plot.srag.leitos.forecast.logistic = psl$current + plot.formatos + ggtitle("")
@@ -226,7 +226,7 @@ if(plot_covid){
 ########################
 
 {
-  pseU = make_ggplot(srag_UTI, latest_srag_UTI, current_fits$srag$UTIExp, disease = "srag",
+  pseU = make_ggplot_no_model(srag_UTI, latest_srag_UTI, disease = "srag",
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Exponencial")
   plot.srag.uti.forecast.exp = pseU$current + plot.formatos + ggtitle("")
@@ -239,7 +239,7 @@ if(plot_covid){
 }
 
 {
-  pslU = make_ggplot(srag_UTI, latest_srag_UTI, current_fits$srag$UTILogist, disease = "srag",
+  pslU = make_ggplot_no_model(srag_UTI, latest_srag_UTI, disease = "srag",
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Logistico")
   plot.srag.uti.forecast.logistic = pslU$current + plot.formatos + ggtitle("")
