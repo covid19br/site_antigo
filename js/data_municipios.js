@@ -78,4 +78,5 @@ const locale =
         { prep: "em", uf: "SP", mun:"Sao_Jose_dos_Campos",   verbose: "São José dos Campos",   has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Sorocaba",              verbose: "Sorocaba",              has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Campinas",              verbose: "Campinas",              has_modelogro: false, has_td: false  }
+	{ prep: "em", uf: "SP", mun:"Votuporanga",              verbose: "Votuporanga",              has_modelogro: false, has_td: false  }
     ];
