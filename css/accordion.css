@@ -6,14 +6,16 @@
     background-color: rgba(0,0,0,.02);
 }
 
+/*CARD LINK */
 .btn-link {
     font-weight: 500;
 }
-
+/*ACCORDIAN MAIN*/
 .accordion {
     margin: 1rem 0 0 0;
 }
 
+/*ACCORDIAN CARD*/
 .accordion>.card {
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
@@ -25,6 +27,7 @@
     border-radius: .25rem;
 }
 
+/*COLLAPSABLE CARD BODY*/
 .collapse>.card-body {
     padding: 1.25rem!important;
 }
