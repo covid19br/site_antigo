@@ -323,10 +323,10 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle acumdia" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Diários | Acumulados
+                        Semanais | Acumulados
                     </button>
                     <div class="dropdown-menu acumdia">
-                        <a q="dia" href="#" class="dropdown-item active">Diários</a>
+                        <a q="dia" href="#" class="dropdown-item active">Semanais</a>
                         <a q="acu" href="#" class="dropdown-item">Acumulados</a>
                     </div>
                 </div>
@@ -426,15 +426,15 @@
                         </ul>
                         <!-- TODO: Adicionar o texto dinamico como badge -->
                         <p class="text-justify mt-3">
-                            As <b>linhas tracejadas</b> são as <b>projeções</b> para <!--os últimos 2 dias e--> os próximos 5 dias, considerando a mesma taxa de crescimento dos últimos 5 dias.
-                            A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> da projeção. Por exemplo, estimamos entre <span class="nowcast_covid_min"></span> e <span class="nowcast_covid_max"></span> casos de COVID-19 e entre <span class="nowcast_srag_min"></span> e <span class="nowcast_srag_max"></span> casos de SRAG no dia <span class="nowcast_data"></span>.
+                            As <b>linhas tracejadas</b> são as <b>projeções</b> para <!--os últimos 2 dias e--> a próxima semana, considerando a mesma taxa de crescimento das últimas 2 semanas.
+                            A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> da projeção. Por exemplo, estimamos entre <span class="nowcast_covid_min"></span> e <span class="nowcast_covid_max"></span> casos de COVID-19 e entre <span class="nowcast_srag_min"></span> e <span class="nowcast_srag_max"></span> casos de SRAG na semana do dia <span class="nowcast_data"></span>.
                         </p>
 
                         <!-- CARD.BUTTON.EXPAND -->
                         <div class="text-center">
                             <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
                                 aria-expanded="false" aria-controls="collapse5DIAS">
-                                Por que só 5 dias? ▾
+                                Por que só uma semana? ▾
                             </button>
                         </div>
                         <!-- CARD.BUTTON.EXPAND.CONTENT -->
@@ -484,11 +484,11 @@
 
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendBlue">pontos em azul</b> são os números de <b>casos graves diários notificados</b> (observados) há mais de 40 dias, para os quais julgamos não ser mais necessário corrigir para atrasos de notificações.
+                            Os <b class="legendBlue">pontos em azul</b> são os números de <b>casos graves semanais notificados</b> (observados) há mais de 10 semanas, para os quais julgamos não ser mais necessário corrigir para atrasos de notificações.
                             <!-- TOOLTIP: oq eh tendencia estimada?-->
                         </p>
                         <p class="text-justify mt-3 mb-2">
-                            Os <b class="legendRed">pontos em vermelho</b> são os números de <b>casos graves diários estimados</b> através da correção do atraso entre a data do primeiro sintoma e a notificação.
+                            Os <b class="legendRed">pontos em vermelho</b> são os números de <b>casos graves semanais estimados</b> através da correção do atraso entre a data do primeiro sintoma e a notificação.
                         </p>
                         <p class="text-justify mt-3 mb-2">
                             A <b>linha preta</b> é a <b>tendência estimada</b>, com média móvel para um período de 10 dias.
@@ -556,10 +556,10 @@
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle acumdia" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        Diários | Acumulados
+                        Semanais | Acumulados
                     </button>
                     <div class="dropdown-menu acumdia">
-                        <a q="dia" href="#" class="dropdown-item active">Diários</a>
+                        <a q="dia" href="#" class="dropdown-item active">Semanais</a>
                         <a q="acu" href="#" class="dropdown-item">Acumulados</a>
                     </div>
                 </div>
@@ -651,7 +651,7 @@
 
                         <p class="text-justify mt-3">
                             As <b>linhas tracejadas</b> indicam a projeção estimada de óbitos por cada condição para os próximos 5 dias, considerando a mesma taxa de aumento de óbitos dos últimos 5 dias. A <b style="color:#6c757d">faixa cinza</b> mostra o intervalo de 95% de confiança dessa projeção. Por exemplo, estimamos entre <span class="nowcast_ob_covid_min"></span> e <span class="nowcast_ob_covid_max"></span> óbitos por
-                            COVID-19 e entre <span class="nowcast_ob_srag_min"></span> e <span class="nowcast_ob_srag_max"></span> óbitos por SRAG no dia <span class="nowcast_ob_data"></span>.
+                            COVID-19 e entre <span class="nowcast_ob_srag_min"></span> e <span class="nowcast_ob_srag_max"></span> óbitos por SRAG na semana do dia <span class="nowcast_ob_data"></span>.
                             
                         </p>
 
@@ -661,8 +661,8 @@
                     <div class="acumdia-text dia">
                         <!-- CARD.TEXT -->
                         <p class="text-justify mt-3">
-                            Os <b class="legendBlue">pontos azuis</b> são de <b>óbitos ocorridos</b> há mais de 40 dias, para os quais não é preciso prever futuras notificações.
-                            Os <b class="legendRed">pontos vermelhos</b> mostram os números diários de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
+                            Os <b class="legendBlue">pontos azuis</b> são de <b>óbitos ocorridos</b> há mais de 10 semanas, para os quais não é preciso prever futuras notificações.
+                            Os <b class="legendRed">pontos vermelhos</b> mostram os números semanais de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
                         </p>
                         <p class="text-justify mt-3">
                             Estes pontos estão sujeitos à alteraçōes devido à atualizaçōes das bases de dados, dentro do <b>intervalo de
@@ -828,7 +828,7 @@
                     <p class="text-justify">
                         O <b class="ibm_indigo">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
                         infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
-                        linha vermelha. Valores de \(R_e\) próximo de um indicam que a cada dia temos um número constante de casos.
+                        linha vermelha. Valores de \(R_e\) próximo de um indicam que a cada semana temos um número constante de casos.
                         E apenas valores de \(R_e\) abaixo de um por muitos dias indica seguramente tendência de redução no número
                         de casos. Importante destacar que um crescimento exponencial é sensível ao valor de \(R_e\), e, portanto,
                         pequenas diferenças em \(R_e\) causam grandes diferenças na curva epidêmica. 
