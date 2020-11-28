@@ -163,18 +163,44 @@
               <p class="mb-3 mt-1">Saiba mais sobre a origem dos dados utilizados em nossas análises</p>
               <h6 id="fontes-principais">Fontes Principais</h6>
               <p class="text-justify">
-                Utilizamos os registros das notificações de casos de COVID-19 divulgadas diariamente pelo <b>Ministério da Saúde</b>.
-                A cada atualização na plataforma um programa automático de recuperação de dados nos envia os novos registros e dispara
-                a atualização das análise e gráficos neste site.
+                Utilizamos os registros das notificações de casos
+                graves de <b>Síndrome Respiratória Aguda Grave
+                (SRAG)</b> e casos de SRAG confirmados para COVID-19
+                na base SIVEP Gripe. Atualização públicas desta base são
+                divulgadas pelo Ministério da Saúde pelo portal <a href
+                =
+                "https://opendatasus.saude.gov.br/dataset/bd-srag-2020">Open
+                Data SUS<a>.  A cada atualização na plataforma um
+                programa automático de recuperação de dados nos envia
+                os novos registros e dispara a atualização das
+                análises e gráficos neste site.
               </p>
+	      <p></p>
               <h6 id="outras-fontes">Outras Fontes</h6>
               <p class="text-justify">
                 <ul>
-                  <li>Portal sobre Coronavírus da <a href="https://portal.fiocruz.br/coronavirus" target="_blank" rel="noopener">FIOCRUZ</a></li>
-                  <li><a href="https://coronavirus.jhu.edu/map.html" target="_blank" rel="noopener">Jonh Hopkins</a> Coronavirus Resource Center</li>
-                  <li>Site sobre epidemia de COVID-19 da <a href="https://www.who.int/health-topics/coronavirus" target="_blank" rel="noopener">Organização Mundial da Saúde</a></li>
-                  <li><a href="https://cmmid.github.io/topics/covid19/" target="_blank" rel="noopener">CMMID COVID repository</a>, Centre for Mathematical
-                    Modelling of Infectious Diseases, London School of Hygiene and Tropical Medicine.</li>
+		  <li>
+		    <a href="https://brasil.io/covid19/boletins/">
+		    Compilação de dados de COVID do Brasil.IO</a>
+		    </li>
+                  <li>Portal sobre Coronavírus
+                  da <a href="https://portal.fiocruz.br/coronavirus"
+			target="_blank" rel="noopener">FIOCRUZ</a></li>
+		  <li> <a href="http://info.gripe.fiocruz.br/"
+			target="_blank" rel="noopener">Sistema InfoGripe</a>
+		    </li>
+                  <li><a href="https://coronavirus.jhu.edu/map.html"
+                  target="_blank" rel="noopener">Jonh Hopkins</a>
+                  Coronavirus Resource Center</li>
+                  <li>Site sobre epidemia de COVID-19
+                  da <a href="https://www.who.int/health-topics/coronavirus"
+                  target="_blank" rel="noopener">Organização Mundial
+                  da Saúde</a></li>
+                  <li><a href="https://cmmid.github.io/topics/covid19/"
+                    target="_blank" rel="noopener">CMMID COVID
+                    repository</a>, Centre for Mathematical Modelling
+                    of Infectious Diseases, London School of Hygiene
+                    and Tropical Medicine.</li>
                 </ul>
               </p>
             </div>
@@ -211,7 +237,7 @@
           </div>
 
           <!-- NEW.CARD -->
-ss
+
           <div class="card" style="z-index: 1070;">
             <!-- CARD.HEADER -->
             <div class="card-body">
@@ -330,8 +356,8 @@ ss
                 considerando incertezas na medida do intervalo serial.
               </p>
               <p class="text-justify">
-                Usamos a série temporal dos últimos 7 dias da epidemia de COVID-19 para estimar diariamente os valores de \(R_e\),
-                utilizando a metodologia de Wallinga e Teunis (2004) e implementada no pacote EpiEstim do software R (Cori 2020). Para a
+                Usamos a série temporal de casos de SRAG da epidemia de COVID-19 para estimar os valores de \(R_e\) a cada dia,
+                utilizando a metodologia de Cori et al (2013) e implementada no pacote EpiEstim do software R (Cori 2020). Para a
                 medida de intervalo serial, utilizamos uma distribuição log-normal truncada com média 4.8 (IC 95%, 3.8 - 6.1) e desvio
                 padrão 2.3 (IC 95%, 1.6 - 3.5) em conformidade com o estudo Nishiura et al. (2020).
               </p>
@@ -347,7 +373,7 @@ ss
               <h5 class="card-title" id="como-se-estima-o-número-de-casos-graves">Como se estima o número de casos graves?</h5><a class="return" href="#toc"><img src="./img/icon_arrow_up.svg"></a> <!-- CARD.TITLE.TEXT -->
               <!-- CARD.TEXT -->
               <p class="text-justify">
-                Para calcular uma estimativa do número de casos graves a cada dia, utilizamos os dados de notificação de
+                Para calcular uma estimativa do número de casos graves a cada semana epidemiológica, utilizamos os dados de notificação de
                 <b>hospitalizações</b> por SRAG (Síndrome Respiratória Aguda Grave) da base SIVEP-Gripe, para o município de São Paulo.
                 É nesta base que são notificados os casos graves suspeitos de COVID-19, que são os casos SRAG hospitalizados. Cada um
                 desses casos deve ser investigado para confirmação ou não como caso de COVID-19. </p>
@@ -362,18 +388,29 @@ ss
                 teste positivo para Covid-19 estar disponível para ser incluído no banco de dados. O tempo acumulado entre essas etapas
                 do processo causa atrasos de vários dias entre o número de casos confirmados no SIVEP-Gripe e os casos ainda não
                 disponíveis no sistema, que são compensados somando aos casos já confirmados uma estimativa de casos que devem ser
-                confirmados no futuro. O método que usamos foi proposto por McGough et.al. (2019) e implementado usando o pacote NobBS
+                confirmados no futuro. O método que usamos foi proposto por McGough et.al. (2020) e implementado usando o pacote NobBS
                 do R (McGough et.al. 2020).
               </p>
               <p class="text-justify">
-                Essa <b>não é uma estimativa do número total</b> de pessoas infectadas pelo novo coronavírus, apenas de casos graves
-                hospitalizados e notificados no sistema de vigilância. Isso porque os casos notificados oficialmente diferem do número
-                de casos reais na mesma data pois são distorcidos tanto por atrasos de notificação (corrigidos pelo nowcasting) quanto
-                por subnotificação (corrigida por outros métodos). Uma das razões da subnotificação é o próprio modelo de vigilância. No
-                Brasil, por exemplo, nem todos os possíveis infectados são testados, então casos leves e casos assintomáticos não são
-                detectados pela base de dados do SRAG <a href="#2">²</a>. No caso de transmissão comunitária, como temos hoje, seria
-                necessário testar toda a população para eliminar a subnotificação. Hoje, no Brasil, o protocolo assegura exames
-                prioritariamente para casos graves (hospitalizações), profissionais da saúde e óbitos. </p>
+                Essa <b>não é uma estimativa do número total</b> de
+                pessoas infectadas pelo novo coronavírus, apenas de
+                casos graves hospitalizados e notificados no sistema
+                de vigilância. Isso porque os casos notificados
+                oficialmente diferem do número de casos reais na mesma
+                data tanto por atrasos de notificação (corrigidos pelo
+                nowcasting) quanto por subnotificação (corrigida por
+                outros métodos). Uma das razões da subnotificação é o
+                próprio modelo de vigilância. No Brasil, por exemplo,
+                nem todos os possíveis infectados são testados, então
+                os casos leves e casos assintomáticos não são
+                detectados pela base de dados do
+                SRAG <a href="#2">²</a>.  No
+                caso de transmissão comunitária, como temos hoje,
+                seria necessário testar toda a população para eliminar
+                a subnotificação. Hoje, no Brasil, o protocolo
+                assegura exames prioritariamente para casos graves
+                (hospitalizações), profissionais da saúde e
+                óbitos. </p>
               <p class="text-justify">
                 Créditos: Observatório COVID-19 BR em parceria com o Grupo Técnico de Assessoramento em Epidemiologia e
                 Modelagem Matemática COVID19 (SMS SP), composto por Ana Freitas Ribeiro (medica sanitarista @ IIER –
@@ -405,6 +442,12 @@ ss
               <h5 class="card-title" id="referências">Referências</h5><a class="return" href="#toc"><img src="./img/icon_arrow_up.svg"></a> <!-- CARD.TITLE.TEXT -->
               <!-- CARD.TEXT -->
               <ol>
+		<li>
+		  Cori A, Ferguson NM, Fraser C, Cauchemez S.  2013. A new
+		  framework and software toestimate time-varying
+		  reproduction numbers during epidemics.  American
+		  journal of epidemiology 178(9):1505–1512.
+		  </li>
                 <li>Ane Cori (2019). EpiEstim: Estimate Time Varying Reproduction Numbers from Epidemic Curves. R
                   package version 2.2-1. <a href="https://CRAN.R-project.org/package=EpiEstim"
                     target="_blank">https://CRAN.R-project.org/package=EpiEstim</a>
@@ -422,10 +465,11 @@ ss
                     target="_blank">https://doi.org/10.1016/j.ijid.2020.02.060</a>
                 </li>
                 <li>
-                  McGough, Sarah , Michael A. Johansson, Marc Lipsitch, Nicolas A. Menzies (2019). Nowcasting by
-                  Bayesian
-                  Smoothing: A flexible, generalizable model for real-time epidemic tracking. bioRxiv 663823; doi: <a
-                    href="https://doi.org/10.1101/663823" target="_blank">https://doi.org/10.1101/663823</a>
+                  McGough, S.F., Johansson, M.A., Lipsitch, M. &
+                  Menzies, N.A., 2020. Nowcasting by Bayesian Smoothing: A flexible,
+                  generalizable model for real-time epidemic tracking.
+                  doi: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007735"
+                  target="_blank">PLoS computational biology, 16(4), p.e1007735</a>
                 </li>
                 <li>
                   McGough, Sarah, Nicolas Menzies, Marc Lipsitch and Michael Johansson (2020). NobBS: Nowcasting by
@@ -450,11 +494,11 @@ ss
                 <li id="nota1">Modelo linear generalizado Poisson (glm), com função de ligação logarítimica. <a
                     href="#estimativa-do-tempo-de-duplicação"><img src="./img/icon_arrow_up.svg"></a>
                 </li>
-                <li id="2">No começo de Abril, a notificação de casos de síndrome gripal começou a ser registrada num
-                  sistema
-                  separado, chamado E-SUS VE, o que inclui casos leves. Profissionais de saúde são testados e se
-                  positivam
-                  passam a casos confirmados nessa base. <a href="#como-se-estima-o-número-de-casos-graves"><img src="./img/icon_arrow_up.svg"></a>
+                <li id="2">Parte dos casos leves
+                (Síndrome Gripal) passaram a ser notificados a partir
+                de abril de 2020, em um sistema separado chamado E-SUS VE. No entanto, estes dados de casos
+                leves são muito variáveis e incompletos, devido a diferenças nas
+                políticas de testagem entre municípios e estados. <a href="#como-se-estima-o-número-de-casos-graves"><img src="./img/icon_arrow_up.svg"></a>
                 </li>
               </ol>
             </div>
