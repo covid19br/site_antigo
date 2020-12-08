@@ -2,7 +2,7 @@
 tabelas.web <- function(output.dir,
                         tipo,
                         df.cum, # data frame com os casos acumulados
-                        df.td, # data frame com o tempo de duplicacao
+                        df.td = NULL, # data frame com o tempo de duplicacao
                         df.re = NULL, # data frame com o r efetivo
                         data_base) { #data real da última atualização de cada objeto
   # MIN-MAX ####
@@ -16,13 +16,15 @@ tabelas.web <- function(output.dir,
               file = paste0(output.dir, "data_forecast_exp_", tipo, ".csv"),
               row.names = TRUE, col.names = FALSE)
   # TEMPO DE DUPLICACAO ####
-  #temp.dupl <- data.frame(row.names = sigla.adm)
-  min.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.inf"], 1))
-  max.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.sup"], 1))
-  temp.dupl <- cbind(min.dias, max.dias)
-  write.table(temp.dupl,
-              file = paste0(output.dir, "data_tempo_dupli_", tipo, ".csv"),
-              row.names = TRUE, col.names = FALSE)
+  if (! is.null(df.td)) {
+    #temp.dupl <- data.frame(row.names = sigla.adm)
+    min.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.inf"], 1))
+    max.dias <- as.vector(round(df.td[max(nrow(df.td)), "ic.sup"], 1))
+    temp.dupl <- cbind(min.dias, max.dias)
+    write.table(temp.dupl,
+                file = paste0(output.dir, "data_tempo_dupli_", tipo, ".csv"),
+                row.names = TRUE, col.names = FALSE)
+  }
   #data_atualizacao
   data_atualizacao <- format(as.Date(data_base, "%Y_%m_%d"), "%d/%m/%Y")
   write.table(data_atualizacao,
