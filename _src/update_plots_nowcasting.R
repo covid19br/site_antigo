@@ -8,6 +8,7 @@ library(plotly)
 library(dplyr)
 library(tidyr)
 library(withr)
+Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
 # carrega funcoes----
 source("funcoes.R")
