@@ -214,12 +214,12 @@ if (existe.ob.covid) {
   ## N de novos casos observados e por nowcasting
   ## Com linha de média móvel
   plot.nowcast.ob.covid <- plot.nowcast.diario(df.ob.covid.diario) +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número de novos óbitos")
 
   ### acumulado
   plot.nowcast.cum.ob.covid <- plot.nowcast.acumulado(df.ob.covid.cum) +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número acumulado de óbitos")
 
   ### tempo de duplicação
@@ -256,14 +256,14 @@ if (existe.ob.srag) {
   plot.nowcast.ob.srag <- df.ob.srag.diario %>%
     dplyr::filter(data > "2020-03-15") %>%
     plot.nowcast.diario() +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número de novos óbitos")
 
   ### acumulado
   plot.nowcast.cum.ob.srag <- df.ob.srag.cum %>%
     dplyr::filter(data > "2020-03-15") %>%
     plot.nowcast.acumulado() +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número acumulado de óbitos")
 
   ### tempo de duplicação
@@ -298,12 +298,12 @@ if (existe.ob.srag.proaim) {
     ## N de novos casos observados e por nowcasting
     ## Com linha de média móvel
     plot.nowcast.ob.srag.proaim <- plot.nowcast.diario(df.ob.srag.diario.proaim) +
-        xlab("Dia") +
+        xlab("Data do óbito") +
         ylab("Número de novos óbitos")
 
     ### acumulado
     plot.nowcast.cum.ob.srag.proaim <- plot.nowcast.acumulado(df.ob.srag.cum.proaim) +
-        xlab("Dia") +
+        xlab("Data do óbito") +
         ylab("Número acumulado de óbitos")
 
     ### tempo de duplicação

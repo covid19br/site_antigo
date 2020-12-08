@@ -13,7 +13,7 @@ plot.nowcast.diario <- function(df) {
         else NULL) +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[2:1]) +
-        xlab("Dia do primeiro sintoma") +
+        xlab("Data do primeiro sintoma") +
         ylab("Número de novos casos") +
         plot.formatos +
         theme(legend.position = "none")
