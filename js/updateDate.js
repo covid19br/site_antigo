@@ -1,5 +1,5 @@
 function updateDate(filename) {
-    jQuery.get('https://raw.githubusercontent.com/covid19br/covid19br.github.io/master/web/' + filename + '.txt', function(readData) {
+    jQuery.get('https://covid19br.github.io/web/' + filename + '.txt', function(readData) {
         // text processing
         dateHourArray = readData.split(" ");
         dateArray = dateHourArray[0].split("-");
