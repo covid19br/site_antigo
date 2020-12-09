@@ -43,14 +43,18 @@ tabelas.web <- function(output.dir,
 
 
     lista <- list(minmax.casos = minmax.casos,
-                  temp.dupl = temp.dupl,
                   Re = Re.efe,
                   data_atualizacao = data_atualizacao)
+    if (! is.null(df.td)) {
+      lista[["temp.dupl"]] = temp.dupl
+    }
   }
   if (tipo %in% c("obitos_covid", "obitos_srag", "obitos_srag_proaim")) {
     lista <- list(minmax.casos = minmax.casos,
-                  temp.dupl = temp.dupl,
                   data_atualizacao = data_atualizacao)
+    if (! is.null(df.td)) {
+      lista[["temp.dupl"]] = temp.dupl
+    }
   }
   return(lista)
 }

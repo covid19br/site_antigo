@@ -175,8 +175,8 @@ if (existe.srag) {
 
   ### tempo de duplicação
   #plot.tempo.dupl.srag <- df.td.srag %>%
-    dplyr::filter(data > "2020-03-15") %>%
-    plot.tempo.dupl()
+  #  dplyr::filter(data > "2020-03-15") %>%
+  #  plot.tempo.dupl()
 
   ### R efetivo
   plot.estimate.R0.srag <- df.re.srag %>%
@@ -338,24 +338,24 @@ plots.para.atualizar <-
                   plot.nowcast.covid,
                   plot.nowcast.cum.covid,
                   plot.estimate.R0.covid,
-                  plot.tempo.dupl.covid,
+                  #plot.tempo.dupl.covid,
                   # srag
                   plot.nowcast.srag,
                   plot.nowcast.cum.srag,
                   plot.estimate.R0.srag,
-                  plot.tempo.dupl.srag,
+                  #plot.tempo.dupl.srag,
                   # obitos covid
                   plot.nowcast.ob.covid,
                   plot.nowcast.cum.ob.covid,
-                  plot.tempo.dupl.ob.covid,
+                  #plot.tempo.dupl.ob.covid,
                   # obitos srag
                   plot.nowcast.ob.srag,
                   plot.nowcast.cum.ob.srag,
-                  plot.tempo.dupl.ob.srag,
+                  #plot.tempo.dupl.ob.srag,
                   #obitos srag.proaim
                   plot.nowcast.ob.srag.proaim,
                   plot.nowcast.cum.ob.srag.proaim,
-                  plot.tempo.dupl.ob.srag.proaim
+                  #plot.tempo.dupl.ob.srag.proaim
     )
 
 # pegando apenas os plots que existem mesmo
