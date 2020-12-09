@@ -125,6 +125,7 @@ if (existe.covid) {
 
   ### tempo de duplicação
   #plot.tempo.dupl.covid <- plot.tempo.dupl(df.td.covid)
+  plot.tempo.dupl.covid <- NULL
 
   ### R efetivo
   plot.estimate.R0.covid <- plot.estimate.R0(df.re.covid)
@@ -177,6 +178,7 @@ if (existe.srag) {
   #plot.tempo.dupl.srag <- df.td.srag %>%
   #  dplyr::filter(data > "2020-03-15") %>%
   #  plot.tempo.dupl()
+  plot.tempo.dupl.srag <- NULL
 
   ### R efetivo
   plot.estimate.R0.srag <- df.re.srag %>%
@@ -224,6 +226,7 @@ if (existe.ob.covid) {
 
   ### tempo de duplicação
   #plot.tempo.dupl.ob.covid <- plot.tempo.dupl(df.td.ob.covid)
+  plot.tempo.dupl.ob.covid <- NULL
 
   # TABELAS ####
   tabelas.web(plot.dir,
@@ -270,6 +273,7 @@ if (existe.ob.srag) {
   #plot.tempo.dupl.ob.srag <- df.td.ob.srag %>%
   #  dplyr::filter(data > "2020-03-15") %>%
   #  plot.tempo.dupl()
+  plot.tempo.dupl.ob.srag <- NULL
 
   # TABELAS ####
     tabelas.web(plot.dir,
@@ -308,6 +312,8 @@ if (existe.ob.srag.proaim) {
 
     ### tempo de duplicação
     #plot.tempo.dupl.ob.srag.proaim <- plot.tempo.dupl(df.td.ob.srag.proaim)
+    plot.tempo.dupl.ob.srag.proaim <- NULL
+
     # TABELAS ####
     tabelas.web(plot.dir,
                 tipo = "obitos_srag_proaim",
@@ -338,24 +344,24 @@ plots.para.atualizar <-
                   plot.nowcast.covid,
                   plot.nowcast.cum.covid,
                   plot.estimate.R0.covid,
-                  #plot.tempo.dupl.covid,
+                  plot.tempo.dupl.covid,
                   # srag
                   plot.nowcast.srag,
                   plot.nowcast.cum.srag,
                   plot.estimate.R0.srag,
-                  #plot.tempo.dupl.srag,
+                  plot.tempo.dupl.srag,
                   # obitos covid
                   plot.nowcast.ob.covid,
                   plot.nowcast.cum.ob.covid,
-                  #plot.tempo.dupl.ob.covid,
+                  plot.tempo.dupl.ob.covid,
                   # obitos srag
                   plot.nowcast.ob.srag,
                   plot.nowcast.cum.ob.srag,
-                  #plot.tempo.dupl.ob.srag,
+                  plot.tempo.dupl.ob.srag,
                   #obitos srag.proaim
                   plot.nowcast.ob.srag.proaim,
                   plot.nowcast.cum.ob.srag.proaim,
-                  #plot.tempo.dupl.ob.srag.proaim
+                  plot.tempo.dupl.ob.srag.proaim
     )
 
 # pegando apenas os plots que existem mesmo
