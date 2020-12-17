@@ -9,6 +9,11 @@ body {
     background-color: #fdfdfd;
 }
 
+/* HELPER */
+.w-97 {width:97%}
+.border-reset-r {border-right: 0!important}
+.ml-35 {margin-left: 1.3rem;}
+
 /* TYPE */
 p, small {
     font-family: 'Open Sans', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
@@ -42,7 +47,9 @@ p, small {
     width: 39px!important;
 }
 
-.blue-accent{border-bottom: 4px solid #007bff;}
+.blue-accent-bottom{border-bottom: 4px solid #007bff;}
+.blue-accent-left  {border-left:   4px solid #007bff;}
+
 /* NAVBAR */
 .navbar {
     -webkit-box-shadow: 0 7px 6px 0 rgba(128, 128, 128, 0.05)!important;
@@ -559,6 +566,23 @@ p, small {
     margin-top: 1rem;
     margin-bottom: 0;
 }
+.card ul {
+    list-style: none;
+}
+.card li::before {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	content: '';
+	display: block;
+	background: #999;
+    position: absolute;
+    margin-top: 10px;
+}
+.card p {
+    color: #444;
+}
+
 /* small desktops: up to 1200px */
 @media (max-width: 1199.98px) {
     .card-text {
@@ -609,7 +633,7 @@ p, small {
 a.text-reset {
     text-decoration: none;
 }
-a.text-reset:hover {
+a.text-reset:hover, .card:hover p{
     color: #007bff!important;
     -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
