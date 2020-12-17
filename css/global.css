@@ -11,6 +11,8 @@ body {
 
 /* HELPER */
 .w-97 {width:97%}
+@media (min-width: 576px) { .w-sm-50 {width:50% !important} }
+@media (min-width: 992px) { .w-lg-100 {width:100% !important} }
 .border-reset-r {border-right: 0!important}
 .ml-35 {margin-left: 1.3rem;}
 
@@ -25,6 +27,7 @@ p, small {
 .font-weight-300 { font-weight: 300!important; }
 .line-height-12  { line-height: 1.2; }
 .font-size-3 { font-size: 3rem; }
+.font-size-275 { font-size: 2.75rem; }
 .font-size-95p { font-size: .95rem!important; }
 
 @media (min-width: 768px) {
@@ -402,11 +405,79 @@ p, small {
     content:"TO"; }
 
 /* JUMBOTRON INDEX */
-.bg-brasil {
+.bg-brasil, .bg-brasil-mobile {
     background-image: url(../img/contorno_brasil.svg);
     background-repeat: no-repeat;
+    position: relative;
+}
+.bg-brasil-mobile {
+	background-size: 169%;
+	background-position-y: 11%;
+	background-position-x: -79%;
+}
+#jumbo-logo {
+    width: 69%;
+}
+#jumbo-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#jumbo-desc {
+    background: linear-gradient(rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.65) 25%, rgb(255, 255, 255, .65) 75%, rgba(255,255,255,0) 100%);
+    font-size: .9rem;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+#jumbo-data-mobile{
+    display: table!important;
+    font-size: 2.25rem;
+}
+}
+@media (min-width: 576px){
+.bg-brasil-mobile {
+	background-size: 147%;
+	background-position-y: 15%;
+	background-position-x: -120%;
+}
+#jumbo-desc {
+    font-size: 1rem;
+}
+}
+@media (min-width: 768px) {
+.bg-brasil-mobile {
+    background-size: 185%;
+    background-position-y: 14%;
+    background-position-x: -64%;
+}
+}
+@media (min-width: 992px) {
+.bg-brasil-mobile {
+    background-image: none;
+}
+.bg-brasil {
+    background-size: 180%;
+    background-position-y: 16%;
+}
+#jumbo-data {
+    top: 42%;
+    left: 60%;
+}
+#jumbo-logo {
+    width: 95%;
+}
+}
+@media (min-width: 1200px) {
+.bg-brasil {
     background-size: 105%;
     background-position-y: 15%;
+}
+#jumbo-data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 }
 
 /* PRESS LOGOS */
@@ -633,7 +704,7 @@ p, small {
 a.text-reset {
     text-decoration: none;
 }
-a.text-reset:hover, .card:hover p{
+a.text-reset:hover, a.card:hover p{
     color: #007bff!important;
     -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;

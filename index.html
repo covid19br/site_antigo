@@ -113,18 +113,31 @@
   <!-- JUMBOTRON -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-4 px-5 py-5">
-        <img src="./img/logo.svg" width="95%">
-        <p class="text-muted text-justify m-0 py-5 pr-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <div class="col col-lg-5 col-xl-4 px-4 px-sm-5 py-4 py-md-5 bg-brasil-mobile">
+        <img src="./img/logo.svg" id="jumbo-logo">
+        <p id="jumbo-desc" class="text-muted text-justify w-100 w-sm-50 w-lg-100 m-0 py-4 py-lg-5 pr-lg-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <table id="jumbo-data-mobile" class="d-none mb-4 font-poppins font-size-3 font-weight-600 text-uppercase">
+          <tbody><tr class="line-height-12">
+            <td class="text-primary text-right" id="mun_count">34</td>
+            <td class="pl-3">Municípios</td>
+          </tr>
+          <tr class="line-height-12">
+            <td class="text-primary text-right" id="uf_count">26</td>
+            <td class="pl-3">Estados</td>
+          </tr>
+          <tr class="line-height-12">
+            <td class="text-primary text-right" id="ana_count">15</td>
+            <td class="pl-3">Análises</td>
+          </tr>
+        </tbody></table>
         <a href="#explore">
         <button type="button" class="btn btn-outline-primary m-0">Explore o Observatório
           <i class="bi bi-chevron-double-down"></i>
         </button></a>
       </div>
-      <div class="col-8 bg-brasil" style="position: relative;">
-        <table class="font-poppins font-size-3 font-weight-600 text-uppercase" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);">
+      <div class="d-none d-lg-flex col col-lg-7 col-xl-8 bg-brasil">
+        <table id="jumbo-data" class="d-none d-lg-table font-poppins font-size-3 font-weight-600 text-uppercase">
           <tr class="line-height-12">
             <td class="text-primary text-right" id="mun_count">34</td>
             <td class="pl-3">Municípios</td>
@@ -273,23 +286,57 @@
       </a>
 
       <!-- NOTA 15/12/2020-->
-      <a href="https://covid19br.github.io/nota.html" class="text-reset">
+      
         <div class="card background-light">
-          <small class="d-block mb-1 text-muted">9 de Dezembro de 2020</small>
-          <h4 class="font-poppins pl-3 blue-accent-left">Ainda não há um plano nacional para vacinação contra COVID-19 </h4>
-          <ul class="pl-0 mt-3">
-            <li>
-              <p class="ml-35 font-size-95p">Apontamos a urgência de uma ação coordenada e transparente para a vacinação contra COVID-19, com livre acesso aos dados para a comunidade científica e para o público geral.</p>
-            </li>
-            <li>
-              <p class="ml-35 font-size-95p">O plano do Ministério da Saúde apresentado até agora não incluiu detalhes fundamentais quanto à produção, distribuição, aplicação e monitoramento dos efeitos e efetividade das vacinas.</p>
-            </li>
-            <li>
-              <p class="ml-35 font-size-95p">Qualquer plano de vacinação deve ser pensado considerando ações coordenadas entre todos os níveis de governo (nacional, estadual e municipal) para que os brasileiros tenham acesso o mais rápido possível a uma vacina segura e eficaz.</p>
-            </li>
-          </ul>
+          <small class="d-block mb-1 text-muted">Última atualização: 17 de Dezembro de 2020</small>
+          <!-- BRASIL -->
+          <h2 class="font-poppins">Brasil</h2>
+          <div class="row">
+            <div class="col">
+              <table class="font-poppins h3">
+                <tr class="line-height-12">
+                  <td class="text-primary text-right">7.053.486</td>
+                  <td class="pl-3">casos</td>
+                </tr>
+                <tr class="line-height-12">
+                  <td class="text-primary text-right">+10.791</td>
+                  <td class="pl-3">novos</td>
+                </tr>
+              </table> 
+            </div>
+            <div class="col">
+              <table class="font-poppins h3">
+                <tr class="line-height-12">
+                  <td class="text-primary text-right">183.959</td>
+                  <td class="pl-3">óbitos</td>
+                </tr>
+                <tr class="line-height-12">
+                  <td class="text-primary text-right">+137</td>
+                  <td class="pl-3">novos</td>
+                </tr>
+              </table> 
+            </div>
+          </div>
+          <a href="#" class="text-reset"><h2 class="font-poppins pt-2" style="display: inline-block;">Estados</h2><i class="bi bi-arrow-up-right" style="display: inline-block;font-size: 1rem;margin-left: 4px;transform: translateY(-3px);"></i></a>
+          <div class="row">
+            <div class="col">
+              <a href="#" class="text-reset">
+              <img src="C:/Users/rafab/Documents/GitHub/master/covid19br.github.io/web/plot.forecast.exp.br.svg" width="100%">
+              <h4 class="font-poppins">São Paulo</h4></a>
+            </div>
+            <div class="col">
+              <a href="#" class="text-reset">
+              <img src="C:/Users/rafab/Documents/GitHub/master/covid19br.github.io/web/plot.forecast.exp.br.svg" width="100%">
+              <h4 class="font-poppins">Minas Gerais</h4></a>
+            </div>
+            <div class="col">
+              <a href="#" class="text-reset">
+              <img src="C:/Users/rafab/Documents/GitHub/master/covid19br.github.io/web/plot.forecast.exp.br.svg" width="100%">
+              <h4 class="font-poppins">Ceará</h4></a>
+            </div>
+          </div>
+          
         </div>
-        </a>
 
       <!-- NOTA 15/12/2020-->
       <a href="https://covid19br.github.io/nota.html" class="text-reset">
