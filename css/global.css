@@ -29,6 +29,10 @@ p, small {
     }
 }
 
+.color-reset, .color-reset:hover {
+    color: inherit;
+}
+
 .index-title {
     font-size: 1.125rem!important;
 }
