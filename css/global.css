@@ -481,6 +481,22 @@ p, small {
 }
 
 /* PRESS LOGOS */
+.logo-press{ position: relative; }
+.logo-press::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+  }
+.logo-press:hover {
+    opacity: .70;
+    transition: .15s ease;
+}
+
 .logo-press div {
     display: flex;
     justify-content: center;
