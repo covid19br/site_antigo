@@ -510,6 +510,13 @@ p, small {
 .logo-press > * { margin:  5px; }
 .logo-press     { margin: -5px; }
 }
+
+/* ICONS */
+.bi.small {
+    font-size: .75rem;
+    margin-left: 4px;
+    transform: translateY(-3px);
+}
 /* CARD LAYOUT */
 /* spacing */
 .card-columns {
