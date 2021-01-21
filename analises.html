@@ -4181,17 +4181,957 @@
             </div>
           </div>
            <!-- NEW.CARD -->
-        <div class="card" id="card5" style="z-index: 1100;">
+		<div class="card" id="card5" style="z-index: 1100;">
+		    <div class="card-body">
+		        <!-- CARD.HEADER -->
+		        <h5 class="card-title" id="aba15-card5">Material Adicional
+		        </h5>
+		        <h5 class="card-title" style="text-align: center;">Figura 1</h5>
+		        <!-- CARD.TEXT -->
+		        <div class="text-center"><img src="./fig/fig_am.jpg" class="tamanho_dinamico" alt="Representação da vulnerabilidade dos aeroportos brasileiros a partir do número de passageiros saindo dos aeroportos do Amazonas"></div>
+		        <p class="card-text legenda mt-2">
+		            <small>Representação da vulnerabilidade dos aeroportos brasileiros a partir do número de passageiros saindo dos aeroportos do Amazonas. Maiores valores de vulnerabilidade dos aeroportos e seus links com aeroportos do Amazonas estão representados por tonalidades em vermelho. Menores vulnerabilidades estão representadas em tonalidades de verde.</small>
+		        </p>
+		        <h5 style="text-align: center;" class="card-title p-0 mt-3 mb-2">Tabela 1</h5>
+		        <div class="text-center">
+		            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTabela15" aria-expanded="false" aria-controls="collapseTabela15">
+		                            Valores de centralidade Katz de entrada (T_in) a partir do Amazonas e de saída (T_out) dos aeroportos do Brasil ▾
+		                            </button>
+		        </div>
+		        <div id="collapseTabela15" class="collapse mt-2">
+		            <table style="border-collapse:collapse;table-layout:fixed;width:356pt;margin: 0 auto;" width="474" cellspacing="0" cellpadding="0" border="0">
+		                <colgroup>
+		                    <col style="mso-width-source:userset;mso-width-alt:4224;width:99pt" width="132">
+		                    <col style="mso-width-source:userset;mso-width-alt:6272;width:147pt" width="196">
+		                    <col style="mso-width-source:userset;mso-width-alt:2218;width:52pt" width="69">
+		                    <col style="mso-width-source:userset;mso-width-alt:2474;width:58pt" width="77">
+		                </colgroup>
+		                <tbody>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td class="xl66" style="height:15.0pt;width:99pt" width="132" height="20">Código do aeroporto
+		                        </td>
+		                        <td class="xl66" style="width:147pt" width="196">Nome do aeroporto</td>
+		                        <td class="xl66" style="width:52pt" width="69">T_in</td>
+		                        <td class="xl66" style="width:58pt" width="77">T_out</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSP</td>
+		                        <td>SÃO PAULO</td>
+		                        <td class="xl65" align="right">251554.7</td>
+		                        <td class="xl65" align="right">1186692.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBGR</td>
+		                        <td>GUARULHOS</td>
+		                        <td class="xl65" align="right">244516.7</td>
+		                        <td class="xl65" align="right">1153491.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBR</td>
+		                        <td>BRASÍLIA</td>
+		                        <td class="xl65" align="right">188615.9</td>
+		                        <td class="xl65" align="right">889783.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBRJ</td>
+		                        <td>RIO DE JANEIRO</td>
+		                        <td class="xl65" align="right">176637.7</td>
+		                        <td class="xl65" align="right">833276.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCF</td>
+		                        <td>CONFINS</td>
+		                        <td class="xl65" align="right">153895.4</td>
+		                        <td class="xl65" align="right">725991.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPA</td>
+		                        <td>PORTO ALEGRE</td>
+		                        <td class="xl65" align="right">147057.6</td>
+		                        <td class="xl65" align="right">693734.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBGL</td>
+		                        <td>RIO DE JANEIRO</td>
+		                        <td class="xl65" align="right">123660.2</td>
+		                        <td class="xl65" align="right">583358.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSV</td>
+		                        <td>SALVADOR</td>
+		                        <td class="xl65" align="right">116985.8</td>
+		                        <td class="xl65" align="right">551872.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCT</td>
+		                        <td>CURITIBA</td>
+		                        <td class="xl65" align="right">115591.9</td>
+		                        <td class="xl65" align="right">545297.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBRF</td>
+		                        <td>RECIFE</td>
+		                        <td class="xl65" align="right">112710.4</td>
+		                        <td class="xl65" align="right">531703.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBFZ</td>
+		                        <td>FORTALEZA</td>
+		                        <td class="xl65" align="right">92512.5</td>
+		                        <td class="xl65" align="right">436421.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBKP</td>
+		                        <td>CAMPINAS</td>
+		                        <td class="xl65" align="right">82856.4</td>
+		                        <td class="xl65" align="right">390869.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBFL</td>
+		                        <td>FLORIANÓPOLIS</td>
+		                        <td class="xl65" align="right">71565.9</td>
+		                        <td class="xl65" align="right">337607.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBVT</td>
+		                        <td>VITÓRIA</td>
+		                        <td class="xl65" align="right">62902.8</td>
+		                        <td class="xl65" align="right">296739.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBGO</td>
+		                        <td>GOIÂNIA</td>
+		                        <td class="xl65" align="right">59805.9</td>
+		                        <td class="xl65" align="right">282130.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCY</td>
+		                        <td>VÁRZEA GRANDE</td>
+		                        <td class="xl65" align="right">43161.5</td>
+		                        <td class="xl65" align="right">203611.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBFI</td>
+		                        <td>FOZ DO IGUAÇU</td>
+		                        <td class="xl65" align="right">41925.1</td>
+		                        <td class="xl65" align="right">197779.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMO</td>
+		                        <td>MACEIÓ</td>
+		                        <td class="xl65" align="right">40394.0</td>
+		                        <td class="xl65" align="right">190556.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBNF</td>
+		                        <td>NAVEGANTES</td>
+		                        <td class="xl65" align="right">40016.6</td>
+		                        <td class="xl65" align="right">188775.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSG</td>
+		                        <td>SÃO GONÇALO DO AMARANTE</td>
+		                        <td class="xl65" align="right">38754.8</td>
+		                        <td class="xl65" align="right">182823.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBE</td>
+		                        <td>BELÉM</td>
+		                        <td class="xl65" align="right">36633.7</td>
+		                        <td class="xl65" align="right">172817.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBEG</td>
+		                        <td>MANAUS</td>
+		                        <td class="xl65" align="right">36038.9</td>
+		                        <td class="xl65" align="right">170010.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPS</td>
+		                        <td>PORTO SEGURO</td>
+		                        <td class="xl65" align="right">33608.3</td>
+		                        <td class="xl65" align="right">158545.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCG</td>
+		                        <td>CAMPO GRANDE</td>
+		                        <td class="xl65" align="right">29243.6</td>
+		                        <td class="xl65" align="right">137954.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJP</td>
+		                        <td>JOÃO PESSOA</td>
+		                        <td class="xl65" align="right">25055.6</td>
+		                        <td class="xl65" align="right">118198.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUL</td>
+		                        <td>UBERLÂNDIA</td>
+		                        <td class="xl65" align="right">23704.1</td>
+		                        <td class="xl65" align="right">111822.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSL</td>
+		                        <td>SÃO LUÍS</td>
+		                        <td class="xl65" align="right">23022.1</td>
+		                        <td class="xl65" align="right">108605.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAR</td>
+		                        <td>ARACAJU</td>
+		                        <td class="xl65" align="right">21346.6</td>
+		                        <td class="xl65" align="right">100701.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBLO</td>
+		                        <td>LONDRINA</td>
+		                        <td class="xl65" align="right">19988.4</td>
+		                        <td class="xl65" align="right">94294.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTE</td>
+		                        <td>TERESINA</td>
+		                        <td class="xl65" align="right">17884.3</td>
+		                        <td class="xl65" align="right">84367.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBRP</td>
+		                        <td>RIBEIRÃO PRETO</td>
+		                        <td class="xl65" align="right">15430.2</td>
+		                        <td class="xl65" align="right">72791.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSR</td>
+		                        <td>SÃO JOSÉ DO RIO PRETO</td>
+		                        <td class="xl65" align="right">15372.8</td>
+		                        <td class="xl65" align="right">72520.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMG</td>
+		                        <td>MARINGÁ</td>
+		                        <td class="xl65" align="right">14022.0</td>
+		                        <td class="xl65" align="right">66147.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJV</td>
+		                        <td>JOINVILLE</td>
+		                        <td class="xl65" align="right">12246.4</td>
+		                        <td class="xl65" align="right">57771.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBIL</td>
+		                        <td>ILHÉUS</td>
+		                        <td class="xl65" align="right">10442.2</td>
+		                        <td class="xl65" align="right">49260.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPJ</td>
+		                        <td>PALMAS</td>
+		                        <td class="xl65" align="right">9988.3</td>
+		                        <td class="xl65" align="right">47119.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPV</td>
+		                        <td>PORTO VELHO</td>
+		                        <td class="xl65" align="right">9730.4</td>
+		                        <td class="xl65" align="right">45902.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJU</td>
+		                        <td>JUAZEIRO DO NORTE</td>
+		                        <td class="xl65" align="right">8454.4</td>
+		                        <td class="xl65" align="right">39883.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCH</td>
+		                        <td>CHAPECÓ</td>
+		                        <td class="xl65" align="right">7083.6</td>
+		                        <td class="xl65" align="right">33416.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBDN</td>
+		                        <td>PRESIDENTE PRUDENTE</td>
+		                        <td class="xl65" align="right">6123.1</td>
+		                        <td class="xl65" align="right">28885.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBRB</td>
+		                        <td>RIO BRANCO</td>
+		                        <td class="xl65" align="right">5643.9</td>
+		                        <td class="xl65" align="right">26624.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPL</td>
+		                        <td>PETROLINA</td>
+		                        <td class="xl65" align="right">5626.4</td>
+		                        <td class="xl65" align="right">26542.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMQ</td>
+		                        <td>MACAPÁ</td>
+		                        <td class="xl65" align="right">4788.2</td>
+		                        <td class="xl65" align="right">22588.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBIZ</td>
+		                        <td>IMPERATRIZ</td>
+		                        <td class="xl65" align="right">4640.3</td>
+		                        <td class="xl65" align="right">21890.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBV</td>
+		                        <td>BOA VISTA</td>
+		                        <td class="xl65" align="right">4639.4</td>
+		                        <td class="xl65" align="right">21886.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCX</td>
+		                        <td>CAXIAS DO SUL</td>
+		                        <td class="xl65" align="right">4347.0</td>
+		                        <td class="xl65" align="right">20506.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMK</td>
+		                        <td>MONTES CLAROS</td>
+		                        <td class="xl65" align="right">3909.7</td>
+		                        <td class="xl65" align="right">18443.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMA</td>
+		                        <td>MARABÁ</td>
+		                        <td class="xl65" align="right">3622.8</td>
+		                        <td class="xl65" align="right">17090.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBFN</td>
+		                        <td>FERNANDO DE NORONHA</td>
+		                        <td class="xl65" align="right">3390.6</td>
+		                        <td class="xl65" align="right">15994.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSN</td>
+		                        <td>SANTARÉM</td>
+		                        <td class="xl65" align="right">3332.3</td>
+		                        <td class="xl65" align="right">15719.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBVC</td>
+		                        <td>VITÓRIA DA CONQUISTA</td>
+		                        <td class="xl65" align="right">3268.8</td>
+		                        <td class="xl65" align="right">15420.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCA</td>
+		                        <td>CASCAVEL</td>
+		                        <td class="xl65" align="right">3094.6</td>
+		                        <td class="xl65" align="right">14598.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCN</td>
+		                        <td>CALDAS NOVAS</td>
+		                        <td class="xl65" align="right">2902.6</td>
+		                        <td class="xl65" align="right">13692.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBZM</td>
+		                        <td>GOIANÁ</td>
+		                        <td class="xl65" align="right">2696.7</td>
+		                        <td class="xl65" align="right">12721.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBKG</td>
+		                        <td>CAMPINA GRANDE</td>
+		                        <td class="xl65" align="right">2611.8</td>
+		                        <td class="xl65" align="right">12320.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJA</td>
+		                        <td>JAGUARUNA</td>
+		                        <td class="xl65" align="right">2310.0</td>
+		                        <td class="xl65" align="right">10897.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJE</td>
+		                        <td>CRUZ</td>
+		                        <td class="xl65" align="right">2158.5</td>
+		                        <td class="xl65" align="right">10182.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAE</td>
+		                        <td>AREALVA</td>
+		                        <td class="xl65" align="right">1941.0</td>
+		                        <td class="xl65" align="right">9156.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPF</td>
+		                        <td>PASSO FUNDO</td>
+		                        <td class="xl65" align="right">1915.8</td>
+		                        <td class="xl65" align="right">9037.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBIP</td>
+		                        <td>SANTANA DO PARAÍSO</td>
+		                        <td class="xl65" align="right">1737.2</td>
+		                        <td class="xl65" align="right">8195.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCJ</td>
+		                        <td>PARAUAPEBAS</td>
+		                        <td class="xl65" align="right">1616.6</td>
+		                        <td class="xl65" align="right">7626.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBQV</td>
+		                        <td>VITÓRIA DA CONQUISTA</td>
+		                        <td class="xl65" align="right">1615.7</td>
+		                        <td class="xl65" align="right">7621.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUR</td>
+		                        <td>UBERABA</td>
+		                        <td class="xl65" align="right">1204.8</td>
+		                        <td class="xl65" align="right">5683.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNBR</td>
+		                        <td>BARREIRAS</td>
+		                        <td class="xl65" align="right">1148.0</td>
+		                        <td class="xl65" align="right">5415.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAU</td>
+		                        <td>ARAÇATUBA</td>
+		                        <td class="xl65" align="right">1089.2</td>
+		                        <td class="xl65" align="right">5138.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBGV</td>
+		                        <td>GOVERNADOR VALADARES</td>
+		                        <td class="xl65" align="right">838.7</td>
+		                        <td class="xl65" align="right">3956.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBDO</td>
+		                        <td>DOURADOS</td>
+		                        <td class="xl65" align="right">818.0</td>
+		                        <td class="xl65" align="right">3859.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWSI</td>
+		                        <td>SINOP</td>
+		                        <td class="xl65" align="right">749.4</td>
+		                        <td class="xl65" align="right">3535.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCB</td>
+		                        <td>CABO FRIO</td>
+		                        <td class="xl65" align="right">676.8</td>
+		                        <td class="xl65" align="right">3192.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSJ</td>
+		                        <td>SÃO JOSÉ DOS CAMPOS</td>
+		                        <td class="xl65" align="right">635.7</td>
+		                        <td class="xl65" align="right">2998.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBML</td>
+		                        <td>MARÍLIA</td>
+		                        <td class="xl65" align="right">613.5</td>
+		                        <td class="xl65" align="right">2894.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTC</td>
+		                        <td>UNA</td>
+		                        <td class="xl65" align="right">560.0</td>
+		                        <td class="xl65" align="right">2641.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCZ</td>
+		                        <td>CRUZEIRO DO SUL</td>
+		                        <td class="xl65" align="right">545.1</td>
+		                        <td class="xl65" align="right">2571.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSM</td>
+		                        <td>SANTA MARIA</td>
+		                        <td class="xl65" align="right">490.4</td>
+		                        <td class="xl65" align="right">2313.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNTF</td>
+		                        <td>TEIXEIRA DE FREITAS</td>
+		                        <td class="xl65" align="right">490.1</td>
+		                        <td class="xl65" align="right">2311.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPK</td>
+		                        <td>PELOTAS</td>
+		                        <td class="xl65" align="right">461.8</td>
+		                        <td class="xl65" align="right">2178.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBRD</td>
+		                        <td>RONDONÓPOLIS</td>
+		                        <td class="xl65" align="right">413.6</td>
+		                        <td class="xl65" align="right">1951.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMS</td>
+		                        <td>MOSSORÓ</td>
+		                        <td class="xl65" align="right">370.4</td>
+		                        <td class="xl65" align="right">1747.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBNM</td>
+		                        <td>SANTO ÂNGELO</td>
+		                        <td class="xl65" align="right">346.0</td>
+		                        <td class="xl65" align="right">1632.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWGN</td>
+		                        <td>ARAGUAÍNA</td>
+		                        <td class="xl65" align="right">344.2</td>
+		                        <td class="xl65" align="right">1623.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBHT</td>
+		                        <td>ALTAMIRA</td>
+		                        <td class="xl65" align="right">342.3</td>
+		                        <td class="xl65" align="right">1614.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUG</td>
+		                        <td>URUGUAIANA</td>
+		                        <td class="xl65" align="right">303.5</td>
+		                        <td class="xl65" align="right">1431.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJI</td>
+		                        <td>JI-PARANÁ</td>
+		                        <td class="xl65" align="right">301.5</td>
+		                        <td class="xl65" align="right">1422.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSI</td>
+		                        <td>SINOP</td>
+		                        <td class="xl65" align="right">294.1</td>
+		                        <td class="xl65" align="right">1387.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTD</td>
+		                        <td>TOLEDO</td>
+		                        <td class="xl65" align="right">271.7</td>
+		                        <td class="xl65" align="right">1281.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWLC</td>
+		                        <td>RIO VERDE</td>
+		                        <td class="xl65" align="right">264.8</td>
+		                        <td class="xl65" align="right">1249.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAT</td>
+		                        <td>ALTA FLORESTA</td>
+		                        <td class="xl65" align="right">264.4</td>
+		                        <td class="xl65" align="right">1247.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBLJ</td>
+		                        <td>LAGES</td>
+		                        <td class="xl65" align="right">263.6</td>
+		                        <td class="xl65" align="right">1243.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSKW</td>
+		                        <td>CACOAL</td>
+		                        <td class="xl65" align="right">259.6</td>
+		                        <td class="xl65" align="right">1224.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTG</td>
+		                        <td>TRÊS LAGOAS</td>
+		                        <td class="xl65" align="right">248.8</td>
+		                        <td class="xl65" align="right">1173.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCP</td>
+		                        <td>CAMPOS DOS GOYTACAZES</td>
+		                        <td class="xl65" align="right">227.5</td>
+		                        <td class="xl65" align="right">1073.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTT</td>
+		                        <td>TABATINGA</td>
+		                        <td class="xl65" align="right">225.2</td>
+		                        <td class="xl65" align="right">1062.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBCR</td>
+		                        <td>CORUMBÁ</td>
+		                        <td class="xl65" align="right">225.1</td>
+		                        <td class="xl65" align="right">1061.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUY</td>
+		                        <td>COARI</td>
+		                        <td class="xl65" align="right">179.4</td>
+		                        <td class="xl65" align="right">846.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPO</td>
+		                        <td>PATO BRANCO</td>
+		                        <td class="xl65" align="right">174.0</td>
+		                        <td class="xl65" align="right">820.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNVB</td>
+		                        <td>VALENÇA</td>
+		                        <td class="xl65" align="right">169.2</td>
+		                        <td class="xl65" align="right">798.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBVH</td>
+		                        <td>VILHENA</td>
+		                        <td class="xl65" align="right">167.3</td>
+		                        <td class="xl65" align="right">789.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBVG</td>
+		                        <td>VARGINHA</td>
+		                        <td class="xl65" align="right">142.6</td>
+		                        <td class="xl65" align="right">672.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPG</td>
+		                        <td>PONTA GROSSA</td>
+		                        <td class="xl65" align="right">137.6</td>
+		                        <td class="xl65" align="right">649.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBDB</td>
+		                        <td>BONITO</td>
+		                        <td class="xl65" align="right">133.9</td>
+		                        <td class="xl65" align="right">631.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUF</td>
+		                        <td>PAULO AFONSO</td>
+		                        <td class="xl65" align="right">127.3</td>
+		                        <td class="xl65" align="right">600.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWPI</td>
+		                        <td>PARINTINS</td>
+		                        <td class="xl65" align="right">126.4</td>
+		                        <td class="xl65" align="right">596.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBSO</td>
+		                        <td>SORRISO</td>
+		                        <td class="xl65" align="right">122.7</td>
+		                        <td class="xl65" align="right">578.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTF</td>
+		                        <td>TEFÉ</td>
+		                        <td class="xl65" align="right">113.6</td>
+		                        <td class="xl65" align="right">535.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBLE</td>
+		                        <td>LENÇÓIS</td>
+		                        <td class="xl65" align="right">113.0</td>
+		                        <td class="xl65" align="right">533.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SJTC</td>
+		                        <td>AREALVA</td>
+		                        <td class="xl65" align="right">109.0</td>
+		                        <td class="xl65" align="right">514.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBME</td>
+		                        <td>MACAÉ</td>
+		                        <td class="xl65" align="right">89.3</td>
+		                        <td class="xl65" align="right">421.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBFE</td>
+		                        <td>FEIRA DE SANTANA</td>
+		                        <td class="xl65" align="right">74.2</td>
+		                        <td class="xl65" align="right">350.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBW</td>
+		                        <td>BARRA DO GARÇAS</td>
+		                        <td class="xl65" align="right">65.2</td>
+		                        <td class="xl65" align="right">307.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBPB</td>
+		                        <td>PARNAÍBA</td>
+		                        <td class="xl65" align="right">62.7</td>
+		                        <td class="xl65" align="right">295.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBIH</td>
+		                        <td>ITAITUBA</td>
+		                        <td class="xl65" align="right">58.0</td>
+		                        <td class="xl65" align="right">273.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNAT</td>
+		                        <td>ARACATI</td>
+		                        <td class="xl65" align="right">40.9</td>
+		                        <td class="xl65" align="right">193.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBUA</td>
+		                        <td>SÃO GABRIEL DA CACHOEIRA</td>
+		                        <td class="xl65" align="right">38.0</td>
+		                        <td class="xl65" align="right">179.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBTB</td>
+		                        <td>ORIXIMINÁ</td>
+		                        <td class="xl65" align="right">28.6</td>
+		                        <td class="xl65" align="right">135.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWEI</td>
+		                        <td>EIRUNEPÉ</td>
+		                        <td class="xl65" align="right">28.5</td>
+		                        <td class="xl65" align="right">134.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAX</td>
+		                        <td>ARAXÁ</td>
+		                        <td class="xl65" align="right">26.4</td>
+		                        <td class="xl65" align="right">124.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWCA</td>
+		                        <td>CARAUARI</td>
+		                        <td class="xl65" align="right">20.4</td>
+		                        <td class="xl65" align="right">96.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNBA</td>
+		                        <td>BARRETOS</td>
+		                        <td class="xl65" align="right">19.3</td>
+		                        <td class="xl65" align="right">91.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSZW</td>
+		                        <td>PONTA GROSSA</td>
+		                        <td class="xl65" align="right">15.7</td>
+		                        <td class="xl65" align="right">74.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWKO</td>
+		                        <td>COARI</td>
+		                        <td class="xl65" align="right">14.7</td>
+		                        <td class="xl65" align="right">68.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJR</td>
+		                        <td>RIO DE JANEIRO</td>
+		                        <td class="xl65" align="right">13.4</td>
+		                        <td class="xl65" align="right">63.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SIMK</td>
+		                        <td>FRANCA</td>
+		                        <td class="xl65" align="right">12.3</td>
+		                        <td class="xl65" align="right">58.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWBC</td>
+		                        <td>BARCELOS</td>
+		                        <td class="xl65" align="right">9.7</td>
+		                        <td class="xl65" align="right">45.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBG</td>
+		                        <td>BAGÉ</td>
+		                        <td class="xl65" align="right">9.3</td>
+		                        <td class="xl65" align="right">43.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBAQ</td>
+		                        <td>ARARAQUARA</td>
+		                        <td class="xl65" align="right">8.0</td>
+		                        <td class="xl65" align="right">37.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWLB</td>
+		                        <td>LÁBREA</td>
+		                        <td class="xl65" align="right">7.8</td>
+		                        <td class="xl65" align="right">36.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSZR</td>
+		                        <td>SANTA ROSA</td>
+		                        <td class="xl65" align="right">5.9</td>
+		                        <td class="xl65" align="right">27.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SJRG</td>
+		                        <td>RIO GRANDE</td>
+		                        <td class="xl65" align="right">4.8</td>
+		                        <td class="xl65" align="right">22.7</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSSB</td>
+		                        <td>SÃO BORJA</td>
+		                        <td class="xl65" align="right">3.6</td>
+		                        <td class="xl65" align="right">17.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSUV</td>
+		                        <td>UNIÃO DA VITÓRIA</td>
+		                        <td class="xl65" align="right">3.6</td>
+		                        <td class="xl65" align="right">16.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBGU</td>
+		                        <td>GUARAPUAVA</td>
+		                        <td class="xl65" align="right">3.0</td>
+		                        <td class="xl65" align="right">14.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSGY</td>
+		                        <td>GUAÍRA</td>
+		                        <td class="xl65" align="right">2.9</td>
+		                        <td class="xl65" align="right">13.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSKM</td>
+		                        <td>CAMPO MOURÃO</td>
+		                        <td class="xl65" align="right">2.7</td>
+		                        <td class="xl65" align="right">12.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSVL</td>
+		                        <td>TELÊMACO BORBA</td>
+		                        <td class="xl65" align="right">2.2</td>
+		                        <td class="xl65" align="right">10.2</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWMW</td>
+		                        <td>MAUÉS</td>
+		                        <td class="xl65" align="right">2.1</td>
+		                        <td class="xl65" align="right">9.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNVS</td>
+		                        <td>BREVES</td>
+		                        <td class="xl65" align="right">1.9</td>
+		                        <td class="xl65" align="right">9.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSPI</td>
+		                        <td>PARANAVAÍ</td>
+		                        <td class="xl65" align="right">1.6</td>
+		                        <td class="xl65" align="right">7.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBBH</td>
+		                        <td>BELO HORIZONTE</td>
+		                        <td class="xl65" align="right">1.6</td>
+		                        <td class="xl65" align="right">7.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSCT</td>
+		                        <td>CIANORTE</td>
+		                        <td class="xl65" align="right">1.5</td>
+		                        <td class="xl65" align="right">7.1</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWTS</td>
+		                        <td>TANGARÁ DA SERRA</td>
+		                        <td class="xl65" align="right">1.1</td>
+		                        <td class="xl65" align="right">5.3</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWHP</td>
+		                        <td>ÁGUA BOA</td>
+		                        <td class="xl65" align="right">1.0</td>
+		                        <td class="xl65" align="right">4.9</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSOG</td>
+		                        <td>ARAPONGAS</td>
+		                        <td class="xl65" align="right">0.8</td>
+		                        <td class="xl65" align="right">4.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSPG</td>
+		                        <td>PARANAGUÁ</td>
+		                        <td class="xl65" align="right">0.8</td>
+		                        <td class="xl65" align="right">3.8</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SNPD</td>
+		                        <td>PATOS DE MINAS</td>
+		                        <td class="xl65" align="right">0.6</td>
+		                        <td class="xl65" align="right">3.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBMD</td>
+		                        <td>ALMEIRIM</td>
+		                        <td class="xl65" align="right">0.6</td>
+		                        <td class="xl65" align="right">3.0</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SSFB</td>
+		                        <td>FRANCISCO BELTRÃO</td>
+		                        <td class="xl65" align="right">0.3</td>
+		                        <td class="xl65" align="right">1.4</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SBJD</td>
+		                        <td>JUNDIAÍ</td>
+		                        <td class="xl65" align="right">0.1</td>
+		                        <td class="xl65" align="right">0.6</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWRD</td>
+		                        <td>RONDONÓPOLIS</td>
+		                        <td class="xl65" align="right">0.1</td>
+		                        <td class="xl65" align="right">0.5</td>
+		                    </tr>
+		                    <tr style="height:15.0pt" height="20">
+		                        <td style="height:15.0pt" height="20">SWJN</td>
+		                        <td>JUÍNA</td>
+		                        <td class="xl65" align="right">0.1</td>
+		                        <td class="xl65" align="right">0.3</td>
+		                    </tr>
+		                    <!--[if supportMisalignedColumns]-->
+		                    <tr style="display:none" height="0">
+		                        <td style="width:99pt" width="132"></td>
+		                        <td style="width:147pt" width="196"></td>
+		                        <td style="width:52pt" width="69"></td>
+		                        <td style="width:58pt" width="77"></td>
+		                    </tr>
+		                    <!--[endif]-->
+		                </tbody>
+		            </table>
+		        </div>
+		    </div>
+		</div>
+        <div class="card" id="card6" style="z-index: 1100;">
             <div class="card-body">
                 <!-- CARD.HEADER -->
-                <h5 class="card-title" id="aba15-card5">Referências
+                <h5 class="card-title" id="aba15-card6">Referências
                 </h5>
                 <!-- CARD.TEXT -->
                 <p class="text-justify mt-4">
                 Faria, N. et al. (2021) ‘Genomic characterisation of an emergent SARS-CoV-2 lineage in Manaus: preliminary findings’, virological.org. Preprint available at: <a href=https://virological.org/t/genomic-characterisation-of-an-emergent-sars-cov-2-lineage-in-manaus-preliminary-findings/586>https://virological.org/t/genomic-characterisation-of-an-emergent-sars-cov-2-lineage-in-manaus-preliminary-findings/586</a> (Accessed: 20 January 2021).
                 </p>
                 <p class="text-justify mt-4">
-Naveca, F. et al. (2021) ‘SARS-CoV-2 reinfection by the new Variant of Concern (VOC) P.1 in Amazonas, Brazil’, virological.org. Preprint available at: <a href=https://virological.org/t/sars-cov-2-reinfection-by-the-new-variant-of-concern-voc-p-1-in-amazonas-brazil/596>https://virological.org/t/sars-cov-2-reinfection-by-the-new-variant-of-concern-voc-p-1-in-amazonas-brazil/596</a> (Accessed: 20 January 2021)
+				Naveca, F. et al. (2021) ‘SARS-CoV-2 reinfection by the new Variant of Concern (VOC) P.1 in Amazonas, Brazil’, virological.org. Preprint available at: <a href=https://virological.org/t/sars-cov-2-reinfection-by-the-new-variant-of-concern-voc-p-1-in-amazonas-brazil/596>https://virological.org/t/sars-cov-2-reinfection-by-the-new-variant-of-concern-voc-p-1-in-amazonas-brazil/596</a> (Accessed: 20 January 2021)
                 </p>
             </div>
         </div>
