@@ -91,7 +91,10 @@ if(is.null(data_date)){
   
   latest_hosp_table = last(hospitalized_files)
   latest_UTI_table = last(UTI_files)
-  latest_date = as.Date(gsub(".csv", "", gsub("hopitalized_", "", last(strsplit(latest_hosp_table, "/")[[1]]))), format = "%Y-%m-%d")
+  latest_date = as.Date(gsub(".csv", "", gsub("hopitalized_", "", 
+                                              last(strsplit(latest_hosp_table, 
+                                                            "/")[[1]]))), 
+                        format = "%Y-%m-%d")
   
   latest_hospital_data = read.csv(latest_hosp_table)
   latest_hospital_data$date = as.Date(latest_hospital_data$date)
@@ -104,12 +107,6 @@ if(is.null(data_date)){
   
   FITSPATH =  paste0(O("curve_fits"), "/curve_fits_", data_date,".Rds")
   current_fits = readRDS(FITSPATH)
-  
-  covid = hospital_data %>% filter(type == "covid")
-  latest_covid = latest_hospital_data %>% filter(type == "covid")
-  
-  covid_UTI = UTI_data %>% filter(type == "covid")
-  latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
   
   srag = hospital_data %>% filter(type == "srag")
   latest_srag = latest_hospital_data %>% filter(type == "srag")
@@ -124,65 +121,72 @@ if(is.null(data_date)){
 ########################
 # Hospitalized
 ########################
-
-{
-  pce = make_ggplot(covid, latest_covid, current_fits$covid$Exp, 
-                    ylabel = "Número de casos COVID-19 hospitalizados",
-                    title = "COVID-19 - Leitos Totais - Exponencial") 
-  plot.covid.leitos.forecast.exp = pce$current + plot.formatos + ggtitle("")
-  if(print_validation_plots){
+plot_covid = FALSE
+if(plot_covid){
+  covid = hospital_data %>% filter(type == "covid")
+  latest_covid = latest_hospital_data %>% filter(type == "covid")
+  
+  covid_UTI = UTI_data %>% filter(type == "covid")
+  latest_covid_UTI = latest_UTI_data %>% filter(type == "covid")
+  
+  {
+    pce = make_ggplot(covid, latest_covid, current_fits$covid$Exp, 
+                      ylabel = "Número de casos COVID-19 hospitalizados",
+                      title = "COVID-19 - Leitos Totais - Exponencial") 
+    plot.covid.leitos.forecast.exp = pce$current + plot.formatos + ggtitle("")
+    if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp.", format)),
                 pce$current, base_height = 6.5, base_asp = 1.7, scale = 0.8)
       save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Exp_validation.", format)),
                 pce$validation, base_height = 6.5, base_asp = 1.7, scale = 0.8)
+    } 
   } 
-} 
-
-{
-  pcl = make_ggplot(covid, latest_covid, current_fits$covid$Logist, 
-                    ylabel = "Número de casos COVID-19 hospitalizados",
-                    title = "COVID-19 - Leitos Totais - Logistica")  
-  plot.covid.leitos.forecast.logistic = pcl$current + plot.formatos + ggtitle("")
-  if(print_validation_plots){
+  
+  {
+    pcl = make_ggplot(covid, latest_covid, current_fits$covid$Logist, 
+                      ylabel = "Número de casos COVID-19 hospitalizados",
+                      title = "COVID-19 - Leitos Totais - Logistica")  
+    plot.covid.leitos.forecast.logistic = pcl$current + plot.formatos + ggtitle("")
+    if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic.", format)),
                 pcl$current, base_height = 6.5, base_asp = 1.7)
       save_plot(PLOTPATH(paste0(data_date, "_covid19_leitos_Logistic_validation.", format)),
                 pcl$validation, base_height = 6.5, base_asp = 1.7)
+    }
   }
-}
-
-########################
-# UTI
-########################
-
-{
-  pceU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTIExp, breaks = 500,
-                     ylabel = "Número de casos COVID-19 hospitalizados em UTI",
-                     title = "COVID-19 - Leitos UTI - Exponencial") 
-  plot.covid.uti.forecast.exp = pceU$current + plot.formatos + ggtitle("")
-  if(print_validation_plots){
+  
+  ########################
+  # UTI
+  ########################
+  
+  {
+    pceU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTIExp, breaks = 500,
+                       ylabel = "Número de casos COVID-19 hospitalizados em UTI",
+                       title = "COVID-19 - Leitos UTI - Exponencial") 
+    plot.covid.uti.forecast.exp = pceU$current + plot.formatos + ggtitle("")
+    if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp.", format)),
                 pceU$current, base_height = 6.5, base_asp = 1.7)
       save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Exp_validation.", format)),
                 pceU$validation, base_height = 6.5, base_asp = 1.7)
-
+      
+    }
   }
-}
-
-
-{
-  pclU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTILogist, breaks = 500,
-                     ylabel = "Número de casos COVID-19 hospitalizados em UTI",
-                     title = "COVID-19 - Leitos UTI - Logistico") 
-  plot.covid.uti.forecast.logistic = pclU$current + plot.formatos + ggtitle("")
-  if(print_validation_plots){
+  
+  
+  {
+    pclU = make_ggplot(covid_UTI, latest_covid_UTI, current_fits$covid$UTILogist, breaks = 500,
+                       ylabel = "Número de casos COVID-19 hospitalizados em UTI",
+                       title = "COVID-19 - Leitos UTI - Logistico") 
+    plot.covid.uti.forecast.logistic = pclU$current + plot.formatos + ggtitle("")
+    if(print_validation_plots){
       save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic.", format)),
                 pclU$current, base_height = 6.5, base_asp = 1.7)
       save_plot(PLOTPATH(paste0(data_date, "_covid19_UTI_Logistic_validation.", format)),
                 pclU$validation, base_height = 6.5, base_asp = 1.7)
+    }
   }
 }
-
 ########################
 # SRAG
 ########################
@@ -192,7 +196,7 @@ if(is.null(data_date)){
 ########################
 
 {
-  pse = make_ggplot(srag, latest_srag, current_fits$srag$Exp, disease = "srag",
+  pse = make_ggplot_no_model(srag, latest_srag, disease = "srag",
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Exponencial")
   plot.srag.leitos.forecast.exp = pse$current + plot.formatos + ggtitle("")
@@ -205,7 +209,7 @@ if(is.null(data_date)){
 }         
 
 {
-  psl = make_ggplot(srag, latest_srag, current_fits$srag$Logist, disease = "srag",
+  psl = make_ggplot_no_model(srag, latest_srag, disease = "srag",
                     ylabel = "Número de casos SRAG hospitalizados",
                     title = "SRAG - Leitos totais - Logistico")
   plot.srag.leitos.forecast.logistic = psl$current + plot.formatos + ggtitle("")
@@ -222,7 +226,7 @@ if(is.null(data_date)){
 ########################
 
 {
-  pseU = make_ggplot(srag_UTI, latest_srag_UTI, current_fits$srag$UTIExp, disease = "srag",
+  pseU = make_ggplot_no_model(srag_UTI, latest_srag_UTI, disease = "srag",
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Exponencial")
   plot.srag.uti.forecast.exp = pseU$current + plot.formatos + ggtitle("")
@@ -235,7 +239,7 @@ if(is.null(data_date)){
 }
 
 {
-  pslU = make_ggplot(srag_UTI, latest_srag_UTI, current_fits$srag$UTILogist, disease = "srag",
+  pslU = make_ggplot_no_model(srag_UTI, latest_srag_UTI, disease = "srag",
                      ylabel = "Número de casos SRAG hospitalizados em UTI",
                      title = "SRAG - Leitos UTI - Logistico")
   plot.srag.uti.forecast.logistic = pslU$current + plot.formatos + ggtitle("")
@@ -269,8 +273,8 @@ makeNamedList <- function(...) {
 }
 
 # Graficos a serem atualizados
-plots.para.atualizar <- makeNamedList(plot.covid.leitos.forecast.exp, plot.covid.leitos.forecast.logistic,
-                                      plot.covid.uti.forecast.exp, plot.covid.uti.forecast.logistic,
+plots.para.atualizar <- makeNamedList(#plot.covid.leitos.forecast.exp, plot.covid.leitos.forecast.logistic,
+                                      #plot.covid.uti.forecast.exp, plot.covid.uti.forecast.logistic,
                                       plot.srag.leitos.forecast.exp, plot.srag.leitos.forecast.logistic,
                                       plot.srag.uti.forecast.exp, plot.srag.uti.forecast.logistic)
 filenames <- paste0(names(plots.para.atualizar))

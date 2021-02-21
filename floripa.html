@@ -1,0 +1,669 @@
+<!doctype html> <!-- HTML 5 doctype -->
+<html lang="pt">
+
+<head>
+    <!-- Description meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+    <title>Florianópolis · Observatório Covid-19 BR</title>
+
+    <!-- Bootstrap CSS via BootstrapCDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Observatorio CSS -->
+    <link href="./css/global.css?ver=2.57" rel="stylesheet">
+    <link href="./css/charts.css?ver=2.02" rel="stylesheet">
+    <link href="./css/toc.css?ver=2.00" rel="stylesheet">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#007bff">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Observatório Covid-19 BR">
+    <meta name="twitter:description"
+          content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+
+    <!-- Facebook -->
+    <meta property="og:url" content="https://covid19br.github.io">
+    <meta property="og:title" content="Observatório Covid-19 BR">
+    <meta property="og:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-analises.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+</head>
+
+<body>
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- BOTAO DO MENU -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+            <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+        </a>
+
+        <!-- DESTAQUE -->
+        <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="#">
+                Florianópolis
+            </a>
+        </div>
+        
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Visão Geral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./estados.html">Estados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./drs.html">DRS - SP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./cenarios.html">Cenários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./analises.html">Análises</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Florianópolis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./midia.html">Reportagens</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./sobre.html">Sobre</a>
+                </li>
+                <!-- MENU.ITEM -->
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- Titulo Principal + Abas -->
+    <div class="container-fluid main-title-bg">
+        <!-- PAGE.TITLE -->
+        <div class="main-title">
+            <h1 class="display" id="page-title">Florianópolis</h1>
+            <small class="page-subtitle ml-0" style="margin-top: -5px;">Última revisão em 12 de julho, 2020 (21:39, Horário de Brasília) </small>
+            <p class="text-justify mt-4 ml-0">Nesta seção, temos documentos feitos pelo braço do Observatório COVID-19 BR 
+                da cidade de Florianópolis no Estado de Santa Catarina.
+            </p>
+        </div>
+
+        <!-- Separator -->
+        <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+        <!-- Menu -->
+        <div class="main-title">
+            <small class="page-subtitle m-0">Selecione uma análise ></small>
+            <!-- ABAS PILL -->
+            <ul class="nav nav-pills nav-fill" id="main-title-aba-pills">
+                <li class="nav-item aba-pill">
+                    <a class="nav-link active" href="#" card-id="aba1">Avanço da epidemia de COVID-19 em SC e na cidade de Florianópolis</a>
+                </li>
+                <li class="nav-item aba-pill">
+                    <a class="nav-link" href="#" card-id="aba2">Carta aberta às autoridades públicas de SC, aos profissionais de saúde e à população catarinense sobre suposto "tratamento precoce” da COVID-19</a>
+                </li>
+                <li class="nav-item aba-pill">
+                    <a class="nav-link" href="#" card-id="aba3">Sobre</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-4 pb-2" style="margin-left: 1.3rem;">
+            <img src="img/license_cc.svg" width="13px" class="m-0">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+            </small>
+            <small class="page-subtitle ml-1 mr-1">·</small>
+            <img src="img/icon_github.svg" width="13px">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+            </small>
+        </div>
+
+    </div>
+    
+    <!-- ABA 1: Avanço da epidemia de COVID-19 em SC e na cidade de Florianópolis -->
+    <div class="aba-group aba1">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Avanço da epidemia de COVID-19 em SC e na cidade de Florianópolis</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    MANIFESTO DO DEPARTAMENTO DE SAÚDE PÚBLICA, DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE 
+                    COLETIVA E DO PROGRAMA DE PÓS-GRADUAÇÃO EM SAÚDE MENTAL E ATENÇÃO PSICOSSOCIAL DA 
+                    UNIVERSIDADE FEDERAL DE SANTA CATARINA SOBRE DO AVANÇO DA EPIDEMIA DE COVID-19 NO 
+                    ESTADO E NA CIDADE DE FLORIANÓPOLIS.
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+            <!-- Card 1 -->
+            <div class="card" style="z-index: 1110;">
+                <div class="card-body">
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        O Departamento de Saúde Pública, o Programa de Pós-Graduação em Saúde Coletiva e o 
+                        Programa de Pós-Graduação em Saúde Mental e Atenção Psicossocial da Universidade 
+                        Federal de Santa Catarina vem a público manifestar grande preocupação quanto ao 
+                        avanço da epidemia de COVID-19 no estado de Santa Catarina e quanto as recentes 
+                        medidas de flexibilização de atividades econômicas que ocorreram na cidade de Florianópolis.
+                    </p>
+
+                    <p class="text-justify">
+                        A partir de informações oficiais se pode observar o aumento expressivo no número de casos novos, 
+                        no número de casos ativos, na letalidade e na taxa de ocupação dos leitos de UTI em todo estado. 
+                        Particularmente, na cidade de Florianópolis, os dados do Covidômetro[<a href="#aba1-ref1">1</a>] da Prefeitura Municipal, 
+                        em 29/06/2020, dão conta de que estamos próximos do colapso da oferta de leitos, com 85,96% de 
+                        taxa de ocupação, e que o número de casos ativos quadruplicou nas últimas quatro semanas.
+                    </p>
+                    <p class="text-justify">
+                        Apesar da melhoria observada na transparência dos dados sobre a COVID-19 em Florianópolis, 
+                        a informação acerca dos critérios que fundamentam as mudanças na classificação de risco na 
+                        cidade ainda é desconhecida. Importante destacar que a cidade apresenta, neste momento, a 
+                        classificação “alto risco” em referência ao risco da epidemia na cidade, de acordo com 
+                        informações do próprio Covidômetro.
+                    </p>
+                    <p class="text-justify">
+                        Não há dúvida que o avanço da epidemia em Santa Catarina teve início com o relaxamento 
+                        das medidas de isolamento social a partir da liberação pelo Governo do Estado do funcionamento 
+                        de atividades em 01 de abril de 2020, após um período de significativo controle da epidemia. 
+                        Ato contínuo, diversas prefeituras municipais flexibilizaram atividades em plena fase de aumento 
+                        do número de casos e óbitos em Santa Catarina.
+                    </p>
+                    <p class="text-justify">
+                        Naquele momento, nos posicionamos contrários a qualquer medida de flexibilização do distanciamento 
+                        social por compreender que elas conflitam com a proteção à saúde da população e pressionam de forma 
+                        negativa o sistema de saúde, já fragilizado por conta da pandemia.
+                    </p>
+                    <p class="text-justify">
+                        Em que pese as prefeituras municipais gozarem de certa autonomia para decretar medidas de 
+                        flexibilização do distanciamento social o processo iniciado pelo Governo do Estado foi interpretado 
+                        como um “sinal verde” pela quase totalidade de prefeituras e pela população catarinense, provocando 
+                        o relaxamento das medidas de controle ao contágio pelo novo Coronavírus.
+                    </p>
+                    <p class="text-justify">
+                        Fato é que a população compreendeu, e ainda compreende, de forma dúbia as mensagens passadas pelas 
+                        gestões no âmbito estadual e no âmbito dos municípios quanto a real necessidade das medidas de 
+                        distanciamento social. Como consequência, observamos o baixo engajamento da população na adoção 
+                        dessas medidas, por todo o estado.
+                    </p>
+                    <p class="text-justify">
+                        Reforçamos que as melhores evidências científicas disponíveis [<a href="#aba1-ref2">2</a>], [<a href="#aba1-ref3">3</a>], [<a href="#aba1-ref4">4</a>] 
+                        e muitas experiências internacionais demonstram que: 
+                        <ol>
+                            <li>O avanço da epidemia somente pode ser 
+                            contido com medidas amplas de distanciamento social; </li>
+                            <li>É fundamental a adoção de estratégias de 
+                            diagnóstico, acompanhamento, tratamento e isolamento de grupos de risco de forma sistemática; </li>
+                            <li>O alinhamento único de estratégias entre os governos potencializa, em muito, a capacidade de 
+                            resposta a doença; </li>
+                            <li>É necessária uma estratégia clara de divulgação da eficácia das medidas 
+                            tomadas e dos riscos envolvidos em sua não adoção.</li>
+                        </ol>
+                    </p>
+                    <p class="text-justify">
+                        Nesse sentido, todas as medidas adotadas pelo poder público para aumentar o distanciamento social, 
+                        associadas a informação da população acerca de sua necessidade, são positivas e estão alinhadas as 
+                        melhores práticas sanitárias mundiais para o controle da pandemia de COVID-19 [<a href="#aba1-ref5">5</a>].
+                    </p>
+                    <p class="text-justify">
+                        Entendemos que existem repercussões econômicas significativas quando medidas que diminuem a 
+                        circulação de pessoas são adotadas por conta da pandemia. Entendemos, também, que é papel dos 
+                        governos adotar medidas que diminuam os efeitos econômicos sobre a população e sobre os setores 
+                        econômicos, em especial aqueles que estão no mercado informal e os de menor renda e maior 
+                        vulnerabilidade.
+                    </p>
+                    <p class="text-justify">
+                        Conclamamos o poder público, os setores econômicos e a população geral à reflexão sobre a 
+                        necessidade urgente de que medidas de distanciamento social sejam reforçadas no estado e na 
+                        cidade de Florianópolis, a fim de que possamos enfrentar apropriadamente a epidemia, 
+                        respaldados nas melhores evidências científicas. Somente assim se cumpre o papel de proteger 
+                        as pessoas e salvar vidas.
+                    </p>
+                    <p style="text-align:right;">
+                        <br><br>Florianópolis/SC, 29 de junho de 2020.
+                    </p>
+                    
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+            <!-- Leitos situacao atual -->
+            <div class="card" style="z-index: 1030;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba1-card2">Créditos</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Departamento de Saúde Pública da UFSC.<br> 
+                        Programa de Pós-Graduação em Saúde Coletiva da UFSC.<br>
+                        Programa de Pós-Graduação em Saúde Mental e Atenção Psicossocial da UFSC.
+                    </p>
+                    <p class="text-justify">
+                        São signatários deste Manifesto as seguintes entidades [<a href="#aba1-ref6">6</a>]:
+                        <ul>
+                            <li>Associação Brasileira de Saúde Coletiva – Abrasco
+                            </li>
+                            <li>Sociedade Brasileira de Bioética – SBB/Regional SC
+                            </li>
+                            <li>Núcleo de Pesquisa e Extensão em Bioética e Saúde Coletiva
+                            </li>
+                            <li>Núcleo de Estudos e Pesquisas em Avaliação em Saúde
+                            </li>
+                            <li>Núcleo de Humanização, Arte e Saúde
+                            </li>
+                            <li>Grupo de Pesquisa em Política de Saúde
+                            </li>
+                            <li>Grupo de Pesquisa em Farmacoepidemiologia
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Referencias -->
+            <div class="card" style="z-index: 1010;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3"  id="aba1-card3">Referências</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li id="aba1-ref1">Covidômetro da Prefeitura Municipal de Florianópolis. 
+                            Acesso em 29 de junho de 2020. Disponível em <a href="https://covidometrofloripa.com.br/">https://covidometrofloripa.com.br/</a>.</li>
+                        <li id="aba1-ref2">Nussbaumer-Streit B., Mayr V., Dobrescu A.I., Chapman A., Persad E., 
+                            Klerings I., Wagner G., Siebert U., Christof C., 
+                            Zachariah C., Gartlehner G.. Quarantine alone or in combination with other public health measures 
+                            to control COVID-19: a rapid review. Cochrane Database of Systematic Reviews 2020, Issue 4. 
+                            Art. No.: CD013574. DOI: <a href="https://doi.org/10.1002/14651858.CD013574">10.1002/14651858.CD013574</a>.</li>
+                        <li id="aba1-ref3">Viner, RM, Russel, SJ, Croker, H, Packer, J, Ward, J, Stansfield, C, Mytton, O, Bonell, 
+                            C, Booy, R. School closure and management practices during coronavirus outbreaks including COVID-19: a 
+                            rapid systematic review. Lancet Child Adolesc Health 2020; 4: 397–404. Published Online April 6, 2020 
+                            <a href="https://doi.org/10.1016/S2352-4642(20)30095-X">https://doi.org/10.1016/S2352-4642(20)30095-X</a>.</li>
+                        <li id="aba1-ref4">MacIntyre, CR. Case isolation, contact tracing, and physical distancing are 
+                            pillars of COVID-19 pandemic control, not optional choices. Lancet Infect. Dis. 2020. Published 
+                            Online June 16, 2020 <a href="https://doi.org/10.1016/S1473-3099(20)30512-0">https://doi.org/10.1016/S1473-3099(20)30512-0</a></li>
+                        <li id="aba1-ref5">World Health Organization. (‎2020)‎. Considerations in adjusting public health and 
+                            social measures in the context of COVID-19: interim guidance, 16 April 2020. World Health Organization. 
+                            <a href="https://apps.who.int/iris/handle/10665/331773">https://apps.who.int/iris/handle/10665/331773</a>. License: CC BY-NC-SA 3.0 IGO</li>
+                        <li>Instituições, entidades, coletivos e grupos interessados em serem signatários deste Manifesto, 
+                            encaminhar solicitação para secretaria do Programa de Pós-Graduação em Saúde Coletiva no e-mail 
+                            <a href="mailto:ppgsc@contato.ufsc.br">ppgsc@contato.ufsc.br</a>.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+        </div>
+    </div>
+
+    <!-- ABA 2: Carta aberta às autoridades públicas de Santa Catarina, aos profissionais de saúde e à população catarinense sobre suposto "tratamento precoce” da Covid-19 -->
+    <div class="aba-group aba2" style="display: none;">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Carta aberta às autoridades públicas de Santa Catarina, aos profissionais de saúde e à população catarinense sobre suposto "tratamento precoce” da Covid-19</h1>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+            <!-- COLUMNS.NUM -->
+
+            <!-- Card 1 -->
+            <div class="card" style="z-index: 1110;">
+                <div class="card-body">
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        À medida em que a capacidade das UTIs de Santa Catarina chega ao limite para tratamento 
+                        da Covid-19, duas importantes cidades do estado, Itajaí e Balneário Camboriú, e um grupo 
+                        de médicos e médicas catarinenses apoiam supostos “protocolos de tratamento precoce” da 
+                        Covid-19 desprovidos de fundamentos científicos. Tais iniciativas estimulam a aplicação de 
+                        recursos de forma equivocada, geram falsas expectativas, falsa sensação de segurança na 
+                        população, impactam negativamente na adesão às medidas reconhecidamente eficazes de proteção 
+                        e prevenção do SARS-CoV-2, e, ainda, podem causar efeitos colaterais significativos.
+                    </p>
+                    <p class="text-justify">
+                        Os municípios referidos estão implantando o que chamam de “tratamento profilático ao 
+                        coronavírus” com o uso de ivermectina, e a carta dos profissionais sugere sua ampliação 
+                        para todo o estado. Destaca-se que até o momento há apenas um estudo indicando que, 
+                        em laboratório (<i>in vitro</i>), a ivermectina pode inibir a replicação do vírus SARS-CoV-2. 
+                        No entanto, isso apenas ocorre em doses muito superiores às aprovadas e seguras para uso 
+                        em seres humanos. Esse mesmo medicamento já foi proposto para possível tratamento de outras 
+                        infecções como HIV, dengue, influenza e Zika Vírus, mas em nenhum caso apresentou resultado 
+                        antiviral eficaz e foi descartado em todas essas oportunidades. Além disso, na carta mencionam 
+                        “tratamento precoce da Covid-19” com vitaminas C e D, oligominerais como o Zinco e outros 
+                        medicamentos, tais como Cloroquina, Hidroxicloroquina e Azitromicina que têm ações comprovadas 
+                        contra outras doenças, mas não contra Covid-19. Os signatários da carta não apontam sequer um 
+                        estudo de qualidade que embase tais proposições.
+                    </p>
+                    <p class="text-justify">
+                        Convém ressaltar que devido à alta taxa de recuperação espontânea da Covid-19 (cerca de 80% - 85%), 
+                        as eficácias terapêuticas desses produtos indicados só podem ser estabelecidas por meio de pesquisas 
+                        clínicas com grupos de comparação. Logo, o uso dessas substâncias para o tratamento de Covid-19 seria 
+                        experimental e só poderia ser realizado como parte de protocolos de pesquisa clínica para determinar se, 
+                        de fato, possuem efeitos clínicos comprovados para a doença em estudo. A Sociedade Brasileira de 
+                        Infectologia, em informe publicado em 30/06, menciona que “Os antiparasitários ivermectina e 
+                        nitazoxanida parecem ter atividade <i>in vitro</i> contra a SARS-CoV-2, porém ainda não há comprovação de 
+                        eficácia <i>in vivo</i>, isto é, em seres humanos. Muitos dos medicamentos que demonstraram ação antiviral 
+                        <i>in vitro</i> (no laboratório) não tiveram o mesmo benefício <i>in vivo</i> (em seres humanos). Só estudos clínicos 
+                        permitirão definir seu benefício e segurança na Covid-19.” Além disso, Schmith et al. (2020) afirmam 
+                        que, até o presente, não foi realizado estudo clínico com ivermectina e placebo em pacientes com 
+                        Covid-19, o que é um quesito importante de comparação segura. As autoras apontam que a dose ideal 
+                        de ivermectina não foi estabelecida e que mesmo doses de ivermectina de até 120 mg foram administradas 
+                        apenas a um pequeno número de indivíduos. A dosagem diária desse medicamento por períodos mais longos 
+                        (por exemplo, 14 dias) na dose aprovada só foi estudada em pequenos estudos para infecções graves. 
+                        Dados apresentados por Momekov & Momekova (2020) mostram a gravidade da constatação de que os dados 
+                        farmacocinéticos disponíveis de estudos de dosagem clinicamente relevantes e excessivos indicam que 
+                        as concentrações inibitórias de SARS-CoV-2 provavelmente não são atingíveis em humanos.
+                    </p>
+                    <p class="text-justify">
+                        O conteúdo da carta e as ações das prefeituras citadas vão na contramão dos órgãos reguladores de 
+                        medicamentos do Brasil e do mundo, os quais pautam-se em critérios científicos para garantir a 
+                        segurança dos pacientes e o bem-estar da população. Cita-se como exemplo a Food and Drug 
+                        Administration (FDA), agência federal reguladora dos Estados Unidos da América, que em 15 de 
+                        junho de 2020 revogou a autorização de uso emergencial da cloroquina e da hidroxicloroquina para 
+                        tratamento da Covid-19 fora de ambientes hospitalares e fora de contexto de pesquisa (FDA, 2020a). 
+                        Além disso, a FDA não indica o uso da ivermectina para prevenção ou tratamento da Covid-19 e, portanto, 
+                        não autoriza o uso off label desta para Covid-19 (FDA, 2020b). A própria FDA aponta alguns dos efeitos 
+                        colaterais que podem estar associados à ivermectina, os quais incluem erupção cutânea, náusea, vômito, 
+                        diarreia, dor de estômago, edema facial ou dos membros, eventos adversos neurológicos (tonturas, 
+                        convulsões, confusão), queda súbita da pressão arterial, erupção cutânea grave potencialmente exigindo 
+                        hospitalização e lesão hepática (hepatite) (FDA, 2020b).
+                    </p>
+                    <p class="text-justify">
+                        O reposicionamento de medicamentos existentes para uso no tratamento da Covid-19 é uma 
+                        estratégia importantíssima, mas só é viável quando há comprovação de eficácia e segurança de 
+                        uso - com estudos de gradientes de concentração clinicamente relevantes e garantia de maior 
+                        benefício em comparação à não utilização.
+                    </p>
+                    <p class="text-justify">
+                        Cabe observar que a solicitação dos médicos e médicas em carta aberta é problemática também 
+                        em outros pontos. A requisitada autonomia médica sempre esteve preservada, pois não é vedado 
+                        ao profissional médico prescrever vitamina C ou D, ou nenhum dos medicamentos citados; o que 
+                        não se pode é assumir que estes são tratamentos precoces eficazes contra a Covid-19. Portanto, 
+                        é imprudente o apoio a protocolos para que toda população tenha acesso facilitado a tratamentos 
+                        os quais não tiveram eficácia comprovada especificamente contra a Covid-19. Neste caso, a automonia 
+                        que está em risco é a dos pacientes, que tomariam decisões sobre seu tratamento baseadas em opiniões 
+                        e não em fatos comprovados cientificamente. Ao serem estabelecidos protocolos municipais, estaduais 
+                        ou nacionais sem comprovação científica contraria-se a lógica da medicina baseada em evidências e 
+                        os próprios princípios da ética médica, tais como <i>primum non nocere</i> (em primeiro lugar, não cause 
+                        dano) e <i>in dubio abstino</i> (na dúvida, abstenha-se de tratar). Portanto, além de imprudente, o referido 
+                        apoio ao protocolo é antiético e irresponsável.
+                    </p>
+                    <p class="text-justify">
+                        De fato, o cenário de Santa Catarina é preocupante e requer ações coerentes e baseadas nas 
+                        melhores evidências. Exatamente por isso chama a atenção que em nenhum momento os médicos e 
+                        médicas mencionam na carta, e os prefeitos em seus comunicados, ao menos uma medida eficaz 
+                        para o controle da Covid-19, tais como testagem em massa e contact-tracing para isolamento 
+                        e quarentena, distanciamento social e uso de máscaras por toda a população. Até o momento, 
+                        essas são as únicas medidas com evidências científicas e aplicadas em diferentes países que 
+                        possibilitaram reduzir o número de infecções, de internações hospitalares, de óbitos e a 
+                        reabertura de setores da economia. Concordamos com os médicos e médicas que assinam a carta 
+                        que “esse momento exige que façamos o tratamento conforme o que temos de evidências 
+                        disponíveis até então”. Mais uma vez, e exatamente por isso, devemos fazer uso de medidas 
+                        que de fato irão ajudar no enfrentamento da Covid-19.
+                    </p>
+                    <p class="text-justify">
+                        Uma última, mas não menos importante questão: as propostas/ações aqui em pauta não prezam 
+                        pelo bom uso do recurso público, pois drenam investimentos que deveriam ser aplicados na 
+                        ampliação das ações que comprovadamente auxiliam no controle da epidemia. Acabam, assim, 
+                        por potencializar e agravar a crise sanitária que vivemos, causar efeitos colaterais indesejados 
+                        em quem se submeter ao suposto “protocolo profilático”, além de retardar o controle da epidemia e, 
+                        consequentemente, o retorno pleno dos setores econômicos e da vida social.
+                    </p>
+                    <p class="text-justify">
+                        O esforço de cientistas de todo o mundo tem permitido a contínua produção de novos conhecimentos. 
+                        Protocolos e condutas clínicas devem ser reavaliados continuamente, mas sempre com ética e 
+                        responsabilidade, baseando-se nas melhores evidências científicas disponíveis no momento.
+                    </p>
+                    <p style="text-align:right;">
+                        <br><br>Florianópolis/SC, 07 de julho de 2020.
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 2 -->
+            <div class="card" id="card2" style="z-index: 1100;">
+                <div class="card-body">
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mb-3" id="aba1-card2">Créditos</h5> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        Assinam esta carta: [<a href="#aba2-ref1">1</a>]
+                        <ul>
+                            <li>Departamento de Saúde Pública – UFSC
+                            </li>
+                            <li>Programa de Pós-graduação em Saúde Coletiva – UFSC
+                            </li>
+                            <li>Associação Brasileira de Saúde Coletiva – Abrasco
+                            </li>
+                            <li>Sociedade Brasileira de Bioética - Regional Santa Catarina
+                            </li>
+                            <li>Sociedade Brasileira para o Progresso da Ciência - Secretaria Regional de SC
+                            </li>
+                            <li>Sociedade Brasileira de Virologia (SBV)
+                            </li>
+                            <li>Associação Catarinense de Plantas Medicinais
+                            </li>
+                            <li>Programa de Pós-graduação em Farmacologia – UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Biologia Celular e do Desenvolvimento - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Biologia de Fungos, Algas e Plantas - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Bioquímica - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Biotecnologia e Biociências - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Ecologia - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação Multicêntrico em Ciências Fisiológicas - UFSC
+                            </li>
+                            <li>Programa de Pós-Graduação em Neurociências - UFSC
+                            </li>
+                            <li>Grupo de Pesquisa em Farmacoepidemiologia -GPFAR/UFSC
+                            </li>
+                            <li>Núcleo de Estudos em Democracia e Associativismo – NEDAS/UFSC
+                            </li>
+                            <li>Núcleo de Estudos em Gênero, Diversidades Sexuais e Saúde – EPICENES/UFSC
+                            </li>
+                            <li>Núcleo de Pesquisa e Extensão em Bioética e Saúde Coletiva – NUPEBISC/UFSC
+                            </li>
+                            <li>Núcleo de Estudo em Sociologia, Filosofia e História das Ciências da Saúde – UFSC
+                            </li>
+                            <li>Núcleo de Extensão e Pesquisa em Avaliação em Saúde – NEPAS/UFSC
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+            <!-- Card 8 -->
+            <div class="card" id="card8" style="z-index: 1010;">
+                <div class="card-body">
+            
+                    <!-- CARD.HEADER -->
+                    <div class="h5 card-title mb-3" id="aba2-card8">Referências</div> <!-- CARD.TITLE.TEXT -->
+                    <!-- CARD.TEXT -->
+                    <ol>
+                        <li id="aba2-ref1">
+                            Instituições, Associações, Grupos e demais organizações interessadas em assinar a carta podem enviar solicitação para o e-mail para <a href="mailto:ppgsc@contato.ufsc.br">ppgsc@contato.ufsc.br</a>.
+                        </li>
+                        <li>
+                            <a href="https://www.fda.gov/news-events/press-announcements/coronavirus-covid-19-update-fda-revokes-emergency-use-authorization-chloroquine-and">FDA, 2020a</a>. 
+                        </li>
+                        <li>
+                            <a href="https://www.fda.gov/animal-veterinary/product-safety-information/faq-covid-19-and-ivermectin-intended-animals">FDA, 2020b</a>. 
+                        </li>
+                        <li>
+                            Schmith, V et al., 2020. <a href="https://www.medrxiv.org/content/10.1101/2020.04.21.20073262v1">The Approved Dose of Ivermectin Alone Is Not the Ideal Dose for the Treatment of COVID-19</a>. 
+                        </li>
+                        <li>
+                            Momekov, G; Momekova, D. <a href="https://www.medrxiv.org/content/10.1101/2020.04.11.20061804v2">Ivermectin as a potential COVID-19 treatment from the pharmacokinetic point of view: antiviral levels are not likely attainable with known dosing regimens</a>. 
+                        </li>
+                        <li>
+                            Sociedade Brasileira de Infectologia. <a href="https://www.infectologia.org.br/admin/zcloud/125/2020/06/ddb8adbedf98c5bed371a929338e0df2acc49af1becb494f5a15dd38f901c760.pdf">Informe da Sociedade Brasileria de Infectologia sobre o novo coronavírus n. 15: uso de medicamentos para Covid-19</a>, de 30/06/2020. 
+                        </li>
+                   </ol>
+            
+                </div>
+            </div>
+
+            <!-- NEW.CARD -->
+
+        </div>
+
+    </div>
+   
+    <!-- ABA 3: Sobre -->
+    <div class="aba-group aba3" style="display: none;">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5 xl-small">
+            <div class="main-title">
+                <h1 class="display">Sobre</h1>
+                <small class="page-subtitle title-tab mt-2">
+                    Veja quem colabora para as análises nessa seção do site. 
+                </small>
+            </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Texto Principal -->
+        <div class="card-columns one xl-small">
+ <!-- CARD.UNORDERED.LIST -->
+ <ul class="list-group mt-2">
+    <li class="list-group-item">Alexandra Crispim Boing (Departamento de Saúde Pública - UFSC) | <a target="_blank"
+      href="http://lattes.cnpq.br/0432995506079351">CV</a></li>
+    <li class="list-group-item">Antonio Fernando Boing (Departamento de Saúde Pública - UFSC) | <a target="_blank"
+        href="http://lattes.cnpq.br/1079435250033626">CV</a></li>
+    <li class="list-group-item">Eleonora D’orsi (Departamento de Saúde Pública- UFSC) | <a target="_blank"
+        href="http://lattes.cnpq.br/6737249218821383">CV</a></li>
+    <li class="list-group-item">Giuliano Boava (Departamento de Matemática - UFSC) | <a target="_blank"
+        href="http://lattes.cnpq.br/4918706756138339">CV</a></li>
+    <li class="list-group-item">Guilherme Valle Moura (Departamento de Economia e Relações Internacionais - UFSC) | <a target="_blank"
+        href="http://lattes.cnpq.br/8741555716252336">CV</a></li> 
+    <li class="list-group-item">Maria Amélia de Sousa Mascena Veras (professora @ FCMSCSP) | <a target="_blank"
+        href="http://lattes.cnpq.br/7977489515345196">CV</a></li>
+    <li class="list-group-item">Mauricio N. Cantor Magnani (professor @ UFSC) | <a target="_blank"
+        href="http://lattes.cnpq.br/1195966541381142">CV</a></li>
+    <li class="list-group-item">Paulo Inácio Prado (professor @ <a target="_blank"
+        href="http://ecologia.ib.usp.br/let/">IB-USP</a>) | <a target="_blank"
+        href="http://lattes.cnpq.br/3884092565521453">CV</a></li>
+    <li class="list-group-item">Renato Mendes Coutinho (professor @ <a target="_blank"
+        href="http://professor.ufabc.edu.br/~renato.coutinho/">CMCC-UFABC</a>) | <a target="_blank"
+        href="http://lattes.cnpq.br/1301865568118160">CV</a></li>
+    <li class="list-group-item">Roberto Kraenkel (professor @ <a target="_blank"
+        href="https://professores.ift.unesp.br/roberto.kraenkel/">IFT-UNESP</a>) | <a target="_blank"
+        href="http://lattes.cnpq.br/8497878967418484">CV</a></li>
+  </ul>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <img src="img/icon_github.svg" width="16px">
+        <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
+            class="text-reset">Source Code</a></small>
+        </div>
+        
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+            <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+        </a>
+        <small id="license">
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
+        </small>
+        </div>
+        
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Conteudo Dinamico -->
+    <script src="js/lib_abas.js?ver=2.10"></script>
+    <script src="js/updateContent.js?ver=2.10"></script>
+    <!-- SCRIPT PARA USAR TABELAS 
+    <script src="js/updateTable.js"></script> -->
+    <!-- SCRIPT PARA USAR MATHJAX E ESCREVER EQUAÇÕES
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> -->
+    <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
+  <script>
+    var sc_project=12220607; 
+    var sc_invisible=1; 
+    var sc_security="18092bfd"; 
+  </script>
+  <script src="https://www.statcounter.com/counter/counter.js" async></script>
+  <noscript>
+    <div class="statcounter">
+      <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
+      </a>
+    </div>
+  </noscript>
+  <!-- End of Statcounter Code -->
+</body>
+
+</html>

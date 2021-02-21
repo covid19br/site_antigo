@@ -8,6 +8,7 @@ library(plotly)
 library(dplyr)
 library(tidyr)
 library(withr)
+Sys.setlocale(category = "LC_TIME", locale = "pt_BR.UTF-8")
 
 # carrega funcoes----
 source("funcoes.R")
@@ -50,6 +51,8 @@ if (sys.nframe() == 0L) {
     geocode <- opt$options$geocode
     data <- opt$options$dataBase
     update.git <- opt$options$updateGit
+
+    options(error = function() quit(save="no", status=1))
 }
 
 if (update.git)
@@ -107,8 +110,8 @@ if (existe.covid) {
                               stringsAsFactors = FALSE)
   df.covid.cum <- read.csv(paste0(data.dir, "nowcasting_acumulado_covid_", data.covid, ".csv"),
                            stringsAsFactors = FALSE)
-  df.td.covid <- read.csv(paste0(data.dir, "tempo_duplicacao_covid_", data.covid, ".csv"),
-                          stringsAsFactors = FALSE)
+  #df.td.covid <- read.csv(paste0(data.dir, "tempo_duplicacao_covid_", data.covid, ".csv"),
+  #                        stringsAsFactors = FALSE)
   df.re.covid <- read.csv(paste0(data.dir, "r_efetivo_covid_", data.covid, ".csv"),
                           stringsAsFactors = FALSE)
   # PLOTS ####
@@ -121,7 +124,8 @@ if (existe.covid) {
   plot.nowcast.cum.covid <- plot.nowcast.acumulado(df.covid.cum)
 
   ### tempo de duplicação
-  plot.tempo.dupl.covid <- plot.tempo.dupl(df.td.covid)
+  #plot.tempo.dupl.covid <- plot.tempo.dupl(df.td.covid)
+  plot.tempo.dupl.covid <- NULL
 
   ### R efetivo
   plot.estimate.R0.covid <- plot.estimate.R0(df.re.covid)
@@ -131,7 +135,7 @@ if (existe.covid) {
   tabelas.web(plot.dir,
               tipo = "covid",
               df.cum = df.covid.cum,
-              df.td = df.td.covid,
+              #df.td = df.td.covid,
               df.re = df.re.covid,
               data_base = data.covid)
 
@@ -153,8 +157,8 @@ if (existe.srag) {
                              stringsAsFactors = FALSE)
   df.srag.cum <- read.csv(paste0(data.dir, "nowcasting_acumulado_srag_", data.srag, ".csv"),
                           stringsAsFactors = FALSE)
-  df.td.srag <- read.csv(paste0(data.dir, "tempo_duplicacao_srag_", data.srag, ".csv"),
-                         stringsAsFactors = FALSE)
+  #df.td.srag <- read.csv(paste0(data.dir, "tempo_duplicacao_srag_", data.srag, ".csv"),
+  #                       stringsAsFactors = FALSE)
   df.re.srag <- read.csv(paste0(data.dir, "r_efetivo_srag_", data.srag, ".csv"),
                          stringsAsFactors = FALSE)
   # PLOTS ####
@@ -171,9 +175,10 @@ if (existe.srag) {
     plot.nowcast.acumulado()
 
   ### tempo de duplicação
-  plot.tempo.dupl.srag <- df.td.srag %>%
-    dplyr::filter(data > "2020-03-15") %>%
-    plot.tempo.dupl()
+  #plot.tempo.dupl.srag <- df.td.srag %>%
+  #  dplyr::filter(data > "2020-03-15") %>%
+  #  plot.tempo.dupl()
+  plot.tempo.dupl.srag <- NULL
 
   ### R efetivo
   plot.estimate.R0.srag <- df.re.srag %>%
@@ -184,7 +189,7 @@ if (existe.srag) {
   tabelas.web(plot.dir,
               tipo = "srag",
               df.cum = df.srag.cum,
-              df.td = df.td.srag,
+              #df.td = df.td.srag,
               df.re = df.re.srag,
               data_base = data.srag)
 } else {
@@ -205,28 +210,29 @@ if (existe.ob.covid) {
                                  stringsAsFactors = FALSE)
   df.ob.covid.cum <- read.csv(paste0(data.dir, "nowcasting_acumulado_obitos_covid_", data.ob.covid, ".csv"),
                               stringsAsFactors = FALSE)
-  df.td.ob.covid <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_covid_", data.ob.covid, ".csv"),
-                             stringsAsFactors = FALSE)
+  #df.td.ob.covid <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_covid_", data.ob.covid, ".csv"),
+  #                           stringsAsFactors = FALSE)
   ### diario
   ## N de novos casos observados e por nowcasting
   ## Com linha de média móvel
   plot.nowcast.ob.covid <- plot.nowcast.diario(df.ob.covid.diario) +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número de novos óbitos")
 
   ### acumulado
   plot.nowcast.cum.ob.covid <- plot.nowcast.acumulado(df.ob.covid.cum) +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número acumulado de óbitos")
 
   ### tempo de duplicação
-  plot.tempo.dupl.ob.covid <- plot.tempo.dupl(df.td.ob.covid)
+  #plot.tempo.dupl.ob.covid <- plot.tempo.dupl(df.td.ob.covid)
+  plot.tempo.dupl.ob.covid <- NULL
 
   # TABELAS ####
   tabelas.web(plot.dir,
               tipo = "obitos_covid",
               df.cum = df.ob.covid.cum,
-              df.td = df.td.ob.covid,
+              #df.td = df.td.ob.covid,
               data_base = data.ob.covid)
 } else {
   plot.nowcast.ob.covid <- NULL
@@ -245,34 +251,35 @@ if (existe.ob.srag) {
                                 stringsAsFactors = FALSE)
   df.ob.srag.cum <- read.csv(paste0(data.dir, "nowcasting_acumulado_obitos_srag_", data.ob.srag, ".csv"),
                              stringsAsFactors = FALSE)
-  df.td.ob.srag <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_srag_", data.ob.srag, ".csv"),
-                            stringsAsFactors = FALSE)
+  #df.td.ob.srag <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_srag_", data.ob.srag, ".csv"),
+  #                          stringsAsFactors = FALSE)
   ### diario
   ## N de novos casos observados e por nowcasting
   ## Com linha de média móvel
   plot.nowcast.ob.srag <- df.ob.srag.diario %>%
     dplyr::filter(data > "2020-03-15") %>%
     plot.nowcast.diario() +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número de novos óbitos")
 
   ### acumulado
   plot.nowcast.cum.ob.srag <- df.ob.srag.cum %>%
     dplyr::filter(data > "2020-03-15") %>%
     plot.nowcast.acumulado() +
-    xlab("Dia") +
+    xlab("Data do óbito") +
     ylab("Número acumulado de óbitos")
 
   ### tempo de duplicação
-  plot.tempo.dupl.ob.srag <- df.td.ob.srag %>%
-    dplyr::filter(data > "2020-03-15") %>%
-    plot.tempo.dupl()
+  #plot.tempo.dupl.ob.srag <- df.td.ob.srag %>%
+  #  dplyr::filter(data > "2020-03-15") %>%
+  #  plot.tempo.dupl()
+  plot.tempo.dupl.ob.srag <- NULL
 
   # TABELAS ####
     tabelas.web(plot.dir,
                 tipo = "obitos_srag",
                 df.cum = df.ob.srag.cum,
-                df.td = df.td.ob.srag,
+                #df.td = df.td.ob.srag,
                 data_base = data.ob.srag)
 } else {
   plot.nowcast.ob.srag <- NULL
@@ -290,26 +297,29 @@ if (existe.ob.srag.proaim) {
                                                 data, ".csv"))
     df.ob.srag.cum.proaim <- read.csv(paste0(data.dir, "nowcasting_acumulado_obitos_srag_proaim_",
                                              data, ".csv"))
-    df.td.ob.srag.proaim <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_srag_proaim_", data, ".csv"))
+    #df.td.ob.srag.proaim <- read.csv(paste0(data.dir, "tempo_duplicacao_obitos_srag_proaim_", data, ".csv"))
     ### diario
     ## N de novos casos observados e por nowcasting
     ## Com linha de média móvel
     plot.nowcast.ob.srag.proaim <- plot.nowcast.diario(df.ob.srag.diario.proaim) +
-        xlab("Dia") +
+        xlab("Data do óbito") +
         ylab("Número de novos óbitos")
 
     ### acumulado
     plot.nowcast.cum.ob.srag.proaim <- plot.nowcast.acumulado(df.ob.srag.cum.proaim) +
-        xlab("Dia") +
+        xlab("Data do óbito") +
         ylab("Número acumulado de óbitos")
 
     ### tempo de duplicação
-    plot.tempo.dupl.ob.srag.proaim <- plot.tempo.dupl(df.td.ob.srag.proaim)
+    #plot.tempo.dupl.ob.srag.proaim <- plot.tempo.dupl(df.td.ob.srag.proaim)
+    plot.tempo.dupl.ob.srag.proaim <- NULL
+
     # TABELAS ####
     tabelas.web(plot.dir,
                 tipo = "obitos_srag_proaim",
-                df.ob.srag.cum.proaim,
-                df.td.ob.srag.proaim)
+                df.ob.srag.cum.proaim
+                #df.td.ob.srag.proaim
+    )
 } else {
     plot.nowcast.ob.srag.proaim <- NULL
     plot.nowcast.cum.ob.srag.proaim <- NULL

@@ -1,0 +1,372 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Projeções de curto prazo para número de hospitalizados por SRAG no drs de Baixada Santista},
+  pdfauthor={Observatório COVID-19 BR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{float}
+\usepackage[brazil]{babel}
+\floatplacement{table}{H}
+\floatplacement{figure}{H}
+\usepackage{pdflscape}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Projeções de curto prazo para número de hospitalizados por SRAG
+no drs de Baixada Santista}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Baseado nas notificações de SRAG Hospitalizados na base SIVEP
+Gripe}
+\author{Observatório COVID-19 BR}
+\date{18-10-2020\_20h57min44s}
+
+\begin{document}
+\maketitle
+
+\hypertarget{sumuxe1rio-executivo}{%
+\section{Sumário executivo}\label{sumuxe1rio-executivo}}
+
+\begin{itemize}
+\tightlist
+\item
+  Este relatório usa notificações de casos de SRAG Hospitalizados na
+  base \textbf{SIVEP-Gripe} do dia 18 de outubro de 2020.
+\item
+  Nesta base de dados, observamos 1436 casos hospitalizados de
+  \textbf{SRAG}. Destes, 333 estão hospitalizados em UTI. Corrigindo
+  para o atraso de notificação, estimamos que o número de hospitalizados
+  está entre 1436 e 1842, e número de casos em UTI está entre 333 e 444.
+\item
+  No cenário pessimista, utilizando um crescimento \textbf{Exponencial},
+  a projeção para dia 20 de outubro do total de casos hospitalizados é
+  de entre 1732 e 3006, e de casos em UTI é de entre 417 e 731.
+\item
+  No cenário otimista, utilizando um crescimento \textbf{Logístico}, a
+  projeção para dia 20 de outubro do total de casos hospitalizados é de
+  entre 1223 e 1553, e de casos em UTI é de entre 307 e 372.
+\end{itemize}
+
+\hypertarget{projeuxe7uxf5es-de-nuxfamero-total-de-casos-de-srag-hospitalizados}{%
+\subsection{Projeções de número total de casos de SRAG
+hospitalizados}\label{projeuxe7uxf5es-de-nuxfamero-total-de-casos-de-srag-hospitalizados}}
+
+\begin{table}
+
+\caption{\label{tab:projecoes_Exp}Projeção do número de casos hospitalizados de SRAG para os próximos 2 dias no cenário pessimista.}
+\centering
+\begin{tabular}[t]{c|c|c|c}
+\hline
+Data & Previsto & Limite Inferior & Limite Superior\\
+\hline
+2020-10-19 & 2339 & 1706 & 2991\\
+\hline
+2020-10-20 & 2362 & 1732 & 3006\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}
+
+\caption{\label{tab:projecoes_Logist}Projeção do número de casos hospitalizados de SRAG pra os próximos 2 dias no cenário otimista.}
+\centering
+\begin{tabular}[t]{c|c|c|c}
+\hline
+Data & Previsto & Limite Inferior & Limite Superior\\
+\hline
+2020-10-19 & 1361 & 1227 & 1556\\
+\hline
+2020-10-20 & 1362 & 1223 & 1553\\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\hypertarget{gruxe1fico-das-projeuxe7uxf5es}{%
+\subsection{Gráfico das
+projeções}\label{gruxe1fico-das-projeuxe7uxf5es}}
+
+\begin{itemize}
+\tightlist
+\item
+  Pontos pretos : número de casos hospitalizados observados a cada dia.
+\item
+  Região e linha vermelha : correção para ao atraso de notificação dos
+  casos hospitalizados. Média e intervalo de confiança de 95\%.
+\item
+  Região azul e linhas pontilhadas : Previsão usando modelos de curto
+  prazo em diferentes cenários. Média de intervalo de confiança de 95\%.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/estimativa_crescimento-1.pdf}
+\caption{Estimativas de crescimento (A) exponencial e (B) logistico para
+os próximos 2 dias para número de internações por SRAG.}
+\end{figure}
+
+\hypertarget{projeuxe7uxf5es-de-nuxfamero-de-casos-de-srag-hospitalizados-em-leitos-de-uti}{%
+\subsection{Projeções de número de casos de SRAG hospitalizados em
+leitos de
+UTI}\label{projeuxe7uxf5es-de-nuxfamero-de-casos-de-srag-hospitalizados-em-leitos-de-uti}}
+
+\begin{table}
+
+\caption{\label{tab:projecoes_UTIExp}Projeção do número de casos hospitalizados de SRAG em leitos de UTI para os próximos 2 dias no cenário pessimista.}
+\centering
+\begin{tabular}[t]{c|c|c|c}
+\hline
+Data & Previsto & Limite Inferior & Limite Superior\\
+\hline
+2020-10-19 & 568 & 410 & 723\\
+\hline
+2020-10-20 & 571 & 417 & 731\\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}
+
+\caption{\label{tab:projecoes_UTILogist}Projeção do número de casos hospitalizados de SRAG em leitos de UTI pra os próximos 2 dias no cenário otimista.}
+\centering
+\begin{tabular}[t]{c|c|c|c}
+\hline
+Data & Previsto & Limite Inferior & Limite Superior\\
+\hline
+2020-10-19 & 334 & 308 & 372\\
+\hline
+2020-10-20 & 334 & 307 & 372\\
+\hline
+\end{tabular}
+\end{table}
+\newpage
+
+\hypertarget{gruxe1fico-das-projeuxe7uxf5es-para-nuxfamero-de-casos-de-srag-hospitalizados-em-leitos-de-uti}{%
+\subsection{Gráfico das projeções para número de casos de SRAG
+hospitalizados em leitos de
+UTI}\label{gruxe1fico-das-projeuxe7uxf5es-para-nuxfamero-de-casos-de-srag-hospitalizados-em-leitos-de-uti}}
+
+\begin{itemize}
+\tightlist
+\item
+  Pontos pretos : número de casos hospitalizados observados a cada dia.
+\item
+  Região e linha vermelha : correção para ao atraso de notificação dos
+  casos hospitalizados. Média e intervalo de confiança de 95\%.
+\item
+  Região azul e linhas pontilhadas : Previsão usando modelos de curto
+  prazo em diferentes cenários. Média de intervalo de confiança de 95\%.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/estimativa_crescimentoUTI-1.pdf}
+\caption{Estimativas de crescimento (A) exponencial e (B) logistico para
+os próximos 2 dias para número de internações em UTI por SRAG.}
+\end{figure}
+
+\hypertarget{muxe9todos}{%
+\section{Métodos}\label{muxe9todos}}
+
+\hypertarget{correuxe7uxe3o-do-atraso-de-notificauxe7uxe3o-pelo-muxe9todo-de-nowcasting}{%
+\subsection{\texorpdfstring{Correção do atraso de notificação pelo
+método de
+\emph{Nowcasting}}{Correção do atraso de notificação pelo método de Nowcasting}}\label{correuxe7uxe3o-do-atraso-de-notificauxe7uxe3o-pelo-muxe9todo-de-nowcasting}}
+
+Para corrigir o efeito de atraso da notificação de casos na tabela de
+notificações, nós utilizamos o método de \emph{nowcasting} descrito em
+McGough et al.~(2019). Esse método utiliza a diferença entre as datas de
+primeiro sintoma e notificação do caso no banco de dados para estimar o
+atraso de inclusão de novos casos no sistema de notificação. O pacote
+NobBS fornece o número de novos casos esperados por dia pelo modelo de
+atraso nas notificações.
+
+\hypertarget{tempos-de-hospitalizauxe7uxe3o-em-leito-comum-e-uti}{%
+\subsection{Tempos de hospitalização em leito comum e
+UTI}\label{tempos-de-hospitalizauxe7uxe3o-em-leito-comum-e-uti}}
+
+Para modelar a ocupação dos hospitais, nós estimamos a distribuição de
+tempos entre aparecimento de sintomas e internação, internação e
+evolução, entrada e saída da UTI, e probabilidade de internação em UTI.
+
+\hypertarget{estimando-nuxfamero-de-hospitalizados}{%
+\subsection{Estimando número de
+hospitalizados}\label{estimando-nuxfamero-de-hospitalizados}}
+
+O número estimado de hospitalizados por dia é dado pelos indivíduos
+notificados na tabela original do Sivep-Gripe + indivíduos
+não-observados mas esperados pelo \emph{nowcast}, que são incluídos na
+tabela com datas de entrada e evolução simuladas a partir das
+distribuições de tempos. Esse modelo permite uma avaliação dinâmica da
+curva de hospitalizações já corrigida pelo atraso de notificação e
+tempos de permanência no hospital.
+
+\hypertarget{projeuxe7uxf5es-de-curto-prazo-utilizando-modelos-estatuxedsticos}{%
+\subsection{Projeções de curto prazo utilizando modelos
+estatísticos}\label{projeuxe7uxf5es-de-curto-prazo-utilizando-modelos-estatuxedsticos}}
+
+Para realizar as projeções de curto prazo, nós ajustamos duas curvas ao
+número de casos hospitalizados. As curvas representam cenários
+diferentes: uma curva exponencial generalizada, que é adequada para
+modelar o começo de uma epidemia, com crescimento rápido, sendo portanto
+um cenário pessimista; e uma curva logística generalizada, que apresenta
+um crescimento que se desacelera com o tempo, representando um cenário
+otimista. Ambos os modelos são descritos em Wu et al.~(2020).
+
+Os modelos usados são dados pelas seguintes equações diferenciais, nas
+quais \(C(t)\) representa o número de hospitalizados, e os parâmetros
+são definidos como: \(r\) taxa de crescimento, \(p\) parâmetro de
+modulação do crescimento (pode variar entre 0 e 1, valores mais baixos
+correspondem a curvas de crescimento mais lento), e, no caso da
+logística, \(K\), um parâmetro de assíntota da curva.
+
+\begin{itemize}
+\tightlist
+\item
+  Exponencial generalizada:
+\end{itemize}
+
+\[
+\frac{dC(t)}{dt} = rC(t)^p 
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  Logística generalizada:
+\end{itemize}
+
+\[
+\frac{dC(t)}{dt} = rC(t)^p \left (1-\frac{C(t)}{K} \right) 
+\]
+
+\hypertarget{limitauxe7uxf5es}{%
+\subsection{Limitações}\label{limitauxe7uxf5es}}
+
+\begin{itemize}
+\item
+  O método de \emph{nowcasting} utilizado assume que a dinâmica de
+  inclusão de novos casos no banco de dados é parecida com o passado. Se
+  o atraso de inclusão aumenta muito, o modelo vai subestimar quantidade
+  de novos casos. O mesmo se aplica aos modelos de distribuição dos
+  tempos de hospitalização e probabilidade de internação em UTI.
+\item
+  As previsões de curto prazo utilizam curvas fenomenológicas que não se
+  prestam a previsões de longo prazo, portanto não são adequadas para
+  prever a dinâmica da epidemia numa escala de tempo maior. Em
+  particular, o uso de uma curva logística não implica que uma assintota
+  no número de hospitalizações é sugerida pelos dados.
+\end{itemize}
+
+\hypertarget{referuxeancias}{%
+\section{Referências}\label{referuxeancias}}
+
+McGough, Sarah , Michael A. Johansson, Marc Lipsitch, Nicolas A.
+Menzies(2019). Nowcasting by Bayesian Smoothing: A flexible,
+generalizable model for real-time epidemic tracking. bioRxiv 663823;
+doi: \url{https://doi.org/10.1101/663823}
+
+McGough, Sarah, Nicolas Menzies, Marc Lipsitch and Michael Johansson
+(2020). NobBS: Nowcasting by Bayesian Smoothing. R package version
+0.1.0. \url{https://CRAN.R-project.org/package=NobBS}
+
+Wu, Ke, Didier Darcet, Qian Wang, and Didier Sornette (2020).
+Generalized Logistic Growth Modeling of the COVID-19 Outbreak in 29
+Provinces in China and in the Rest of the World. arXiv {[}q-bio.PE{]}.
+arXiv. \url{http://arxiv.org/abs/2003.05681}.
+
+\hypertarget{observatuxf3rio-covid-19-br}{%
+\subsection{Observatório COVID-19
+BR}\label{observatuxf3rio-covid-19-br}}
+
+O Observatório Covid-19 BR é uma iniciativa independente, fruto da
+colaboração entre pesquisadores com o desejo de contribuir para a
+disseminação de informação de qualidade baseada em dados atualizados e
+análises cientificamente embasadas.
+
+Criamos um sítio com códigos de fonte aberta que nos permite acompanhar
+o estado atual da epidemia de Covid-19 no Brasil, incluindo análises
+estatísticas e previsões. Modelos estatísticos e matemáticos para
+previsões da epidemia estão em preparação
+
+\textbf{Site:} \url{https://covid19br.github.io/}
+
+\textbf{Contato:}
+\href{mailto:obscovid19br@gmail.com}{\nolinkurl{obscovid19br@gmail.com}}
+
+\hypertarget{comparauxe7uxe3o-com-previsuxf5es-anteriores}{%
+\subsection{Comparação com previsões
+anteriores}\label{comparauxe7uxe3o-com-previsuxf5es-anteriores}}
+
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\newpage
+
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-1.pdf}
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-2.pdf}
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-3.pdf}
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-4.pdf}
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-5.pdf}
+\includegraphics{/home/diogro/projects/covid19/central_covid/site/dados/projecao_leitos/DRS/SP/Baixada_Santista/relatorios/2020-10-18_relatorio_projecoes_demanda_hospitalar_srag_files/figure-latex/unnamed-chunk-2-6.pdf}
+
+\end{document}

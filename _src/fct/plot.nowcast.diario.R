@@ -8,10 +8,12 @@ plot.nowcast.diario <- function(df) {
         geom_line(aes(y = estimate.merged), lty = 2, col = "grey") +
         geom_point(aes(y = n.casos, col = "Notificado"), size = 2) +
         geom_point(aes(y = estimate, col = "Nowcasting"), size = 2) +
-        geom_line(aes(y = estimate.merged.smooth), alpha = 0.6, size = 2) +
-        scale_x_date(date_labels = "%d/%b") +
+        (if (! is.na(df$estimate.merged.smooth[1]))
+          geom_line(aes(y = estimate.merged.smooth), alpha = 0.6, size = 2)
+        else NULL) +
+        scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         scale_color_manual(name = "", values = RColorBrewer::brewer.pal(3, "Set1")[2:1]) +
-        xlab("Dia do primeiro sintoma") +
+        xlab("Data do primeiro sintoma") +
         ylab("Número de novos casos") +
         plot.formatos +
         theme(legend.position = "none")
