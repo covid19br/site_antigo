@@ -41,6 +41,7 @@ const locale =
         { prep: "em", uf: "AM", mun:"Manacapuru",            verbose: "Manacapuru",            has_modelogro: false, has_td: false  },
         { prep: "em", uf: "RJ", mun:"Niteroi",               verbose: "Niterói",               has_modelogro: false, has_td: false },
         { prep: "em", uf: "SP", mun:"Ribeirao_Preto",        verbose: "Ribeirão Preto",        has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Americana",             verbose: "Americana",             has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Santa_Barbara_dOeste",  verbose: "Santa Bárbara d'Oeste", has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Barueri",               verbose: "Barueri",               has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SP", mun:"Botucatu",              verbose: "Botucatu",              has_modelogro: false, has_td: false  },
@@ -71,5 +72,13 @@ const locale =
         { prep: "em", uf: "RR", mun:"Boa_Vista",             verbose: "Boa Vista",             has_modelogro: false, has_td: false  },
         { prep: "em", uf: "SE", mun:"Aracaju",               verbose: "Aracaju",               has_modelogro: false, has_td: false  },
         { prep: "em", uf: "TO", mun:"Palmas",                verbose: "Palmas",                has_modelogro: false, has_td: false  },
-        { prep: "em", uf: "SP", mun:"Taboao_da_Serra",       verbose: "Taboão da Serra",       has_modelogro: false, has_td: false  }
+        { prep: "em", uf: "SP", mun:"Taboao_da_Serra",       verbose: "Taboão da Serra",       has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Diadema",               verbose: "Diadema",               has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Maua",                  verbose: "Mauá",                  has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Sao_Caetano_do_Sul",    verbose: "São Caetano do Sul",    has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Sao_Jose_dos_Campos",   verbose: "São José dos Campos",   has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Serrana",               verbose: "Serrana",               has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Sorocaba",              verbose: "Sorocaba",              has_modelogro: false, has_td: false  },
+        { prep: "em", uf: "SP", mun:"Campinas",              verbose: "Campinas",              has_modelogro: false, has_td: false  },
+	{ prep: "em", uf: "SP", mun:"Votuporanga",              verbose: "Votuporanga",              has_modelogro: false, has_td: false  }
     ];
