@@ -15,6 +15,7 @@ body {
 @media (min-width: 992px) { .w-lg-100 {width:100% !important} }
 .ml-35 {margin-left: 1.3rem;}
 .center-margin-auto {margin: 0 auto}
+.br-0{border-right: 0!important;}
 
 /* TYPE */
 p, small {
@@ -683,7 +684,7 @@ hr.double {
 .card ul {
     list-style: none;
 }
-.card li::before {
+.card ul:not(.list-group) li::before {
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
@@ -930,9 +931,9 @@ a.text-reset:hover, a.card:hover p{
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
 }
-.card-deck > .card {
-    margin: 0 0 1rem 0; /* gap */
-}
+/*.card-deck > .card {
+    margin: 0 0 1rem 0;  gap 
+}*/
 .card-deck > .card:last-child {
     margin: 0; /* gap */
 }
@@ -952,9 +953,9 @@ a.text-reset:hover, a.card:hover p{
             -ms-flex-flow: row nowrap;
                 flex-flow: row nowrap;
     }
-    .card-deck > .card {
-        margin: 0 1rem 0 0; /* gap */
-    }
+    /* .card-deck > .card {
+        margin: 0 1rem 0 0;  gap 
+    }*/
 }
 
 /* proportions */
