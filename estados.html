@@ -2,364 +2,874 @@
 <html lang="pt">
 
 <head>
-  <!-- Description meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description"
-    content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
-  <title>Estados · Observatório Covid-19 BR</title>
+    <!-- Description meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="O Observatório Covid-19 BR é uma iniciativa independente com o desejo de disseminar informações de qualidade sobre o coronavírus, baseada em dados científicos atualizados.">
+    <title>Estados · Observatório Covid-19 BR</title>
 
-  <!-- Bootstrap CSS via BootstrapCDN -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <!-- Custom Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Observatorio CSS -->
-  <link href="./css/global.css?ver=2.57" rel="stylesheet">
-  <link href="./css/charts.css?ver=2.02" rel="stylesheet">
+    <!-- Bootstrap CSS via BootstrapCDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Observatorio CSS -->
+    <link href="./css/global.css?ver=2.57" rel="stylesheet">
+    <link href="./css/charts.css?ver=2.02" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
-  <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
-  <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
-  <meta name="theme-color" content="#007bff">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="https://covid19br.github.io/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="https://covid19br.github.io/img/favicons/manifest.json">
+    <link rel="icon" href="https://covid19br.github.io/img/favicons/favicon.ico">
+    <meta name="msapplication-config" content="https://covid19br.github.io/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#007bff">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Observatório Covid-19 BR">
-  <meta name="twitter:description"
-    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Observatório Covid-19 BR">
+    <meta name="twitter:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta name="twitter:image" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
 
-  <!-- Facebook -->
-  <meta property="og:url" content="https://covid19br.github.io">
-  <meta property="og:title" content="Observatório Covid-19 BR">
-  <meta property="og:description"
-    content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-estados.png">
-  <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <!-- Facebook -->
+    <meta property="og:url" content="https://covid19br.github.io">
+    <meta property="og:title" content="Observatório Covid-19 BR">
+    <meta property="og:description"
+        content="Grupo de cientistas brasileiros com um objetivo: espalhar ciência e conter o vírus!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+    <meta property="og:image:secure_url" content="https://covid19br.github.io/img/favicons/observatorio-social-estados.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 </head>
 
 <body>
-  <!-- Barra Superior -->
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <!-- BOTAO DO MENU -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Barra Superior -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- BOTAO DO MENU -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- LOGO -->
-    <a class="navbar-brand" href="./index.html">
-      <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
-    </a>
+        <!-- LOGO -->
+        <a class="navbar-brand" href="./index.html">
+        <img class="navbar-logo" src="./img/logo.svg"></img> <!-- OBSERV.LOGO.IMAGEM -->
+        </a>
 
-    <!-- DESTAQUE -->
-    <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <a href="#">
-        Estados
-      </a>
-    </div>
-
-    <!-- MENU -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Estados</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./drs.html">DRS-SP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./cenarios.html">Cenários</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./analises.html">Análises</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./midia.html">Reportagens</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./sobre.html">Sobre</a>
-        </li>
-        <!-- MENU.ITEM -->
-      </ul>
-    </div>
-
-  </nav>
-
-  <!-- Titulo Principal + Abas -->
-  <div class="container-fluid main-title-bg">
-      <!-- PAGE.TITLE -->
-      <div class="main-title" style="display: inline;">
-        <div class="display" id="page-title-pre">Avanço da COVID-19 <span class="prep"></span></div>
-        <div class="dropdown">
-          <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <a href="#" style="text-decoration: none;">
-              <h1 class="display" id="page-title">Brasil</h1>
-            </a> <!-- PAGE.TITLE -->
-          </div>
-          <div class="dropdown-menu menu-overflow" id="locale" aria-labelledby="titleDropdown">
-            <a class="dropdown-item active" href="#" uf="br">Brasil</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" uf="sp">São Paulo</a>
-            <a class="dropdown-item" href="#" uf="rj">Rio de Janeiro</a>
-            <a class="dropdown-item" href="#" uf="ac">Acre</a>
-            <a class="dropdown-item" href="#" uf="al">Alagoas</a>
-            <a class="dropdown-item" href="#" uf="ap">Amapá</a>
-            <a class="dropdown-item" href="#" uf="am">Amazonas</a>
-            <a class="dropdown-item" href="#" uf="ba">Bahia</a>
-            <a class="dropdown-item" href="#" uf="ce">Ceará</a>
-            <a class="dropdown-item" href="#" uf="df">Distrito Federal</a>
-            <a class="dropdown-item" href="#" uf="es">Espírito Santo</a>
-            <a class="dropdown-item" href="#" uf="go">Goiás</a>
-            <a class="dropdown-item" href="#" uf="ma">Maranhão</a>
-            <a class="dropdown-item" href="#" uf="mt">Mato Grosso</a>
-            <a class="dropdown-item" href="#" uf="ms">Mato Grosso do Sul</a>
-            <a class="dropdown-item" href="#" uf="mg">Minas Gerais</a>
-            <a class="dropdown-item" href="#" uf="pa">Pará</a>
-            <a class="dropdown-item" href="#" uf="pb">Paraíba</a>
-            <a class="dropdown-item" href="#" uf="pr">Paraná</a>
-            <a class="dropdown-item" href="#" uf="pe">Pernambuco</a>
-            <a class="dropdown-item" href="#" uf="pi">Piauí</a>
-            <a class="dropdown-item" href="#" uf="rn">Rio Grande do Norte</a>
-            <a class="dropdown-item" href="#" uf="rs">Rio Grande do Sul</a>
-            <a class="dropdown-item" href="#" uf="ro">Rondônia</a>
-            <a class="dropdown-item" href="#" uf="rr">Roraima</a>
-            <a class="dropdown-item" href="#" uf="sc">Santa Catarina</a>
-            <a class="dropdown-item" href="#" uf="se">Sergipe</a>
-            <a class="dropdown-item" href="#" uf="to">Tocantins</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="main-title">
-        <small class="page-subtitle updateDate ml-1">Última atualização</small>
-      </div>
-
-      <!-- Separator -->
-      <hr class="my-4" style="margin-left: 1.3rem;"> 
-
-      <!-- Footer -->
-      <div class="mt-3 pb-2" style="margin-left: 1.3rem;">
-        <img src="img/license_cc.svg" width="13px" class="m-0">
-        <small class="page-subtitle">
-            <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
-        </small>
-        <small class="page-subtitle ml-1 mr-1">·</small>
-        <img src="img/icon_github.svg" width="13px">
-        <small class="page-subtitle">
-            <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
-        </small>
-    </div>
-
-  </div>
-
-  <!-- Cards -->
-  <div class="card-deck">
-    <!-- COLUMNS.NUM -->
-
-    <!-- NEW.CARD -->
-
-    <!-- GRAPH.CARD -->
-    <div class="card cd-70 chart-fix">
-      <div class="card-body">
-
-        <!-- CARD.TITLE.TEXT -->
-        <h5 class="card-title text-center">Número de casos em escala logarítimica</h5>
-
-        <!-- CARD.GGPLOT.LEGEND -->
-        <div class="card-legend">
-          <small class="legend-square" id="wong_black">Casos Confirmados</small>
-          <small class="legend-square" id="ibm_ultramarine_dark">Previsão</small>
+        <!-- DESTAQUE -->
+        <div class="nav-item destaque" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a href="#">
+            Estados
+        </a>
         </div>
 
-        <!-- CARD.GGPLOT -->
-        <div data-src="./web/plot.forecast.exp.html" class="codegena_iframe center d-flex flex-column justify-content-center"
-             data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
-             data-responsive="true">
-          <picture>
-            <source media="(max-width: 575.98px)"  srcset="./web/plot.forecast.exp.ex.svg">
-            <source media="(max-width: 767.98px)"  srcset="./web/plot.forecast.exp.sm.svg">
-            <source media="(max-width: 991.98px)"  srcset="./web/plot.forecast.exp.md.svg">
-            <source media="(max-width: 1199.98px)" srcset="./web/plot.forecast.exp.lg.svg">
-            <img src="./web/plot.forecast.exp.svg" class="placeholder_svg" width="100%">
-          </picture>
-        </div>
-        <script src="./js/async-iframe.js"></script>
-
-      </div>
-    </div>
-
-    <!-- NEW.CARD -->
-
-    <!-- CONTENT.CARD -->
-    <div class="card cd-30">
-      <div class="card-body">
-        <!-- AVANCO -->
-        <h5 class="card-title">Avanço da doença <span class="estado-prep"></span></h5> <!-- CARD.TITLE.TEXT -->
-
-        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos notificados temos atualmente?
-          </li>
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link active" href="#">Estados</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./municipios.html?aba=aba1">Municípios</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./drs.html">DRS-SP</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./cenarios.html">Cenários</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./analises.html">Análises</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./perguntas.html">Perguntas Comuns</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./informacoes.html">Informações Técnicas</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./midia.html">Reportagens</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="./sobre.html">Sobre</a>
+            </li>
+            <!-- MENU.ITEM -->
         </ul>
-
-        <!-- CARD.TEXT -->
-        <p class="text-justify mt-3">
-          Pontos <b class="wong_black">pretos</b> indicam o número de casos confirmados notificados <span class="estado-prep"></span>
-          por dia.
-        </p>
-
-        <ul class="list-group mt-3"> <!-- CARD.DESTAQUE -->
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Quantos casos teremos nos próximos dias?
-          </li>
-        </ul>
-
-        <p class="text-justify mt-3">
-          Pontos em <b class="ibm_ultramarine_dark">azul</b> são a previsão para os próximos 5 dias (entre <span class="forecast_min"></span>
-            e <span class="forecast_max"></span> casos em <span class="forecast_data"></span>), se a taxa de
-          crescimento continuar a mesma dos últimos 5 dias. Em <b class="ibm_ultramarine">azul claro</b> é o intervalo de confiança dessa previsão.
-        </p>
-
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#collapse1"
-          aria-expanded="false" aria-controls="collapse1">
-          Por que só 5 dias? ▾
-        </button>
-        <!-- CARD.BUTTON.EXPAND -->
-        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#collapse2"
-          aria-expanded="false" aria-controls="collapse2">
-          Quão rápido a doença se propaga? ▾
-        </button>
-
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-1" id="collapse1">
-          <p class="text-justify">
-            Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
-            <b class="ibm_ultramarine">azul claro</b>, que expressa a incerteza da previsão, aumenta de largura com o tempo.
-            E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
-          </p>
-          <p class="text-justify">
-            Por isso avaliamos que é inadequado fazer previsões para mais de 5 dias com este método.
-          </p>
-        </div>
-        <!-- CARD.BUTTON.EXPAND.CONTENT -->
-        <div class="collapse mt-1" id="collapse2">
-          <p class="text-justify">
-            No momento não é possível estimar tempos de duplicação da epidemia, pois há um enorme acúmulo de testes
-            moleculares sem resultados, necessários para que os casos sejam confirmados e notificados. Essa demora
-            faz com que os números disponíveis publicamente (número de notificações) cresça de maneira artificialmente
-            lenta.
-          </p>
-          <p class="text-justify">
-            Assim, a evolução do números oficiais informa hoje sobre a dinâmica de notificação, não da epidemia. Seria
-            irresponsável seguir divulgando medidas de propagação da epidemia no Brasil com esses números.
-          </p>
         </div>
 
-        <!-- CARD.SIGNATURE -->
-        <p class="mb-0 mt-3">Acesse a página <a href="informacoes.html#estimativa-do-tempo-de-duplicação">informações</a>
-          para saber mais sobre o método.</p>
-        <div class="blockquote-footer text-right">Observatório COVID-19</div>
+    </nav>
 
-      </div>
+    <!-- Titulo Principal + Abas -->
+    <div class="container-fluid main-title-bg">
+            <!-- PAGE.TITLE -->
+            <div class="main-title" style="display: inline;">
+            <div class="display" id="page-title-pre">Estado: </div>
+            <div class="dropdown">
+                <div class="dropdown-toggle" href="#" id="titleDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" data-display="static">
+                <a href="#" style="text-decoration: none;">
+                    <div class="display" id="page-title">São Paulo</div> <!-- PAGE.TITLE -->
+                </a>
+                </div>
+                <div class="dropdown-menu menu-overflow dropdown-menu-md-right" id="locale" aria-labelledby="titleDropdown">
+                    <a class="dropdown-item" href="#" uf="AC">Acre</a>
+                    <a class="dropdown-item" href="#" uf="AL">Alagoas</a>
+                    <a class="dropdown-item" href="#" uf="AP">Amapá</a>
+                    <a class="dropdown-item" href="#" uf="AM">Amazonas</a>
+                    <a class="dropdown-item" href="#" uf="BA">Bahia</a>
+                    <a class="dropdown-item" href="#" uf="CE">Ceará</a>
+                    <a class="dropdown-item" href="#" uf="DF">Distrito Federal</a>
+                    <a class="dropdown-item" href="#" uf="ES">Espírito Santo</a>
+                    <a class="dropdown-item" href="#" uf="GO">Goiás</a>
+                    <a class="dropdown-item" href="#" uf="MA">Maranhão</a>
+                    <a class="dropdown-item" href="#" uf="MT">Mato Grosso</a>
+                    <a class="dropdown-item" href="#" uf="MS">Mato Grosso do Sul</a>
+                    <a class="dropdown-item" href="#" uf="MG">Minas Gerais</a>
+                    <a class="dropdown-item" href="#" uf="PA">Pará</a>
+                    <a class="dropdown-item" href="#" uf="PB">Paraíba</a>
+                    <a class="dropdown-item" href="#" uf="PR">Paraná</a>
+                    <a class="dropdown-item" href="#" uf="PE">Pernambuco</a>
+                    <a class="dropdown-item" href="#" uf="PI">Piauí</a>
+                    <a class="dropdown-item" href="#" uf="RJ">Rio de Janeiro</a>
+                    <a class="dropdown-item" href="#" uf="RN">Rio Grande do Norte</a>
+                    <a class="dropdown-item" href="#" uf="RS">Rio Grande do Sul</a>
+                    <a class="dropdown-item" href="#" uf="RO">Rondônia</a>
+                    <a class="dropdown-item" href="#" uf="RR">Roraima</a>
+                    <a class="dropdown-item" href="#" uf="SC">Santa Catarina</a>
+                    <a class="dropdown-item active" href="#" uf="SP">São Paulo</a>
+                    <a class="dropdown-item" href="#" uf="SE">Sergipe</a>
+                    <a class="dropdown-item" href="#" uf="TO">Tocantins</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="main-title">
+            <small class="page-subtitle updateDate ml-1">Última atualização</small>
+            </div>
+
+            <!-- Separator -->
+            <hr class="my-4" style="margin-left: 1.3rem;"> 
+
+            <!-- Menu -->
+            <div class="main-title">
+                <small class="page-subtitle m-0">Selecione uma análise ></small>
+                <!-- ABAS PILL -->
+                <ul class="nav nav-pills nav-fill" id="main-title-aba-pills">
+                    <li class="nav-item aba-pill">
+                        <a class="nav-link active" href="#" card-id="aba1">Casos graves</a>
+                    </li>
+                    <li class="nav-item aba-pill">
+                        <a class="nav-link" href="#" card-id="aba2">Óbitos</a>
+                    </li>
+                    <li class="nav-item aba-pill">
+                        <a class="nav-link" href="#" card-id="aba3">R efetivo</a>
+                    </li>
+                    <li class="nav-item aba-pill">
+                        <a class="nav-link" href="#" card-id="sobre">Sobre</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-4 pb-2" style="margin-left: 1.3rem;">
+            <img src="img/license_cc.svg" width="13px" class="m-0">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt_BR" target="_blank" rel="noopener">Reuse</a>
+            </small>
+            <small class="page-subtitle ml-1 mr-1">·</small>
+            <img src="img/icon_github.svg" width="13px">
+            <small class="page-subtitle">
+                <a class="text-reset" href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener">Contribua</a>
+            </small>
+        </div>
+
     </div>
 
-    <!-- NEW.CARD -->
-  </div>
+    <!-- Aba 1: Casos Graves -->
+    <div class="aba-group aba1">
 
-  <!-- Footer -->
-  <footer class="container-fluid">
-    <!-- FOOTER.ITEM -->
-    <div class="footer-content">
-      <img src="img/icon_github.svg" width="16px">
-      <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
-          class="text-reset">Source Code</a></small>
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+            <div class="main-title">
+                <h1 class="display text-center">Casos graves de COVID-19 e SRAG <span class="locale-prep"></span></h1>
+            </div> 
+            
+            <!-- CARD.DROPDOWN -->
+            <div class="text-center mt-1">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle acumdia" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Semanais | Acumulados
+                    </button>
+                    <div class="dropdown-menu acumdia">
+                        <a q="dia" href="#" class="dropdown-item active">Semanais</a>
+                        <a q="acu" href="#" class="dropdown-item">Acumulados</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Conteudo -->
+        <div class="card-deck">
+            <div class="card background-light chart-fix cd-auto mx-0">
+                <div class="container-fluid mt-3 mb-2 m-xl-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Casos graves de COVID-19 <span class="acum_ou_dia"></span></h5>
+
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
+
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia cov nowcast">
+                                <div data-src="./web/estado/SP/plot_nowcast_cum_covid.html" class="codegena_iframe acumdia cov nowcast"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia cov nowcast">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_nowcast_cum_covid.lg.svg">
+                                        <img src="./web/estado/SP/plot_nowcast_cum_covid.md.svg" class="placeholder_svg acumdia cov nowcast" width="100%">
+                                    </picture>
+                                </div>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
+                        <div class="col mt-4 m-xxl-0 p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Casos de SRAG <span class="acum_ou_dia"></span></h5>
+
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
+
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia srag nowcast">
+                                <div data-src="./web/estado/SP/plot_nowcast_cum_srag.html" class="codegena_iframe acumdia srag nowcast"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia srag nowcast">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_nowcast_cum_srag.lg.svg">
+                                        <img src="./web/estado/SP/plot_nowcast_cum_srag.md.svg" class="placeholder_svg acumdia srag nowcast" width="100%">
+                                    </picture>
+                                </div>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card background-light">
+                <div class="card-body">
+                    <h5 class="card-title mx-3 mb-4"><span class="blue-accent-bottom">Como interpretar os gráficos?</span></h5>
+                    <!-- ACUMULADOS.ABA1 -->
+                    <div class="acumdia-text acu" class="sticky-top">
+
+                        <!-- DESTAQUE -->
+                        <ul class="list-group mt-3">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quantos casos graves estimamos ter atualmente?
+                            </li>
+                        </ul>
+
+                        <!-- CARD.TEXT -->
+                        <p class="text-justify mt-3 mb-2">
+                            As <b class="legendBlue">linhas azuis contínuas</b> indicam o número de casos graves <b>notificados</b> (observados) acumulados até a data mais recente.
+                            As <b class="legendRed">linhas vermelhas contínuas</b> indicam o número de casos graves <b>estimados</b> acumulados, incluindo correção do tempo entre o primeiro sintoma e a notificação.  
+                        </p>
+
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+                        <p class="text-justify">
+                            Por se tratar de números altos ao longo do tempo, o número de casos acumulados no gráfico está em <b>escala logarítmica</b>.
+                       </p>
+
+                        <!-- DESTAQUE -->
+                        <ul class="list-group mt-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Quantos casos graves estimamos ter no futuro?
+                            </li>
+                        </ul>
+                        <!-- TODO: Adicionar o texto dinamico como badge -->
+                        <p class="text-justify mt-3">
+                            As <b>linhas tracejadas</b> são as <b>projeções</b> para <!--os últimos 2 dias e--> a próxima semana, considerando a mesma taxa de crescimento das últimas 2 semanas.
+                            <!-- (entre <span class="nowcast_covid_min"></span> e <span class="nowcast_covid_max"></span> casos de
+                            COVID-19 e entre <span class="nowcast_srag_min"></span> e <span class="nowcast_srag_max"></span> casos de SRAG em
+                            <span class="nowcast_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos últimos 5 dias. -->
+                            A <b style="color:#6c757d">faixa cinza</b> mostra o <b>intervalo de 95% de confiança</b> da projeção.
+                        </p>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
+                                aria-expanded="false" aria-controls="collapse5DIAS">
+                                Por que só uma semana? ▾
+                            </button>
+                        </div>
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2 mb-2" id="collapse5DIAS">
+                            <p class="text-justify">
+                                Quando o crescimento é exponencial, as <b>incertezas também crescem exponencialmente</b>. Por isso a região
+                                <b style="color:#6c757d">cinza</b> do gráfico, que expressa a incerteza da projeção, aumenta de largura com o tempo.
+                                Pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro. Por isso avaliamos que é
+                                inadequado fazer projeções para mais de uma semana com este método.
+                            </p>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+                                aria-expanded="false" aria-controls="collapseHosp1">
+                            Como calculamos este número? ▾
+                            </button>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2" id="collapseHosp1">
+                            <p class="text-justify">
+                                Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de
+                                COVID-19</b>, e são investigados com testes laboratoriais. As notificações e confirmações são retiradas por nós da
+                                base de dados <b>SIVEP-Gripe</b>, um sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
+                            </p>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSRAG"
+                                aria-expanded="false" aria-controls="collapseSRAG">
+                            Por que acompanhar casos SRAG? ▾
+                            </button>
+                        </div>
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2" id="collapseSRAG">
+                            <p class="text-justify">
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar semanas além de terem uma taxa de erro. Desta forma, acompanhar os casos de SRAG também é importante para termos um quadro mais completo da pandemia de COVID-19 no Brasil. Porém, é importante lembrar que SRAG é uma síndrome que pode também ser causada por outros motivos que não o COVID-19.  
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dia -->
+                    <div class="acumdia-text dia">
+
+                        <!-- CARD.TEXT -->
+                        <p class="text-justify mt-3 mb-2">
+                            Os <b class="legendBlue">pontos em azul</b> são os números de casos <b>notificados</b> (observados) há mais de 10 semanas, para os quais julgamos não ser mais necessário corrigir para atrasos de notificações.
+                            <!-- TOOLTIP: oq eh tendencia estimada?-->
+                        </p>
+                        <p class="text-justify mt-3 mb-2">
+                            Os <b class="legendRed">pontos em vermelho</b> são os números de casos semanais <b>estimados</b> através da correção do atraso entre a data do primeiro sintoma e a notificação.
+                        </p>
+                        <p class="text-justify mt-3 mb-2">
+                            Os casos graves são apenas os de pessoas hospitalizadas, não o número total de casos, e portanto é menor que a maioria das fontes de dados, que inclui em geral casos leves.
+                        </p>
+
+                        <!-- CARD.BUTTON.EXPAND 
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+                                aria-expanded="false" aria-controls="collapseHosp1">
+                            Como calculamos este número? ▾
+                            </button>
+                        </div> -->
+                        <!-- CARD.BUTTON.EXPAND.CONTENT
+                        <div class="collapse mt-2 mb-2" id="collapseHosp1">
+                            <p class="text-justify">
+                                Desde o início da pandemia de COVID-19 no Brasil <b>todos os casos de SRAG são notificados como casos suspeitos de
+                                COVID-19</b>, que são então investigados com testes laboratoriais. As notificações e confirmações exibidas são retiradas da
+                                base de dados do sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios, chamado
+                                base <b>SIVEP-Gripe</b>.
+                            </p>
+                            <p class="text-justify">
+                                Por se tratar de números muito discrepantes ao longo do tempo, o gráfico de casos acumulados está em <b>escala logarítmica</b>.
+                            </p>
+                        </div>-->
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+
+
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSRAG"
+                                aria-expanded="false" aria-controls="collapseSRAG">
+                            Por que acompanhar casos SRAG? ▾
+                            </button>
+                        </div>
+                        <div class="collapse mt-2" id="collapseSRAG">
+                            <p class="text-justify">
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, que podem demorar semanas além de terem uma taxa de erro. Desta forma, acompanhar os casos de SRAG também é importante para termos um quadro mais completo da pandemia de COVID-19 no Brasil. Porém, é importante lembrar que SRAG é uma síndrome que pode também ser causada por outros motivos que não o COVID-19. 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- CARD.SIGNATURE -->
+                    <p class="mt-3 mx-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+                        para saber mais sobre o método.
+                    </p>
+                    <!--<div class="blockquote-footer">Fonte: casos de residentes do Município de São Paulo constantes na base SIVEP consultada dia 19 de maio de 2020.</div>-->
+                    <div class="blockquote-footer mx-3">Dados sujeitos a modificações devido a atualizações da base.</div>
+                </div>
+            </div>            
+        </div>
+
     </div>
+
+    <!-- Aba 2: Óbitos -->
+    <div class="aba-group aba2">
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+            <div class="main-title">
+                <h1 class="display text-center">Óbitos por COVID-19 e SRAG <span class="locale-prep"></span></h1>
+            </div>
+
+            <!-- CARD.DROPDOWN -->
+            <div class="text-center mt-1">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle acumdia" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Semanais | Acumulados
+                    </button>
+                    <div class="dropdown-menu acumdia">
+                        <a q="dia" href="#" class="dropdown-item active">Semanais</a>
+                        <a q="acu" href="#" class="dropdown-item">Acumulados</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Conteudo -->
+        <div class="card-deck">
+            <div class="card background-light chart-fix cd-auto mx-0">
+                <div class="container-fluid mt-3 mb-2 m-xl-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
+
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por COVID-19 <span class="acum_ou_dia"></span></h5>
+
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
+
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia cov ob">
+                                <div data-src="./web/estado/SP/plot_nowcast_cum_ob_covid.html" class="codegena_iframe acumdia cov ob"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia cov ob"> 
+                                        <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_covid.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_covid.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_covid.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_nowcast_cum_ob_covid.lg.svg">
+                                        <img src="./web/estado/SP/plot_nowcast_cum_ob_covid.svg" class="placeholder_svg acumdia cov ob" width="100%">
+                                    </picture>
+                                </div>
+                                <script src="./js/async-iframe.js"></script>
+                            </div>
+
+                        </div>
+                        <div class="col mt-4 m-xxl-0 p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Óbitos por SRAG <span class="acum_ou_dia"></span></h5>
+
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="legendBlue">Notificados</small>
+                                <small class="legend-square" id="legendRed">Estimados</small>
+                            </div>
+
+                            <!-- CARD.GGPLOT -->
+                            <div class="acumdia srag ob">
+                                <div data-src="./web/estado/SP/plot_nowcast_cum_ob_srag.html" class="codegena_iframe acumdia srag ob"
+                                    data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                    data-responsive="true">
+                                    <picture class="acumdia srag ob">
+                                        <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_srag.ex.svg">
+                                        <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_srag.sm.svg">
+                                        <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_nowcast_cum_ob_srag.md.svg">
+                                        <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_nowcast_cum_ob_srag.lg.svg">
+                                        <img src="./web/estado/SP/plot_nowcast_cum_ob_srag.svg" class="placeholder_svg acumdia srag ob" width="100%">
+                                    </picture>
+                                    <script src="./js/async-iframe.js"></script>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card background-light">
+                <div class="card-body">
+                    <h5 class="card-title mx-3 mb-4"><span class="blue-accent-bottom">Como interpretar os gráficos?</span></h5>
+                    <!-- ACUMULADOS -->
+                    <div class="acumdia-text acu">
+
+                        <!-- CARD.TEXT -->
+                        <p class="text-justify mt-3">
+                            As <b class="legendBlue">linhas azuis contínuas</b> indicam o número de óbitos <b>notificados</b> (observados) acumulados até a data mais recente.
+                            As <b class="legendRed">linhas vermelhas contínuas</b> indicam o número de óbitos <b>estimados</b> acumulados, incluindo correção do tempo entre o primeiro sintoma e a notificação.
+                        </p>
+
+                        <!-- TOOLTIP: oq eh escala logaritimica? -->
+                        <p class="text-justify">
+                            Por se tratar de números altos ao longo do tempo, o número de casos acumulados no gráfico está em <b>escala logarítmica</b>.
+                        </p>
+
+                        <p class="text-justify mt-3">
+                            As <b>linhas tracejadas</b> indicam a projeção estimada de óbitos por cada condição para a próxima semana,
+                            considerando a mesma taxa de aumento de óbitos das últimas 2 semanas.
+                            <!--(entre <span class="nowcast_ob_covid_min"></span> e <span class="nowcast_ob_covid_max"></span> óbitos por
+                            COVID-19 e <span class="nowcast_ob_srag_min"></span> e <span class="nowcast_ob_srag_max"></span> óbitos por SRAG
+                            em <span class="nowcast_ob_data"></span>), se a taxa de crescimento dos valores corrigidos continuar a mesma dos
+                            últimos 5 dias. -->
+                            A <b style="color:#6c757d">faixa cinza</b> mostra o intervalo de 95% de confiança dessa projeção.
+                        </p>
+
+                    </div>
+
+                    <!-- Dia -->
+                    <div class="acumdia-text dia">
+                        <!-- CARD.TEXT -->
+                        <p class="text-justify mt-3">
+                            Os <b class="legendBlue">pontos azuis</b> são de <b>óbitos ocorridos</b> há mais de 10 semanas, para os quais não é preciso prever futuras notificações.
+                            Os <b class="legendRed">pontos vermelhos</b> mostram os números semanais de <b>óbitos estimados</b>, corrigidos pelo atraso entre a data dos primeiros sintomas e data da notificação.
+                        </p>
+                        <p class="text-justify mt-3">
+                            Estes pontos estão sujeitos à alteraçōes devido à atualizaçōes das bases de dados, dentro do <b>intervalo de
+                                confiança</b> indicado em <b class="legendBlue_light">azul claro</b>.
+                        </p>
+                    </div>
+
+                    <!-- GLOBAIS -->
+                    <div class="global-text">
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseHosp1"
+                                aria-expanded="false" aria-controls="collapseHosp1">
+                            Como calculamos estes números? ▾
+                            </button>
+                        </div>
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2" id="collapseHosp1">
+                            <p class="text-justify">
+                                Para calcular o número de óbitos por SRAG utilizamos a base de dados do <b>PRO-AIM</b> (Programa de Aprimoramento
+                                das Informações sobre Mortalidade), da Secretaria Municipal da Saúde de São Paulo. O PRO-AIM processa e classifica
+                                todos os óbitos ocorridos no município de São Paulo,e que possui um critério mais rigoroso e inclusivo na
+                                classificação de óbitos por SRAG. Neste gráficos, filtramos os dados para o município de São Paulo a partir da base
+                                da PRO-AIM.
+                            </p>
+                            <p class="text-justify">
+                                Para calcular o número de óbitos por COVID-19 utilizamos a base oficial de notificações <b>SIVEP-GRIPE</b>, um
+                                sistema nacional de informação, gerido pelo Ministério da Saúde e alimentado pelos municípios.
+                            </p>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapse5DIAS"
+                                aria-expanded="false" aria-controls="collapse5DIAS">
+                                Por que só uma semana? ▾
+                            </button>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2" id="collapse5DIAS">
+                            <p class="text-justify">
+                                Porque quando o crescimento é exponencial as incertezas também crescem exponencialmente. Por isso a região
+                                <b style="color:#6c757d">cinza</b>, que expressa a incerteza da projeção, aumenta de largura com o tempo.
+                                E mesmo pequenas mudanças na taxa que aconteçam hoje ou amanhã vão causar enormes variações no futuro.
+                            </p>
+                            <p class="text-justify">
+                                Por isso avaliamos que é inadequado fazer projeções para mais de uma semana com este método.
+                            </p>
+                        </div>
+
+                        <!-- CARD.BUTTON.EXPAND -->
+                        <div class="text-center">
+                            <button class="btn btn-primary mt-3" type="button" data-toggle="collapse" data-target="#collapseSRAG"
+                                aria-expanded="false" aria-controls="collapseSRAG">
+                                Por que acompanhar casos SRAG? ▾
+                            </button>
+                        </div>
+                        <!-- CARD.BUTTON.EXPAND.CONTENT -->
+                        <div class="collapse mt-2" id="collapseSRAG">
+                            <p class="text-justify">
+                                A <b>Síndrome Respiratória Aguda Grave (SRAG)</b> é o principal quadro grave causado por COVID-19. 
+                                Sua notificação depende apenas de diagnóstico clínico, enquanto que a notificação de casos de COVID-19 depende de testes laboratoriais, 
+                                que podem demorar e têm uma taxa de erro. Por isso acompanhar também os casos de SRAG é importante para ter um quadro mais completo da 
+                                pandemia de COVID-19. Mas é importante lembrar que SRAG é um síndrome que pode também ter outras causas.
+                            </p>
+                        </div>
+
+                        <!-- Alert -->
+                        <!--<div class="alert alert-warning mt-3" role="alert">
+                            <small><b>Os dados da base de dados PROAIM são atualizados semanalmente.</b></small>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>-->
+
+                        <!-- CARD.SIGNATURE -->
+                        <p class="mt-3 mx-3 mb-0">Acesse a página <a href="informacoes.html#como-se-estima-o-número-de-casos-graves">informações</a>
+                            para saber mais sobre o método de correção de atrasos.</p>
+                        
+                        <!--<div class="blockquote-footer">Fonte: casos de óbitos no Município de São Paulo constantes na base PROAIM consultada dia 13 de maio de 2020.</div>-->
+                        <div class="blockquote-footer mx-3">Dados sujeitos a modificações devido a atualizações da base.</div>
+                    </div>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Aba 3: R efetivo -->
+    <div class="aba-group aba3">
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+        <div class="main-title">
+            <h1 class="display text-center">R efetivo <span class="locale-prep"></span></h1>
+        </div> <!-- PAGE.TITLE -->
+        </div>
+        
+        <!-- Conteudo -->
+        <div class="card-deck">
+
+            <div class="card background-light chart-fix cd-auto mx-0">
+                <div class="container-fluid mt-3 mb-2 m-xl-0">
+                    <div class="row row-cols-1 row-cols-xxl-2">
+                        <div class="col p-0">
+
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Número reprodutivo para COVID-19</h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                                <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                            </div>
+                            <!-- CARD.GGPLOT -->
+                            <div data-src="./web/estado/SP/plot_estimate_R0_covid.html" class="codegena_iframe"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                data-responsive="true">
+                                <picture>
+                                    <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_estimate_R0_covid.ex.svg">
+                                    <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_estimate_R0_covid.sm.svg">
+                                    <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_estimate_R0_covid.md.svg">
+                                    <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_estimate_R0_covid.lg.svg">
+                                    <img src="./web/estado/SP/plot_estimate_R0_covid.svg" class="placeholder_svg" width="100%">
+                                </picture>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+
+                        </div>
+                        <div class="col mt-4 m-xxl-0 p-0">
+                            <!-- CARD.TITLE.TEXT -->
+                            <h5 class="card-title text-center">Número reprodutivo para SRAG</h5>
+                            <!-- CARD.GGPLOT.LEGEND -->
+                            <div class="card-legend mb-3">
+                                <small class="legend-square" id="ibm_indigo">Número reprodutivo</small>
+                                <small class="legend-square" id="legendGrey">Intervalo de confiança</small>
+                            </div>
+                            <!-- CARD.GGPLOT -->
+                            <div data-src="./web/estado/SP/plot_estimate_R0_srag.html" class="codegena_iframe"
+                                data-css="background:url('./img/loading.gif') white center center no-repeat;border:0px;"
+                                data-responsive="true">
+                                <picture>
+                                    <source media="(max-width: 575.98px)"  srcset="./web/estado/SP/plot_estimate_R0_srag.ex.svg">
+                                    <source media="(max-width: 767.98px)"  srcset="./web/estado/SP/plot_estimate_R0_srag.sm.svg">
+                                    <source media="(max-width: 991.98px)"  srcset="./web/estado/SP/plot_estimate_R0_srag.md.svg">
+                                    <source media="(max-width: 1199.98px)" srcset="./web/estado/SP/plot_estimate_R0_srag.lg.svg">
+                                    <img src="./web/estado/SP/plot_estimate_R0_srag.svg" class="placeholder_svg" width="100%">
+                                </picture>
+                            </div>
+                            <script src="./js/async-iframe.js"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAXA.CONTENT.CARD -->
+            <div class="card background-light">
+                <div class="card-body">
+                    <h5 class="card-title mx-3 mb-4"><span class="blue-accent-bottom">Como interpretar os gráficos?</span></h5>
+                    <!-- CARD.TITLE.TEXT -->
+                    <ul class="list-group mt-3 mb-3">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Para quantas pessoas cada infectado transmite a doença?
+                        </li>
+                    </ul>
+
+                    <!-- CARD.TEXT -->
+                    <p class="text-justify">
+                        O <b class="ibm_indigo">Número Reprodutivo efetivo</b> \((R_e)\) é a média de pessoas contaminadas por um
+                        infectado. <b>Valores maiores que 1 indicam que o número de novos casos está aumentando</b>. Marcamos este limite com uma
+                        linha vermelha. Valores de \(R_e\) próximo de um indicam que a cada semana temos um número constante de casos.
+                        E apenas valores de \(R_e\) abaixo de um por muitos dias indica seguramente tendência de redução no número
+                        de casos. Importante destacar que um crescimento exponencial é sensível ao valor de \(R_e\), e, portanto,
+                        pequenas diferenças em \(R_e\) causam grandes diferenças na curva epidêmica. 
+                    </p>
+                    <p class="text-justify re">
+                        Estimamos o \(R_e\) da epidemia de COVID-19 semanalmente <span class="locale-prep"></span> baseando-nos nos
+                        dados estimados de casos graves. <b>No momento o \(R_e\) está entre <span class="re_min_covid"></span> e
+                        <span class="re_max_covid"></span>.</b>
+                    </p>
+                    <!-- analise dinamica re covid -->
+                    <p class="text-justify re">
+                        <span class="re_analise_covid"></span>
+                    </p>
+                    <p class="text-justify">
+                        A linha roxa no gráfico mostra a estimativa de \(R_e\) a intervalos de 7 dias (as datas indicam o fim de cada
+                        um desses intervalos). A faixa cinza é o intervalo de confiança dessas estimativas. Esse intervalo tem 95% de
+                        chance de incluir o valor real de \(R_e\).
+                    </p>
+                    <p class="text-justify"> Mais informações técnicas sobre o cálculo do número de reprodução <a href="/informacoes.html#estimativa-do-número-de-reprodução-da-epidemia">aqui</a>.
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- Sobre -->
+    <div class="aba-group sobre">
+
+        <!-- Titulo Principal -->
+        <div class="container-fluid mt-5 mb-5">
+            <div class="main-title">
+                <h1 class="display text-center">Sobre</h1>
+            </div>
+        </div>
+        
+        <!-- Conteudo -->
+        <div class="card-deck xl-small">
+
+            <!-- SOBRE.CONTENT.CARD -->
+            <div class="card background-light br-0">
+                <div class="card-body">
+
+                    <!-- CARD.HEADER -->
+                    <h5 class="card-title mx-3"><span class="blue-accent-bottom">Sobre os dados dos estados</span></h5> <!-- CARD.TITLE.TEXT -->
+                    <p class="text-justify">
+                    As atualizações desta página são feitas com as notificações de casos de SRAG registradas na base SIVEP-Gripe, disponibilizada no <a href="https://opendatasus.saude.gov.br/dataset/bd-srag-2020">portal open DataSUS</a>.
+                    </p>
+                    <p class="text-justify">
+                        Com as notificações de casos graves suspeitos e confirmados de
+                        COVID-19 (casos de Síndrome Aguda Respiratória Grave na base
+                        Sivep-Gripe), <b>estimamos o número de casos graves que
+                        já ocorreram mas ainda não foram notificados</b>. Com esses dados
+                        corrigidos é possível obter estimativas mais confiáveis da evolução da
+                        epidemia.
+                    </p>
+                    <p class="text-justify">
+                        Trabalhamos com esses dados por serem uma amostra mais
+                        uniforme dos casos, ou seja, depende menos da quantidade de
+                        testes feitos em diferentes lugares e em diferentes
+                        momentos - a notificação está ligada à hospitalização.
+                    </p>
+                </div>
+
+    </div>
+
     
-    <!-- FOOTER.ITEM -->
-    <div class="footer-content">
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
-        <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
-      </a>
-      <small id="license">
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
-      </small>
-    </div>
-    
-  </footer>
 
-  <!-- Toast -->
-  <div aria-live="polite" aria-atomic="true" class="d-flex toast-wrap">
-    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-grafico">
-      <div class="toast-header">
-        <img src="./img/favicons/favicon-16x16.png" class="rounded mr-2" alt="Logo do Observatório">
-        <strong class="mr-auto">Observatório Covid-19 BR</strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="toast-body">
-        Clique no gráfico para explorar os dados
-      </div>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer class="container-fluid">
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <img src="img/icon_github.svg" width="16px">
+        <small class="mb-0 ml-1"><a href="https://github.com/covid19br/covid19br.github.io" target="_blank" rel="noopener"
+            class="text-reset">Source Code</a></small>
+        </div>
 
-  <!-- JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <!-- R Integration -->
-  <!-- Hora de atualizacao -->
-  <script src="js/updateDate.js"></script>
-  <!-- Conteudo e Menu Dinamico -->
-  <script src="js/data_estados.js?ver=2.00"></script>
-  <script src="js/lib_locale_uf.js?ver=3.01"></script>
-  <script src="js/updateContent.js?ver=2.21"></script>
-  <!-- Dispara Toast Messages -->
-  <script src="js/updateToast.js"></script>
-  <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
-  <script>
-    var sc_project=12220607; 
-    var sc_invisible=1; 
-    var sc_security="18092bfd"; 
-  </script>
-  <script src="https://www.statcounter.com/counter/counter.js" async></script>
-  <noscript>
-    <div class="statcounter">
-      <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
-        <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
-      </a>
+        <!-- FOOTER.ITEM -->
+        <div class="footer-content">
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+            <img alt="Licença Creative Commons" height="20px" style="margin-right: .35rem;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/>
+        </a>
+        <small id="license">
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Observatório Covid-19 BR</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">Creative Commons - Atribuição-NãoComercial 4.0 Internacional</a>.
+        </small>
+        </div>
+
+    </footer>
+
+    <!-- Toast -->
+    <div aria-live="polite" aria-atomic="true" class="d-flex toast-wrap">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="toast-grafico">
+        <div class="toast-header">
+            <img src="./img/favicons/favicon-16x16.png" class="rounded mr-2" alt="Logo do Observatório">
+            <strong class="mr-auto">Observatório Covid-19 BR</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            Clique no gráfico para explorar os dados
+        </div>
+        </div>
     </div>
-  </noscript>
-  <!-- End of Statcounter Code -->
+
+    <!-- JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS via BootstrapCDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- R Integration -->
+    <!-- Hora de atualizacao -->
+    <script src="js/updateDate.js"></script>
+    <!-- Conteudo Dinamico -->
+    <script src="js/data_estadosn.js?ver=1.00"></script>
+    <script src="js/lib_locale_mun.js?ver=3.03"></script>
+    <script src="js/lib_acumdia.js?ver=3.00"></script>
+    <script src="js/lib_casobi.js?ver=2.00"></script>
+    <script src="js/lib_abas.js?ver=2.10"></script>
+    <script src="js/updateContent.js?ver=2.21"></script>
+    <!-- Dispara Toast Messages -->
+    <script src="js/updateToast.js"></script>
+    <!-- MathJax: Equacoes -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+    <!-- Default Statcounter code for Observatório COVID-19 BR https://covid19br.github.io -->
+    <script>
+        var sc_project=12220607;
+        var sc_invisible=1;
+        var sc_security="18092bfd";
+    </script>
+    <script src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+        <div class="statcounter">
+        <a title="Web Analytics Made Easy - StatCounter" href="https://statcounter.com/" target="_blank">
+            <img class="statcounter" src="https://c.statcounter.com/12220607/0/18092bfd/1/" alt="Web Analytics Made Easy - StatCounter">
+        </a>
+        </div>
+    </noscript>
+    <!-- End of Statcounter Code -->
 </body>
 
 </html>
