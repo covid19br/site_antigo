@@ -45,6 +45,7 @@ p, small {
 
 .index-title {
     font-size: 1.125rem!important;
+    line-height: 1.45;
 }
 
 .index-icon {
@@ -99,6 +100,11 @@ p, small {
 @media (max-width: 374px) {
     .destaque {
         font-size: .7rem;
+    } 
+}
+@media (max-width: 390px) {
+    .container#institutos {
+        padding: 0;
     } 
 }
 @media (min-width: 992px) {
