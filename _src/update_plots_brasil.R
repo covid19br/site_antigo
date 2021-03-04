@@ -64,23 +64,25 @@ for (estado in estados) {
     
     # pegando a data mais recente
     if (is.null(data)) {
-        data <- get.last.date(data.dir)
+        data.e <- get.last.date(data.dir)
+    } else {
+        data.e <- data
     }
 
     # testando se existe nowcasting
     existe.covid <- existe.nowcasting2(tipo = "covid",
                                        output.dir = data.dir,
-                                       data = data)
+                                       data = data.e)
     existe.srag <- existe.nowcasting2(tipo = "srag",
                                       output.dir = data.dir,
-                                      data = data)
+                                      data = data.e)
     existe.ob.covid <- existe.nowcasting2(tipo = "obitos_covid",
                                           output.dir = data.dir,
-                                          data = data)
+                                          data = data.e)
     existe.ob.srag <- existe.nowcasting2(tipo = "obitos_srag",
                                          output.dir = data.dir,
-                                         data = data)
-    df.estados[estado,] <- c(estado, data.dir, data, existe.covid, existe.srag,
+                                         data = data.e)
+    df.estados[estado,] <- c(estado, data.dir, data.e, existe.covid, existe.srag,
                              existe.ob.covid, existe.ob.srag)
 }
 
@@ -89,10 +91,11 @@ if (all(as.logical(df.estados$existe.covid))) {
     df.covid.diario <- list()
     for (estado in estados) {
         data.dir <- df.estados[estado, "data.dir"]
-        df.covid.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_covid_", data, ".csv"), stringsAsFactors = FALSE)
+        df.covid.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_covid_", data.e, ".csv"), stringsAsFactors = FALSE)
     }
     df.covid.diario <- plyr::ldply(df.covid.diario, .id="UF")
-    plot.nowcast.covid <- plot.nowcast.diario.brasil(df.covid.diario)
+    plot.nowcast.covid <- plot.nowcast.diario.brasil(df.covid.diario) +
+        labs(title = "Casos hospitalizados Covid")
 } else {
     plot.nowcast.covid <- NULL
 }
@@ -102,10 +105,11 @@ if (all(as.logical(df.estados$existe.srag))) {
     df.srag.diario <- list()
     for (estado in estados) {
         data.dir <- df.estados[estado, "data.dir"]
-        df.srag.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_srag_", data, ".csv"), stringsAsFactors = FALSE)
+        df.srag.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_srag_", data.e, ".csv"), stringsAsFactors = FALSE)
     }
     df.srag.diario <- plyr::ldply(df.srag.diario, .id="UF")
-    plot.nowcast.srag <- plot.nowcast.diario.brasil(df.srag.diario)
+    plot.nowcast.srag <- plot.nowcast.diario.brasil(df.srag.diario) +
+        labs(title = "Casos hospitalizados SRAG")
 } else {
   plot.nowcast.srag <- NULL
 }
@@ -115,10 +119,12 @@ if (all(as.logical(df.estados$existe.ob.covid))) {
     df.ob.covid.diario <- list()
     for (estado in estados) {
         data.dir <- df.estados[estado, "data.dir"]
-        df.ob.covid.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_obitos_covid_", data, ".csv"), stringsAsFactors = FALSE)
+        df.ob.covid.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_obitos_covid_", data.e, ".csv"), stringsAsFactors = FALSE)
     }
     df.ob.covid.diario <- plyr::ldply(df.ob.covid.diario, .id="UF")
-    plot.nowcast.ob.covid <- plot.nowcast.diario.brasil(df.ob.covid.diario)
+    plot.nowcast.ob.covid <- plot.nowcast.diario.brasil(df.ob.covid.diario) +
+        labs(title = "Óbitos Covid",
+             y="Número de novos óbitos")
 } else {
     plot.nowcast.ob.covid <- NULL
 }
@@ -128,10 +134,12 @@ if (all(as.logical(df.estados$existe.ob.srag))) {
     df.ob.srag.diario <- list()
     for (estado in estados) {
         data.dir <- df.estados[estado, "data.dir"]
-        df.ob.srag.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_obitos_srag_", data, ".csv"), stringsAsFactors = FALSE)
+        df.ob.srag.diario[[estado]] <- read.csv(paste0(data.dir, "nowcasting_diario_obitos_srag_", data.e, ".csv"), stringsAsFactors = FALSE)
     }
     df.ob.srag.diario <- plyr::ldply(df.ob.srag.diario, .id="UF")
-    plot.nowcast.ob.srag <- plot.nowcast.diario.brasil(df.ob.srag.diario)
+    plot.nowcast.ob.srag <- plot.nowcast.diario.brasil(df.ob.srag.diario) +
+        labs(title = "Óbitos SRAG",
+             y="Número de novos óbitos")
 } else {
     plot.nowcast.ob.srag <- NULL
 }
@@ -160,50 +168,49 @@ for (i in n[plots.true]) {
 
     #### SVG ####
     # fazendo todos os graficos svg para o site
-    graph.svg <- plots.para.atualizar[[i]] +
+    graph.svg <- plots.para.atualizar[[i]] #+
         # corrige a diferenca do tamanho do texto entre svg e html
-        theme(axis.text = element_text(size = 6.65),
-              # corrige a margem inserida pelo plotly
-              plot.margin = margin(10, 0, 0, 7, "pt"))
-    ggsave(paste0(plot.dir, fig.name, ".svg"), plot = graph.svg,
-           device = svg, scale = 1, width = 215, height = 235, units = "mm")
+        #theme(axis.text = element_text(size = 6.65),
+        #      # corrige a margem inserida pelo plotly
+        #      plot.margin = margin(10, 0, 0, 7, "pt"))
+    ggsave(paste0(plot.dir, fig.name, ".png"), plot = graph.svg, width=11, height=12)
     # tamanho calculado usando ppi = 141.21
     #ggsave(paste0(plot.dir, fig.name, ".svg"), plot = graph.svg,
     #       device = svg, scale = .8, width = 210, height = 142, units = "mm")
     # o tamanho do texto no placeholder deve ser um fator de 0.665 do tamanho original
     # large
-    graph.lg.svg <- graph.svg +
-        # corrige a diferenca do tamanho do texto entre svg e html
-        theme(axis.text = element_text(size = 8.65))
-    ggsave(paste0(plot.dir, fig.name, ".lg.svg"), plot = graph.lg.svg,
-           device = svg, scale = 1, width = 215, height = 235, units = "mm")
-    # medium
-    graph.md.svg <- graph.svg +
-        # corrige a diferenca do tamanho do texto entre svg e html
-        theme(axis.text = element_text(size = 12.65))
-    ggsave(paste0(plot.dir, fig.name, ".md.svg"), plot = graph.md.svg,
-           device = svg, scale = 1, width = 215, height = 235, units = "mm")
-    # small
-    graph.sm.svg <- graph.svg +
-        # corrige a diferenca do tamanho do texto entre svg e html
-        theme(axis.text = element_text(size = 16.65))
-    ggsave(paste0(plot.dir, fig.name, ".sm.svg"), plot = graph.sm.svg,
-           device = svg, scale = 1, width = 215, height = 235, units = "mm")
-    # extra small
-    graph.ex.svg <- graph.svg +
-        # corrige a diferenca do tamanho do texto entre svg e html
-        theme(axis.text = element_text(size = 20.65))
-    ggsave(paste0(plot.dir, fig.name, ".ex.svg"), plot = graph.ex.svg,
-           device = svg, scale = 1, width = 215, height = 235, units = "mm")
+    #graph.lg.svg <- graph.svg +
+    #    # corrige a diferenca do tamanho do texto entre svg e html
+    #    theme(axis.text = element_text(size = 8.65))
+    #ggsave(paste0(plot.dir, fig.name, ".lg.svg"), plot = graph.lg.svg,
+    #       device = svg, scale = 1, width = 215, height = 235, units = "mm")
+    ## medium
+    #graph.md.svg <- graph.svg +
+    #    # corrige a diferenca do tamanho do texto entre svg e html
+    #    theme(axis.text = element_text(size = 12.65))
+    #ggsave(paste0(plot.dir, fig.name, ".md.svg"), plot = graph.md.svg,
+    #       device = svg, scale = 1, width = 215, height = 235, units = "mm")
+    ## small
+    #graph.sm.svg <- graph.svg +
+    #    # corrige a diferenca do tamanho do texto entre svg e html
+    #    theme(axis.text = element_text(size = 16.65))
+    #ggsave(paste0(plot.dir, fig.name, ".sm.svg"), plot = graph.sm.svg,
+    #       device = svg, scale = 1, width = 215, height = 235, units = "mm")
+    ## extra small
+    #graph.ex.svg <- graph.svg +
+    #    # corrige a diferenca do tamanho do texto entre svg e html
+    #    theme(axis.text = element_text(size = 20.65))
+    #ggsave(paste0(plot.dir, fig.name, ".ex.svg"), plot = graph.ex.svg,
+    #       device = svg, scale = 1, width = 215, height = 235, units = "mm")
 
-    #### HTML ####
-    graph.html <- ggplotly(plots.para.atualizar[[i]]) %>%
-        layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
-    with_dir(plot.dir,
-             saveWidget(frameableWidget(graph.html),
-                        file = paste0(fig.name, ".html"),
-                        selfcontained = FALSE,
-                        libdir = "./libs"))
+    ##### HTML ####
+    #graph.html <- ggplotly(plots.para.atualizar[[i]]) %>%
+    #    layout(margin = list(l = 50, r = 20, b = 20, t = 20, pad = 4))
+    #with_dir(plot.dir,
+    #         saveWidget(frameableWidget(graph.html),
+    #                    file = paste0(fig.name, ".html"),
+    #                    selfcontained = FALSE,
+    #                    libdir = "./libs"))
     #saveWidgetFix(frameableWidget(graph.html),
     #              file = paste0(plot.dir, fig.name, ".html"),
     #              libdir="./libs") # HTML Interative Plot
