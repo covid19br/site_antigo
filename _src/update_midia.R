@@ -116,9 +116,15 @@ if (update.git)
 
 write_file(new.content, file.out)
 
-if (update.git)
+if (update.git) {
+    emails <- str_trim(read_file('emails.txt'))
     system(paste0("git commit -m ':robot: atualizando reportagens' ",
                   file.out,
-                  " && git push")
+                  " && git push",
+                  ' && echo -e "Página de reportagens atualizada.\n
+O conteúdo novo abaixo aparecerá no site em alguns minutos.\n
+Atenciosamente,
+Robot mailer\n\n`git diff HEAD~1" | mail -s "Página de reportagens atualizada" ',
+                  emails)
     )
-
+}
