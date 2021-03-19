@@ -33,7 +33,7 @@ reports.df <- reports.df %>%
 template_year_begin <- '
               <p class="news-year">
                   <a class="text-reset" data-toggle="collapse" href="#collapseano" role="button"
-                      aria-expanded="true" aria-controls="collapseano">
+                      aria-expanded="false" aria-controls="collapseano">
                       ano ▾
                   </a>
               </p>
@@ -49,7 +49,7 @@ template_year_end <- '
 template_month_begin <- '
                  <p class="news-month">
                     <a class="text-reset" data-toggle="collapse" href="#collapsemes_ano" role="button"
-                        aria-expanded="true" aria-controls="collapsemes_ano">
+                        aria-expanded="false" aria-controls="collapsemes_ano">
                         mes ▾
                     </a>
                 </p>
@@ -107,9 +107,17 @@ reports.df %>%
         })
 
 full.content <- read_file(file.out)
+
 new.content <- str_replace(full.content,
-                           "(<!--AUTOMATIC CONTENT BEGIN-->).+(<!--AUTOMATIC CONTENT END-->)",
-                           paste("\1", content, "\2", sep = "\n"))
+                           regex("(<!--AUTOMATIC CONTENT BEGIN-->).*(<!--AUTOMATIC CONTENT END-->)",
+                                 dotall = TRUE),
+                           paste("\\1", content, "\\2", sep = "\n"))
+
+# expand first year/month
+new.content <- str_replace(new.content, regex('(<p class="news-year">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\d+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
+            '\\1"true"')
+new.content <- str_replace(new.content, regex('(<p class="news-month">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\w+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
+            '\\1"true"')
 
 if (update.git)
     system("git pull --ff-only")
