@@ -4,7 +4,7 @@ if(!require(stringr)){install.packages("stringr"); library(stringr)}
 library(readr)
 
 # update git?
-update.git <- FALSE
+update.git <- TRUE
 
 # private link
 doc_link <- read_file('link_midia_source.txt')
@@ -24,11 +24,12 @@ reports <- read_sheet(doc_link, sheet = 1)
 reports.df <- as.data.frame(reports)
 
 reports.df <- reports.df %>%
-    filter(! any(is.na(date), is.na(link), is.na(titulo))) %>%
+    filter(! is.na(date), ! is.na(link), ! is.na(titulo), ! is.na(veiculo)) %>%
     mutate(date = as.Date(date),
            dateform = format(date, "%d/%m/%Y"),
+           mesn = factor(format(date, "%m"), levels=str_pad(as.character(12:1), 2, pad="0")),
            mes = format(date, "%B"),
-           ano = format(date, "%Y"),
+           ano = factor(format(date, "%Y"), levels=as.character(2021:2020)),
            baseaddress = link %>% str_replace("https?://", "") %>% str_replace("/.*$", "")) %>%
     arrange(desc(date))
 
@@ -80,15 +81,15 @@ reports.df %>%
     group_walk(function(x, ano) {
         content <<- paste(content,
                          str_replace_all(template_year_begin,
-                                         c("ano" = ano[[1]])),
+                                         c("ano" = as.character(ano[[1]]))),
                          sep = "\n")
         x %>%
-            group_by(mes) %>%
-            group_walk(function(y, mes) {
+            group_by(mesn) %>%
+            group_walk(function(y, mesn) {
                 content <<- paste(content,
                          str_replace_all(template_month_begin,
-                                         c("mes" = mes[[1]],
-                                           "ano" = ano[[1]])),
+                                         c("mes" = tools::toTitleCase(y[[1,"mes"]]),
+                                           "ano" = as.character(ano[[1]]))),
                          sep = "\n")
                 for (i in seq(1, nrow(y))) {
                     content <<- paste(content,
@@ -98,13 +99,13 @@ reports.df %>%
                 }
                 content <<- paste(content,
                          str_replace_all(template_month_end,
-                                         c("mes" = mes[[1]],
-                                           "ano" = ano[[1]])),
+                                         c("mes" = tools::toTitleCase(y[[1, "mes"]]),
+                                           "ano" = as.character(ano[[1]]))),
                          sep = "\n")
                          })
         content <<- paste(content,
                          str_replace_all(template_year_end,
-                                         c("ano" = ano[[1]])),
+                                         c("ano" = as.character(ano[[1]]))),
                          sep = "\n")
         })
 
@@ -136,10 +137,10 @@ if (update.git) {
     system(paste0("git commit -m ':robot: atualizando reportagens' ",
                   file.out,
                   " && git push",
-                  ' && echo -e "Página de reportagens atualizada.\n
+                  ' && (echo -e "Página de reportagens atualizada.\n
 O conteúdo novo abaixo aparecerá no site em alguns minutos.\n
 Atenciosamente,
-Robot mailer\n\n" `git diff HEAD~1` | mail -s "Página de reportagens atualizada" ',
+Robot mailer\n\n"; git diff --no-color HEAD~1; ) | mail -s "Página de reportagens atualizada" ',
                   emails)
     )
 }
