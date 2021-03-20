@@ -109,6 +109,9 @@ reports.df %>%
                          sep = "\n")
         })
 
+
+# update before reading
+system("git pull --ff-only")
 full.content <- read_file(file.out)
 
 new.content <- str_replace(full.content,
