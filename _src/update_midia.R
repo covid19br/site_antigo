@@ -27,7 +27,8 @@ reports.df <- reports.df %>%
     filter(! any(is.na(date), is.na(link), is.na(titulo))) %>%
     mutate(data = as.Date(reports.df$date),
            mes = format(reports.df$date, "%B"),
-           ano = format(reports.df$date, "%Y")) %>%
+           ano = format(reports.df$date, "%Y"),
+           baseaddress = link %>% str_replace("https?://", "") %>% str_replace("/.*$", "")) %>%
     arrange(desc(date))
 
 template_year_begin <- '
@@ -65,13 +66,13 @@ template_report <- '
                         target="_blank" rel="noopener"
                         class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1"><img src="logo_midia" class="favicon">veiculo</h5>
+                            <h5 class="mb-1"><img src="https://icons.duckduckgo.com/ip3/baseaddress.ico" class="favicon">veiculo</h5>
                             <small>date</small>
                         </div>
                         <p class="mb-1">titulo</p>
                         </a>'
 
-fields <- c("veiculo", "date", "titulo", "link", "logo_midia")
+fields <- c("veiculo", "date", "titulo", "link", "baseaddress")
 content <- ""
 reports.df %>%
     group_by(ano) %>%
@@ -114,10 +115,15 @@ new.content <- str_replace(full.content,
                            paste("\\1", content, "\\2", sep = "\n"))
 
 # expand first year/month
-new.content <- str_replace(new.content, regex('(<p class="news-year">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\d+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
-            '\\1"true"')
-new.content <- str_replace(new.content, regex('(<p class="news-month">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\w+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
-            '\\1"true"')
+new.content <- new.content %>%
+    str_replace(regex('(<p class="news-year">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\d+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
+            '\\1"true"') %>%
+    str_replace(regex('(<p class="news-month">\\s*<a class="text-reset" data-toggle="collapse" href="#collapse\\w+" role="button"\\s*aria-expanded=)"false"', dotall = TRUE),
+            '\\1"true"') %>%
+    str_replace(regex('(<!-- CONTEUDO \\d{4} -->\\s*<div class=)"collapse"', dotall = TRUE),
+                '\\1"collapse show"') %>%
+    str_replace(regex('(<!-- CONTEUDO \\D+ -->\\s*<div class=)"collapse"', dotall = TRUE),
+                '\\1"collapse show"')
 
 if (update.git)
     system("git pull --ff-only")
