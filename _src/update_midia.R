@@ -64,7 +64,7 @@ template_month_end <- '
                     </div>
                 </div>'
 template_report <- '
-                        <a href="links"
+                        <a href="link"
                         target="_blank" rel="noopener"
                         class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
