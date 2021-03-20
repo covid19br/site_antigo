@@ -40,7 +40,7 @@ template_year_begin <- '
               </p>
 
               <!-- CONTEUDO ano -->
-              <div class="collapse show" id="collapseano">
+              <div class="collapse" id="collapseano">
                   <div class="list-group">
 '
 template_year_end <- '
@@ -56,7 +56,7 @@ template_month_begin <- '
                 </p>
 
                 <!-- CONTEUDO mes -->
-                <div class="collapse show" id="collapsemes_ano">
+                <div class="collapse" id="collapsemes_ano">
                     <div class="list-group">'
 template_month_end <- '
                     </div>
