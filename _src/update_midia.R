@@ -4,7 +4,7 @@ if(!require(stringr)){install.packages("stringr"); library(stringr)}
 library(readr)
 
 # update git?
-update.git <- FALSE
+update.git <- TRUE
 
 # private link
 doc_link <- read_file('link_midia_source.txt')
@@ -138,7 +138,7 @@ if (update.git) {
                   ' && echo -e "Página de reportagens atualizada.\n
 O conteúdo novo abaixo aparecerá no site em alguns minutos.\n
 Atenciosamente,
-Robot mailer\n\n`git diff HEAD~1" | mail -s "Página de reportagens atualizada" ',
+Robot mailer\n\n" `git diff HEAD~1` | mail -s "Página de reportagens atualizada" ',
                   emails)
     )
 }
