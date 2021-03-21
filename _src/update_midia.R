@@ -143,7 +143,7 @@ if (update.git) {
                   ' && (echo -e "Página de reportagens atualizada.\n
 O conteúdo novo abaixo aparecerá no site em alguns minutos.\n
 Atenciosamente,
-Robot mailer\n\n"; git diff --no-color HEAD HEAD~1; ) | mail -s "Página de reportagens atualizada" ',
+Robot mailer\n\n"; git diff --no-color HEAD~1 HEAD; ) | mail -s "Página de reportagens atualizada" ',
                   emails)
     )
 }
