@@ -17,6 +17,12 @@ file.out <- "../midia.html"
 # 2. tipos
 # 3. backlog
 
+capitalize <- function(x) {
+    first <- substr(x, 1, 1)
+    ending <- substring(x, 2)
+    return(paste0(toupper(first), ending))
+}
+
 # public access
 gs4_deauth()
 
@@ -88,7 +94,7 @@ reports.df %>%
             group_walk(function(y, mesn) {
                 content <<- paste(content,
                          str_replace_all(template_month_begin,
-                                         c("mes" = tools::toTitleCase(y[[1,"mes"]]),
+                                         c("mes" = capitalize(y[[1,"mes"]]),
                                            "ano" = as.character(ano[[1]]))),
                          sep = "\n")
                 for (i in seq(1, nrow(y))) {
@@ -99,7 +105,7 @@ reports.df %>%
                 }
                 content <<- paste(content,
                          str_replace_all(template_month_end,
-                                         c("mes" = tools::toTitleCase(y[[1, "mes"]]),
+                                         c("mes" = capitalize(y[[1, "mes"]]),
                                            "ano" = as.character(ano[[1]]))),
                          sep = "\n")
                          })
