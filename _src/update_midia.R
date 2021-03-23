@@ -17,6 +17,9 @@ file.out <- "../midia.html"
 # 2. tipos
 # 3. backlog
 
+# quit on error when run non-interactively
+if (!interactive()) options(error = function() quit(save = "no", status = 1))
+
 capitalize <- function(x) {
     first <- substr(x, 1, 1)
     ending <- substring(x, 2)
